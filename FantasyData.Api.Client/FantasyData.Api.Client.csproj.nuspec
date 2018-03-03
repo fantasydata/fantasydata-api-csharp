@@ -3,12 +3,12 @@
   <metadata>
     <id>FantasyData.Api.Client</id>
     <title>FantasyData API Client Library</title>
-    <version>1.0.0</version>
+    <version>0.0.0</version>
     <authors>FantasyData LLC</authors>
     <owners>FantasyData LLC</owners>
     <licenseUrl>https://fantasydata.com/terms-of-service.aspx</licenseUrl>
     <projectUrl>https://github.com/fantasydata/fantasydata-api-csharp</projectUrl>
-    <iconUrl></iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/fantasydata/fantasydata-api-csharp/master/FantasyData.Api.Client/fantasy-logo-icon-500-gray-white.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>FantasyData API C# Client Library</description>
     <releaseNotes>Initial build of FantasyData Sports Data API C# client library wrapper.</releaseNotes>
