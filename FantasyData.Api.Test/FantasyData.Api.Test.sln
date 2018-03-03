@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FantasyData.Api.Test", "FantasyData.Api.Test.csproj", "{B2B91CAD-E22D-4311-BAE7-7185D430DB2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FantasyData.Api.Client", "..\FantasyData.Api.Client\FantasyData.Api.Client.csproj", "{4917F563-EC8F-4E15-B08A-E18B514A3960}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2B91CAD-E22D-4311-BAE7-7185D430DB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B91CAD-E22D-4311-BAE7-7185D430DB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B91CAD-E22D-4311-BAE7-7185D430DB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B91CAD-E22D-4311-BAE7-7185D430DB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4917F563-EC8F-4E15-B08A-E18B514A3960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4917F563-EC8F-4E15-B08A-E18B514A3960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4917F563-EC8F-4E15-B08A-E18B514A3960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4917F563-EC8F-4E15-B08A-E18B514A3960}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB521F83-CE79-4304-8F71-5484775517AA}
+	EndGlobalSection
+EndGlobal
