@@ -306,6 +306,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clients\SampleClient.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="FantasyData.Api.Client.csproj.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

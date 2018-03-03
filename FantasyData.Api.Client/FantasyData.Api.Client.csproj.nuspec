@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>FantasyData.Api.Client</id>
+    <title>FantasyData API Client Library</title>
+    <version>1.0.0</version>
+    <authors>FantasyData LLC</authors>
+    <owners>FantasyData LLC</owners>
+    <licenseUrl>https://fantasydata.com/terms-of-service.aspx</licenseUrl>
+    <projectUrl>https://github.com/fantasydata/fantasydata-api-csharp</projectUrl>
+    <iconUrl></iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>FantasyData API C# Client Library</description>
+    <releaseNotes>Initial build of FantasyData Sports Data API C# client library wrapper.</releaseNotes>
+    <copyright>Copyright FantasyData LLC 2018</copyright>
+    <tags>Fantasy Sports Live Data Feed API Client Library Wrapper SDK</tags>
+    <dependencies>
+      <dependency id="SampleDependency" version="1.0" />
+    </dependencies>
+  </metadata>
+</package>
