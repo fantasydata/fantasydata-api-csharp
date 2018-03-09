@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using FantasyData.Api.Client;
 
 namespace FantasyData.Api.Test
 {
@@ -8,11 +9,15 @@ namespace FantasyData.Api.Test
         static void Main(string[] args)
         {
             // Connect to client
-            var client = new FantasyData.Api.Client.NFLv3ScoresClient("<Your license key goes here>");
+            var client = new NFLv3ScoresClient("<Your license key goes here>");
 
-            // Get teams and write to console
-            var teams = client.GetTeams();
-            teams.ForEach(t => Console.WriteLine(t.FullName + " (" + t.HeadCoach + ")"));
+            // Get NFL scores
+            var scores = client.GetScoresByWeek("2017", 1);
+            foreach(var score in scores)
+            {
+                Console.WriteLine($"{score.AwayTeam} - {score.AwayScore} @ {score.HomeTeam} - {score.HomeScore}");
+            }
+
             Console.WriteLine();
             Console.WriteLine("Press enter to continue...");
             Console.ReadLine();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using FantasyData.Api.Client.Model.MLB;
 
 namespace FantasyData.Api.Client
@@ -10,34 +11,66 @@ namespace FantasyData.Api.Client
         public MLBv3RotoBallerArticlesClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// RotoBaller Articles
+        /// Get RotoBaller Articles Asynchronous
         /// </summary>
-        public List<Article> GetRotoBallerArticles()
+        public Task<List<Article>> GetRotoBallerArticlesAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
-            return base.Get<List<Article>>("/v3/mlb/articles-rotoballer/{format}/RotoBallerArticles", parameters);
+            return Task.Run<List<Article>>(() =>
+                base.Get<List<Article>>("/v3/mlb/articles-rotoballer/{format}/RotoBallerArticles", parameters)
+            );
         }
 
         /// <summary>
-        /// RotoBaller Articles By Date
+        /// Get RotoBaller Articles
+        /// </summary>
+        public List<Article> GetRotoBallerArticles()
+        {
+            return this.GetRotoBallerArticlesAsync().Result;
+        }
+
+        /// <summary>
+        /// Get RotoBaller Articles By Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the news. Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
+        public Task<List<Article>> GetRotoBallerArticlesByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<Article>>(() =>
+                base.Get<List<Article>>("/v3/mlb/articles-rotoballer/{format}/RotoBallerArticlesByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get RotoBaller Articles By Date
         /// </summary>
         /// <param name="date">The date of the news. Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
         public List<Article> GetRotoBallerArticlesByDate(string date)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            return base.Get<List<Article>>("/v3/mlb/articles-rotoballer/{format}/RotoBallerArticlesByDate/{date}", parameters);
+            return this.GetRotoBallerArticlesByDateAsync(date).Result;
         }
 
         /// <summary>
-        /// RotoBaller Articles By Player
+        /// Get RotoBaller Articles By Player Asynchronous
+        /// </summary>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code>.</param>
+        public Task<List<Article>> GetRotoBallerArticlesByPlayerIDAsync(int playerid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            return Task.Run<List<Article>>(() =>
+                base.Get<List<Article>>("/v3/mlb/articles-rotoballer/{format}/RotoBallerArticlesByPlayerID/{playerid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get RotoBaller Articles By Player
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code>.</param>
         public List<Article> GetRotoBallerArticlesByPlayerID(int playerid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
-            return base.Get<List<Article>>("/v3/mlb/articles-rotoballer/{format}/RotoBallerArticlesByPlayerID/{playerid}", parameters);
+            return this.GetRotoBallerArticlesByPlayerIDAsync(playerid).Result;
         }
 
     }

@@ -58,34 +58,11 @@ namespace FantasyData.Api.Client
                 foreach (var parameter in parameters)
                     url = url.Replace("{" + parameter.Key.ToLower() + "}", parameter.Value.ToLower().Trim());
 
+                // Download json, deserialize it, and return it
                 var json = client.DownloadString(url);
-                var serializer2 = new JavaScriptSerializer();
-                var result2 = serializer2.Deserialize<T>(json);
-                return result2;
+                var serializer = new JavaScriptSerializer();
+                return serializer.Deserialize<T>(json);
                 
-                //// Get stream, deserialize it, and return it
-                //var stream = client.OpenRead(url);
-                //var serializer = new DataContractJsonSerializer(typeof(T));
-                //var result = (T)serializer.ReadObject(stream);
-                //return result;
-
-                // TODO: find a way to handle errors properly (API needs to be modified to return appropriate 400, 401, etc, status codes)
-                //Stream stream;
-                //try
-                //{
-                //    stream = client.OpenRead(url);
-                //    var serializer = new DataContractJsonSerializer(typeof(T));
-                //    var result = (T)serializer.ReadObject(stream);
-                //    return result;
-                //}
-                //catch (Exception ex)
-                //{
-                //    stream = client.OpenRead(url);
-                //    var serializer = new DataContractJsonSerializer(typeof(ApiException));
-                //    var result = (ApiException)serializer.ReadObject(stream);
-                //    throw result;
-                //}
-
             }
 
         }

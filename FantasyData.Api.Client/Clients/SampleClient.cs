@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using FantasyData.Api.Client.Model.NFLv3;
 
 namespace FantasyData.Api.Client
@@ -15,27 +16,31 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// this should appear in autocomplete
+        /// Summary description
         /// </summary>
         /// <param name="season">season description 1</param>
         /// <param name="week">week description 2</param>
         public IList<Score> GetScoresByWeek(string season, string week)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("format", "json"));
-            parameters.Add(new KeyValuePair<string, string>("season", season));
-            parameters.Add(new KeyValuePair<string, string>("week", week));
-            return base.Get<IList<Score>>("/v3/nfl/stats/{format}/ScoresByWeek/{season}/{week}", parameters);
+            return this.GetScoresByWeekAsync(season, week).Result;
         }
 
-        public IList<BoxScore> GetBoxScoresByWeek(string season, string week)
+        /// <summary>
+        /// Summary description
+        /// </summary>
+        /// <param name="season">season description 1</param>
+        /// <param name="week">week description 2</param>
+        public Task<IList<Score>> GetScoresByWeekAsync(string season, string week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("format", "json"));
             parameters.Add(new KeyValuePair<string, string>("season", season));
             parameters.Add(new KeyValuePair<string, string>("week", week));
-            return base.Get<IList<BoxScore>>("/v3/nfl/stats/{format}/BoxScores/{season}/{week}", parameters);
+            return Task.Run<IList<Score>>(() =>
+                base.Get<IList<Score>>("/v3/nfl/stats/{format}/ScoresByWeek/{season}/{week}", parameters)
+            );
         }
+
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using FantasyData.Api.Client.Model.Soccer;
 
 namespace FantasyData.Api.Client
@@ -10,320 +11,638 @@ namespace FantasyData.Api.Client
         public Soccerv3StatsClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Areas (Countries)
+        /// Get Areas (Countries) Asynchronous
         /// </summary>
-        public List<Area> GetAreas()
+        public Task<List<Area>> GetAreasAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
-            return base.Get<List<Area>>("/v3/soccer/stats/{format}/Areas", parameters);
+            return Task.Run<List<Area>>(() =>
+                base.Get<List<Area>>("/v3/soccer/stats/{format}/Areas", parameters)
+            );
         }
 
         /// <summary>
-        /// Box Score
+        /// Get Areas (Countries)
+        /// </summary>
+        public List<Area> GetAreas()
+        {
+            return this.GetAreasAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Box Score Asynchronous
+        /// </summary>
+        /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>702</code>, <code>1274</code>, etc.</param>
+        public Task<BoxScore> GetBoxScoreAsync(int gameid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            return Task.Run<BoxScore>(() =>
+                base.Get<BoxScore>("/v3/soccer/stats/{format}/BoxScore/{gameid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Box Score
         /// </summary>
         /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>702</code>, <code>1274</code>, etc.</param>
         public BoxScore GetBoxScore(int gameid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
-            return base.Get<BoxScore>("/v3/soccer/stats/{format}/BoxScore/{gameid}", parameters);
+            return this.GetBoxScoreAsync(gameid).Result;
         }
 
         /// <summary>
-        /// Box Scores by Date
+        /// Get Box Scores by Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public Task<List<BoxScore>> GetBoxScoresAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<BoxScore>>(() =>
+                base.Get<List<BoxScore>>("/v3/soccer/stats/{format}/BoxScores/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Box Scores by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         public List<BoxScore> GetBoxScores(string date)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            return base.Get<List<BoxScore>>("/v3/soccer/stats/{format}/BoxScores/{date}", parameters);
+            return this.GetBoxScoresAsync(date).Result;
         }
 
         /// <summary>
-        /// Box Scores by Date by Competition
+        /// Get Box Scores by Date by Competition Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public Task<List<BoxScore>> GetBoxScoresByCompetitionAsync(string competition, string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<BoxScore>>(() =>
+                base.Get<List<BoxScore>>("/v3/soccer/stats/{format}/BoxScoresByCompetition/{competition}/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Box Scores by Date by Competition
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         public List<BoxScore> GetBoxScoresByCompetition(string competition, string date)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            return base.Get<List<BoxScore>>("/v3/soccer/stats/{format}/BoxScoresByCompetition/{competition}/{date}", parameters);
+            return this.GetBoxScoresByCompetitionAsync(competition, date).Result;
         }
 
         /// <summary>
-        /// Box Scores by Date Delta
+        /// Get Box Scores by Date Delta Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code>, <code>2</code> ... <code>all</code>.</param>
+        public Task<List<BoxScore>> GetBoxScoresDeltaAsync(string date, string minutes)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("minutes", minutes.ToString()));
+            return Task.Run<List<BoxScore>>(() =>
+                base.Get<List<BoxScore>>("/v3/soccer/stats/{format}/BoxScoresDelta/{date}/{minutes}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Box Scores by Date Delta
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code>, <code>2</code> ... <code>all</code>.</param>
         public List<BoxScore> GetBoxScoresDelta(string date, string minutes)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            parameters.Add(new KeyValuePair<string, string>("minutes", minutes.ToString()));
-            return base.Get<List<BoxScore>>("/v3/soccer/stats/{format}/BoxScoresDelta/{date}/{minutes}", parameters);
+            return this.GetBoxScoresDeltaAsync(date, minutes).Result;
         }
 
         /// <summary>
-        /// Box Scores Delta by Date by Competition
+        /// Get Box Scores Delta by Date by Competition Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code>, <code>2</code> ... <code>all</code>.</param>
+        public Task<List<BoxScore>> GetBoxScoresDeltaByCompetitionAsync(string competition, string date, string minutes)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("minutes", minutes.ToString()));
+            return Task.Run<List<BoxScore>>(() =>
+                base.Get<List<BoxScore>>("/v3/soccer/stats/{format}/BoxScoresDeltaByCompetition/{competition}/{date}/{minutes}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Box Scores Delta by Date by Competition
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code>, <code>2</code> ... <code>all</code>.</param>
         public List<BoxScore> GetBoxScoresDeltaByCompetition(string competition, string date, string minutes)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            parameters.Add(new KeyValuePair<string, string>("minutes", minutes.ToString()));
-            return base.Get<List<BoxScore>>("/v3/soccer/stats/{format}/BoxScoresDeltaByCompetition/{competition}/{date}/{minutes}", parameters);
+            return this.GetBoxScoresDeltaByCompetitionAsync(competition, date, minutes).Result;
         }
 
         /// <summary>
-        /// Competition Fixtures (League Details)
+        /// Get Competition Fixtures (League Details) Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        public Task<CompetitionDetail> GetCompetitionDetailsAsync(string competition)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            return Task.Run<CompetitionDetail>(() =>
+                base.Get<CompetitionDetail>("/v3/soccer/stats/{format}/CompetitionDetails/{competition}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Competition Fixtures (League Details)
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         public CompetitionDetail GetCompetitionDetails(string competition)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
-            return base.Get<CompetitionDetail>("/v3/soccer/stats/{format}/CompetitionDetails/{competition}", parameters);
+            return this.GetCompetitionDetailsAsync(competition).Result;
         }
 
         /// <summary>
-        /// Competition Hierarchy (League Hierarchy)
+        /// Get Competition Hierarchy (League Hierarchy) Asynchronous
+        /// </summary>
+        public Task<List<Area>> GetCompetitionHierarchyAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Area>>(() =>
+                base.Get<List<Area>>("/v3/soccer/stats/{format}/CompetitionHierarchy", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Competition Hierarchy (League Hierarchy)
         /// </summary>
         public List<Area> GetCompetitionHierarchy()
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            return base.Get<List<Area>>("/v3/soccer/stats/{format}/CompetitionHierarchy", parameters);
+            return this.GetCompetitionHierarchyAsync().Result;
         }
 
         /// <summary>
-        /// Competitions (Leagues)
+        /// Get Competitions (Leagues) Asynchronous
+        /// </summary>
+        public Task<List<Competition>> GetCompetitionsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Competition>>(() =>
+                base.Get<List<Competition>>("/v3/soccer/stats/{format}/Competitions", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Competitions (Leagues)
         /// </summary>
         public List<Competition> GetCompetitions()
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            return base.Get<List<Competition>>("/v3/soccer/stats/{format}/Competitions", parameters);
+            return this.GetCompetitionsAsync().Result;
         }
 
         /// <summary>
-        /// Games by Date
+        /// Get Games by Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public Task<List<Game>> GetGamesByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<Game>>(() =>
+                base.Get<List<Game>>("/v3/soccer/stats/{format}/GamesByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Games by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         public List<Game> GetGamesByDate(string date)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            return base.Get<List<Game>>("/v3/soccer/stats/{format}/GamesByDate/{date}", parameters);
+            return this.GetGamesByDateAsync(date).Result;
         }
 
         /// <summary>
-        /// Memberships (Active)
+        /// Get Memberships (Active) Asynchronous
+        /// </summary>
+        public Task<List<Membership>> GetActiveMembershipsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Membership>>(() =>
+                base.Get<List<Membership>>("/v3/soccer/stats/{format}/ActiveMemberships", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Memberships (Active)
         /// </summary>
         public List<Membership> GetActiveMemberships()
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            return base.Get<List<Membership>>("/v3/soccer/stats/{format}/ActiveMemberships", parameters);
+            return this.GetActiveMembershipsAsync().Result;
         }
 
         /// <summary>
-        /// Memberships (Historical)
+        /// Get Memberships (Historical) Asynchronous
+        /// </summary>
+        public Task<List<Membership>> GetHistoricalMembershipsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Membership>>(() =>
+                base.Get<List<Membership>>("/v3/soccer/stats/{format}/HistoricalMemberships", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Memberships (Historical)
         /// </summary>
         public List<Membership> GetHistoricalMemberships()
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            return base.Get<List<Membership>>("/v3/soccer/stats/{format}/HistoricalMemberships", parameters);
+            return this.GetHistoricalMembershipsAsync().Result;
         }
 
         /// <summary>
-        /// Memberships by Team (Active)
+        /// Get Memberships by Team (Active) Asynchronous
+        /// </summary>
+        /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
+        public Task<List<Membership>> GetMembershipsByTeamAsync(int teamid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("teamid", teamid.ToString()));
+            return Task.Run<List<Membership>>(() =>
+                base.Get<List<Membership>>("/v3/soccer/stats/{format}/MembershipsByTeam/{teamid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Memberships by Team (Active)
         /// </summary>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
         public List<Membership> GetMembershipsByTeam(int teamid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("teamid", teamid.ToString()));
-            return base.Get<List<Membership>>("/v3/soccer/stats/{format}/MembershipsByTeam/{teamid}", parameters);
+            return this.GetMembershipsByTeamAsync(teamid).Result;
         }
 
         /// <summary>
-        /// Memberships by Team (Historical)
+        /// Get Memberships by Team (Historical) Asynchronous
+        /// </summary>
+        /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
+        public Task<List<Membership>> GetHistoricalMembershipsByTeamAsync(int teamid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("teamid", teamid.ToString()));
+            return Task.Run<List<Membership>>(() =>
+                base.Get<List<Membership>>("/v3/soccer/stats/{format}/HistoricalMembershipsByTeam/{teamid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Memberships by Team (Historical)
         /// </summary>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
         public List<Membership> GetHistoricalMembershipsByTeam(int teamid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("teamid", teamid.ToString()));
-            return base.Get<List<Membership>>("/v3/soccer/stats/{format}/HistoricalMembershipsByTeam/{teamid}", parameters);
+            return this.GetHistoricalMembershipsByTeamAsync(teamid).Result;
         }
 
         /// <summary>
-        /// Player
+        /// Get Player Asynchronous
+        /// </summary>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>
+        public Task<Player> GetPlayerAsync(int playerid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            return Task.Run<Player>(() =>
+                base.Get<Player>("/v3/soccer/stats/{format}/Player/{playerid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>
         public Player GetPlayer(int playerid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
-            return base.Get<Player>("/v3/soccer/stats/{format}/Player/{playerid}", parameters);
+            return this.GetPlayerAsync(playerid).Result;
         }
 
         /// <summary>
-        /// Player Game Stats by Date
+        /// Get Player Game Stats by Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public Task<List<PlayerGame>> GetPlayerGameStatsByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<PlayerGame>>(() =>
+                base.Get<List<PlayerGame>>("/v3/soccer/stats/{format}/PlayerGameStatsByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Game Stats by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         public List<PlayerGame> GetPlayerGameStatsByDate(string date)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            return base.Get<List<PlayerGame>>("/v3/soccer/stats/{format}/PlayerGameStatsByDate/{date}", parameters);
+            return this.GetPlayerGameStatsByDateAsync(date).Result;
         }
 
         /// <summary>
-        /// Player Game Stats by Player
+        /// Get Player Game Stats by Player Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>
+        public Task<List<PlayerGame>> GetPlayerGameStatsByPlayerAsync(string date, int playerid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            return Task.Run<List<PlayerGame>>(() =>
+                base.Get<List<PlayerGame>>("/v3/soccer/stats/{format}/PlayerGameStatsByPlayer/{date}/{playerid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Game Stats by Player
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>
         public List<PlayerGame> GetPlayerGameStatsByPlayer(string date, int playerid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
-            return base.Get<List<PlayerGame>>("/v3/soccer/stats/{format}/PlayerGameStatsByPlayer/{date}/{playerid}", parameters);
+            return this.GetPlayerGameStatsByPlayerAsync(date, playerid).Result;
         }
 
         /// <summary>
-        /// Player Season Stats
+        /// Get Player Season Stats Asynchronous
+        /// </summary>
+        /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
+        public Task<List<PlayerSeason>> GetPlayerSeasonStatsAsync(int roundid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
+            return Task.Run<List<PlayerSeason>>(() =>
+                base.Get<List<PlayerSeason>>("/v3/soccer/stats/{format}/PlayerSeasonStats/{roundid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Season Stats
         /// </summary>
         /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
         public List<PlayerSeason> GetPlayerSeasonStats(int roundid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
-            return base.Get<List<PlayerSeason>>("/v3/soccer/stats/{format}/PlayerSeasonStats/{roundid}", parameters);
+            return this.GetPlayerSeasonStatsAsync(roundid).Result;
         }
 
         /// <summary>
-        /// Player Season Stats by Player
+        /// Get Player Season Stats by Player Asynchronous
+        /// </summary>
+        /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>
+        public Task<List<PlayerSeason>> GetPlayerSeasonStatsByPlayerAsync(int roundid, int playerid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            return Task.Run<List<PlayerSeason>>(() =>
+                base.Get<List<PlayerSeason>>("/v3/soccer/stats/{format}/PlayerSeasonStatsByPlayer/{roundid}/{playerid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Season Stats by Player
         /// </summary>
         /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>
         public List<PlayerSeason> GetPlayerSeasonStatsByPlayer(int roundid, int playerid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
-            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
-            return base.Get<List<PlayerSeason>>("/v3/soccer/stats/{format}/PlayerSeasonStatsByPlayer/{roundid}/{playerid}", parameters);
+            return this.GetPlayerSeasonStatsByPlayerAsync(roundid, playerid).Result;
         }
 
         /// <summary>
-        /// Player Season Stats by Team
+        /// Get Player Season Stats by Team Asynchronous
+        /// </summary>
+        /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
+        /// <param name="team">Unique FantasyData Team ID. Example:<code>516</code>.</param>
+        public Task<List<PlayerSeason>> GetPlayerSeasonStatsByTeamAsync(int roundid, string team)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            return Task.Run<List<PlayerSeason>>(() =>
+                base.Get<List<PlayerSeason>>("/v3/soccer/stats/{format}/PlayerSeasonStatsByTeam/{roundid}/{team}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Season Stats by Team
         /// </summary>
         /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
         /// <param name="team">Unique FantasyData Team ID. Example:<code>516</code>.</param>
         public List<PlayerSeason> GetPlayerSeasonStatsByTeam(int roundid, string team)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
-            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
-            return base.Get<List<PlayerSeason>>("/v3/soccer/stats/{format}/PlayerSeasonStatsByTeam/{roundid}/{team}", parameters);
+            return this.GetPlayerSeasonStatsByTeamAsync(roundid, team).Result;
         }
 
         /// <summary>
-        /// Players
+        /// Get Players Asynchronous
+        /// </summary>
+        public Task<List<Player>> GetPlayersAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/soccer/stats/{format}/Players", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Players
         /// </summary>
         public List<Player> GetPlayers()
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            return base.Get<List<Player>>("/v3/soccer/stats/{format}/Players", parameters);
+            return this.GetPlayersAsync().Result;
         }
 
         /// <summary>
-        /// Players by Team
+        /// Get Players by Team Asynchronous
+        /// </summary>
+        /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
+        public Task<List<Player>> GetPlayersByTeamAsync(int teamid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("teamid", teamid.ToString()));
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/soccer/stats/{format}/PlayersByTeam/{teamid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Players by Team
         /// </summary>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
         public List<Player> GetPlayersByTeam(int teamid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("teamid", teamid.ToString()));
-            return base.Get<List<Player>>("/v3/soccer/stats/{format}/PlayersByTeam/{teamid}", parameters);
+            return this.GetPlayersByTeamAsync(teamid).Result;
         }
 
         /// <summary>
-        /// Schedule
+        /// Get Schedule Asynchronous
+        /// </summary>
+        /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
+        public Task<List<Game>> GetScheduleAsync(int roundid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
+            return Task.Run<List<Game>>(() =>
+                base.Get<List<Game>>("/v3/soccer/stats/{format}/Schedule/{roundid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Schedule
         /// </summary>
         /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
         public List<Game> GetSchedule(int roundid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
-            return base.Get<List<Game>>("/v3/soccer/stats/{format}/Schedule/{roundid}", parameters);
+            return this.GetScheduleAsync(roundid).Result;
         }
 
         /// <summary>
-        /// Season Teams
+        /// Get Season Teams Asynchronous
+        /// </summary>
+        /// <param name="seasonid">Unique FantasyData Season ID. SeasonIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
+        public Task<List<SeasonTeam>> GetSeasonTeamsAsync(int seasonid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("seasonid", seasonid.ToString()));
+            return Task.Run<List<SeasonTeam>>(() =>
+                base.Get<List<SeasonTeam>>("/v3/soccer/stats/{format}/SeasonTeams/{seasonid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Season Teams
         /// </summary>
         /// <param name="seasonid">Unique FantasyData Season ID. SeasonIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
         public List<SeasonTeam> GetSeasonTeams(int seasonid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("seasonid", seasonid.ToString()));
-            return base.Get<List<SeasonTeam>>("/v3/soccer/stats/{format}/SeasonTeams/{seasonid}", parameters);
+            return this.GetSeasonTeamsAsync(seasonid).Result;
         }
 
         /// <summary>
-        /// Standings
+        /// Get Standings Asynchronous
+        /// </summary>
+        /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
+        public Task<List<Standing>> GetStandingsAsync(int roundid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
+            return Task.Run<List<Standing>>(() =>
+                base.Get<List<Standing>>("/v3/soccer/stats/{format}/Standings/{roundid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Standings
         /// </summary>
         /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
         public List<Standing> GetStandings(int roundid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
-            return base.Get<List<Standing>>("/v3/soccer/stats/{format}/Standings/{roundid}", parameters);
+            return this.GetStandingsAsync(roundid).Result;
         }
 
         /// <summary>
-        /// Team Game Stats by Date
+        /// Get Team Game Stats by Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public Task<List<TeamGame>> GetTeamGameStatsByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<TeamGame>>(() =>
+                base.Get<List<TeamGame>>("/v3/soccer/stats/{format}/TeamGameStatsByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Team Game Stats by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         public List<TeamGame> GetTeamGameStatsByDate(string date)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            return base.Get<List<TeamGame>>("/v3/soccer/stats/{format}/TeamGameStatsByDate/{date}", parameters);
+            return this.GetTeamGameStatsByDateAsync(date).Result;
         }
 
         /// <summary>
-        /// Team Season Stats
+        /// Get Team Season Stats Asynchronous
+        /// </summary>
+        /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
+        public Task<List<TeamSeason>> GetTeamSeasonStatsAsync(int roundid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
+            return Task.Run<List<TeamSeason>>(() =>
+                base.Get<List<TeamSeason>>("/v3/soccer/stats/{format}/TeamSeasonStats/{roundid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Team Season Stats
         /// </summary>
         /// <param name="roundid">Unique FantasyData Round ID. RoundIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
         public List<TeamSeason> GetTeamSeasonStats(int roundid)
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
-            return base.Get<List<TeamSeason>>("/v3/soccer/stats/{format}/TeamSeasonStats/{roundid}", parameters);
+            return this.GetTeamSeasonStatsAsync(roundid).Result;
         }
 
         /// <summary>
-        /// Teams
+        /// Get Teams Asynchronous
+        /// </summary>
+        public Task<List<Team>> GetTeamsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Team>>(() =>
+                base.Get<List<Team>>("/v3/soccer/stats/{format}/Teams", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Teams
         /// </summary>
         public List<Team> GetTeams()
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            return base.Get<List<Team>>("/v3/soccer/stats/{format}/Teams", parameters);
+            return this.GetTeamsAsync().Result;
         }
 
         /// <summary>
-        /// Venues
+        /// Get Venues Asynchronous
+        /// </summary>
+        public Task<List<Venue>> GetVenuesAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Venue>>(() =>
+                base.Get<List<Venue>>("/v3/soccer/stats/{format}/Venues", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Venues
         /// </summary>
         public List<Venue> GetVenues()
         {
-            var parameters = new List<KeyValuePair<string, string>>();
-            return base.Get<List<Venue>>("/v3/soccer/stats/{format}/Venues", parameters);
+            return this.GetVenuesAsync().Result;
         }
 
     }
