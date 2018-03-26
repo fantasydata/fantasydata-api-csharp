@@ -121,9 +121,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The current quarter in the game
+        /// The current quarter in the game (possible values: 1, 2, Half, 3, 4, OT, F/OT)
         /// </summary>
-        [Description("The current quarter in the game")]
+        [Description("The current quarter in the game (possible values: 1, 2, Half, 3, 4, OT, F/OT)")]
         [DataMember(Name = "Quarter", Order = 17)]
         public string Quarter { get; set; }
 

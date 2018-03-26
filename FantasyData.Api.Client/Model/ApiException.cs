@@ -2,7 +2,7 @@
 using System.Net;
 using System.Runtime.Serialization;
 
-namespace FantasyData.Api.Model
+namespace FantasyData.Api.Client.Model
 {
     [DataContract]
     public class ApiException : Exception

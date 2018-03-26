@@ -36,6 +36,13 @@ namespace FantasyData.Api.Client.Model.NHL
         [DataMember(Name = "PlayerGames", Order = 20004)]
         public PlayerGame[] PlayerGames { get; set; }
 
+        /// <summary>
+        /// The details of any shootout plays associated with this box score
+        /// </summary>
+        [Description("The details of any shootout plays associated with this box score")]
+        [DataMember(Name = "ShootoutPlays", Order = 20005)]
+        public Play[] ShootoutPlays { get; set; }
+
     }
 }
 

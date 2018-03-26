@@ -323,6 +323,13 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "FantasyDraftPlayerID", Order = 45)]
         public int? FantasyDraftPlayerID { get; set; }
 
+        /// <summary>
+        /// The player's years of experience
+        /// </summary>
+        [Description("The player's years of experience")]
+        [DataMember(Name = "Experience", Order = 46)]
+        public string Experience { get; set; }
+
     }
 }
 

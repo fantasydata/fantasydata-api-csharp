@@ -244,7 +244,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedules Asynchronous
+        /// Get Schedule Asynchronous
         /// </summary>
         public Task<List<Tournament>> GetTournamentsAsync()
         {
@@ -255,11 +255,55 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedules
+        /// Get Schedule
         /// </summary>
         public List<Tournament> GetTournaments()
         {
             return this.GetTournamentsAsync().Result;
+        }
+
+        /// <summary>
+        /// Get DFS Slates Asynchronous
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public Task<List<DfsSlate>> GetDfsSlatesByTournamentAsync(int tournamentid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
+            return Task.Run<List<DfsSlate>>(() =>
+                base.Get<List<DfsSlate>>("/golf/v2/{format}/DfsSlatesByTournament/{tournamentid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get DFS Slates
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public List<DfsSlate> GetDfsSlatesByTournament(int tournamentid)
+        {
+            return this.GetDfsSlatesByTournamentAsync(tournamentid).Result;
+        }
+
+        /// <summary>
+        /// Get Schedule by Season Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
+        public Task<List<Tournament>> GetTournamentsAsync(string season)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            return Task.Run<List<Tournament>>(() =>
+                base.Get<List<Tournament>>("/golf/v2/{format}/Tournaments/{season}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Schedule by Season
+        /// </summary>
+        /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
+        public List<Tournament> GetTournaments(string season)
+        {
+            return this.GetTournamentsAsync(season).Result;
         }
 
     }

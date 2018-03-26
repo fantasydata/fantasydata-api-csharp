@@ -239,6 +239,13 @@ namespace FantasyData.Api.Client.Model.CBB
         [DataMember(Name = "TournamentDisplayOrder", Order = 33)]
         public int? TournamentDisplayOrder { get; set; }
 
+        /// <summary>
+        /// The display order of the home team for this game. This is used for rendering the NCAA Tournament bracket, and it indicates whether the home team should be displayed at the top or bottom of the game card. Possible values: Top, Bottom
+        /// </summary>
+        [Description("The display order of the home team for this game. This is used for rendering the NCAA Tournament bracket, and it indicates whether the home team should be displayed at the top or bottom of the game card. Possible values: Top, Bottom")]
+        [DataMember(Name = "TournamentDisplayOrderForHomeTeam", Order = 34)]
+        public string TournamentDisplayOrderForHomeTeam { get; set; }
+
     }
 }
 

@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? Sequence { get; set; }
 
         /// <summary>
-        /// The number of minutes remaining after the score
+        /// Number of minutes that have passed in the current period. Please note this field name is misleading, and actually represents the game clock minutes, which are the number of minutes that have already passed in the period. Possible values: 0-20.
         /// </summary>
-        [Description("The number of minutes remaining after the score")]
+        [Description("Number of minutes that have passed in the current period. Please note this field name is misleading, and actually represents the game clock minutes, which are the number of minutes that have already passed in the period. Possible values: 0-20.")]
         [DataMember(Name = "TimeRemainingMinutes", Order = 4)]
         public int? TimeRemainingMinutes { get; set; }
 
         /// <summary>
-        /// The number of seconds remaining after the score
+        /// Number of seconds that have passed in the current period. Please note this field name is misleading, and actually represents the game clock seconds, which are the number of seconds that have already passed in the period. Possible values: 0-60.
         /// </summary>
-        [Description("The number of seconds remaining after the score")]
+        [Description("Number of seconds that have passed in the current period. Please note this field name is misleading, and actually represents the game clock seconds, which are the number of seconds that have already passed in the period. Possible values: 0-60.")]
         [DataMember(Name = "TimeRemainingSeconds", Order = 5)]
         public int? TimeRemainingSeconds { get; set; }
 
