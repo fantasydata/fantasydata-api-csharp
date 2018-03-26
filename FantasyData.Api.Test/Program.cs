@@ -8,14 +8,14 @@ namespace FantasyData.Api.Test
     {
         static void Main(string[] args)
         {
-            // Connect to client
-            var client = new NFLv3ScoresClient("<Your license key goes here>");
+            // Connect to client and get data
+            var client = new MLBv3ProjectionsClient("<license key>");
+            var projections = client.GetPlayerGameProjectionStatsByDate("2018-03-29").OrderByDescending(p => p.DraftKingsSalary).Take(20).ToList();
 
-            // Get NFL scores
-            var scores = client.GetScoresByWeek("2017", 1);
-            foreach(var score in scores)
+            // Write data to console
+            foreach(var projection in projections)
             {
-                Console.WriteLine($"{score.AwayTeam} - {score.AwayScore} @ {score.HomeTeam} - {score.HomeScore}");
+                Console.WriteLine($"{projection.PlayerID} - {projection.Name} ({projection.DraftKingsPosition}) DraftKings Salary: {projection.DraftKingsSalary}");
             }
 
             Console.WriteLine();

@@ -60,7 +60,7 @@ namespace FantasyData.Api.Client
 
                 // Download json, deserialize it, and return it
                 var json = client.DownloadString(url);
-                var serializer = new JavaScriptSerializer();
+                var serializer = new JavaScriptSerializer() { MaxJsonLength = int.MaxValue };
                 return serializer.Deserialize<T>(json);
                 
             }
