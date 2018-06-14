@@ -134,6 +134,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "ConferenceLosses", Order = 18)]
         public int ConferenceLosses { get; set; }
 
+        /// <summary>
+        /// The unique ID of the team
+        /// </summary>
+        [Description("The unique ID of the team")]
+        [DataMember(Name = "TeamID", Order = 19)]
+        public int TeamID { get; set; }
+
     }
 }
 

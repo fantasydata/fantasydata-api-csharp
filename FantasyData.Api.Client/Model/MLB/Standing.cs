@@ -197,6 +197,20 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "NightLosses", Order = 27)]
         public int? NightLosses { get; set; }
 
+        /// <summary>
+        /// Number of runs scored
+        /// </summary>
+        [Description("Number of runs scored")]
+        [DataMember(Name = "RunsScored", Order = 28)]
+        public int? RunsScored { get; set; }
+
+        /// <summary>
+        /// Number of runs scored by opponents
+        /// </summary>
+        [Description("Number of runs scored by opponents")]
+        [DataMember(Name = "RunsAgainst", Order = 29)]
+        public int? RunsAgainst { get; set; }
+
     }
 }
 

@@ -71,6 +71,20 @@ namespace FantasyData.Api.Client.Model.NHL
         [DataMember(Name = "Capacity", Order = 9)]
         public int? Capacity { get; set; }
 
+        /// <summary>
+        /// The geographic latitude coordinate of this venue.
+        /// </summary>
+        [Description("The geographic latitude coordinate of this venue.")]
+        [DataMember(Name = "GeoLat", Order = 10)]
+        public decimal? GeoLat { get; set; }
+
+        /// <summary>
+        /// The geographic longitude coordinate of this venue.
+        /// </summary>
+        [Description("The geographic longitude coordinate of this venue.")]
+        [DataMember(Name = "GeoLong", Order = 11)]
+        public decimal? GeoLong { get; set; }
+
     }
 }
 

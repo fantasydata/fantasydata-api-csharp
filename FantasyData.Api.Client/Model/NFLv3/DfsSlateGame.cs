@@ -36,6 +36,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "OperatorGameID", Order = 4)]
         public int? OperatorGameID { get; set; }
 
+        /// <summary>
+        /// Indicates whether this game was removed/deleted by the operator.
+        /// </summary>
+        [Description("Indicates whether this game was removed/deleted by the operator.")]
+        [DataMember(Name = "RemovedByOperator", Order = 5)]
+        public bool? RemovedByOperator { get; set; }
+
     }
 }
 

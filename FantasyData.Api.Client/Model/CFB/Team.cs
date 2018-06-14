@@ -113,6 +113,20 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "TeamLogoUrl", Order = 15)]
         public string TeamLogoUrl { get; set; }
 
+        /// <summary>
+        /// The ID of the team's conference
+        /// </summary>
+        [Description("The ID of the team's conference")]
+        [DataMember(Name = "ConferenceID", Order = 16)]
+        public int? ConferenceID { get; set; }
+
+        /// <summary>
+        /// The name of the team's conference
+        /// </summary>
+        [Description("The name of the team's conference")]
+        [DataMember(Name = "Conference", Order = 17)]
+        public string Conference { get; set; }
+
     }
 }
 

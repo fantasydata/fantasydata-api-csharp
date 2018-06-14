@@ -43,6 +43,13 @@ namespace FantasyData.Api.Client.Model.Golf
         [DataMember(Name = "OperatorTournamentID", Order = 5)]
         public int? OperatorTournamentID { get; set; }
 
+        /// <summary>
+        /// Indicates whether this tournament was removed/deleted by the operator.
+        /// </summary>
+        [Description("Indicates whether this tournament was removed/deleted by the operator.")]
+        [DataMember(Name = "RemovedByOperator", Order = 6)]
+        public bool? RemovedByOperator { get; set; }
+
     }
 }
 

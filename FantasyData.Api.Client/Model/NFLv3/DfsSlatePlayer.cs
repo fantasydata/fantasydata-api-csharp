@@ -106,6 +106,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "TeamID", Order = 14)]
         public int? TeamID { get; set; }
 
+        /// <summary>
+        /// Indicates whether this player was removed/deleted by the operator.
+        /// </summary>
+        [Description("Indicates whether this player was removed/deleted by the operator.")]
+        [DataMember(Name = "RemovedByOperator", Order = 15)]
+        public bool? RemovedByOperator { get; set; }
+
     }
 }
 

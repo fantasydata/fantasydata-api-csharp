@@ -218,7 +218,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Schedules Asynchronous
         /// </summary>
-        /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
         public Task<List<Game>> GetGamesAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
@@ -231,7 +231,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Schedules
         /// </summary>
-        /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
         public List<Game> GetGames(string season)
         {
             return this.GetGamesAsync(season).Result;

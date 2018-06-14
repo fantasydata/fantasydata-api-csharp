@@ -233,45 +233,108 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? HomeTeamScorePenalty { get; set; }
 
         /// <summary>
+        /// Payout on a bet that the home team wins.
+        /// </summary>
+        [Description("Payout on a bet that the home team wins.")]
+        [DataMember(Name = "HomeTeamMoneyLine", Order = 33)]
+        public int? HomeTeamMoneyLine { get; set; }
+
+        /// <summary>
+        /// Payout on a bet that the away team wins.
+        /// </summary>
+        [Description("Payout on a bet that the away team wins.")]
+        [DataMember(Name = "AwayTeamMoneyLine", Order = 34)]
+        public int? AwayTeamMoneyLine { get; set; }
+
+        /// <summary>
+        /// Payout on a bet that the game is a draw.
+        /// </summary>
+        [Description("Payout on a bet that the game is a draw.")]
+        [DataMember(Name = "DrawMoneyLine", Order = 35)]
+        public int? DrawMoneyLine { get; set; }
+
+        /// <summary>
+        /// Point spread for the home team.
+        /// </summary>
+        [Description("Point spread for the home team.")]
+        [DataMember(Name = "PointSpread", Order = 36)]
+        public decimal? PointSpread { get; set; }
+
+        /// <summary>
+        /// Payout if the home team beats the spread.
+        /// </summary>
+        [Description("Payout if the home team beats the spread.")]
+        [DataMember(Name = "HomeTeamPointSpreadPayout", Order = 37)]
+        public int? HomeTeamPointSpreadPayout { get; set; }
+
+        /// <summary>
+        /// Payout if the away team beats the spread.
+        /// </summary>
+        [Description("Payout if the away team beats the spread.")]
+        [DataMember(Name = "AwayTeamPointSpreadPayout", Order = 38)]
+        public int? AwayTeamPointSpreadPayout { get; set; }
+
+        /// <summary>
+        /// Over/Under total goals for the game.
+        /// </summary>
+        [Description("Over/Under total goals for the game.")]
+        [DataMember(Name = "OverUnder", Order = 39)]
+        public decimal? OverUnder { get; set; }
+
+        /// <summary>
+        /// Payout for the over bet.
+        /// </summary>
+        [Description("Payout for the over bet.")]
+        [DataMember(Name = "OverPayout", Order = 40)]
+        public int? OverPayout { get; set; }
+
+        /// <summary>
+        /// Payout for the under bet.
+        /// </summary>
+        [Description("Payout for the under bet.")]
+        [DataMember(Name = "UnderPayout", Order = 41)]
+        public int? UnderPayout { get; set; }
+
+        /// <summary>
         /// The attendance for the game.
         /// </summary>
         [Description("The attendance for the game.")]
-        [DataMember(Name = "Attendance", Order = 33)]
+        [DataMember(Name = "Attendance", Order = 42)]
         public int? Attendance { get; set; }
 
         /// <summary>
         /// The timestamp of when this record was updated, based on US Eatern Time (EST/EDT).
         /// </summary>
         [Description("The timestamp of when this record was updated, based on US Eatern Time (EST/EDT).")]
-        [DataMember(Name = "Updated", Order = 34)]
+        [DataMember(Name = "Updated", Order = 43)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
         /// The timestamp of when this record was updated, based on Universal Coordinated Time (UTC).
         /// </summary>
         [Description("The timestamp of when this record was updated, based on Universal Coordinated Time (UTC).")]
-        [DataMember(Name = "UpdatedUtc", Order = 35)]
+        [DataMember(Name = "UpdatedUtc", Order = 44)]
         public DateTime? UpdatedUtc { get; set; }
 
         /// <summary>
         /// A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.
         /// </summary>
         [Description("A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.")]
-        [DataMember(Name = "GlobalGameId", Order = 36)]
+        [DataMember(Name = "GlobalGameId", Order = 45)]
         public int GlobalGameId { get; set; }
 
         /// <summary>
         /// A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.
         /// </summary>
         [Description("A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.")]
-        [DataMember(Name = "GlobalAwayTeamId", Order = 37)]
+        [DataMember(Name = "GlobalAwayTeamId", Order = 46)]
         public int? GlobalAwayTeamId { get; set; }
 
         /// <summary>
         /// A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.
         /// </summary>
         [Description("A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.")]
-        [DataMember(Name = "GlobalHomeTeamId", Order = 38)]
+        [DataMember(Name = "GlobalHomeTeamId", Order = 47)]
         public int? GlobalHomeTeamId { get; set; }
 
     }

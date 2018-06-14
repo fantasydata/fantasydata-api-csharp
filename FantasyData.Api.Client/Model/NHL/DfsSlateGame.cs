@@ -30,11 +30,25 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? GameID { get; set; }
 
         /// <summary>
+        /// The details of the Game that this SlateGame refers to.
+        /// </summary>
+        [Description("The details of the Game that this SlateGame refers to.")]
+        [DataMember(Name = "Game", Order = 10004)]
+        public Game Game { get; set; }
+
+        /// <summary>
         /// Unique ID of a SlateGame (assigned by the operator).
         /// </summary>
         [Description("Unique ID of a SlateGame (assigned by the operator).")]
-        [DataMember(Name = "OperatorGameID", Order = 4)]
+        [DataMember(Name = "OperatorGameID", Order = 5)]
         public int? OperatorGameID { get; set; }
+
+        /// <summary>
+        /// Indicates whether this player was removed/deleted by the operator.
+        /// </summary>
+        [Description("Indicates whether this player was removed/deleted by the operator.")]
+        [DataMember(Name = "RemovedByOperator", Order = 6)]
+        public bool? RemovedByOperator { get; set; }
 
     }
 }

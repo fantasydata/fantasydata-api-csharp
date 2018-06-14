@@ -85,6 +85,13 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "OperatorRosterSlots", Order = 10011)]
         public string[] OperatorRosterSlots { get; set; }
 
+        /// <summary>
+        /// Indicates whether this player was removed/deleted by the operator.
+        /// </summary>
+        [Description("Indicates whether this player was removed/deleted by the operator.")]
+        [DataMember(Name = "RemovedByOperator", Order = 12)]
+        public bool? RemovedByOperator { get; set; }
+
     }
 }
 
