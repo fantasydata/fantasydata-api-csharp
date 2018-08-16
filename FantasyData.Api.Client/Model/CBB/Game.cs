@@ -246,6 +246,13 @@ namespace FantasyData.Api.Client.Model.CBB
         [DataMember(Name = "TournamentDisplayOrderForHomeTeam", Order = 34)]
         public string TournamentDisplayOrderForHomeTeam { get; set; }
 
+        /// <summary>
+        /// The details of the periods (halves & overtime) for this game.
+        /// </summary>
+        [Description("The details of the periods (halves & overtime) for this game.")]
+        [DataMember(Name = "Periods", Order = 20035)]
+        public Period[] Periods { get; set; }
+
     }
 }
 

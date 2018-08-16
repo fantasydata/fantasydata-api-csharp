@@ -218,6 +218,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "IsClosed", Order = 30)]
         public bool IsClosed { get; set; }
 
+        /// <summary>
+        /// The details of the quarters (including overtime periods) for this game.
+        /// </summary>
+        [Description("The details of the quarters (including overtime periods) for this game.")]
+        [DataMember(Name = "Quarters", Order = 20031)]
+        public Quarter[] Quarters { get; set; }
+
     }
 }
 

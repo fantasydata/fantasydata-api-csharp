@@ -29,6 +29,20 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "Teams", Order = 20003)]
         public Team[] Teams { get; set; }
 
+        /// <summary>
+        /// The name of the team's parent conference (e.g. SEC, Big Ten, etc)
+        /// </summary>
+        [Description("The name of the team's parent conference (e.g. SEC, Big Ten, etc)")]
+        [DataMember(Name = "ConferenceName", Order = 4)]
+        public string ConferenceName { get; set; }
+
+        /// <summary>
+        /// The name of the team's division (e.g. East, West, Atlantic, etc)
+        /// </summary>
+        [Description("The name of the team's division (e.g. East, West, Atlantic, etc)")]
+        [DataMember(Name = "DivisionName", Order = 5)]
+        public string DivisionName { get; set; }
+
     }
 }
 

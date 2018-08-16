@@ -631,6 +631,20 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "ScoringDetails", Order = 20089)]
         public ScoringDetail[] ScoringDetails { get; set; }
 
+        /// <summary>
+        /// The average draft position of the team's fantasy defense (DST) in dynasty leagues
+        /// </summary>
+        [Description("The average draft position of the team's fantasy defense (DST) in dynasty leagues")]
+        [DataMember(Name = "AverageDraftPositionDynasty", Order = 90)]
+        public decimal? AverageDraftPositionDynasty { get; set; }
+
+        /// <summary>
+        /// The average draft position of the team's fantasy defense (DST) in 2 Quarterback Leagues
+        /// </summary>
+        [Description("The average draft position of the team's fantasy defense (DST) in 2 Quarterback Leagues")]
+        [DataMember(Name = "AverageDraftPosition2QB", Order = 91)]
+        public decimal? AverageDraftPosition2QB { get; set; }
+
     }
 }
 

@@ -274,6 +274,27 @@ namespace FantasyData.Api.Client.Model.NHL
         [DataMember(Name = "FantasyDraftPlayerID", Order = 38)]
         public int? FantasyDraftPlayerID { get; set; }
 
+        /// <summary>
+        /// The player's cross reference PlayerID to USA Today headshot data feeds.
+        /// </summary>
+        [Description("The player's cross reference PlayerID to USA Today headshot data feeds.")]
+        [DataMember(Name = "UsaTodayPlayerID", Order = 39)]
+        public int? UsaTodayPlayerID { get; set; }
+
+        /// <summary>
+        /// The player's headshot URL as provided by USA Today. License from USA Today is required.
+        /// </summary>
+        [Description("The player's headshot URL as provided by USA Today. License from USA Today is required.")]
+        [DataMember(Name = "UsaTodayHeadshotUrl", Order = 40)]
+        public string UsaTodayHeadshotUrl { get; set; }
+
+        /// <summary>
+        /// The player's transparent background headshot URL as provided by USA Today. License from USA Today is required.
+        /// </summary>
+        [Description("The player's transparent background headshot URL as provided by USA Today. License from USA Today is required.")]
+        [DataMember(Name = "UsaTodayHeadshotNoBackgroundUrl", Order = 41)]
+        public string UsaTodayHeadshotNoBackgroundUrl { get; set; }
+
     }
 }
 

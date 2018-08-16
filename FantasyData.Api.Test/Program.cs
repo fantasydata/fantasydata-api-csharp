@@ -9,7 +9,7 @@ namespace FantasyData.Api.Test
         static void Main(string[] args)
         {
             // Connect to client and get data
-            var client = new MLBv3ProjectionsClient("<license key>");
+            var client = new MLBv3ProjectionsClient("724e368e98ed4d1f8b711babe9d3707c");
             var projections = client.GetPlayerGameProjectionStatsByDate("2018-03-29").OrderByDescending(p => p.DraftKingsSalary).Take(20).ToList();
 
             // Write data to console

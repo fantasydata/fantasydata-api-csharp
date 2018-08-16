@@ -319,6 +319,13 @@ namespace FantasyData.Api.Client.Model.Golf
         [DataMember(Name = "RoundsWithFiveOrMoreBirdiesOrBetter", Order = 45)]
         public decimal? RoundsWithFiveOrMoreBirdiesOrBetter { get; set; }
 
+        /// <summary>
+        /// Indicates whether the player has withdrawn from the tournament
+        /// </summary>
+        [Description("Indicates whether the player has withdrawn from the tournament")]
+        [DataMember(Name = "IsWithdrawn", Order = 46)]
+        public bool IsWithdrawn { get; set; }
+
     }
 }
 

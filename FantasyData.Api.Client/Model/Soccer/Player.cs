@@ -176,6 +176,27 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "DraftKingsPosition", Order = 24)]
         public string DraftKingsPosition { get; set; }
 
+        /// <summary>
+        /// The player's cross reference PlayerID to USA Today headshot data feeds.
+        /// </summary>
+        [Description("The player's cross reference PlayerID to USA Today headshot data feeds.")]
+        [DataMember(Name = "UsaTodayPlayerID", Order = 25)]
+        public int? UsaTodayPlayerID { get; set; }
+
+        /// <summary>
+        /// The player's headshot URL as provided by USA Today. License from USA Today is required.
+        /// </summary>
+        [Description("The player's headshot URL as provided by USA Today. License from USA Today is required.")]
+        [DataMember(Name = "UsaTodayHeadshotUrl", Order = 26)]
+        public string UsaTodayHeadshotUrl { get; set; }
+
+        /// <summary>
+        /// The player's transparent background headshot URL as provided by USA Today. License from USA Today is required.
+        /// </summary>
+        [Description("The player's transparent background headshot URL as provided by USA Today. License from USA Today is required.")]
+        [DataMember(Name = "UsaTodayHeadshotNoBackgroundUrl", Order = 27)]
+        public string UsaTodayHeadshotNoBackgroundUrl { get; set; }
+
     }
 }
 

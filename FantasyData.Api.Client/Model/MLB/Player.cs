@@ -330,6 +330,27 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "Experience", Order = 46)]
         public string Experience { get; set; }
 
+        /// <summary>
+        /// The player's cross reference PlayerID to USA Today headshot data feeds.
+        /// </summary>
+        [Description("The player's cross reference PlayerID to USA Today headshot data feeds.")]
+        [DataMember(Name = "UsaTodayPlayerID", Order = 47)]
+        public int? UsaTodayPlayerID { get; set; }
+
+        /// <summary>
+        /// The player's headshot URL as provided by USA Today. License from USA Today is required.
+        /// </summary>
+        [Description("The player's headshot URL as provided by USA Today. License from USA Today is required.")]
+        [DataMember(Name = "UsaTodayHeadshotUrl", Order = 48)]
+        public string UsaTodayHeadshotUrl { get; set; }
+
+        /// <summary>
+        /// The player's transparent background headshot URL as provided by USA Today. License from USA Today is required.
+        /// </summary>
+        [Description("The player's transparent background headshot URL as provided by USA Today. License from USA Today is required.")]
+        [DataMember(Name = "UsaTodayHeadshotNoBackgroundUrl", Order = 49)]
+        public string UsaTodayHeadshotNoBackgroundUrl { get; set; }
+
     }
 }
 

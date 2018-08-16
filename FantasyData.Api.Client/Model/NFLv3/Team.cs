@@ -295,6 +295,20 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "StadiumDetails", Order = 10041)]
         public Stadium StadiumDetails { get; set; }
 
+        /// <summary>
+        /// The average draft position in 2 QuarterBack Leagues of the team's fantasy defense (DST)
+        /// </summary>
+        [Description("The average draft position in 2 QuarterBack Leagues of the team's fantasy defense (DST)")]
+        [DataMember(Name = "AverageDraftPosition2QB", Order = 42)]
+        public decimal? AverageDraftPosition2QB { get; set; }
+
+        /// <summary>
+        /// The average draft position in dynasty of the team's fantasy defense (DST)
+        /// </summary>
+        [Description("The average draft position in dynasty of the team's fantasy defense (DST)")]
+        [DataMember(Name = "AverageDraftPositionDynasty", Order = 43)]
+        public decimal? AverageDraftPositionDynasty { get; set; }
+
     }
 }
 

@@ -149,10 +149,17 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public bool? IsScoringPlay { get; set; }
 
         /// <summary>
+        /// The details of the scoring play attached to this play (if any).
+        /// </summary>
+        [Description("The details of the scoring play attached to this play (if any).")]
+        [DataMember(Name = "ScoringPlay", Order = 10021)]
+        public ScoringPlay ScoringPlay { get; set; }
+
+        /// <summary>
         /// The player stats accumulated during this play.
         /// </summary>
         [Description("The player stats accumulated during this play.")]
-        [DataMember(Name = "PlayStats", Order = 20021)]
+        [DataMember(Name = "PlayStats", Order = 20022)]
         public PlayStat[] PlayStats { get; set; }
 
     }

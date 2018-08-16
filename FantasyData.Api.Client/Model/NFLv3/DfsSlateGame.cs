@@ -43,6 +43,20 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "RemovedByOperator", Order = 5)]
         public bool? RemovedByOperator { get; set; }
 
+        /// <summary>
+        /// Unique ID of the Score/Game.
+        /// </summary>
+        [Description("Unique ID of the Score/Game.")]
+        [DataMember(Name = "ScoreID", Order = 6)]
+        public int? ScoreID { get; set; }
+
+        /// <summary>
+        /// The details of the Score/Game that this SlateGame refers to.
+        /// </summary>
+        [Description("The details of the Score/Game that this SlateGame refers to.")]
+        [DataMember(Name = "Game", Order = 10007)]
+        public Schedule Game { get; set; }
+
     }
 }
 

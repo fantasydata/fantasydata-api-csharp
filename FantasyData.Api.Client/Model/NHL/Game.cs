@@ -218,6 +218,13 @@ namespace FantasyData.Api.Client.Model.NHL
         [DataMember(Name = "LastPlay", Order = 30)]
         public string LastPlay { get; set; }
 
+        /// <summary>
+        /// The details of the periods (including overtime if applicable) for this game.
+        /// </summary>
+        [Description("The details of the periods (including overtime if applicable) for this game.")]
+        [DataMember(Name = "Periods", Order = 20031)]
+        public Period[] Periods { get; set; }
+
     }
 }
 
