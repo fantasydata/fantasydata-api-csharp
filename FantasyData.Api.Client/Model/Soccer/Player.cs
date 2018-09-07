@@ -121,9 +121,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Nationality { get; set; }
 
         /// <summary>
-        /// Indicates the player's injury status. Possible values include: Probable, Questionable, Doubtful, Out
+        /// Indicates the player's injury status. Possible values include: Questionable, Out
         /// </summary>
-        [Description("Indicates the player's injury status. Possible values include: Probable, Questionable, Doubtful, Out")]
+        [Description("Indicates the player's injury status. Possible values include: Questionable, Out")]
         [DataMember(Name = "InjuryStatus", Order = 17)]
         public string InjuryStatus { get; set; }
 
@@ -135,9 +135,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string InjuryBodyPart { get; set; }
 
         /// <summary>
-        /// Brief description of the player's injury and expected availability.
+        /// Not yet supported, will be null.
         /// </summary>
-        [Description("Brief description of the player's injury and expected availability.")]
+        [Description("Not yet supported, will be null.")]
         [DataMember(Name = "InjuryNotes", Order = 19)]
         public string InjuryNotes { get; set; }
 

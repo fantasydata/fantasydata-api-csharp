@@ -36,6 +36,13 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "TeamGames", Order = 20004)]
         public TeamGame[] TeamGames { get; set; }
 
+        /// <summary>
+        /// The plays in which either team scoring during the game
+        /// </summary>
+        [Description("The plays in which either team scoring during the game")]
+        [DataMember(Name = "ScoringPlays", Order = 20005)]
+        public ScoringPlay[] ScoringPlays { get; set; }
+
     }
 }
 

@@ -211,6 +211,41 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "Stadium", Order = 10029)]
         public Stadium Stadium { get; set; }
 
+        /// <summary>
+        /// The yard line the ball is on
+        /// </summary>
+        [Description("The yard line the ball is on")]
+        [DataMember(Name = "YardLine", Order = 30)]
+        public int? YardLine { get; set; }
+
+        /// <summary>
+        /// Which team's side of the field the ball is on
+        /// </summary>
+        [Description("Which team's side of the field the ball is on")]
+        [DataMember(Name = "YardLineTerritory", Order = 31)]
+        public string YardLineTerritory { get; set; }
+
+        /// <summary>
+        /// The current down
+        /// </summary>
+        [Description("The current down")]
+        [DataMember(Name = "Down", Order = 32)]
+        public int? Down { get; set; }
+
+        /// <summary>
+        /// The current distance to a first down
+        /// </summary>
+        [Description("The current distance to a first down")]
+        [DataMember(Name = "Distance", Order = 33)]
+        public int? Distance { get; set; }
+
+        /// <summary>
+        /// Which team currently has possession of the ball
+        /// </summary>
+        [Description("Which team currently has possession of the ball")]
+        [DataMember(Name = "Possession", Order = 34)]
+        public string Possession { get; set; }
+
     }
 }
 

@@ -309,6 +309,97 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "ExtraPointsMade", Order = 43)]
         public decimal? ExtraPointsMade { get; set; }
 
+        /// <summary>
+        /// Total interceptions
+        /// </summary>
+        [Description("Total interceptions")]
+        [DataMember(Name = "Interceptions", Order = 44)]
+        public decimal? Interceptions { get; set; }
+
+        /// <summary>
+        /// Total interception return yards
+        /// </summary>
+        [Description("Total interception return yards")]
+        [DataMember(Name = "InterceptionReturnYards", Order = 45)]
+        public decimal? InterceptionReturnYards { get; set; }
+
+        /// <summary>
+        /// Total interception return touchdowns
+        /// </summary>
+        [Description("Total interception return touchdowns")]
+        [DataMember(Name = "InterceptionReturnTouchdowns", Order = 46)]
+        public decimal? InterceptionReturnTouchdowns { get; set; }
+
+        /// <summary>
+        /// Total Solo Tackles
+        /// </summary>
+        [Description("Total Solo Tackles")]
+        [DataMember(Name = "SoloTackles", Order = 47)]
+        public decimal? SoloTackles { get; set; }
+
+        /// <summary>
+        /// Total Assisted Tackles
+        /// </summary>
+        [Description("Total Assisted Tackles")]
+        [DataMember(Name = "AssistedTackles", Order = 48)]
+        public decimal? AssistedTackles { get; set; }
+
+        /// <summary>
+        /// Total Tackles for a loss of yardage
+        /// </summary>
+        [Description("Total Tackles for a loss of yardage")]
+        [DataMember(Name = "TacklesForLoss", Order = 49)]
+        public decimal? TacklesForLoss { get; set; }
+
+        /// <summary>
+        /// Total Quarterback Sacks
+        /// </summary>
+        [Description("Total Quarterback Sacks")]
+        [DataMember(Name = "Sacks", Order = 50)]
+        public decimal? Sacks { get; set; }
+
+        /// <summary>
+        /// Total Passes Defended
+        /// </summary>
+        [Description("Total Passes Defended")]
+        [DataMember(Name = "PassesDefended", Order = 51)]
+        public decimal? PassesDefended { get; set; }
+
+        /// <summary>
+        /// Total Fumble Recoveries
+        /// </summary>
+        [Description("Total Fumble Recoveries")]
+        [DataMember(Name = "FumblesRecovered", Order = 52)]
+        public decimal? FumblesRecovered { get; set; }
+
+        /// <summary>
+        /// Total Fumbles Recovered and returned for a touchdown
+        /// </summary>
+        [Description("Total Fumbles Recovered and returned for a touchdown")]
+        [DataMember(Name = "FumbleReturnTouchdowns", Order = 53)]
+        public decimal? FumbleReturnTouchdowns { get; set; }
+
+        /// <summary>
+        /// Total Quarterback Hurries
+        /// </summary>
+        [Description("Total Quarterback Hurries")]
+        [DataMember(Name = "QuarterbackHurries", Order = 54)]
+        public decimal? QuarterbackHurries { get; set; }
+
+        /// <summary>
+        /// Total Fumbles
+        /// </summary>
+        [Description("Total Fumbles")]
+        [DataMember(Name = "Fumbles", Order = 55)]
+        public decimal? Fumbles { get; set; }
+
+        /// <summary>
+        /// Total Fumbles Lost
+        /// </summary>
+        [Description("Total Fumbles Lost")]
+        [DataMember(Name = "FumblesLost", Order = 56)]
+        public decimal? FumblesLost { get; set; }
+
     }
 }
 

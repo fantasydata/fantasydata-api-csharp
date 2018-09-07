@@ -120,6 +120,34 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "GlobalTeamID", Order = 16)]
         public int? GlobalTeamID { get; set; }
 
+        /// <summary>
+        /// Indicates the player's injury status (possible values include: Probable, Questionable, Doubtful, Out)
+        /// </summary>
+        [Description("Indicates the player's injury status (possible values include: Probable, Questionable, Doubtful, Out)")]
+        [DataMember(Name = "InjuryStatus", Order = 17)]
+        public string InjuryStatus { get; set; }
+
+        /// <summary>
+        /// The body part that is injured (Knee, Groin, Calf, Hamstring, etc.)
+        /// </summary>
+        [Description("The body part that is injured (Knee, Groin, Calf, Hamstring, etc.)")]
+        [DataMember(Name = "InjuryBodyPart", Order = 18)]
+        public string InjuryBodyPart { get; set; }
+
+        /// <summary>
+        /// The day that the injury started or first discovered.
+        /// </summary>
+        [Description("The day that the injury started or first discovered.")]
+        [DataMember(Name = "InjuryStartDate", Order = 19)]
+        public DateTime? InjuryStartDate { get; set; }
+
+        /// <summary>
+        /// Brief description of the player's injury and expected availability.
+        /// </summary>
+        [Description("Brief description of the player's injury and expected availability.")]
+        [DataMember(Name = "InjuryNotes", Order = 20)]
+        public string InjuryNotes { get; set; }
+
     }
 }
 

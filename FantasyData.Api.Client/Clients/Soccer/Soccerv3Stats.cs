@@ -645,6 +645,28 @@ namespace FantasyData.Api.Client
             return this.GetVenuesAsync().Result;
         }
 
+        /// <summary>
+        /// Get Upcoming Schedule By Player Asynchronous
+        /// </summary>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>
+        public Task<List<Game>> GetUpcomingScheduleByPlayerAsync(int playerid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            return Task.Run<List<Game>>(() =>
+                base.Get<List<Game>>("/v3/soccer/stats/{format}/UpcomingScheduleByPlayer/{playerid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Upcoming Schedule By Player
+        /// </summary>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>
+        public List<Game> GetUpcomingScheduleByPlayer(int playerid)
+        {
+            return this.GetUpcomingScheduleByPlayerAsync(playerid).Result;
+        }
+
     }
 }
 

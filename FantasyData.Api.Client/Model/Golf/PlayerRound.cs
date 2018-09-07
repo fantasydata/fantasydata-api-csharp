@@ -183,6 +183,13 @@ namespace FantasyData.Api.Client.Model.Golf
         [DataMember(Name = "IncludesFiveOrMoreBirdiesOrBetter", Order = 25)]
         public bool IncludesFiveOrMoreBirdiesOrBetter { get; set; }
 
+        /// <summary>
+        /// Indicates whether the player shot a six of five birdies or better on this round
+        /// </summary>
+        [Description("Indicates whether the player shot a six of five birdies or better on this round")]
+        [DataMember(Name = "IncludesStreakOfSixBirdiesOrBetter", Order = 26)]
+        public bool IncludesStreakOfSixBirdiesOrBetter { get; set; }
+
     }
 }
 

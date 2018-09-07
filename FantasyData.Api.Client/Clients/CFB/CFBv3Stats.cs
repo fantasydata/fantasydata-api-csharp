@@ -76,8 +76,8 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Box Scores by Week Asynchronous
         /// </summary>
-        /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>, etc.</param>
-        /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc.</param>
+        /// <param name="season">Year of the season. Examples: <code>2017</code>, <code>2018</code>, etc.</param>
+        /// <param name="week">The week of the game(s). Examples: <code>2</code>, <code>3</code>, etc.</param>
         public Task<List<BoxScore>> GetBoxScoresByWeekAsync(string season, int week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
@@ -91,8 +91,8 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Box Scores by Week
         /// </summary>
-        /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>, etc.</param>
-        /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc.</param>
+        /// <param name="season">Year of the season. Examples: <code>2017</code>, <code>2018</code>, etc.</param>
+        /// <param name="week">The week of the game(s). Examples: <code>2</code>, <code>3</code>, etc.</param>
         public List<BoxScore> GetBoxScoresByWeek(string season, int week)
         {
             return this.GetBoxScoresByWeekAsync(season, week).Result;

@@ -127,6 +127,13 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "Conference", Order = 17)]
         public string Conference { get; set; }
 
+        /// <summary>
+        /// The short display name of the team
+        /// </summary>
+        [Description("The short display name of the team")]
+        [DataMember(Name = "ShortDisplayName", Order = 18)]
+        public string ShortDisplayName { get; set; }
+
     }
 }
 
