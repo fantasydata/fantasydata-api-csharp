@@ -92,6 +92,8 @@
     <Compile Include="Model\CBB\BoxScore.cs" />
     <Compile Include="Model\CBB\Conference.cs" />
     <Compile Include="Model\CBB\Game.cs" />
+    <Compile Include="Model\CBB\GameInfo.cs" />
+    <Compile Include="Model\CBB\GameOdd.cs" />
     <Compile Include="Model\CBB\GameStat.cs" />
     <Compile Include="Model\CBB\Injury.cs" />
     <Compile Include="Model\CBB\News.cs" />
@@ -111,6 +113,9 @@
     <Compile Include="Model\CBB\Tournament.cs" />
     <Compile Include="Model\CFB\BoxScore.cs" />
     <Compile Include="Model\CFB\Conference.cs" />
+    <Compile Include="Model\CFB\DfsSlate.cs" />
+    <Compile Include="Model\CFB\DfsSlateGame.cs" />
+    <Compile Include="Model\CFB\DfsSlatePlayer.cs" />
     <Compile Include="Model\CFB\Game.cs" />
     <Compile Include="Model\CFB\GameInfo.cs" />
     <Compile Include="Model\CFB\GameOdd.cs" />
@@ -188,6 +193,8 @@
     <Compile Include="Model\NBA\DfsSlateGame.cs" />
     <Compile Include="Model\NBA\DfsSlatePlayer.cs" />
     <Compile Include="Model\NBA\Game.cs" />
+    <Compile Include="Model\NBA\GameInfo.cs" />
+    <Compile Include="Model\NBA\GameOdd.cs" />
     <Compile Include="Model\NBA\GameStat.cs" />
     <Compile Include="Model\NBA\Injury.cs" />
     <Compile Include="Model\NBA\News.cs" />
@@ -267,6 +274,8 @@
     <Compile Include="Model\NHL\DfsSlateGame.cs" />
     <Compile Include="Model\NHL\DfsSlatePlayer.cs" />
     <Compile Include="Model\NHL\Game.cs" />
+    <Compile Include="Model\NHL\GameInfo.cs" />
+    <Compile Include="Model\NHL\GameOdd.cs" />
     <Compile Include="Model\NHL\GameStat.cs" />
     <Compile Include="Model\NHL\News.cs" />
     <Compile Include="Model\NHL\OpponentSeason.cs" />
