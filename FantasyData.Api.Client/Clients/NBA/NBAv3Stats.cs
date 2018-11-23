@@ -382,7 +382,7 @@ namespace FantasyData.Api.Client
         /// Get Player Season Stats by Team Asynchronous
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
-        /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>PHI</code>.</param>
         public Task<List<PlayerSeason>> GetPlayerSeasonStatsByTeamAsync(string season, string team)
         {
             var parameters = new List<KeyValuePair<string, string>>();
@@ -397,7 +397,7 @@ namespace FantasyData.Api.Client
         /// Get Player Season Stats by Team
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
-        /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>PHI</code>.</param>
         public List<PlayerSeason> GetPlayerSeasonStatsByTeam(string season, string team)
         {
             return this.GetPlayerSeasonStatsByTeamAsync(season, team).Result;

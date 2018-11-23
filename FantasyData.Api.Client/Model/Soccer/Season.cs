@@ -44,16 +44,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string CompetitionName { get; set; }
 
         /// <summary>
-        /// The start date of the season
+        /// The start date of the season (UTC)
         /// </summary>
-        [Description("The start date of the season")]
+        [Description("The start date of the season (UTC)")]
         [DataMember(Name = "StartDate", Order = 6)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// The end date of the season
+        /// The end date of the season (UTC)
         /// </summary>
-        [Description("The end date of the season")]
+        [Description("The end date of the season (UTC)")]
         [DataMember(Name = "EndDate", Order = 7)]
         public DateTime? EndDate { get; set; }
 

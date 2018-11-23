@@ -450,9 +450,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? PointSpreadHomeTeamMoneyLine { get; set; }
 
         /// <summary>
-        /// Unique ID of the Score/Game.
+        /// Unique ID of the Score/Game
         /// </summary>
-        [Description("Unique ID of the Score/Game.")]
+        [Description("Unique ID of the Score/Game")]
         [DataMember(Name = "ScoreID", Order = 64)]
         public int ScoreID { get; set; }
 
@@ -462,6 +462,20 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [Description("The details of the stadium where this game is played")]
         [DataMember(Name = "StadiumDetails", Order = 10065)]
         public Stadium StadiumDetails { get; set; }
+
+        /// <summary>
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled
+        /// </summary>
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled")]
+        [DataMember(Name = "Status", Order = 66)]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// The date and time that the game ended in US Eastern Time
+        /// </summary>
+        [Description("The date and time that the game ended in US Eastern Time")]
+        [DataMember(Name = "GameEndDateTime", Order = 67)]
+        public DateTime? GameEndDateTime { get; set; }
 
     }
 }

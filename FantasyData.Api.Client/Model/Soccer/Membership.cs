@@ -58,23 +58,23 @@ namespace FantasyData.Api.Client.Model.Soccer
         public bool Active { get; set; }
 
         /// <summary>
-        /// The start date of the membership
+        /// The start date of the membership (UTC)
         /// </summary>
-        [Description("The start date of the membership")]
+        [Description("The start date of the membership (UTC)")]
         [DataMember(Name = "StartDate", Order = 8)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// The end date of the membership
+        /// The end date of the membership (UTC)
         /// </summary>
-        [Description("The end date of the membership")]
+        [Description("The end date of the membership (UTC)")]
         [DataMember(Name = "EndDate", Order = 9)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// The updated date and time of the membership
+        /// The updated date and time of the membership (EST/EDT)
         /// </summary>
-        [Description("The updated date and time of the membership")]
+        [Description("The updated date and time of the membership (EST/EDT)")]
         [DataMember(Name = "Updated", Order = 10)]
         public DateTime? Updated { get; set; }
 

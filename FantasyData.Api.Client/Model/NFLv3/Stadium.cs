@@ -71,6 +71,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "GeoLong", Order = 9)]
         public decimal? GeoLong { get; set; }
 
+        /// <summary>
+        /// The type of the stadium (possible values: Outdoor, Dome, RetractableDome)
+        /// </summary>
+        [Description("The type of the stadium (possible values: Outdoor, Dome, RetractableDome)")]
+        [DataMember(Name = "Type", Order = 10)]
+        public string Type { get; set; }
+
     }
 }
 

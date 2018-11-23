@@ -113,6 +113,13 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "Points", Order = 15)]
         public int? Points { get; set; }
 
+        /// <summary>
+        /// The name of the group (when applicable)
+        /// </summary>
+        [Description("The name of the group (when applicable)")]
+        [DataMember(Name = "Group", Order = 16)]
+        public string Group { get; set; }
+
     }
 }
 

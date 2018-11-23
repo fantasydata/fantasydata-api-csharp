@@ -141,6 +141,20 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "TeamID", Order = 19)]
         public int TeamID { get; set; }
 
+        /// <summary>
+        /// Regular season ties within the division
+        /// </summary>
+        [Description("Regular season ties within the division")]
+        [DataMember(Name = "DivisionTies", Order = 20)]
+        public int DivisionTies { get; set; }
+
+        /// <summary>
+        /// Regular season ties within the conference
+        /// </summary>
+        [Description("Regular season ties within the conference")]
+        [DataMember(Name = "ConferenceTies", Order = 21)]
+        public int ConferenceTies { get; set; }
+
     }
 }
 

@@ -79,6 +79,78 @@ namespace FantasyData.Api.Client
             return this.GetPlayerGameProjectionStatsByPlayerAsync(date, playerid).Result;
         }
 
+        /// <summary>
+        /// Get Projected Player Season Stats Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2019</code>, etc.</param>
+        public Task<List<PlayerSeasonProjection>> GetPlayerSeasonProjectionStatsAsync(string season)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            return Task.Run<List<PlayerSeasonProjection>>(() =>
+                base.Get<List<PlayerSeasonProjection>>("/v3/nba/projections/{format}/PlayerSeasonProjectionStats/{season}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Projected Player Season Stats
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2019</code>, etc.</param>
+        public List<PlayerSeasonProjection> GetPlayerSeasonProjectionStats(string season)
+        {
+            return this.GetPlayerSeasonProjectionStatsAsync(season).Result;
+        }
+
+        /// <summary>
+        /// Get Projected Player Season Stats by Player Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2019</code>, etc.</param>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>20000571</code>.</param>
+        public Task<PlayerSeasonProjection> GetPlayerSeasonProjectionStatsByPlayerAsync(string season, int playerid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            return Task.Run<PlayerSeasonProjection>(() =>
+                base.Get<PlayerSeasonProjection>("/v3/nba/projections/{format}/PlayerSeasonProjectionStatsByPlayer/{season}/{playerid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Projected Player Season Stats by Player
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2019</code>, etc.</param>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>20000571</code>.</param>
+        public PlayerSeasonProjection GetPlayerSeasonProjectionStatsByPlayer(string season, int playerid)
+        {
+            return this.GetPlayerSeasonProjectionStatsByPlayerAsync(season, playerid).Result;
+        }
+
+        /// <summary>
+        /// Get Projected Player Season Stats by Team Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2019</code>, etc.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>PHI</code>.</param>
+        public Task<List<PlayerSeasonProjection>> GetPlayerSeasonProjectionStatsByTeamAsync(string season, string team)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            return Task.Run<List<PlayerSeasonProjection>>(() =>
+                base.Get<List<PlayerSeasonProjection>>("/v3/nba/projections/{format}/PlayerSeasonProjectionStatsByTeam/{season}/{team}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Projected Player Season Stats by Team
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2019</code>, etc.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>PHI</code>.</param>
+        public List<PlayerSeasonProjection> GetPlayerSeasonProjectionStatsByTeam(string season, string team)
+        {
+            return this.GetPlayerSeasonProjectionStatsByTeamAsync(season, team).Result;
+        }
+
     }
 }
 

@@ -114,9 +114,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? HomeTeamScore { get; set; }
 
         /// <summary>
-        /// The current quarter in the game (Possible Values: First, Second, Third, Fourth)
+        /// The current quarter in the game (Possible Values: 1, 2, 3, 4, Half, OT, F, F/OT, NULL)
         /// </summary>
-        [Description("The current quarter in the game (Possible Values: First, Second, Third, Fourth)")]
+        [Description("The current quarter in the game (Possible Values: 1, 2, 3, 4, Half, OT, F, F/OT, NULL)")]
         [DataMember(Name = "Period", Order = 16)]
         public string Period { get; set; }
 
@@ -245,6 +245,27 @@ namespace FantasyData.Api.Client.Model.CFB
         [Description("Which team currently has possession of the ball")]
         [DataMember(Name = "Possession", Order = 34)]
         public string Possession { get; set; }
+
+        /// <summary>
+        /// The details of the periods (quarters & overtime) for this game.
+        /// </summary>
+        [Description("The details of the periods (quarters & overtime) for this game.")]
+        [DataMember(Name = "Periods", Order = 20035)]
+        public Period[] Periods { get; set; }
+
+        /// <summary>
+        /// Indicates whether the game is over and the final score has been verified and closed out.
+        /// </summary>
+        [Description("Indicates whether the game is over and the final score has been verified and closed out.")]
+        [DataMember(Name = "IsClosed", Order = 36)]
+        public bool IsClosed { get; set; }
+
+        /// <summary>
+        /// The date and time that the game ended in US Eastern Time
+        /// </summary>
+        [Description("The date and time that the game ended in US Eastern Time")]
+        [DataMember(Name = "GameEndDateTime", Order = 37)]
+        public DateTime? GameEndDateTime { get; set; }
 
     }
 }

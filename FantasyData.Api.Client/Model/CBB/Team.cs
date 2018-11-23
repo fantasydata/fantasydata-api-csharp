@@ -113,6 +113,13 @@ namespace FantasyData.Api.Client.Model.CBB
         [DataMember(Name = "ShortDisplayName", Order = 15)]
         public string ShortDisplayName { get; set; }
 
+        /// <summary>
+        /// The home stadium of the team
+        /// </summary>
+        [Description("The home stadium of the team")]
+        [DataMember(Name = "Stadium", Order = 10016)]
+        public Stadium Stadium { get; set; }
+
     }
 }
 

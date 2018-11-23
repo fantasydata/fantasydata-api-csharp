@@ -100,16 +100,16 @@ namespace FantasyData.Api.Client.Model.MLB
         public string Channel { get; set; }
 
         /// <summary>
-        /// The inning that the game is currently in, or the inning in which the game ended (possible values: 1, 2, 3, 4, 5, etc)
+        /// The inning that the game is currently in, or the inning in which the game ended. Possible values include: NULL, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, etc)
         /// </summary>
-        [Description("The inning that the game is currently in, or the inning in which the game ended (possible values: 1, 2, 3, 4, 5, etc)")]
+        [Description("The inning that the game is currently in, or the inning in which the game ended. Possible values include: NULL, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, etc)")]
         [DataMember(Name = "Inning", Order = 14)]
         public int? Inning { get; set; }
 
         /// <summary>
-        /// The inning half that the game is currently in, or the inning half in which the game ended (possible values: T, B)
+        /// The inning half that the game is currently in, or the inning half in which the game ended (possible values: T, B, NULL)
         /// </summary>
-        [Description("The inning half that the game is currently in, or the inning half in which the game ended (possible values: T, B)")]
+        [Description("The inning half that the game is currently in, or the inning half in which the game ended (possible values: T, B, NULL)")]
         [DataMember(Name = "InningHalf", Order = 15)]
         public string InningHalf { get; set; }
 
@@ -483,6 +483,20 @@ namespace FantasyData.Api.Client.Model.MLB
         [Description("The timestamp of when the record was last updated (US Eastern Time).")]
         [DataMember(Name = "Updated", Order = 68)]
         public DateTime? Updated { get; set; }
+
+        /// <summary>
+        /// The details of the innings associated with this game
+        /// </summary>
+        [Description("The details of the innings associated with this game")]
+        [DataMember(Name = "Innings", Order = 20069)]
+        public Inning[] Innings { get; set; }
+
+        /// <summary>
+        /// The date and time that the game ended in US Eastern Time
+        /// </summary>
+        [Description("The date and time that the game ended in US Eastern Time")]
+        [DataMember(Name = "GameEndDateTime", Order = 70)]
+        public DateTime? GameEndDateTime { get; set; }
 
     }
 }

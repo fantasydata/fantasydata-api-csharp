@@ -337,6 +337,20 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "GlobalHomeTeamId", Order = 47)]
         public int? GlobalHomeTeamId { get; set; }
 
+        /// <summary>
+        /// The added stoppage time minute the game is currently in. Will be null when game is not in stoppage time.
+        /// </summary>
+        [Description("The added stoppage time minute the game is currently in. Will be null when game is not in stoppage time.")]
+        [DataMember(Name = "ClockExtra", Order = 48)]
+        public int? ClockExtra { get; set; }
+
+        /// <summary>
+        /// A convienience string display of the current clock with format Clock+ClockExtra (ex 90+3)
+        /// </summary>
+        [Description("A convienience string display of the current clock with format Clock+ClockExtra (ex 90+3)")]
+        [DataMember(Name = "ClockDisplay", Order = 49)]
+        public string ClockDisplay { get; set; }
+
     }
 }
 

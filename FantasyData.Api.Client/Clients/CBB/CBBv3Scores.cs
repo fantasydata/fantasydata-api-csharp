@@ -259,6 +259,25 @@ namespace FantasyData.Api.Client
             return this.GetTournamentAsync(season).Result;
         }
 
+        /// <summary>
+        /// Get Stadiums Asynchronous
+        /// </summary>
+        public Task<List<Stadium>> GetStadiumsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Stadium>>(() =>
+                base.Get<List<Stadium>>("/v3/cbb/scores/{format}/Stadiums", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Stadiums
+        /// </summary>
+        public List<Stadium> GetStadiums()
+        {
+            return this.GetStadiumsAsync().Result;
+        }
+
     }
 }
 

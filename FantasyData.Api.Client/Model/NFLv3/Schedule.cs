@@ -204,6 +204,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "StadiumDetails", Order = 10028)]
         public Stadium StadiumDetails { get; set; }
 
+        /// <summary>
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled
+        /// </summary>
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled")]
+        [DataMember(Name = "Status", Order = 29)]
+        public string Status { get; set; }
+
     }
 }
 

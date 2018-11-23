@@ -64,6 +64,13 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "Seasons", Order = 20008)]
         public Season[] Seasons { get; set; }
 
+        /// <summary>
+        /// The unique string key of the competition/league
+        /// </summary>
+        [Description("The unique string key of the competition/league")]
+        [DataMember(Name = "Key", Order = 9)]
+        public string Key { get; set; }
+
     }
 }
 

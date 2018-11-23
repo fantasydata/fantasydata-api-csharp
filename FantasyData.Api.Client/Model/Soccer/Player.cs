@@ -72,16 +72,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Foot { get; set; }
 
         /// <summary>
-        /// The player's height in inches.
+        /// The player's height in cm.
         /// </summary>
-        [Description("The player's height in inches.")]
+        [Description("The player's height in cm.")]
         [DataMember(Name = "Height", Order = 10)]
         public int? Height { get; set; }
 
         /// <summary>
-        /// The player's weight in pounds (lbs).
+        /// The player's weight in kg.
         /// </summary>
-        [Description("The player's weight in pounds (lbs).")]
+        [Description("The player's weight in kg.")]
         [DataMember(Name = "Weight", Order = 11)]
         public int? Weight { get; set; }
 
@@ -149,9 +149,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public DateTime? InjuryStartDate { get; set; }
 
         /// <summary>
-        /// The date and time the player's status was updated. 
+        /// The date and time the player's status was updated. (EST/EDT)
         /// </summary>
-        [Description("The date and time the player's status was updated. ")]
+        [Description("The date and time the player's status was updated. (EST/EDT)")]
         [DataMember(Name = "Updated", Order = 21)]
         public DateTime? Updated { get; set; }
 

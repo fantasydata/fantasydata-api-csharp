@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public bool Active { get; set; }
 
         /// <summary>
-        /// The school of the team (e.g. Oklahoma University, Texas Tech University, University of Southern California, Kentucky University, etc)
+        /// The school of the team (e.g. Oklahoma University, Texas Tech University, University of Southern California,  University of Kentucky, etc)
         /// </summary>
-        [Description("The school of the team (e.g. Oklahoma University, Texas Tech University, University of Southern California, Kentucky University, etc)")]
+        [Description("The school of the team (e.g. Oklahoma University, Texas Tech University, University of Southern California,  University of Kentucky, etc)")]
         [DataMember(Name = "School", Order = 4)]
         public string School { get; set; }
 

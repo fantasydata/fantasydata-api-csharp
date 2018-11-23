@@ -121,9 +121,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The current quarter in the game (possible values: 1, 2, Half, 3, 4, OT, F/OT)
+        /// The current quarter in the game. Possible values include: 1, 2, 3, 4, Half, OT, NULL
         /// </summary>
-        [Description("The current quarter in the game (possible values: 1, 2, Half, 3, 4, OT, F/OT)")]
+        [Description("The current quarter in the game. Possible values include: 1, 2, 3, 4, Half, OT, NULL")]
         [DataMember(Name = "Quarter", Order = 17)]
         public string Quarter { get; set; }
 
@@ -224,6 +224,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [Description("The details of the quarters (including overtime periods) for this game.")]
         [DataMember(Name = "Quarters", Order = 20031)]
         public Quarter[] Quarters { get; set; }
+
+        /// <summary>
+        /// The date and time that the game ended in US Eastern Time
+        /// </summary>
+        [Description("The date and time that the game ended in US Eastern Time")]
+        [DataMember(Name = "GameEndDateTime", Order = 32)]
+        public DateTime? GameEndDateTime { get; set; }
 
     }
 }

@@ -51,16 +51,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Type { get; set; }
 
         /// <summary>
-        /// The start date of the round
+        /// The start date of the round (UTC)
         /// </summary>
-        [Description("The start date of the round")]
+        [Description("The start date of the round (UTC)")]
         [DataMember(Name = "StartDate", Order = 7)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// The end date of the round
+        /// The end date of the round (UTC)
         /// </summary>
-        [Description("The end date of the round")]
+        [Description("The end date of the round (UTC)")]
         [DataMember(Name = "EndDate", Order = 8)]
         public DateTime? EndDate { get; set; }
 

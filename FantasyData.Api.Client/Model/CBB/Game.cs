@@ -100,9 +100,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The current half of the game (Possible Values: First, Second)
+        /// The current half of the game (Possible Values: 1, 2, Half, OT, F, F/OT, NULL)
         /// </summary>
-        [Description("The current half of the game (Possible Values: First, Second)")]
+        [Description("The current half of the game (Possible Values: 1, 2, Half, OT, F, F/OT, NULL)")]
         [DataMember(Name = "Period", Order = 14)]
         public string Period { get; set; }
 
@@ -252,6 +252,27 @@ namespace FantasyData.Api.Client.Model.CBB
         [Description("The details of the periods (halves & overtime) for this game.")]
         [DataMember(Name = "Periods", Order = 20035)]
         public Period[] Periods { get; set; }
+
+        /// <summary>
+        /// Indicates whether the game is over and the final score has been verified and closed out.
+        /// </summary>
+        [Description("Indicates whether the game is over and the final score has been verified and closed out.")]
+        [DataMember(Name = "IsClosed", Order = 36)]
+        public bool IsClosed { get; set; }
+
+        /// <summary>
+        /// The date and time that the game ended in US Eastern Time
+        /// </summary>
+        [Description("The date and time that the game ended in US Eastern Time")]
+        [DataMember(Name = "GameEndDateTime", Order = 37)]
+        public DateTime? GameEndDateTime { get; set; }
+
+        /// <summary>
+        /// The stadium details of where this game was played
+        /// </summary>
+        [Description("The stadium details of where this game was played")]
+        [DataMember(Name = "Stadium", Order = 10038)]
+        public Stadium Stadium { get; set; }
 
     }
 }
