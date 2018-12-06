@@ -233,9 +233,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? HomeTeamPreviousGlobalGameID { get; set; }
 
         /// <summary>
-        /// The display order of this game (used for rendering NCAA Tournament bracket)
+        /// The display order of this game. This is used for rendering NCAA Tournament bracket.
         /// </summary>
-        [Description("The display order of this game (used for rendering NCAA Tournament bracket)")]
+        [Description("The display order of this game. This is used for rendering NCAA Tournament bracket.")]
         [DataMember(Name = "TournamentDisplayOrder", Order = 33)]
         public int? TournamentDisplayOrder { get; set; }
 

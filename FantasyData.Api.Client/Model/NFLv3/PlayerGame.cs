@@ -695,9 +695,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? PuntInside20 { get; set; }
 
         /// <summary>
-        /// Net punt average (includes punt return yards as negative)
+        /// Deprecated
         /// </summary>
-        [Description("Net punt average (includes punt return yards as negative)")]
+        [Description("Deprecated")]
         [DataMember(Name = "PuntNetAverage", Order = 99)]
         public decimal? PuntNetAverage { get; set; }
 
@@ -772,9 +772,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? FieldGoalReturnYards { get; set; }
 
         /// <summary>
-        /// Net punt yards
+        /// Deprecated
         /// </summary>
-        [Description("Net punt yards")]
+        [Description("Deprecated")]
         [DataMember(Name = "PuntNetYards", Order = 110)]
         public decimal? PuntNetYards { get; set; }
 

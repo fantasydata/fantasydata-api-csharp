@@ -247,16 +247,16 @@ namespace FantasyData.Api.Client.Model.CFB
         public string Possession { get; set; }
 
         /// <summary>
-        /// The details of the periods (quarters & overtime) for this game.
+        /// The details of the periods (quarters & overtime) for this game
         /// </summary>
-        [Description("The details of the periods (quarters & overtime) for this game.")]
+        [Description("The details of the periods (quarters & overtime) for this game")]
         [DataMember(Name = "Periods", Order = 20035)]
         public Period[] Periods { get; set; }
 
         /// <summary>
-        /// Indicates whether the game is over and the final score has been verified and closed out.
+        /// Indicates whether the game is over and the final score has been verified and closed out
         /// </summary>
-        [Description("Indicates whether the game is over and the final score has been verified and closed out.")]
+        [Description("Indicates whether the game is over and the final score has been verified and closed out")]
         [DataMember(Name = "IsClosed", Order = 36)]
         public bool IsClosed { get; set; }
 
@@ -266,6 +266,13 @@ namespace FantasyData.Api.Client.Model.CFB
         [Description("The date and time that the game ended in US Eastern Time")]
         [DataMember(Name = "GameEndDateTime", Order = 37)]
         public DateTime? GameEndDateTime { get; set; }
+
+        /// <summary>
+        /// The title of the game (e.g. Rose Bowl, Citrus Bowl, etc)
+        /// </summary>
+        [Description("The title of the game (e.g. Rose Bowl, Citrus Bowl, etc)")]
+        [DataMember(Name = "Title", Order = 38)]
+        public string Title { get; set; }
 
     }
 }

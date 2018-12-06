@@ -898,16 +898,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? HomePuntsHadBlocked { get; set; }
 
         /// <summary>
-        /// Net punt average (includes punt return yards as negative)
+        /// Deprecated
         /// </summary>
-        [Description("Net punt average (includes punt return yards as negative)")]
+        [Description("Deprecated")]
         [DataMember(Name = "AwayPuntNetAverage", Order = 128)]
         public decimal? AwayPuntNetAverage { get; set; }
 
         /// <summary>
-        /// Net punt average (includes punt return yards as negative)
+        /// Deprecated
         /// </summary>
-        [Description("Net punt average (includes punt return yards as negative)")]
+        [Description("Deprecated")]
         [DataMember(Name = "HomePuntNetAverage", Order = 129)]
         public decimal? HomePuntNetAverage { get; set; }
 
@@ -1283,9 +1283,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? AwayFieldGoalReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Net punt yards
+        /// Deprecated
         /// </summary>
-        [Description("Net punt yards")]
+        [Description("Deprecated")]
         [DataMember(Name = "AwayPuntNetYards", Order = 183)]
         public int? AwayPuntNetYards { get; set; }
 
@@ -1437,9 +1437,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? HomeFieldGoalReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Net punt yards
+        /// Deprecated
         /// </summary>
-        [Description("Net punt yards")]
+        [Description("Deprecated")]
         [DataMember(Name = "HomePuntNetYards", Order = 205)]
         public int? HomePuntNetYards { get; set; }
 

@@ -101,18 +101,18 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Current Season Asynchronous
         /// </summary>
-        public Task<List<Season>> GetCurrentSeasonAsync()
+        public Task<Season> GetCurrentSeasonAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
-            return Task.Run<List<Season>>(() =>
-                base.Get<List<Season>>("/nba/v2/{format}/CurrentSeason", parameters)
+            return Task.Run<Season>(() =>
+                base.Get<Season>("/nba/v2/{format}/CurrentSeason", parameters)
             );
         }
 
         /// <summary>
         /// Get Current Season
         /// </summary>
-        public List<Season> GetCurrentSeason()
+        public Season GetCurrentSeason()
         {
             return this.GetCurrentSeasonAsync().Result;
         }
