@@ -43,6 +43,34 @@ namespace FantasyData.Api.Client.Model.CBB
         [DataMember(Name = "Games", Order = 20005)]
         public Game[] Games { get; set; }
 
+        /// <summary>
+        /// The conference that is displayed on the top-left when rendering the tournament bracket.
+        /// </summary>
+        [Description("The conference that is displayed on the top-left when rendering the tournament bracket.")]
+        [DataMember(Name = "LeftTopBracketConference", Order = 6)]
+        public string LeftTopBracketConference { get; set; }
+
+        /// <summary>
+        /// The conference that is displayed on the bottom-left when rendering the tournament bracket.
+        /// </summary>
+        [Description("The conference that is displayed on the bottom-left when rendering the tournament bracket.")]
+        [DataMember(Name = "LeftBottomBracketConference", Order = 7)]
+        public string LeftBottomBracketConference { get; set; }
+
+        /// <summary>
+        /// The conference that is displayed on the top-right when rendering the tournament bracket.
+        /// </summary>
+        [Description("The conference that is displayed on the top-right when rendering the tournament bracket.")]
+        [DataMember(Name = "RightTopBracketConference", Order = 8)]
+        public string RightTopBracketConference { get; set; }
+
+        /// <summary>
+        /// The conference that is displayed on the bottom-right when rendering the tournament bracket.
+        /// </summary>
+        [Description("The conference that is displayed on the bottom-right when rendering the tournament bracket.")]
+        [DataMember(Name = "RightBottomBracketConference", Order = 9)]
+        public string RightBottomBracketConference { get; set; }
+
     }
 }
 

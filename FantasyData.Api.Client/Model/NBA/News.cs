@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Source { get; set; }
 
         /// <summary>
-        /// The date/time that the content was published
+        /// The date/time that the content was published (UTC time zone)
         /// </summary>
-        [Description("The date/time that the content was published")]
+        [Description("The date/time that the content was published (UTC time zone)")]
         [DataMember(Name = "Updated", Order = 3)]
         public DateTime Updated { get; set; }
 

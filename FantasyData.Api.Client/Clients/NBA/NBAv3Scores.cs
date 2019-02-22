@@ -278,6 +278,66 @@ namespace FantasyData.Api.Client
             return this.GetAllTeamsAsync().Result;
         }
 
+        /// <summary>
+        /// Get Player Details by Active Asynchronous
+        /// </summary>
+        public Task<List<Player>> GetPlayersAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/nba/scores/{format}/Players", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Details by Active
+        /// </summary>
+        public List<Player> GetPlayers()
+        {
+            return this.GetPlayersAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Player Details by Free Agent Asynchronous
+        /// </summary>
+        public Task<List<Player>> GetFreeAgentsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/nba/scores/{format}/FreeAgents", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Details by Free Agent
+        /// </summary>
+        public List<Player> GetFreeAgents()
+        {
+            return this.GetFreeAgentsAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Player Details by Player Asynchronous
+        /// </summary>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>20000571</code>.</param>
+        public Task<Player> GetPlayerAsync(int playerid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            return Task.Run<Player>(() =>
+                base.Get<Player>("/v3/nba/scores/{format}/Player/{playerid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Details by Player
+        /// </summary>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>20000571</code>.</param>
+        public Player GetPlayer(int playerid)
+        {
+            return this.GetPlayerAsync(playerid).Result;
+        }
+
     }
 }
 

@@ -104,6 +104,87 @@ namespace FantasyData.Api.Client
             return this.GetGameOddsLineMovementAsync(gameid).Result;
         }
 
+        /// <summary>
+        /// Get Player Props by Player Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
+        /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
+        /// <param name="playerid">Unique FantasyData Player ID. Example: <code>50002016</code></param>
+        public Task<List<PlayerProp>> GetPlayerPropsByPlayerIDAsync(string season, int week, int playerid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            return Task.Run<List<PlayerProp>>(() =>
+                base.Get<List<PlayerProp>>("/v3/cfb/odds/{format}/PlayerPropsByPlayerID/{season}/{week}/{playerid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Props by Player
+        /// </summary>
+        /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
+        /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
+        /// <param name="playerid">Unique FantasyData Player ID. Example: <code>50002016</code></param>
+        public List<PlayerProp> GetPlayerPropsByPlayerID(string season, int week, int playerid)
+        {
+            return this.GetPlayerPropsByPlayerIDAsync(season, week, playerid).Result;
+        }
+
+        /// <summary>
+        /// Get Player Props by Team Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
+        /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
+        public Task<List<PlayerProp>> GetPlayerPropsByTeamAsync(string season, int week, string team)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            return Task.Run<List<PlayerProp>>(() =>
+                base.Get<List<PlayerProp>>("/v3/cfb/odds/{format}/PlayerPropsByTeam/{season}/{week}/{team}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Props by Team
+        /// </summary>
+        /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
+        /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
+        public List<PlayerProp> GetPlayerPropsByTeam(string season, int week, string team)
+        {
+            return this.GetPlayerPropsByTeamAsync(season, week, team).Result;
+        }
+
+        /// <summary>
+        /// Get Player Props by Week Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
+        /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
+        public Task<List<PlayerProp>> GetPlayerPropsByWeekAsync(string season, int week)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            return Task.Run<List<PlayerProp>>(() =>
+                base.Get<List<PlayerProp>>("/v3/cfb/odds/{format}/PlayerPropsByWeek/{season}/{week}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Props by Week
+        /// </summary>
+        /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
+        /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
+        public List<PlayerProp> GetPlayerPropsByWeek(string season, int week)
+        {
+            return this.GetPlayerPropsByWeekAsync(season, week).Result;
+        }
+
     }
 }
 

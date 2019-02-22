@@ -558,6 +558,88 @@ namespace FantasyData.Api.Client
             return this.GetSimulatedScoresAsync(numberofplays).Result;
         }
 
+        /// <summary>
+        /// Get Player Details by Available Asynchronous
+        /// </summary>
+        public Task<List<Player>> GetPlayersAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/nfl/scores/{format}/Players", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Details by Available
+        /// </summary>
+        public List<Player> GetPlayers()
+        {
+            return this.GetPlayersAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Player Details by Free Agents Asynchronous
+        /// </summary>
+        public Task<List<Player>> GetFreeAgentsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/nfl/scores/{format}/FreeAgents", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Details by Free Agents
+        /// </summary>
+        public List<Player> GetFreeAgents()
+        {
+            return this.GetFreeAgentsAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Player Details by Player Asynchronous
+        /// </summary>
+        /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
+        public Task<PlayerDetail> GetPlayerAsync(int playerid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            return Task.Run<PlayerDetail>(() =>
+                base.Get<PlayerDetail>("/v3/nfl/scores/{format}/Player/{playerid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Details by Player
+        /// </summary>
+        /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
+        public PlayerDetail GetPlayer(int playerid)
+        {
+            return this.GetPlayerAsync(playerid).Result;
+        }
+
+        /// <summary>
+        /// Get Player Details by Team Asynchronous
+        /// </summary>
+        /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
+        public Task<List<PlayerDetail>> GetPlayersAsync(string team)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            return Task.Run<List<PlayerDetail>>(() =>
+                base.Get<List<PlayerDetail>>("/v3/nfl/scores/{format}/Players/{team}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Details by Team
+        /// </summary>
+        /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
+        public List<PlayerDetail> GetPlayers(string team)
+        {
+            return this.GetPlayersAsync(team).Result;
+        }
+
     }
 }
 

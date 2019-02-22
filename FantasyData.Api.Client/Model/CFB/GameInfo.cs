@@ -120,6 +120,27 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "LiveOdds", Order = 20016)]
         public GameOdd[] LiveOdds { get; set; }
 
+        /// <summary>
+        /// Score of the home team (updated after game ends to allow for resolving bets)
+        /// </summary>
+        [Description("Score of the home team (updated after game ends to allow for resolving bets)")]
+        [DataMember(Name = "HomeTeamScore", Order = 17)]
+        public int? HomeTeamScore { get; set; }
+
+        /// <summary>
+        /// Score of the away team (updated after game ends to allow for resolving bets)
+        /// </summary>
+        [Description("Score of the away team (updated after game ends to allow for resolving bets)")]
+        [DataMember(Name = "AwayTeamScore", Order = 18)]
+        public int? AwayTeamScore { get; set; }
+
+        /// <summary>
+        /// Total scored points in the game (updated after game ends to allow for resolving bets)
+        /// </summary>
+        [Description("Total scored points in the game (updated after game ends to allow for resolving bets)")]
+        [DataMember(Name = "TotalScore", Order = 19)]
+        public int? TotalScore { get; set; }
+
     }
 }
 

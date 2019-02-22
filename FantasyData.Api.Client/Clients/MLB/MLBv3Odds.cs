@@ -98,6 +98,78 @@ namespace FantasyData.Api.Client
             return this.GetLiveGameOddsLineMovementAsync(gameid).Result;
         }
 
+        /// <summary>
+        /// Get Player Props by Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        public Task<List<PlayerProp>> GetPlayerPropsByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<PlayerProp>>(() =>
+                base.Get<List<PlayerProp>>("/v3/mlb/odds/{format}/PlayerPropsByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Props by Date
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        public List<PlayerProp> GetPlayerPropsByDate(string date)
+        {
+            return this.GetPlayerPropsByDateAsync(date).Result;
+        }
+
+        /// <summary>
+        /// Get Player Props by Player Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code></param>
+        public Task<List<PlayerProp>> GetPlayerPropsByPlayerIDAsync(string date, int playerid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            return Task.Run<List<PlayerProp>>(() =>
+                base.Get<List<PlayerProp>>("/v3/mlb/odds/{format}/PlayerPropsByPlayerID/{date}/{playerid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Props by Player
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code></param>
+        public List<PlayerProp> GetPlayerPropsByPlayerID(string date, int playerid)
+        {
+            return this.GetPlayerPropsByPlayerIDAsync(date, playerid).Result;
+        }
+
+        /// <summary>
+        /// Get Player Props by Team Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>PHI</code>, <code>MIN</code>, <code>DET</code>, etc.</param>
+        public Task<List<PlayerProp>> GetPlayerPropsByTeamAsync(string date, string team)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            return Task.Run<List<PlayerProp>>(() =>
+                base.Get<List<PlayerProp>>("/v3/mlb/odds/{format}/PlayerPropsByTeam/{date}/{team}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Props by Team
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>PHI</code>, <code>MIN</code>, <code>DET</code>, etc.</param>
+        public List<PlayerProp> GetPlayerPropsByTeam(string date, string team)
+        {
+            return this.GetPlayerPropsByTeamAsync(date, team).Result;
+        }
+
     }
 }
 

@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Name { get; set; }
 
         /// <summary>
-        /// Indicates the gender of the players on this team (possible values: Make, Female)
+        /// Indicates the gender of the players on this team (possible values: Male, Female)
         /// </summary>
-        [Description("Indicates the gender of the players on this team (possible values: Make, Female)")]
+        [Description("Indicates the gender of the players on this team (possible values: Male, Female)")]
         [DataMember(Name = "Gender", Order = 8)]
         public string Gender { get; set; }
 

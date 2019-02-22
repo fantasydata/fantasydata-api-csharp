@@ -295,6 +295,20 @@ namespace FantasyData.Api.Client.Model.NHL
         [DataMember(Name = "UsaTodayHeadshotNoBackgroundUrl", Order = 41)]
         public string UsaTodayHeadshotNoBackgroundUrl { get; set; }
 
+        /// <summary>
+        /// The last updated date of the player's headshot as provided by USA Today. License from USA Today is required.
+        /// </summary>
+        [Description("The last updated date of the player's headshot as provided by USA Today. License from USA Today is required.")]
+        [DataMember(Name = "UsaTodayHeadshotUpdated", Order = 42)]
+        public DateTime? UsaTodayHeadshotUpdated { get; set; }
+
+        /// <summary>
+        /// The last updated date of the player's transparent background headshot as provided by USA Today. License from USA Today is required.
+        /// </summary>
+        [Description("The last updated date of the player's transparent background headshot as provided by USA Today. License from USA Today is required.")]
+        [DataMember(Name = "UsaTodayHeadshotNoBackgroundUpdated", Order = 43)]
+        public DateTime? UsaTodayHeadshotNoBackgroundUpdated { get; set; }
+
     }
 }
 

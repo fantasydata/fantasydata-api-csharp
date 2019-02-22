@@ -78,6 +78,20 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "UnderPayout", Order = 10)]
         public int UnderPayout { get; set; }
 
+        /// <summary>
+        /// A description of the result (Over, Under, or Push)
+        /// </summary>
+        [Description("A description of the result (Over, Under, or Push)")]
+        [DataMember(Name = "BetResult", Order = 11)]
+        public string BetResult { get; set; }
+
+        /// <summary>
+        /// The final total from the game of the stat in question 
+        /// </summary>
+        [Description("The final total from the game of the stat in question ")]
+        [DataMember(Name = "StatResult", Order = 12)]
+        public decimal? StatResult { get; set; }
+
     }
 }
 

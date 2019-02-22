@@ -205,30 +205,30 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? HomeTeamSeed { get; set; }
 
         /// <summary>
-        /// The unique ID of the away team's previous game
+        /// The unique ID of the away team's previous game (This gameid will be inaccurate/invalid in free trial as it is scrambled)
         /// </summary>
-        [Description("The unique ID of the away team's previous game")]
+        [Description("The unique ID of the away team's previous game (This gameid will be inaccurate/invalid in free trial as it is scrambled)")]
         [DataMember(Name = "AwayTeamPreviousGameID", Order = 29)]
         public int? AwayTeamPreviousGameID { get; set; }
 
         /// <summary>
-        /// The unique ID of the home team's previous game
+        /// The unique ID of the home team's previous game (This gameid will be inaccurate/invalid in free trial as it is scrambled)
         /// </summary>
-        [Description("The unique ID of the home team's previous game")]
+        [Description("The unique ID of the home team's previous game (This gameid will be inaccurate/invalid in free trial as it is scrambled)")]
         [DataMember(Name = "HomeTeamPreviousGameID", Order = 30)]
         public int? HomeTeamPreviousGameID { get; set; }
 
         /// <summary>
-        /// The unique global ID of the away team's previous game
+        /// The unique global ID of the away team's previous game (This gameid will be inaccurate/invalid in free trial as it is scrambled)
         /// </summary>
-        [Description("The unique global ID of the away team's previous game")]
+        [Description("The unique global ID of the away team's previous game (This gameid will be inaccurate/invalid in free trial as it is scrambled)")]
         [DataMember(Name = "AwayTeamPreviousGlobalGameID", Order = 31)]
         public int? AwayTeamPreviousGlobalGameID { get; set; }
 
         /// <summary>
-        /// The unique global ID of the away team's previous game
+        /// The unique global ID of the away team's previous game (This gameid will be inaccurate/invalid in free trial as it is scrambled)
         /// </summary>
-        [Description("The unique global ID of the away team's previous game")]
+        [Description("The unique global ID of the away team's previous game (This gameid will be inaccurate/invalid in free trial as it is scrambled)")]
         [DataMember(Name = "HomeTeamPreviousGlobalGameID", Order = 32)]
         public int? HomeTeamPreviousGlobalGameID { get; set; }
 
