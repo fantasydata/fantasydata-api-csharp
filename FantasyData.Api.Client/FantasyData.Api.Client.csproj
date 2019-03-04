@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Clients\BaseClient.cs" />
     <Compile Include="Clients\CBB\CBBv2.cs" />
+    <Compile Include="Clients\CBB\CBBv3Odds.cs" />
     <Compile Include="Clients\CBB\CBBv3Scores.cs" />
     <Compile Include="Clients\CBB\CBBv3Stats.cs" />
     <Compile Include="Clients\CFB\CFBv3Odds.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Clients\MLB\MLBv3Stats.cs" />
     <Compile Include="Clients\Nascar\NASCARv2.cs" />
     <Compile Include="Clients\NBA\NBAv2.cs" />
+    <Compile Include="Clients\NBA\NBAv3Odds.cs" />
     <Compile Include="Clients\NBA\NBAv3PlayByPlay.cs" />
     <Compile Include="Clients\NBA\NBAv3Projections.cs" />
     <Compile Include="Clients\NBA\NBAv3RotoBallerArticles.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="Clients\NFLv3\NFLv3Scores.cs" />
     <Compile Include="Clients\NFLv3\NFLv3Stats.cs" />
     <Compile Include="Clients\NHL\NHLv2.cs" />
+    <Compile Include="Clients\NHL\NHLv3Odds.cs" />
     <Compile Include="Clients\NHL\NHLv3PlayByPlay.cs" />
     <Compile Include="Clients\NHL\NHLv3Projections.cs" />
     <Compile Include="Clients\NHL\NHLv3Scores.cs" />

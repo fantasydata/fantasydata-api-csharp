@@ -640,6 +640,28 @@ namespace FantasyData.Api.Client
             return this.GetPlayersAsync(team).Result;
         }
 
+        /// <summary>
+        /// Get Player Details by Rookie Draft Year Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season. Examples: <code>2018</code>, <code>2019</code>, etc.</param>
+        public Task<List<Player>> GetRookiesAsync(string season)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/nfl/scores/{format}/Rookies/{season}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Details by Rookie Draft Year
+        /// </summary>
+        /// <param name="season">Year of the season. Examples: <code>2018</code>, <code>2019</code>, etc.</param>
+        public List<Player> GetRookies(string season)
+        {
+            return this.GetRookiesAsync(season).Result;
+        }
+
     }
 }
 
