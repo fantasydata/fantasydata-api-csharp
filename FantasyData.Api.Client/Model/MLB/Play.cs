@@ -156,9 +156,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? PitchNumberThisAtBat { get; set; }
 
         /// <summary>
-        /// The result of the play. Possible values include: Batter's Interference, Bunted into Double Play, Catcher's Interference, Double, Error, Fielder's Choice, Fly into Double Play, Fly Out, Foul Out, Fouled into Double Play, Ground into Double Play, Ground Out, Hit by Pitch, Home Run, Infield Fly Out, Intentional Walk, Line into Double Play, Lineout, Pop Out, Popped into Double Play, Sacrifice, Sacrifice Fly, Single, Strikeout Bunting, Strikeout Looking, Strikeout Swinging, Triple, Triple Play, Walk
+        /// The result of the play. Possible values include: Batter's Interference, Bunted into Double Play, Catcher's Interference, Double, Error, Fielder's Choice, Fly into Double Play, Fly Out, Foul Out, Fouled into Double Play, Ground into Double Play, Ground Out, Hit by Pitch, Home Run, Infield Fly Out, Intentional Walk, Line into Double Play, Lineout, Pop Out, Popped into Double Play, Sacrifice, Sacrifice Fly, Single, Strikeout Bunting, Strikeout Looking, Strikeout Swinging, Triple, Triple Play, Walk, Stolen Base, Caught Stealing, Passed Ball, Wild Pitch, Pick Off, Balk, Error, Fielders Indifference
         /// </summary>
-        [Description("The result of the play. Possible values include: Batter's Interference, Bunted into Double Play, Catcher's Interference, Double, Error, Fielder's Choice, Fly into Double Play, Fly Out, Foul Out, Fouled into Double Play, Ground into Double Play, Ground Out, Hit by Pitch, Home Run, Infield Fly Out, Intentional Walk, Line into Double Play, Lineout, Pop Out, Popped into Double Play, Sacrifice, Sacrifice Fly, Single, Strikeout Bunting, Strikeout Looking, Strikeout Swinging, Triple, Triple Play, Walk")]
+        [Description("The result of the play. Possible values include: Batter's Interference, Bunted into Double Play, Catcher's Interference, Double, Error, Fielder's Choice, Fly into Double Play, Fly Out, Foul Out, Fouled into Double Play, Ground into Double Play, Ground Out, Hit by Pitch, Home Run, Infield Fly Out, Intentional Walk, Line into Double Play, Lineout, Pop Out, Popped into Double Play, Sacrifice, Sacrifice Fly, Single, Strikeout Bunting, Strikeout Looking, Strikeout Swinging, Triple, Triple Play, Walk, Stolen Base, Caught Stealing, Passed Ball, Wild Pitch, Pick Off, Balk, Error, Fielders Indifference")]
         [DataMember(Name = "Result", Order = 22)]
         public string Result { get; set; }
 
@@ -245,6 +245,27 @@ namespace FantasyData.Api.Client.Model.MLB
         [Description("The details of the pitches associated with this Play")]
         [DataMember(Name = "Pitches", Order = 20034)]
         public Pitch[] Pitches { get; set; }
+
+        /// <summary>
+        /// The PlayerID of the first runner in the play.
+        /// </summary>
+        [Description("The PlayerID of the first runner in the play.")]
+        [DataMember(Name = "Runner1ID", Order = 35)]
+        public int? Runner1ID { get; set; }
+
+        /// <summary>
+        /// The PlayerID of the second runner in the play.
+        /// </summary>
+        [Description("The PlayerID of the second runner in the play.")]
+        [DataMember(Name = "Runner2ID", Order = 36)]
+        public int? Runner2ID { get; set; }
+
+        /// <summary>
+        /// The PlayerID of the third runner in the play.
+        /// </summary>
+        [Description("The PlayerID of the third runner in the play.")]
+        [DataMember(Name = "Runner3ID", Order = 37)]
+        public int? Runner3ID { get; set; }
 
     }
 }

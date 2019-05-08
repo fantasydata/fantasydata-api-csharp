@@ -120,6 +120,13 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "Group", Order = 16)]
         public string Group { get; set; }
 
+        /// <summary>
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// </summary>
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [DataMember(Name = "GlobalTeamID", Order = 17)]
+        public int? GlobalTeamID { get; set; }
+
     }
 }
 

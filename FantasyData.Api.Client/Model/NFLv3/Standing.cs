@@ -155,6 +155,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "ConferenceTies", Order = 21)]
         public int ConferenceTies { get; set; }
 
+        /// <summary>
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// </summary>
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [DataMember(Name = "GlobalTeamID", Order = 22)]
+        public int? GlobalTeamID { get; set; }
+
     }
 }
 

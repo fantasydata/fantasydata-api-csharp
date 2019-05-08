@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public string SportsDataID { get; set; }
 
         /// <summary>
-        /// Indicates the player's status of being on an Major League Active Roster. Possible values include: Active, 40 Man Active, Non-Roster Invitee, Minors, Inactive, 7 Day Disabled List, 10 Day Disabled List, 15 Day Disabled List, 60 Day Disabled List
+        /// Indicates the player's status of being on an Major League Active Roster. Possible values include: Active, 40 Man Active, Non-Roster Invitee, Minors, Inactive, 7 Day Injury List, 10 Day Injury List, 15 Day Injury List, 60 Day Injury List
         /// </summary>
-        [Description("Indicates the player's status of being on an Major League Active Roster. Possible values include: Active, 40 Man Active, Non-Roster Invitee, Minors, Inactive, 7 Day Disabled List, 10 Day Disabled List, 15 Day Disabled List, 60 Day Disabled List")]
+        [Description("Indicates the player's status of being on an Major League Active Roster. Possible values include: Active, 40 Man Active, Non-Roster Invitee, Minors, Inactive, 7 Day Injury List, 10 Day Injury List, 15 Day Injury List, 60 Day Injury List")]
         [DataMember(Name = "Status", Order = 3)]
         public string Status { get; set; }
 
@@ -254,16 +254,16 @@ namespace FantasyData.Api.Client.Model.MLB
         public string InjuryNotes { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID for cross reference use with Fan Duel.
+        /// The player's unique PlayerID for cross reference use with FanDuel.
         /// </summary>
-        [Description("The player's unique PlayerID for cross reference use with Fan Duel.")]
+        [Description("The player's unique PlayerID for cross reference use with FanDuel.")]
         [DataMember(Name = "FanDuelPlayerID", Order = 36)]
         public int? FanDuelPlayerID { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID for cross reference use with Draft Kings.
+        /// The player's unique PlayerID for cross reference use with DraftKings.
         /// </summary>
-        [Description("The player's unique PlayerID for cross reference use with Draft Kings.")]
+        [Description("The player's unique PlayerID for cross reference use with DraftKings.")]
         [DataMember(Name = "DraftKingsPlayerID", Order = 37)]
         public int? DraftKingsPlayerID { get; set; }
 
@@ -289,9 +289,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public string FanDuelName { get; set; }
 
         /// <summary>
-        /// The player's name on Fan Draft Kings.
+        /// The player's name on Fan DraftKings.
         /// </summary>
-        [Description("The player's name on Fan Draft Kings.")]
+        [Description("The player's name on Fan DraftKings.")]
         [DataMember(Name = "DraftKingsName", Order = 41)]
         public string DraftKingsName { get; set; }
 

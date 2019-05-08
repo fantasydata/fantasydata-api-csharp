@@ -72,9 +72,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public string Author { get; set; }
 
         /// <summary>
-        /// Comma delimited meta tags describing the categories of this content
+        /// Comma delimited meta tags describing the categories of this content. Possible tags include: Top Headlines, Breaking News, Injury, Sit/Start, Waiver Wire, Risers, Fallers, Lineups, Transactions, Free Agents, Prospects/Rookies, Game Recap, Matchup Outlook
         /// </summary>
-        [Description("Comma delimited meta tags describing the categories of this content")]
+        [Description("Comma delimited meta tags describing the categories of this content. Possible tags include: Top Headlines, Breaking News, Injury, Sit/Start, Waiver Wire, Risers, Fallers, Lineups, Transactions, Free Agents, Prospects/Rookies, Game Recap, Matchup Outlook")]
         [DataMember(Name = "Categories", Order = 10)]
         public string Categories { get; set; }
 

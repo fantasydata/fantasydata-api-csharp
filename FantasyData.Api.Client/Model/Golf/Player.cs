@@ -155,6 +155,27 @@ namespace FantasyData.Api.Client.Model.Golf
         [DataMember(Name = "FantasyDraftPlayerID", Order = 21)]
         public int? FantasyDraftPlayerID { get; set; }
 
+        /// <summary>
+        /// The unique ID of this golfer on DraftKings
+        /// </summary>
+        [Description("The unique ID of this golfer on DraftKings")]
+        [DataMember(Name = "DraftKingsPlayerID", Order = 22)]
+        public int? DraftKingsPlayerID { get; set; }
+
+        /// <summary>
+        /// The unique ID of this golfer on FanDuel
+        /// </summary>
+        [Description("The unique ID of this golfer on FanDuel")]
+        [DataMember(Name = "FanDuelPlayerID", Order = 23)]
+        public int? FanDuelPlayerID { get; set; }
+
+        /// <summary>
+        /// The unique ID of this golfer on Yahoo
+        /// </summary>
+        [Description("The unique ID of this golfer on Yahoo")]
+        [DataMember(Name = "YahooPlayerID", Order = 24)]
+        public int? YahooPlayerID { get; set; }
+
     }
 }
 

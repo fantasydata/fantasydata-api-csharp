@@ -127,6 +127,13 @@ namespace FantasyData.Api.Client.Model.NHL
         [DataMember(Name = "ShutoutWins", Order = 17)]
         public int? ShutoutWins { get; set; }
 
+        /// <summary>
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// </summary>
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [DataMember(Name = "GlobalTeamID", Order = 18)]
+        public int? GlobalTeamID { get; set; }
+
     }
 }
 

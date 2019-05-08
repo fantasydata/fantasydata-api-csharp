@@ -436,16 +436,16 @@ namespace FantasyData.Api.Client.Model.MLB
         public decimal? GrandSlams { get; set; }
 
         /// <summary>
-        /// Total Fan Duel fantasy points
+        /// Total FanDuel fantasy points
         /// </summary>
-        [Description("Total Fan Duel fantasy points")]
+        [Description("Total FanDuel fantasy points")]
         [DataMember(Name = "FantasyPointsFanDuel", Order = 62)]
         public decimal? FantasyPointsFanDuel { get; set; }
 
         /// <summary>
-        /// Total Draft Kings fantasy points
+        /// Total DraftKings fantasy points
         /// </summary>
-        [Description("Total Draft Kings fantasy points")]
+        [Description("Total DraftKings fantasy points")]
         [DataMember(Name = "FantasyPointsDraftKings", Order = 63)]
         public decimal? FantasyPointsDraftKings { get; set; }
 

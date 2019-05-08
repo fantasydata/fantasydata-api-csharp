@@ -163,16 +163,16 @@ namespace FantasyData.Api.Client.Model.NHL
         public decimal? FantasyPoints { get; set; }
 
         /// <summary>
-        /// Total Fan Duel daily fantasy points scored
+        /// Total FanDuel daily fantasy points scored
         /// </summary>
-        [Description("Total Fan Duel daily fantasy points scored")]
+        [Description("Total FanDuel daily fantasy points scored")]
         [DataMember(Name = "FantasyPointsFanDuel", Order = 23)]
         public decimal? FantasyPointsFanDuel { get; set; }
 
         /// <summary>
-        /// Total Draft Kings daily fantasy points scored
+        /// Total DraftKings daily fantasy points scored
         /// </summary>
-        [Description("Total Draft Kings daily fantasy points scored")]
+        [Description("Total DraftKings daily fantasy points scored")]
         [DataMember(Name = "FantasyPointsDraftKings", Order = 24)]
         public decimal? FantasyPointsDraftKings { get; set; }
 

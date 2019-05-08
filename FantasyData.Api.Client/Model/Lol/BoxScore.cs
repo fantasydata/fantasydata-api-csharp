@@ -22,6 +22,20 @@ namespace FantasyData.Api.Client.Model.Lol
         [DataMember(Name = "Matches", Order = 20002)]
         public Match[] Matches { get; set; }
 
+        /// <summary>
+        /// The stats for players across all matches
+        /// </summary>
+        [Description("The stats for players across all matches")]
+        [DataMember(Name = "PlayerGames", Order = 20003)]
+        public PlayerGame[] PlayerGames { get; set; }
+
+        /// <summary>
+        /// The stats for teams across all matches
+        /// </summary>
+        [Description("The stats for teams across all matches")]
+        [DataMember(Name = "TeamGames", Order = 20004)]
+        public TeamGame[] TeamGames { get; set; }
+
     }
 }
 

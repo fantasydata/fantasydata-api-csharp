@@ -55,7 +55,13 @@
     <Compile Include="Clients\CFB\CFBv3Projections.cs" />
     <Compile Include="Clients\CFB\CFBv3Scores.cs" />
     <Compile Include="Clients\CFB\CFBv3Stats.cs" />
+    <Compile Include="Clients\Csgo\CSGOv3Projections.cs" />
+    <Compile Include="Clients\Csgo\CSGOv3Scores.cs" />
+    <Compile Include="Clients\Csgo\CSGOv3Stats.cs" />
     <Compile Include="Clients\Golf\Golfv2.cs" />
+    <Compile Include="Clients\Lol\LoLv3Projections.cs" />
+    <Compile Include="Clients\Lol\LoLv3Scores.cs" />
+    <Compile Include="Clients\Lol\LoLv3Stats.cs" />
     <Compile Include="Clients\MLB\MLBv2.cs" />
     <Compile Include="Clients\MLB\MLBv3Odds.cs" />
     <Compile Include="Clients\MLB\MLBv3PlayByPlay.cs" />

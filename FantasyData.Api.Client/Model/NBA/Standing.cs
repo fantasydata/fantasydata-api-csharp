@@ -190,6 +190,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "StreakDescription", Order = 26)]
         public string StreakDescription { get; set; }
 
+        /// <summary>
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// </summary>
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [DataMember(Name = "GlobalTeamID", Order = 27)]
+        public int? GlobalTeamID { get; set; }
+
     }
 }
 

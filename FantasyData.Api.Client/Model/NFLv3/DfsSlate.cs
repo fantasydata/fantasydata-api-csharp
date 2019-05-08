@@ -92,6 +92,20 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "DfsSlatePlayers", Order = 20012)]
         public DfsSlatePlayer[] DfsSlatePlayers { get; set; }
 
+        /// <summary>
+        /// The positions that need to be filled for this particular slate
+        /// </summary>
+        [Description("The positions that need to be filled for this particular slate")]
+        [DataMember(Name = "SlateRosterSlots", Order = 10013)]
+        public string[] SlateRosterSlots { get; set; }
+
+        /// <summary>
+        /// The salary cap for the current slate (is null for slates with no salary cap such a Tiers gametypes)
+        /// </summary>
+        [Description("The salary cap for the current slate (is null for slates with no salary cap such a Tiers gametypes)")]
+        [DataMember(Name = "SalaryCap", Order = 14)]
+        public int? SalaryCap { get; set; }
+
     }
 }
 

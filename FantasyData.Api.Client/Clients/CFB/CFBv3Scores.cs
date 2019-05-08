@@ -240,6 +240,25 @@ namespace FantasyData.Api.Client
             return this.GetTeamsAsync().Result;
         }
 
+        /// <summary>
+        /// Get Current SeasonType Asynchronous
+        /// </summary>
+        public Task<string> GetCurrentSeasonTypeAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<string>(() =>
+                base.Get<string>("/v3/cfb/scores/{format}/CurrentSeasonType", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Current SeasonType
+        /// </summary>
+        public string GetCurrentSeasonType()
+        {
+            return this.GetCurrentSeasonTypeAsync().Result;
+        }
+
     }
 }
 

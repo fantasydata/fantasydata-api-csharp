@@ -211,20 +211,6 @@ namespace FantasyData.Api.Client.Model.Lol
         [DataMember(Name = "UpdatedUtc", Order = 29)]
         public DateTime? UpdatedUtc { get; set; }
 
-        /// <summary>
-        /// The list of player game stats
-        /// </summary>
-        [Description("The list of player game stats")]
-        [DataMember(Name = "PlayerGames", Order = 20030)]
-        public PlayerGame[] PlayerGames { get; set; }
-
-        /// <summary>
-        /// The list of team game stats
-        /// </summary>
-        [Description("The list of team game stats")]
-        [DataMember(Name = "TeamGames", Order = 20031)]
-        public TeamGame[] TeamGames { get; set; }
-
     }
 }
 
