@@ -9,7 +9,7 @@ namespace FantasyData.Api.Test
         static void Main(string[] args)
         {
             // Connect to client and get data
-            var client = new  Lolv3ScoresClient("e525e7fefe904d0cb42412d8e31ef4cc");
+            var client = new  Lolv3ScoresClient("<api_key>");
             var competitions = client.GetCompetitions();
 
             // Write data to console
