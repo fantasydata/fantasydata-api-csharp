@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization.Json;
+using Newtonsoft.Json;
 using System.Text;
-using System.Web.Script.Serialization;
 
 namespace FantasyData.Api.Client
 {
@@ -69,8 +68,7 @@ namespace FantasyData.Api.Client
 
                 // Download json, deserialize it, and return it
                 var json = client.DownloadString(url);
-                var serializer = new JavaScriptSerializer() { MaxJsonLength = int.MaxValue };
-                return serializer.Deserialize<T>(json);
+                return JsonConvert.DeserializeObject<T>(json);
                 
             }
 
