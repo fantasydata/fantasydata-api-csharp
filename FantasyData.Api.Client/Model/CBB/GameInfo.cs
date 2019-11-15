@@ -134,6 +134,27 @@ namespace FantasyData.Api.Client.Model.CBB
         [DataMember(Name = "TotalScore", Order = 18)]
         public int? TotalScore { get; set; }
 
+        /// <summary>
+        /// Rotation number of home team for this game
+        /// </summary>
+        [Description("Rotation number of home team for this game")]
+        [DataMember(Name = "HomeRotationNumber", Order = 19)]
+        public int? HomeRotationNumber { get; set; }
+
+        /// <summary>
+        /// Rotation number of away team for this game
+        /// </summary>
+        [Description("Rotation number of away team for this game")]
+        [DataMember(Name = "AwayRotationNumber", Order = 20)]
+        public int? AwayRotationNumber { get; set; }
+
+        /// <summary>
+        /// List of Alternate Market Pregame GameOdds from different sportsbooks
+        /// </summary>
+        [Description("List of Alternate Market Pregame GameOdds from different sportsbooks")]
+        [DataMember(Name = "AlternateMarketPregameOdds", Order = 20021)]
+        public GameOdd[] AlternateMarketPregameOdds { get; set; }
+
     }
 }
 

@@ -93,16 +93,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Status { get; set; }
 
         /// <summary>
-        /// Whether the player participated in practice (None, Limited, Full)
+        /// deprecated
         /// </summary>
-        [Description("Whether the player participated in practice (None, Limited, Full)")]
+        [Description("deprecated")]
         [DataMember(Name = "Practice", Order = 13)]
         public string Practice { get; set; }
 
         /// <summary>
-        /// Full description of whether the player participated in practice)
+        /// deprecated
         /// </summary>
-        [Description("Full description of whether the player participated in practice)")]
+        [Description("deprecated")]
         [DataMember(Name = "PracticeDescription", Order = 14)]
         public string PracticeDescription { get; set; }
 

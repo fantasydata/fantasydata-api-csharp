@@ -436,16 +436,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? FantasyPositionDepthOrder { get; set; }
 
         /// <summary>
-        /// Whether the player participated in practice (None, Limited, Full)
+        /// deprecated
         /// </summary>
-        [Description("Whether the player participated in practice (None, Limited, Full)")]
+        [Description("deprecated")]
         [DataMember(Name = "InjuryPractice", Order = 62)]
         public string InjuryPractice { get; set; }
 
         /// <summary>
-        /// Full description of whether the player participated in practice)
+        /// deprecated
         /// </summary>
-        [Description("Full description of whether the player participated in practice)")]
+        [Description("deprecated")]
         [DataMember(Name = "InjuryPracticeDescription", Order = 63)]
         public string InjuryPracticeDescription { get; set; }
 

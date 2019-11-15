@@ -526,7 +526,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Current Season Type Asynchronous
+        /// Get Current SeasonType Asynchronous
         /// </summary>
         public Task<string> GetCurrentSeasonTypeAsync()
         {
@@ -537,11 +537,30 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Current Season Type
+        /// Get Current SeasonType
         /// </summary>
         public string GetCurrentSeasonType()
         {
             return this.GetCurrentSeasonTypeAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Current Season Details Asynchronous
+        /// </summary>
+        public Task<Season> GetCurrentSeasonDetailsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<Season>(() =>
+                base.Get<Season>("/v3/cfb/stats/{format}/CurrentSeasonDetails", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Current Season Details
+        /// </summary>
+        public Season GetCurrentSeasonDetails()
+        {
+            return this.GetCurrentSeasonDetailsAsync().Result;
         }
 
     }

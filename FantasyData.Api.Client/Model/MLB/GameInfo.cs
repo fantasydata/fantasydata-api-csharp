@@ -134,6 +134,20 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "TotalScore", Order = 18)]
         public int? TotalScore { get; set; }
 
+        /// <summary>
+        /// Home team rotation number for this game
+        /// </summary>
+        [Description("Home team rotation number for this game")]
+        [DataMember(Name = "HomeRotationNumber", Order = 19)]
+        public int? HomeRotationNumber { get; set; }
+
+        /// <summary>
+        /// Away team rotation number for this game
+        /// </summary>
+        [Description("Away team rotation number for this game")]
+        [DataMember(Name = "AwayRotationNumber", Order = 20)]
+        public int? AwayRotationNumber { get; set; }
+
     }
 }
 

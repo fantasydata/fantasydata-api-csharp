@@ -344,6 +344,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "UsaTodayHeadshotNoBackgroundUpdated", Order = 48)]
         public DateTime? UsaTodayHeadshotNoBackgroundUpdated { get; set; }
 
+        /// <summary>
+        /// The player's personid on nba dot com
+        /// </summary>
+        [Description("The player's personid on nba dot com")]
+        [DataMember(Name = "NbaDotComPlayerID", Order = 49)]
+        public int? NbaDotComPlayerID { get; set; }
+
     }
 }
 

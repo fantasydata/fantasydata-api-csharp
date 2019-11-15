@@ -50,6 +50,13 @@ namespace FantasyData.Api.Client.Model.CBB
         [DataMember(Name = "PostSeasonStartDate", Order = 6)]
         public DateTime? PostSeasonStartDate { get; set; }
 
+        /// <summary>
+        /// The string to pass into subsequent API calls in the season parameter
+        /// </summary>
+        [Description("The string to pass into subsequent API calls in the season parameter")]
+        [DataMember(Name = "ApiSeason", Order = 7)]
+        public string ApiSeason { get; set; }
+
     }
 }
 

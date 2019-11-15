@@ -106,6 +106,13 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "UnderPayout", Order = 14)]
         public int? UnderPayout { get; set; }
 
+        /// <summary>
+        /// Unique ID of the sportsbook
+        /// </summary>
+        [Description("Unique ID of the sportsbook")]
+        [DataMember(Name = "SportsbookId", Order = 15)]
+        public int? SportsbookId { get; set; }
+
     }
 }
 

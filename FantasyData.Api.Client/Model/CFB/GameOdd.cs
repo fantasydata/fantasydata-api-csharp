@@ -113,6 +113,20 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "UnderPayout", Order = 15)]
         public int? UnderPayout { get; set; }
 
+        /// <summary>
+        /// Unique ID of the sportsbook
+        /// </summary>
+        [Description("Unique ID of the sportsbook")]
+        [DataMember(Name = "SportsbookId", Order = 16)]
+        public int? SportsbookId { get; set; }
+
+        /// <summary>
+        /// The odd type of this odd
+        /// </summary>
+        [Description("The odd type of this odd")]
+        [DataMember(Name = "OddType", Order = 17)]
+        public string OddType { get; set; }
+
     }
 }
 

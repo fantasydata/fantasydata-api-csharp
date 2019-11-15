@@ -232,6 +232,20 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "GameEndDateTime", Order = 32)]
         public DateTime? GameEndDateTime { get; set; }
 
+        /// <summary>
+        /// The Rotation number of the home team for this game
+        /// </summary>
+        [Description("The Rotation number of the home team for this game")]
+        [DataMember(Name = "HomeRotationNumber", Order = 33)]
+        public int? HomeRotationNumber { get; set; }
+
+        /// <summary>
+        /// The Rotation number of the away team for this game
+        /// </summary>
+        [Description("The Rotation number of the away team for this game")]
+        [DataMember(Name = "AwayRotationNumber", Order = 34)]
+        public int? AwayRotationNumber { get; set; }
+
     }
 }
 

@@ -134,6 +134,27 @@ namespace FantasyData.Api.Client.Model.NHL
         [DataMember(Name = "TotalScore", Order = 18)]
         public int? TotalScore { get; set; }
 
+        /// <summary>
+        /// The rotation number of the home team for this game
+        /// </summary>
+        [Description("The rotation number of the home team for this game")]
+        [DataMember(Name = "HomeRotationNumber", Order = 19)]
+        public int? HomeRotationNumber { get; set; }
+
+        /// <summary>
+        /// The rotation number of the away team for this game
+        /// </summary>
+        [Description("The rotation number of the away team for this game")]
+        [DataMember(Name = "AwayRotationNumber", Order = 20)]
+        public int? AwayRotationNumber { get; set; }
+
+        /// <summary>
+        /// List of Alternate Market Pregame GameOdds from different sportsbooks (ex 1st-pd, 2nd-pd, etc)
+        /// </summary>
+        [Description("List of Alternate Market Pregame GameOdds from different sportsbooks (ex 1st-pd, 2nd-pd, etc)")]
+        [DataMember(Name = "AlternateMarketPregameOdds", Order = 20021)]
+        public GameOdd[] AlternateMarketPregameOdds { get; set; }
+
     }
 }
 

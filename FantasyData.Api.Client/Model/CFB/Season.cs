@@ -37,18 +37,18 @@ namespace FantasyData.Api.Client.Model.CFB
         public string Description { get; set; }
 
         /// <summary>
-        /// The start date of the regular season
+        /// The string to pass into subsequent API calls in the season parameter
         /// </summary>
-        [Description("The start date of the regular season")]
-        [DataMember(Name = "RegularSeasonStartDate", Order = 5)]
-        public DateTime? RegularSeasonStartDate { get; set; }
+        [Description("The string to pass into subsequent API calls in the season parameter")]
+        [DataMember(Name = "ApiSeason", Order = 5)]
+        public string ApiSeason { get; set; }
 
         /// <summary>
-        /// The start date of the postseason
+        /// The current week which can be passed into subsequent API calls in the week parameter
         /// </summary>
-        [Description("The start date of the postseason")]
-        [DataMember(Name = "PostSeasonStartDate", Order = 6)]
-        public DateTime? PostSeasonStartDate { get; set; }
+        [Description("The current week which can be passed into subsequent API calls in the week parameter")]
+        [DataMember(Name = "ApiWeek", Order = 6)]
+        public int? ApiWeek { get; set; }
 
     }
 }

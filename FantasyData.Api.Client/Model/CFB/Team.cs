@@ -134,6 +134,27 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "ShortDisplayName", Order = 18)]
         public string ShortDisplayName { get; set; }
 
+        /// <summary>
+        /// The week that the ApRank/CoachesRank was last updated
+        /// </summary>
+        [Description("The week that the ApRank/CoachesRank was last updated")]
+        [DataMember(Name = "RankWeek", Order = 19)]
+        public int? RankWeek { get; set; }
+
+        /// <summary>
+        /// The season that the ApRank/CoachesRank was last updated
+        /// </summary>
+        [Description("The season that the ApRank/CoachesRank was last updated")]
+        [DataMember(Name = "RankSeason", Order = 20)]
+        public int? RankSeason { get; set; }
+
+        /// <summary>
+        /// The season type that the ApRank/CoachesRank was last updated
+        /// </summary>
+        [Description("The season type that the ApRank/CoachesRank was last updated")]
+        [DataMember(Name = "RankSeasonType", Order = 21)]
+        public int? RankSeasonType { get; set; }
+
     }
 }
 

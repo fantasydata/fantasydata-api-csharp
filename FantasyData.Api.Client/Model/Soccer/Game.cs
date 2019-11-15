@@ -351,6 +351,13 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "ClockDisplay", Order = 49)]
         public string ClockDisplay { get; set; }
 
+        /// <summary>
+        /// Indicates whether the game is over and the final score and stats have been verified and closed out
+        /// </summary>
+        [Description("Indicates whether the game is over and the final score and stats have been verified and closed out")]
+        [DataMember(Name = "IsClosed", Order = 50)]
+        public bool? IsClosed { get; set; }
+
     }
 }
 

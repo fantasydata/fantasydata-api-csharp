@@ -274,6 +274,20 @@ namespace FantasyData.Api.Client.Model.CBB
         [DataMember(Name = "Stadium", Order = 10038)]
         public Stadium Stadium { get; set; }
 
+        /// <summary>
+        /// Rotation number of home team for this game
+        /// </summary>
+        [Description("Rotation number of home team for this game")]
+        [DataMember(Name = "HomeRotationNumber", Order = 39)]
+        public int? HomeRotationNumber { get; set; }
+
+        /// <summary>
+        /// Rotation number of away team for this game
+        /// </summary>
+        [Description("Rotation number of away team for this game")]
+        [DataMember(Name = "AwayRotationNumber", Order = 40)]
+        public int? AwayRotationNumber { get; set; }
+
     }
 }
 

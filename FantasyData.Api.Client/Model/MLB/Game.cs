@@ -498,6 +498,20 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "GameEndDateTime", Order = 70)]
         public DateTime? GameEndDateTime { get; set; }
 
+        /// <summary>
+        /// Rotation number of home team for this game
+        /// </summary>
+        [Description("Rotation number of home team for this game")]
+        [DataMember(Name = "HomeRotationNumber", Order = 71)]
+        public int? HomeRotationNumber { get; set; }
+
+        /// <summary>
+        /// Rotation number of away team for this game
+        /// </summary>
+        [Description("Rotation number of away team for this game")]
+        [DataMember(Name = "AwayRotationNumber", Order = 72)]
+        public int? AwayRotationNumber { get; set; }
+
     }
 }
 

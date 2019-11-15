@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.Lol
         public string CommonName { get; set; }
 
         /// <summary>
-        /// The player's short name.
+        /// The player's match name.
         /// </summary>
-        [Description("The player's short name.")]
+        [Description("The player's match name.")]
         [DataMember(Name = "MatchName", Order = 5)]
         public string MatchName { get; set; }
 

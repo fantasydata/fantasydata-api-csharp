@@ -1077,13 +1077,13 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
-        public Task<PlayerSeason> GetPlayerSeasonStatsByPlayerIDAsync(string season, int playerid)
+        public Task<List<PlayerSeason>> GetPlayerSeasonStatsByPlayerIDAsync(string season, int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
             parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
-            return Task.Run<PlayerSeason>(() =>
-                base.Get<PlayerSeason>("/v3/nfl/stats/{format}/PlayerSeasonStatsByPlayerID/{season}/{playerid}", parameters)
+            return Task.Run<List<PlayerSeason>>(() =>
+                base.Get<List<PlayerSeason>>("/v3/nfl/stats/{format}/PlayerSeasonStatsByPlayerID/{season}/{playerid}", parameters)
             );
         }
 
@@ -1092,7 +1092,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
-        public PlayerSeason GetPlayerSeasonStatsByPlayerID(string season, int playerid)
+        public List<PlayerSeason> GetPlayerSeasonStatsByPlayerID(string season, int playerid)
         {
             return this.GetPlayerSeasonStatsByPlayerIDAsync(season, playerid).Result;
         }

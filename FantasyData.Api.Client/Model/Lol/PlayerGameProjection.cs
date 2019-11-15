@@ -72,312 +72,312 @@ namespace FantasyData.Api.Client.Model.Lol
         public string Name { get; set; }
 
         /// <summary>
+        /// The player's match name.
+        /// </summary>
+        [Description("The player's match name.")]
+        [DataMember(Name = "MatchName", Order = 10)]
+        public string MatchName { get; set; }
+
+        /// <summary>
         /// The total number of Kills by the player
         /// </summary>
         [Description("The total number of Kills by the player")]
-        [DataMember(Name = "Kills", Order = 10)]
+        [DataMember(Name = "Kills", Order = 11)]
         public decimal? Kills { get; set; }
 
         /// <summary>
         /// The total number of Assists by the player
         /// </summary>
         [Description("The total number of Assists by the player")]
-        [DataMember(Name = "Assists", Order = 11)]
+        [DataMember(Name = "Assists", Order = 12)]
         public decimal? Assists { get; set; }
 
         /// <summary>
         /// The total number of Deaths by the player
         /// </summary>
         [Description("The total number of Deaths by the player")]
-        [DataMember(Name = "Deaths", Order = 12)]
+        [DataMember(Name = "Deaths", Order = 13)]
         public decimal? Deaths { get; set; }
 
         /// <summary>
         /// The longest killing spree achieved by the player
         /// </summary>
         [Description("The longest killing spree achieved by the player")]
-        [DataMember(Name = "LargestKillingSpree", Order = 13)]
+        [DataMember(Name = "LargestKillingSpree", Order = 14)]
         public decimal? LargestKillingSpree { get; set; }
 
         /// <summary>
         /// The largest multikill achieved by the player
         /// </summary>
         [Description("The largest multikill achieved by the player")]
-        [DataMember(Name = "LargestMultiKill", Order = 14)]
+        [DataMember(Name = "LargestMultiKill", Order = 15)]
         public decimal? LargestMultiKill { get; set; }
 
         /// <summary>
         /// The current killing spree the player is on by the player
         /// </summary>
         [Description("The current killing spree the player is on by the player")]
-        [DataMember(Name = "KillingSpree", Order = 15)]
+        [DataMember(Name = "KillingSpree", Order = 16)]
         public decimal? KillingSpree { get; set; }
 
         /// <summary>
         /// The longest time spent alive by the player
         /// </summary>
         [Description("The longest time spent alive by the player")]
-        [DataMember(Name = "LongestTimeSpentLiving", Order = 16)]
+        [DataMember(Name = "LongestTimeSpentLiving", Order = 17)]
         public decimal? LongestTimeSpentLiving { get; set; }
 
         /// <summary>
         /// The total number of Double Kills by the player
         /// </summary>
         [Description("The total number of Double Kills by the player")]
-        [DataMember(Name = "DoubleKills", Order = 17)]
+        [DataMember(Name = "DoubleKills", Order = 18)]
         public decimal? DoubleKills { get; set; }
 
         /// <summary>
         /// The total number of Triple Kills by the player
         /// </summary>
         [Description("The total number of Triple Kills by the player")]
-        [DataMember(Name = "TripleKills", Order = 18)]
+        [DataMember(Name = "TripleKills", Order = 19)]
         public decimal? TripleKills { get; set; }
 
         /// <summary>
         /// The total number of Quadra Kills by the player
         /// </summary>
         [Description("The total number of Quadra Kills by the player")]
-        [DataMember(Name = "QuadraKills", Order = 19)]
+        [DataMember(Name = "QuadraKills", Order = 20)]
         public decimal? QuadraKills { get; set; }
 
         /// <summary>
         /// The total number of Penta Kills by the player
         /// </summary>
         [Description("The total number of Penta Kills by the player")]
-        [DataMember(Name = "PentaKills", Order = 20)]
+        [DataMember(Name = "PentaKills", Order = 21)]
         public decimal? PentaKills { get; set; }
 
         /// <summary>
         /// The total number of Unreal Kills by the player
         /// </summary>
         [Description("The total number of Unreal Kills by the player")]
-        [DataMember(Name = "UnrealKills", Order = 21)]
+        [DataMember(Name = "UnrealKills", Order = 22)]
         public decimal? UnrealKills { get; set; }
 
         /// <summary>
         /// The total damage dealt  by the player
         /// </summary>
         [Description("The total damage dealt  by the player")]
-        [DataMember(Name = "TotalDamageDealt", Order = 22)]
+        [DataMember(Name = "TotalDamageDealt", Order = 23)]
         public decimal? TotalDamageDealt { get; set; }
 
         /// <summary>
         /// The total magical damage dealt  by the player
         /// </summary>
         [Description("The total magical damage dealt  by the player")]
-        [DataMember(Name = "MagicDamageDealt", Order = 23)]
+        [DataMember(Name = "MagicDamageDealt", Order = 24)]
         public decimal? MagicDamageDealt { get; set; }
 
         /// <summary>
         /// The total physical damage dealt  by the player
         /// </summary>
         [Description("The total physical damage dealt  by the player")]
-        [DataMember(Name = "PhysicalDamageDealt", Order = 24)]
+        [DataMember(Name = "PhysicalDamageDealt", Order = 25)]
         public decimal? PhysicalDamageDealt { get; set; }
 
         /// <summary>
         /// The total true damage dealt  by the player
         /// </summary>
         [Description("The total true damage dealt  by the player")]
-        [DataMember(Name = "TrueDamageDealt", Order = 25)]
+        [DataMember(Name = "TrueDamageDealt", Order = 26)]
         public decimal? TrueDamageDealt { get; set; }
 
         /// <summary>
         /// The largest single critical strike damage by the player
         /// </summary>
         [Description("The largest single critical strike damage by the player")]
-        [DataMember(Name = "LargestCriticalStrike", Order = 26)]
+        [DataMember(Name = "LargestCriticalStrike", Order = 27)]
         public decimal? LargestCriticalStrike { get; set; }
 
         /// <summary>
         /// The total damage dealt to opposing champions by the player
         /// </summary>
         [Description("The total damage dealt to opposing champions by the player")]
-        [DataMember(Name = "TotalDamageDealtToChampions", Order = 27)]
+        [DataMember(Name = "TotalDamageDealtToChampions", Order = 28)]
         public decimal? TotalDamageDealtToChampions { get; set; }
 
         /// <summary>
         /// The total magical damage dealt to opposing champions by the player
         /// </summary>
         [Description("The total magical damage dealt to opposing champions by the player")]
-        [DataMember(Name = "MagicDamageDealtToChampions", Order = 28)]
+        [DataMember(Name = "MagicDamageDealtToChampions", Order = 29)]
         public decimal? MagicDamageDealtToChampions { get; set; }
 
         /// <summary>
         /// The total physical damage dealt to opposing champions by the player
         /// </summary>
         [Description("The total physical damage dealt to opposing champions by the player")]
-        [DataMember(Name = "PhysicalDamageDealtToChampions", Order = 29)]
+        [DataMember(Name = "PhysicalDamageDealtToChampions", Order = 30)]
         public decimal? PhysicalDamageDealtToChampions { get; set; }
 
         /// <summary>
         /// The total true damage dealt to opposing champions by the player
         /// </summary>
         [Description("The total true damage dealt to opposing champions by the player")]
-        [DataMember(Name = "TrueDamageDealtToChampions", Order = 30)]
+        [DataMember(Name = "TrueDamageDealtToChampions", Order = 31)]
         public decimal? TrueDamageDealtToChampions { get; set; }
 
         /// <summary>
         /// The total amount of heal by the player
         /// </summary>
         [Description("The total amount of heal by the player")]
-        [DataMember(Name = "TotalHeal", Order = 31)]
+        [DataMember(Name = "TotalHeal", Order = 32)]
         public decimal? TotalHeal { get; set; }
 
         /// <summary>
         /// The total number of units healed by the player
         /// </summary>
         [Description("The total number of units healed by the player")]
-        [DataMember(Name = "TotalUnitsHealed", Order = 32)]
+        [DataMember(Name = "TotalUnitsHealed", Order = 33)]
         public decimal? TotalUnitsHealed { get; set; }
 
         /// <summary>
         /// The total amount of damage taken by the player
         /// </summary>
         [Description("The total amount of damage taken by the player")]
-        [DataMember(Name = "TotalDamageTaken", Order = 33)]
+        [DataMember(Name = "TotalDamageTaken", Order = 34)]
         public decimal? TotalDamageTaken { get; set; }
 
         /// <summary>
         /// The total amount of magical damage taken by the player
         /// </summary>
         [Description("The total amount of magical damage taken by the player")]
-        [DataMember(Name = "MagicDamageTaken", Order = 34)]
+        [DataMember(Name = "MagicDamageTaken", Order = 35)]
         public decimal? MagicDamageTaken { get; set; }
 
         /// <summary>
         /// The total amount of physical damage taken by the player
         /// </summary>
         [Description("The total amount of physical damage taken by the player")]
-        [DataMember(Name = "PhysicalDamageTaken", Order = 35)]
+        [DataMember(Name = "PhysicalDamageTaken", Order = 36)]
         public decimal? PhysicalDamageTaken { get; set; }
 
         /// <summary>
         /// The total amount of true damage taken by the player
         /// </summary>
         [Description("The total amount of true damage taken by the player")]
-        [DataMember(Name = "TrueDamageTaken", Order = 36)]
+        [DataMember(Name = "TrueDamageTaken", Order = 37)]
         public decimal? TrueDamageTaken { get; set; }
 
         /// <summary>
         /// The total gold earned by the player
         /// </summary>
         [Description("The total gold earned by the player")]
-        [DataMember(Name = "GoldEarned", Order = 37)]
+        [DataMember(Name = "GoldEarned", Order = 38)]
         public decimal? GoldEarned { get; set; }
 
         /// <summary>
         /// The total gold spent by the player
         /// </summary>
         [Description("The total gold spent by the player")]
-        [DataMember(Name = "GoldSpent", Order = 38)]
+        [DataMember(Name = "GoldSpent", Order = 39)]
         public decimal? GoldSpent { get; set; }
 
         /// <summary>
         /// The total number of turrets killed by the player
         /// </summary>
         [Description("The total number of turrets killed by the player")]
-        [DataMember(Name = "TurretKills", Order = 39)]
+        [DataMember(Name = "TurretKills", Order = 40)]
         public decimal? TurretKills { get; set; }
 
         /// <summary>
         /// The total number of inhibitors killed by the player
         /// </summary>
         [Description("The total number of inhibitors killed by the player")]
-        [DataMember(Name = "InhibitorKills", Order = 40)]
+        [DataMember(Name = "InhibitorKills", Order = 41)]
         public decimal? InhibitorKills { get; set; }
 
         /// <summary>
         /// The total number of minions killed by the player
         /// </summary>
         [Description("The total number of minions killed by the player")]
-        [DataMember(Name = "TotalMinionsKilled", Order = 41)]
+        [DataMember(Name = "TotalMinionsKilled", Order = 42)]
         public decimal? TotalMinionsKilled { get; set; }
 
         /// <summary>
         /// The total number of neutral minions killed by the player
         /// </summary>
         [Description("The total number of neutral minions killed by the player")]
-        [DataMember(Name = "NeutralMinionsKIlled", Order = 42)]
+        [DataMember(Name = "NeutralMinionsKIlled", Order = 43)]
         public decimal? NeutralMinionsKIlled { get; set; }
 
         /// <summary>
         /// The total number of neutral minions killed by the player in their own jungle
         /// </summary>
         [Description("The total number of neutral minions killed by the player in their own jungle")]
-        [DataMember(Name = "NeutralMinionsKIlledTeamJungle", Order = 43)]
+        [DataMember(Name = "NeutralMinionsKIlledTeamJungle", Order = 44)]
         public decimal? NeutralMinionsKIlledTeamJungle { get; set; }
 
         /// <summary>
         /// The total number of neutral minions killed by the player in the enemy jungle
         /// </summary>
         [Description("The total number of neutral minions killed by the player in the enemy jungle")]
-        [DataMember(Name = "NeutralMinionsKilledEnemyJungle", Order = 44)]
+        [DataMember(Name = "NeutralMinionsKilledEnemyJungle", Order = 45)]
         public decimal? NeutralMinionsKilledEnemyJungle { get; set; }
 
         /// <summary>
         /// The total time enemies were crowd controlled by the player
         /// </summary>
         [Description("The total time enemies were crowd controlled by the player")]
-        [DataMember(Name = "TotalTimeCrowdControlDealt", Order = 45)]
+        [DataMember(Name = "TotalTimeCrowdControlDealt", Order = 46)]
         public decimal? TotalTimeCrowdControlDealt { get; set; }
 
         /// <summary>
         /// The total number of vision wards bought by the player
         /// </summary>
         [Description("The total number of vision wards bought by the player")]
-        [DataMember(Name = "VisionWardsBoughtInGame", Order = 46)]
+        [DataMember(Name = "VisionWardsBoughtInGame", Order = 47)]
         public decimal? VisionWardsBoughtInGame { get; set; }
 
         /// <summary>
         /// The total number of sight wards bought by the player
         /// </summary>
         [Description("The total number of sight wards bought by the player")]
-        [DataMember(Name = "SightWardsBoughtInGame", Order = 47)]
+        [DataMember(Name = "SightWardsBoughtInGame", Order = 48)]
         public decimal? SightWardsBoughtInGame { get; set; }
 
         /// <summary>
         /// The total number of wards placed by the player
         /// </summary>
         [Description("The total number of wards placed by the player")]
-        [DataMember(Name = "WardsPlaced", Order = 48)]
+        [DataMember(Name = "WardsPlaced", Order = 49)]
         public decimal? WardsPlaced { get; set; }
 
         /// <summary>
         /// The total number of wards killed by the player
         /// </summary>
         [Description("The total number of wards killed by the player")]
-        [DataMember(Name = "WardsKilled", Order = 49)]
+        [DataMember(Name = "WardsKilled", Order = 50)]
         public decimal? WardsKilled { get; set; }
 
         /// <summary>
         /// The player's combat player score
         /// </summary>
         [Description("The player's combat player score")]
-        [DataMember(Name = "CombatPlayerScore", Order = 50)]
+        [DataMember(Name = "CombatPlayerScore", Order = 51)]
         public decimal? CombatPlayerScore { get; set; }
 
         /// <summary>
         /// The player's objective player score
         /// </summary>
         [Description("The player's objective player score")]
-        [DataMember(Name = "ObjectivePlayerScore", Order = 51)]
+        [DataMember(Name = "ObjectivePlayerScore", Order = 52)]
         public decimal? ObjectivePlayerScore { get; set; }
 
         /// <summary>
         /// The player's total player score
         /// </summary>
         [Description("The player's total player score")]
-        [DataMember(Name = "TotalPlayerScore", Order = 52)]
+        [DataMember(Name = "TotalPlayerScore", Order = 53)]
         public decimal? TotalPlayerScore { get; set; }
-
-        /// <summary>
-        /// The total number of fantasy points scored by the player
-        /// </summary>
-        [Description("The total number of fantasy points scored by the player")]
-        [DataMember(Name = "FantasyPoints", Order = 53)]
-        public decimal? FantasyPoints { get; set; }
 
         /// <summary>
         /// Did player reach either 10 kills or 10 assists in a single match

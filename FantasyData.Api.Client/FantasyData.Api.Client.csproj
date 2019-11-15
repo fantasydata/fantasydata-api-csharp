@@ -168,6 +168,7 @@
     <Compile Include="Model\Golf\DfsSlate.cs" />
     <Compile Include="Model\Golf\DfsSlatePlayer.cs" />
     <Compile Include="Model\Golf\DfsSlateTournament.cs" />
+    <Compile Include="Model\Golf\Headshot.cs" />
     <Compile Include="Model\Golf\Injury.cs" />
     <Compile Include="Model\Golf\Leaderboard.cs" />
     <Compile Include="Model\Golf\News.cs" />
@@ -215,6 +216,7 @@
     <Compile Include="Model\MLB\GameInfo.cs" />
     <Compile Include="Model\MLB\GameOdd.cs" />
     <Compile Include="Model\MLB\GameStat.cs" />
+    <Compile Include="Model\MLB\Headshot.cs" />
     <Compile Include="Model\MLB\Inning.cs" />
     <Compile Include="Model\MLB\News.cs" />
     <Compile Include="Model\MLB\Pitch.cs" />
@@ -253,6 +255,7 @@
     <Compile Include="Model\NBA\GameInfo.cs" />
     <Compile Include="Model\NBA\GameOdd.cs" />
     <Compile Include="Model\NBA\GameStat.cs" />
+    <Compile Include="Model\NBA\Headshot.cs" />
     <Compile Include="Model\NBA\Injury.cs" />
     <Compile Include="Model\NBA\News.cs" />
     <Compile Include="Model\NBA\OpponentSeason.cs" />
@@ -273,6 +276,10 @@
     <Compile Include="Model\NBA\Team.cs" />
     <Compile Include="Model\NBA\TeamGame.cs" />
     <Compile Include="Model\NBA\TeamSeason.cs" />
+    <Compile Include="Model\NFLv3\AdvancedPlayer.cs" />
+    <Compile Include="Model\NFLv3\AdvancedPlayerGame.cs" />
+    <Compile Include="Model\NFLv3\AdvancedPlayerMedical.cs" />
+    <Compile Include="Model\NFLv3\AdvancedPlayerSeason.cs" />
     <Compile Include="Model\NFLv3\Article.cs" />
     <Compile Include="Model\NFLv3\BoxScore.cs" />
     <Compile Include="Model\NFLv3\BoxScorePlayer.cs" />
@@ -292,6 +299,8 @@
     <Compile Include="Model\NFLv3\Game.cs" />
     <Compile Include="Model\NFLv3\GameInfo.cs" />
     <Compile Include="Model\NFLv3\GameOdd.cs" />
+    <Compile Include="Model\NFLv3\GamePrediction.cs" />
+    <Compile Include="Model\NFLv3\Headshot.cs" />
     <Compile Include="Model\NFLv3\Injury.cs" />
     <Compile Include="Model\NFLv3\News.cs" />
     <Compile Include="Model\NFLv3\Play.cs" />
@@ -336,6 +345,7 @@
     <Compile Include="Model\NHL\GameInfo.cs" />
     <Compile Include="Model\NHL\GameOdd.cs" />
     <Compile Include="Model\NHL\GameStat.cs" />
+    <Compile Include="Model\NHL\Headshot.cs" />
     <Compile Include="Model\NHL\News.cs" />
     <Compile Include="Model\NHL\OpponentSeason.cs" />
     <Compile Include="Model\NHL\Penalty.cs" />

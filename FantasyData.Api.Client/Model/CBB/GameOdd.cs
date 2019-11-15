@@ -106,6 +106,13 @@ namespace FantasyData.Api.Client.Model.CBB
         [DataMember(Name = "UnderPayout", Order = 14)]
         public int? UnderPayout { get; set; }
 
+        /// <summary>
+        /// The odd type of this specific odd
+        /// </summary>
+        [Description("The odd type of this specific odd")]
+        [DataMember(Name = "OddType", Order = 15)]
+        public string OddType { get; set; }
+
     }
 }
 

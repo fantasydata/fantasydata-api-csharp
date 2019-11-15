@@ -259,6 +259,25 @@ namespace FantasyData.Api.Client
             return this.GetCurrentSeasonTypeAsync().Result;
         }
 
+        /// <summary>
+        /// Get Current Season Details Asynchronous
+        /// </summary>
+        public Task<Season> GetCurrentSeasonDetailsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<Season>(() =>
+                base.Get<Season>("/v3/cfb/scores/{format}/CurrentSeasonDetails", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Current Season Details
+        /// </summary>
+        public Season GetCurrentSeasonDetails()
+        {
+            return this.GetCurrentSeasonDetailsAsync().Result;
+        }
+
     }
 }
 

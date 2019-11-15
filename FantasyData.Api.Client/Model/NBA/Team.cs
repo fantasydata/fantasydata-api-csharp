@@ -120,6 +120,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "GlobalTeamID", Order = 16)]
         public int GlobalTeamID { get; set; }
 
+        /// <summary>
+        /// The team's ID on nba dot com
+        /// </summary>
+        [Description("The team's ID on nba dot com")]
+        [DataMember(Name = "NbaDotComTeamID", Order = 17)]
+        public int? NbaDotComTeamID { get; set; }
+
     }
 }
 

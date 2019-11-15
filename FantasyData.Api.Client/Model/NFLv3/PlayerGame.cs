@@ -1066,16 +1066,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? OpponentPositionRank { get; set; }
 
         /// <summary>
-        /// Whether the player participated in practice (None, Limited, Full)
+        /// deprecated
         /// </summary>
-        [Description("Whether the player participated in practice (None, Limited, Full)")]
+        [Description("deprecated")]
         [DataMember(Name = "InjuryPractice", Order = 152)]
         public string InjuryPractice { get; set; }
 
         /// <summary>
-        /// Full description of whether the player participated in practice)
+        /// deprecated
         /// </summary>
-        [Description("Full description of whether the player participated in practice)")]
+        [Description("deprecated")]
         [DataMember(Name = "InjuryPracticeDescription", Order = 153)]
         public string InjuryPracticeDescription { get; set; }
 
@@ -1169,6 +1169,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [Description("The details of the scoring plays this player recorded")]
         [DataMember(Name = "ScoringDetails", Order = 20166)]
         public ScoringDetail[] ScoringDetails { get; set; }
+
+        /// <summary>
+        /// Touchdowns scored by an offensive player recovering a fumble
+        /// </summary>
+        [Description("Touchdowns scored by an offensive player recovering a fumble")]
+        [DataMember(Name = "OffensiveFumbleRecoveryTouchdowns", Order = 167)]
+        public decimal? OffensiveFumbleRecoveryTouchdowns { get; set; }
 
     }
 }

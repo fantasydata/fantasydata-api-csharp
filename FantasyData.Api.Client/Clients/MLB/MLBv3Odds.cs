@@ -55,7 +55,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Live Game Odds by Date Asynchronous
+        /// Get In-Game Odds by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
         public Task<List<GameInfo>> GetLiveGameOddsByDateAsync(string date)
@@ -68,7 +68,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Live Game Odds by Date
+        /// Get In-Game Odds by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
         public List<GameInfo> GetLiveGameOddsByDate(string date)
@@ -77,7 +77,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Live Game Odds Line Movement Asynchronous
+        /// Get In-Game Odds Line Movement Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>51735</code> or <code>51745</code></param>
         public Task<List<GameInfo>> GetLiveGameOddsLineMovementAsync(int gameid)
@@ -90,7 +90,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Live Game Odds Line Movement
+        /// Get In-Game Odds Line Movement
         /// </summary>
         /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>51735</code> or <code>51745</code></param>
         public List<GameInfo> GetLiveGameOddsLineMovement(int gameid)

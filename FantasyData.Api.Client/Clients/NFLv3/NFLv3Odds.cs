@@ -11,7 +11,7 @@ namespace FantasyData.Api.Client
         public NFLv3OddsClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Live Game Odds by Week Asynchronous
+        /// Get In-Game Odds by Week Asynchronous
         /// </summary>
         /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
         /// <param name="week">The week of the scores (games). Examples: <code>1</code>, <code>2</code>, etc.</param>
@@ -26,7 +26,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Live Game Odds by Week
+        /// Get In-Game Odds by Week
         /// </summary>
         /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
         /// <param name="week">The week of the scores (games). Examples: <code>1</code>, <code>2</code>, etc.</param>
@@ -36,7 +36,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Live Game Odds Line Movement Asynchronous
+        /// Get In-Game Odds Line Movement Asynchronous
         /// </summary>
         /// <param name="scoreid">The ScoreID of an NFL score (game). ScoreIDs can be found in the Scores API. Valid entries are <code>16654</code> or <code>16667</code></param>
         public Task<List<GameInfo>> GetLiveGameOddsLineMovementAsync(int scoreid)
@@ -49,7 +49,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Live Game Odds Line Movement
+        /// Get In-Game Odds Line Movement
         /// </summary>
         /// <param name="scoreid">The ScoreID of an NFL score (game). ScoreIDs can be found in the Scores API. Valid entries are <code>16654</code> or <code>16667</code></param>
         public List<GameInfo> GetLiveGameOddsLineMovement(int scoreid)
@@ -183,6 +183,53 @@ namespace FantasyData.Api.Client
         public List<PlayerProp> GetPlayerPropsByWeek(string season, int week)
         {
             return this.GetPlayerPropsByWeekAsync(season, week).Result;
+        }
+
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds by Week Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
+        /// <param name="week">The week of the scores (games). Examples: <code>1</code>, <code>2</code>, etc.</param>
+        public Task<List<GameInfo>> GetAlternateMarketGameOddsByWeekAsync(string season, int week)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v3/nfl/odds/{format}/AlternateMarketGameOddsByWeek/{season}/{week}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds by Week
+        /// </summary>
+        /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
+        /// <param name="week">The week of the scores (games). Examples: <code>1</code>, <code>2</code>, etc.</param>
+        public List<GameInfo> GetAlternateMarketGameOddsByWeek(string season, int week)
+        {
+            return this.GetAlternateMarketGameOddsByWeekAsync(season, week).Result;
+        }
+
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds Line Movement  Asynchronous
+        /// </summary>
+        /// <param name="scoreid">The ScoreID of an NFL score (game). ScoreIDs can be found in the Scores API. Valid entries are <code>16654</code> or <code>16667</code></param>
+        public Task<List<GameInfo>> GetAlternateMarketGameOddsLineMovementAsync(int scoreid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("scoreid", scoreid.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v3/nfl/odds/{format}/AlternateMarketGameOddsLineMovement/{scoreid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds Line Movement 
+        /// </summary>
+        /// <param name="scoreid">The ScoreID of an NFL score (game). ScoreIDs can be found in the Scores API. Valid entries are <code>16654</code> or <code>16667</code></param>
+        public List<GameInfo> GetAlternateMarketGameOddsLineMovement(int scoreid)
+        {
+            return this.GetAlternateMarketGameOddsLineMovementAsync(scoreid).Result;
         }
 
     }

@@ -106,6 +106,20 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "UnderPayout", Order = 14)]
         public int? UnderPayout { get; set; }
 
+        /// <summary>
+        /// Unique ID of the Sportsbook
+        /// </summary>
+        [Description("Unique ID of the Sportsbook")]
+        [DataMember(Name = "SportsbookId", Order = 15)]
+        public int? SportsbookId { get; set; }
+
+        /// <summary>
+        /// The market type of the odd (ex: live, pregame, 1st-half, 2nd-quarter)
+        /// </summary>
+        [Description("The market type of the odd (ex: live, pregame, 1st-half, 2nd-quarter)")]
+        [DataMember(Name = "OddType", Order = 16)]
+        public string OddType { get; set; }
+
     }
 }
 
