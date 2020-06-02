@@ -345,16 +345,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Stadium { get; set; }
 
         /// <summary>
-        /// Temperature at game start (Farenheit)
+        /// Temperature at game start (Fahrenheit)
         /// </summary>
-        [Description("Temperature at game start (Farenheit)")]
+        [Description("Temperature at game start (Fahrenheit)")]
         [DataMember(Name = "Temperature", Order = 49)]
         public int? Temperature { get; set; }
 
         /// <summary>
-        /// Temperature at game start (Farenheit)
+        /// Temperature at game start (Fahrenheit)
         /// </summary>
-        [Description("Temperature at game start (Farenheit)")]
+        [Description("Temperature at game start (Fahrenheit)")]
         [DataMember(Name = "Humidity", Order = 50)]
         public int? Humidity { get; set; }
 

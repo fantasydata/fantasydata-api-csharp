@@ -3,16 +3,15 @@
   <metadata>
     <id>FantasyData.Api.Client</id>
     <title>FantasyData API Client Library</title>
-    <version>0.7.0</version>
+    <version>0.9</version>
     <authors>FantasyData LLC</authors>
     <owners>FantasyData LLC</owners>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/fantasydata/fantasydata-api-csharp</projectUrl>
-    <!--<icon>https://raw.githubusercontent.com/fantasydata/fantasydata-api-csharp/master/FantasyData.Api.Client/fantasy-logo-icon-500-gray-white.png</icon>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>FantasyData API C# Client Library</description>
-    <releaseNotes>Misc features added and bug fixes.</releaseNotes>
-    <copyright>Copyright FantasyData LLC 2019</copyright>
+    <releaseNotes>Added support for new endpoints across multiple sports.</releaseNotes>
+    <copyright>Copyright FantasyData LLC 2020</copyright>
     <tags>Fantasy Sports Live Data Feed API Client Library Wrapper SDK</tags>
   </metadata>
   <files>

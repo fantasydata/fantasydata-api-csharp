@@ -100,9 +100,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string PlayingSurface { get; set; }
 
         /// <summary>
-        /// Temperature at game start (Farenheit)
+        /// Temperature at game start (Fahrenheit)
         /// </summary>
-        [Description("Temperature at game start (Farenheit)")]
+        [Description("Temperature at game start (Fahrenheit)")]
         [DataMember(Name = "Temperature", Order = 14)]
         public int? Temperature { get; set; }
 

@@ -733,6 +733,50 @@ namespace FantasyData.Api.Client
             return this.GetHistoricalMembershipsByCompetitionAsync(competition).Result;
         }
 
+        /// <summary>
+        /// Get Dfs Slates By Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2020-02-18</code>.</param>
+        public Task<List<DfsSlate>> GetDfsSlatesByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<DfsSlate>>(() =>
+                base.Get<List<DfsSlate>>("/v3/soccer/stats/{format}/DfsSlatesByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Dfs Slates By Date
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2020-02-18</code>.</param>
+        public List<DfsSlate> GetDfsSlatesByDate(string date)
+        {
+            return this.GetDfsSlatesByDateAsync(date).Result;
+        }
+
+        /// <summary>
+        /// Get Upcoming Dfs Slates By Competition Asynchronous
+        /// </summary>
+        /// <param name="competitionId">The id of the competition. Examples: <code>3</code></param>
+        public Task<List<DfsSlate>> GetUpcomingDfsSlatesByCompetitionAsync(string competitionId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competitionId", competitionId.ToString()));
+            return Task.Run<List<DfsSlate>>(() =>
+                base.Get<List<DfsSlate>>("/v3/soccer/stats/{format}/UpcomingDfsSlatesByCompetition/{competitionId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Upcoming Dfs Slates By Competition
+        /// </summary>
+        /// <param name="competitionId">The id of the competition. Examples: <code>3</code></param>
+        public List<DfsSlate> GetUpcomingDfsSlatesByCompetition(string competitionId)
+        {
+            return this.GetUpcomingDfsSlatesByCompetitionAsync(competitionId).Result;
+        }
+
     }
 }
 

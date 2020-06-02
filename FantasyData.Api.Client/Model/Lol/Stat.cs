@@ -29,6 +29,13 @@ namespace FantasyData.Api.Client.Model.Lol
         [DataMember(Name = "Matches", Order = 3)]
         public int Matches { get; set; }
 
+        /// <summary>
+        /// Indicates whether the stats for this player have been loaded and are final
+        /// </summary>
+        [Description("Indicates whether the stats for this player have been loaded and are final")]
+        [DataMember(Name = "IsClosed", Order = 4)]
+        public bool IsClosed { get; set; }
+
     }
 }
 

@@ -99,13 +99,6 @@ namespace FantasyData.Api.Client.Model.Golf
         [DataMember(Name = "SlateRosterSlots", Order = 10013)]
         public string[] SlateRosterSlots { get; set; }
 
-        /// <summary>
-        /// The salary cap for the current slate (is null for slates with no salary cap such a Tiers gametypes)
-        /// </summary>
-        [Description("The salary cap for the current slate (is null for slates with no salary cap such a Tiers gametypes)")]
-        [DataMember(Name = "SalaryCap", Order = 14)]
-        public int? SalaryCap { get; set; }
-
     }
 }
 

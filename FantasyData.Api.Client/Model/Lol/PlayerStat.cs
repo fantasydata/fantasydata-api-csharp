@@ -345,32 +345,46 @@ namespace FantasyData.Api.Client.Model.Lol
         public decimal? TotalPlayerScore { get; set; }
 
         /// <summary>
+        /// The total number of fantasy points scored by the player
+        /// </summary>
+        [Description("The total number of fantasy points scored by the player")]
+        [DataMember(Name = "FantasyPoints", Order = 49)]
+        public decimal? FantasyPoints { get; set; }
+
+        /// <summary>
         /// Did player reach either 10 kills or 10 assists in a single match
         /// </summary>
         [Description("Did player reach either 10 kills or 10 assists in a single match")]
-        [DataMember(Name = "TenKillsOrAssists", Order = 49)]
+        [DataMember(Name = "TenKillsOrAssists", Order = 50)]
         public decimal? TenKillsOrAssists { get; set; }
 
         /// <summary>
         /// The last update time of the record
         /// </summary>
         [Description("The last update time of the record")]
-        [DataMember(Name = "Updated", Order = 50)]
+        [DataMember(Name = "Updated", Order = 51)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
         /// The number of games played
         /// </summary>
         [Description("The number of games played")]
-        [DataMember(Name = "Games", Order = 51)]
+        [DataMember(Name = "Games", Order = 52)]
         public int Games { get; set; }
 
         /// <summary>
         /// The number of matches played
         /// </summary>
         [Description("The number of matches played")]
-        [DataMember(Name = "Matches", Order = 52)]
+        [DataMember(Name = "Matches", Order = 53)]
         public int Matches { get; set; }
+
+        /// <summary>
+        /// Indicates whether the stats for this player have been loaded and are final
+        /// </summary>
+        [Description("Indicates whether the stats for this player have been loaded and are final")]
+        [DataMember(Name = "IsClosed", Order = 54)]
+        public bool IsClosed { get; set; }
 
     }
 }

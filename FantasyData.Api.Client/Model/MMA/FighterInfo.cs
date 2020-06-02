@@ -64,6 +64,13 @@ namespace FantasyData.Api.Client.Model.MMA
         [DataMember(Name = "Winner", Order = 8)]
         public bool? Winner { get; set; }
 
+        /// <summary>
+        /// Moneyline for the fighters odds to win the fight
+        /// </summary>
+        [Description("Moneyline for the fighters odds to win the fight")]
+        [DataMember(Name = "Moneyline", Order = 9)]
+        public int? Moneyline { get; set; }
+
     }
 }
 

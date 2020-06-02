@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public bool? ShotMade { get; set; }
 
         /// <summary>
-        /// The category the play. Possible values: Period, Timeout, JumpBall, Shot, Rebound, Foul, Substitution
+        /// The category the play. Possible values: Period, Timeout, JumpBall, Shot, Rebound, Foul, Substitution, Turnover
         /// </summary>
-        [Description("The category the play. Possible values: Period, Timeout, JumpBall, Shot, Rebound, Foul, Substitution")]
+        [Description("The category the play. Possible values: Period, Timeout, JumpBall, Shot, Rebound, Foul, Substitution, Turnover")]
         [DataMember(Name = "Category", Order = 12)]
         public string Category { get; set; }
 
@@ -210,6 +210,55 @@ namespace FantasyData.Api.Client.Model.NBA
         [Description("The PlayerID of the player who substituted out of the game.")]
         [DataMember(Name = "SubstituteOutPlayerID", Order = 29)]
         public int? SubstituteOutPlayerID { get; set; }
+
+        /// <summary>
+        /// The PlayerID of the player who is involved in the play from the away team
+        /// </summary>
+        [Description("The PlayerID of the player who is involved in the play from the away team")]
+        [DataMember(Name = "AwayPlayerID", Order = 30)]
+        public int? AwayPlayerID { get; set; }
+
+        /// <summary>
+        /// The PlayerID of the player who is involved in the play from the home team
+        /// </summary>
+        [Description("The PlayerID of the player who is involved in the play from the home team")]
+        [DataMember(Name = "HomePlayerID", Order = 31)]
+        public int? HomePlayerID { get; set; }
+
+        /// <summary>
+        /// The PlayerID of the player who received the ball
+        /// </summary>
+        [Description("The PlayerID of the player who received the ball")]
+        [DataMember(Name = "ReceivingPlayerID", Order = 32)]
+        public int? ReceivingPlayerID { get; set; }
+
+        /// <summary>
+        /// The baseline offset percentage of where the ball was shot/passed
+        /// </summary>
+        [Description("The baseline offset percentage of where the ball was shot/passed")]
+        [DataMember(Name = "BaselineOffsetPercentage", Order = 33)]
+        public decimal? BaselineOffsetPercentage { get; set; }
+
+        /// <summary>
+        /// The sideline offset percentage of where the ball was shot/passed
+        /// </summary>
+        [Description("The sideline offset percentage of where the ball was shot/passed")]
+        [DataMember(Name = "SidelineOffsetPercentage", Order = 34)]
+        public decimal? SidelineOffsetPercentage { get; set; }
+
+        /// <summary>
+        /// The x/y coordinates of where the ball was shot/passed
+        /// </summary>
+        [Description("The x/y coordinates of where the ball was shot/passed")]
+        [DataMember(Name = "Coordinates", Order = 35)]
+        public string Coordinates { get; set; }
+
+        /// <summary>
+        /// The PlayerId of the player which stole the ball (if applicable).
+        /// </summary>
+        [Description("The PlayerId of the player which stole the ball (if applicable).")]
+        [DataMember(Name = "StolenByPlayerID", Order = 36)]
+        public int? StolenByPlayerID { get; set; }
 
     }
 }

@@ -492,6 +492,25 @@ namespace FantasyData.Api.Client
             return this.GetHistoricalMembershipsByCompetitionAsync(competition).Result;
         }
 
+        /// <summary>
+        /// Get Canceled Memberships Asynchronous
+        /// </summary>
+        public Task<CanceledMembership> GetCanceledMembershipsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<CanceledMembership>(() =>
+                base.Get<CanceledMembership>("/v3/soccer/scores/{format}/CanceledMemberships", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Canceled Memberships
+        /// </summary>
+        public CanceledMembership GetCanceledMemberships()
+        {
+            return this.GetCanceledMembershipsAsync().Result;
+        }
+
     }
 }
 

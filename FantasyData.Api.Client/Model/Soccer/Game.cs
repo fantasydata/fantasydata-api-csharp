@@ -254,44 +254,44 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? DrawMoneyLine { get; set; }
 
         /// <summary>
-        /// Point spread for the home team.
+        /// Point spread for the home team. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("Point spread for the home team.")]
+        [Description("Point spread for the home team. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "PointSpread", Order = 36)]
         public decimal? PointSpread { get; set; }
 
         /// <summary>
-        /// Payout if the home team beats the spread.
+        /// Payout if the home team beats the spread. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("Payout if the home team beats the spread.")]
+        [Description("Payout if the home team beats the spread. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "HomeTeamPointSpreadPayout", Order = 37)]
         public int? HomeTeamPointSpreadPayout { get; set; }
 
         /// <summary>
-        /// Payout if the away team beats the spread.
+        /// Payout if the away team beats the spread. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("Payout if the away team beats the spread.")]
+        [Description("Payout if the away team beats the spread. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "AwayTeamPointSpreadPayout", Order = 38)]
         public int? AwayTeamPointSpreadPayout { get; set; }
 
         /// <summary>
-        /// Over/Under total goals for the game.
+        /// Over/Under total goals for the game. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("Over/Under total goals for the game.")]
+        [Description("Over/Under total goals for the game. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "OverUnder", Order = 39)]
         public decimal? OverUnder { get; set; }
 
         /// <summary>
-        /// Payout for the over bet.
+        /// Payout for the over bet. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("Payout for the over bet.")]
+        [Description("Payout for the over bet. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "OverPayout", Order = 40)]
         public int? OverPayout { get; set; }
 
         /// <summary>
-        /// Payout for the under bet.
+        /// Payout for the under bet. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("Payout for the under bet.")]
+        [Description("Payout for the under bet. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "UnderPayout", Order = 41)]
         public int? UnderPayout { get; set; }
 
@@ -357,6 +357,27 @@ namespace FantasyData.Api.Client.Model.Soccer
         [Description("Indicates whether the game is over and the final score and stats have been verified and closed out")]
         [DataMember(Name = "IsClosed", Order = 50)]
         public bool? IsClosed { get; set; }
+
+        /// <summary>
+        /// The formation for the home team (4-4-2, 4-3-3, etc.). 
+        /// </summary>
+        [Description("The formation for the home team (4-4-2, 4-3-3, etc.). ")]
+        [DataMember(Name = "HomeTeamFormation", Order = 51)]
+        public string HomeTeamFormation { get; set; }
+
+        /// <summary>
+        /// The formation for the away team (4-4-2, 4-3-3, etc.)
+        /// </summary>
+        [Description("The formation for the away team (4-4-2, 4-3-3, etc.)")]
+        [DataMember(Name = "AwayTeamFormation", Order = 52)]
+        public string AwayTeamFormation { get; set; }
+
+        /// <summary>
+        /// Aggregate scoring information for 2-leg/home-and-home games (i.e. Champions League Round of 16).  Team A is determined by the first leg’s home team.
+        /// </summary>
+        [Description("Aggregate scoring information for 2-leg/home-and-home games (i.e. Champions League Round of 16).  Team A is determined by the first leg’s home team.")]
+        [DataMember(Name = "PlayoffAggregateScore", Order = 10053)]
+        public PlayoffAggregateScore PlayoffAggregateScore { get; set; }
 
     }
 }

@@ -563,6 +563,34 @@ namespace FantasyData.Api.Client
             return this.GetCurrentSeasonDetailsAsync().Result;
         }
 
+        /// <summary>
+        /// Get Player Game Logs By Season Asynchronous
+        /// </summary>
+        /// <param name="season">Season to get games from. Example <code>2019POST</code>, <code>2020</code></param>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>50036283</code>.</param>
+        /// <param name="numberofgames">How many games to return. Example <code>all</code>, <code>10</code>, <code>25</code></param>
+        public Task<List<PlayerGame>> GetPlayerGameStatsBySeasonAsync(string season, int playerid, string numberofgames)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("numberofgames", numberofgames.ToString()));
+            return Task.Run<List<PlayerGame>>(() =>
+                base.Get<List<PlayerGame>>("/v3/cfb/stats/{format}/PlayerGameStatsBySeason/{season}/{playerid}/{numberofgames}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Game Logs By Season
+        /// </summary>
+        /// <param name="season">Season to get games from. Example <code>2019POST</code>, <code>2020</code></param>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>50036283</code>.</param>
+        /// <param name="numberofgames">How many games to return. Example <code>all</code>, <code>10</code>, <code>25</code></param>
+        public List<PlayerGame> GetPlayerGameStatsBySeason(string season, int playerid, string numberofgames)
+        {
+            return this.GetPlayerGameStatsBySeasonAsync(season, playerid, numberofgames).Result;
+        }
+
     }
 }
 

@@ -232,6 +232,53 @@ namespace FantasyData.Api.Client
             return this.GetAlternateMarketGameOddsLineMovementAsync(gameid).Result;
         }
 
+        /// <summary>
+        /// Get Betting Trends by Matchup Asynchronous
+        /// </summary>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
+        /// <param name="opponent">The abbreviation of the requested opponent. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
+        public Task<MatchupTrends> GetMatchupTrendsAsync(string team, string opponent)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("opponent", opponent.ToString()));
+            return Task.Run<MatchupTrends>(() =>
+                base.Get<MatchupTrends>("/v3/cfb/odds/{format}/MatchupTrends/{team}/{opponent}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Trends by Matchup
+        /// </summary>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
+        /// <param name="opponent">The abbreviation of the requested opponent. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
+        public MatchupTrends GetMatchupTrends(string team, string opponent)
+        {
+            return this.GetMatchupTrendsAsync(team, opponent).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Trends by Team Asynchronous
+        /// </summary>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
+        public Task<TeamTrends> GetTeamTrendsAsync(string team)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            return Task.Run<TeamTrends>(() =>
+                base.Get<TeamTrends>("/v3/cfb/odds/{format}/TeamTrends/{team}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Trends by Team
+        /// </summary>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
+        public TeamTrends GetTeamTrends(string team)
+        {
+            return this.GetTeamTrendsAsync(team).Result;
+        }
+
     }
 }
 

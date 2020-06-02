@@ -163,16 +163,16 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? HomeTeamMoneyLine { get; set; }
 
         /// <summary>
-        /// The oddsmaker Point Spread at game start from the perspective of the HomeTeam (negative numbers indicate the HomeTeam is favored, positive numbers indicate the AwayTeam is favored)
+        /// The oddsmaker Point Spread at game start from the perspective of the HomeTeam (negative numbers indicate the HomeTeam is favored, positive numbers indicate the AwayTeam is favored). This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("The oddsmaker Point Spread at game start from the perspective of the HomeTeam (negative numbers indicate the HomeTeam is favored, positive numbers indicate the AwayTeam is favored)")]
+        [Description("The oddsmaker Point Spread at game start from the perspective of the HomeTeam (negative numbers indicate the HomeTeam is favored, positive numbers indicate the AwayTeam is favored). This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "PointSpread", Order = 23)]
         public decimal? PointSpread { get; set; }
 
         /// <summary>
-        /// The oddsmaker Over/Under at game start
+        /// The oddsmaker Over/Under at game start. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("The oddsmaker Over/Under at game start")]
+        [Description("The oddsmaker Over/Under at game start. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "OverUnder", Order = 24)]
         public decimal? OverUnder { get; set; }
 
@@ -198,16 +198,16 @@ namespace FantasyData.Api.Client.Model.NHL
         public int GlobalHomeTeamID { get; set; }
 
         /// <summary>
-        /// The money line payout odds when betting on the away team with the point spread
+        /// The money line payout odds when betting on the away team with the point spread. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("The money line payout odds when betting on the away team with the point spread")]
+        [Description("The money line payout odds when betting on the away team with the point spread. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "PointSpreadAwayTeamMoneyLine", Order = 28)]
         public int? PointSpreadAwayTeamMoneyLine { get; set; }
 
         /// <summary>
-        /// The money line payout odds when betting on the home team with the point spread
+        /// The money line payout odds when betting on the home team with the point spread. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("The money line payout odds when betting on the home team with the point spread")]
+        [Description("The money line payout odds when betting on the home team with the point spread. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "PointSpreadHomeTeamMoneyLine", Order = 29)]
         public int? PointSpreadHomeTeamMoneyLine { get; set; }
 
@@ -245,6 +245,13 @@ namespace FantasyData.Api.Client.Model.NHL
         [Description("The rotation number of the away team for this game")]
         [DataMember(Name = "AwayRotationNumber", Order = 34)]
         public int? AwayRotationNumber { get; set; }
+
+        /// <summary>
+        /// Indicates whether this game is played in a neutral venue
+        /// </summary>
+        [Description("Indicates whether this game is played in a neutral venue")]
+        [DataMember(Name = "NeutralVenue", Order = 35)]
+        public bool? NeutralVenue { get; set; }
 
     }
 }

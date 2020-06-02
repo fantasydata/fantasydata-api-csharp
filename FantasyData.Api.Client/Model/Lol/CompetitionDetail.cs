@@ -85,6 +85,13 @@ namespace FantasyData.Api.Client.Model.Lol
         [DataMember(Name = "Seasons", Order = 20011)]
         public Season[] Seasons { get; set; }
 
+        /// <summary>
+        /// Indicates whether league coverage includes player stats
+        /// </summary>
+        [Description("Indicates whether league coverage includes player stats")]
+        [DataMember(Name = "PlayerStatsCoverage", Order = 12)]
+        public bool? PlayerStatsCoverage { get; set; }
+
     }
 }
 

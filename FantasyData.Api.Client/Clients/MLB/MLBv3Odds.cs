@@ -170,6 +170,97 @@ namespace FantasyData.Api.Client
             return this.GetPlayerPropsByTeamAsync(date, team).Result;
         }
 
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds by Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        public Task<List<GameInfo>> GetAlternateMarketGameOddsByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v3/mlb/odds/{format}/AlternateMarketGameOddsByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds by Date
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        public List<GameInfo> GetAlternateMarketGameOddsByDate(string date)
+        {
+            return this.GetAlternateMarketGameOddsByDateAsync(date).Result;
+        }
+
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds Line Movement Asynchronous
+        /// </summary>
+        /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>51735</code> or <code>51745</code></param>
+        public Task<List<GameInfo>> GetAlternateMarketGameOddsLineMovementAsync(int gameid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v3/mlb/odds/{format}/AlternateMarketGameOddsLineMovement/{gameid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds Line Movement
+        /// </summary>
+        /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>51735</code> or <code>51745</code></param>
+        public List<GameInfo> GetAlternateMarketGameOddsLineMovement(int gameid)
+        {
+            return this.GetAlternateMarketGameOddsLineMovementAsync(gameid).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Trends by Matchup Asynchronous
+        /// </summary>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>PHI</code>, <code>MIN</code>, <code>DET</code>, etc.</param>
+        /// <param name="opponent">The abbreviation of the requested opponent. Examples: <code>PHI</code>, <code>MIN</code>, <code>DET</code>, etc.</param>
+        public Task<MatchupTrends> GetMatchupTrendsAsync(string team, string opponent)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("opponent", opponent.ToString()));
+            return Task.Run<MatchupTrends>(() =>
+                base.Get<MatchupTrends>("/v3/mlb/odds/{format}/MatchupTrends/{team}/{opponent}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Trends by Matchup
+        /// </summary>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>PHI</code>, <code>MIN</code>, <code>DET</code>, etc.</param>
+        /// <param name="opponent">The abbreviation of the requested opponent. Examples: <code>PHI</code>, <code>MIN</code>, <code>DET</code>, etc.</param>
+        public MatchupTrends GetMatchupTrends(string team, string opponent)
+        {
+            return this.GetMatchupTrendsAsync(team, opponent).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Trends by Team  Asynchronous
+        /// </summary>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>PHI</code>, <code>MIN</code>, <code>DET</code>, etc.</param>
+        public Task<TeamTrends> GetTeamTrendsAsync(string team)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            return Task.Run<TeamTrends>(() =>
+                base.Get<TeamTrends>("/v3/mlb/odds/{format}/TeamTrends/{team}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Trends by Team 
+        /// </summary>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>PHI</code>, <code>MIN</code>, <code>DET</code>, etc.</param>
+        public TeamTrends GetTeamTrends(string team)
+        {
+            return this.GetTeamTrendsAsync(team).Result;
+        }
+
     }
 }
 

@@ -142,30 +142,30 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? TimeRemainingSeconds { get; set; }
 
         /// <summary>
-        /// The oddsmaker Point Spread at game start from the perspective of the HomeTeam (negative numbers indicate the HomeTeam is favored, positive numbers indicate the AwayTeam is favored)
+        /// The oddsmaker Point Spread at game start from the perspective of the HomeTeam (negative numbers indicate the HomeTeam is favored, positive numbers indicate the AwayTeam is favored). This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("The oddsmaker Point Spread at game start from the perspective of the HomeTeam (negative numbers indicate the HomeTeam is favored, positive numbers indicate the AwayTeam is favored)")]
+        [Description("The oddsmaker Point Spread at game start from the perspective of the HomeTeam (negative numbers indicate the HomeTeam is favored, positive numbers indicate the AwayTeam is favored). This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "PointSpread", Order = 20)]
         public decimal? PointSpread { get; set; }
 
         /// <summary>
-        /// The oddsmaker Over/Under at game start
+        /// The oddsmaker Over/Under at game start. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("The oddsmaker Over/Under at game start")]
+        [Description("The oddsmaker Over/Under at game start. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "OverUnder", Order = 21)]
         public decimal? OverUnder { get; set; }
 
         /// <summary>
-        /// Money line from the perspective of the away team
+        /// Money line from the perspective of the away team. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("Money line from the perspective of the away team")]
+        [Description("Money line from the perspective of the away team. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "AwayTeamMoneyLine", Order = 22)]
         public int? AwayTeamMoneyLine { get; set; }
 
         /// <summary>
-        /// Money line from the perspective of the home team
+        /// Money line from the perspective of the home team. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("Money line from the perspective of the home team")]
+        [Description("Money line from the perspective of the home team. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "HomeTeamMoneyLine", Order = 23)]
         public int? HomeTeamMoneyLine { get; set; }
 
@@ -191,16 +191,16 @@ namespace FantasyData.Api.Client.Model.NBA
         public int GlobalHomeTeamID { get; set; }
 
         /// <summary>
-        /// The money line payout odds when betting on the away team with the point spread
+        /// The money line payout odds when betting on the away team with the point spread. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("The money line payout odds when betting on the away team with the point spread")]
+        [Description("The money line payout odds when betting on the away team with the point spread. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "PointSpreadAwayTeamMoneyLine", Order = 27)]
         public int? PointSpreadAwayTeamMoneyLine { get; set; }
 
         /// <summary>
-        /// The money line payout odds when betting on the home team with the point spread
+        /// The money line payout odds when betting on the home team with the point spread. This is updated once daily at 4:00 AM ET.
         /// </summary>
-        [Description("The money line payout odds when betting on the home team with the point spread")]
+        [Description("The money line payout odds when betting on the home team with the point spread. This is updated once daily at 4:00 AM ET.")]
         [DataMember(Name = "PointSpreadHomeTeamMoneyLine", Order = 28)]
         public int? PointSpreadHomeTeamMoneyLine { get; set; }
 
@@ -245,6 +245,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [Description("The Rotation number of the away team for this game")]
         [DataMember(Name = "AwayRotationNumber", Order = 34)]
         public int? AwayRotationNumber { get; set; }
+
+        /// <summary>
+        /// Indicates whether this game is played in a neutral venue
+        /// </summary>
+        [Description("Indicates whether this game is played in a neutral venue")]
+        [DataMember(Name = "NeutralVenue", Order = 35)]
+        public bool? NeutralVenue { get; set; }
 
     }
 }

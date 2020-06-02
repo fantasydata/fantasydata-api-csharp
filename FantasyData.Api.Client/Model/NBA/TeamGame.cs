@@ -463,6 +463,20 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "IsClosed", Order = 65)]
         public bool IsClosed { get; set; }
 
+        /// <summary>
+        /// Indicates whether starting lineup is confirmed
+        /// </summary>
+        [Description("Indicates whether starting lineup is confirmed")]
+        [DataMember(Name = "LineupConfirmed", Order = 66)]
+        public bool? LineupConfirmed { get; set; }
+
+        /// <summary>
+        /// Indicates whether player is starting, active, or inactive
+        /// </summary>
+        [Description("Indicates whether player is starting, active, or inactive")]
+        [DataMember(Name = "LineupStatus", Order = 67)]
+        public string LineupStatus { get; set; }
+
     }
 }
 

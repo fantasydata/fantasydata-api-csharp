@@ -51,108 +51,115 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public DateTime? DateTime { get; set; }
 
         /// <summary>
+        /// The status of the game (such as Scheduled, InProgress, Final, Etc)
+        /// </summary>
+        [Description("The status of the game (such as Scheduled, InProgress, Final, Etc)")]
+        [DataMember(Name = "Status", Order = 7)]
+        public string Status { get; set; }
+
+        /// <summary>
         /// The TeamId of the away team.
         /// </summary>
         [Description("The TeamId of the away team.")]
-        [DataMember(Name = "AwayTeamId", Order = 7)]
+        [DataMember(Name = "AwayTeamId", Order = 8)]
         public int? AwayTeamId { get; set; }
 
         /// <summary>
         /// The TeamId of the home team.
         /// </summary>
         [Description("The TeamId of the home team.")]
-        [DataMember(Name = "HomeTeamId", Order = 8)]
+        [DataMember(Name = "HomeTeamId", Order = 9)]
         public int? HomeTeamId { get; set; }
 
         /// <summary>
         /// The name of the away team.
         /// </summary>
         [Description("The name of the away team.")]
-        [DataMember(Name = "AwayTeamName", Order = 9)]
+        [DataMember(Name = "AwayTeamName", Order = 10)]
         public string AwayTeamName { get; set; }
 
         /// <summary>
         /// The name of the home team.
         /// </summary>
         [Description("The name of the home team.")]
-        [DataMember(Name = "HomeTeamName", Order = 10)]
+        [DataMember(Name = "HomeTeamName", Order = 11)]
         public string HomeTeamName { get; set; }
 
         /// <summary>
         /// A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.
         /// </summary>
         [Description("A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.")]
-        [DataMember(Name = "GlobalGameId", Order = 11)]
+        [DataMember(Name = "GlobalGameId", Order = 12)]
         public int GlobalGameId { get; set; }
 
         /// <summary>
         /// A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.
         /// </summary>
         [Description("A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.")]
-        [DataMember(Name = "GlobalAwayTeamId", Order = 12)]
+        [DataMember(Name = "GlobalAwayTeamId", Order = 13)]
         public int? GlobalAwayTeamId { get; set; }
 
         /// <summary>
         /// A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.
         /// </summary>
         [Description("A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.")]
-        [DataMember(Name = "GlobalHomeTeamId", Order = 13)]
+        [DataMember(Name = "GlobalHomeTeamId", Order = 14)]
         public int? GlobalHomeTeamId { get; set; }
 
         /// <summary>
         /// List of Pregame Odds from different sportsbooks
         /// </summary>
         [Description("List of Pregame Odds from different sportsbooks")]
-        [DataMember(Name = "PregameOdds", Order = 20014)]
+        [DataMember(Name = "PregameOdds", Order = 20015)]
         public GameOdd[] PregameOdds { get; set; }
 
         /// <summary>
         /// List of Live Odds from different sportsbooks
         /// </summary>
         [Description("List of Live Odds from different sportsbooks")]
-        [DataMember(Name = "LiveOdds", Order = 20015)]
+        [DataMember(Name = "LiveOdds", Order = 20016)]
         public GameOdd[] LiveOdds { get; set; }
 
         /// <summary>
         /// Score of the home team (updated after game ends to allow for resolving bets)
         /// </summary>
         [Description("Score of the home team (updated after game ends to allow for resolving bets)")]
-        [DataMember(Name = "HomeTeamScore", Order = 16)]
+        [DataMember(Name = "HomeTeamScore", Order = 17)]
         public int? HomeTeamScore { get; set; }
 
         /// <summary>
         /// Score of the away team (updated after game ends to allow for resolving bets)
         /// </summary>
         [Description("Score of the away team (updated after game ends to allow for resolving bets)")]
-        [DataMember(Name = "AwayTeamScore", Order = 17)]
+        [DataMember(Name = "AwayTeamScore", Order = 18)]
         public int? AwayTeamScore { get; set; }
 
         /// <summary>
         /// Total scored points in the game (updated after game ends to allow for resolving bets)
         /// </summary>
         [Description("Total scored points in the game (updated after game ends to allow for resolving bets)")]
-        [DataMember(Name = "TotalScore", Order = 18)]
+        [DataMember(Name = "TotalScore", Order = 19)]
         public int? TotalScore { get; set; }
 
         /// <summary>
         /// Rotation Number of home team in this game
         /// </summary>
         [Description("Rotation Number of home team in this game")]
-        [DataMember(Name = "HomeRotationNumber", Order = 19)]
+        [DataMember(Name = "HomeRotationNumber", Order = 20)]
         public int? HomeRotationNumber { get; set; }
 
         /// <summary>
         /// Rotation Number of away team in this game
         /// </summary>
         [Description("Rotation Number of away team in this game")]
-        [DataMember(Name = "AwayRotationNumber", Order = 20)]
+        [DataMember(Name = "AwayRotationNumber", Order = 21)]
         public int? AwayRotationNumber { get; set; }
 
         /// <summary>
         /// List of Alternate Market Pregame odds from different sportsbooks (such as 1st-half, 1st-qtr, etc)
         /// </summary>
         [Description("List of Alternate Market Pregame odds from different sportsbooks (such as 1st-half, 1st-qtr, etc)")]
-        [DataMember(Name = "AlternateMarketPregameOdds", Order = 20021)]
+        [DataMember(Name = "AlternateMarketPregameOdds", Order = 20022)]
         public GameOdd[] AlternateMarketPregameOdds { get; set; }
 
     }

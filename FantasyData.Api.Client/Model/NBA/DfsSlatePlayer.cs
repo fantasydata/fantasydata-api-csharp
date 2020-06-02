@@ -92,6 +92,20 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "RemovedByOperator", Order = 12)]
         public bool? RemovedByOperator { get; set; }
 
+        /// <summary>
+        /// Name of the team the player belongs to.
+        /// </summary>
+        [Description("Name of the team the player belongs to.")]
+        [DataMember(Name = "Team", Order = 13)]
+        public string Team { get; set; }
+
+        /// <summary>
+        /// Unique ID of the Team the player belongs to (assigned by FantasyData).
+        /// </summary>
+        [Description("Unique ID of the Team the player belongs to (assigned by FantasyData).")]
+        [DataMember(Name = "TeamID", Order = 14)]
+        public int? TeamID { get; set; }
+
     }
 }
 

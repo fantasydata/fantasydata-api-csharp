@@ -491,6 +491,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "AwayRotationNumber", Order = 69)]
         public int? AwayRotationNumber { get; set; }
 
+        /// <summary>
+        /// Indicates whether this game is played in a neutral venue
+        /// </summary>
+        [Description("Indicates whether this game is played in a neutral venue")]
+        [DataMember(Name = "NeutralVenue", Order = 70)]
+        public bool? NeutralVenue { get; set; }
+
     }
 }
 

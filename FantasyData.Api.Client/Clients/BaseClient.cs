@@ -12,7 +12,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// The host name for making API calls.
         /// </summary>
-        /// <value>Default value is api.fantasydata.net</value>
+        /// <value>Default value is api.sportsdata.io</value>
         public string Host { get; set; }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace FantasyData.Api.Client
 
         public BaseClient(string apiKey)
         {
-            Host = "api.fantasydata.net";
+            Host = "api.sportsdata.io";
             ApiKey = apiKey.Replace("-", "").ToLower();
             Https = true;
             Encoding = new UTF8Encoding();

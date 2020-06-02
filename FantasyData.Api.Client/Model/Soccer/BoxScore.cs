@@ -113,6 +113,13 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "PlayerGames", Order = 20015)]
         public PlayerGame[] PlayerGames { get; set; }
 
+        /// <summary>
+        /// The referee in charge of the video reviews (VAR)
+        /// </summary>
+        [Description("The referee in charge of the video reviews (VAR)")]
+        [DataMember(Name = "VideoAssistantReferee", Order = 10016)]
+        public Referee VideoAssistantReferee { get; set; }
+
     }
 }
 

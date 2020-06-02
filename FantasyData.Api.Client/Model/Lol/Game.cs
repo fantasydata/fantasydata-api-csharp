@@ -211,6 +211,13 @@ namespace FantasyData.Api.Client.Model.Lol
         [DataMember(Name = "UpdatedUtc", Order = 29)]
         public DateTime? UpdatedUtc { get; set; }
 
+        /// <summary>
+        /// Indicates whether the score of the game is final and has been closed.
+        /// </summary>
+        [Description("Indicates whether the score of the game is final and has been closed.")]
+        [DataMember(Name = "IsClosed", Order = 30)]
+        public bool? IsClosed { get; set; }
+
     }
 }
 

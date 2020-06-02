@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public decimal? Purse { get; set; }
 
         /// <summary>
-        /// The first tee time of the upcoming round of this tournament
+        /// The first tee time of the upcoming round of this tournament (this value will be in the local time of the tournament)
         /// </summary>
-        [Description("The first tee time of the upcoming round of this tournament")]
+        [Description("The first tee time of the upcoming round of this tournament (this value will be in the local time of the tournament)")]
         [DataMember(Name = "StartDateTime", Order = 12)]
         public DateTime? StartDateTime { get; set; }
 
