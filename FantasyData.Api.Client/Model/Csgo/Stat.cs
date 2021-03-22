@@ -92,6 +92,55 @@ namespace FantasyData.Api.Client.Model.Csgo
         [DataMember(Name = "Rating", Order = 12)]
         public decimal? Rating { get; set; }
 
+        /// <summary>
+        /// The number of times the player got the first kill of the round
+        /// </summary>
+        [Description("The number of times the player got the first kill of the round")]
+        [DataMember(Name = "EntryKills", Order = 13)]
+        public decimal? EntryKills { get; set; }
+
+        /// <summary>
+        /// The number of times a player got a quad kill (4 kills in a round)
+        /// </summary>
+        [Description("The number of times a player got a quad kill (4 kills in a round)")]
+        [DataMember(Name = "QuadKills", Order = 14)]
+        public decimal? QuadKills { get; set; }
+
+        /// <summary>
+        /// The number of times the player killed the entire enemy squad in a round
+        /// </summary>
+        [Description("The number of times the player killed the entire enemy squad in a round")]
+        [DataMember(Name = "Aces", Order = 15)]
+        public decimal? Aces { get; set; }
+
+        /// <summary>
+        /// The number of rounds won while being the last surviving member of the team against 2 opponents
+        /// </summary>
+        [Description("The number of rounds won while being the last surviving member of the team against 2 opponents")]
+        [DataMember(Name = "Clutch1v2s", Order = 16)]
+        public decimal? Clutch1v2s { get; set; }
+
+        /// <summary>
+        /// The number of rounds won while being the last surviving member of the team against 3 opponents
+        /// </summary>
+        [Description("The number of rounds won while being the last surviving member of the team against 3 opponents")]
+        [DataMember(Name = "Clutch1v3s", Order = 17)]
+        public decimal? Clutch1v3s { get; set; }
+
+        /// <summary>
+        /// The number of rounds won while being the last surviving member of the team against 4 opponents
+        /// </summary>
+        [Description("The number of rounds won while being the last surviving member of the team against 4 opponents")]
+        [DataMember(Name = "Clutch1v4s", Order = 18)]
+        public decimal? Clutch1v4s { get; set; }
+
+        /// <summary>
+        /// The number of rounds won while being the last surviving member of the team against all 5 opponents
+        /// </summary>
+        [Description("The number of rounds won while being the last surviving member of the team against all 5 opponents")]
+        [DataMember(Name = "Clutch1v5s", Order = 19)]
+        public decimal? Clutch1v5s { get; set; }
+
     }
 }
 

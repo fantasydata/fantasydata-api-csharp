@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public int GameID { get; set; }
 
         /// <summary>
-        /// The Name of the Quarter (possible values: 1, 2, 3, OT, SO)
+        /// The Name of the Quarter (possible values: 1, 2, 3, SO, OT, OT2, OT3, OT4, etc)
         /// </summary>
-        [Description("The Name of the Quarter (possible values: 1, 2, 3, OT, SO)")]
+        [Description("The Name of the Quarter (possible values: 1, 2, 3, SO, OT, OT2, OT3, OT4, etc)")]
         [DataMember(Name = "Name", Order = 3)]
         public string Name { get; set; }
 

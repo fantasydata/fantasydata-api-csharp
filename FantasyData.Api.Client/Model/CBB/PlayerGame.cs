@@ -93,9 +93,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? YahooSalary { get; set; }
 
         /// <summary>
-        /// Indicates the player's injury status. Possible values include: Probable, Questionable, Doubtful, Out
+        /// Indicates the player's injury status.  Free text, can vary.
         /// </summary>
-        [Description("Indicates the player's injury status. Possible values include: Probable, Questionable, Doubtful, Out")]
+        [Description("Indicates the player's injury status.  Free text, can vary.")]
         [DataMember(Name = "InjuryStatus", Order = 13)]
         public string InjuryStatus { get; set; }
 

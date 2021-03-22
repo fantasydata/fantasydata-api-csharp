@@ -278,6 +278,69 @@ namespace FantasyData.Api.Client
             return this.GetCurrentSeasonDetailsAsync().Result;
         }
 
+        /// <summary>
+        /// Get Player Details By Active Asynchronous
+        /// </summary>
+        public Task<List<Player>> GetPlayersAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/cfb/scores/{format}/Players", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Details By Active
+        /// </summary>
+        public List<Player> GetPlayers()
+        {
+            return this.GetPlayersAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Player Details By Player Asynchronous
+        /// </summary>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>50002016</code>.</param>
+        public Task<List<Player>> GetPlayerAsync(int playerid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/cfb/scores/{format}/Player/{playerid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Details By Player
+        /// </summary>
+        /// <param name="playerid">Unique FantasyData Player ID. Example:<code>50002016</code>.</param>
+        public List<Player> GetPlayer(int playerid)
+        {
+            return this.GetPlayerAsync(playerid).Result;
+        }
+
+        /// <summary>
+        /// Get Player Details by Team Asynchronous
+        /// </summary>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
+        public Task<List<Player>> GetPlayersAsync(string team)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/cfb/scores/{format}/Players/{team}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Details by Team
+        /// </summary>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
+        public List<Player> GetPlayers(string team)
+        {
+            return this.GetPlayersAsync(team).Result;
+        }
+
     }
 }
 

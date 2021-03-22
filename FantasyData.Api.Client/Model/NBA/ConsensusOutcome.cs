@@ -134,6 +134,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "GlobalTeamID", Order = 18)]
         public int? GlobalTeamID { get; set; }
 
+        /// <summary>
+        /// The URL for sportsbook event
+        /// </summary>
+        [Description("The URL for sportsbook event")]
+        [DataMember(Name = "SportsbookUrl", Order = 19)]
+        public string SportsbookUrl { get; set; }
+
     }
 }
 

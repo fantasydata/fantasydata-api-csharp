@@ -394,16 +394,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? RedZoneConversions { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities")]
+        [Description("Deprecated")]
         [DataMember(Name = "GoalToGoAttempts", Order = 56)]
         public int? GoalToGoAttempts { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities converted to touchdowns
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities converted to touchdowns")]
+        [Description("Deprecated")]
         [DataMember(Name = "GoalToGoConversions", Order = 57)]
         public int? GoalToGoConversions { get; set; }
 
@@ -464,9 +464,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? QuarterbackHits { get; set; }
 
         /// <summary>
-        /// Number of times the opponent was tackled for a loss
+        /// Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)
         /// </summary>
-        [Description("Number of times the opponent was tackled for a loss")]
+        [Description("Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)")]
         [DataMember(Name = "TacklesForLoss", Order = 66)]
         public int? TacklesForLoss { get; set; }
 
@@ -779,16 +779,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? OpponentRedZoneConversions { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities")]
+        [Description("Deprecated")]
         [DataMember(Name = "OpponentGoalToGoAttempts", Order = 111)]
         public int? OpponentGoalToGoAttempts { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities converted to touchdowns
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities converted to touchdowns")]
+        [Description("Deprecated")]
         [DataMember(Name = "OpponentGoalToGoConversions", Order = 112)]
         public int? OpponentGoalToGoConversions { get; set; }
 
@@ -842,16 +842,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? OpponentTimesSackedYards { get; set; }
 
         /// <summary>
-        /// Number of times our QB was hit but not sacked
+        /// Number of times hitting an opposing quarterback (this inludes sacks)
         /// </summary>
-        [Description("Number of times our QB was hit but not sacked")]
+        [Description("Number of times hitting an opposing quarterback (this inludes sacks)")]
         [DataMember(Name = "OpponentQuarterbackHits", Order = 120)]
         public int? OpponentQuarterbackHits { get; set; }
 
         /// <summary>
-        /// Number of times our ball carrier was tackled for a loss
+        /// Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)
         /// </summary>
-        [Description("Number of times our ball carrier was tackled for a loss")]
+        [Description("Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)")]
         [DataMember(Name = "OpponentTacklesForLoss", Order = 121)]
         public int? OpponentTacklesForLoss { get; set; }
 
@@ -912,9 +912,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? RedZonePercentage { get; set; }
 
         /// <summary>
-        /// Percentage of goal-to-go opportunities converted into touchdowns
+        /// Deprecated
         /// </summary>
-        [Description("Percentage of goal-to-go opportunities converted into touchdowns")]
+        [Description("Deprecated")]
         [DataMember(Name = "GoalToGoPercentage", Order = 130)]
         public decimal? GoalToGoPercentage { get; set; }
 
@@ -968,9 +968,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? OpponentRedZonePercentage { get; set; }
 
         /// <summary>
-        /// Percentage of opponent's goal-to-go opportunities converted into touchdowns
+        /// Deprecated
         /// </summary>
-        [Description("Percentage of opponent's goal-to-go opportunities converted into touchdowns")]
+        [Description("Deprecated")]
         [DataMember(Name = "OpponentGoalToGoPercentage", Order = 138)]
         public decimal? OpponentGoalToGoPercentage { get; set; }
 

@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int ScoreID { get; set; }
 
         /// <summary>
-        /// The type of season that this game corresponds to (1=Regular Season, 2=Preseason, 3=Postseason).
+        /// The type of season that this game corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=All-Star).
         /// </summary>
-        [Description("The type of season that this game corresponds to (1=Regular Season, 2=Preseason, 3=Postseason).")]
+        [Description("The type of season that this game corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=All-Star).")]
         [DataMember(Name = "SeasonType", Order = 2)]
         public int SeasonType { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? StadiumID { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled")]
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled")]
         [DataMember(Name = "Status", Order = 7)]
         public string Status { get; set; }
 

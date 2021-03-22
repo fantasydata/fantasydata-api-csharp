@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.MMA
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Indicates the event's status. Possible values include: Scheduled, InProgress, Final, Suspended, Postponed, Canceled
+        /// Indicates the event's status. Possible values include: Scheduled, In Progress, Final, Suspended, Postponed, Canceled
         /// </summary>
-        [Description("Indicates the event's status. Possible values include: Scheduled, InProgress, Final, Suspended, Postponed, Canceled")]
+        [Description("Indicates the event's status. Possible values include: Scheduled, In Progress, Final, Suspended, Postponed, Canceled")]
         [DataMember(Name = "Status", Order = 8)]
         public string Status { get; set; }
 

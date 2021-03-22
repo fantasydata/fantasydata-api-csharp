@@ -120,6 +120,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "OddType", Order = 16)]
         public string OddType { get; set; }
 
+        /// <summary>
+        /// The URL for sportsbook event
+        /// </summary>
+        [Description("The URL for sportsbook event")]
+        [DataMember(Name = "SportsbookUrl", Order = 17)]
+        public string SportsbookUrl { get; set; }
+
     }
 }
 

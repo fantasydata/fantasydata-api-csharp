@@ -11,7 +11,7 @@ namespace FantasyData.Api.Client
         public Golfv3HeadshotsClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Headshot Asynchronous
+        /// Get Headshots Asynchronous
         /// </summary>
         public Task<List<Headshot>> GetHeadshotsAsync()
         {
@@ -22,7 +22,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Headshot
+        /// Get Headshots
         /// </summary>
         public List<Headshot> GetHeadshots()
         {

@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// The status of the game (such as Scheduled, InProgress, Final, Etc)
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled
         /// </summary>
-        [Description("The status of the game (such as Scheduled, InProgress, Final, Etc)")]
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled")]
         [DataMember(Name = "Status", Order = 7)]
         public string Status { get; set; }
 

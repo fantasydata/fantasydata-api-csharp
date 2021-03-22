@@ -440,6 +440,25 @@ namespace FantasyData.Api.Client
             return this.GetTeamTrendsAsync(team).Result;
         }
 
+        /// <summary>
+        /// Get Betting Metadata Asynchronous
+        /// </summary>
+        public Task<List<BettingEntityMetadata>> GetBettingMetadataAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<BettingEntityMetadata>>(() =>
+                base.Get<List<BettingEntityMetadata>>("/v3/nba/odds/{format}/BettingMetadata", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Metadata
+        /// </summary>
+        public List<BettingEntityMetadata> GetBettingMetadata()
+        {
+            return this.GetBettingMetadataAsync().Result;
+        }
+
     }
 }
 

@@ -128,94 +128,108 @@ namespace FantasyData.Api.Client.Model.MLB
         public string Streak { get; set; }
 
         /// <summary>
+        /// The ranking in the league
+        /// </summary>
+        [Description("The ranking in the league")]
+        [DataMember(Name = "LeagueRank", Order = 18)]
+        public int? LeagueRank { get; set; }
+
+        /// <summary>
+        /// The ranking in the division
+        /// </summary>
+        [Description("The ranking in the division")]
+        [DataMember(Name = "DivisionRank", Order = 19)]
+        public int? DivisionRank { get; set; }
+
+        /// <summary>
         /// The ranking in the wild card
         /// </summary>
         [Description("The ranking in the wild card")]
-        [DataMember(Name = "WildCardRank", Order = 18)]
+        [DataMember(Name = "WildCardRank", Order = 20)]
         public int? WildCardRank { get; set; }
 
         /// <summary>
         /// Number of games behind the team leading the wild card
         /// </summary>
         [Description("Number of games behind the team leading the wild card")]
-        [DataMember(Name = "WildCardGamesBehind", Order = 19)]
+        [DataMember(Name = "WildCardGamesBehind", Order = 21)]
         public decimal? WildCardGamesBehind { get; set; }
 
         /// <summary>
         /// Number of home wins
         /// </summary>
         [Description("Number of home wins")]
-        [DataMember(Name = "HomeWins", Order = 20)]
+        [DataMember(Name = "HomeWins", Order = 22)]
         public int? HomeWins { get; set; }
 
         /// <summary>
         /// Number of home losses
         /// </summary>
         [Description("Number of home losses")]
-        [DataMember(Name = "HomeLosses", Order = 21)]
+        [DataMember(Name = "HomeLosses", Order = 23)]
         public int? HomeLosses { get; set; }
 
         /// <summary>
         /// Number of away wins
         /// </summary>
         [Description("Number of away wins")]
-        [DataMember(Name = "AwayWins", Order = 22)]
+        [DataMember(Name = "AwayWins", Order = 24)]
         public int? AwayWins { get; set; }
 
         /// <summary>
         /// Number of away losses
         /// </summary>
         [Description("Number of away losses")]
-        [DataMember(Name = "AwayLosses", Order = 23)]
+        [DataMember(Name = "AwayLosses", Order = 25)]
         public int? AwayLosses { get; set; }
 
         /// <summary>
         /// Number of wins during the day
         /// </summary>
         [Description("Number of wins during the day")]
-        [DataMember(Name = "DayWins", Order = 24)]
+        [DataMember(Name = "DayWins", Order = 26)]
         public int? DayWins { get; set; }
 
         /// <summary>
         /// Number of losses during the day
         /// </summary>
         [Description("Number of losses during the day")]
-        [DataMember(Name = "DayLosses", Order = 25)]
+        [DataMember(Name = "DayLosses", Order = 27)]
         public int? DayLosses { get; set; }
 
         /// <summary>
         /// Number of wins at night
         /// </summary>
         [Description("Number of wins at night")]
-        [DataMember(Name = "NightWins", Order = 26)]
+        [DataMember(Name = "NightWins", Order = 28)]
         public int? NightWins { get; set; }
 
         /// <summary>
         /// Number of losses at night
         /// </summary>
         [Description("Number of losses at night")]
-        [DataMember(Name = "NightLosses", Order = 27)]
+        [DataMember(Name = "NightLosses", Order = 29)]
         public int? NightLosses { get; set; }
 
         /// <summary>
         /// Number of runs scored
         /// </summary>
         [Description("Number of runs scored")]
-        [DataMember(Name = "RunsScored", Order = 28)]
+        [DataMember(Name = "RunsScored", Order = 30)]
         public int? RunsScored { get; set; }
 
         /// <summary>
         /// Number of runs scored by opponents
         /// </summary>
         [Description("Number of runs scored by opponents")]
-        [DataMember(Name = "RunsAgainst", Order = 29)]
+        [DataMember(Name = "RunsAgainst", Order = 31)]
         public int? RunsAgainst { get; set; }
 
         /// <summary>
         /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
         /// </summary>
         [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
-        [DataMember(Name = "GlobalTeamID", Order = 30)]
+        [DataMember(Name = "GlobalTeamID", Order = 32)]
         public int? GlobalTeamID { get; set; }
 
     }

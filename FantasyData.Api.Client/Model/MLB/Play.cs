@@ -51,16 +51,16 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? InningBatterNumber { get; set; }
 
         /// <summary>
-        /// Number of away team runs in the inning
+        /// This indicates the score of the away team (if any runs were scored on this play, otherwise this indicates zero)
         /// </summary>
-        [Description("Number of away team runs in the inning")]
+        [Description("This indicates the score of the away team (if any runs were scored on this play, otherwise this indicates zero)")]
         [DataMember(Name = "AwayTeamRuns", Order = 7)]
         public int? AwayTeamRuns { get; set; }
 
         /// <summary>
-        /// Number of home team runs in the inning.
+        /// This indicates the score of the home team (if any runs were scored on this play, otherwise this indicates zero)
         /// </summary>
-        [Description("Number of home team runs in the inning.")]
+        [Description("This indicates the score of the home team (if any runs were scored on this play, otherwise this indicates zero)")]
         [DataMember(Name = "HomeTeamRuns", Order = 8)]
         public int? HomeTeamRuns { get; set; }
 

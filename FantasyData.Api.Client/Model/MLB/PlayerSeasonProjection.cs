@@ -100,710 +100,717 @@ namespace FantasyData.Api.Client.Model.MLB
         public decimal? AverageDraftPosition { get; set; }
 
         /// <summary>
+        /// The auction value for this player as it pertains to auction-style drafts for season-long fantasy baseball.
+        /// </summary>
+        [Description("The auction value for this player as it pertains to auction-style drafts for season-long fantasy baseball.")]
+        [DataMember(Name = "AuctionValue", Order = 14)]
+        public int? AuctionValue { get; set; }
+
+        /// <summary>
         /// The timestamp of when the record was last updated (US Eastern Time).
         /// </summary>
         [Description("The timestamp of when the record was last updated (US Eastern Time).")]
-        [DataMember(Name = "Updated", Order = 14)]
+        [DataMember(Name = "Updated", Order = 15)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
         /// The number of games played.
         /// </summary>
         [Description("The number of games played.")]
-        [DataMember(Name = "Games", Order = 15)]
+        [DataMember(Name = "Games", Order = 16)]
         public int? Games { get; set; }
 
         /// <summary>
         /// Total fantasy points
         /// </summary>
         [Description("Total fantasy points")]
-        [DataMember(Name = "FantasyPoints", Order = 16)]
+        [DataMember(Name = "FantasyPoints", Order = 17)]
         public decimal? FantasyPoints { get; set; }
 
         /// <summary>
         /// At bats while hitting
         /// </summary>
         [Description("At bats while hitting")]
-        [DataMember(Name = "AtBats", Order = 17)]
+        [DataMember(Name = "AtBats", Order = 18)]
         public decimal? AtBats { get; set; }
 
         /// <summary>
         /// Total runs scored.
         /// </summary>
         [Description("Total runs scored.")]
-        [DataMember(Name = "Runs", Order = 18)]
+        [DataMember(Name = "Runs", Order = 19)]
         public decimal? Runs { get; set; }
 
         /// <summary>
         /// Total hits
         /// </summary>
         [Description("Total hits")]
-        [DataMember(Name = "Hits", Order = 19)]
+        [DataMember(Name = "Hits", Order = 20)]
         public decimal? Hits { get; set; }
 
         /// <summary>
         /// Total singles
         /// </summary>
         [Description("Total singles")]
-        [DataMember(Name = "Singles", Order = 20)]
+        [DataMember(Name = "Singles", Order = 21)]
         public decimal? Singles { get; set; }
 
         /// <summary>
         /// Total doubles
         /// </summary>
         [Description("Total doubles")]
-        [DataMember(Name = "Doubles", Order = 21)]
+        [DataMember(Name = "Doubles", Order = 22)]
         public decimal? Doubles { get; set; }
 
         /// <summary>
         /// Total triples
         /// </summary>
         [Description("Total triples")]
-        [DataMember(Name = "Triples", Order = 22)]
+        [DataMember(Name = "Triples", Order = 23)]
         public decimal? Triples { get; set; }
 
         /// <summary>
         /// Total home runs
         /// </summary>
         [Description("Total home runs")]
-        [DataMember(Name = "HomeRuns", Order = 23)]
+        [DataMember(Name = "HomeRuns", Order = 24)]
         public decimal? HomeRuns { get; set; }
 
         /// <summary>
         /// Total runs batted in
         /// </summary>
         [Description("Total runs batted in")]
-        [DataMember(Name = "RunsBattedIn", Order = 24)]
+        [DataMember(Name = "RunsBattedIn", Order = 25)]
         public decimal? RunsBattedIn { get; set; }
 
         /// <summary>
         /// Total batting average
         /// </summary>
         [Description("Total batting average")]
-        [DataMember(Name = "BattingAverage", Order = 25)]
+        [DataMember(Name = "BattingAverage", Order = 26)]
         public decimal? BattingAverage { get; set; }
 
         /// <summary>
         /// Total outs
         /// </summary>
         [Description("Total outs")]
-        [DataMember(Name = "Outs", Order = 26)]
+        [DataMember(Name = "Outs", Order = 27)]
         public decimal? Outs { get; set; }
 
         /// <summary>
         /// Total strikeouts
         /// </summary>
         [Description("Total strikeouts")]
-        [DataMember(Name = "Strikeouts", Order = 27)]
+        [DataMember(Name = "Strikeouts", Order = 28)]
         public decimal? Strikeouts { get; set; }
 
         /// <summary>
         /// Total walks
         /// </summary>
         [Description("Total walks")]
-        [DataMember(Name = "Walks", Order = 28)]
+        [DataMember(Name = "Walks", Order = 29)]
         public decimal? Walks { get; set; }
 
         /// <summary>
         /// Total times hit by pitch
         /// </summary>
         [Description("Total times hit by pitch")]
-        [DataMember(Name = "HitByPitch", Order = 29)]
+        [DataMember(Name = "HitByPitch", Order = 30)]
         public decimal? HitByPitch { get; set; }
 
         /// <summary>
         /// Total sacrifices
         /// </summary>
         [Description("Total sacrifices")]
-        [DataMember(Name = "Sacrifices", Order = 30)]
+        [DataMember(Name = "Sacrifices", Order = 31)]
         public decimal? Sacrifices { get; set; }
 
         /// <summary>
         /// Total sacrifice flies
         /// </summary>
         [Description("Total sacrifice flies")]
-        [DataMember(Name = "SacrificeFlies", Order = 31)]
+        [DataMember(Name = "SacrificeFlies", Order = 32)]
         public decimal? SacrificeFlies { get; set; }
 
         /// <summary>
         /// Total times grounded into double play
         /// </summary>
         [Description("Total times grounded into double play")]
-        [DataMember(Name = "GroundIntoDoublePlay", Order = 32)]
+        [DataMember(Name = "GroundIntoDoublePlay", Order = 33)]
         public decimal? GroundIntoDoublePlay { get; set; }
 
         /// <summary>
         /// Total stolen bases
         /// </summary>
         [Description("Total stolen bases")]
-        [DataMember(Name = "StolenBases", Order = 33)]
+        [DataMember(Name = "StolenBases", Order = 34)]
         public decimal? StolenBases { get; set; }
 
         /// <summary>
         /// Total caught stealing
         /// </summary>
         [Description("Total caught stealing")]
-        [DataMember(Name = "CaughtStealing", Order = 34)]
+        [DataMember(Name = "CaughtStealing", Order = 35)]
         public decimal? CaughtStealing { get; set; }
 
         /// <summary>
         /// Total pitches seen
         /// </summary>
         [Description("Total pitches seen")]
-        [DataMember(Name = "PitchesSeen", Order = 35)]
+        [DataMember(Name = "PitchesSeen", Order = 36)]
         public decimal? PitchesSeen { get; set; }
 
         /// <summary>
         /// Total on base percentage
         /// </summary>
         [Description("Total on base percentage")]
-        [DataMember(Name = "OnBasePercentage", Order = 36)]
+        [DataMember(Name = "OnBasePercentage", Order = 37)]
         public decimal? OnBasePercentage { get; set; }
 
         /// <summary>
         /// Total slugging percentage
         /// </summary>
         [Description("Total slugging percentage")]
-        [DataMember(Name = "SluggingPercentage", Order = 37)]
+        [DataMember(Name = "SluggingPercentage", Order = 38)]
         public decimal? SluggingPercentage { get; set; }
 
         /// <summary>
         /// Total on base plus percentage 
         /// </summary>
         [Description("Total on base plus percentage ")]
-        [DataMember(Name = "OnBasePlusSlugging", Order = 38)]
+        [DataMember(Name = "OnBasePlusSlugging", Order = 39)]
         public decimal? OnBasePlusSlugging { get; set; }
 
         /// <summary>
         /// Total errors
         /// </summary>
         [Description("Total errors")]
-        [DataMember(Name = "Errors", Order = 39)]
+        [DataMember(Name = "Errors", Order = 40)]
         public decimal? Errors { get; set; }
 
         /// <summary>
         /// Total wins by the team/player
         /// </summary>
         [Description("Total wins by the team/player")]
-        [DataMember(Name = "Wins", Order = 40)]
+        [DataMember(Name = "Wins", Order = 41)]
         public decimal? Wins { get; set; }
 
         /// <summary>
         /// Total losses by the team/player
         /// </summary>
         [Description("Total losses by the team/player")]
-        [DataMember(Name = "Losses", Order = 41)]
+        [DataMember(Name = "Losses", Order = 42)]
         public decimal? Losses { get; set; }
 
         /// <summary>
         /// Total saves by team/player
         /// </summary>
         [Description("Total saves by team/player")]
-        [DataMember(Name = "Saves", Order = 42)]
+        [DataMember(Name = "Saves", Order = 43)]
         public decimal? Saves { get; set; }
 
         /// <summary>
         /// Decimal representation of total innings pitched (e.g. 1.33, 7.66, etc)
         /// </summary>
         [Description("Decimal representation of total innings pitched (e.g. 1.33, 7.66, etc)")]
-        [DataMember(Name = "InningsPitchedDecimal", Order = 43)]
+        [DataMember(Name = "InningsPitchedDecimal", Order = 44)]
         public decimal? InningsPitchedDecimal { get; set; }
 
         /// <summary>
         /// Total outs pitched by team/player
         /// </summary>
         [Description("Total outs pitched by team/player")]
-        [DataMember(Name = "TotalOutsPitched", Order = 44)]
+        [DataMember(Name = "TotalOutsPitched", Order = 45)]
         public decimal? TotalOutsPitched { get; set; }
 
         /// <summary>
         /// Total full innings pitched (e.g. 6, 71, 89, etc)
         /// </summary>
         [Description("Total full innings pitched (e.g. 6, 71, 89, etc)")]
-        [DataMember(Name = "InningsPitchedFull", Order = 45)]
+        [DataMember(Name = "InningsPitchedFull", Order = 46)]
         public decimal? InningsPitchedFull { get; set; }
 
         /// <summary>
         /// Outs pitched beyond InningsPitchedFull (possible values: 0, 1, 2)
         /// </summary>
         [Description("Outs pitched beyond InningsPitchedFull (possible values: 0, 1, 2)")]
-        [DataMember(Name = "InningsPitchedOuts", Order = 46)]
+        [DataMember(Name = "InningsPitchedOuts", Order = 47)]
         public decimal? InningsPitchedOuts { get; set; }
 
         /// <summary>
         /// Total earned run average by team/player
         /// </summary>
         [Description("Total earned run average by team/player")]
-        [DataMember(Name = "EarnedRunAverage", Order = 47)]
+        [DataMember(Name = "EarnedRunAverage", Order = 48)]
         public decimal? EarnedRunAverage { get; set; }
 
         /// <summary>
         /// Hits allowed while pitching
         /// </summary>
         [Description("Hits allowed while pitching")]
-        [DataMember(Name = "PitchingHits", Order = 48)]
+        [DataMember(Name = "PitchingHits", Order = 49)]
         public decimal? PitchingHits { get; set; }
 
         /// <summary>
         /// Runs allowed while pitching
         /// </summary>
         [Description("Runs allowed while pitching")]
-        [DataMember(Name = "PitchingRuns", Order = 49)]
+        [DataMember(Name = "PitchingRuns", Order = 50)]
         public decimal? PitchingRuns { get; set; }
 
         /// <summary>
         /// Earned runs allowed while pitching
         /// </summary>
         [Description("Earned runs allowed while pitching")]
-        [DataMember(Name = "PitchingEarnedRuns", Order = 50)]
+        [DataMember(Name = "PitchingEarnedRuns", Order = 51)]
         public decimal? PitchingEarnedRuns { get; set; }
 
         /// <summary>
         /// Walks allowed while pitching
         /// </summary>
         [Description("Walks allowed while pitching")]
-        [DataMember(Name = "PitchingWalks", Order = 51)]
+        [DataMember(Name = "PitchingWalks", Order = 52)]
         public decimal? PitchingWalks { get; set; }
 
         /// <summary>
         /// Strikeouts allowed while pitching
         /// </summary>
         [Description("Strikeouts allowed while pitching")]
-        [DataMember(Name = "PitchingStrikeouts", Order = 52)]
+        [DataMember(Name = "PitchingStrikeouts", Order = 53)]
         public decimal? PitchingStrikeouts { get; set; }
 
         /// <summary>
         /// Home runs allowed while pitching
         /// </summary>
         [Description("Home runs allowed while pitching")]
-        [DataMember(Name = "PitchingHomeRuns", Order = 53)]
+        [DataMember(Name = "PitchingHomeRuns", Order = 54)]
         public decimal? PitchingHomeRuns { get; set; }
 
         /// <summary>
         /// Total pitches thrown while pitching
         /// </summary>
         [Description("Total pitches thrown while pitching")]
-        [DataMember(Name = "PitchesThrown", Order = 54)]
+        [DataMember(Name = "PitchesThrown", Order = 55)]
         public decimal? PitchesThrown { get; set; }
 
         /// <summary>
         /// Total pitches thrown for strikes while pitching
         /// </summary>
         [Description("Total pitches thrown for strikes while pitching")]
-        [DataMember(Name = "PitchesThrownStrikes", Order = 55)]
+        [DataMember(Name = "PitchesThrownStrikes", Order = 56)]
         public decimal? PitchesThrownStrikes { get; set; }
 
         /// <summary>
         /// Walks plus hits per innings pitched (WHIP) while pitching
         /// </summary>
         [Description("Walks plus hits per innings pitched (WHIP) while pitching")]
-        [DataMember(Name = "WalksHitsPerInningsPitched", Order = 56)]
+        [DataMember(Name = "WalksHitsPerInningsPitched", Order = 57)]
         public decimal? WalksHitsPerInningsPitched { get; set; }
 
         /// <summary>
         /// Total batting average against (BAA) while pitching
         /// </summary>
         [Description("Total batting average against (BAA) while pitching")]
-        [DataMember(Name = "PitchingBattingAverageAgainst", Order = 57)]
+        [DataMember(Name = "PitchingBattingAverageAgainst", Order = 58)]
         public decimal? PitchingBattingAverageAgainst { get; set; }
 
         /// <summary>
         /// Total grand slams
         /// </summary>
         [Description("Total grand slams")]
-        [DataMember(Name = "GrandSlams", Order = 58)]
+        [DataMember(Name = "GrandSlams", Order = 59)]
         public decimal? GrandSlams { get; set; }
 
         /// <summary>
         /// Total FanDuel fantasy points
         /// </summary>
         [Description("Total FanDuel fantasy points")]
-        [DataMember(Name = "FantasyPointsFanDuel", Order = 59)]
+        [DataMember(Name = "FantasyPointsFanDuel", Order = 60)]
         public decimal? FantasyPointsFanDuel { get; set; }
 
         /// <summary>
         /// Total DraftKings fantasy points
         /// </summary>
         [Description("Total DraftKings fantasy points")]
-        [DataMember(Name = "FantasyPointsDraftKings", Order = 60)]
+        [DataMember(Name = "FantasyPointsDraftKings", Order = 61)]
         public decimal? FantasyPointsDraftKings { get; set; }
 
         /// <summary>
         /// Total Yahoo fantasy points
         /// </summary>
         [Description("Total Yahoo fantasy points")]
-        [DataMember(Name = "FantasyPointsYahoo", Order = 61)]
+        [DataMember(Name = "FantasyPointsYahoo", Order = 62)]
         public decimal? FantasyPointsYahoo { get; set; }
 
         /// <summary>
         /// Total plate appearances
         /// </summary>
         [Description("Total plate appearances")]
-        [DataMember(Name = "PlateAppearances", Order = 62)]
+        [DataMember(Name = "PlateAppearances", Order = 63)]
         public decimal? PlateAppearances { get; set; }
 
         /// <summary>
         /// Number of total bases
         /// </summary>
         [Description("Number of total bases")]
-        [DataMember(Name = "TotalBases", Order = 63)]
+        [DataMember(Name = "TotalBases", Order = 64)]
         public decimal? TotalBases { get; set; }
 
         /// <summary>
         /// Total fly outs
         /// </summary>
         [Description("Total fly outs")]
-        [DataMember(Name = "FlyOuts", Order = 64)]
+        [DataMember(Name = "FlyOuts", Order = 65)]
         public decimal? FlyOuts { get; set; }
 
         /// <summary>
         /// Total ground outs
         /// </summary>
         [Description("Total ground outs")]
-        [DataMember(Name = "GroundOuts", Order = 65)]
+        [DataMember(Name = "GroundOuts", Order = 66)]
         public decimal? GroundOuts { get; set; }
 
         /// <summary>
         /// Total line outs
         /// </summary>
         [Description("Total line outs")]
-        [DataMember(Name = "LineOuts", Order = 66)]
+        [DataMember(Name = "LineOuts", Order = 67)]
         public decimal? LineOuts { get; set; }
 
         /// <summary>
         /// Total pop outs
         /// </summary>
         [Description("Total pop outs")]
-        [DataMember(Name = "PopOuts", Order = 67)]
+        [DataMember(Name = "PopOuts", Order = 68)]
         public decimal? PopOuts { get; set; }
 
         /// <summary>
         /// Total intentional walks
         /// </summary>
         [Description("Total intentional walks")]
-        [DataMember(Name = "IntentionalWalks", Order = 68)]
+        [DataMember(Name = "IntentionalWalks", Order = 69)]
         public decimal? IntentionalWalks { get; set; }
 
         /// <summary>
         /// Total times reached on error
         /// </summary>
         [Description("Total times reached on error")]
-        [DataMember(Name = "ReachedOnError", Order = 69)]
+        [DataMember(Name = "ReachedOnError", Order = 70)]
         public decimal? ReachedOnError { get; set; }
 
         /// <summary>
         /// Total balls in play
         /// </summary>
         [Description("Total balls in play")]
-        [DataMember(Name = "BallsInPlay", Order = 70)]
+        [DataMember(Name = "BallsInPlay", Order = 71)]
         public decimal? BallsInPlay { get; set; }
 
         /// <summary>
         /// Total batting average on balls in play (BABIP
         /// </summary>
         [Description("Total batting average on balls in play (BABIP")]
-        [DataMember(Name = "BattingAverageOnBallsInPlay", Order = 71)]
+        [DataMember(Name = "BattingAverageOnBallsInPlay", Order = 72)]
         public decimal? BattingAverageOnBallsInPlay { get; set; }
 
         /// <summary>
         /// Total weight on base percentage
         /// </summary>
         [Description("Total weight on base percentage")]
-        [DataMember(Name = "WeightedOnBasePercentage", Order = 72)]
+        [DataMember(Name = "WeightedOnBasePercentage", Order = 73)]
         public decimal? WeightedOnBasePercentage { get; set; }
 
         /// <summary>
         /// Total singles allowed while pitching
         /// </summary>
         [Description("Total singles allowed while pitching")]
-        [DataMember(Name = "PitchingSingles", Order = 73)]
+        [DataMember(Name = "PitchingSingles", Order = 74)]
         public decimal? PitchingSingles { get; set; }
 
         /// <summary>
         /// Total doubles allowed while pitching
         /// </summary>
         [Description("Total doubles allowed while pitching")]
-        [DataMember(Name = "PitchingDoubles", Order = 74)]
+        [DataMember(Name = "PitchingDoubles", Order = 75)]
         public decimal? PitchingDoubles { get; set; }
 
         /// <summary>
         /// Total triples allowed while pitching
         /// </summary>
         [Description("Total triples allowed while pitching")]
-        [DataMember(Name = "PitchingTriples", Order = 75)]
+        [DataMember(Name = "PitchingTriples", Order = 76)]
         public decimal? PitchingTriples { get; set; }
 
         /// <summary>
         /// Total grand slams allowed while pitching
         /// </summary>
         [Description("Total grand slams allowed while pitching")]
-        [DataMember(Name = "PitchingGrandSlams", Order = 76)]
+        [DataMember(Name = "PitchingGrandSlams", Order = 77)]
         public decimal? PitchingGrandSlams { get; set; }
 
         /// <summary>
         /// Total batters hit by pitch while pitching
         /// </summary>
         [Description("Total batters hit by pitch while pitching")]
-        [DataMember(Name = "PitchingHitByPitch", Order = 77)]
+        [DataMember(Name = "PitchingHitByPitch", Order = 78)]
         public decimal? PitchingHitByPitch { get; set; }
 
         /// <summary>
         /// Total sacrifices while pitching
         /// </summary>
         [Description("Total sacrifices while pitching")]
-        [DataMember(Name = "PitchingSacrifices", Order = 78)]
+        [DataMember(Name = "PitchingSacrifices", Order = 79)]
         public decimal? PitchingSacrifices { get; set; }
 
         /// <summary>
         /// Total sacrifice flies while pitching
         /// </summary>
         [Description("Total sacrifice flies while pitching")]
-        [DataMember(Name = "PitchingSacrificeFlies", Order = 79)]
+        [DataMember(Name = "PitchingSacrificeFlies", Order = 80)]
         public decimal? PitchingSacrificeFlies { get; set; }
 
         /// <summary>
         /// Total grounded into double plays while pitching
         /// </summary>
         [Description("Total grounded into double plays while pitching")]
-        [DataMember(Name = "PitchingGroundIntoDoublePlay", Order = 80)]
+        [DataMember(Name = "PitchingGroundIntoDoublePlay", Order = 81)]
         public decimal? PitchingGroundIntoDoublePlay { get; set; }
 
         /// <summary>
         /// Total complete games while pitching
         /// </summary>
         [Description("Total complete games while pitching")]
-        [DataMember(Name = "PitchingCompleteGames", Order = 81)]
+        [DataMember(Name = "PitchingCompleteGames", Order = 82)]
         public decimal? PitchingCompleteGames { get; set; }
 
         /// <summary>
         /// Total shuouts while pitching
         /// </summary>
         [Description("Total shuouts while pitching")]
-        [DataMember(Name = "PitchingShutOuts", Order = 82)]
+        [DataMember(Name = "PitchingShutOuts", Order = 83)]
         public decimal? PitchingShutOuts { get; set; }
 
         /// <summary>
         /// Total no hitters while pitching
         /// </summary>
         [Description("Total no hitters while pitching")]
-        [DataMember(Name = "PitchingNoHitters", Order = 83)]
+        [DataMember(Name = "PitchingNoHitters", Order = 84)]
         public decimal? PitchingNoHitters { get; set; }
 
         /// <summary>
         /// Total perfect games while pitching
         /// </summary>
         [Description("Total perfect games while pitching")]
-        [DataMember(Name = "PitchingPerfectGames", Order = 84)]
+        [DataMember(Name = "PitchingPerfectGames", Order = 85)]
         public decimal? PitchingPerfectGames { get; set; }
 
         /// <summary>
         /// Total plate appearances while pitching
         /// </summary>
         [Description("Total plate appearances while pitching")]
-        [DataMember(Name = "PitchingPlateAppearances", Order = 85)]
+        [DataMember(Name = "PitchingPlateAppearances", Order = 86)]
         public decimal? PitchingPlateAppearances { get; set; }
 
         /// <summary>
         /// Total bases while pitching
         /// </summary>
         [Description("Total bases while pitching")]
-        [DataMember(Name = "PitchingTotalBases", Order = 86)]
+        [DataMember(Name = "PitchingTotalBases", Order = 87)]
         public decimal? PitchingTotalBases { get; set; }
 
         /// <summary>
         /// Total fly outs while pitching
         /// </summary>
         [Description("Total fly outs while pitching")]
-        [DataMember(Name = "PitchingFlyOuts", Order = 87)]
+        [DataMember(Name = "PitchingFlyOuts", Order = 88)]
         public decimal? PitchingFlyOuts { get; set; }
 
         /// <summary>
         /// Total ground outs while pitching
         /// </summary>
         [Description("Total ground outs while pitching")]
-        [DataMember(Name = "PitchingGroundOuts", Order = 88)]
+        [DataMember(Name = "PitchingGroundOuts", Order = 89)]
         public decimal? PitchingGroundOuts { get; set; }
 
         /// <summary>
         /// Total line outs while pitching
         /// </summary>
         [Description("Total line outs while pitching")]
-        [DataMember(Name = "PitchingLineOuts", Order = 89)]
+        [DataMember(Name = "PitchingLineOuts", Order = 90)]
         public decimal? PitchingLineOuts { get; set; }
 
         /// <summary>
         /// Total pop outs while pitching
         /// </summary>
         [Description("Total pop outs while pitching")]
-        [DataMember(Name = "PitchingPopOuts", Order = 90)]
+        [DataMember(Name = "PitchingPopOuts", Order = 91)]
         public decimal? PitchingPopOuts { get; set; }
 
         /// <summary>
         /// Total intentional walks while pitching
         /// </summary>
         [Description("Total intentional walks while pitching")]
-        [DataMember(Name = "PitchingIntentionalWalks", Order = 91)]
+        [DataMember(Name = "PitchingIntentionalWalks", Order = 92)]
         public decimal? PitchingIntentionalWalks { get; set; }
 
         /// <summary>
         /// Total times reached on error while pitching
         /// </summary>
         [Description("Total times reached on error while pitching")]
-        [DataMember(Name = "PitchingReachedOnError", Order = 92)]
+        [DataMember(Name = "PitchingReachedOnError", Order = 93)]
         public decimal? PitchingReachedOnError { get; set; }
 
         /// <summary>
         /// Total catchers interference while pitching
         /// </summary>
         [Description("Total catchers interference while pitching")]
-        [DataMember(Name = "PitchingCatchersInterference", Order = 93)]
+        [DataMember(Name = "PitchingCatchersInterference", Order = 94)]
         public decimal? PitchingCatchersInterference { get; set; }
 
         /// <summary>
         /// Total balls in play while pitching
         /// </summary>
         [Description("Total balls in play while pitching")]
-        [DataMember(Name = "PitchingBallsInPlay", Order = 94)]
+        [DataMember(Name = "PitchingBallsInPlay", Order = 95)]
         public decimal? PitchingBallsInPlay { get; set; }
 
         /// <summary>
         /// Total on base percentage (OBP) while pitching
         /// </summary>
         [Description("Total on base percentage (OBP) while pitching")]
-        [DataMember(Name = "PitchingOnBasePercentage", Order = 95)]
+        [DataMember(Name = "PitchingOnBasePercentage", Order = 96)]
         public decimal? PitchingOnBasePercentage { get; set; }
 
         /// <summary>
         /// Total slugging percentage (SLG) while pitching
         /// </summary>
         [Description("Total slugging percentage (SLG) while pitching")]
-        [DataMember(Name = "PitchingSluggingPercentage", Order = 96)]
+        [DataMember(Name = "PitchingSluggingPercentage", Order = 97)]
         public decimal? PitchingSluggingPercentage { get; set; }
 
         /// <summary>
         /// Total on base plus slugging (OPS) while pitching
         /// </summary>
         [Description("Total on base plus slugging (OPS) while pitching")]
-        [DataMember(Name = "PitchingOnBasePlusSlugging", Order = 97)]
+        [DataMember(Name = "PitchingOnBasePlusSlugging", Order = 98)]
         public decimal? PitchingOnBasePlusSlugging { get; set; }
 
         /// <summary>
         /// Total strikeouts per nine innings (K/9) while pitching
         /// </summary>
         [Description("Total strikeouts per nine innings (K/9) while pitching")]
-        [DataMember(Name = "PitchingStrikeoutsPerNineInnings", Order = 98)]
+        [DataMember(Name = "PitchingStrikeoutsPerNineInnings", Order = 99)]
         public decimal? PitchingStrikeoutsPerNineInnings { get; set; }
 
         /// <summary>
         /// Total walks per nine innings (BB/9) while pitching
         /// </summary>
         [Description("Total walks per nine innings (BB/9) while pitching")]
-        [DataMember(Name = "PitchingWalksPerNineInnings", Order = 99)]
+        [DataMember(Name = "PitchingWalksPerNineInnings", Order = 100)]
         public decimal? PitchingWalksPerNineInnings { get; set; }
 
         /// <summary>
         /// Total batting average on balls in play (BABIP) while pitching
         /// </summary>
         [Description("Total batting average on balls in play (BABIP) while pitching")]
-        [DataMember(Name = "PitchingBattingAverageOnBallsInPlay", Order = 100)]
+        [DataMember(Name = "PitchingBattingAverageOnBallsInPlay", Order = 101)]
         public decimal? PitchingBattingAverageOnBallsInPlay { get; set; }
 
         /// <summary>
         /// Total weighted on base percentage while pitching 
         /// </summary>
         [Description("Total weighted on base percentage while pitching ")]
-        [DataMember(Name = "PitchingWeightedOnBasePercentage", Order = 101)]
+        [DataMember(Name = "PitchingWeightedOnBasePercentage", Order = 102)]
         public decimal? PitchingWeightedOnBasePercentage { get; set; }
 
         /// <summary>
         /// Total double plays
         /// </summary>
         [Description("Total double plays")]
-        [DataMember(Name = "DoublePlays", Order = 102)]
+        [DataMember(Name = "DoublePlays", Order = 103)]
         public decimal? DoublePlays { get; set; }
 
         /// <summary>
         /// Total double plays while pitching
         /// </summary>
         [Description("Total double plays while pitching")]
-        [DataMember(Name = "PitchingDoublePlays", Order = 103)]
+        [DataMember(Name = "PitchingDoublePlays", Order = 104)]
         public decimal? PitchingDoublePlays { get; set; }
 
         /// <summary>
         /// Whether the batting order is confirmed (true/false)
         /// </summary>
         [Description("Whether the batting order is confirmed (true/false)")]
-        [DataMember(Name = "BattingOrderConfirmed", Order = 104)]
+        [DataMember(Name = "BattingOrderConfirmed", Order = 105)]
         public bool? BattingOrderConfirmed { get; set; }
 
         /// <summary>
         /// Total isolated power (ISO)
         /// </summary>
         [Description("Total isolated power (ISO)")]
-        [DataMember(Name = "IsolatedPower", Order = 105)]
+        [DataMember(Name = "IsolatedPower", Order = 106)]
         public decimal? IsolatedPower { get; set; }
 
         /// <summary>
         /// Total fielding independent pitching (FIP)
         /// </summary>
         [Description("Total fielding independent pitching (FIP)")]
-        [DataMember(Name = "FieldingIndependentPitching", Order = 106)]
+        [DataMember(Name = "FieldingIndependentPitching", Order = 107)]
         public decimal? FieldingIndependentPitching { get; set; }
 
         /// <summary>
         /// Total quality starts pitched
         /// </summary>
         [Description("Total quality starts pitched")]
-        [DataMember(Name = "PitchingQualityStarts", Order = 107)]
+        [DataMember(Name = "PitchingQualityStarts", Order = 108)]
         public decimal? PitchingQualityStarts { get; set; }
 
         /// <summary>
         /// The inning that the pitcher entered the game (if any).
         /// </summary>
         [Description("The inning that the pitcher entered the game (if any).")]
-        [DataMember(Name = "PitchingInningStarted", Order = 108)]
+        [DataMember(Name = "PitchingInningStarted", Order = 109)]
         public int? PitchingInningStarted { get; set; }
 
         /// <summary>
         /// Total left on base percentage 
         /// </summary>
         [Description("Total left on base percentage ")]
-        [DataMember(Name = "LeftOnBase", Order = 109)]
+        [DataMember(Name = "LeftOnBase", Order = 110)]
         public decimal? LeftOnBase { get; set; }
 
         /// <summary>
         /// Total holds pitched
         /// </summary>
         [Description("Total holds pitched")]
-        [DataMember(Name = "PitchingHolds", Order = 110)]
+        [DataMember(Name = "PitchingHolds", Order = 111)]
         public decimal? PitchingHolds { get; set; }
 
         /// <summary>
         /// Total blown saves pitched
         /// </summary>
         [Description("Total blown saves pitched")]
-        [DataMember(Name = "PitchingBlownSaves", Order = 111)]
+        [DataMember(Name = "PitchingBlownSaves", Order = 112)]
         public decimal? PitchingBlownSaves { get; set; }
 
         /// <summary>
         /// The position in the batting order where this player was substituted into the game (does not include players in the starting lineup)
         /// </summary>
         [Description("The position in the batting order where this player was substituted into the game (does not include players in the starting lineup)")]
-        [DataMember(Name = "SubstituteBattingOrder", Order = 112)]
+        [DataMember(Name = "SubstituteBattingOrder", Order = 113)]
         public int? SubstituteBattingOrder { get; set; }
 
         /// <summary>
         /// The sequence in which this player was substituted into the game, within the particular batting order
         /// </summary>
         [Description("The sequence in which this player was substituted into the game, within the particular batting order")]
-        [DataMember(Name = "SubstituteBattingOrderSequence", Order = 113)]
+        [DataMember(Name = "SubstituteBattingOrderSequence", Order = 114)]
         public int? SubstituteBattingOrderSequence { get; set; }
 
         /// <summary>
         /// Total FantasyDraft fantasy points
         /// </summary>
         [Description("Total FantasyDraft fantasy points")]
-        [DataMember(Name = "FantasyPointsFantasyDraft", Order = 114)]
+        [DataMember(Name = "FantasyPointsFantasyDraft", Order = 115)]
         public decimal? FantasyPointsFantasyDraft { get; set; }
 
     }

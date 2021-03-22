@@ -127,6 +127,13 @@ namespace FantasyData.Api.Client.Model.Nascar
         [DataMember(Name = "RescheduledDateTime", Order = 17)]
         public DateTime? RescheduledDateTime { get; set; }
 
+        /// <summary>
+        /// Indicates whether this race has been canceled
+        /// </summary>
+        [Description("Indicates whether this race has been canceled")]
+        [DataMember(Name = "Canceled", Order = 18)]
+        public bool Canceled { get; set; }
+
     }
 }
 

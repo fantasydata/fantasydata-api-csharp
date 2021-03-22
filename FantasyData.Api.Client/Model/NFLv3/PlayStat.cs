@@ -520,16 +520,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? ExtraPointsHadBlocked { get; set; }
 
         /// <summary>
-        /// Penalties enforced against this player on the play
+        /// Penalties enforced against this player on the play (placeholder for data intended to be added in the future)
         /// </summary>
-        [Description("Penalties enforced against this player on the play")]
+        [Description("Penalties enforced against this player on the play (placeholder for data intended to be added in the future)")]
         [DataMember(Name = "Penalties", Order = 74)]
         public int? Penalties { get; set; }
 
         /// <summary>
-        /// Penalty yards enforced against this player on the play
+        /// Penalty yards enforced against this player on the play (placeholder for data intended to be added in the future)
         /// </summary>
-        [Description("Penalty yards enforced against this player on the play")]
+        [Description("Penalty yards enforced against this player on the play (placeholder for data intended to be added in the future)")]
         [DataMember(Name = "PenaltyYards", Order = 75)]
         public int? PenaltyYards { get; set; }
 

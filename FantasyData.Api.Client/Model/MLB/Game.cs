@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Postponed, Canceled
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Delayed, Postponed, Canceled
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Postponed, Canceled")]
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Delayed, Postponed, Canceled")]
         [DataMember(Name = "Status", Order = 4)]
         public string Status { get; set; }
 
@@ -518,6 +518,27 @@ namespace FantasyData.Api.Client.Model.MLB
         [Description("Indicates whether this game is played in a neutral venue")]
         [DataMember(Name = "NeutralVenue", Order = 73)]
         public bool? NeutralVenue { get; set; }
+
+        /// <summary>
+        /// The current status of the inning for display purposes (possible values: Top 2, Mid 2, Bot 2, End 2, etc)
+        /// </summary>
+        [Description("The current status of the inning for display purposes (possible values: Top 2, Mid 2, Bot 2, End 2, etc)")]
+        [DataMember(Name = "InningDescription", Order = 74)]
+        public string InningDescription { get; set; }
+
+        /// <summary>
+        /// The payout when betting the Over of the Over/Under
+        /// </summary>
+        [Description("The payout when betting the Over of the Over/Under")]
+        [DataMember(Name = "OverPayout", Order = 75)]
+        public int? OverPayout { get; set; }
+
+        /// <summary>
+        /// The payout when betting the Under of the Over/Under
+        /// </summary>
+        [Description("The payout when betting the Under of the Over/Under")]
+        [DataMember(Name = "UnderPayout", Order = 76)]
+        public int? UnderPayout { get; set; }
 
     }
 }

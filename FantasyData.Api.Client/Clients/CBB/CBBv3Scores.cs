@@ -278,6 +278,31 @@ namespace FantasyData.Api.Client
             return this.GetStadiumsAsync().Result;
         }
 
+        /// <summary>
+        /// Get Team Schedule Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
+        public Task<List<Game>> GetTeamScheduleAsync(string season, string team)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            return Task.Run<List<Game>>(() =>
+                base.Get<List<Game>>("/v3/cbb/scores/{format}/TeamSchedule/{season}/{team}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Team Schedule
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
+        public List<Game> GetTeamSchedule(string season, string team)
+        {
+            return this.GetTeamScheduleAsync(season, team).Result;
+        }
+
     }
 }
 

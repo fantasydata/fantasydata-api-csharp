@@ -64,6 +64,27 @@ namespace FantasyData.Api.Client.Model.Golf
         [DataMember(Name = "Updated", Order = 8)]
         public DateTime Updated { get; set; }
 
+        /// <summary>
+        /// Indicates whether the odd is available for wagering at the related Sportsbook (excludes Consensus).
+        /// </summary>
+        [Description("Indicates whether the odd is available for wagering at the related Sportsbook (excludes Consensus).")]
+        [DataMember(Name = "IsAvailable", Order = 9)]
+        public bool IsAvailable { get; set; }
+
+        /// <summary>
+        /// The market type of the odd (e.g. live, pregame, 1st-half, 2nd-quarter)
+        /// </summary>
+        [Description("The market type of the odd (e.g. live, pregame, 1st-half, 2nd-quarter)")]
+        [DataMember(Name = "OddType", Order = 10)]
+        public string OddType { get; set; }
+
+        /// <summary>
+        /// The URL for sportsbook event
+        /// </summary>
+        [Description("The URL for sportsbook event")]
+        [DataMember(Name = "SportsbookUrl", Order = 11)]
+        public string SportsbookUrl { get; set; }
+
     }
 }
 

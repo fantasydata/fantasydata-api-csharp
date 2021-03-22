@@ -162,6 +162,20 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "GlobalTeamID", Order = 22)]
         public int? GlobalTeamID { get; set; }
 
+        /// <summary>
+        /// Rank within the division
+        /// </summary>
+        [Description("Rank within the division")]
+        [DataMember(Name = "DivisionRank", Order = 23)]
+        public int DivisionRank { get; set; }
+
+        /// <summary>
+        /// Rank within the conference
+        /// </summary>
+        [Description("Rank within the conference")]
+        [DataMember(Name = "ConferenceRank", Order = 24)]
+        public int ConferenceRank { get; set; }
+
     }
 }
 

@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string GameKey { get; set; }
 
         /// <summary>
-        /// The type of season that this game corresponds to (1=Regular Season, 2=Preseason, 3=Postseason).
+        /// The type of season that this game corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=All-Star).
         /// </summary>
-        [Description("The type of season that this game corresponds to (1=Regular Season, 2=Preseason, 3=Postseason).")]
+        [Description("The type of season that this game corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=All-Star).")]
         [DataMember(Name = "SeasonType", Order = 2)]
         public int SeasonType { get; set; }
 
@@ -464,9 +464,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public Stadium StadiumDetails { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled")]
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled")]
         [DataMember(Name = "Status", Order = 66)]
         public string Status { get; set; }
 
@@ -497,6 +497,27 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [Description("Indicates whether this game is played in a neutral venue")]
         [DataMember(Name = "NeutralVenue", Order = 70)]
         public bool? NeutralVenue { get; set; }
+
+        /// <summary>
+        /// The head referee ID in this game
+        /// </summary>
+        [Description("The head referee ID in this game")]
+        [DataMember(Name = "RefereeID", Order = 71)]
+        public int? RefereeID { get; set; }
+
+        /// <summary>
+        /// The payout when betting the Over of the Over/Under
+        /// </summary>
+        [Description("The payout when betting the Over of the Over/Under")]
+        [DataMember(Name = "OverPayout", Order = 72)]
+        public int? OverPayout { get; set; }
+
+        /// <summary>
+        /// The payout when betting the Under of the Over/Under
+        /// </summary>
+        [Description("The payout when betting the Under of the Over/Under")]
+        [DataMember(Name = "UnderPayout", Order = 73)]
+        public int? UnderPayout { get; set; }
 
     }
 }

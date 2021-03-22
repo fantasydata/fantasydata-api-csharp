@@ -64,6 +64,34 @@ namespace FantasyData.Api.Client.Model.Golf
         [DataMember(Name = "Updated", Order = 8)]
         public DateTime? Updated { get; set; }
 
+        /// <summary>
+        /// The Author of the news item
+        /// </summary>
+        [Description("The Author of the news item")]
+        [DataMember(Name = "Author", Order = 9)]
+        public string Author { get; set; }
+
+        /// <summary>
+        /// The Categories of the news item
+        /// </summary>
+        [Description("The Categories of the news item")]
+        [DataMember(Name = "Categories", Order = 10)]
+        public string Categories { get; set; }
+
+        /// <summary>
+        /// The OriginalSource of the news item
+        /// </summary>
+        [Description("The OriginalSource of the news item")]
+        [DataMember(Name = "OriginalSource", Order = 11)]
+        public string OriginalSource { get; set; }
+
+        /// <summary>
+        /// The OriginalSourceUrl of the news item
+        /// </summary>
+        [Description("The OriginalSourceUrl of the news item")]
+        [DataMember(Name = "OriginalSourceUrl", Order = 12)]
+        public string OriginalSourceUrl { get; set; }
+
     }
 }
 

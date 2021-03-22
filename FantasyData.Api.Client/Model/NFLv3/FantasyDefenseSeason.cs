@@ -275,16 +275,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? FieldGoalReturnYards { get; set; }
 
         /// <summary>
-        /// Quarterback hits
+        /// Number of times hitting an opposing quarterback (this inludes sacks)
         /// </summary>
-        [Description("Quarterback hits")]
+        [Description("Number of times hitting an opposing quarterback (this inludes sacks)")]
         [DataMember(Name = "QuarterbackHits", Order = 39)]
         public decimal? QuarterbackHits { get; set; }
 
         /// <summary>
-        /// Tackles for a loss
+        /// Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)
         /// </summary>
-        [Description("Tackles for a loss")]
+        [Description("Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)")]
         [DataMember(Name = "TacklesForLoss", Order = 40)]
         public decimal? TacklesForLoss { get; set; }
 

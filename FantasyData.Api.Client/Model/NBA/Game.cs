@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled")]
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled")]
         [DataMember(Name = "Status", Order = 4)]
         public string Status { get; set; }
 
@@ -252,6 +252,20 @@ namespace FantasyData.Api.Client.Model.NBA
         [Description("Indicates whether this game is played in a neutral venue")]
         [DataMember(Name = "NeutralVenue", Order = 35)]
         public bool? NeutralVenue { get; set; }
+
+        /// <summary>
+        /// The payout when betting the Over of the Over/Under
+        /// </summary>
+        [Description("The payout when betting the Over of the Over/Under")]
+        [DataMember(Name = "OverPayout", Order = 36)]
+        public int? OverPayout { get; set; }
+
+        /// <summary>
+        /// The payout when betting the Under of the Over/Under
+        /// </summary>
+        [Description("The payout when betting the Under of the Over/Under")]
+        [DataMember(Name = "UnderPayout", Order = 37)]
+        public int? UnderPayout { get; set; }
 
     }
 }

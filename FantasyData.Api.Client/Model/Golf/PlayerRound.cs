@@ -190,6 +190,13 @@ namespace FantasyData.Api.Client.Model.Golf
         [DataMember(Name = "IncludesStreakOfSixBirdiesOrBetter", Order = 26)]
         public bool IncludesStreakOfSixBirdiesOrBetter { get; set; }
 
+        /// <summary>
+        /// Indicates the Player's Tee Time this round (from 2020)
+        /// </summary>
+        [Description("Indicates the Player's Tee Time this round (from 2020)")]
+        [DataMember(Name = "TeeTime", Order = 27)]
+        public DateTime? TeeTime { get; set; }
+
     }
 }
 

@@ -120,6 +120,62 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "SportsbookId", Order = 16)]
         public int? SportsbookId { get; set; }
 
+        /// <summary>
+        /// The URL for sportsbook event
+        /// </summary>
+        [Description("The URL for sportsbook event")]
+        [DataMember(Name = "SportsbookUrl", Order = 17)]
+        public string SportsbookUrl { get; set; }
+
+        /// <summary>
+        /// The sportsbook's asian handicap for the home team
+        /// </summary>
+        [Description("The sportsbook's asian handicap for the home team")]
+        [DataMember(Name = "HomeTeamAsianHandicap", Order = 18)]
+        public decimal? HomeTeamAsianHandicap { get; set; }
+
+        /// <summary>
+        /// The sportsbook's asian handicap for the away team
+        /// </summary>
+        [Description("The sportsbook's asian handicap for the away team")]
+        [DataMember(Name = "AwayTeamAsianHandicap", Order = 19)]
+        public decimal? AwayTeamAsianHandicap { get; set; }
+
+        /// <summary>
+        /// The sportsbook's asian handicap payout for the home team covering
+        /// </summary>
+        [Description("The sportsbook's asian handicap payout for the home team covering")]
+        [DataMember(Name = "HomeTeamAsianHandicapPayout", Order = 20)]
+        public int? HomeTeamAsianHandicapPayout { get; set; }
+
+        /// <summary>
+        /// The sportsbook's asian handicap payout for the away team covering
+        /// </summary>
+        [Description("The sportsbook's asian handicap payout for the away team covering")]
+        [DataMember(Name = "AwayTeamAsianHandicapPayout", Order = 21)]
+        public int? AwayTeamAsianHandicapPayout { get; set; }
+
+        /// <summary>
+        /// The sportsbook's asian total for the game
+        /// </summary>
+        [Description("The sportsbook's asian total for the game")]
+        [DataMember(Name = "AsianTotal", Order = 22)]
+        public decimal? AsianTotal { get; set; }
+
+        /// <summary>
+        /// The sportsbook's payout for a result over the asian total
+        /// </summary>
+        [Description("The sportsbook's payout for a result over the asian total")]
+        [DataMember(Name = "AsianTotalOverPayout", Order = 23)]
+        public int? AsianTotalOverPayout { get; set; }
+
+        /// <summary>
+        /// The sportsbook's payout for a result under the asian total
+        /// </summary>
+        [Description("The sportsbook's payout for a result under the asian total")]
+        [DataMember(Name = "AsianTotalUnderPayout", Order = 24)]
+        public int? AsianTotalUnderPayout { get; set; }
+
     }
 }
 

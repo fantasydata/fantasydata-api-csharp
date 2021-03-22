@@ -98,6 +98,31 @@ namespace FantasyData.Api.Client
             return this.GetLiveGameOddsLineMovementAsync(gameid).Result;
         }
 
+        /// <summary>
+        /// Get Pre-Game Odds by Date by Competition Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public Task<List<GameInfo>> GetPreGameOddsByDateByCompetitionAsync(string competition, string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v3/soccer/odds/{format}/PreGameOddsByDateByCompetition/{competition}/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Pre-Game Odds by Date by Competition
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public List<GameInfo> GetPreGameOddsByDateByCompetition(string competition, string date)
+        {
+            return this.GetPreGameOddsByDateByCompetitionAsync(competition, date).Result;
+        }
+
     }
 }
 

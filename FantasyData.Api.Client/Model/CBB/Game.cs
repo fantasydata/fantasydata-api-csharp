@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled")]
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled")]
         [DataMember(Name = "Status", Order = 4)]
         public string Status { get; set; }
 
@@ -315,6 +315,34 @@ namespace FantasyData.Api.Client.Model.CBB
         [Description("Indicates whether this game is played in a neutral venue")]
         [DataMember(Name = "NeutralVenue", Order = 44)]
         public bool? NeutralVenue { get; set; }
+
+        /// <summary>
+        /// The point spread payout for the away team
+        /// </summary>
+        [Description("The point spread payout for the away team")]
+        [DataMember(Name = "AwayPointSpreadPayout", Order = 45)]
+        public int? AwayPointSpreadPayout { get; set; }
+
+        /// <summary>
+        /// The point spread payout for the home team
+        /// </summary>
+        [Description("The point spread payout for the home team")]
+        [DataMember(Name = "HomePointSpreadPayout", Order = 46)]
+        public int? HomePointSpreadPayout { get; set; }
+
+        /// <summary>
+        /// The payout when betting the Over of the Over/Under
+        /// </summary>
+        [Description("The payout when betting the Over of the Over/Under")]
+        [DataMember(Name = "OverPayout", Order = 47)]
+        public int? OverPayout { get; set; }
+
+        /// <summary>
+        /// The payout when betting the Under of the Over/Under
+        /// </summary>
+        [Description("The payout when betting the Under of the Over/Under")]
+        [DataMember(Name = "UnderPayout", Order = 48)]
+        public int? UnderPayout { get; set; }
 
     }
 }

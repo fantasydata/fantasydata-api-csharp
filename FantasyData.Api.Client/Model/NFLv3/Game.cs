@@ -618,30 +618,30 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? HomeRedZoneConversions { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities")]
+        [Description("Deprecated")]
         [DataMember(Name = "AwayGoalToGoAttempts", Order = 88)]
         public int? AwayGoalToGoAttempts { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities")]
+        [Description("Deprecated")]
         [DataMember(Name = "HomeGoalToGoAttempts", Order = 89)]
         public int? HomeGoalToGoAttempts { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities converted to touchdowns
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities converted to touchdowns")]
+        [Description("Deprecated")]
         [DataMember(Name = "AwayGoalToGoConversions", Order = 90)]
         public int? AwayGoalToGoConversions { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities converted to touchdowns
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities converted to touchdowns")]
+        [Description("Deprecated")]
         [DataMember(Name = "HomeGoalToGoConversions", Order = 91)]
         public int? HomeGoalToGoConversions { get; set; }
 

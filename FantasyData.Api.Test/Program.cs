@@ -9,13 +9,32 @@ namespace FantasyData.Api.Test
         static void Main(string[] args)
         {
             // Connect to client and get data
-            var client = new Lolv3ScoresClient("23f3696056164352b61722b32f5abaa0");
-            var competitions = client.GetCompetitions();
+            var client = new  NFLv3ScoresClient("4512f3fb84064c699b18704f70f1708c");
+            var scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
+            scores = client.GetScores("2020POST");
 
             // Write data to console
-            foreach(var competition in competitions)
+            foreach (var score in scores)
             {
-                Console.WriteLine($"{competition.CompetitionId} - {competition.Name} ({competition.AreaName})");
+                Console.WriteLine($"{score.AwayTeam} @ {score.HomeTeam}");
             }
 
             Console.WriteLine();

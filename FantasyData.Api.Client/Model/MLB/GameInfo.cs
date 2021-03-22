@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Postponed, Canceled
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Postponed, Delayed, Canceled
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Postponed, Canceled")]
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Postponed, Delayed, Canceled")]
         [DataMember(Name = "Status", Order = 6)]
         public string Status { get; set; }
 
@@ -147,6 +147,13 @@ namespace FantasyData.Api.Client.Model.MLB
         [Description("Rotation number of away team for this game")]
         [DataMember(Name = "AwayRotationNumber", Order = 20)]
         public int? AwayRotationNumber { get; set; }
+
+        /// <summary>
+        /// List of Alternate Market Game Odds from different sportsbooks.
+        /// </summary>
+        [Description("List of Alternate Market Game Odds from different sportsbooks.")]
+        [DataMember(Name = "AlternateMarketPregameOdds", Order = 20021)]
+        public GameOdd[] AlternateMarketPregameOdds { get; set; }
 
     }
 }

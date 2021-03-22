@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled")]
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled")]
         [DataMember(Name = "Status", Order = 7)]
         public string Status { get; set; }
 
@@ -152,8 +152,8 @@ namespace FantasyData.Api.Client.Model.CFB
         /// Rotation number of away team for this game
         /// </summary>
         [Description("Rotation number of away team for this game")]
-        [DataMember(Name = "AwayRotationNUmber", Order = 21)]
-        public int? AwayRotationNUmber { get; set; }
+        [DataMember(Name = "AwayRotationNumber", Order = 21)]
+        public int? AwayRotationNumber { get; set; }
 
         /// <summary>
         /// List of Alternate Market Pregame Odds from different sportsbooks

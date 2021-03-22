@@ -120,6 +120,20 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "Team2", Order = 16)]
         public string Team2 { get; set; }
 
+        /// <summary>
+        /// The original source who broke this news (before it was picked up by the publisher of this blurb)
+        /// </summary>
+        [Description("The original source who broke this news (before it was picked up by the publisher of this blurb)")]
+        [DataMember(Name = "OriginalSource", Order = 17)]
+        public string OriginalSource { get; set; }
+
+        /// <summary>
+        /// The URL of the original source who broke this news blurb
+        /// </summary>
+        [Description("The URL of the original source who broke this news blurb")]
+        [DataMember(Name = "OriginalSourceUrl", Order = 18)]
+        public string OriginalSourceUrl { get; set; }
+
     }
 }
 

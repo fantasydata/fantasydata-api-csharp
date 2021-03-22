@@ -331,16 +331,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? RedZoneConversions { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities")]
+        [Description("Deprecated")]
         [DataMember(Name = "GoalToGoAttempts", Order = 47)]
         public int? GoalToGoAttempts { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities converted to touchdowns
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities converted to touchdowns")]
+        [Description("Deprecated")]
         [DataMember(Name = "GoalToGoConversions", Order = 48)]
         public int? GoalToGoConversions { get; set; }
 
@@ -394,16 +394,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? TimesSackedYards { get; set; }
 
         /// <summary>
-        /// Number of times the opposing QB was hit but not sacked
+        /// Number of times hitting an opposing quarterback (this inludes sacks)
         /// </summary>
-        [Description("Number of times the opposing QB was hit but not sacked")]
+        [Description("Number of times hitting an opposing quarterback (this inludes sacks)")]
         [DataMember(Name = "QuarterbackHits", Order = 56)]
         public int? QuarterbackHits { get; set; }
 
         /// <summary>
-        /// Number of times the opponent was tackled for a loss
+        /// Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)
         /// </summary>
-        [Description("Number of times the opponent was tackled for a loss")]
+        [Description("Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)")]
         [DataMember(Name = "TacklesForLoss", Order = 57)]
         public int? TacklesForLoss { get; set; }
 
@@ -702,16 +702,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? OpponentRedZoneConversions { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities")]
+        [Description("Deprecated")]
         [DataMember(Name = "OpponentGoalToGoAttempts", Order = 100)]
         public int? OpponentGoalToGoAttempts { get; set; }
 
         /// <summary>
-        /// 1st & Goal opportunities converted to touchdowns
+        /// Deprecated
         /// </summary>
-        [Description("1st & Goal opportunities converted to touchdowns")]
+        [Description("Deprecated")]
         [DataMember(Name = "OpponentGoalToGoConversions", Order = 101)]
         public int? OpponentGoalToGoConversions { get; set; }
 
@@ -835,9 +835,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? RedZonePercentage { get; set; }
 
         /// <summary>
-        /// Percentage of goal-to-go opportunities converted into touchdowns
+        /// Deprecated
         /// </summary>
-        [Description("Percentage of goal-to-go opportunities converted into touchdowns")]
+        [Description("Deprecated")]
         [DataMember(Name = "GoalToGoPercentage", Order = 119)]
         public decimal? GoalToGoPercentage { get; set; }
 
@@ -891,9 +891,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? OpponentRedZonePercentage { get; set; }
 
         /// <summary>
-        /// Percentage of opponent's goal-to-go opportunities converted into touchdowns
+        /// Deprecated
         /// </summary>
-        [Description("Percentage of opponent's goal-to-go opportunities converted into touchdowns")]
+        [Description("Deprecated")]
         [DataMember(Name = "OpponentGoalToGoPercentage", Order = 127)]
         public decimal? OpponentGoalToGoPercentage { get; set; }
 
@@ -1575,6 +1575,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
         [DataMember(Name = "GlobalTeamID", Order = 224)]
         public int? GlobalTeamID { get; set; }
+
+        /// <summary>
+        /// Unique ID of this TeamStatID record.
+        /// </summary>
+        [Description("Unique ID of this TeamStatID record.")]
+        [DataMember(Name = "TeamStatID", Order = 225)]
+        public int TeamStatID { get; set; }
 
     }
 }
