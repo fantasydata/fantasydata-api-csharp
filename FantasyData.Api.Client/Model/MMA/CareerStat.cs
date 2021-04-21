@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.MMA
         public string LastName { get; set; }
 
         /// <summary>
-        /// Significal strikes landed per minute over career
+        /// Significant strikes landed per minute over career
         /// </summary>
-        [Description("Significal strikes landed per minute over career")]
+        [Description("Significant strikes landed per minute over career")]
         [DataMember(Name = "SigStrikesLandedPerMinute", Order = 4)]
         public decimal? SigStrikesLandedPerMinute { get; set; }
 
