@@ -78,6 +78,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "PlayerGameID", Order = 10)]
         public int PlayerGameID { get; set; }
 
+        /// <summary>
+        /// Unique identifier of this scoring play associated with this scoring detail
+        /// </summary>
+        [Description("Unique identifier of this scoring play associated with this scoring detail")]
+        [DataMember(Name = "ScoringPlayID", Order = 11)]
+        public int? ScoringPlayID { get; set; }
+
     }
 }
 

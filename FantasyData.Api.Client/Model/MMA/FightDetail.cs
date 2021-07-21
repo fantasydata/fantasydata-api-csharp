@@ -99,6 +99,13 @@ namespace FantasyData.Api.Client.Model.MMA
         [DataMember(Name = "Fighters", Order = 20013)]
         public FighterInfo[] Fighters { get; set; }
 
+        /// <summary>
+        /// Indicates the fight is still active
+        /// </summary>
+        [Description("Indicates the fight is still active")]
+        [DataMember(Name = "Active", Order = 14)]
+        public bool? Active { get; set; }
+
     }
 }
 

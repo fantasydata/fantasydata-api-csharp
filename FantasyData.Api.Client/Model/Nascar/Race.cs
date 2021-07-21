@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public int? PoleWinnerID { get; set; }
 
         /// <summary>
-        /// Indicates whether this race is currently in progress
+        /// Indicates whether this race is currently in progress. Because some races have the qualifying pole race prior to the actual race, this field flips to true approximately three hours prior to the race's start time (DateTime)
         /// </summary>
-        [Description("Indicates whether this race is currently in progress")]
+        [Description("Indicates whether this race is currently in progress. Because some races have the qualifying pole race prior to the actual race, this field flips to true approximately three hours prior to the race's start time (DateTime)")]
         [DataMember(Name = "IsInProgress", Order = 12)]
         public bool IsInProgress { get; set; }
 

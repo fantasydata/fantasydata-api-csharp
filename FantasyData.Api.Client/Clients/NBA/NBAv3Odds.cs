@@ -459,6 +459,47 @@ namespace FantasyData.Api.Client
             return this.GetBettingMetadataAsync().Result;
         }
 
+        /// <summary>
+        /// Get Sportsbooks (Active) Asynchronous
+        /// </summary>
+        public Task<List<Sportsbook>> GetActiveSportsbooksAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Sportsbook>>(() =>
+                base.Get<List<Sportsbook>>("/v3/nba/odds/{format}/ActiveSportsbooks", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Sportsbooks (Active)
+        /// </summary>
+        public List<Sportsbook> GetActiveSportsbooks()
+        {
+            return this.GetActiveSportsbooksAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Betting Results By Market Asynchronous
+        /// </summary>
+        /// <param name="marketId">The MarketId of the desired market for which to pull all outcomes/bets. Valid entries include: <code>406451</code>, <code>404168</code>, etc.</param>
+        public Task<BettingMarketResult> GetBettingMarketResultsAsync(string marketId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("marketId", marketId.ToString()));
+            return Task.Run<BettingMarketResult>(() =>
+                base.Get<BettingMarketResult>("/v3/nba/odds/{format}/BettingMarketResults/{marketId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Results By Market
+        /// </summary>
+        /// <param name="marketId">The MarketId of the desired market for which to pull all outcomes/bets. Valid entries include: <code>406451</code>, <code>404168</code>, etc.</param>
+        public BettingMarketResult GetBettingMarketResults(string marketId)
+        {
+            return this.GetBettingMarketResultsAsync(marketId).Result;
+        }
+
     }
 }
 

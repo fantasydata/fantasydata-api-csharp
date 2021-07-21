@@ -163,9 +163,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public DateTime? ProDebut { get; set; }
 
         /// <summary>
-        /// The player's salary for the current season.
+        /// Deprecated (do not use)
         /// </summary>
-        [Description("The player's salary for the current season.")]
+        [Description("Deprecated (do not use)")]
         [DataMember(Name = "Salary", Order = 23)]
         public int? Salary { get; set; }
 

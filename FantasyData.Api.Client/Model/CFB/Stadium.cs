@@ -50,6 +50,20 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "State", Order = 6)]
         public string State { get; set; }
 
+        /// <summary>
+        /// The geographic latitude coordinate of this venue.
+        /// </summary>
+        [Description("The geographic latitude coordinate of this venue.")]
+        [DataMember(Name = "GeoLat", Order = 7)]
+        public decimal? GeoLat { get; set; }
+
+        /// <summary>
+        /// The geographic longitude coordinate of this venue.
+        /// </summary>
+        [Description("The geographic longitude coordinate of this venue.")]
+        [DataMember(Name = "GeoLong", Order = 8)]
+        public decimal? GeoLong { get; set; }
+
     }
 }
 

@@ -135,9 +135,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string College { get; set; }
 
         /// <summary>
-        /// The player's salary for the current season.
+        /// Deprecated (do not use)
         /// </summary>
-        [Description("The player's salary for the current season.")]
+        [Description("Deprecated (do not use)")]
         [DataMember(Name = "Salary", Order = 19)]
         public int? Salary { get; set; }
 

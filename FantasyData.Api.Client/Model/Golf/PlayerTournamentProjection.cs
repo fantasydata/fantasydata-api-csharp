@@ -198,9 +198,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public decimal? WorseThanTripleBogey { get; set; }
 
         /// <summary>
-        /// The time that this golfer tees off for the upcoming round (this value will be in the local time of the tournament)
+        /// The time that this golfer tees off for the upcoming round (starting after 2020, this value will be in ET)
         /// </summary>
-        [Description("The time that this golfer tees off for the upcoming round (this value will be in the local time of the tournament)")]
+        [Description("The time that this golfer tees off for the upcoming round (starting after 2020, this value will be in ET)")]
         [DataMember(Name = "TeeTime", Order = 28)]
         public DateTime? TeeTime { get; set; }
 

@@ -71,6 +71,13 @@ namespace FantasyData.Api.Client.Model.MMA
         [DataMember(Name = "Moneyline", Order = 9)]
         public int? Moneyline { get; set; }
 
+        /// <summary>
+        /// Indicates the fighter is still listed for this fight
+        /// </summary>
+        [Description("Indicates the fighter is still listed for this fight")]
+        [DataMember(Name = "Active", Order = 10)]
+        public bool? Active { get; set; }
+
     }
 }
 

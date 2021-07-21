@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Name { get; set; }
 
         /// <summary>
-        /// The league of the team (possible values: Eastern, Western)
+        /// This is no longer used (deprecated)
         /// </summary>
-        [Description("The league of the team (possible values: Eastern, Western)")]
+        [Description("This is no longer used (deprecated)")]
         [DataMember(Name = "LeagueID", Order = 6)]
         public int? LeagueID { get; set; }
 

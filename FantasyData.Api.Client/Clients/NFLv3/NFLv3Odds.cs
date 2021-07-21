@@ -477,6 +477,69 @@ namespace FantasyData.Api.Client
             return this.GetBettingMetadataAsync().Result;
         }
 
+        /// <summary>
+        /// Get Sportsbooks (Active) Asynchronous
+        /// </summary>
+        public Task<List<Sportsbook>> GetActiveSportsbooksAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Sportsbook>>(() =>
+                base.Get<List<Sportsbook>>("/v3/nfl/odds/{format}/ActiveSportsbooks", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Sportsbooks (Active)
+        /// </summary>
+        public List<Sportsbook> GetActiveSportsbooks()
+        {
+            return this.GetActiveSportsbooksAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Betting Splits By BettingMarketId Asynchronous
+        /// </summary>
+        /// <param name="marketId">The BettingMarketID of the market you would like to get splits for. Note that markets we do not have split information on will return an empty response.</param>
+        public Task<BettingMarketSplit> GetBettingSplitsByMarketIdAsync(string marketId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("marketId", marketId.ToString()));
+            return Task.Run<BettingMarketSplit>(() =>
+                base.Get<BettingMarketSplit>("/v3/nfl/odds/{format}/BettingSplitsByMarketId/{marketId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Splits By BettingMarketId
+        /// </summary>
+        /// <param name="marketId">The BettingMarketID of the market you would like to get splits for. Note that markets we do not have split information on will return an empty response.</param>
+        public BettingMarketSplit GetBettingSplitsByMarketId(string marketId)
+        {
+            return this.GetBettingSplitsByMarketIdAsync(marketId).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Splits By ScoreID Asynchronous
+        /// </summary>
+        /// <param name="scoreId">The ScoreID of the desired game to get Betting Market Splits for</param>
+        public Task<GameBettingSplit> GetBettingSplitsByScoreIdAsync(int scoreId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("scoreId", scoreId.ToString()));
+            return Task.Run<GameBettingSplit>(() =>
+                base.Get<GameBettingSplit>("/v3/nfl/odds/{format}/BettingSplitsByScoreId/{scoreId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Splits By ScoreID
+        /// </summary>
+        /// <param name="scoreId">The ScoreID of the desired game to get Betting Market Splits for</param>
+        public GameBettingSplit GetBettingSplitsByScoreId(int scoreId)
+        {
+            return this.GetBettingSplitsByScoreIdAsync(scoreId).Result;
+        }
+
     }
 }
 

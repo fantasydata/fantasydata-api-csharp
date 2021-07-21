@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.Serialization;
 
-namespace FantasyData.Api.Client.Model.NBA
+namespace FantasyData.Api.Client.Model.Golf
 {
     [DataContract(Namespace="", Name="BettingEntityMetadataCollection")]
     [Serializable]
@@ -42,13 +42,6 @@ namespace FantasyData.Api.Client.Model.NBA
         [Description("A list of the possible BettingOutcomeTypes (e.g. Home, Over)")]
         [DataMember(Name = "BettingOutcomeTypes", Order = 20005)]
         public BettingEntityMetadata[] BettingOutcomeTypes { get; set; }
-
-        /// <summary>
-        /// A list of the combinations of MarketType, BetType, & PeriodType which we willl provide automated resulting for
-        /// </summary>
-        [Description("A list of the combinations of MarketType, BetType, & PeriodType which we willl provide automated resulting for")]
-        [DataMember(Name = "ResultedMarketMetaData", Order = 20006)]
-        public BettingResultingMetadata[] ResultedMarketMetaData { get; set; }
 
     }
 }

@@ -396,6 +396,25 @@ namespace FantasyData.Api.Client
             return this.GetBettingMetadataAsync().Result;
         }
 
+        /// <summary>
+        /// Get Sportsbooks (Active) Asynchronous
+        /// </summary>
+        public Task<List<Sportsbook>> GetActiveSportsbooksAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Sportsbook>>(() =>
+                base.Get<List<Sportsbook>>("/v3/cfb/odds/{format}/ActiveSportsbooks", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Sportsbooks (Active)
+        /// </summary>
+        public List<Sportsbook> GetActiveSportsbooks()
+        {
+            return this.GetActiveSportsbooksAsync().Result;
+        }
+
     }
 }
 

@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? Par { get; set; }
 
         /// <summary>
-        /// The player's score (+/- par) on this round
+        /// The total strokes this golfer has for this round in the tournament
         /// </summary>
-        [Description("The player's score (+/- par) on this round")]
+        [Description("The total strokes this golfer has for this round in the tournament")]
         [DataMember(Name = "Score", Order = 6)]
         public int? Score { get; set; }
 
