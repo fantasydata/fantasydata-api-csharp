@@ -105,7 +105,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Player Asynchronous
+        /// Get Generated Player Props by Player Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code></param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code>, <code>2</code>, etc</param>
@@ -122,7 +122,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Player
+        /// Get Generated Player Props by Player
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code></param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code>, <code>2</code>, etc</param>
@@ -133,7 +133,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Team Asynchronous
+        /// Get Generated Player Props by Team Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code></param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code>, <code>2</code>, etc</param>
@@ -150,7 +150,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Team
+        /// Get Generated Player Props by Team
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code></param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code>, <code>2</code>, etc</param>
@@ -161,7 +161,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Week Asynchronous
+        /// Get Generated Player Props by Week Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code></param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code>, <code>2</code>, etc</param>
@@ -176,7 +176,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Week
+        /// Get Generated Player Props by Week
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code></param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code>, <code>2</code>, etc</param>
@@ -538,6 +538,50 @@ namespace FantasyData.Api.Client
         public GameBettingSplit GetBettingSplitsByScoreId(int scoreId)
         {
             return this.GetBettingSplitsByScoreIdAsync(scoreId).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Results By Market Asynchronous
+        /// </summary>
+        /// <param name="marketId">The MarketId of the desired market for which to pull all outcomes/bets.</param>
+        public Task<BettingMarketResult> GetBettingMarketResultsAsync(string marketId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("marketId", marketId.ToString()));
+            return Task.Run<BettingMarketResult>(() =>
+                base.Get<BettingMarketResult>("/v3/nfl/odds/{format}/BettingMarketResults/{marketId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Results By Market
+        /// </summary>
+        /// <param name="marketId">The MarketId of the desired market for which to pull all outcomes/bets.</param>
+        public BettingMarketResult GetBettingMarketResults(string marketId)
+        {
+            return this.GetBettingMarketResultsAsync(marketId).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Player Props by ScoreID Asynchronous
+        /// </summary>
+        /// <param name="scoreid">The unique ScoreID of the game in question.</param>
+        public Task<List<BettingMarket>> GetBettingPlayerPropsByScoreIDAsync(int scoreid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("scoreid", scoreid.ToString()));
+            return Task.Run<List<BettingMarket>>(() =>
+                base.Get<List<BettingMarket>>("/v3/nfl/odds/{format}/BettingPlayerPropsByScoreID/{scoreid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Player Props by ScoreID
+        /// </summary>
+        /// <param name="scoreid">The unique ScoreID of the game in question.</param>
+        public List<BettingMarket> GetBettingPlayerPropsByScoreID(int scoreid)
+        {
+            return this.GetBettingPlayerPropsByScoreIDAsync(scoreid).Result;
         }
 
     }

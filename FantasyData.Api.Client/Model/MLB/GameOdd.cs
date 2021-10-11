@@ -120,6 +120,13 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "SportsbookUrl", Order = 16)]
         public string SportsbookUrl { get; set; }
 
+        /// <summary>
+        /// The market type of the odd (ex: live, pregame, 1st-5th Inning, etc)
+        /// </summary>
+        [Description("The market type of the odd (ex: live, pregame, 1st-5th Inning, etc)")]
+        [DataMember(Name = "OddType", Order = 17)]
+        public string OddType { get; set; }
+
     }
 }
 

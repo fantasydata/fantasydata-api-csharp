@@ -43,6 +43,20 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "BettingOutcomeTypes", Order = 20005)]
         public BettingEntityMetadata[] BettingOutcomeTypes { get; set; }
 
+        /// <summary>
+        /// A list of the combinations of MarketType, BetType, & PeriodType which we willl provide automated resulting for
+        /// </summary>
+        [Description("A list of the combinations of MarketType, BetType, & PeriodType which we willl provide automated resulting for")]
+        [DataMember(Name = "ResultedMarketMetaData", Order = 20006)]
+        public BettingResultingMetadata[] ResultedMarketMetaData { get; set; }
+
+        /// <summary>
+        /// A list of possible BettingResultTypes (eg Win, Loss, Push, NotResulted)
+        /// </summary>
+        [Description("A list of possible BettingResultTypes (eg Win, Loss, Push, NotResulted)")]
+        [DataMember(Name = "BettingResultTypes", Order = 20007)]
+        public BettingEntityMetadata[] BettingResultTypes { get; set; }
+
     }
 }
 

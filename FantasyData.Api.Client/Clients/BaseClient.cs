@@ -36,7 +36,7 @@ namespace FantasyData.Api.Client
 
         public BaseClient(string apiKey)
         {
-            Host = "fly.sportsdata.io";
+            Host = "api.sportsdata.io";
             ApiKey = apiKey.Replace("-", "").ToLower();
             Https = true;
             Encoding = new UTF8Encoding();

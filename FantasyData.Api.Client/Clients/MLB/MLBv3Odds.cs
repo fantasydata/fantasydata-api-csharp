@@ -99,7 +99,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Date Asynchronous
+        /// Get Generated Player Props by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
         public Task<List<PlayerProp>> GetPlayerPropsByDateAsync(string date)
@@ -112,7 +112,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Date
+        /// Get Generated Player Props by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
         public List<PlayerProp> GetPlayerPropsByDate(string date)
@@ -121,7 +121,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Player Asynchronous
+        /// Get Generated Player Props by Player Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code></param>
@@ -136,7 +136,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Player
+        /// Get Generated Player Props by Player
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code></param>
@@ -146,7 +146,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Team Asynchronous
+        /// Get Generated Player Props by Team Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>PHI</code>, <code>MIN</code>, <code>DET</code>, etc.</param>
@@ -161,7 +161,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Props by Team
+        /// Get Generated Player Props by Team
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>PHI</code>, <code>MIN</code>, <code>DET</code>, etc.</param>
@@ -476,6 +476,94 @@ namespace FantasyData.Api.Client
         public List<Sportsbook> GetActiveSportsbooks()
         {
             return this.GetActiveSportsbooksAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Betting Results By Market Asynchronous
+        /// </summary>
+        /// <param name="marketId">The MarketId of the desired market for which to pull all outcomes/bets. Valid IDs include <code>837872</code>, <code>841068</code></param>
+        public Task<BettingMarketResult> GetBettingMarketResultsAsync(string marketId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("marketId", marketId.ToString()));
+            return Task.Run<BettingMarketResult>(() =>
+                base.Get<BettingMarketResult>("/v3/mlb/odds/{format}/BettingMarketResults/{marketId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Results By Market
+        /// </summary>
+        /// <param name="marketId">The MarketId of the desired market for which to pull all outcomes/bets. Valid IDs include <code>837872</code>, <code>841068</code></param>
+        public BettingMarketResult GetBettingMarketResults(string marketId)
+        {
+            return this.GetBettingMarketResultsAsync(marketId).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Splits By BettingMarketId Asynchronous
+        /// </summary>
+        /// <param name="marketId">The MarketId of the desired market for which to pull splits.. Valid IDs include <code>837872</code></param>
+        public Task<BettingMarketSplit> GetBettingSplitsByMarketIdAsync(string marketId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("marketId", marketId.ToString()));
+            return Task.Run<BettingMarketSplit>(() =>
+                base.Get<BettingMarketSplit>("/v3/mlb/odds/{format}/BettingSplitsByMarketId/{marketId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Splits By BettingMarketId
+        /// </summary>
+        /// <param name="marketId">The MarketId of the desired market for which to pull splits.. Valid IDs include <code>837872</code></param>
+        public BettingMarketSplit GetBettingSplitsByMarketId(string marketId)
+        {
+            return this.GetBettingSplitsByMarketIdAsync(marketId).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Splits By GameID Asynchronous
+        /// </summary>
+        /// <param name="gameId">The ID of the game for which you want to receive splits for. Example <code>63266</code>.</param>
+        public Task<GameBettingSplit> GetBettingSplitsByGameIdAsync(int gameId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameId", gameId.ToString()));
+            return Task.Run<GameBettingSplit>(() =>
+                base.Get<GameBettingSplit>("/v3/mlb/odds/{format}/BettingSplitsByGameId/{gameId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Splits By GameID
+        /// </summary>
+        /// <param name="gameId">The ID of the game for which you want to receive splits for. Example <code>63266</code>.</param>
+        public GameBettingSplit GetBettingSplitsByGameId(int gameId)
+        {
+            return this.GetBettingSplitsByGameIdAsync(gameId).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Player Props by GameID Asynchronous
+        /// </summary>
+        /// <param name="gameId">The unique GameID of the game in question.</param>
+        public Task<List<BettingMarket>> GetBettingPlayerPropsByGameIDAsync(int gameId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameId", gameId.ToString()));
+            return Task.Run<List<BettingMarket>>(() =>
+                base.Get<List<BettingMarket>>("/v3/mlb/odds/{format}/BettingPlayerPropsByGameID/{gameId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Player Props by GameID
+        /// </summary>
+        /// <param name="gameId">The unique GameID of the game in question.</param>
+        public List<BettingMarket> GetBettingPlayerPropsByGameID(int gameId)
+        {
+            return this.GetBettingPlayerPropsByGameIDAsync(gameId).Result;
         }
 
     }

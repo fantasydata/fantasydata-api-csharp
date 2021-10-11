@@ -43,6 +43,13 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "BettingOutcomeTypes", Order = 20005)]
         public BettingEntityMetadata[] BettingOutcomeTypes { get; set; }
 
+        /// <summary>
+        /// A list of the combinations of BettingMarketTypeID, BettingBetTypeID, and BettingPeriodTypeID that will be resulted
+        /// </summary>
+        [Description("A list of the combinations of BettingMarketTypeID, BettingBetTypeID, and BettingPeriodTypeID that will be resulted")]
+        [DataMember(Name = "ResultedMarketMetaData", Order = 20006)]
+        public BettingResultingMetadata[] ResultedMarketMetaData { get; set; }
+
     }
 }
 

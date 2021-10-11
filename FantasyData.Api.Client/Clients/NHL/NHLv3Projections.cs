@@ -79,6 +79,28 @@ namespace FantasyData.Api.Client
             return this.GetPlayerGameProjectionStatsByPlayerAsync(date, playerid).Result;
         }
 
+        /// <summary>
+        /// Get Starting Goaltenders by Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2021-OCT-12</code>, <code>2021-DEC-09</code>.</param>
+        public Task<List<StartingGoaltenders>> GetStartingGoaltendersByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<StartingGoaltenders>>(() =>
+                base.Get<List<StartingGoaltenders>>("/v3/nhl/projections/{format}/StartingGoaltendersByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Starting Goaltenders by Date
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2021-OCT-12</code>, <code>2021-DEC-09</code>.</param>
+        public List<StartingGoaltenders> GetStartingGoaltendersByDate(string date)
+        {
+            return this.GetStartingGoaltendersByDateAsync(date).Result;
+        }
+
     }
 }
 

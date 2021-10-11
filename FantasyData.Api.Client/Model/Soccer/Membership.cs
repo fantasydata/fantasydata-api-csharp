@@ -78,6 +78,13 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "Updated", Order = 10)]
         public DateTime? Updated { get; set; }
 
+        /// <summary>
+        /// Jersey number worn by player for this team
+        /// </summary>
+        [Description("Jersey number worn by player for this team")]
+        [DataMember(Name = "Jersey", Order = 11)]
+        public int? Jersey { get; set; }
+
     }
 }
 

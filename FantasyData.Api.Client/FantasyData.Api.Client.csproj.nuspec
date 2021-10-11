@@ -3,14 +3,14 @@
   <metadata>
     <id>FantasyData.Api.Client</id>
     <title>FantasyData API Client Library</title>
-    <version>0.9.2</version>
+    <version>0.9.3</version>
     <authors>FantasyData LLC</authors>
     <owners>FantasyData LLC</owners>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/fantasydata/fantasydata-api-csharp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>FantasyData API C# Client Library</description>
-    <releaseNotes>Added support for newly added classes/endpoints.</releaseNotes>
+    <releaseNotes>Added further support for newly added classes/endpoints (including betting splits and resulting).</releaseNotes>
     <copyright>Copyright FantasyData LLC 2021</copyright>
     <tags>Fantasy Sports Live Data Feed API Client Library Wrapper SDK</tags>
   </metadata>

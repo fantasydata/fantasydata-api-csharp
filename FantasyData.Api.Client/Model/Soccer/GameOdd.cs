@@ -176,6 +176,13 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "AsianTotalUnderPayout", Order = 24)]
         public int? AsianTotalUnderPayout { get; set; }
 
+        /// <summary>
+        /// The market type of the odd (ex:live, pregame)
+        /// </summary>
+        [Description("The market type of the odd (ex:live, pregame)")]
+        [DataMember(Name = "OddType", Order = 25)]
+        public string OddType { get; set; }
+
     }
 }
 

@@ -1707,6 +1707,28 @@ namespace FantasyData.Api.Client
             return this.GetPlayerGameStatsBySeasonAsync(season, playerid, numberofgames).Result;
         }
 
+        /// <summary>
+        /// Get Scores by Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the games. Examples: <code>2021-SEP-12</code>, <code>2021-NOV-28</code>.</param>
+        public Task<List<Score>> GetScoresByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<Score>>(() =>
+                base.Get<List<Score>>("/v3/nfl/stats/{format}/ScoresByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Scores by Date
+        /// </summary>
+        /// <param name="date">The date of the games. Examples: <code>2021-SEP-12</code>, <code>2021-NOV-28</code>.</param>
+        public List<Score> GetScoresByDate(string date)
+        {
+            return this.GetScoresByDateAsync(date).Result;
+        }
+
     }
 }
 

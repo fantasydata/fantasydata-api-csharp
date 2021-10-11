@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Delayed, Postponed, Canceled
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Delayed, Postponed, Canceled, Forfeit
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Delayed, Postponed, Canceled")]
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Delayed, Postponed, Canceled, Forfeit")]
         [DataMember(Name = "Status", Order = 4)]
         public string Status { get; set; }
 
@@ -539,6 +539,13 @@ namespace FantasyData.Api.Client.Model.MLB
         [Description("The payout when betting the Under of the Over/Under")]
         [DataMember(Name = "UnderPayout", Order = 76)]
         public int? UnderPayout { get; set; }
+
+        /// <summary>
+        /// Contains relevant series data for playoff series only - HomeTeamWins, AwayTeamWins, GameNumber, and MaxLength
+        /// </summary>
+        [Description("Contains relevant series data for playoff series only - HomeTeamWins, AwayTeamWins, GameNumber, and MaxLength")]
+        [DataMember(Name = "SeriesInfo", Order = 10077)]
+        public Series SeriesInfo { get; set; }
 
     }
 }

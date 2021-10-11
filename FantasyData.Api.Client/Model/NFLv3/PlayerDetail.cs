@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Position { get; set; }
 
         /// <summary>
-        /// The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.
+        /// The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Exempt/Left Team, Paternity, Bereavement, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.
         /// </summary>
-        [Description("The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.")]
+        [Description("The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Exempt/Left Team, Paternity, Bereavement, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.")]
         [DataMember(Name = "Status", Order = 9)]
         public string Status { get; set; }
 
@@ -296,9 +296,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? UpcomingOpponentPositionRank { get; set; }
 
         /// <summary>
-        /// The player's current status, aggregated from Status and Injury Status (possible values are: Suspended, Injured Reserve, Non Football Injury, Physically Unable To Perform, Free Agent, Practice Squad, Healthy, Probable, Questionable, Doubtful, Out)
+        /// The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Exempt/Left Team, Paternity, Bereavement, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.
         /// </summary>
-        [Description("The player's current status, aggregated from Status and Injury Status (possible values are: Suspended, Injured Reserve, Non Football Injury, Physically Unable To Perform, Free Agent, Practice Squad, Healthy, Probable, Questionable, Doubtful, Out)")]
+        [Description("The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Exempt/Left Team, Paternity, Bereavement, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.")]
         [DataMember(Name = "CurrentStatus", Order = 42)]
         public string CurrentStatus { get; set; }
 

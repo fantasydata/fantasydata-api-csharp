@@ -406,6 +406,72 @@ namespace FantasyData.Api.Client
             return this.GetActiveSportsbooksAsync().Result;
         }
 
+        /// <summary>
+        /// Get Betting Splits By BettingMarketId Asynchronous
+        /// </summary>
+        /// <param name="marketId">The MarketId of the desired market for which to pull splits. MarketIds are pulled from the Betting Markets endpoints.</param>
+        public Task<BettingMarketSplit> GetBettingSplitsByMarketIdAsync(string marketId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("marketId", marketId.ToString()));
+            return Task.Run<BettingMarketSplit>(() =>
+                base.Get<BettingMarketSplit>("/v3/cbb/odds/{format}/BettingSplitsByMarketId/{marketId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Splits By BettingMarketId
+        /// </summary>
+        /// <param name="marketId">The MarketId of the desired market for which to pull splits. MarketIds are pulled from the Betting Markets endpoints.</param>
+        public BettingMarketSplit GetBettingSplitsByMarketId(string marketId)
+        {
+            return this.GetBettingSplitsByMarketIdAsync(marketId).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Splits By GameID Asynchronous
+        /// </summary>
+        /// <param name="gameId">The ID of the game for which you want to receive splits for. GameIds are pulled from the Schedules and Games by Date endpoints.</param>
+        public Task<GameBettingSplit> GetBettingSplitsByGameIdAsync(int gameId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameId", gameId.ToString()));
+            return Task.Run<GameBettingSplit>(() =>
+                base.Get<GameBettingSplit>("/v3/cbb/odds/{format}/BettingSplitsByGameId/{gameId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Splits By GameID
+        /// </summary>
+        /// <param name="gameId">The ID of the game for which you want to receive splits for. GameIds are pulled from the Schedules and Games by Date endpoints.</param>
+        public GameBettingSplit GetBettingSplitsByGameId(int gameId)
+        {
+            return this.GetBettingSplitsByGameIdAsync(gameId).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Player Props by GameID Asynchronous
+        /// </summary>
+        /// <param name="gameId">The unique GameID of the game in question.</param>
+        public Task<List<BettingMarket>> GetBettingPlayerPropsByGameIDAsync(int gameId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameId", gameId.ToString()));
+            return Task.Run<List<BettingMarket>>(() =>
+                base.Get<List<BettingMarket>>("/v3/cbb/odds/{format}/BettingPlayerPropsByGameID/{gameId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Player Props by GameID
+        /// </summary>
+        /// <param name="gameId">The unique GameID of the game in question.</param>
+        public List<BettingMarket> GetBettingPlayerPropsByGameID(int gameId)
+        {
+            return this.GetBettingPlayerPropsByGameIDAsync(gameId).Result;
+        }
+
     }
 }
 

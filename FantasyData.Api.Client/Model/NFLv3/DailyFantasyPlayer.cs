@@ -100,9 +100,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? OpponentPositionRank { get; set; }
 
         /// <summary>
-        /// The player's current status (including Healthy, Probable, Questionable, Doubtful, Out, Injured Reserve, Suspended, Practice Squad, and more)
+        /// The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Exempt/Left Team, Paternity, Bereavement, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.
         /// </summary>
-        [Description("The player's current status (including Healthy, Probable, Questionable, Doubtful, Out, Injured Reserve, Suspended, Practice Squad, and more)")]
+        [Description("The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Exempt/Left Team, Paternity, Bereavement, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.")]
         [DataMember(Name = "Status", Order = 14)]
         public string Status { get; set; }
 

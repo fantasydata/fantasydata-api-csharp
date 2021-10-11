@@ -464,9 +464,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public Stadium StadiumDetails { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled, Forfeit
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled")]
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled, Forfeit")]
         [DataMember(Name = "Status", Order = 66)]
         public string Status { get; set; }
 
@@ -518,6 +518,20 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [Description("The payout when betting the Under of the Over/Under")]
         [DataMember(Name = "UnderPayout", Order = 73)]
         public int? UnderPayout { get; set; }
+
+        /// <summary>
+        /// The number of timeouts remaining for the Home Team
+        /// </summary>
+        [Description("The number of timeouts remaining for the Home Team")]
+        [DataMember(Name = "HomeTimeouts", Order = 74)]
+        public int? HomeTimeouts { get; set; }
+
+        /// <summary>
+        /// The number of timeouts remaining for the Away Team
+        /// </summary>
+        [Description("The number of timeouts remaining for the Away Team")]
+        [DataMember(Name = "AwayTimeouts", Order = 75)]
+        public int? AwayTimeouts { get; set; }
 
     }
 }

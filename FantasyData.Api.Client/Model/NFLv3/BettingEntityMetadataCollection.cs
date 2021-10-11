@@ -43,6 +43,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "BettingOutcomeTypes", Order = 20005)]
         public BettingEntityMetadata[] BettingOutcomeTypes { get; set; }
 
+        /// <summary>
+        /// A list of the combinations of MarketType, BetType, & PeriodType which we willl provide automated resulting for
+        /// </summary>
+        [Description("A list of the combinations of MarketType, BetType, & PeriodType which we willl provide automated resulting for")]
+        [DataMember(Name = "ResultedMarketMetaData", Order = 20006)]
+        public BettingResultingMetadata[] ResultedMarketMetaData { get; set; }
+
     }
 }
 
