@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string BettingEventType { get; set; }
 
         /// <summary>
-        /// The last day for betting on this event
+        /// The furthest forward time any book has a market set to close for this betting event
         /// </summary>
-        [Description("The last day for betting on this event")]
+        [Description("The furthest forward time any book has a market set to close for this betting event")]
         [DataMember(Name = "StartDate", Order = 6)]
         public DateTime? StartDate { get; set; }
 
@@ -175,6 +175,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [Description("The list of betting markets for this event")]
         [DataMember(Name = "BettingMarkets", Order = 20024)]
         public BettingMarket[] BettingMarkets { get; set; }
+
+        /// <summary>
+        /// The date and time the connected game starts, where applicable
+        /// </summary>
+        [Description("The date and time the connected game starts, where applicable")]
+        [DataMember(Name = "GameStartTime", Order = 25)]
+        public DateTime? GameStartTime { get; set; }
 
     }
 }

@@ -151,6 +151,28 @@ namespace FantasyData.Api.Client
             return this.GetPlayerSeasonProjectionStatsByTeamAsync(season, team).Result;
         }
 
+        /// <summary>
+        /// Get Starting Lineups by Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2021-OCT-12</code>, <code>2021-DEC-09</code>.</param>
+        public Task<List<StartingLineups>> GetStartingLineupsByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<StartingLineups>>(() =>
+                base.Get<List<StartingLineups>>("/v3/nba/projections/{format}/StartingLineupsByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Starting Lineups by Date
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2021-OCT-12</code>, <code>2021-DEC-09</code>.</param>
+        public List<StartingLineups> GetStartingLineupsByDate(string date)
+        {
+            return this.GetStartingLineupsByDateAsync(date).Result;
+        }
+
     }
 }
 

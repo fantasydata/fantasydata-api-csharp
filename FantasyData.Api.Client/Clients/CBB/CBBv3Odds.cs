@@ -472,6 +472,28 @@ namespace FantasyData.Api.Client
             return this.GetBettingPlayerPropsByGameIDAsync(gameId).Result;
         }
 
+        /// <summary>
+        /// Get Betting Resulting By Market Asynchronous
+        /// </summary>
+        /// <param name="marketId">BettingMarketID of the market for which you would like to see resulted outcomes. Valid example ID <code>96401</code>, <code>93518</code></param>
+        public Task<BettingMarketResult> GetBettingMarketResultsAsync(string marketId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("marketId", marketId.ToString()));
+            return Task.Run<BettingMarketResult>(() =>
+                base.Get<BettingMarketResult>("/v3/cbb/odds/{format}/BettingMarketResults/{marketId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Resulting By Market
+        /// </summary>
+        /// <param name="marketId">BettingMarketID of the market for which you would like to see resulted outcomes. Valid example ID <code>96401</code>, <code>93518</code></param>
+        public BettingMarketResult GetBettingMarketResults(string marketId)
+        {
+            return this.GetBettingMarketResultsAsync(marketId).Result;
+        }
+
     }
 }
 

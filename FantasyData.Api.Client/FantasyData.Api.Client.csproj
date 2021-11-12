@@ -112,8 +112,11 @@
     <Compile Include="Model\CBB\BettingEntityMetadataCollection.cs" />
     <Compile Include="Model\CBB\BettingEvent.cs" />
     <Compile Include="Model\CBB\BettingMarket.cs" />
+    <Compile Include="Model\CBB\BettingMarketResult.cs" />
     <Compile Include="Model\CBB\BettingMarketSplit.cs" />
     <Compile Include="Model\CBB\BettingOutcome.cs" />
+    <Compile Include="Model\CBB\BettingOutcomeResult.cs" />
+    <Compile Include="Model\CBB\BettingResultingMetadata.cs" />
     <Compile Include="Model\CBB\BettingSplit.cs" />
     <Compile Include="Model\CBB\BoxScore.cs" />
     <Compile Include="Model\CBB\Conference.cs" />
@@ -292,6 +295,7 @@
     <Compile Include="Model\MLB\GameStat.cs" />
     <Compile Include="Model\MLB\Headshot.cs" />
     <Compile Include="Model\MLB\Inning.cs" />
+    <Compile Include="Model\MLB\Lineup.cs" />
     <Compile Include="Model\MLB\MatchupTrends.cs" />
     <Compile Include="Model\MLB\News.cs" />
     <Compile Include="Model\MLB\Pitch.cs" />
@@ -309,6 +313,7 @@
     <Compile Include="Model\MLB\Sportsbook.cs" />
     <Compile Include="Model\MLB\Stadium.cs" />
     <Compile Include="Model\MLB\Standing.cs" />
+    <Compile Include="Model\MLB\StartingLineups.cs" />
     <Compile Include="Model\MLB\Stat.cs" />
     <Compile Include="Model\MLB\Team.cs" />
     <Compile Include="Model\MLB\TeamGame.cs" />
@@ -364,6 +369,7 @@
     <Compile Include="Model\NBA\GameStat.cs" />
     <Compile Include="Model\NBA\Headshot.cs" />
     <Compile Include="Model\NBA\Injury.cs" />
+    <Compile Include="Model\NBA\Lineup.cs" />
     <Compile Include="Model\NBA\MatchupTrends.cs" />
     <Compile Include="Model\NBA\News.cs" />
     <Compile Include="Model\NBA\OpponentSeason.cs" />
@@ -377,10 +383,12 @@
     <Compile Include="Model\NBA\PlayerSeason.cs" />
     <Compile Include="Model\NBA\PlayerSeasonProjection.cs" />
     <Compile Include="Model\NBA\Quarter.cs" />
+    <Compile Include="Model\NBA\Referee.cs" />
     <Compile Include="Model\NBA\Season.cs" />
     <Compile Include="Model\NBA\Sportsbook.cs" />
     <Compile Include="Model\NBA\Stadium.cs" />
     <Compile Include="Model\NBA\Standing.cs" />
+    <Compile Include="Model\NBA\StartingLineups.cs" />
     <Compile Include="Model\NBA\Stat.cs" />
     <Compile Include="Model\NBA\Team.cs" />
     <Compile Include="Model\NBA\TeamGame.cs" />

@@ -267,6 +267,34 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "UnderPayout", Order = 37)]
         public int? UnderPayout { get; set; }
 
+        /// <summary>
+        /// Unique ID of Officiating Crew Chief
+        /// </summary>
+        [Description("Unique ID of Officiating Crew Chief")]
+        [DataMember(Name = "CrewChiefID", Order = 38)]
+        public int? CrewChiefID { get; set; }
+
+        /// <summary>
+        /// Unique ID of Officiating Umpire
+        /// </summary>
+        [Description("Unique ID of Officiating Umpire")]
+        [DataMember(Name = "UmpireID", Order = 39)]
+        public int? UmpireID { get; set; }
+
+        /// <summary>
+        /// Unique ID of Officiating Referee
+        /// </summary>
+        [Description("Unique ID of Officiating Referee")]
+        [DataMember(Name = "RefereeID", Order = 40)]
+        public int? RefereeID { get; set; }
+
+        /// <summary>
+        /// Unique ID of Officiating Alternate Referee
+        /// </summary>
+        [Description("Unique ID of Officiating Alternate Referee")]
+        [DataMember(Name = "AlternateID", Order = 41)]
+        public int? AlternateID { get; set; }
+
     }
 }
 

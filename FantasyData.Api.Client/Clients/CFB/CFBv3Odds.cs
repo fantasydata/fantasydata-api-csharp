@@ -406,7 +406,7 @@ namespace FantasyData.Api.Client
                 base.Get<List<Sportsbook>>("/v3/cfb/odds/{format}/ActiveSportsbooks", parameters)
             );
         }
-        
+
         /// <summary>
         /// Get Sportsbooks (Active)
         /// </summary>

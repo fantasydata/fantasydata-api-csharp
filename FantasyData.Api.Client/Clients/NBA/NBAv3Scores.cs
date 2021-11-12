@@ -338,6 +338,25 @@ namespace FantasyData.Api.Client
             return this.GetPlayerAsync(playerid).Result;
         }
 
+        /// <summary>
+        /// Get Referees Asynchronous
+        /// </summary>
+        public Task<List<Referee>> GetRefereesAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Referee>>(() =>
+                base.Get<List<Referee>>("/v3/nba/scores/{format}/Referees", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Referees
+        /// </summary>
+        public List<Referee> GetReferees()
+        {
+            return this.GetRefereesAsync().Result;
+        }
+
     }
 }
 
