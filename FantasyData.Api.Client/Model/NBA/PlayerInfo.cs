@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class PlayerInfo
     {
         /// <summary>
-        /// Unique ID of the Player (assigned by FantasyData).
+        /// Unique ID of the Player (assigned by SportsDataIO).
         /// </summary>
-        [Description("Unique ID of the Player (assigned by FantasyData).")]
+        [Description("Unique ID of the Player (assigned by SportsDataIO).")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Name { get; set; }
 
         /// <summary>
-        /// Unique ID of the Team the player belongs to (assigned by FantasyData).
+        /// Unique ID of the Team the player belongs to (assigned by SportsDataIO).
         /// </summary>
-        [Description("Unique ID of the Team the player belongs to (assigned by FantasyData).")]
+        [Description("Unique ID of the Team the player belongs to (assigned by SportsDataIO).")]
         [DataMember(Name = "TeamID", Order = 3)]
         public int? TeamID { get; set; }
 

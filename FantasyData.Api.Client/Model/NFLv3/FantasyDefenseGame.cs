@@ -331,9 +331,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public bool? IsGameOver { get; set; }
 
         /// <summary>
-        /// Fantasy points scored based on basic fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)
+        /// Fantasy points scored based on basic fantasy scoring system
         /// </summary>
-        [Description("Fantasy points scored based on basic fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)")]
+        [Description("Fantasy points scored based on basic fantasy scoring system")]
         [DataMember(Name = "FantasyPoints", Order = 47)]
         public decimal? FantasyPoints { get; set; }
 
@@ -415,9 +415,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? DraftKingsSalary { get; set; }
 
         /// <summary>
-        /// The team's DST salary as calculated by FantasyData.  Based on the same salary cap as DraftKings contests ($50,000).
+        /// The team's DST salary as calculated by SportsDataIO (formerly known as FantasyData).  Based on the same salary cap as DraftKings contests ($50,000).
         /// </summary>
-        [Description("The team's DST salary as calculated by FantasyData.  Based on the same salary cap as DraftKings contests ($50,000).")]
+        [Description("The team's DST salary as calculated by SportsDataIO (formerly known as FantasyData).  Based on the same salary cap as DraftKings contests ($50,000).")]
         [DataMember(Name = "FantasyDataSalary", Order = 59)]
         public int? FantasyDataSalary { get; set; }
 

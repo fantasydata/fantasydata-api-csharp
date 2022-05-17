@@ -569,16 +569,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal TwoPointConversionReceptions { get; set; }
 
         /// <summary>
-        /// Fantasy points scored based on basic fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)
+        /// Fantasy points scored based on basic fantasy scoring system
         /// </summary>
-        [Description("Fantasy points scored based on basic fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)")]
+        [Description("Fantasy points scored based on basic fantasy scoring system")]
         [DataMember(Name = "FantasyPoints", Order = 81)]
         public decimal FantasyPoints { get; set; }
 
         /// <summary>
-        /// Fantasy points scored based on basic PPR fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)
+        /// Fantasy points scored based on basic PPR fantasy scoring system
         /// </summary>
-        [Description("Fantasy points scored based on basic PPR fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)")]
+        [Description("Fantasy points scored based on basic PPR fantasy scoring system")]
         [DataMember(Name = "FantasyPointsPPR", Order = 82)]
         public decimal FantasyPointsPPR { get; set; }
 
@@ -877,9 +877,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? DraftKingsSalary { get; set; }
 
         /// <summary>
-        /// The player's salary as calculated by FantasyData.  Based on the same salary cap as DraftKings contests ($50,000).
+        /// The player's salary as calculated by SportsDataIO (formerly known as FantasyData).  Based on the same salary cap as DraftKings contests ($50,000).
         /// </summary>
-        [Description("The player's salary as calculated by FantasyData.  Based on the same salary cap as DraftKings contests ($50,000).")]
+        [Description("The player's salary as calculated by SportsDataIO (formerly known as FantasyData).  Based on the same salary cap as DraftKings contests ($50,000).")]
         [DataMember(Name = "FantasyDataSalary", Order = 125)]
         public int? FantasyDataSalary { get; set; }
 

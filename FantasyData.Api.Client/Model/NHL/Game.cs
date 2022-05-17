@@ -135,16 +135,16 @@ namespace FantasyData.Api.Client.Model.NHL
         public string Period { get; set; }
 
         /// <summary>
-        /// Number of minutes that have passed in the current period. Please note this field name is misleading, and actually represents the game clock minutes, which are the number of minutes that have already passed in the period. Possible values: 0-20.
+        /// Number of minutes remaining in the current period. Possible values: 0-20.
         /// </summary>
-        [Description("Number of minutes that have passed in the current period. Please note this field name is misleading, and actually represents the game clock minutes, which are the number of minutes that have already passed in the period. Possible values: 0-20.")]
+        [Description("Number of minutes remaining in the current period. Possible values: 0-20.")]
         [DataMember(Name = "TimeRemainingMinutes", Order = 19)]
         public int? TimeRemainingMinutes { get; set; }
 
         /// <summary>
-        /// Number of seconds that have passed in the current period. Please note this field name is misleading, and actually represents the game clock seconds, which are the number of seconds that have already passed in the period. Possible values: 0-60.
+        /// Number of seconds remaining in the current period. Possible values: 0-59.
         /// </summary>
-        [Description("Number of seconds that have passed in the current period. Please note this field name is misleading, and actually represents the game clock seconds, which are the number of seconds that have already passed in the period. Possible values: 0-60.")]
+        [Description("Number of seconds remaining in the current period. Possible values: 0-59.")]
         [DataMember(Name = "TimeRemainingSeconds", Order = 20)]
         public int? TimeRemainingSeconds { get; set; }
 
@@ -266,6 +266,20 @@ namespace FantasyData.Api.Client.Model.NHL
         [Description("The payout when betting the Under of the Over/Under")]
         [DataMember(Name = "UnderPayout", Order = 37)]
         public int? UnderPayout { get; set; }
+
+        /// <summary>
+        /// The date and time of the game in UTC
+        /// </summary>
+        [Description("The date and time of the game in UTC")]
+        [DataMember(Name = "DateTimeUTC", Order = 38)]
+        public DateTime? DateTimeUTC { get; set; }
+
+        /// <summary>
+        /// Contains relevant series data for playoff series only - HomeTeamWins, AwayTeamWins, GameNumber, and MaxLength
+        /// </summary>
+        [Description("Contains relevant series data for playoff series only - HomeTeamWins, AwayTeamWins, GameNumber, and MaxLength")]
+        [DataMember(Name = "SeriesInfo", Order = 10039)]
+        public Series SeriesInfo { get; set; }
 
     }
 }

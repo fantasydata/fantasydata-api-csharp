@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class Article
     {
         /// <summary>
-        /// Unique ID of the Article (assigned by FantasyData)
+        /// Unique ID of the Article (assigned by SportsDataIO)
         /// </summary>
-        [Description("Unique ID of the Article (assigned by FantasyData)")]
+        [Description("Unique ID of the Article (assigned by SportsDataIO)")]
         [DataMember(Name = "ArticleID", Order = 1)]
         public int ArticleID { get; set; }
 

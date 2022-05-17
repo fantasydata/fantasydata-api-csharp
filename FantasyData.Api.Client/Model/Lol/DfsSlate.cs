@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Lol
     public partial class DfsSlate
     {
         /// <summary>
-        /// Unique ID of a Slate (assigned by FantasyData).
+        /// Unique ID of a Slate (assigned by SportsDataIO).
         /// </summary>
-        [Description("Unique ID of a Slate (assigned by FantasyData).")]
+        [Description("Unique ID of a Slate (assigned by SportsDataIO).")]
         [DataMember(Name = "SlateID", Order = 1)]
         public int SlateID { get; set; }
 

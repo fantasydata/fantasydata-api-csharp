@@ -142,9 +142,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string BirthDateString { get; set; }
 
         /// <summary>
-        /// The url of the player's photo hosted on FantasyData.com (http://static.fantasydata.com/images/nfl/player/2593.jpg)
+        /// The url of the player's low-resolution headshot photo (hosted on SportsDataIO server)
         /// </summary>
-        [Description("The url of the player's photo hosted on FantasyData.com (http://static.fantasydata.com/images/nfl/player/2593.jpg)")]
+        [Description("The url of the player's low-resolution headshot photo (hosted on SportsDataIO server)")]
         [DataMember(Name = "PhotoUrl", Order = 20)]
         public string PhotoUrl { get; set; }
 
@@ -282,16 +282,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? UpcomingOpponentPositionRank { get; set; }
 
         /// <summary>
-        /// The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Exempt/Left Team, Paternity, Bereavement, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.
+        /// The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Exempt/Left Team, Paternity, Bereavement, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.  Can also include injury status.
         /// </summary>
-        [Description("The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Exempt/Left Team, Paternity, Bereavement, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.")]
+        [Description("The player's current status.  Possible values include Active, Inactive, Injured Reserve, Physically Unable to Perform, Practice Squad, Suspended, Non Football Injury, Non-Football Illness, Commissioner Exempt List, Exempt/Left Team, Paternity, Bereavement, Reserve/COVID-19, and Voluntary Opt Out. Inactive indicates that this player is a free agent.  Active indicates that this player is on his team's active roster.  Can also include injury status.")]
         [DataMember(Name = "CurrentStatus", Order = 40)]
         public string CurrentStatus { get; set; }
 
         /// <summary>
-        /// The player's salary for the upcoming week in accordance with a $50,000 salary cap.  This is used for daily fantasy sports salary cap contests.  Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game, the most recent DraftKings salary is used.
+        /// The player's salary for the upcoming week in accordance with a $50,000 salary cap.  This is used for daily fantasy sports salary cap contests.  Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game, the most recent DraftKings salary is used.  We recommend using our new DFS endpoints instead.
         /// </summary>
-        [Description("The player's salary for the upcoming week in accordance with a $50,000 salary cap.  This is used for daily fantasy sports salary cap contests.  Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game, the most recent DraftKings salary is used.")]
+        [Description("The player's salary for the upcoming week in accordance with a $50,000 salary cap.  This is used for daily fantasy sports salary cap contests.  Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game, the most recent DraftKings salary is used.  We recommend using our new DFS endpoints instead.")]
         [DataMember(Name = "UpcomingSalary", Order = 41)]
         public int? UpcomingSalary { get; set; }
 
@@ -443,23 +443,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public bool DeclaredInactive { get; set; }
 
         /// <summary>
-        /// The player's FanDuel salary for the upcoming week.
+        /// The player's FanDuel salary for the upcoming week. We recommend using our new DFS endpoints instead.
         /// </summary>
-        [Description("The player's FanDuel salary for the upcoming week.")]
+        [Description("The player's FanDuel salary for the upcoming week. We recommend using our new DFS endpoints instead.")]
         [DataMember(Name = "UpcomingFanDuelSalary", Order = 63)]
         public int? UpcomingFanDuelSalary { get; set; }
 
         /// <summary>
-        /// The player's DraftKings salary for the upcoming week.
+        /// The player's DraftKings salary for the upcoming week. We recommend using our new DFS endpoints instead.
         /// </summary>
-        [Description("The player's DraftKings salary for the upcoming week.")]
+        [Description("The player's DraftKings salary for the upcoming week. We recommend using our new DFS endpoints instead.")]
         [DataMember(Name = "UpcomingDraftKingsSalary", Order = 64)]
         public int? UpcomingDraftKingsSalary { get; set; }
 
         /// <summary>
-        /// The player's Yahoo salary for the upcoming week.
+        /// The player's Yahoo salary for the upcoming week. We recommend using our new DFS endpoints instead.
         /// </summary>
-        [Description("The player's Yahoo salary for the upcoming week.")]
+        [Description("The player's Yahoo salary for the upcoming week. We recommend using our new DFS endpoints instead.")]
         [DataMember(Name = "UpcomingYahooSalary", Order = 65)]
         public int? UpcomingYahooSalary { get; set; }
 

@@ -37,16 +37,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? Week { get; set; }
 
         /// <summary>
-        /// The day that the game is scheduled to be played in UTC.
+        /// The day that the game is scheduled to be played.
         /// </summary>
-        [Description("The day that the game is scheduled to be played in UTC.")]
+        [Description("The day that the game is scheduled to be played.")]
         [DataMember(Name = "Day", Order = 5)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date/time that the game is scheduled to be played in UTC.
+        /// The date/time that the game is scheduled to be played.
         /// </summary>
-        [Description("The date/time that the game is scheduled to be played in UTC.")]
+        [Description("The date/time that the game is scheduled to be played.")]
         [DataMember(Name = "DateTime", Order = 6)]
         public DateTime? DateTime { get; set; }
 

@@ -148,6 +148,13 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "TotalScore", Order = 20)]
         public int? TotalScore { get; set; }
 
+        /// <summary>
+        /// List of Alternate Market GameOdds from different sportsbooks (such as 1st-half, 1st-qtr, etc)
+        /// </summary>
+        [Description("List of Alternate Market GameOdds from different sportsbooks (such as 1st-half, 1st-qtr, etc)")]
+        [DataMember(Name = "AlternateMarketPregameOdds", Order = 20021)]
+        public GameOdd[] AlternateMarketPregameOdds { get; set; }
+
     }
 }
 

@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int BettingEventID { get; set; }
 
         /// <summary>
-        /// Market Type ID (e.g. 1 => Game Line)
+        /// Market Type ID
         /// </summary>
-        [Description("Market Type ID (e.g. 1 => Game Line)")]
+        [Description("Market Type ID")]
         [DataMember(Name = "BettingMarketTypeID", Order = 3)]
         public int BettingMarketTypeID { get; set; }
 
@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public string BettingMarketType { get; set; }
 
         /// <summary>
-        /// Bet Type ID (e.g. 1 => Puck Line)
+        /// Bet Type ID 
         /// </summary>
-        [Description("Bet Type ID (e.g. 1 => Puck Line)")]
+        [Description("Bet Type ID ")]
         [DataMember(Name = "BettingBetTypeID", Order = 5)]
         public int BettingBetTypeID { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public string BettingBetType { get; set; }
 
         /// <summary>
-        /// Betting Period Type ID (e.g. 1 => Full Game)
+        /// Betting Period Type ID
         /// </summary>
-        [Description("Betting Period Type ID (e.g. 1 => Full Game)")]
+        [Description("Betting Period Type ID")]
         [DataMember(Name = "BettingPeriodTypeID", Order = 7)]
         public int BettingPeriodTypeID { get; set; }
 

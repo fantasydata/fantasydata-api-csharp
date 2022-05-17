@@ -48,7 +48,7 @@ namespace FantasyData.Api.Client.Model.NHL
         /// </summary>
         [Description("Goaltender Jersey Number")]
         [DataMember(Name = "Jersey", Order = 6)]
-        public int Jersey { get; set; }
+        public int? Jersey { get; set; }
 
         /// <summary>
         /// Indicates whether the starting goaltender is projected or confirmed

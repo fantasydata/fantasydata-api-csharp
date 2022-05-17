@@ -534,16 +534,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal TwoPointConversionReceptions { get; set; }
 
         /// <summary>
-        /// Fantasy points scored based on basic fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)
+        /// Fantasy points scored based on basic fantasy scoring system
         /// </summary>
-        [Description("Fantasy points scored based on basic fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)")]
+        [Description("Fantasy points scored based on basic fantasy scoring system")]
         [DataMember(Name = "FantasyPoints", Order = 76)]
         public decimal FantasyPoints { get; set; }
 
         /// <summary>
-        /// Fantasy points scored based on basic PPR fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)
+        /// Fantasy points scored based on basic PPR fantasy scoring system
         /// </summary>
-        [Description("Fantasy points scored based on basic PPR fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)")]
+        [Description("Fantasy points scored based on basic PPR fantasy scoring system")]
         [DataMember(Name = "FantasyPointsPPR", Order = 77)]
         public decimal FantasyPointsPPR { get; set; }
 

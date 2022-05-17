@@ -533,6 +533,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "AwayTimeouts", Order = 75)]
         public int? AwayTimeouts { get; set; }
 
+        /// <summary>
+        /// The date and time of the game in UTC
+        /// </summary>
+        [Description("The date and time of the game in UTC")]
+        [DataMember(Name = "DateTimeUTC", Order = 76)]
+        public DateTime? DateTimeUTC { get; set; }
+
     }
 }
 

@@ -547,6 +547,13 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "SeriesInfo", Order = 10077)]
         public Series SeriesInfo { get; set; }
 
+        /// <summary>
+        /// The date and time of the game in UTC.
+        /// </summary>
+        [Description("The date and time of the game in UTC.")]
+        [DataMember(Name = "DateTimeUTC", Order = 78)]
+        public DateTime? DateTimeUTC { get; set; }
+
     }
 }
 

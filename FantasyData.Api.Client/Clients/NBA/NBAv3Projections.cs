@@ -173,6 +173,25 @@ namespace FantasyData.Api.Client
             return this.GetStartingLineupsByDateAsync(date).Result;
         }
 
+        /// <summary>
+        /// Get Injured Players Asynchronous
+        /// </summary>
+        public Task<List<Player>> GetInjuredPlayersAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/nba/projections/{format}/InjuredPlayers", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Injured Players
+        /// </summary>
+        public List<Player> GetInjuredPlayers()
+        {
+            return this.GetInjuredPlayersAsync().Result;
+        }
+
     }
 }
 

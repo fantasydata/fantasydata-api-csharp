@@ -13,7 +13,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Play By Play Asynchronous
         /// </summary>
-        /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
+        /// <param name="gameid">The GameID of an NHL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
         public Task<PlayByPlay> GetPlayByPlayAsync(int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
@@ -26,7 +26,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Play By Play
         /// </summary>
-        /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
+        /// <param name="gameid">The GameID of an NHL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
         public PlayByPlay GetPlayByPlay(int gameid)
         {
             return this.GetPlayByPlayAsync(gameid).Result;

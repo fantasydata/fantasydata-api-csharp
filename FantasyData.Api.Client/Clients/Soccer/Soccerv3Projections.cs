@@ -126,6 +126,28 @@ namespace FantasyData.Api.Client
             return this.GetUpcomingDfsSlatesByCompetitionAsync(competitionId).Result;
         }
 
+        /// <summary>
+        /// Get Injured Players By Competition Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        public Task<List<Player>> GetInjuredPlayersAsync(string competition)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/soccer/projections/{format}/InjuredPlayers/{competition}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Injured Players By Competition
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        public List<Player> GetInjuredPlayers(string competition)
+        {
+            return this.GetInjuredPlayersAsync(competition).Result;
+        }
+
     }
 }
 

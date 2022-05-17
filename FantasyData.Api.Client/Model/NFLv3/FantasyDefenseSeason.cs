@@ -303,9 +303,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? SpecialTeamsTouchdowns { get; set; }
 
         /// <summary>
-        /// Fantasy points scored based on basic fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)
+        /// Fantasy points scored based on basic fantasy scoring system
         /// </summary>
-        [Description("Fantasy points scored based on basic fantasy scoring system (https://fantasydata.com/resources/fantasy-scoring-system.aspx)")]
+        [Description("Fantasy points scored based on basic fantasy scoring system")]
         [DataMember(Name = "FantasyPoints", Order = 43)]
         public decimal? FantasyPoints { get; set; }
 

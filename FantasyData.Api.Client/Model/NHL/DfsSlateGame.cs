@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class DfsSlateGame
     {
         /// <summary>
-        /// Unique ID of a SlateGame (assigned by FantasyData).
+        /// Unique ID of a SlateGame (assigned by SportsDataIO).
         /// </summary>
-        [Description("Unique ID of a SlateGame (assigned by FantasyData).")]
+        [Description("Unique ID of a SlateGame (assigned by SportsDataIO).")]
         [DataMember(Name = "SlateGameID", Order = 1)]
         public int SlateGameID { get; set; }
 
@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public int SlateID { get; set; }
 
         /// <summary>
-        /// The FantasyData GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.
+        /// The SportsDataIO GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.
         /// </summary>
-        [Description("The FantasyData GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.")]
+        [Description("The SportsDataIO GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.")]
         [DataMember(Name = "GameID", Order = 3)]
         public int? GameID { get; set; }
 

@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public string Position { get; set; }
 
         /// <summary>
-        /// The player's salary as calculated by FantasyData.  Based on the same salary cap as DraftKings contests ($50,000).
+        /// The player's salary as calculated by SportsDataIO (formerly known as FantasyData).  Based on the same salary cap as DraftKings contests ($50,000).
         /// </summary>
-        [Description("The player's salary as calculated by FantasyData.  Based on the same salary cap as DraftKings contests ($50,000).")]
+        [Description("The player's salary as calculated by SportsDataIO (formerly known as FantasyData).  Based on the same salary cap as DraftKings contests ($50,000).")]
         [DataMember(Name = "FantasyDataSalary", Order = 9)]
         public int? FantasyDataSalary { get; set; }
 

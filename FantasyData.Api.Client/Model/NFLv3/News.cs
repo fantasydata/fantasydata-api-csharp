@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int NewsID { get; set; }
 
         /// <summary>
-        /// The source of the story (FantasyData, RotoBaller, NBCSports.com, etc.)
+        /// The source of the story (RotoBaller, NBCSports.com, etc.)
         /// </summary>
-        [Description("The source of the story (FantasyData, RotoBaller, NBCSports.com, etc.)")]
+        [Description("The source of the story (RotoBaller, NBCSports.com, etc.)")]
         [DataMember(Name = "Source", Order = 2)]
         public string Source { get; set; }
 

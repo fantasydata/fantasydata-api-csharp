@@ -330,6 +330,13 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "UnderPayout", Order = 46)]
         public int? UnderPayout { get; set; }
 
+        /// <summary>
+        /// The date and time of the game in UTC
+        /// </summary>
+        [Description("The date and time of the game in UTC")]
+        [DataMember(Name = "DateTimeUTC", Order = 47)]
+        public DateTime? DateTimeUTC { get; set; }
+
     }
 }
 

@@ -295,6 +295,20 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "AlternateID", Order = 41)]
         public int? AlternateID { get; set; }
 
+        /// <summary>
+        /// The date and time of the game in UTC
+        /// </summary>
+        [Description("The date and time of the game in UTC")]
+        [DataMember(Name = "DateTimeUTC", Order = 42)]
+        public DateTime? DateTimeUTC { get; set; }
+
+        /// <summary>
+        /// Contains relevant series data for playoff series only - HomeTeamWins, AwayTeamWins, GameNumber, and MaxLength
+        /// </summary>
+        [Description("Contains relevant series data for playoff series only - HomeTeamWins, AwayTeamWins, GameNumber, and MaxLength")]
+        [DataMember(Name = "SeriesInfo", Order = 10043)]
+        public Series SeriesInfo { get; set; }
+
     }
 }
 

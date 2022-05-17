@@ -344,6 +344,13 @@ namespace FantasyData.Api.Client.Model.CBB
         [DataMember(Name = "UnderPayout", Order = 48)]
         public int? UnderPayout { get; set; }
 
+        /// <summary>
+        /// The date and time of the game in UTC
+        /// </summary>
+        [Description("The date and time of the game in UTC")]
+        [DataMember(Name = "DateTimeUTC", Order = 49)]
+        public DateTime? DateTimeUTC { get; set; }
+
     }
 }
 

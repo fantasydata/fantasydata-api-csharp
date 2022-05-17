@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class DfsSlateTournament
     {
         /// <summary>
-        /// Unique ID of a SlateTournament (assigned by FantasyData).
+        /// Unique ID of a SlateTournament (assigned by SportsDataIO).
         /// </summary>
-        [Description("Unique ID of a SlateTournament (assigned by FantasyData).")]
+        [Description("Unique ID of a SlateTournament (assigned by SportsDataIO).")]
         [DataMember(Name = "SlateTournamentID", Order = 1)]
         public int SlateTournamentID { get; set; }
 
@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public int SlateID { get; set; }
 
         /// <summary>
-        /// The FantasyData TournamentID that this SlateTournament refers to. This points to data in the respective sports' schedule/game/box score feeds.
+        /// The SportsDataIO TournamentID that this SlateTournament refers to. This points to data in the respective sports' schedule/game/box score feeds.
         /// </summary>
-        [Description("The FantasyData TournamentID that this SlateTournament refers to. This points to data in the respective sports' schedule/game/box score feeds.")]
+        [Description("The SportsDataIO TournamentID that this SlateTournament refers to. This points to data in the respective sports' schedule/game/box score feeds.")]
         [DataMember(Name = "TournamentID", Order = 3)]
         public int? TournamentID { get; set; }
 

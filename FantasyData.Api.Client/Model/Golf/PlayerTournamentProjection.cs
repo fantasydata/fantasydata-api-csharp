@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? FedExPoints { get; set; }
 
         /// <summary>
-        /// The fantasy points this golfer scored using the FantasyData scoring system
+        /// The fantasy points this golfer scored using the default SportsDataIO scoring system
         /// </summary>
-        [Description("The fantasy points this golfer scored using the FantasyData scoring system")]
+        [Description("The fantasy points this golfer scored using the default SportsDataIO scoring system")]
         [DataMember(Name = "FantasyPoints", Order = 12)]
         public decimal? FantasyPoints { get; set; }
 
@@ -205,9 +205,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public DateTime? TeeTime { get; set; }
 
         /// <summary>
-        /// Indicates whether this golfer made the cut (for tournament projections, this value will be a decimal between 0 and 1 of the likelihood that this golfer makes the cut)
+        /// Indicates whether this golfer made the cut.  This field defaults to 1 at tournament start, then flips to 0 once a golfer has been cut (for tournament projections, this value will be a decimal between 0 and 1 of the likelihood that this golfer makes the cut)
         /// </summary>
-        [Description("Indicates whether this golfer made the cut (for tournament projections, this value will be a decimal between 0 and 1 of the likelihood that this golfer makes the cut)")]
+        [Description("Indicates whether this golfer made the cut.  This field defaults to 1 at tournament start, then flips to 0 once a golfer has been cut (for tournament projections, this value will be a decimal between 0 and 1 of the likelihood that this golfer makes the cut)")]
         [DataMember(Name = "MadeCut", Order = 29)]
         public decimal? MadeCut { get; set; }
 
@@ -225,6 +225,10 @@ namespace FantasyData.Api.Client.Model.Golf
         [DataMember(Name = "TournamentStatus", Order = 31)]
         public string TournamentStatus { get; set; }
 
+        /// <summary>
+        /// Indicates whether a golfer is in the regular playing field or if they are an alternate golfer for this tournament.
+        /// </summary>
+        [Description("Indicates whether a golfer is in the regular playing field or if they are an alternate golfer for this tournament.")]
         [DataMember(Name = "IsAlternate", Order = 32)]
         public bool? IsAlternate { get; set; }
 

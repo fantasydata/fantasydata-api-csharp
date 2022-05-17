@@ -197,6 +197,13 @@ namespace FantasyData.Api.Client.Model.Golf
         [DataMember(Name = "TeeTime", Order = 27)]
         public DateTime? TeeTime { get; set; }
 
+        /// <summary>
+        /// Indicates whether the player started with the back nine holes.
+        /// </summary>
+        [Description("Indicates whether the player started with the back nine holes.")]
+        [DataMember(Name = "BackNineStart", Order = 28)]
+        public bool? BackNineStart { get; set; }
+
     }
 }
 

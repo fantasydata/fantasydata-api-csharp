@@ -33,7 +33,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Date (w/ Injuries, Lineups, DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats by Date (w/ Injuries, DFS Salaries) Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
         public Task<List<PlayerGameProjection>> GetPlayerGameProjectionStatsByDateAsync(string date)
@@ -46,7 +46,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Date (w/ Injuries, Lineups, DFS Salaries)
+        /// Get Projected Player Game Stats by Date (w/ Injuries, DFS Salaries)
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
         public List<PlayerGameProjection> GetPlayerGameProjectionStatsByDate(string date)
@@ -55,7 +55,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Player (w/ Injuries, Lineups, DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats by Player (w/ Injuries, DFS Salaries) Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code>.</param>
@@ -70,7 +70,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Player (w/ Injuries, Lineups, DFS Salaries)
+        /// Get Projected Player Game Stats by Player (w/ Injuries, DFS Salaries)
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code>.</param>
@@ -99,6 +99,66 @@ namespace FantasyData.Api.Client
         public List<PlayerSeasonProjection> GetPlayerSeasonProjectionStats(string season)
         {
             return this.GetPlayerSeasonProjectionStatsAsync(season).Result;
+        }
+
+        /// <summary>
+        /// Get Injured Players Asynchronous
+        /// </summary>
+        public Task<List<Player>> GetInjuredPlayersAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/mlb/projections/{format}/InjuredPlayers", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Injured Players
+        /// </summary>
+        public List<Player> GetInjuredPlayers()
+        {
+            return this.GetInjuredPlayersAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Starting Lineups by Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the slates. Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
+        public Task<List<StartingLineups>> GetStartingLineupsByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<StartingLineups>>(() =>
+                base.Get<List<StartingLineups>>("/v3/mlb/projections/{format}/StartingLineupsByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Starting Lineups by Date
+        /// </summary>
+        /// <param name="date">The date of the slates. Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
+        public List<StartingLineups> GetStartingLineupsByDate(string date)
+        {
+            return this.GetStartingLineupsByDateAsync(date).Result;
+        }
+
+        /// <summary>
+        /// Get Depth Charts Asynchronous
+        /// </summary>
+        public Task<List<TeamDepthChart>> GetDepthChartsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<TeamDepthChart>>(() =>
+                base.Get<List<TeamDepthChart>>("/v3/mlb/projections/{format}/DepthCharts", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Depth Charts
+        /// </summary>
+        public List<TeamDepthChart> GetDepthCharts()
+        {
+            return this.GetDepthChartsAsync().Result;
         }
 
     }

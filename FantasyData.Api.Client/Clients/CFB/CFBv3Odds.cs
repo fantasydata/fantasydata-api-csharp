@@ -223,7 +223,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Betting Events by Season Asynchronous
         /// </summary>
-        /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
+        /// <param name="season">Year of the season Examples: <code>2021</code>, <code>2022</code>, etc.</param>
         public Task<List<BettingEvent>> GetBettingEventsAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
@@ -236,7 +236,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Betting Events by Season
         /// </summary>
-        /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
+        /// <param name="season">Year of the season Examples: <code>2021</code>, <code>2022</code>, etc.</param>
         public List<BettingEvent> GetBettingEvents(string season)
         {
             return this.GetBettingEventsAsync(season).Result;

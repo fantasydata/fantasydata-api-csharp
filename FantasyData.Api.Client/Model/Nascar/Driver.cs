@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Nascar
     public partial class Driver
     {
         /// <summary>
-        /// The unique ID of this driver (assigned by FantasyData)
+        /// The unique ID of this driver (assigned by SportsDataIO)
         /// </summary>
-        [Description("The unique ID of this driver (assigned by FantasyData)")]
+        [Description("The unique ID of this driver (assigned by SportsDataIO)")]
         [DataMember(Name = "DriverID", Order = 1)]
         public int DriverID { get; set; }
 

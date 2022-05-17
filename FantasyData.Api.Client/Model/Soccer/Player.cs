@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class Player
     {
         /// <summary>
-        /// The player's unique PlayerID as assigned by FantasyData.
+        /// The player's unique PlayerID as assigned by SportsDataIO.
         /// </summary>
-        [Description("The player's unique PlayerID as assigned by FantasyData.")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO.")]
         [DataMember(Name = "PlayerId", Order = 1)]
         public int PlayerId { get; set; }
 

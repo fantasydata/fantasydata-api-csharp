@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class PlayerOwnership
     {
         /// <summary>
-        /// Unique ID of the Player (assigned by FantasyData).
+        /// Unique ID of the Player (assigned by SportsDataIO).
         /// </summary>
-        [Description("Unique ID of the Player (assigned by FantasyData).")]
+        [Description("Unique ID of the Player (assigned by SportsDataIO).")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 

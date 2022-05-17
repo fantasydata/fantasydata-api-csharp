@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.Lol
         public int TeamId { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID as assigned by FantasyData.
+        /// The player's unique PlayerID as assigned by SportsDataIO.
         /// </summary>
-        [Description("The player's unique PlayerID as assigned by FantasyData.")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO.")]
         [DataMember(Name = "PlayerId", Order = 3)]
         public int PlayerId { get; set; }
 

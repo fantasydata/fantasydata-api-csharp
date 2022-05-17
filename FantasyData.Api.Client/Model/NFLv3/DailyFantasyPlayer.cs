@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Position { get; set; }
 
         /// <summary>
-        /// The player's daily fantasy salary as determined by FantasyData, based on a $60,000 salary cap
+        /// The player's daily fantasy salary as determined by SportsDataIO (formerly known as FantasyData), based on a $60,000 salary cap
         /// </summary>
-        [Description("The player's daily fantasy salary as determined by FantasyData, based on a $60,000 salary cap")]
+        [Description("The player's daily fantasy salary as determined by SportsDataIO (formerly known as FantasyData), based on a $60,000 salary cap")]
         [DataMember(Name = "Salary", Order = 9)]
         public int Salary { get; set; }
 
@@ -142,9 +142,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? YahooSalary { get; set; }
 
         /// <summary>
-        /// The player's salary as calculated by FantasyData.  Based on the same salary cap as DraftKings contests ($50,000).
+        /// The player's salary as calculated by SportsDataIO (formerly known as FantasyData). Based on the same salary cap as DraftKings contests ($50,000).
         /// </summary>
-        [Description("The player's salary as calculated by FantasyData.  Based on the same salary cap as DraftKings contests ($50,000).")]
+        [Description("The player's salary as calculated by SportsDataIO (formerly known as FantasyData). Based on the same salary cap as DraftKings contests ($50,000).")]
         [DataMember(Name = "FantasyDataSalary", Order = 20)]
         public int? FantasyDataSalary { get; set; }
 

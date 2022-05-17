@@ -541,6 +541,53 @@ namespace FantasyData.Api.Client
             return this.GetPlayerGameStatsBySeasonAsync(season, playerid, numberofgames).Result;
         }
 
+        /// <summary>
+        /// Get Injured Players Asynchronous
+        /// </summary>
+        public Task<List<Player>> GetInjuredPlayersAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Player>>(() =>
+                base.Get<List<Player>>("/v3/cbb/stats/{format}/InjuredPlayers", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Injured Players
+        /// </summary>
+        public List<Player> GetInjuredPlayers()
+        {
+            return this.GetInjuredPlayersAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Team Game Logs By Season Asynchronous
+        /// </summary>
+        /// <param name="season">Season to get games from. Example <code>2019POST</code>, <code>2020</code></param>
+        /// <param name="teamid">Unique ID of team. Example <code> 1 </code></param>
+        /// <param name="numberofgames">How many games to return. Example <code>all</code>, <code>10</code>, <code>25</code></param>
+        public Task<List<TeamGame>> GetTeamGameStatsBySeasonAsync(string season, int teamid, string numberofgames)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("teamid", teamid.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("numberofgames", numberofgames.ToString()));
+            return Task.Run<List<TeamGame>>(() =>
+                base.Get<List<TeamGame>>("/v3/cbb/stats/{format}/TeamGameStatsBySeason/{season}/{teamid}/{numberofgames}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Team Game Logs By Season
+        /// </summary>
+        /// <param name="season">Season to get games from. Example <code>2019POST</code>, <code>2020</code></param>
+        /// <param name="teamid">Unique ID of team. Example <code> 1 </code></param>
+        /// <param name="numberofgames">How many games to return. Example <code>all</code>, <code>10</code>, <code>25</code></param>
+        public List<TeamGame> GetTeamGameStatsBySeason(string season, int teamid, string numberofgames)
+        {
+            return this.GetTeamGameStatsBySeasonAsync(season, teamid, numberofgames).Result;
+        }
+
     }
 }
 

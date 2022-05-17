@@ -374,6 +374,50 @@ namespace FantasyData.Api.Client
             return this.GetBettingPlayerPropsByGameIDAsync(gameId).Result;
         }
 
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds By Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2022-03-19</code></param>
+        public Task<List<GameInfo>> GetAlternateMarketGameOddsByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v3/soccer/odds/{format}/AlternateMarketGameOddsByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds By Date
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2022-03-19</code></param>
+        public List<GameInfo> GetAlternateMarketGameOddsByDate(string date)
+        {
+            return this.GetAlternateMarketGameOddsByDateAsync(date).Result;
+        }
+
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds Line Movement Asynchronous
+        /// </summary>
+        /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>41323</code></param>
+        public Task<List<GameInfo>> GetAlternateMarketGameOddsLineMovementAsync(int gameid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v3/soccer/odds/{format}/AlternateMarketGameOddsLineMovement/{gameid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Alternate Market Pre-Game Odds Line Movement
+        /// </summary>
+        /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>41323</code></param>
+        public List<GameInfo> GetAlternateMarketGameOddsLineMovement(int gameid)
+        {
+            return this.GetAlternateMarketGameOddsLineMovementAsync(gameid).Result;
+        }
+
     }
 }
 

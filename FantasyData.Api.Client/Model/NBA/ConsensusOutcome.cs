@@ -141,6 +141,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "SportsbookUrl", Order = 19)]
         public string SportsbookUrl { get; set; }
 
+        /// <summary>
+        /// Was this outcome created after the start time of the game (only applies when the betting event is of type game)
+        /// </summary>
+        [Description("Was this outcome created after the start time of the game (only applies when the betting event is of type game)")]
+        [DataMember(Name = "IsInPlay", Order = 20)]
+        public bool? IsInPlay { get; set; }
+
     }
 }
 

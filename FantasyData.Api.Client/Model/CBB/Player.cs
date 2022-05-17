@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.CBB
     public partial class Player
     {
         /// <summary>
-        /// The player's unique PlayerID as assigned by FantasyData.
+        /// The player's unique PlayerID as assigned by SportsDataIO.
         /// </summary>
-        [Description("The player's unique PlayerID as assigned by FantasyData.")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO.")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
@@ -133,6 +133,34 @@ namespace FantasyData.Api.Client.Model.CBB
         [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
         [DataMember(Name = "GlobalTeamID", Order = 18)]
         public int? GlobalTeamID { get; set; }
+
+        /// <summary>
+        /// Injury status (Questionable, Out, etc)
+        /// </summary>
+        [Description("Injury status (Questionable, Out, etc)")]
+        [DataMember(Name = "InjuryStatus", Order = 19)]
+        public string InjuryStatus { get; set; }
+
+        /// <summary>
+        /// Body part injured
+        /// </summary>
+        [Description("Body part injured")]
+        [DataMember(Name = "InjuryBodyPart", Order = 20)]
+        public string InjuryBodyPart { get; set; }
+
+        /// <summary>
+        /// Injury description and expected availability
+        /// </summary>
+        [Description("Injury description and expected availability")]
+        [DataMember(Name = "InjuryNotes", Order = 21)]
+        public string InjuryNotes { get; set; }
+
+        /// <summary>
+        /// Date on which injury occurred
+        /// </summary>
+        [Description("Date on which injury occurred")]
+        [DataMember(Name = "InjuryStartDate", Order = 22)]
+        public DateTime? InjuryStartDate { get; set; }
 
     }
 }
