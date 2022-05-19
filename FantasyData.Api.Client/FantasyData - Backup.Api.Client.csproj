@@ -1,8 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFrameworks>net46;netstandard20</TargetFrameworks>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Version>1.0.2</Version>
 	</PropertyGroup>
 	<ItemGroup>
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
