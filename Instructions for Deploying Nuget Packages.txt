@@ -1,0 +1,4 @@
+1) Update the nuspec file with the latest info.
+2) Rebuild the project(s) in RELEASE mode.
+3) This will also generate the Nuget package for upload (in the bin\Release folder).
+4) Login to nuget.org and upload the latest version of the package.
