@@ -3,15 +3,15 @@
   <metadata>
     <id>FantasyData.Api.Client</id>
     <title>FantasyData API Client Library</title>
-    <version>0.9.4</version>
+    <version>1.0</version>
     <authors>FantasyData LLC</authors>
     <owners>FantasyData LLC</owners>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/fantasydata/fantasydata-api-csharp</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>FantasyData API C# Client Library</description>
-    <releaseNotes>Added support for new SportsDataIO API features, including resulting, betting splits, and gameday lineups.</releaseNotes>
-    <copyright>Copyright FantasyData LLC 2021</copyright>
+    <releaseNotes>Upgraded library version to support .NET Core 3.1 and higher.</releaseNotes>
+    <copyright>Copyright FantasyData LLC 2022</copyright>
     <tags>Fantasy Sports Live Data Feed API Client Library Wrapper SDK</tags>
   </metadata>
   <files>
