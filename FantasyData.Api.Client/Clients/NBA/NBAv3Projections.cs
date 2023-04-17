@@ -192,6 +192,25 @@ namespace FantasyData.Api.Client
             return this.GetInjuredPlayersAsync().Result;
         }
 
+        /// <summary>
+        /// Get Depth Charts Asynchronous
+        /// </summary>
+        public Task<List<TeamDepthChart>> GetDepthChartsAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<TeamDepthChart>>(() =>
+                base.Get<List<TeamDepthChart>>("/v3/nba/projections/{format}/DepthCharts", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Depth Charts
+        /// </summary>
+        public List<TeamDepthChart> GetDepthCharts()
+        {
+            return this.GetDepthChartsAsync().Result;
+        }
+
     }
 }
 

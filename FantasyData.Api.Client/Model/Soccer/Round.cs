@@ -78,6 +78,34 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "CurrentRound", Order = 10)]
         public bool CurrentRound { get; set; }
 
+        /// <summary>
+        /// Games that are part of this round
+        /// </summary>
+        [Description("Games that are part of this round")]
+        [DataMember(Name = "Games", Order = 20011)]
+        public Game[] Games { get; set; }
+
+        /// <summary>
+        /// Standing records associated with this round
+        /// </summary>
+        [Description("Standing records associated with this round")]
+        [DataMember(Name = "Standings", Order = 20012)]
+        public Standing[] Standings { get; set; }
+
+        /// <summary>
+        /// Team Stat records associated with this round.
+        /// </summary>
+        [Description("Team Stat records associated with this round.")]
+        [DataMember(Name = "TeamSeasons", Order = 20013)]
+        public TeamSeason[] TeamSeasons { get; set; }
+
+        /// <summary>
+        /// Player Season stat records associated with this round
+        /// </summary>
+        [Description("Player Season stat records associated with this round")]
+        [DataMember(Name = "PlayerSeasons", Order = 20014)]
+        public PlayerSeason[] PlayerSeasons { get; set; }
+
     }
 }
 

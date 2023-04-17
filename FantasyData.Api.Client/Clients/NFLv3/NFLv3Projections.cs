@@ -83,7 +83,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Fantasy Defense Season Stats (w/ Bye Week, ADP) Asynchronous
+        /// Get Projected Fantasy Defense Season Stats (w/ ADP) Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         public Task<List<FantasyDefenseSeasonProjection>> GetFantasyDefenseProjectionsBySeasonAsync(string season)
@@ -96,7 +96,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Fantasy Defense Season Stats (w/ Bye Week, ADP)
+        /// Get Projected Fantasy Defense Season Stats (w/ ADP)
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         public List<FantasyDefenseSeasonProjection> GetFantasyDefenseProjectionsBySeason(string season)
@@ -186,7 +186,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats (w/ Bye Week, ADP) Asynchronous
+        /// Get Projected Player Season Stats (w/ ADP) Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         public Task<List<PlayerSeasonProjection>> GetPlayerSeasonProjectionStatsAsync(string season)
@@ -199,7 +199,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats (w/ Bye Week, ADP)
+        /// Get Projected Player Season Stats (w/ ADP)
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         public List<PlayerSeasonProjection> GetPlayerSeasonProjectionStats(string season)
@@ -208,7 +208,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Player (w/ Bye Week, ADP) Asynchronous
+        /// Get Projected Player Season Stats by Player (w/ ADP) Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>14257</code>.</param>
@@ -223,7 +223,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Player (w/ Bye Week, ADP)
+        /// Get Projected Player Season Stats by Player (w/ ADP)
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>14257</code>.</param>
@@ -233,7 +233,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Team (w/ Bye Week, ADP) Asynchronous
+        /// Get Projected Player Season Stats by Team (w/ ADP) Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
@@ -248,7 +248,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Team (w/ Bye Week, ADP)
+        /// Get Projected Player Season Stats by Team (w/ ADP)
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>

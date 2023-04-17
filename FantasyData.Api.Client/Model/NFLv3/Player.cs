@@ -142,9 +142,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string BirthDateString { get; set; }
 
         /// <summary>
-        /// The url of the player's low-resolution headshot photo (hosted on SportsDataIO server)
+        /// This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.
         /// </summary>
-        [Description("The url of the player's low-resolution headshot photo (hosted on SportsDataIO server)")]
+        [Description("This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.")]
         [DataMember(Name = "PhotoUrl", Order = 20)]
         public string PhotoUrl { get; set; }
 

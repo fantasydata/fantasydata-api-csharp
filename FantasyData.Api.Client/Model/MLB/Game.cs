@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Delayed, Postponed, Canceled, Forfeit
+        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Delayed, Postponed, Canceled, Forfeit, NotNecessary
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Delayed, Postponed, Canceled, Forfeit")]
+        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Delayed, Postponed, Canceled, Forfeit, NotNecessary")]
         [DataMember(Name = "Status", Order = 4)]
         public string Status { get; set; }
 

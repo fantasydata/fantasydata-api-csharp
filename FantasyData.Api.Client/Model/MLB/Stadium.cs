@@ -149,9 +149,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? Altitude { get; set; }
 
         /// <summary>
-        /// The direction that the batter is facing while looking at the pitcher's mound. For instance, 90 means that the line from home plate through 2nd base is pointing east. 180 means that the line is pointing north … and so on.
+        /// The direction that the batter is facing while looking at the pitcher's mound. If the home plate is at the north of the stadium, the batter is facing south, so the value is given as 180 degrees. If home plate is at the east the batter faces west, so it's 270 degrees. If the home plate is at the south the batter faces north, so it's 0 degrees. If the home plate is at the west the batter faces east, so it's 90 degrees.
         /// </summary>
-        [Description("The direction that the batter is facing while looking at the pitcher's mound. For instance, 90 means that the line from home plate through 2nd base is pointing east. 180 means that the line is pointing north … and so on.")]
+        [Description("The direction that the batter is facing while looking at the pitcher's mound. If the home plate is at the north of the stadium, the batter is facing south, so the value is given as 180 degrees. If home plate is at the east the batter faces west, so it's 270 degrees. If the home plate is at the south the batter faces north, so it's 0 degrees. If the home plate is at the west the batter faces east, so it's 90 degrees.")]
         [DataMember(Name = "HomePlateDirection", Order = 21)]
         public int? HomePlateDirection { get; set; }
 

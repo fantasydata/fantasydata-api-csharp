@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public int? PoleWinnerID { get; set; }
 
         /// <summary>
-        /// Indicates whether this race is currently in progress. Because some races have the qualifying pole race prior to the actual race, this field flips to true approximately three hours prior to the race's start time (DateTime)
+        /// Indicates whether this race is currently in progress. 
         /// </summary>
-        [Description("Indicates whether this race is currently in progress. Because some races have the qualifying pole race prior to the actual race, this field flips to true approximately three hours prior to the race's start time (DateTime)")]
+        [Description("Indicates whether this race is currently in progress. ")]
         [DataMember(Name = "IsInProgress", Order = 12)]
         public bool IsInProgress { get; set; }
 
@@ -133,6 +133,20 @@ namespace FantasyData.Api.Client.Model.Nascar
         [Description("Indicates whether this race has been canceled")]
         [DataMember(Name = "Canceled", Order = 18)]
         public bool Canceled { get; set; }
+
+        /// <summary>
+        /// Number of laps scheduled for this race
+        /// </summary>
+        [Description("Number of laps scheduled for this race")]
+        [DataMember(Name = "ScheduledLaps", Order = 19)]
+        public int? ScheduledLaps { get; set; }
+
+        /// <summary>
+        /// Number of laps ran for this race
+        /// </summary>
+        [Description("Number of laps ran for this race")]
+        [DataMember(Name = "ActualLaps", Order = 20)]
+        public int? ActualLaps { get; set; }
 
     }
 }

@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public decimal? Value { get; set; }
 
         /// <summary>
-        /// The name of the participant (typically team or player) associated with the outcome
+        /// The name of the participant (typically team or player) associated with the outcome. NOTE: This is provided by the sportsbook. In the case of Player odds, we highly recommend using PlayerID as names of players can be inconsistent between sportsbooks.
         /// </summary>
-        [Description("The name of the participant (typically team or player) associated with the outcome")]
+        [Description("The name of the participant (typically team or player) associated with the outcome. NOTE: This is provided by the sportsbook. In the case of Player odds, we highly recommend using PlayerID as names of players can be inconsistent between sportsbooks.")]
         [DataMember(Name = "Participant", Order = 9)]
         public string Participant { get; set; }
 
@@ -140,6 +140,20 @@ namespace FantasyData.Api.Client.Model.CFB
         [Description("Was this outcome created after the start time of the game (only applies when the betting event is of type game)")]
         [DataMember(Name = "IsInPlay", Order = 19)]
         public bool? IsInPlay { get; set; }
+
+        /// <summary>
+        /// The market ID of a given sportsbook when available for deep links
+        /// </summary>
+        [Description("The market ID of a given sportsbook when available for deep links")]
+        [DataMember(Name = "SportsbookMarketID", Order = 20)]
+        public string SportsbookMarketID { get; set; }
+
+        /// <summary>
+        /// The outcome ID of a given sportsbook when available for deep links
+        /// </summary>
+        [Description("The outcome ID of a given sportsbook when available for deep links")]
+        [DataMember(Name = "SportsbookOutcomeID", Order = 21)]
+        public string SportsbookOutcomeID { get; set; }
 
     }
 }

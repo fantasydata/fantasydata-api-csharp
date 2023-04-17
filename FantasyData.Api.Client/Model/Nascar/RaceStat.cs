@@ -148,6 +148,13 @@ namespace FantasyData.Api.Client.Model.Nascar
         [DataMember(Name = "Poles", Order = 20)]
         public decimal? Poles { get; set; }
 
+        /// <summary>
+        /// Driver's current position in the race, updated live.
+        /// </summary>
+        [Description("Driver's current position in the race, updated live.")]
+        [DataMember(Name = "CurrentPosition", Order = 21)]
+        public decimal? CurrentPosition { get; set; }
+
     }
 }
 

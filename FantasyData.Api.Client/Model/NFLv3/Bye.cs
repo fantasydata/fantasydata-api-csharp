@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class Bye
     {
         /// <summary>
-        /// The NFL season during this bye week
+        /// The NFL season during which this bye week occurs.
         /// </summary>
-        [Description("The NFL season during this bye week")]
+        [Description("The NFL season during which this bye week occurs.")]
         [DataMember(Name = "Season", Order = 1)]
         public int Season { get; set; }
 

@@ -156,9 +156,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The url of the player's photo.
+        /// This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.
         /// </summary>
-        [Description("The url of the player's photo.")]
+        [Description("This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.")]
         [DataMember(Name = "PhotoUrl", Order = 22)]
         public string PhotoUrl { get; set; }
 

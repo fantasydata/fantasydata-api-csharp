@@ -337,6 +337,13 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "DateTimeUTC", Order = 47)]
         public DateTime? DateTimeUTC { get; set; }
 
+        /// <summary>
+        /// The attendance of the game when available
+        /// </summary>
+        [Description("The attendance of the game when available")]
+        [DataMember(Name = "Attendance", Order = 48)]
+        public int? Attendance { get; set; }
+
     }
 }
 

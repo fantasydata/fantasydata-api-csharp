@@ -365,6 +365,13 @@ namespace FantasyData.Api.Client.Model.Soccer
         [DataMember(Name = "OpponentScore", Order = 51)]
         public decimal? OpponentScore { get; set; }
 
+        /// <summary>
+        /// Total Tackles
+        /// </summary>
+        [Description("Total Tackles")]
+        [DataMember(Name = "Tackles", Order = 52)]
+        public decimal? Tackles { get; set; }
+
     }
 }
 

@@ -99,6 +99,13 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "BettingOutcomeResults", Order = 20013)]
         public BettingOutcomeResult[] BettingOutcomeResults { get; set; }
 
+        /// <summary>
+        /// Indicates whether resulting is supported for this kind of BettingMarket
+        /// </summary>
+        [Description("Indicates whether resulting is supported for this kind of BettingMarket")]
+        [DataMember(Name = "IsMarketResultingSupported", Order = 14)]
+        public bool IsMarketResultingSupported { get; set; }
+
     }
 }
 

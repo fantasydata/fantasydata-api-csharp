@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? Value { get; set; }
 
         /// <summary>
-        /// The name of the participant (typically team or player) associated with the outcome
+        /// This field is sourced from the related sportsbook and is shown as is; consider it as free-text that can take any form. If a BettingOutcome has the PlayerId or TeamId field set, you should use the respective Player or Team record to perform actions like displaying a player's name.  Note: if a BettingMarket has PlayerId or TeamId set, all the child BettingOutcomes will have the field set as well.
         /// </summary>
-        [Description("The name of the participant (typically team or player) associated with the outcome")]
+        [Description("This field is sourced from the related sportsbook and is shown as is; consider it as free-text that can take any form. If a BettingOutcome has the PlayerId or TeamId field set, you should use the respective Player or Team record to perform actions like displaying a player's name.  Note: if a BettingMarket has PlayerId or TeamId set, all the child BettingOutcomes will have the field set as well.")]
         [DataMember(Name = "Participant", Order = 9)]
         public string Participant { get; set; }
 
@@ -140,6 +140,20 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [Description("Was this outcome created after the start time of the game (only applies when the betting event is of type game)")]
         [DataMember(Name = "IsInPlay", Order = 19)]
         public bool? IsInPlay { get; set; }
+
+        /// <summary>
+        /// The market id on the given sportsbook when available for deep links.
+        /// </summary>
+        [Description("The market id on the given sportsbook when available for deep links.")]
+        [DataMember(Name = "SportsbookMarketID", Order = 20)]
+        public string SportsbookMarketID { get; set; }
+
+        /// <summary>
+        /// The outcome id on the given sportsbook when available for deep links
+        /// </summary>
+        [Description("The outcome id on the given sportsbook when available for deep links")]
+        [DataMember(Name = "SportsbookOutcomeID", Order = 21)]
+        public string SportsbookOutcomeID { get; set; }
 
     }
 }

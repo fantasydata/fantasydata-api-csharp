@@ -93,9 +93,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Category { get; set; }
 
         /// <summary>
-        /// The type of the play. Possible values: None, Period, Timeout, JumpBall, FieldGoalMade, FieldGoalMissed, FreeThrowMade, FreeThrowMissed, Rebound, Steal, Turnover, Foul, PersonalFoul, ShootingFoul, OffensiveFoul, LooseBallFoul, TechnicalFoul, FlagrantFoul, Traveling, Palming, Goaltending, KickedBall, LaneViolation, DelayOfGame, Substitution
+        /// The type of the play. Possible values: None, Period, Timeout, JumpBall, FieldGoalMade, FieldGoalMissed, FreeThrowMade, FreeThrowMissed, Rebound, Steal, Turnover, Foul, PersonalFoul, ShootingFoul, OffensiveFoul, LooseBallFoul, TechnicalFoul, FlagrantFoul, Traveling, Palming, Goaltending, KickedBall, LaneViolation, DelayOfGame, Substitution, Ejection, and Challenge.
         /// </summary>
-        [Description("The type of the play. Possible values: None, Period, Timeout, JumpBall, FieldGoalMade, FieldGoalMissed, FreeThrowMade, FreeThrowMissed, Rebound, Steal, Turnover, Foul, PersonalFoul, ShootingFoul, OffensiveFoul, LooseBallFoul, TechnicalFoul, FlagrantFoul, Traveling, Palming, Goaltending, KickedBall, LaneViolation, DelayOfGame, Substitution")]
+        [Description("The type of the play. Possible values: None, Period, Timeout, JumpBall, FieldGoalMade, FieldGoalMissed, FreeThrowMade, FreeThrowMissed, Rebound, Steal, Turnover, Foul, PersonalFoul, ShootingFoul, OffensiveFoul, LooseBallFoul, TechnicalFoul, FlagrantFoul, Traveling, Palming, Goaltending, KickedBall, LaneViolation, DelayOfGame, Substitution, Ejection, and Challenge.")]
         [DataMember(Name = "Type", Order = 13)]
         public string Type { get; set; }
 

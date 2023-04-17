@@ -328,31 +328,6 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Player Props by Date Asynchronous
-        /// </summary>
-        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        /// <param name="date">The date of the game(s). Examples: <code>2020-10-17</code></param>
-        public Task<List<BettingMarket>> GetBettingPlayerPropsByDateAsync(string competition, string date)
-        {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            return Task.Run<List<BettingMarket>>(() =>
-                base.Get<List<BettingMarket>>("/v3/soccer/odds/{format}/BettingPlayerPropsByDate/{competition}/{date}", parameters)
-            );
-        }
-
-        /// <summary>
-        /// Get Betting Player Props by Date
-        /// </summary>
-        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        /// <param name="date">The date of the game(s). Examples: <code>2020-10-17</code></param>
-        public List<BettingMarket> GetBettingPlayerPropsByDate(string competition, string date)
-        {
-            return this.GetBettingPlayerPropsByDateAsync(competition, date).Result;
-        }
-
-        /// <summary>
         /// Get Betting Player Props by GameID Asynchronous
         /// </summary>
         /// <param name="gameId">The unique GameID of the game in question.</param>
@@ -375,7 +350,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Alternate Market Pre-Game Odds By Date Asynchronous
+        /// Get Period Game Odds By Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2022-03-19</code></param>
         public Task<List<GameInfo>> GetAlternateMarketGameOddsByDateAsync(string date)
@@ -388,7 +363,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Alternate Market Pre-Game Odds By Date
+        /// Get Period Game Odds By Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2022-03-19</code></param>
         public List<GameInfo> GetAlternateMarketGameOddsByDate(string date)
@@ -397,7 +372,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Alternate Market Pre-Game Odds Line Movement Asynchronous
+        /// Get Period Game Odds Line Movement Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>41323</code></param>
         public Task<List<GameInfo>> GetAlternateMarketGameOddsLineMovementAsync(int gameid)
@@ -410,12 +385,62 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Alternate Market Pre-Game Odds Line Movement
+        /// Get Period Game Odds Line Movement
         /// </summary>
         /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>41323</code></param>
         public List<GameInfo> GetAlternateMarketGameOddsLineMovement(int gameid)
         {
             return this.GetAlternateMarketGameOddsLineMovementAsync(gameid).Result;
+        }
+
+        /// <summary>
+        /// Get In-Game Odds by Date by Competition Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        public Task<List<GameInfo>> GetLiveGameOddsByDateByCompetitionAsync(string competition, string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v3/soccer/odds/{format}/LiveGameOddsByDateByCompetition/{competition}/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get In-Game Odds by Date by Competition
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        public List<GameInfo> GetLiveGameOddsByDateByCompetition(string competition, string date)
+        {
+            return this.GetLiveGameOddsByDateByCompetitionAsync(competition, date).Result;
+        }
+
+        /// <summary>
+        /// Get Period Game Odds By Date By Competition Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public Task<List<GameInfo>> GetAlternateMarketGameOddsByDateByCompetitionAsync(string competition, string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v3/soccer/odds/{format}/AlternateMarketGameOddsByDateByCompetition/{competition}/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Period Game Odds By Date By Competition
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public List<GameInfo> GetAlternateMarketGameOddsByDateByCompetition(string competition, string date)
+        {
+            return this.GetAlternateMarketGameOddsByDateByCompetitionAsync(competition, date).Result;
         }
 
     }

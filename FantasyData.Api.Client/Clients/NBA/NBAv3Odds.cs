@@ -171,7 +171,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Alternate Market Pre-Game Odds by Date Asynchronous
+        /// Get Period Game Odds by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
         public Task<List<GameInfo>> GetAlternateMarketGameOddsByDateAsync(string date)
@@ -184,7 +184,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Alternate Market Pre-Game Odds by Date
+        /// Get Period Game Odds by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
         public List<GameInfo> GetAlternateMarketGameOddsByDate(string date)
@@ -193,7 +193,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Alternate Market Pre-Game Odds Line Movement Asynchronous
+        /// Get Period Game Odds Line Movement Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of an NBA game. GameIDs can be found in the Games API. Valid entries are <code>12780</code> or <code>12781</code></param>
         public Task<List<GameInfo>> GetAlternateMarketGameOddsLineMovementAsync(int gameid)
@@ -206,7 +206,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Alternate Market Pre-Game Odds Line Movement
+        /// Get Period Game Odds Line Movement
         /// </summary>
         /// <param name="gameid">The GameID of an NBA game. GameIDs can be found in the Games API. Valid entries are <code>12780</code> or <code>12781</code></param>
         public List<GameInfo> GetAlternateMarketGameOddsLineMovement(int gameid)
@@ -347,28 +347,6 @@ namespace FantasyData.Api.Client
         public List<BettingMarket> GetBettingMarketsByMarketType(string eventId, string marketTypeID)
         {
             return this.GetBettingMarketsByMarketTypeAsync(eventId, marketTypeID).Result;
-        }
-
-        /// <summary>
-        /// Get Betting Player Props by Date Asynchronous
-        /// </summary>
-        /// <param name="date">The date of the game(s). Examples: <code>2020-02-15</code>, <code>2020-02-23</code>.</param>
-        public Task<List<BettingEvent>> GetBettingPlayerPropsByDateAsync(string date)
-        {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            return Task.Run<List<BettingEvent>>(() =>
-                base.Get<List<BettingEvent>>("/v3/nba/odds/{format}/BettingPlayerPropsByDate/{date}", parameters)
-            );
-        }
-
-        /// <summary>
-        /// Get Betting Player Props by Date
-        /// </summary>
-        /// <param name="date">The date of the game(s). Examples: <code>2020-02-15</code>, <code>2020-02-23</code>.</param>
-        public List<BettingEvent> GetBettingPlayerPropsByDate(string date)
-        {
-            return this.GetBettingPlayerPropsByDateAsync(date).Result;
         }
 
         /// <summary>

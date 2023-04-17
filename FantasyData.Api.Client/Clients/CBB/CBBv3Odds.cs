@@ -347,28 +347,6 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Player Props by Date Asynchronous
-        /// </summary>
-        /// <param name="date">The date of the game(s). Examples: <code>2020-10-17</code></param>
-        public Task<List<BettingEvent>> GetBettingPlayerPropsByDateAsync(string date)
-        {
-            var parameters = new List<KeyValuePair<string, string>>();
-            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
-            return Task.Run<List<BettingEvent>>(() =>
-                base.Get<List<BettingEvent>>("/v3/cbb/odds/{format}/BettingPlayerPropsByDate/{date}", parameters)
-            );
-        }
-
-        /// <summary>
-        /// Get Betting Player Props by Date
-        /// </summary>
-        /// <param name="date">The date of the game(s). Examples: <code>2020-10-17</code></param>
-        public List<BettingEvent> GetBettingPlayerPropsByDate(string date)
-        {
-            return this.GetBettingPlayerPropsByDateAsync(date).Result;
-        }
-
-        /// <summary>
         /// Get Betting Metadata Asynchronous
         /// </summary>
         public Task<List<BettingEntityMetadata>> GetBettingMetadataAsync()

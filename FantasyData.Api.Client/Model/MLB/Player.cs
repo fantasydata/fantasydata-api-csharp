@@ -170,9 +170,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? Salary { get; set; }
 
         /// <summary>
-        /// The URL of the player's headshot photo.
+        /// This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.
         /// </summary>
-        [Description("The URL of the player's headshot photo.")]
+        [Description("This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.")]
         [DataMember(Name = "PhotoUrl", Order = 24)]
         public string PhotoUrl { get; set; }
 

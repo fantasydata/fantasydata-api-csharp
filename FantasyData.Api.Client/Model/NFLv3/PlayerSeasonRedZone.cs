@@ -779,9 +779,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string ShortName { get; set; }
 
         /// <summary>
-        /// Safeties allowed (tackled in end zone, sacked in end zone, ran out of bounds in end zone, or committed a penalty in end zone, e.g. Intentional Grounding or Offensive Holding)
+        /// NOTE: This field is deprecated.
         /// </summary>
-        [Description("Safeties allowed (tackled in end zone, sacked in end zone, ran out of bounds in end zone, or committed a penalty in end zone, e.g. Intentional Grounding or Offensive Holding)")]
+        [Description("NOTE: This field is deprecated.")]
         [DataMember(Name = "SafetiesAllowed", Order = 111)]
         public decimal? SafetiesAllowed { get; set; }
 
@@ -987,6 +987,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [Description("The average draft position of this player in 2 Quarterback drafts")]
         [DataMember(Name = "AverageDraftPosition2QB", Order = 140)]
         public decimal? AverageDraftPosition2QB { get; set; }
+
+        /// <summary>
+        /// NOTE: This field is deprecated; touchdowns scored via an offensive fumble recovery are recorded as Rushing Touchdowns.
+        /// </summary>
+        [Description("NOTE: This field is deprecated; touchdowns scored via an offensive fumble recovery are recorded as Rushing Touchdowns.")]
+        [DataMember(Name = "OffensiveFumbleRecoveryTouchdowns", Order = 141)]
+        public int? OffensiveFumbleRecoveryTouchdowns { get; set; }
 
     }
 }

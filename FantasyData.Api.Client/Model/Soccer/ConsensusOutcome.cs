@@ -72,9 +72,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public decimal? Value { get; set; }
 
         /// <summary>
-        /// The name of the participant (typically team or player) associated with the outcome
+        /// The name of the participant (typically team or player) associated with the outcome. NOTE: This is provided by the sportsbook. In the case of Player odds, we highly recommend using PlayerID as names of players can be inconsistent between sportsbooks.
         /// </summary>
-        [Description("The name of the participant (typically team or player) associated with the outcome")]
+        [Description("The name of the participant (typically team or player) associated with the outcome. NOTE: This is provided by the sportsbook. In the case of Player odds, we highly recommend using PlayerID as names of players can be inconsistent between sportsbooks.")]
         [DataMember(Name = "Participant", Order = 10)]
         public string Participant { get; set; }
 

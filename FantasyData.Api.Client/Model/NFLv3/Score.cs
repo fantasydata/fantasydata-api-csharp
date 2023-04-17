@@ -540,6 +540,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "DateTimeUTC", Order = 76)]
         public DateTime? DateTimeUTC { get; set; }
 
+        /// <summary>
+        /// Attendance at the game
+        /// </summary>
+        [Description("Attendance at the game")]
+        [DataMember(Name = "Attendance", Order = 77)]
+        public int Attendance { get; set; }
+
     }
 }
 

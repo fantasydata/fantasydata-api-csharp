@@ -674,9 +674,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public decimal? PitchingWeightedOnBasePercentage { get; set; }
 
         /// <summary>
-        /// Total double plays
+        /// Total double plays, defined as one of: Bunted into Double Play, Fly into Double Play, Fouled into Double Play, Ground into Double Pla,y Line into Double Play, Popped into Double Play
         /// </summary>
-        [Description("Total double plays")]
+        [Description("Total double plays, defined as one of: Bunted into Double Play, Fly into Double Play, Fouled into Double Play, Ground into Double Pla,y Line into Double Play, Popped into Double Play")]
         [DataMember(Name = "DoublePlays", Order = 96)]
         public decimal? DoublePlays { get; set; }
 
@@ -763,6 +763,20 @@ namespace FantasyData.Api.Client.Model.MLB
         [Description("Total FantasyDraft fantasy points")]
         [DataMember(Name = "FantasyPointsFantasyDraft", Order = 108)]
         public decimal? FantasyPointsFantasyDraft { get; set; }
+
+        /// <summary>
+        /// Total batting fantasy points
+        /// </summary>
+        [Description("Total batting fantasy points")]
+        [DataMember(Name = "FantasyPointsBatting", Order = 109)]
+        public decimal? FantasyPointsBatting { get; set; }
+
+        /// <summary>
+        /// Total pitching fantasy points
+        /// </summary>
+        [Description("Total pitching fantasy points")]
+        [DataMember(Name = "FantasyPointsPitching", Order = 110)]
+        public decimal? FantasyPointsPitching { get; set; }
 
     }
 }
