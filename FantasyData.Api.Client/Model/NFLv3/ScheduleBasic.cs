@@ -155,6 +155,20 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "LastUpdated", Order = 21)]
         public DateTime? LastUpdated { get; set; }
 
+        /// <summary>
+        /// Indicates whether the game is over and the final score has been verified and closed out.
+        /// </summary>
+        [Description("Indicates whether the game is over and the final score has been verified and closed out.")]
+        [DataMember(Name = "IsClosed", Order = 22)]
+        public bool? IsClosed { get; set; }
+
+        /// <summary>
+        /// The NFL week of the game (regular season: 1 to 17, preseason: 0 to 4, postseason: 1 to 4)
+        /// </summary>
+        [Description("The NFL week of the game (regular season: 1 to 17, preseason: 0 to 4, postseason: 1 to 4)")]
+        [DataMember(Name = "Week", Order = 23)]
+        public int Week { get; set; }
+
     }
 }
 

@@ -32,7 +32,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Injuries (Historical) Asynchronous
         /// </summary>
-        public Task<List<Injury>> GetInjuriesByHistoricalAsync()
+        public Task<List<Injury>> GetInjuriesHistoricalAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Injury>>(() =>
@@ -43,9 +43,9 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Injuries (Historical)
         /// </summary>
-        public List<Injury> GetInjuriesByHistorical()
+        public List<Injury> GetInjuriesHistorical()
         {
-            return this.GetInjuriesByHistoricalAsync().Result;
+            return this.GetInjuriesHistoricalAsync().Result;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace FantasyData.Api.Client
         /// Get News by Player Asynchronous
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>40000019</code>.</param>
-        public Task<List<News>> GetNewsByPlayerIDAsync(int playerid)
+        public Task<List<News>> GetNewsByPlayerAsync(int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
@@ -128,9 +128,9 @@ namespace FantasyData.Api.Client
         /// Get News by Player
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>40000019</code>.</param>
-        public List<News> GetNewsByPlayerID(int playerid)
+        public List<News> GetNewsByPlayer(int playerid)
         {
-            return this.GetNewsByPlayerIDAsync(playerid).Result;
+            return this.GetNewsByPlayerAsync(playerid).Result;
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace FantasyData.Api.Client
         /// Get Player Tournament Projected Stats (w/ DraftKings Salaries) Asynchronous
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>78</code>, <code>79</code>, <code>80</code>, etc.</param>
-        public Task<List<PlayerTournamentProjection>> GetPlayerTournamentProjectionStatsAsync(int tournamentid)
+        public Task<List<PlayerTournamentProjection>> GetPlayerTournamentProjectedStatsAsync(int tournamentid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
@@ -194,9 +194,9 @@ namespace FantasyData.Api.Client
         /// Get Player Tournament Projected Stats (w/ DraftKings Salaries)
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>78</code>, <code>79</code>, <code>80</code>, etc.</param>
-        public List<PlayerTournamentProjection> GetPlayerTournamentProjectionStats(int tournamentid)
+        public List<PlayerTournamentProjection> GetPlayerTournamentProjectedStats(int tournamentid)
         {
-            return this.GetPlayerTournamentProjectionStatsAsync(tournamentid).Result;
+            return this.GetPlayerTournamentProjectedStatsAsync(tournamentid).Result;
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Schedule Asynchronous
         /// </summary>
-        public Task<List<Tournament>> GetTournamentsAsync()
+        public Task<List<Tournament>> GetScheduleAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Tournament>>(() =>
@@ -257,16 +257,16 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Schedule
         /// </summary>
-        public List<Tournament> GetTournaments()
+        public List<Tournament> GetSchedule()
         {
-            return this.GetTournamentsAsync().Result;
+            return this.GetScheduleAsync().Result;
         }
 
         /// <summary>
         /// Get DFS Slates Asynchronous
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
-        public Task<List<DfsSlate>> GetDfsSlatesByTournamentAsync(int tournamentid)
+        public Task<List<DfsSlate>> GetDFSSlatesAsync(int tournamentid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
@@ -279,16 +279,16 @@ namespace FantasyData.Api.Client
         /// Get DFS Slates
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
-        public List<DfsSlate> GetDfsSlatesByTournament(int tournamentid)
+        public List<DfsSlate> GetDFSSlates(int tournamentid)
         {
-            return this.GetDfsSlatesByTournamentAsync(tournamentid).Result;
+            return this.GetDFSSlatesAsync(tournamentid).Result;
         }
 
         /// <summary>
         /// Get Schedule by Season Asynchronous
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
-        public Task<List<Tournament>> GetTournamentsAsync(string season)
+        public Task<List<Tournament>> GetScheduleBySeasonAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -301,9 +301,9 @@ namespace FantasyData.Api.Client
         /// Get Schedule by Season
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
-        public List<Tournament> GetTournaments(string season)
+        public List<Tournament> GetScheduleBySeason(string season)
         {
-            return this.GetTournamentsAsync(season).Result;
+            return this.GetScheduleBySeasonAsync(season).Result;
         }
 
         /// <summary>

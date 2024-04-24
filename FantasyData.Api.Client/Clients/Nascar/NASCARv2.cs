@@ -14,7 +14,7 @@ namespace FantasyData.Api.Client
         /// Get Driver Details Asynchronous
         /// </summary>
         /// <param name="driverid">Unique FantasyData Driver ID. Example:<code>80000268</code>.</param>
-        public Task<Driver> GetDriverAsync(int driverid)
+        public Task<Driver> GetDriverDetailsAsync(int driverid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("driverid", driverid.ToString()));
@@ -27,16 +27,16 @@ namespace FantasyData.Api.Client
         /// Get Driver Details
         /// </summary>
         /// <param name="driverid">Unique FantasyData Driver ID. Example:<code>80000268</code>.</param>
-        public Driver GetDriver(int driverid)
+        public Driver GetDriverDetails(int driverid)
         {
-            return this.GetDriverAsync(driverid).Result;
+            return this.GetDriverDetailsAsync(driverid).Result;
         }
 
         /// <summary>
         /// Get Driver Race Projections (Entry List) Asynchronous
         /// </summary>
         /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
-        public Task<List<DriverRaceProjection>> GetDriverRaceProjectionsAsync(int raceid)
+        public Task<List<DriverRaceProjection>> GetDriverRaceProjectionsEntryListAsync(int raceid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("raceid", raceid.ToString()));
@@ -49,9 +49,9 @@ namespace FantasyData.Api.Client
         /// Get Driver Race Projections (Entry List)
         /// </summary>
         /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
-        public List<DriverRaceProjection> GetDriverRaceProjections(int raceid)
+        public List<DriverRaceProjection> GetDriverRaceProjectionsEntryList(int raceid)
         {
-            return this.GetDriverRaceProjectionsAsync(raceid).Result;
+            return this.GetDriverRaceProjectionsEntryListAsync(raceid).Result;
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace FantasyData.Api.Client
         /// Get Race Results Asynchronous
         /// </summary>
         /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
-        public Task<RaceResult> GetRaceresultAsync(int raceid)
+        public Task<RaceResult> GetRaceResultsAsync(int raceid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("raceid", raceid.ToString()));
@@ -90,16 +90,16 @@ namespace FantasyData.Api.Client
         /// Get Race Results
         /// </summary>
         /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
-        public RaceResult GetRaceresult(int raceid)
+        public RaceResult GetRaceResults(int raceid)
         {
-            return this.GetRaceresultAsync(raceid).Result;
+            return this.GetRaceResultsAsync(raceid).Result;
         }
 
         /// <summary>
         /// Get Races / Schedule Asynchronous
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
-        public Task<List<Race>> GetRacesAsync(string season)
+        public Task<List<Race>> GetRacesScheduleAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -112,9 +112,9 @@ namespace FantasyData.Api.Client
         /// Get Races / Schedule
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
-        public List<Race> GetRaces(string season)
+        public List<Race> GetRacesSchedule(string season)
         {
-            return this.GetRacesAsync(season).Result;
+            return this.GetRacesScheduleAsync(season).Result;
         }
 
         /// <summary>

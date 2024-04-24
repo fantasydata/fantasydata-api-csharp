@@ -43,6 +43,13 @@ namespace FantasyData.Api.Client.Model.NHL
         [DataMember(Name = "PowerPlayLines", Order = 20005)]
         public PlayerLine[] PowerPlayLines { get; set; }
 
+        /// <summary>
+        /// The short-handed/penalty-kill lines for this team
+        /// </summary>
+        [Description("The short-handed/penalty-kill lines for this team")]
+        [DataMember(Name = "ShortHandedLines", Order = 20006)]
+        public PlayerLine[] ShortHandedLines { get; set; }
+
     }
 }
 

@@ -40,7 +40,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
-        public Task<List<AdvancedPlayerGame>> GetAdvancedPlayerGameStatsByPlayerIDAsync(string season, int playerid)
+        public Task<List<AdvancedPlayerGame>> GetAdvancedPlayerGameStatsByPlayerAsync(string season, int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -55,9 +55,9 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
-        public List<AdvancedPlayerGame> GetAdvancedPlayerGameStatsByPlayerID(string season, int playerid)
+        public List<AdvancedPlayerGame> GetAdvancedPlayerGameStatsByPlayer(string season, int playerid)
         {
-            return this.GetAdvancedPlayerGameStatsByPlayerIDAsync(season, playerid).Result;
+            return this.GetAdvancedPlayerGameStatsByPlayerAsync(season, playerid).Result;
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
-        public Task<List<AdvancedPlayerSeason>> GetAdvancedPlayerSeasonStatsByPlayerIDAsync(string season, int playerid)
+        public Task<List<AdvancedPlayerSeason>> GetAdvancedPlayerSeasonStatsByPlayerAsync(string season, int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -102,9 +102,9 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
-        public List<AdvancedPlayerSeason> GetAdvancedPlayerSeasonStatsByPlayerID(string season, int playerid)
+        public List<AdvancedPlayerSeason> GetAdvancedPlayerSeasonStatsByPlayer(string season, int playerid)
         {
-            return this.GetAdvancedPlayerSeasonStatsByPlayerIDAsync(season, playerid).Result;
+            return this.GetAdvancedPlayerSeasonStatsByPlayerAsync(season, playerid).Result;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code>.</param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
-        public Task<List<AdvancedPlayerSeason>> GetAdvancedPlayerSeasonStatsAsync(string season, string team)
+        public Task<List<AdvancedPlayerSeason>> GetAdvancedPlayerSeasonStatsByTeamAsync(string season, string team)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -127,9 +127,9 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2018REG</code>, <code>2018PRE</code>, <code>2018POST</code>.</param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
-        public List<AdvancedPlayerSeason> GetAdvancedPlayerSeasonStats(string season, string team)
+        public List<AdvancedPlayerSeason> GetAdvancedPlayerSeasonStatsByTeam(string season, string team)
         {
-            return this.GetAdvancedPlayerSeasonStatsAsync(season, team).Result;
+            return this.GetAdvancedPlayerSeasonStatsByTeamAsync(season, team).Result;
         }
 
         /// <summary>

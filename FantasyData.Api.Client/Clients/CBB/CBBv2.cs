@@ -13,7 +13,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Are Games In Progress Asynchronous
         /// </summary>
-        public Task<bool> GetAreAnyGamesInProgressAsync()
+        public Task<bool> GetAreGamesInProgressAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<bool>(() =>
@@ -24,9 +24,9 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Are Games In Progress
         /// </summary>
-        public bool GetAreAnyGamesInProgress()
+        public bool GetAreGamesInProgress()
         {
-            return this.GetAreAnyGamesInProgressAsync().Result;
+            return this.GetAreGamesInProgressAsync().Result;
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace FantasyData.Api.Client
         /// Get Box Scores by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2016-FEB-27</code>, <code>2015-SEP-01</code>.</param>
-        public Task<List<BoxScore>> GetBoxScoresAsync(string date)
+        public Task<List<BoxScore>> GetBoxScoresByDateAsync(string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -68,9 +68,9 @@ namespace FantasyData.Api.Client
         /// Get Box Scores by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2016-FEB-27</code>, <code>2015-SEP-01</code>.</param>
-        public List<BoxScore> GetBoxScores(string date)
+        public List<BoxScore> GetBoxScoresByDate(string date)
         {
-            return this.GetBoxScoresAsync(date).Result;
+            return this.GetBoxScoresByDateAsync(date).Result;
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2016-FEB-27</code>, <code>2015-SEP-01</code>.</param>
         /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code> or <code>2</code>.</param>
-        public Task<List<BoxScore>> GetBoxScoresDeltaAsync(string date, string minutes)
+        public Task<List<BoxScore>> GetBoxScoresByDateDeltaAsync(string date, string minutes)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -93,9 +93,9 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2016-FEB-27</code>, <code>2015-SEP-01</code>.</param>
         /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code> or <code>2</code>.</param>
-        public List<BoxScore> GetBoxScoresDelta(string date, string minutes)
+        public List<BoxScore> GetBoxScoresByDateDelta(string date, string minutes)
         {
-            return this.GetBoxScoresDeltaAsync(date, minutes).Result;
+            return this.GetBoxScoresByDateDeltaAsync(date, minutes).Result;
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Player Details by Active Asynchronous
         /// </summary>
-        public Task<List<Player>> GetPlayersAsync()
+        public Task<List<Player>> GetPlayerDetailsByActiveAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Player>>(() =>
@@ -172,16 +172,16 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Player Details by Active
         /// </summary>
-        public List<Player> GetPlayers()
+        public List<Player> GetPlayerDetailsByActive()
         {
-            return this.GetPlayersAsync().Result;
+            return this.GetPlayerDetailsByActiveAsync().Result;
         }
 
         /// <summary>
         /// Get Player Details by Player Asynchronous
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>60003802</code>.</param>
-        public Task<Player> GetPlayerAsync(int playerid)
+        public Task<Player> GetPlayerDetailsByPlayerAsync(int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
@@ -194,16 +194,16 @@ namespace FantasyData.Api.Client
         /// Get Player Details by Player
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>60003802</code>.</param>
-        public Player GetPlayer(int playerid)
+        public Player GetPlayerDetailsByPlayer(int playerid)
         {
-            return this.GetPlayerAsync(playerid).Result;
+            return this.GetPlayerDetailsByPlayerAsync(playerid).Result;
         }
 
         /// <summary>
         /// Get Player Details by Team Asynchronous
         /// </summary>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
-        public Task<List<Player>> GetPlayersAsync(string team)
+        public Task<List<Player>> GetPlayerDetailsByTeamAsync(string team)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
@@ -216,9 +216,9 @@ namespace FantasyData.Api.Client
         /// Get Player Details by Team
         /// </summary>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
-        public List<Player> GetPlayers(string team)
+        public List<Player> GetPlayerDetailsByTeam(string team)
         {
-            return this.GetPlayersAsync(team).Result;
+            return this.GetPlayerDetailsByTeamAsync(team).Result;
         }
 
         /// <summary>
@@ -344,7 +344,7 @@ namespace FantasyData.Api.Client
         /// Get Projected Player Game Stats by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2016-FEB-27</code>, <code>2015-SEP-01</code>.</param>
-        public Task<List<PlayerGameProjection>> GetPlayerGameProjectionStatsByDateAsync(string date)
+        public Task<List<PlayerGameProjection>> GetProjectedPlayerGameStatsByDateAsync(string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -357,9 +357,9 @@ namespace FantasyData.Api.Client
         /// Get Projected Player Game Stats by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2016-FEB-27</code>, <code>2015-SEP-01</code>.</param>
-        public List<PlayerGameProjection> GetPlayerGameProjectionStatsByDate(string date)
+        public List<PlayerGameProjection> GetProjectedPlayerGameStatsByDate(string date)
         {
-            return this.GetPlayerGameProjectionStatsByDateAsync(date).Result;
+            return this.GetProjectedPlayerGameStatsByDateAsync(date).Result;
         }
 
         /// <summary>
@@ -367,7 +367,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2016-FEB-27</code>, <code>2015-SEP-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>60003802</code>.</param>
-        public Task<PlayerGameProjection> GetPlayerGameProjectionStatsByPlayerAsync(string date, int playerid)
+        public Task<PlayerGameProjection> GetProjectedPlayerGameStatsByPlayerAsync(string date, int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -382,16 +382,16 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2016-FEB-27</code>, <code>2015-SEP-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>60003802</code>.</param>
-        public PlayerGameProjection GetPlayerGameProjectionStatsByPlayer(string date, int playerid)
+        public PlayerGameProjection GetProjectedPlayerGameStatsByPlayer(string date, int playerid)
         {
-            return this.GetPlayerGameProjectionStatsByPlayerAsync(date, playerid).Result;
+            return this.GetProjectedPlayerGameStatsByPlayerAsync(date, playerid).Result;
         }
 
         /// <summary>
         /// Get Schedules Asynchronous
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
-        public Task<List<Game>> GetGamesAsync(string season)
+        public Task<List<Game>> GetSchedulesAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -404,9 +404,9 @@ namespace FantasyData.Api.Client
         /// Get Schedules
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
-        public List<Game> GetGames(string season)
+        public List<Game> GetSchedules(string season)
         {
-            return this.GetGamesAsync(season).Result;
+            return this.GetSchedulesAsync(season).Result;
         }
 
         /// <summary>
@@ -476,7 +476,7 @@ namespace FantasyData.Api.Client
         /// Get Tournament Hierarchy Asynchronous
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
-        public Task<Tournament> GetTournamentAsync(string season)
+        public Task<Tournament> GetTournamentHierarchyAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -489,9 +489,9 @@ namespace FantasyData.Api.Client
         /// Get Tournament Hierarchy
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
-        public Tournament GetTournament(string season)
+        public Tournament GetTournamentHierarchy(string season)
         {
-            return this.GetTournamentAsync(season).Result;
+            return this.GetTournamentHierarchyAsync(season).Result;
         }
 
     }

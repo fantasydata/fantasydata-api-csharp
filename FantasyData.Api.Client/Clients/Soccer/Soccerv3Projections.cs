@@ -15,7 +15,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public Task<List<PlayerGameProjection>> GetPlayerGameProjectionStatsByCompetitionAsync(string competition, string date)
+        public Task<List<PlayerGameProjection>> GetProjectedPlayerGameStatsByCompetitionAsync(string competition, string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public List<PlayerGameProjection> GetPlayerGameProjectionStatsByCompetition(string competition, string date)
+        public List<PlayerGameProjection> GetProjectedPlayerGameStatsByCompetition(string competition, string date)
         {
-            return this.GetPlayerGameProjectionStatsByCompetitionAsync(competition, date).Result;
+            return this.GetProjectedPlayerGameStatsByCompetitionAsync(competition, date).Result;
         }
 
         /// <summary>
         /// Get Projected Player Game Stats by Date (w/ DFS Salaries) Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public Task<List<PlayerGameProjection>> GetPlayerGameProjectionStatsByDateAsync(string date)
+        public Task<List<PlayerGameProjection>> GetProjectedPlayerGameStatsByDateAsync(string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -52,9 +52,9 @@ namespace FantasyData.Api.Client
         /// Get Projected Player Game Stats by Date (w/ DFS Salaries)
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public List<PlayerGameProjection> GetPlayerGameProjectionStatsByDate(string date)
+        public List<PlayerGameProjection> GetProjectedPlayerGameStatsByDate(string date)
         {
-            return this.GetPlayerGameProjectionStatsByDateAsync(date).Result;
+            return this.GetProjectedPlayerGameStatsByDateAsync(date).Result;
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>
-        public Task<List<PlayerGameProjection>> GetPlayerGameProjectionStatsByPlayerAsync(string date, int playerid)
+        public Task<List<PlayerGameProjection>> GetProjectedPlayerGameStatsByPlayerAsync(string date, int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -77,9 +77,9 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>
-        public List<PlayerGameProjection> GetPlayerGameProjectionStatsByPlayer(string date, int playerid)
+        public List<PlayerGameProjection> GetProjectedPlayerGameStatsByPlayer(string date, int playerid)
         {
-            return this.GetPlayerGameProjectionStatsByPlayerAsync(date, playerid).Result;
+            return this.GetProjectedPlayerGameStatsByPlayerAsync(date, playerid).Result;
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace FantasyData.Api.Client
         /// Get Injured Players By Competition Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public Task<List<Player>> GetInjuredPlayersAsync(string competition)
+        public Task<List<Player>> GetInjuredPlayersByCompetitionAsync(string competition)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -143,9 +143,9 @@ namespace FantasyData.Api.Client
         /// Get Injured Players By Competition
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public List<Player> GetInjuredPlayers(string competition)
+        public List<Player> GetInjuredPlayersByCompetition(string competition)
         {
-            return this.GetInjuredPlayersAsync(competition).Result;
+            return this.GetInjuredPlayersByCompetitionAsync(competition).Result;
         }
 
     }

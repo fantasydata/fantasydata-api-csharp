@@ -309,6 +309,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "SeriesInfo", Order = 10043)]
         public Series SeriesInfo { get; set; }
 
+        /// <summary>
+        /// A flag to indicate this game is part of the inseason NBA tournament (can be considered a part of regular season still) - a null would also indicate false
+        /// </summary>
+        [Description("A flag to indicate this game is part of the inseason NBA tournament (can be considered a part of regular season still) - a null would also indicate false")]
+        [DataMember(Name = "InseasonTournament", Order = 44)]
+        public bool? InseasonTournament { get; set; }
+
     }
 }
 

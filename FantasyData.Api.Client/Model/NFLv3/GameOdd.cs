@@ -134,6 +134,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "SportsbookUrl", Order = 18)]
         public string SportsbookUrl { get; set; }
 
+        /// <summary>
+        /// Unique ID of the Score/Game (identical to ScoreID but using the updated naming)
+        /// </summary>
+        [Description("Unique ID of the Score/Game (identical to ScoreID but using the updated naming)")]
+        [DataMember(Name = "GameId", Order = 19)]
+        public int GameId { get; set; }
+
     }
 }
 

@@ -155,6 +155,62 @@ namespace FantasyData.Api.Client.Model.WNBA
         [DataMember(Name = "Quarters", Order = 20021)]
         public Quarter[] Quarters { get; set; }
 
+        /// <summary>
+        /// The consensus moneyline for the home team
+        /// </summary>
+        [Description("The consensus moneyline for the home team")]
+        [DataMember(Name = "HomeTeamMoneyLine", Order = 22)]
+        public int? HomeTeamMoneyLine { get; set; }
+
+        /// <summary>
+        /// The consensus moneyline for the away team
+        /// </summary>
+        [Description("The consensus moneyline for the away team")]
+        [DataMember(Name = "AwayTeamMoneyLine", Order = 23)]
+        public int? AwayTeamMoneyLine { get; set; }
+
+        /// <summary>
+        /// The point spread (as listed for the home team)
+        /// </summary>
+        [Description("The point spread (as listed for the home team)")]
+        [DataMember(Name = "PointSpread", Order = 24)]
+        public decimal? PointSpread { get; set; }
+
+        /// <summary>
+        /// The payout for the home team beating the spread
+        /// </summary>
+        [Description("The payout for the home team beating the spread")]
+        [DataMember(Name = "PointSpreadHomeTeamPayout", Order = 25)]
+        public int? PointSpreadHomeTeamPayout { get; set; }
+
+        /// <summary>
+        /// The payout for the away team beating the spread
+        /// </summary>
+        [Description("The payout for the away team beating the spread")]
+        [DataMember(Name = "PointSpreadAwayTeamPayout", Order = 26)]
+        public int? PointSpreadAwayTeamPayout { get; set; }
+
+        /// <summary>
+        /// The total points scored line from the consensus
+        /// </summary>
+        [Description("The total points scored line from the consensus")]
+        [DataMember(Name = "OverUnder", Order = 27)]
+        public decimal? OverUnder { get; set; }
+
+        /// <summary>
+        /// The payout for the total points going over
+        /// </summary>
+        [Description("The payout for the total points going over")]
+        [DataMember(Name = "OverPayout", Order = 28)]
+        public int? OverPayout { get; set; }
+
+        /// <summary>
+        /// The payout for the total points going under
+        /// </summary>
+        [Description("The payout for the total points going under")]
+        [DataMember(Name = "UnderPayout", Order = 29)]
+        public int? UnderPayout { get; set; }
+
     }
 }
 

@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The ScoreId of the game tied to this event
+        /// ScoreID has been superseded by GameID and should not be used in any new integrations. Existing integrations can be updated to use GameID instead, so that they are consistent with all other sports.
         /// </summary>
-        [Description("The ScoreId of the game tied to this event")]
+        [Description("ScoreID has been superseded by GameID and should not be used in any new integrations. Existing integrations can be updated to use GameID instead, so that they are consistent with all other sports.")]
         [DataMember(Name = "ScoreID", Order = 9)]
         public int? ScoreID { get; set; }
 

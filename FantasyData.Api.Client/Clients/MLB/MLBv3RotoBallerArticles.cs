@@ -55,7 +55,7 @@ namespace FantasyData.Api.Client
         /// Get RotoBaller Articles By Player Asynchronous
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code>.</param>
-        public Task<List<Article>> GetRotoBallerArticlesByPlayerIDAsync(int playerid)
+        public Task<List<Article>> GetRotoBallerArticlesByPlayerAsync(int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
@@ -68,9 +68,9 @@ namespace FantasyData.Api.Client
         /// Get RotoBaller Articles By Player
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code>.</param>
-        public List<Article> GetRotoBallerArticlesByPlayerID(int playerid)
+        public List<Article> GetRotoBallerArticlesByPlayer(int playerid)
         {
-            return this.GetRotoBallerArticlesByPlayerIDAsync(playerid).Result;
+            return this.GetRotoBallerArticlesByPlayerAsync(playerid).Result;
         }
 
     }

@@ -127,6 +127,13 @@ namespace FantasyData.Api.Client.Model.NBA
         [DataMember(Name = "NbaDotComTeamID", Order = 17)]
         public int? NbaDotComTeamID { get; set; }
 
+        /// <summary>
+        /// The current head coach of the team
+        /// </summary>
+        [Description("The current head coach of the team")]
+        [DataMember(Name = "HeadCoach", Order = 18)]
+        public string HeadCoach { get; set; }
+
     }
 }
 

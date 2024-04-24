@@ -10,7 +10,7 @@ namespace FantasyData.Api.Test
         {
             // Connect to client and get data
             var client = new  NFLv3ScoresClient("<api_key_goes_here>");
-            var scores = client.GetScores("2020POST");
+            var scores = client.GetSchedules("2023POST");
 
             // Write data to console
             foreach (var score in scores)

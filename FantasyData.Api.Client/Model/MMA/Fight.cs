@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.MMA
         public int? Order { get; set; }
 
         /// <summary>
-        /// Indicates the fight's status. Possible values include: Scheduled, Pre-fight, Walkouts, Intros, In Progress, Final, Suspended, Postponed, Canceled, End Rd1, End Rd2, End Rd3…
+        /// Indicates the fight's status. Possible values: Scheduled, Pre-fight, Walkouts, Intros, In Progress, End of Round, Final, Canceled, and NULL.
         /// </summary>
-        [Description("Indicates the fight's status. Possible values include: Scheduled, Pre-fight, Walkouts, Intros, In Progress, Final, Suspended, Postponed, Canceled, End Rd1, End Rd2, End Rd3…")]
+        [Description("Indicates the fight's status. Possible values: Scheduled, Pre-fight, Walkouts, Intros, In Progress, End of Round, Final, Canceled, and NULL.")]
         [DataMember(Name = "Status", Order = 3)]
         public string Status { get; set; }
 

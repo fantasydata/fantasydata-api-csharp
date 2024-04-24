@@ -155,6 +155,34 @@ namespace FantasyData.Api.Client.Model.Tennis
         [DataMember(Name = "Updated", Order = 21)]
         public DateTime? Updated { get; set; }
 
+        /// <summary>
+        /// Spread Value for Contestant A.
+        /// </summary>
+        [Description("Spread Value for Contestant A.")]
+        [DataMember(Name = "ContestantAGameSpread", Order = 22)]
+        public decimal? ContestantAGameSpread { get; set; }
+
+        /// <summary>
+        /// Odds for Contestant A Spread.
+        /// </summary>
+        [Description("Odds for Contestant A Spread.")]
+        [DataMember(Name = "ContestantAGameSpreadPayout", Order = 23)]
+        public int? ContestantAGameSpreadPayout { get; set; }
+
+        /// <summary>
+        /// Spread Value for Contestant B.
+        /// </summary>
+        [Description("Spread Value for Contestant B.")]
+        [DataMember(Name = "ContestantBGameSpread", Order = 24)]
+        public decimal? ContestantBGameSpread { get; set; }
+
+        /// <summary>
+        /// Odds for Contestant B Spread.
+        /// </summary>
+        [Description("Odds for Contestant B Spread.")]
+        [DataMember(Name = "ContestantBGameSpreadPayout", Order = 25)]
+        public int? ContestantBGameSpreadPayout { get; set; }
+
     }
 }
 

@@ -106,6 +106,20 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "AwayBattingLineup", Order = 20014)]
         public Lineup[] AwayBattingLineup { get; set; }
 
+        /// <summary>
+        /// Indicates whether the home team will utilize their bullpen instead of a dedicated starting pitcher
+        /// </summary>
+        [Description("Indicates whether the home team will utilize their bullpen instead of a dedicated starting pitcher")]
+        [DataMember(Name = "HomeTeamOpener", Order = 15)]
+        public bool? HomeTeamOpener { get; set; }
+
+        /// <summary>
+        /// Indicates whether the away team will utilize their bullpen instead of a dedicated starting pitcher
+        /// </summary>
+        [Description("Indicates whether the away team will utilize their bullpen instead of a dedicated starting pitcher")]
+        [DataMember(Name = "AwayTeamOpener", Order = 16)]
+        public bool? AwayTeamOpener { get; set; }
+
     }
 }
 

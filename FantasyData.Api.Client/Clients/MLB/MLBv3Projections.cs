@@ -14,7 +14,7 @@ namespace FantasyData.Api.Client
         /// Get DFS Slates by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the slates. Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
-        public Task<List<DfsSlate>> GetDfsSlatesByDateAsync(string date)
+        public Task<List<DfsSlate>> GetDFSSlatesByDateAsync(string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -27,16 +27,16 @@ namespace FantasyData.Api.Client
         /// Get DFS Slates by Date
         /// </summary>
         /// <param name="date">The date of the slates. Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
-        public List<DfsSlate> GetDfsSlatesByDate(string date)
+        public List<DfsSlate> GetDFSSlatesByDate(string date)
         {
-            return this.GetDfsSlatesByDateAsync(date).Result;
+            return this.GetDFSSlatesByDateAsync(date).Result;
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Date (w/ Injuries, DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats by Date (w/ Injuries, DFS Salaries) - Legacy Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
-        public Task<List<PlayerGameProjection>> GetPlayerGameProjectionStatsByDateAsync(string date)
+        public Task<List<PlayerGameProjection>> GetProjectedPlayerGameStatsByDateAsync(string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -46,12 +46,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Date (w/ Injuries, DFS Salaries)
+        /// Get Projected Player Game Stats by Date (w/ Injuries, DFS Salaries) - Legacy
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
-        public List<PlayerGameProjection> GetPlayerGameProjectionStatsByDate(string date)
+        public List<PlayerGameProjection> GetProjectedPlayerGameStatsByDate(string date)
         {
-            return this.GetPlayerGameProjectionStatsByDateAsync(date).Result;
+            return this.GetProjectedPlayerGameStatsByDateAsync(date).Result;
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code>.</param>
-        public Task<List<PlayerGameProjection>> GetPlayerGameProjectionStatsByPlayerAsync(string date, int playerid)
+        public Task<List<PlayerGameProjection>> GetProjectedPlayerGameStatsByPlayerAsync(string date, int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -74,16 +74,16 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code>.</param>
-        public List<PlayerGameProjection> GetPlayerGameProjectionStatsByPlayer(string date, int playerid)
+        public List<PlayerGameProjection> GetProjectedPlayerGameStatsByPlayer(string date, int playerid)
         {
-            return this.GetPlayerGameProjectionStatsByPlayerAsync(date, playerid).Result;
+            return this.GetProjectedPlayerGameStatsByPlayerAsync(date, playerid).Result;
         }
 
         /// <summary>
         /// Get Projected Player Season Stats (with ADP) Asynchronous
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2017</code>, <code>2018</code>.</param>
-        public Task<List<PlayerSeasonProjection>> GetPlayerSeasonProjectionStatsAsync(string season)
+        public Task<List<PlayerSeasonProjection>> GetProjectedPlayerSeasonStatsAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -96,9 +96,9 @@ namespace FantasyData.Api.Client
         /// Get Projected Player Season Stats (with ADP)
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2017</code>, <code>2018</code>.</param>
-        public List<PlayerSeasonProjection> GetPlayerSeasonProjectionStats(string season)
+        public List<PlayerSeasonProjection> GetProjectedPlayerSeasonStats(string season)
         {
-            return this.GetPlayerSeasonProjectionStatsAsync(season).Result;
+            return this.GetProjectedPlayerSeasonStatsAsync(season).Result;
         }
 
         /// <summary>
@@ -159,6 +159,53 @@ namespace FantasyData.Api.Client
         public List<TeamDepthChart> GetDepthCharts()
         {
             return this.GetDepthChartsAsync().Result;
+        }
+
+        /// <summary>
+        /// Get BAKER Projected Player Game Stats by Date (w/ Injuries, DFS Salaries) Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2023-JUL-31</code>, <code>2023-SEP-01</code>.</param>
+        public Task<List<PlayerGameProjection>> GetBAKERProjectedPlayerGameStatsByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<PlayerGameProjection>>(() =>
+                base.Get<List<PlayerGameProjection>>("/v3/mlb/projections/{format}/BakerPlayerGameProjections/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get BAKER Projected Player Game Stats by Date (w/ Injuries, DFS Salaries)
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2023-JUL-31</code>, <code>2023-SEP-01</code>.</param>
+        public List<PlayerGameProjection> GetBAKERProjectedPlayerGameStatsByDate(string date)
+        {
+            return this.GetBAKERProjectedPlayerGameStatsByDateAsync(date).Result;
+        }
+
+        /// <summary>
+        /// Get BAKER Projected Player Game Stats by Date (w/ Injuries, DFS Salaries) Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2023-JUL-31</code>, <code>2023-SEP-01</code>.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
+        public Task<List<PlayerGameProjection>> GetBAKERProjectedPlayerGameStatsByDateAsync(string date, string team)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            return Task.Run<List<PlayerGameProjection>>(() =>
+                base.Get<List<PlayerGameProjection>>("/v3/mlb/projections/{format}/BakerPlayerGameProjectionsByTeam/{date}/{team}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get BAKER Projected Player Game Stats by Date (w/ Injuries, DFS Salaries)
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2023-JUL-31</code>, <code>2023-SEP-01</code>.</param>
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
+        public List<PlayerGameProjection> GetBAKERProjectedPlayerGameStatsByDate(string date, string team)
+        {
+            return this.GetBAKERProjectedPlayerGameStatsByDateAsync(date, team).Result;
         }
 
     }

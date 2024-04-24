@@ -57,6 +57,28 @@ namespace FantasyData.Api.Client
             return this.GetPlayByPlayDeltaAsync(date, minutes).Result;
         }
 
+        /// <summary>
+        /// Get Play By Play Final Asynchronous
+        /// </summary>
+        /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
+        public Task<PlayByPlay> GetPlayByPlayFinalAsync(int gameid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            return Task.Run<PlayByPlay>(() =>
+                base.Get<PlayByPlay>("/v3/mlb/pbp/{format}/PlayByPlay/final/{gameid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Play By Play Final
+        /// </summary>
+        /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
+        public PlayByPlay GetPlayByPlayFinal(int gameid)
+        {
+            return this.GetPlayByPlayFinalAsync(gameid).Result;
+        }
+
     }
 }
 

@@ -149,9 +149,9 @@ namespace FantasyData.Api.Client.Model.MMA
         public int? TitleDraws { get; set; }
 
         /// <summary>
-        /// The fighter's title draws
+        /// The fighter's overall career stats
         /// </summary>
-        [Description("The fighter's title draws")]
+        [Description("The fighter's overall career stats")]
         [DataMember(Name = "CareerStats", Order = 10021)]
         public CareerStat CareerStats { get; set; }
 

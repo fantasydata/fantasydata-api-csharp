@@ -23,11 +23,11 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string PlayerLastName { get; set; }
 
         /// <summary>
-        /// The Rotoworld Player ID of the player related to the news item as listed by Rotoworld Player News
+        /// The Rotoworld Player ID/GUID of the player related to the news item as listed by Rotoworld Player News
         /// </summary>
-        [Description("The Rotoworld Player ID of the player related to the news item as listed by Rotoworld Player News")]
+        [Description("The Rotoworld Player ID/GUID of the player related to the news item as listed by Rotoworld Player News")]
         [DataMember(Name = "RotoworldPlayerId", Order = 3)]
-        public int? RotoworldPlayerId { get; set; }
+        public string RotoworldPlayerId { get; set; }
 
         /// <summary>
         /// The Stats Player ID of the player related to the news item as listed by Rotoworld Player News

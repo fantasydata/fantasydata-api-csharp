@@ -78,6 +78,13 @@ namespace FantasyData.Api.Client.Model.NHL
         [DataMember(Name = "Updated", Order = 10)]
         public DateTime? Updated { get; set; }
 
+        /// <summary>
+        /// A description of how long ago this content was published
+        /// </summary>
+        [Description("A description of how long ago this content was published")]
+        [DataMember(Name = "TimeAgo", Order = 11)]
+        public string TimeAgo { get; set; }
+
     }
 }
 

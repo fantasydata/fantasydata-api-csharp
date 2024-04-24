@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Abbreviation of the team (e.g. OU, TTU, USC, UK, etc.)
+        /// A unique abbreviation of the team (e.g. OU, TTU, USC, UK, etc.) These are not recommended for front end use as they may not match common usage; see the ShortDisplayName instead.
         /// </summary>
-        [Description("Abbreviation of the team (e.g. OU, TTU, USC, UK, etc.)")]
+        [Description("A unique abbreviation of the team (e.g. OU, TTU, USC, UK, etc.) These are not recommended for front end use as they may not match common usage; see the ShortDisplayName instead.")]
         [DataMember(Name = "Key", Order = 2)]
         public string Key { get; set; }
 
@@ -79,9 +79,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public string Conference { get; set; }
 
         /// <summary>
-        /// The short display name of the team
+        /// The short display name of the team, recommended for front end applications. May not be unique; if you need a 100% unique letter identifier see the Key field in this table.
         /// </summary>
-        [Description("The short display name of the team")]
+        [Description("The short display name of the team, recommended for front end applications. May not be unique; if you need a 100% unique letter identifier see the Key field in this table.")]
         [DataMember(Name = "ShortDisplayName", Order = 11)]
         public string ShortDisplayName { get; set; }
 

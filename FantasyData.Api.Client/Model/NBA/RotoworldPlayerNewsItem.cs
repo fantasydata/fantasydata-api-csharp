@@ -9,11 +9,11 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class RotoworldPlayerNewsItem
     {
         /// <summary>
-        /// Rotoworld Player News Item ID
+        /// Rotoworld Player News Item ID/GUID
         /// </summary>
-        [Description("Rotoworld Player News Item ID")]
+        [Description("Rotoworld Player News Item ID/GUID")]
         [DataMember(Name = "RotoworldPlayerNewsLine", Order = 1)]
-        public int RotoworldPlayerNewsLine { get; set; }
+        public string RotoworldPlayerNewsLine { get; set; }
 
         /// <summary>
         /// The short headline

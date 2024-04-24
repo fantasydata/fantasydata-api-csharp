@@ -113,6 +113,13 @@ namespace FantasyData.Api.Client.Model.NHL
         [DataMember(Name = "GlobalTeamID", Order = 15)]
         public int GlobalTeamID { get; set; }
 
+        /// <summary>
+        /// The current head coach of the team
+        /// </summary>
+        [Description("The current head coach of the team")]
+        [DataMember(Name = "HeadCoach", Order = 16)]
+        public string HeadCoach { get; set; }
+
     }
 }
 

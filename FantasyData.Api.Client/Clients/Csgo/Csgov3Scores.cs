@@ -13,7 +13,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Areas (Countries) Asynchronous
         /// </summary>
-        public Task<List<Area>> GetAreasAsync()
+        public Task<List<Area>> GetAreasCountriesAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Area>>(() =>
@@ -24,16 +24,16 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Areas (Countries)
         /// </summary>
-        public List<Area> GetAreas()
+        public List<Area> GetAreasCountries()
         {
-            return this.GetAreasAsync().Result;
+            return this.GetAreasCountriesAsync().Result;
         }
 
         /// <summary>
         /// Get Competition Fixtures (League Details) Asynchronous
         /// </summary>
         /// <param name="competitionid">A CS:GO competition/league unique CompetitionId. Possible values include: <code>100000009</code>, etc.</param>
-        public Task<CompetitionDetail> GetCompetitionDetailsAsync(string competitionid)
+        public Task<CompetitionDetail> GetCompetitionFixturesLeagueDetailsAsync(string competitionid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competitionid", competitionid.ToString()));
@@ -46,15 +46,15 @@ namespace FantasyData.Api.Client
         /// Get Competition Fixtures (League Details)
         /// </summary>
         /// <param name="competitionid">A CS:GO competition/league unique CompetitionId. Possible values include: <code>100000009</code>, etc.</param>
-        public CompetitionDetail GetCompetitionDetails(string competitionid)
+        public CompetitionDetail GetCompetitionFixturesLeagueDetails(string competitionid)
         {
-            return this.GetCompetitionDetailsAsync(competitionid).Result;
+            return this.GetCompetitionFixturesLeagueDetailsAsync(competitionid).Result;
         }
 
         /// <summary>
         /// Get Competitions (Leagues) Asynchronous
         /// </summary>
-        public Task<List<Competition>> GetCompetitionsAsync()
+        public Task<List<Competition>> GetCompetitionsLeaguesAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Competition>>(() =>
@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Competitions (Leagues)
         /// </summary>
-        public List<Competition> GetCompetitions()
+        public List<Competition> GetCompetitionsLeagues()
         {
-            return this.GetCompetitionsAsync().Result;
+            return this.GetCompetitionsLeaguesAsync().Result;
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Memberships (Active) Asynchronous
         /// </summary>
-        public Task<List<Membership>> GetActiveMembershipsAsync()
+        public Task<List<Membership>> GetMembershipsActiveAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Membership>>(() =>
@@ -106,15 +106,15 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Memberships (Active)
         /// </summary>
-        public List<Membership> GetActiveMemberships()
+        public List<Membership> GetMembershipsActive()
         {
-            return this.GetActiveMembershipsAsync().Result;
+            return this.GetMembershipsActiveAsync().Result;
         }
 
         /// <summary>
         /// Get Memberships (Historical) Asynchronous
         /// </summary>
-        public Task<List<Membership>> GetHistoricalMembershipsAsync()
+        public Task<List<Membership>> GetMembershipsHistoricalAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Membership>>(() =>
@@ -125,16 +125,16 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Memberships (Historical)
         /// </summary>
-        public List<Membership> GetHistoricalMemberships()
+        public List<Membership> GetMembershipsHistorical()
         {
-            return this.GetHistoricalMembershipsAsync().Result;
+            return this.GetMembershipsHistoricalAsync().Result;
         }
 
         /// <summary>
         /// Get Memberships by Team (Active) Asynchronous
         /// </summary>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>100000001</code>.</param>
-        public Task<List<Membership>> GetMembershipsByTeamAsync(int teamid)
+        public Task<List<Membership>> GetMembershipsByTeamActiveAsync(int teamid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("teamid", teamid.ToString()));
@@ -147,16 +147,16 @@ namespace FantasyData.Api.Client
         /// Get Memberships by Team (Active)
         /// </summary>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>100000001</code>.</param>
-        public List<Membership> GetMembershipsByTeam(int teamid)
+        public List<Membership> GetMembershipsByTeamActive(int teamid)
         {
-            return this.GetMembershipsByTeamAsync(teamid).Result;
+            return this.GetMembershipsByTeamActiveAsync(teamid).Result;
         }
 
         /// <summary>
         /// Get Memberships by Team (Historical) Asynchronous
         /// </summary>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>100000001</code>.</param>
-        public Task<List<Membership>> GetHistoricalMembershipsByTeamAsync(int teamid)
+        public Task<List<Membership>> GetMembershipsByTeamHistoricalAsync(int teamid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("teamid", teamid.ToString()));
@@ -169,9 +169,9 @@ namespace FantasyData.Api.Client
         /// Get Memberships by Team (Historical)
         /// </summary>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>100000001</code>.</param>
-        public List<Membership> GetHistoricalMembershipsByTeam(int teamid)
+        public List<Membership> GetMembershipsByTeamHistorical(int teamid)
         {
-            return this.GetHistoricalMembershipsByTeamAsync(teamid).Result;
+            return this.GetMembershipsByTeamHistoricalAsync(teamid).Result;
         }
 
         /// <summary>

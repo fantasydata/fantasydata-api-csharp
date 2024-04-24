@@ -113,6 +113,27 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "GlobalTeamID", Order = 15)]
         public int GlobalTeamID { get; set; }
 
+        /// <summary>
+        /// The current head coach of the team
+        /// </summary>
+        [Description("The current head coach of the team")]
+        [DataMember(Name = "HeadCoach", Order = 16)]
+        public string HeadCoach { get; set; }
+
+        /// <summary>
+        /// The current hitting coach of the team
+        /// </summary>
+        [Description("The current hitting coach of the team")]
+        [DataMember(Name = "HittingCoach", Order = 17)]
+        public string HittingCoach { get; set; }
+
+        /// <summary>
+        /// The current pitching coach of the team
+        /// </summary>
+        [Description("The current pitching coach of the team")]
+        [DataMember(Name = "PitchingCoach", Order = 18)]
+        public string PitchingCoach { get; set; }
+
     }
 }
 

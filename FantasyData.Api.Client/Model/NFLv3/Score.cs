@@ -471,9 +471,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Status { get; set; }
 
         /// <summary>
-        /// The date and time that the game ended in US Eastern Time
+        /// GameEndDateTime is entered after the game is final and the score is finalized.
         /// </summary>
-        [Description("The date and time that the game ended in US Eastern Time")]
+        [Description("GameEndDateTime is entered after the game is final and the score is finalized.")]
         [DataMember(Name = "GameEndDateTime", Order = 67)]
         public DateTime? GameEndDateTime { get; set; }
 
@@ -546,6 +546,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [Description("Attendance at the game")]
         [DataMember(Name = "Attendance", Order = 77)]
         public int Attendance { get; set; }
+
+        /// <summary>
+        /// Indicates whether the game is over and the final score has been verified and closed out.
+        /// </summary>
+        [Description("Indicates whether the game is over and the final score has been verified and closed out.")]
+        [DataMember(Name = "IsClosed", Order = 78)]
+        public bool? IsClosed { get; set; }
 
     }
 }

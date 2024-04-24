@@ -226,16 +226,16 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? GlobalTeamID { get; set; }
 
         /// <summary>
-        /// The season conference rank
+        /// This field is deprecated.
         /// </summary>
-        [Description("The season conference rank")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "ConferenceRank", Order = 32)]
         public int? ConferenceRank { get; set; }
 
         /// <summary>
-        /// The season division rank
+        /// This field is deprecated.
         /// </summary>
-        [Description("The season division rank")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "DivisionRank", Order = 33)]
         public int? DivisionRank { get; set; }
 

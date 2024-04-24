@@ -93,16 +93,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? OpponentID { get; set; }
 
         /// <summary>
-        /// How many snaps this player took part in in this game
+        /// How many snaps this player took part in in this game. Available the morning after the game.
         /// </summary>
-        [Description("How many snaps this player took part in in this game")]
+        [Description("How many snaps this player took part in in this game. Available the morning after the game.")]
         [DataMember(Name = "Snaps", Order = 13)]
         public decimal? Snaps { get; set; }
 
         /// <summary>
-        /// 	The percentage of total offensive plays that had this player on the field.
+        /// The percentage of total offensive plays that had this player on the field. Available the morning after the game.
         /// </summary>
-        [Description("	The percentage of total offensive plays that had this player on the field.")]
+        [Description("The percentage of total offensive plays that had this player on the field. Available the morning after the game.")]
         [DataMember(Name = "SnapShare", Order = 14)]
         public decimal? SnapShare { get; set; }
 

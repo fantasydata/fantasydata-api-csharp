@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Abbreviation of the team (e.g. OU, TTU, USC, UK, etc.)
+        /// A unique abbreviation of the team (e.g. OU, TTU, USC, UK, etc.) Due to being selected for uniqueness, these are not always a match with broadcaster abbreviations. For that use case, use ShortDisplayName.
         /// </summary>
-        [Description("Abbreviation of the team (e.g. OU, TTU, USC, UK, etc.)")]
+        [Description("A unique abbreviation of the team (e.g. OU, TTU, USC, UK, etc.) Due to being selected for uniqueness, these are not always a match with broadcaster abbreviations. For that use case, use ShortDisplayName.")]
         [DataMember(Name = "Key", Order = 2)]
         public string Key { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public bool Active { get; set; }
 
         /// <summary>
-        /// The school of the team (e.g. Oklahoma University, Texas Tech University, University of Southern California,  University of Kentucky, etc)
+        /// The name of the school as used in college sports (e.g. SMU, South Florida, Stony Brook, UCLA, etc.)
         /// </summary>
-        [Description("The school of the team (e.g. Oklahoma University, Texas Tech University, University of Southern California,  University of Kentucky, etc)")]
+        [Description("The name of the school as used in college sports (e.g. SMU, South Florida, Stony Brook, UCLA, etc.)")]
         [DataMember(Name = "School", Order = 4)]
         public string School { get; set; }
 

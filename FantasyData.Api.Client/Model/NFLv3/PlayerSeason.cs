@@ -436,30 +436,30 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal BlockedKicks { get; set; }
 
         /// <summary>
-        /// Solo tackles on kick and punt plays
+        /// This field is deprecated.
         /// </summary>
-        [Description("Solo tackles on kick and punt plays")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "SpecialTeamsSoloTackles", Order = 62)]
         public decimal SpecialTeamsSoloTackles { get; set; }
 
         /// <summary>
-        /// Assisted tackles on kick and punt plays
+        /// This field is deprecated.
         /// </summary>
-        [Description("Assisted tackles on kick and punt plays")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "SpecialTeamsAssistedTackles", Order = 63)]
         public decimal SpecialTeamsAssistedTackles { get; set; }
 
         /// <summary>
-        /// Solo tackles when playing offense (after a turnover)
+        /// This field is deprecated.
         /// </summary>
-        [Description("Solo tackles when playing offense (after a turnover)")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "MiscSoloTackles", Order = 64)]
         public decimal MiscSoloTackles { get; set; }
 
         /// <summary>
-        /// Assisted tackles when playing offense (after a turnover)
+        /// This field is deprecated.
         /// </summary>
-        [Description("Assisted tackles when playing offense (after a turnover)")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "MiscAssistedTackles", Order = 65)]
         public decimal MiscAssistedTackles { get; set; }
 
@@ -625,23 +625,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? FumblesOwnRecoveries { get; set; }
 
         /// <summary>
-        /// Fumbles by this player that went out of bounds (no one was awarded the recovery)
+        /// This field is deprecated.
         /// </summary>
-        [Description("Fumbles by this player that went out of bounds (no one was awarded the recovery)")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "FumblesOutOfBounds", Order = 89)]
         public decimal? FumblesOutOfBounds { get; set; }
 
         /// <summary>
-        /// Fair catches made on kickoffs
+        /// This field is deprecated.
         /// </summary>
-        [Description("Fair catches made on kickoffs")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "KickReturnFairCatches", Order = 90)]
         public decimal? KickReturnFairCatches { get; set; }
 
         /// <summary>
-        /// Fair catches made on punts
+        /// This field is deprecated.
         /// </summary>
-        [Description("Fair catches made on punts")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "PuntReturnFairCatches", Order = 91)]
         public decimal? PuntReturnFairCatches { get; set; }
 
@@ -744,30 +744,30 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? PuntNetYards { get; set; }
 
         /// <summary>
-        /// Fumbles forced on special teams plays
+        /// This field is deprecated.
         /// </summary>
-        [Description("Fumbles forced on special teams plays")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "SpecialTeamsFumblesForced", Order = 106)]
         public decimal? SpecialTeamsFumblesForced { get; set; }
 
         /// <summary>
-        /// Fumbles recovered on special teams plays
+        /// This field is deprecated.
         /// </summary>
-        [Description("Fumbles recovered on special teams plays")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "SpecialTeamsFumblesRecovered", Order = 107)]
         public decimal? SpecialTeamsFumblesRecovered { get; set; }
 
         /// <summary>
-        /// Fumbles forced after a turnover on offensive plays
+        /// This field is deprecated.
         /// </summary>
-        [Description("Fumbles forced after a turnover on offensive plays")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "MiscFumblesForced", Order = 108)]
         public decimal? MiscFumblesForced { get; set; }
 
         /// <summary>
-        /// Fumbles recovered after a turnover on offensive plays
+        /// This field is deprecated.
         /// </summary>
-        [Description("Fumbles recovered after a turnover on offensive plays")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "MiscFumblesRecovered", Order = 109)]
         public decimal? MiscFumblesRecovered { get; set; }
 

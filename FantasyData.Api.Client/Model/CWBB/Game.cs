@@ -148,6 +148,13 @@ namespace FantasyData.Api.Client.Model.CWBB
         [DataMember(Name = "Periods", Order = 20020)]
         public Period[] Periods { get; set; }
 
+        /// <summary>
+        /// The date and time of game in UTC
+        /// </summary>
+        [Description("The date and time of game in UTC")]
+        [DataMember(Name = "DateTimeUTC", Order = 21)]
+        public DateTime? DateTimeUTC { get; set; }
+
     }
 }
 

@@ -471,30 +471,30 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal BlockedKicks { get; set; }
 
         /// <summary>
-        /// Solo tackles on kick and punt plays
+        /// This field is deprecated.
         /// </summary>
-        [Description("Solo tackles on kick and punt plays")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "SpecialTeamsSoloTackles", Order = 67)]
         public decimal SpecialTeamsSoloTackles { get; set; }
 
         /// <summary>
-        /// Assisted tackles on kick and punt plays
+        /// This field is deprecated.
         /// </summary>
-        [Description("Assisted tackles on kick and punt plays")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "SpecialTeamsAssistedTackles", Order = 68)]
         public decimal SpecialTeamsAssistedTackles { get; set; }
 
         /// <summary>
-        /// Solo tackles when playing offense (after a turnover)
+        /// NOTE: This field is deprecated.
         /// </summary>
-        [Description("Solo tackles when playing offense (after a turnover)")]
+        [Description("NOTE: This field is deprecated.")]
         [DataMember(Name = "MiscSoloTackles", Order = 69)]
         public decimal MiscSoloTackles { get; set; }
 
         /// <summary>
-        /// Assisted tackles when playing offense (after a turnover)
+        /// NOTE: This field is deprecated.
         /// </summary>
-        [Description("Assisted tackles when playing offense (after a turnover)")]
+        [Description("NOTE: This field is deprecated.")]
         [DataMember(Name = "MiscAssistedTackles", Order = 70)]
         public decimal MiscAssistedTackles { get; set; }
 
@@ -660,23 +660,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? FumblesOwnRecoveries { get; set; }
 
         /// <summary>
-        /// Fumbles by this player that went out of bounds (no one was awarded the recovery)
+        /// NOTE: This field is deprecated.
         /// </summary>
-        [Description("Fumbles by this player that went out of bounds (no one was awarded the recovery)")]
+        [Description("NOTE: This field is deprecated.")]
         [DataMember(Name = "FumblesOutOfBounds", Order = 94)]
         public decimal? FumblesOutOfBounds { get; set; }
 
         /// <summary>
-        /// Fair catches made on kickoffs
+        /// NOTE: This field is deprecated.
         /// </summary>
-        [Description("Fair catches made on kickoffs")]
+        [Description("NOTE: This field is deprecated.")]
         [DataMember(Name = "KickReturnFairCatches", Order = 95)]
         public decimal? KickReturnFairCatches { get; set; }
 
         /// <summary>
-        /// Fair catches made on punts
+        /// NOTE: This field is deprecated.
         /// </summary>
-        [Description("Fair catches made on punts")]
+        [Description("NOTE: This field is deprecated.")]
         [DataMember(Name = "PuntReturnFairCatches", Order = 96)]
         public decimal? PuntReturnFairCatches { get; set; }
 
@@ -779,30 +779,30 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? PuntNetYards { get; set; }
 
         /// <summary>
-        /// Fumbles forced on special teams plays
+        /// This field is deprecated.
         /// </summary>
-        [Description("Fumbles forced on special teams plays")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "SpecialTeamsFumblesForced", Order = 111)]
         public decimal? SpecialTeamsFumblesForced { get; set; }
 
         /// <summary>
-        /// Fumbles recovered on special teams plays
+        /// This field is deprecated.
         /// </summary>
-        [Description("Fumbles recovered on special teams plays")]
+        [Description("This field is deprecated.")]
         [DataMember(Name = "SpecialTeamsFumblesRecovered", Order = 112)]
         public decimal? SpecialTeamsFumblesRecovered { get; set; }
 
         /// <summary>
-        /// Fumbles forced after a turnover on offensive plays
+        /// NOTE: This field is deprecated.
         /// </summary>
-        [Description("Fumbles forced after a turnover on offensive plays")]
+        [Description("NOTE: This field is deprecated.")]
         [DataMember(Name = "MiscFumblesForced", Order = 113)]
         public decimal? MiscFumblesForced { get; set; }
 
         /// <summary>
-        /// Fumbles recovered after a turnover on offensive plays
+        /// NOTE: This field is deprecated.
         /// </summary>
-        [Description("Fumbles recovered after a turnover on offensive plays")]
+        [Description("NOTE: This field is deprecated.")]
         [DataMember(Name = "MiscFumblesRecovered", Order = 114)]
         public decimal? MiscFumblesRecovered { get; set; }
 
@@ -884,23 +884,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? FantasyDataSalary { get; set; }
 
         /// <summary>
-        /// The number of snaps this player played on offense.
+        /// The number of snaps this player played on offense. Available the morning after the game.
         /// </summary>
-        [Description("The number of snaps this player played on offense.")]
+        [Description("The number of snaps this player played on offense. Available the morning after the game.")]
         [DataMember(Name = "OffensiveSnapsPlayed", Order = 126)]
         public int? OffensiveSnapsPlayed { get; set; }
 
         /// <summary>
-        /// The number of snaps this player played on defense.
+        /// The number of snaps this player played on defense.  Available the morning after the game.
         /// </summary>
-        [Description("The number of snaps this player played on defense.")]
+        [Description("The number of snaps this player played on defense.  Available the morning after the game.")]
         [DataMember(Name = "DefensiveSnapsPlayed", Order = 127)]
         public int? DefensiveSnapsPlayed { get; set; }
 
         /// <summary>
-        /// The number of snaps this player played on special teams.
+        /// The number of snaps this player played on special teams. Available the morning after the game.
         /// </summary>
-        [Description("The number of snaps this player played on special teams.")]
+        [Description("The number of snaps this player played on special teams. Available the morning after the game.")]
         [DataMember(Name = "SpecialTeamsSnapsPlayed", Order = 128)]
         public int? SpecialTeamsSnapsPlayed { get; set; }
 
@@ -1178,11 +1178,18 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? OffensiveFumbleRecoveryTouchdowns { get; set; }
 
         /// <summary>
-        /// Whether snap count fields are confirmed (true/false)
+        /// Whether snap count fields are confirmed (true/false). This takes place the morning after the game.
         /// </summary>
-        [Description("Whether snap count fields are confirmed (true/false)")]
+        [Description("Whether snap count fields are confirmed (true/false). This takes place the morning after the game.")]
         [DataMember(Name = "SnapCountsConfirmed", Order = 168)]
         public bool? SnapCountsConfirmed { get; set; }
+
+        /// <summary>
+        /// Time of last sync.  Does not indicate that stats changed.
+        /// </summary>
+        [Description("Time of last sync.  Does not indicate that stats changed.")]
+        [DataMember(Name = "Updated", Order = 169)]
+        public DateTime? Updated { get; set; }
 
     }
 }

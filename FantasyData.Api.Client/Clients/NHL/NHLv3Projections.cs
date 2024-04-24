@@ -14,7 +14,7 @@ namespace FantasyData.Api.Client
         /// Get DFS Slates by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-DEC-01</code>, <code>2018-FEB-15</code>.</param>
-        public Task<List<DfsSlate>> GetDfsSlatesByDateAsync(string date)
+        public Task<List<DfsSlate>> GetDFSSlatesByDateAsync(string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -27,16 +27,16 @@ namespace FantasyData.Api.Client
         /// Get DFS Slates by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-DEC-01</code>, <code>2018-FEB-15</code>.</param>
-        public List<DfsSlate> GetDfsSlatesByDate(string date)
+        public List<DfsSlate> GetDFSSlatesByDate(string date)
         {
-            return this.GetDfsSlatesByDateAsync(date).Result;
+            return this.GetDFSSlatesByDateAsync(date).Result;
         }
 
         /// <summary>
         /// Get Projected Player Game Stats by Date (w/ Injuries, DFS Salaries) Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-JAN-31</code>, <code>2017-OCT-01</code>.</param>
-        public Task<List<PlayerGameProjection>> GetPlayerGameProjectionStatsByDateAsync(string date)
+        public Task<List<PlayerGameProjection>> GetProjectedPlayerGameStatsByDateAsync(string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -49,9 +49,9 @@ namespace FantasyData.Api.Client
         /// Get Projected Player Game Stats by Date (w/ Injuries, DFS Salaries)
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-JAN-31</code>, <code>2017-OCT-01</code>.</param>
-        public List<PlayerGameProjection> GetPlayerGameProjectionStatsByDate(string date)
+        public List<PlayerGameProjection> GetProjectedPlayerGameStatsByDate(string date)
         {
-            return this.GetPlayerGameProjectionStatsByDateAsync(date).Result;
+            return this.GetProjectedPlayerGameStatsByDateAsync(date).Result;
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-JAN-31</code>, <code>2017-OCT-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>30000378</code>.</param>
-        public Task<PlayerGameProjection> GetPlayerGameProjectionStatsByPlayerAsync(string date, int playerid)
+        public Task<PlayerGameProjection> GetProjectedPlayerGameStatsByPlayerAsync(string date, int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -74,9 +74,9 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-JAN-31</code>, <code>2017-OCT-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>30000378</code>.</param>
-        public PlayerGameProjection GetPlayerGameProjectionStatsByPlayer(string date, int playerid)
+        public PlayerGameProjection GetProjectedPlayerGameStatsByPlayer(string date, int playerid)
         {
-            return this.GetPlayerGameProjectionStatsByPlayerAsync(date, playerid).Result;
+            return this.GetProjectedPlayerGameStatsByPlayerAsync(date, playerid).Result;
         }
 
         /// <summary>

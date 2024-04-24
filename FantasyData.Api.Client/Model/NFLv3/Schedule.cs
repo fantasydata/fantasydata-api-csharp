@@ -211,6 +211,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "Status", Order = 29)]
         public string Status { get; set; }
 
+        /// <summary>
+        /// Indicates whether the game is over and the final score has been verified and closed out.
+        /// </summary>
+        [Description("Indicates whether the game is over and the final score has been verified and closed out.")]
+        [DataMember(Name = "IsClosed", Order = 30)]
+        public bool? IsClosed { get; set; }
+
     }
 }
 

@@ -15,7 +15,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
         /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
-        public Task<List<GameInfo>> GetLiveGameOddsByWeekAsync(string season, int week)
+        public Task<List<GameInfo>> GetInGameOddsByWeekAsync(string season, int week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
         /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
-        public List<GameInfo> GetLiveGameOddsByWeek(string season, int week)
+        public List<GameInfo> GetInGameOddsByWeek(string season, int week)
         {
-            return this.GetLiveGameOddsByWeekAsync(season, week).Result;
+            return this.GetInGameOddsByWeekAsync(season, week).Result;
         }
 
         /// <summary>
         /// Get In-Game Odds Line Movement Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of an CFB game. GameIDs can be found in the Games API. Valid entries are <code>8487</code> or <code>8657</code></param>
-        public Task<List<GameInfo>> GetLiveGameOddsLineMovementAsync(int gameid)
+        public Task<List<GameInfo>> GetInGameOddsLineMovementAsync(int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
@@ -52,9 +52,9 @@ namespace FantasyData.Api.Client
         /// Get In-Game Odds Line Movement
         /// </summary>
         /// <param name="gameid">The GameID of an CFB game. GameIDs can be found in the Games API. Valid entries are <code>8487</code> or <code>8657</code></param>
-        public List<GameInfo> GetLiveGameOddsLineMovement(int gameid)
+        public List<GameInfo> GetInGameOddsLineMovement(int gameid)
         {
-            return this.GetLiveGameOddsLineMovementAsync(gameid).Result;
+            return this.GetInGameOddsLineMovementAsync(gameid).Result;
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
         /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
-        public Task<List<GameInfo>> GetGameOddsByWeekAsync(string season, int week)
+        public Task<List<GameInfo>> GetPreGameOddsByWeekAsync(string season, int week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -77,16 +77,16 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
         /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
-        public List<GameInfo> GetGameOddsByWeek(string season, int week)
+        public List<GameInfo> GetPreGameOddsByWeek(string season, int week)
         {
-            return this.GetGameOddsByWeekAsync(season, week).Result;
+            return this.GetPreGameOddsByWeekAsync(season, week).Result;
         }
 
         /// <summary>
         /// Get Pre-Game Odds Line Movement Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of an CFB game. GameIDs can be found in the Games API. Valid entries are <code>8487</code> or <code>8657</code></param>
-        public Task<List<GameInfo>> GetGameOddsLineMovementAsync(int gameid)
+        public Task<List<GameInfo>> GetPreGameOddsLineMovementAsync(int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
@@ -99,9 +99,9 @@ namespace FantasyData.Api.Client
         /// Get Pre-Game Odds Line Movement
         /// </summary>
         /// <param name="gameid">The GameID of an CFB game. GameIDs can be found in the Games API. Valid entries are <code>8487</code> or <code>8657</code></param>
-        public List<GameInfo> GetGameOddsLineMovement(int gameid)
+        public List<GameInfo> GetPreGameOddsLineMovement(int gameid)
         {
-            return this.GetGameOddsLineMovementAsync(gameid).Result;
+            return this.GetPreGameOddsLineMovementAsync(gameid).Result;
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
         /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
-        public Task<List<GameInfo>> GetAlternateMarketGameOddsByWeekAsync(string season, int week)
+        public Task<List<GameInfo>> GetPeriodGameOddsByWeekAsync(string season, int week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -124,16 +124,16 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="season">Year of the season, with optional season type. Examples: <code>2018</code>, <code>2018POST</code>, etc.</param>
         /// <param name="week">The week of the game(s). Examples: <code>1</code>, <code>2</code>, etc.</param>
-        public List<GameInfo> GetAlternateMarketGameOddsByWeek(string season, int week)
+        public List<GameInfo> GetPeriodGameOddsByWeek(string season, int week)
         {
-            return this.GetAlternateMarketGameOddsByWeekAsync(season, week).Result;
+            return this.GetPeriodGameOddsByWeekAsync(season, week).Result;
         }
 
         /// <summary>
         /// Get Period Game Odds Line Movement Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of an CFB game. GameIDs can be found in the Games API. Valid entries are <code>8487</code> or <code>8657</code></param>
-        public Task<List<GameInfo>> GetAlternateMarketGameOddsLineMovementAsync(int gameid)
+        public Task<List<GameInfo>> GetPeriodGameOddsLineMovementAsync(int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
@@ -146,9 +146,9 @@ namespace FantasyData.Api.Client
         /// Get Period Game Odds Line Movement
         /// </summary>
         /// <param name="gameid">The GameID of an CFB game. GameIDs can be found in the Games API. Valid entries are <code>8487</code> or <code>8657</code></param>
-        public List<GameInfo> GetAlternateMarketGameOddsLineMovement(int gameid)
+        public List<GameInfo> GetPeriodGameOddsLineMovement(int gameid)
         {
-            return this.GetAlternateMarketGameOddsLineMovementAsync(gameid).Result;
+            return this.GetPeriodGameOddsLineMovementAsync(gameid).Result;
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
         /// <param name="opponent">The abbreviation of the requested opponent. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
-        public Task<MatchupTrends> GetMatchupTrendsAsync(string team, string opponent)
+        public Task<MatchupTrends> GetBettingTrendsByMatchupAsync(string team, string opponent)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
@@ -171,16 +171,16 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
         /// <param name="opponent">The abbreviation of the requested opponent. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
-        public MatchupTrends GetMatchupTrends(string team, string opponent)
+        public MatchupTrends GetBettingTrendsByMatchup(string team, string opponent)
         {
-            return this.GetMatchupTrendsAsync(team, opponent).Result;
+            return this.GetBettingTrendsByMatchupAsync(team, opponent).Result;
         }
 
         /// <summary>
         /// Get Betting Trends by Team Asynchronous
         /// </summary>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
-        public Task<TeamTrends> GetTeamTrendsAsync(string team)
+        public Task<TeamTrends> GetBettingTrendsByTeamAsync(string team)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
@@ -193,9 +193,9 @@ namespace FantasyData.Api.Client
         /// Get Betting Trends by Team
         /// </summary>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>ND</code>, <code>PITT</code>, etc.</param>
-        public TeamTrends GetTeamTrends(string team)
+        public TeamTrends GetBettingTrendsByTeam(string team)
         {
-            return this.GetTeamTrendsAsync(team).Result;
+            return this.GetBettingTrendsByTeamAsync(team).Result;
         }
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace FantasyData.Api.Client
         /// Get Betting Events by Season Asynchronous
         /// </summary>
         /// <param name="season">Year of the season Examples: <code>2021</code>, <code>2022</code>, etc.</param>
-        public Task<List<BettingEvent>> GetBettingEventsAsync(string season)
+        public Task<List<BettingEvent>> GetBettingEventsBySeasonAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -237,9 +237,9 @@ namespace FantasyData.Api.Client
         /// Get Betting Events by Season
         /// </summary>
         /// <param name="season">Year of the season Examples: <code>2021</code>, <code>2022</code>, etc.</param>
-        public List<BettingEvent> GetBettingEvents(string season)
+        public List<BettingEvent> GetBettingEventsBySeason(string season)
         {
-            return this.GetBettingEventsAsync(season).Result;
+            return this.GetBettingEventsBySeasonAsync(season).Result;
         }
 
         /// <summary>
@@ -290,10 +290,12 @@ namespace FantasyData.Api.Client
         /// Get Betting Markets by Event Asynchronous
         /// </summary>
         /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
-        public Task<List<BettingMarket>> GetBettingMarketsAsync(string eventId)
+        /// <param name="include">This parameter indicates which <code>BettingOutcome</code> records to return in the payload. By default, this endpoint only returns available outcomes, excluding the unlisted bets. <b>Important Note:</b> the default parameter of available is much faster and provides the best performance. Passing unlisted will return unlisted odds, but these are cached for much longer and may be several minutes old. For best performance, the default parameter is highly recommended. Possible values include: <code>available</code> - excludes any betting outcomes that have been removed/unlisted by the respective sportsbook. This is more lightweight and delivers odds much faster than using unlisted. <code>unlisted</code> - includes the most recently available betting outcome per sportsbook, for each listed market, even those outcomes are expired/unlisted or otherwise unavailable from the respective sportsbook. This is a far heavier payload, and it's cached for much longer than available.</param>
+        public Task<List<BettingMarket>> GetBettingMarketsByEventAsync(string eventId, string include)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("eventId", eventId.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("include", include.ToString()));
             return Task.Run<List<BettingMarket>>(() =>
                 base.Get<List<BettingMarket>>("/v3/cfb/odds/{format}/BettingMarkets/{eventId}", parameters)
             );
@@ -303,19 +305,22 @@ namespace FantasyData.Api.Client
         /// Get Betting Markets by Event
         /// </summary>
         /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
-        public List<BettingMarket> GetBettingMarkets(string eventId)
+        /// <param name="include">This parameter indicates which <code>BettingOutcome</code> records to return in the payload. By default, this endpoint only returns available outcomes, excluding the unlisted bets. <b>Important Note:</b> the default parameter of available is much faster and provides the best performance. Passing unlisted will return unlisted odds, but these are cached for much longer and may be several minutes old. For best performance, the default parameter is highly recommended. Possible values include: <code>available</code> - excludes any betting outcomes that have been removed/unlisted by the respective sportsbook. This is more lightweight and delivers odds much faster than using unlisted. <code>unlisted</code> - includes the most recently available betting outcome per sportsbook, for each listed market, even those outcomes are expired/unlisted or otherwise unavailable from the respective sportsbook. This is a far heavier payload, and it's cached for much longer than available.</param>
+        public List<BettingMarket> GetBettingMarketsByEvent(string eventId, string include)
         {
-            return this.GetBettingMarketsAsync(eventId).Result;
+            return this.GetBettingMarketsByEventAsync(eventId, include).Result;
         }
 
         /// <summary>
         /// Get Betting Markets by GameID Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of the desired game for which to pull all betting markets (includes outcomes/bets).</param>
-        public Task<List<BettingMarket>> GetBettingMarketsByGameIDAsync(int gameid)
+        /// <param name="include">This parameter indicates which <code>BettingOutcome</code> records to return in the payload. By default, this endpoint only returns available outcomes, excluding the unlisted bets. <b>Important Note:</b> the default parameter of available is much faster and provides the best performance. Passing unlisted will return unlisted odds, but these are cached for much longer and may be several minutes old. For best performance, the default parameter is highly recommended. Possible values include: <code>available</code> - excludes any betting outcomes that have been removed/unlisted by the respective sportsbook. This is more lightweight and delivers odds much faster than using unlisted. <code>unlisted</code> - includes the most recently available betting outcome per sportsbook, for each listed market, even those outcomes are expired/unlisted or otherwise unavailable from the respective sportsbook. This is a far heavier payload, and it's cached for much longer than available.</param>
+        public Task<List<BettingMarket>> GetBettingMarketsByGameIDAsync(int gameid, string include)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("include", include.ToString()));
             return Task.Run<List<BettingMarket>>(() =>
                 base.Get<List<BettingMarket>>("/v3/cfb/odds/{format}/BettingMarketsByGameID/{gameid}", parameters)
             );
@@ -325,9 +330,10 @@ namespace FantasyData.Api.Client
         /// Get Betting Markets by GameID
         /// </summary>
         /// <param name="gameid">The GameID of the desired game for which to pull all betting markets (includes outcomes/bets).</param>
-        public List<BettingMarket> GetBettingMarketsByGameID(int gameid)
+        /// <param name="include">This parameter indicates which <code>BettingOutcome</code> records to return in the payload. By default, this endpoint only returns available outcomes, excluding the unlisted bets. <b>Important Note:</b> the default parameter of available is much faster and provides the best performance. Passing unlisted will return unlisted odds, but these are cached for much longer and may be several minutes old. For best performance, the default parameter is highly recommended. Possible values include: <code>available</code> - excludes any betting outcomes that have been removed/unlisted by the respective sportsbook. This is more lightweight and delivers odds much faster than using unlisted. <code>unlisted</code> - includes the most recently available betting outcome per sportsbook, for each listed market, even those outcomes are expired/unlisted or otherwise unavailable from the respective sportsbook. This is a far heavier payload, and it's cached for much longer than available.</param>
+        public List<BettingMarket> GetBettingMarketsByGameID(int gameid, string include)
         {
-            return this.GetBettingMarketsByGameIDAsync(gameid).Result;
+            return this.GetBettingMarketsByGameIDAsync(gameid, include).Result;
         }
 
         /// <summary>
@@ -335,11 +341,13 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
         /// <param name="marketTypeID">The Market Type ID of the desired MarketTypes to pull. Some common types include: <code>1</code> for Game Lines, <code>2</code> for Player Props, <code>3</code> for Team Props, <code>6</code> for Game Props</param>
-        public Task<List<BettingMarket>> GetBettingMarketsByMarketTypeAsync(string eventId, string marketTypeID)
+        /// <param name="include">This parameter indicates which <code>BettingOutcome</code> records to return in the payload. By default, this endpoint only returns available outcomes, excluding the unlisted bets. <b>Important Note:</b> the default parameter of available is much faster and provides the best performance. Passing unlisted will return unlisted odds, but these are cached for much longer and may be several minutes old. For best performance, the default parameter is highly recommended. Possible values include: <code>available</code> - excludes any betting outcomes that have been removed/unlisted by the respective sportsbook. This is more lightweight and delivers odds much faster than using unlisted. <code>unlisted</code> - includes the most recently available betting outcome per sportsbook, for each listed market, even those outcomes are expired/unlisted or otherwise unavailable from the respective sportsbook. This is a far heavier payload, and it's cached for much longer than available.</param>
+        public Task<List<BettingMarket>> GetBettingMarketsByMarketTypeAsync(string eventId, string marketTypeID, string include)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("eventId", eventId.ToString()));
             parameters.Add(new KeyValuePair<string, string>("marketTypeID", marketTypeID.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("include", include.ToString()));
             return Task.Run<List<BettingMarket>>(() =>
                 base.Get<List<BettingMarket>>("/v3/cfb/odds/{format}/BettingMarketsByMarketType/{eventId}/{marketTypeID}", parameters)
             );
@@ -350,9 +358,10 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
         /// <param name="marketTypeID">The Market Type ID of the desired MarketTypes to pull. Some common types include: <code>1</code> for Game Lines, <code>2</code> for Player Props, <code>3</code> for Team Props, <code>6</code> for Game Props</param>
-        public List<BettingMarket> GetBettingMarketsByMarketType(string eventId, string marketTypeID)
+        /// <param name="include">This parameter indicates which <code>BettingOutcome</code> records to return in the payload. By default, this endpoint only returns available outcomes, excluding the unlisted bets. <b>Important Note:</b> the default parameter of available is much faster and provides the best performance. Passing unlisted will return unlisted odds, but these are cached for much longer and may be several minutes old. For best performance, the default parameter is highly recommended. Possible values include: <code>available</code> - excludes any betting outcomes that have been removed/unlisted by the respective sportsbook. This is more lightweight and delivers odds much faster than using unlisted. <code>unlisted</code> - includes the most recently available betting outcome per sportsbook, for each listed market, even those outcomes are expired/unlisted or otherwise unavailable from the respective sportsbook. This is a far heavier payload, and it's cached for much longer than available.</param>
+        public List<BettingMarket> GetBettingMarketsByMarketType(string eventId, string marketTypeID, string include)
         {
-            return this.GetBettingMarketsByMarketTypeAsync(eventId, marketTypeID).Result;
+            return this.GetBettingMarketsByMarketTypeAsync(eventId, marketTypeID, include).Result;
         }
 
         /// <summary>
@@ -377,7 +386,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Sportsbooks (Active) Asynchronous
         /// </summary>
-        public Task<List<Sportsbook>> GetActiveSportsbooksAsync()
+        public Task<List<Sportsbook>> GetSportsbooksActiveAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Sportsbook>>(() =>
@@ -388,16 +397,16 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Sportsbooks (Active)
         /// </summary>
-        public List<Sportsbook> GetActiveSportsbooks()
+        public List<Sportsbook> GetSportsbooksActive()
         {
-            return this.GetActiveSportsbooksAsync().Result;
+            return this.GetSportsbooksActiveAsync().Result;
         }
 
         /// <summary>
         /// Get Betting Resulting By Market Asynchronous
         /// </summary>
         /// <param name="marketId">BettingMarketID of the market for which you would like to see resulted outcomes. Valid example ID <code>17819</code></param>
-        public Task<BettingMarketResult> GetBettingMarketResultsAsync(string marketId)
+        public Task<BettingMarketResult> GetBettingResultingByMarketAsync(string marketId)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("marketId", marketId.ToString()));
@@ -410,16 +419,16 @@ namespace FantasyData.Api.Client
         /// Get Betting Resulting By Market
         /// </summary>
         /// <param name="marketId">BettingMarketID of the market for which you would like to see resulted outcomes. Valid example ID <code>17819</code></param>
-        public BettingMarketResult GetBettingMarketResults(string marketId)
+        public BettingMarketResult GetBettingResultingByMarket(string marketId)
         {
-            return this.GetBettingMarketResultsAsync(marketId).Result;
+            return this.GetBettingResultingByMarketAsync(marketId).Result;
         }
 
         /// <summary>
         /// Get Betting Splits By BettingMarketId Asynchronous
         /// </summary>
         /// <param name="marketId">The MarketId of the desired market for which to pull splits.</param>
-        public Task<BettingMarketSplit> GetBettingSplitsByMarketIdAsync(string marketId)
+        public Task<BettingMarketSplit> GetBettingSplitsByBettingMarketIdAsync(string marketId)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("marketId", marketId.ToString()));
@@ -432,16 +441,16 @@ namespace FantasyData.Api.Client
         /// Get Betting Splits By BettingMarketId
         /// </summary>
         /// <param name="marketId">The MarketId of the desired market for which to pull splits.</param>
-        public BettingMarketSplit GetBettingSplitsByMarketId(string marketId)
+        public BettingMarketSplit GetBettingSplitsByBettingMarketId(string marketId)
         {
-            return this.GetBettingSplitsByMarketIdAsync(marketId).Result;
+            return this.GetBettingSplitsByBettingMarketIdAsync(marketId).Result;
         }
 
         /// <summary>
         /// Get Betting Splits By GameID Asynchronous
         /// </summary>
         /// <param name="gameid">The ID of the game for which you want to receive splits for.Example <code>11778</code></param>
-        public Task<GameBettingSplit> GetBettingSplitsByGameIdAsync(int gameid)
+        public Task<GameBettingSplit> GetBettingSplitsByGameIDAsync(int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
@@ -454,19 +463,21 @@ namespace FantasyData.Api.Client
         /// Get Betting Splits By GameID
         /// </summary>
         /// <param name="gameid">The ID of the game for which you want to receive splits for.Example <code>11778</code></param>
-        public GameBettingSplit GetBettingSplitsByGameId(int gameid)
+        public GameBettingSplit GetBettingSplitsByGameID(int gameid)
         {
-            return this.GetBettingSplitsByGameIdAsync(gameid).Result;
+            return this.GetBettingSplitsByGameIDAsync(gameid).Result;
         }
 
         /// <summary>
         /// Get Betting Player Props by GameID Asynchronous
         /// </summary>
         /// <param name="gameId">The unique GameID of the game in question.</param>
-        public Task<List<BettingMarket>> GetBettingPlayerPropsByGameIDAsync(int gameId)
+        /// <param name="include">This parameter indicates which <code>BettingOutcome</code> records to return in the payload. By default, this endpoint only returns available outcomes, excluding the unlisted bets. <b>Important Note:</b> the default parameter of available is much faster and provides the best performance. Passing unlisted will return unlisted odds, but these are cached for much longer and may be several minutes old. For best performance, the default parameter is highly recommended. Possible values include: <code>available</code> - excludes any betting outcomes that have been removed/unlisted by the respective sportsbook. This is more lightweight and delivers odds much faster than using unlisted. <code>unlisted</code> - includes the most recently available betting outcome per sportsbook, for each listed market, even those outcomes are expired/unlisted or otherwise unavailable from the respective sportsbook. This is a far heavier payload, and it's cached for much longer than available.</param>
+        public Task<List<BettingMarket>> GetBettingPlayerPropsByGameIDAsync(int gameId, string include)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("gameId", gameId.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("include", include.ToString()));
             return Task.Run<List<BettingMarket>>(() =>
                 base.Get<List<BettingMarket>>("/v3/cfb/odds/{format}/BettingPlayerPropsByGameID/{gameId}", parameters)
             );
@@ -476,9 +487,10 @@ namespace FantasyData.Api.Client
         /// Get Betting Player Props by GameID
         /// </summary>
         /// <param name="gameId">The unique GameID of the game in question.</param>
-        public List<BettingMarket> GetBettingPlayerPropsByGameID(int gameId)
+        /// <param name="include">This parameter indicates which <code>BettingOutcome</code> records to return in the payload. By default, this endpoint only returns available outcomes, excluding the unlisted bets. <b>Important Note:</b> the default parameter of available is much faster and provides the best performance. Passing unlisted will return unlisted odds, but these are cached for much longer and may be several minutes old. For best performance, the default parameter is highly recommended. Possible values include: <code>available</code> - excludes any betting outcomes that have been removed/unlisted by the respective sportsbook. This is more lightweight and delivers odds much faster than using unlisted. <code>unlisted</code> - includes the most recently available betting outcome per sportsbook, for each listed market, even those outcomes are expired/unlisted or otherwise unavailable from the respective sportsbook. This is a far heavier payload, and it's cached for much longer than available.</param>
+        public List<BettingMarket> GetBettingPlayerPropsByGameID(int gameId, string include)
         {
-            return this.GetBettingPlayerPropsByGameIDAsync(gameId).Result;
+            return this.GetBettingPlayerPropsByGameIDAsync(gameId, include).Result;
         }
 
     }

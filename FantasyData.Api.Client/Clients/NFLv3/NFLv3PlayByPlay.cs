@@ -45,7 +45,7 @@ namespace FantasyData.Api.Client
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code> or <code>2</code>.</param>
         /// <param name="numberofplays">The number of plays to progress in this NFL live game simulation. Example entries are <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>150</code>, <code>200</code>, etc.</param>
-        public Task<List<PlayByPlay>> GetSimulatedPlayByPlayAsync(string season, int week, string minutes, string numberofplays)
+        public Task<List<PlayByPlay>> GetPlayByPlaySimulationAsync(string season, int week, string minutes, string numberofplays)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -64,9 +64,9 @@ namespace FantasyData.Api.Client
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code> or <code>2</code>.</param>
         /// <param name="numberofplays">The number of plays to progress in this NFL live game simulation. Example entries are <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>150</code>, <code>200</code>, etc.</param>
-        public List<PlayByPlay> GetSimulatedPlayByPlay(string season, int week, string minutes, string numberofplays)
+        public List<PlayByPlay> GetPlayByPlaySimulation(string season, int week, string minutes, string numberofplays)
         {
-            return this.GetSimulatedPlayByPlayAsync(season, week, minutes, numberofplays).Result;
+            return this.GetPlayByPlaySimulationAsync(season, week, minutes, numberofplays).Result;
         }
 
         /// <summary>
@@ -95,6 +95,28 @@ namespace FantasyData.Api.Client
         public List<PlayByPlay> GetPlayByPlayDelta(string season, int week, string minutes)
         {
             return this.GetPlayByPlayDeltaAsync(season, week, minutes).Result;
+        }
+
+        /// <summary>
+        /// Get Play By Play By GameID Asynchronous
+        /// </summary>
+        /// <param name="gameid">The GameID of a NFL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
+        public Task<List<PlayByPlay>> GetPlayByPlayByGameIDAsync(int gameid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            return Task.Run<List<PlayByPlay>>(() =>
+                base.Get<List<PlayByPlay>>("/v3/nfl/pbp/{format}/PlayByPlay/{gameid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Play By Play By GameID
+        /// </summary>
+        /// <param name="gameid">The GameID of a NFL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
+        public List<PlayByPlay> GetPlayByPlayByGameID(int gameid)
+        {
+            return this.GetPlayByPlayByGameIDAsync(gameid).Result;
         }
 
     }

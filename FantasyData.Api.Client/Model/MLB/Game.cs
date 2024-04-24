@@ -554,6 +554,20 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "DateTimeUTC", Order = 78)]
         public DateTime? DateTimeUTC { get; set; }
 
+        /// <summary>
+        /// Indicates whether the home team will utilize their bullpen instead of a dedicated starting pitcher
+        /// </summary>
+        [Description("Indicates whether the home team will utilize their bullpen instead of a dedicated starting pitcher")]
+        [DataMember(Name = "HomeTeamOpener", Order = 79)]
+        public bool? HomeTeamOpener { get; set; }
+
+        /// <summary>
+        /// Indicated whether the away team will utilize their bullpen instead of a dedicated starting pitcher
+        /// </summary>
+        [Description("Indicated whether the away team will utilize their bullpen instead of a dedicated starting pitcher")]
+        [DataMember(Name = "AwayTeamOpener", Order = 80)]
+        public bool? AwayTeamOpener { get; set; }
+
     }
 }
 

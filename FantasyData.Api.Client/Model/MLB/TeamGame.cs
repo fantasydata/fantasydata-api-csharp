@@ -520,9 +520,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public decimal? BallsInPlay { get; set; }
 
         /// <summary>
-        /// Total batting average on balls in play (BABIP
+        /// Total batting average on balls in play (BABIP)
         /// </summary>
-        [Description("Total batting average on balls in play (BABIP")]
+        [Description("Total batting average on balls in play (BABIP)")]
         [DataMember(Name = "BattingAverageOnBallsInPlay", Order = 74)]
         public decimal? BattingAverageOnBallsInPlay { get; set; }
 

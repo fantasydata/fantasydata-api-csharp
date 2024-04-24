@@ -169,6 +169,20 @@ namespace FantasyData.Api.Client.Model.CBB
         [DataMember(Name = "DateTimeUTC", Order = 23)]
         public DateTime? DateTimeUTC { get; set; }
 
+        /// <summary>
+        /// A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.
+        /// </summary>
+        [Description("A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.")]
+        [DataMember(Name = "GlobalAwayTeamID", Order = 24)]
+        public int GlobalAwayTeamID { get; set; }
+
+        /// <summary>
+        /// A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.
+        /// </summary>
+        [Description("A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.")]
+        [DataMember(Name = "GlobalHomeTeamID", Order = 25)]
+        public int GlobalHomeTeamID { get; set; }
+
     }
 }
 

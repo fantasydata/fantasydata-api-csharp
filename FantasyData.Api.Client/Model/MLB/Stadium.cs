@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int StadiumID { get; set; }
 
         /// <summary>
-        /// Whether or not this stadium is the home venue for an active team
+        /// The stadium will be set to Active if it exists. Expect available stadiums to be set to Active. For finding a team's current home stadium, Teams endpoints should be used.
         /// </summary>
-        [Description("Whether or not this stadium is the home venue for an active team")]
+        [Description("The stadium will be set to Active if it exists. Expect available stadiums to be set to Active. For finding a team's current home stadium, Teams endpoints should be used.")]
         [DataMember(Name = "Active", Order = 2)]
         public bool Active { get; set; }
 

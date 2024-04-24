@@ -162,6 +162,13 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "AlternateMarketPregameOdds", Order = 20022)]
         public GameOdd[] AlternateMarketPregameOdds { get; set; }
 
+        /// <summary>
+        /// Unique ID of the Score/Game (identical to ScoreID but using the updated naming)
+        /// </summary>
+        [Description("Unique ID of the Score/Game (identical to ScoreID but using the updated naming)")]
+        [DataMember(Name = "GameId", Order = 23)]
+        public int GameId { get; set; }
+
     }
 }
 

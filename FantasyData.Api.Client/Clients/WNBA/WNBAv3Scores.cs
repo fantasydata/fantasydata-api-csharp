@@ -13,7 +13,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Are Games In Progress Asynchronous
         /// </summary>
-        public Task<bool> GetAreAnyGamesInProgressAsync()
+        public Task<bool> GetAreGamesInProgressAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<bool>(() =>
@@ -24,9 +24,9 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get Are Games In Progress
         /// </summary>
-        public bool GetAreAnyGamesInProgress()
+        public bool GetAreGamesInProgress()
         {
-            return this.GetAreAnyGamesInProgressAsync().Result;
+            return this.GetAreGamesInProgressAsync().Result;
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace FantasyData.Api.Client
         /// Get Schedule Asynchronous
         /// </summary>
         /// <param name="Season">Year of the season (with optional season type). Examples: <code>2019</code>, <code>2019PRE</code>, <code>2019POST</code>, <code>2019REG</code>, etc.</param>
-        public Task<List<Game>> GetGamesAsync(string Season)
+        public Task<List<Game>> GetScheduleAsync(string Season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("Season", Season.ToString()));
@@ -87,9 +87,9 @@ namespace FantasyData.Api.Client
         /// Get Schedule
         /// </summary>
         /// <param name="Season">Year of the season (with optional season type). Examples: <code>2019</code>, <code>2019PRE</code>, <code>2019POST</code>, <code>2019REG</code>, etc.</param>
-        public List<Game> GetGames(string Season)
+        public List<Game> GetSchedule(string Season)
         {
-            return this.GetGamesAsync(Season).Result;
+            return this.GetScheduleAsync(Season).Result;
         }
 
         /// <summary>
@@ -128,6 +128,69 @@ namespace FantasyData.Api.Client
         public List<Team> GetTeams()
         {
             return this.GetTeamsAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Pre-Game Odds by Date Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2019-MAY-16</code>, <code>2019-MAY-25</code>, etc.</param>
+        public Task<List<GameInfo>> GetPreGameOddsByDateAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v3/wnba/scores/{format}/GameOddsByDate/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Pre-Game Odds by Date
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2019-MAY-16</code>, <code>2019-MAY-25</code>, etc.</param>
+        public List<GameInfo> GetPreGameOddsByDate(string date)
+        {
+            return this.GetPreGameOddsByDateAsync(date).Result;
+        }
+
+        /// <summary>
+        /// Get Pre-Game Odds Line Movement Asynchronous
+        /// </summary>
+        /// <param name="gameid">The unique GameID of the game for which to pull data.</param>
+        public Task<List<GameInfo>> GetPreGameOddsLineMovementAsync(int gameid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v3/wnba/scores/{format}/GameOddsLineMovement/{gameid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Pre-Game Odds Line Movement
+        /// </summary>
+        /// <param name="gameid">The unique GameID of the game for which to pull data.</param>
+        public List<GameInfo> GetPreGameOddsLineMovement(int gameid)
+        {
+            return this.GetPreGameOddsLineMovementAsync(gameid).Result;
+        }
+
+        /// <summary>
+        /// Get Sportsbooks (Active) Asynchronous
+        /// </summary>
+        public Task<List<Sportsbook>> GetSportsbooksActiveAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Sportsbook>>(() =>
+                base.Get<List<Sportsbook>>("/v3/wnba/scores/{format}/ActiveSportsbooks", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Sportsbooks (Active)
+        /// </summary>
+        public List<Sportsbook> GetSportsbooksActive()
+        {
+            return this.GetSportsbooksActiveAsync().Result;
         }
 
     }

@@ -345,9 +345,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? ClockExtra { get; set; }
 
         /// <summary>
-        /// A convienience string display of the current clock with format Clock+ClockExtra (ex 90+3)
+        /// A convenient string display of the current clock with format Clock+ClockExtra (ex 90+3)
         /// </summary>
-        [Description("A convienience string display of the current clock with format Clock+ClockExtra (ex 90+3)")]
+        [Description("A convenient string display of the current clock with format Clock+ClockExtra (ex 90+3)")]
         [DataMember(Name = "ClockDisplay", Order = 49)]
         public string ClockDisplay { get; set; }
 

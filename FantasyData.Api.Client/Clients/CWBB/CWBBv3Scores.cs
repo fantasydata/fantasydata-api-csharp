@@ -73,7 +73,7 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get League Hierarchy (Conferences and Teams) Asynchronous
         /// </summary>
-        public Task<List<Conference>> GetLeagueHierarchyAsync()
+        public Task<List<Conference>> GetLeagueHierarchyConferencesAndTeamsAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Conference>>(() =>
@@ -84,16 +84,16 @@ namespace FantasyData.Api.Client
         /// <summary>
         /// Get League Hierarchy (Conferences and Teams)
         /// </summary>
-        public List<Conference> GetLeagueHierarchy()
+        public List<Conference> GetLeagueHierarchyConferencesAndTeams()
         {
-            return this.GetLeagueHierarchyAsync().Result;
+            return this.GetLeagueHierarchyConferencesAndTeamsAsync().Result;
         }
 
         /// <summary>
         /// Get Schedules Asynchronous
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2020</code>, <code>2020PRE</code>, <code>2020POST</code>, <code>2019</code>, etc.</param>
-        public Task<List<Game>> GetGamesAsync(string season)
+        public Task<List<Game>> GetSchedulesAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -106,9 +106,9 @@ namespace FantasyData.Api.Client
         /// Get Schedules
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2020</code>, <code>2020PRE</code>, <code>2020POST</code>, <code>2019</code>, etc.</param>
-        public List<Game> GetGames(string season)
+        public List<Game> GetSchedules(string season)
         {
-            return this.GetGamesAsync(season).Result;
+            return this.GetSchedulesAsync(season).Result;
         }
 
         /// <summary>

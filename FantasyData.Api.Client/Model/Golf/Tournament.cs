@@ -162,6 +162,13 @@ namespace FantasyData.Api.Client.Model.Golf
         [DataMember(Name = "SportRadarTournamentID", Order = 22)]
         public string SportRadarTournamentID { get; set; }
 
+        /// <summary>
+        /// Indicates coverage status for odds ('None', 'Limited', 'Full')
+        /// </summary>
+        [Description("Indicates coverage status for odds ('None', 'Limited', 'Full')")]
+        [DataMember(Name = "OddsCoverage", Order = 23)]
+        public string OddsCoverage { get; set; }
+
     }
 }
 
