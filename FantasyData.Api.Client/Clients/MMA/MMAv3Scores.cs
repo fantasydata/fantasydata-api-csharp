@@ -33,10 +33,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fighter Asynchronous
+        /// Get Fighter Profile - By Fighter Asynchronous
         /// </summary>
         /// <param name="fighterid">Each fighter has a unique ID assigned by FantasyData. Fighter IDs can be determined by pulling player related data. Example: <code>140000098</code></param>
-        public Task<Fighter> GetFighterAsync(string fighterid)
+        public Task<Fighter> GetFighterProfileByFighterAsync(string fighterid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("fighterid", fighterid.ToString()));
@@ -46,18 +46,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fighter
+        /// Get Fighter Profile - By Fighter
         /// </summary>
         /// <param name="fighterid">Each fighter has a unique ID assigned by FantasyData. Fighter IDs can be determined by pulling player related data. Example: <code>140000098</code></param>
-        public Fighter GetFighter(string fighterid)
+        public Fighter GetFighterProfileByFighter(string fighterid)
         {
-            return this.GetFighterAsync(fighterid).Result;
+            return this.GetFighterProfileByFighterAsync(fighterid).Result;
         }
 
         /// <summary>
-        /// Get Fighters Asynchronous
+        /// Get Fighter Profiles - All Asynchronous
         /// </summary>
-        public Task<List<Fighter>> GetFightersAsync()
+        public Task<List<Fighter>> GetFighterProfilesAllAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Fighter>>(() =>
@@ -66,11 +66,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fighters
+        /// Get Fighter Profiles - All
         /// </summary>
-        public List<Fighter> GetFighters()
+        public List<Fighter> GetFighterProfilesAll()
         {
-            return this.GetFightersAsync().Result;
+            return this.GetFighterProfilesAllAsync().Result;
         }
 
         /// <summary>
@@ -93,11 +93,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedule Asynchronous
+        /// Get Schedules Asynchronous
         /// </summary>
         /// <param name="league">The name of the league. Examples: <code>UFC</code>, etc</param>
         /// <param name="season">Year of the season. Examples: <code>2019</code>, <code>2020</code>, etc.</param>
-        public Task<List<Event>> GetScheduleAsync(string league, string season)
+        public Task<List<Event>> GetSchedulesAsync(string league, string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("league", league.ToString()));
@@ -108,13 +108,32 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedule
+        /// Get Schedules
         /// </summary>
         /// <param name="league">The name of the league. Examples: <code>UFC</code>, etc</param>
         /// <param name="season">Year of the season. Examples: <code>2019</code>, <code>2020</code>, etc.</param>
-        public List<Event> GetSchedule(string league, string season)
+        public List<Event> GetSchedules(string league, string season)
         {
-            return this.GetScheduleAsync(league, season).Result;
+            return this.GetSchedulesAsync(league, season).Result;
+        }
+
+        /// <summary>
+        /// Get Fighter Profiles (Basic) - All Asynchronous
+        /// </summary>
+        public Task<List<FighterBasic>> GetFighterProfilesBasicAllAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<FighterBasic>>(() =>
+                base.Get<List<FighterBasic>>("/v3/mma/scores/{format}/FightersBasic", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Fighter Profiles (Basic) - All
+        /// </summary>
+        public List<FighterBasic> GetFighterProfilesBasicAll()
+        {
+            return this.GetFighterProfilesBasicAllAsync().Result;
         }
 
     }

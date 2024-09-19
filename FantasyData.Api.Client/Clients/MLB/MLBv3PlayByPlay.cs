@@ -11,10 +11,10 @@ namespace FantasyData.Api.Client
         public MLBv3PlayByPlayClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Play By Play Asynchronous
+        /// Get Play By Play [Live & Final] Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
-        public Task<PlayByPlay> GetPlayByPlayAsync(int gameid)
+        public Task<PlayByPlay> GetPlayByPlayLiveFinalAsync(int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
@@ -24,12 +24,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Play By Play
+        /// Get Play By Play [Live & Final]
         /// </summary>
         /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
-        public PlayByPlay GetPlayByPlay(int gameid)
+        public PlayByPlay GetPlayByPlayLiveFinal(int gameid)
         {
-            return this.GetPlayByPlayAsync(gameid).Result;
+            return this.GetPlayByPlayLiveFinalAsync(gameid).Result;
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Play By Play Final Asynchronous
+        /// Get Play By Play [Final] Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
         public Task<PlayByPlay> GetPlayByPlayFinalAsync(int gameid)
@@ -66,12 +66,12 @@ namespace FantasyData.Api.Client
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
             return Task.Run<PlayByPlay>(() =>
-                base.Get<PlayByPlay>("/v3/mlb/pbp/{format}/PlayByPlay/final/{gameid}", parameters)
+                base.Get<PlayByPlay>("/v3/mlb/pbp/{format}/PlayByPlayFinal/{gameid}", parameters)
             );
         }
 
         /// <summary>
-        /// Get Play By Play Final
+        /// Get Play By Play [Final]
         /// </summary>
         /// <param name="gameid">The GameID of an MLB game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
         public PlayByPlay GetPlayByPlayFinal(int gameid)

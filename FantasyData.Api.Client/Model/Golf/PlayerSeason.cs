@@ -37,16 +37,16 @@ namespace FantasyData.Api.Client.Model.Golf
         public string Name { get; set; }
 
         /// <summary>
-        /// The player's latest world golf ranking
+        /// The player's latest World Golf Ranking
         /// </summary>
-        [Description("The player's latest world golf ranking")]
+        [Description("The player's latest World Golf Ranking")]
         [DataMember(Name = "WorldGolfRank", Order = 5)]
         public int? WorldGolfRank { get; set; }
 
         /// <summary>
-        /// The player's world golf ranking from the previous week
+        /// The player's World Golf Ranking from the previous week
         /// </summary>
-        [Description("The player's world golf ranking from the previous week")]
+        [Description("The player's World Golf Ranking from the previous week")]
         [DataMember(Name = "WorldGolfRankLastWeek", Order = 6)]
         public int? WorldGolfRankLastWeek { get; set; }
 
@@ -58,30 +58,30 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? Events { get; set; }
 
         /// <summary>
-        /// Average points scored on tournaments during this season
+        /// Average World Golf Ranking points scored on tournaments during this season
         /// </summary>
-        [Description("Average points scored on tournaments during this season")]
+        [Description("Average World Golf Ranking points scored on tournaments during this season")]
         [DataMember(Name = "AveragePoints", Order = 8)]
         public decimal? AveragePoints { get; set; }
 
         /// <summary>
-        /// Total points scored on tournaments during this season
+        /// Total World Golf Ranking points scored on tournaments during this season
         /// </summary>
-        [Description("Total points scored on tournaments during this season")]
+        [Description("Total World Golf Ranking points scored on tournaments during this season")]
         [DataMember(Name = "TotalPoints", Order = 9)]
         public decimal? TotalPoints { get; set; }
 
         /// <summary>
-        /// Total points lost
+        /// Total World Golf Ranking points lost
         /// </summary>
-        [Description("Total points lost")]
+        [Description("Total World Golf Ranking points lost")]
         [DataMember(Name = "PointsLost", Order = 10)]
         public decimal? PointsLost { get; set; }
 
         /// <summary>
-        /// Total points gained
+        /// Total World Golf Ranking points gained
         /// </summary>
-        [Description("Total points gained")]
+        [Description("Total World Golf Ranking points gained")]
         [DataMember(Name = "PointsGained", Order = 11)]
         public decimal? PointsGained { get; set; }
 

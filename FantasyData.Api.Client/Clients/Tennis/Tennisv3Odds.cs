@@ -11,7 +11,7 @@ namespace FantasyData.Api.Client
         public Tennisv3OddsClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Match Odds by Date Asynchronous
+        /// Get Match Odds - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date for which to pull matches. Ex: <code> 2023-01-03 </code></param>
         public Task<List<Match>> GetMatchOddsByDateAsync(string date)
@@ -24,7 +24,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Match Odds by Date
+        /// Get Match Odds - by Date
         /// </summary>
         /// <param name="date">The date for which to pull matches. Ex: <code> 2023-01-03 </code></param>
         public List<Match> GetMatchOddsByDate(string date)
@@ -33,11 +33,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Match Odds by Date and Season Asynchronous
+        /// Get Match Odds by Season - by Date Asynchronous
         /// </summary>
         /// <param name="seasonid">The SeasonId for which to filter data. Example: <code>27</code></param>
         /// <param name="date">The date for which to pull matches. Ex: <code> 2023-01-03 </code></param>
-        public Task<List<Match>> GetMatchOddsByDateAndSeasonAsync(int seasonid, string date)
+        public Task<List<Match>> GetMatchOddsBySeasonByDateAsync(int seasonid, string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("seasonid", seasonid.ToString()));
@@ -48,13 +48,13 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Match Odds by Date and Season
+        /// Get Match Odds by Season - by Date
         /// </summary>
         /// <param name="seasonid">The SeasonId for which to filter data. Example: <code>27</code></param>
         /// <param name="date">The date for which to pull matches. Ex: <code> 2023-01-03 </code></param>
-        public List<Match> GetMatchOddsByDateAndSeason(int seasonid, string date)
+        public List<Match> GetMatchOddsBySeasonByDate(int seasonid, string date)
         {
-            return this.GetMatchOddsByDateAndSeasonAsync(seasonid, date).Result;
+            return this.GetMatchOddsBySeasonByDateAsync(seasonid, date).Result;
         }
 
         /// <summary>
@@ -80,9 +80,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Sportsbooks (Active) Asynchronous
+        /// Get Sportsbooks - by Active Asynchronous
         /// </summary>
-        public Task<List<Sportsbook>> GetSportsbooksActiveAsync()
+        public Task<List<Sportsbook>> GetSportsbooksByActiveAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Sportsbook>>(() =>
@@ -91,11 +91,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Sportsbooks (Active)
+        /// Get Sportsbooks - by Active
         /// </summary>
-        public List<Sportsbook> GetSportsbooksActive()
+        public List<Sportsbook> GetSportsbooksByActive()
         {
-            return this.GetSportsbooksActiveAsync().Result;
+            return this.GetSportsbooksByActiveAsync().Result;
         }
 
     }

@@ -11,10 +11,10 @@ namespace FantasyData.Api.Client
         public NHLv3PlayByPlayClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Play By Play Asynchronous
+        /// Get Play By Play [Live & Final] Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of an NHL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
-        public Task<PlayByPlay> GetPlayByPlayAsync(int gameid)
+        public Task<PlayByPlay> GetPlayByPlayLiveFinalAsync(int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
@@ -24,12 +24,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Play By Play
+        /// Get Play By Play [Live & Final]
         /// </summary>
         /// <param name="gameid">The GameID of an NHL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
-        public PlayByPlay GetPlayByPlay(int gameid)
+        public PlayByPlay GetPlayByPlayLiveFinal(int gameid)
         {
-            return this.GetPlayByPlayAsync(gameid).Result;
+            return this.GetPlayByPlayLiveFinalAsync(gameid).Result;
         }
 
         /// <summary>
@@ -55,6 +55,28 @@ namespace FantasyData.Api.Client
         public List<PlayByPlay> GetPlayByPlayDelta(string date, string minutes)
         {
             return this.GetPlayByPlayDeltaAsync(date, minutes).Result;
+        }
+
+        /// <summary>
+        /// Get Play By Play [Final] Asynchronous
+        /// </summary>
+        /// <param name="gameid">The GameID of an NHL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
+        public Task<PlayByPlay> GetPlayByPlayFinalAsync(int gameid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            return Task.Run<PlayByPlay>(() =>
+                base.Get<PlayByPlay>("/v3/nhl/pbp/{format}/PlayByPlayFinal/{gameid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Play By Play [Final]
+        /// </summary>
+        /// <param name="gameid">The GameID of an NHL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
+        public PlayByPlay GetPlayByPlayFinal(int gameid)
+        {
+            return this.GetPlayByPlayFinalAsync(gameid).Result;
         }
 
     }

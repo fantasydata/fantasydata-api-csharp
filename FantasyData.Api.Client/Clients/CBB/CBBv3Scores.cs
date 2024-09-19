@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Current Season Asynchronous
+        /// Get Season - Current Asynchronous
         /// </summary>
-        public Task<Season> GetCurrentSeasonAsync()
+        public Task<Season> GetSeasonCurrentAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<Season>(() =>
@@ -41,18 +41,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Current Season
+        /// Get Season - Current
         /// </summary>
-        public Season GetCurrentSeason()
+        public Season GetSeasonCurrent()
         {
-            return this.GetCurrentSeasonAsync().Result;
+            return this.GetSeasonCurrentAsync().Result;
         }
 
         /// <summary>
-        /// Get Games by Date - Legacy Asynchronous
+        /// Get Games - by Date [Live & Final] Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-FEB-27</code>, <code>2017-DEC-01</code>.</param>
-        public Task<List<Game>> GetGamesByDateLegacyAsync(string date)
+        public Task<List<Game>> GetGamesByDateLiveFinalAsync(string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -62,12 +62,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Games by Date - Legacy
+        /// Get Games - by Date [Live & Final]
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-FEB-27</code>, <code>2017-DEC-01</code>.</param>
-        public List<Game> GetGamesByDateLegacy(string date)
+        public List<Game> GetGamesByDateLiveFinal(string date)
         {
-            return this.GetGamesByDateLegacyAsync(date).Result;
+            return this.GetGamesByDateLiveFinalAsync(date).Result;
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Active Asynchronous
+        /// Get Player Details - by Active Asynchronous
         /// </summary>
         public Task<List<Player>> GetPlayerDetailsByActiveAsync()
         {
@@ -101,7 +101,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Active
+        /// Get Player Details - by Active
         /// </summary>
         public List<Player> GetPlayerDetailsByActive()
         {
@@ -109,7 +109,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Player Asynchronous
+        /// Get Player Details - by Player Asynchronous
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>60003802</code>.</param>
         public Task<Player> GetPlayerDetailsByPlayerAsync(int playerid)
@@ -122,7 +122,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Player
+        /// Get Player Details - by Player
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>60003802</code>.</param>
         public Player GetPlayerDetailsByPlayer(int playerid)
@@ -131,7 +131,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Team Asynchronous
+        /// Get Player Details - by Team Asynchronous
         /// </summary>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
         public Task<List<Player>> GetPlayerDetailsByTeamAsync(string team)
@@ -144,7 +144,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Team
+        /// Get Player Details - by Team
         /// </summary>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
         public List<Player> GetPlayerDetailsByTeam(string team)
@@ -153,10 +153,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedules - Legacy Asynchronous
+        /// Get Games - by Season Asynchronous
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
-        public Task<List<Game>> GetSchedulesLegacyAsync(string season)
+        public Task<List<Game>> GetGamesBySeasonAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -166,19 +166,19 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedules - Legacy
+        /// Get Games - by Season
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
-        public List<Game> GetSchedulesLegacy(string season)
+        public List<Game> GetGamesBySeason(string season)
         {
-            return this.GetSchedulesLegacyAsync(season).Result;
+            return this.GetGamesBySeasonAsync(season).Result;
         }
 
         /// <summary>
-        /// Get Team Game Stats by Date Asynchronous
+        /// Get Team Game Stats - by Date [Live & Final] Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-FEB-27</code>, <code>2017-DEC-01</code>.</param>
-        public Task<List<TeamGame>> GetTeamGameStatsByDateAsync(string date)
+        public Task<List<TeamGame>> GetTeamGameStatsByDateLiveFinalAsync(string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -188,12 +188,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Team Game Stats by Date
+        /// Get Team Game Stats - by Date [Live & Final]
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-FEB-27</code>, <code>2017-DEC-01</code>.</param>
-        public List<TeamGame> GetTeamGameStatsByDate(string date)
+        public List<TeamGame> GetTeamGameStatsByDateLiveFinal(string date)
         {
-            return this.GetTeamGameStatsByDateAsync(date).Result;
+            return this.GetTeamGameStatsByDateLiveFinalAsync(date).Result;
         }
 
         /// <summary>
@@ -219,9 +219,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Teams - Legacy Asynchronous
+        /// Get Team Profiles - All Asynchronous
         /// </summary>
-        public Task<List<Team>> GetTeamsLegacyAsync()
+        public Task<List<Team>> GetTeamProfilesAllAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Team>>(() =>
@@ -230,18 +230,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Teams - Legacy
+        /// Get Team Profiles - All
         /// </summary>
-        public List<Team> GetTeamsLegacy()
+        public List<Team> GetTeamProfilesAll()
         {
-            return this.GetTeamsLegacyAsync().Result;
+            return this.GetTeamProfilesAllAsync().Result;
         }
 
         /// <summary>
-        /// Get Tournament Hierarchy Asynchronous
+        /// Get Games - by Season [Live & Final] Asynchronous
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018POST</code>, <code>2019</code>.</param>
-        public Task<Tournament> GetTournamentHierarchyAsync(string season)
+        public Task<Tournament> GetGamesBySeasonLiveFinalAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -251,12 +251,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Tournament Hierarchy
+        /// Get Games - by Season [Live & Final]
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018POST</code>, <code>2019</code>.</param>
-        public Tournament GetTournamentHierarchy(string season)
+        public Tournament GetGamesBySeasonLiveFinal(string season)
         {
-            return this.GetTournamentHierarchyAsync(season).Result;
+            return this.GetGamesBySeasonLiveFinalAsync(season).Result;
         }
 
         /// <summary>
@@ -279,11 +279,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Team Schedule - Legacy Asynchronous
+        /// Get Schedules - by Team Asynchronous
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
-        public Task<List<Game>> GetTeamScheduleLegacyAsync(string season, string team)
+        public Task<List<Game>> GetSchedulesByTeamAsync(string season, string team)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -294,19 +294,19 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Team Schedule - Legacy
+        /// Get Schedules - by Team
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
-        public List<Game> GetTeamScheduleLegacy(string season, string team)
+        public List<Game> GetSchedulesByTeam(string season, string team)
         {
-            return this.GetTeamScheduleLegacyAsync(season, team).Result;
+            return this.GetSchedulesByTeamAsync(season, team).Result;
         }
 
         /// <summary>
-        /// Get Injured Players Asynchronous
+        /// Get Player Details - by Injured Asynchronous
         /// </summary>
-        public Task<List<Player>> GetInjuredPlayersAsync()
+        public Task<List<Player>> GetPlayerDetailsByInjuredAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Player>>(() =>
@@ -315,11 +315,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Injured Players
+        /// Get Player Details - by Injured
         /// </summary>
-        public List<Player> GetInjuredPlayers()
+        public List<Player> GetPlayerDetailsByInjured()
         {
-            return this.GetInjuredPlayersAsync().Result;
+            return this.GetPlayerDetailsByInjuredAsync().Result;
         }
 
         /// <summary>
@@ -351,10 +351,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Scores by Date Asynchronous
+        /// Get Games (Basic) - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-FEB-27</code>, <code>2017-DEC-01</code>.</param>
-        public Task<List<ScoreBasic>> GetScoresByDateAsync(string date)
+        public Task<List<ScoreBasic>> GetGamesBasicByDateAsync(string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -364,19 +364,19 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Scores by Date
+        /// Get Games (Basic) - by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2018-FEB-27</code>, <code>2017-DEC-01</code>.</param>
-        public List<ScoreBasic> GetScoresByDate(string date)
+        public List<ScoreBasic> GetGamesBasicByDate(string date)
         {
-            return this.GetScoresByDateAsync(date).Result;
+            return this.GetGamesBasicByDateAsync(date).Result;
         }
 
         /// <summary>
-        /// Get Players by Team Asynchronous
+        /// Get Player Profiles - by Team Asynchronous
         /// </summary>
-        /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
-        public Task<List<PlayerBasic>> GetPlayersByTeamAsync(string team)
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>SMU</code>, <code>UCLA</code>.</param>
+        public Task<List<PlayerBasic>> GetPlayerProfilesByTeamAsync(string team)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
@@ -386,19 +386,19 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Players by Team
+        /// Get Player Profiles - by Team
         /// </summary>
-        /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
-        public List<PlayerBasic> GetPlayersByTeam(string team)
+        /// <param name="team">The abbreviation of the requested team. Examples: <code>SMU</code>, <code>UCLA</code>.</param>
+        public List<PlayerBasic> GetPlayerProfilesByTeam(string team)
         {
-            return this.GetPlayersByTeamAsync(team).Result;
+            return this.GetPlayerProfilesByTeamAsync(team).Result;
         }
 
         /// <summary>
-        /// Get Schedules Asynchronous
+        /// Get Schedules (Basic) Asynchronous
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
-        public Task<List<ScheduleBasic>> GetSchedulesAsync(string season)
+        public Task<List<ScheduleBasic>> GetSchedulesBasicAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -408,18 +408,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedules
+        /// Get Schedules (Basic)
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
-        public List<ScheduleBasic> GetSchedules(string season)
+        public List<ScheduleBasic> GetSchedulesBasic(string season)
         {
-            return this.GetSchedulesAsync(season).Result;
+            return this.GetSchedulesBasicAsync(season).Result;
         }
 
         /// <summary>
-        /// Get Teams Asynchronous
+        /// Get Teams (Basic) - All Asynchronous
         /// </summary>
-        public Task<List<TeamBasic>> GetTeamsAsync()
+        public Task<List<TeamBasic>> GetTeamsBasicAllAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<TeamBasic>>(() =>
@@ -428,17 +428,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Teams
+        /// Get Teams (Basic) - All
         /// </summary>
-        public List<TeamBasic> GetTeams()
+        public List<TeamBasic> GetTeamsBasicAll()
         {
-            return this.GetTeamsAsync().Result;
+            return this.GetTeamsBasicAllAsync().Result;
         }
 
         /// <summary>
-        /// Get Players by Active Asynchronous
+        /// Get Player Details - by Active Asynchronous
         /// </summary>
-        public Task<List<PlayerBasic>> GetPlayersByActiveAsync()
+        public Task<List<PlayerBasic>> GetPlayerDetailsByActive_1457Async()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<PlayerBasic>>(() =>
@@ -447,11 +447,55 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Players by Active
+        /// Get Player Details - by Active
         /// </summary>
-        public List<PlayerBasic> GetPlayersByActive()
+        public List<PlayerBasic> GetPlayerDetailsByActive_1457()
         {
-            return this.GetPlayersByActiveAsync().Result;
+            return this.GetPlayerDetailsByActive_1457Async().Result;
+        }
+
+        /// <summary>
+        /// Get Games - by Date [Final] Asynchronous
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-FEB-27</code>, <code>2017-DEC-01</code>.</param>
+        public Task<List<Game>> GetGamesByDateFinalAsync(string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<Game>>(() =>
+                base.Get<List<Game>>("/v3/cbb/scores/{format}/GamesByDateFinal/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Games - by Date [Final]
+        /// </summary>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-FEB-27</code>, <code>2017-DEC-01</code>.</param>
+        public List<Game> GetGamesByDateFinal(string date)
+        {
+            return this.GetGamesByDateFinalAsync(date).Result;
+        }
+
+        /// <summary>
+        /// Get Games - by Season [Final] Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
+        public Task<List<Game>> GetGamesBySeasonFinalAsync(string season)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            return Task.Run<List<Game>>(() =>
+                base.Get<List<Game>>("/v3/cbb/scores/{format}/GamesFinal/{season}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Games - by Season [Final]
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
+        public List<Game> GetGamesBySeasonFinal(string season)
+        {
+            return this.GetGamesBySeasonFinalAsync(season).Result;
         }
 
     }

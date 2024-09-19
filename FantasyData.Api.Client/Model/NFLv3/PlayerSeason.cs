@@ -590,9 +590,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal SpecialTeamsTouchdowns { get; set; }
 
         /// <summary>
-        /// Total touchdowns scored
+        /// Total touchdowns scored by this player. Note that this is not inclusive of passes thrown or other such assists; this field refers only to touchdowns scored by the player having the ball in the endzone.
         /// </summary>
-        [Description("Total touchdowns scored")]
+        [Description("Total touchdowns scored by this player. Note that this is not inclusive of passes thrown or other such assists; this field refers only to touchdowns scored by the player having the ball in the endzone.")]
         [DataMember(Name = "Touchdowns", Order = 84)]
         public decimal Touchdowns { get; set; }
 

@@ -777,6 +777,59 @@ namespace FantasyData.Api.Client
             return this.GetUpcomingDfsSlatesByCompetitionAsync(competitionId).Result;
         }
 
+        /// <summary>
+        /// Get Player Game Stats by Date Final Asynchronous
+        /// </summary>
+        /// <param name="competition"></param>
+        /// <param name="date"></param>
+        public Task<List<PlayerGame>> GetPlayerGameStatsByDateFinalAsync(string competition, string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<PlayerGame>>(() =>
+                base.Get<List<PlayerGame>>("/v3/soccer/stats/{format}/PlayerGameStatsByDateFinal/{competition}/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Game Stats by Date Final
+        /// </summary>
+        /// <param name="competition"></param>
+        /// <param name="date"></param>
+        public List<PlayerGame> GetPlayerGameStatsByDateFinal(string competition, string date)
+        {
+            return this.GetPlayerGameStatsByDateFinalAsync(competition, date).Result;
+        }
+
+        /// <summary>
+        /// Get Team Game Stats by Date Final Asynchronous
+        /// </summary>
+        /// <param name="compeitition"></param>
+        /// <param name="date"></param>
+        /// <param name="competition"></param>
+        public Task<List<TeamGame>> GetTeamGameStatsByDateFinalAsync(string compeitition, string date, string competition)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("compeitition", compeitition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            return Task.Run<List<TeamGame>>(() =>
+                base.Get<List<TeamGame>>("/v3/soccer/stats/{format}/TeamGameStatsByDateFinal/{competition}/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Team Game Stats by Date Final
+        /// </summary>
+        /// <param name="compeitition"></param>
+        /// <param name="date"></param>
+        /// <param name="competition"></param>
+        public List<TeamGame> GetTeamGameStatsByDateFinal(string compeitition, string date, string competition)
+        {
+            return this.GetTeamGameStatsByDateFinalAsync(compeitition, date, competition).Result;
+        }
+
     }
 }
 

@@ -11,12 +11,12 @@ namespace FantasyData.Api.Client
         public NFLv3PlayByPlayClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Play By Play Asynchronous
+        /// Get Play By Play - by Team [Live & Final] Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="hometeam">Abbreviation of the home team. Example: <code>WAS</code>.</param>
-        public Task<PlayByPlay> GetPlayByPlayAsync(string season, int week, string hometeam)
+        public Task<PlayByPlay> GetPlayByPlayByTeamLiveFinalAsync(string season, int week, string hometeam)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -28,14 +28,14 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Play By Play
+        /// Get Play By Play - by Team [Live & Final]
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="hometeam">Abbreviation of the home team. Example: <code>WAS</code>.</param>
-        public PlayByPlay GetPlayByPlay(string season, int week, string hometeam)
+        public PlayByPlay GetPlayByPlayByTeamLiveFinal(string season, int week, string hometeam)
         {
-            return this.GetPlayByPlayAsync(season, week, hometeam).Result;
+            return this.GetPlayByPlayByTeamLiveFinalAsync(season, week, hometeam).Result;
         }
 
         /// <summary>
@@ -98,25 +98,75 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Play By Play By GameID Asynchronous
+        /// Get Play By Play [Final] Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of a NFL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
-        public Task<List<PlayByPlay>> GetPlayByPlayByGameIDAsync(int gameid)
+        public Task<PlayByPlay> GetPlayByPlayFinalAsync(int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
-            return Task.Run<List<PlayByPlay>>(() =>
-                base.Get<List<PlayByPlay>>("/v3/nfl/pbp/{format}/PlayByPlay/{gameid}", parameters)
+            return Task.Run<PlayByPlay>(() =>
+                base.Get<PlayByPlay>("/v3/nfl/pbp/{format}/PlayByPlayFinal/{gameid}", parameters)
             );
         }
 
         /// <summary>
-        /// Get Play By Play By GameID
+        /// Get Play By Play [Final]
         /// </summary>
         /// <param name="gameid">The GameID of a NFL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
-        public List<PlayByPlay> GetPlayByPlayByGameID(int gameid)
+        public PlayByPlay GetPlayByPlayFinal(int gameid)
         {
-            return this.GetPlayByPlayByGameIDAsync(gameid).Result;
+            return this.GetPlayByPlayFinalAsync(gameid).Result;
+        }
+
+        /// <summary>
+        /// Get Play By Play [Live & Final] Asynchronous
+        /// </summary>
+        /// <param name="gameid">The GameID of a NFL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
+        public Task<PlayByPlay> GetPlayByPlayLiveFinalAsync(int gameid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            return Task.Run<PlayByPlay>(() =>
+                base.Get<PlayByPlay>("/v3/nfl/pbp/{format}/PlayByPlay/{gameid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Play By Play [Live & Final]
+        /// </summary>
+        /// <param name="gameid">The GameID of a NFL game. GameIDs can be found in the Games API. Valid entries are <code>14620</code> or <code>16905</code></param>
+        public PlayByPlay GetPlayByPlayLiveFinal(int gameid)
+        {
+            return this.GetPlayByPlayLiveFinalAsync(gameid).Result;
+        }
+
+        /// <summary>
+        /// Get Play By Play - by Team [Final] Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        /// <param name="hometeam">Abbreviation of the home team. Example: <code>WAS</code>.</param>
+        public Task<PlayByPlay> GetPlayByPlayByTeamFinalAsync(string season, int week, string hometeam)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("hometeam", hometeam.ToString()));
+            return Task.Run<PlayByPlay>(() =>
+                base.Get<PlayByPlay>("/v3/nfl/pbp/{format}/PlayByPlayFinal/{season}/{week}/{hometeam}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Play By Play - by Team [Final]
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        /// <param name="hometeam">Abbreviation of the home team. Example: <code>WAS</code>.</param>
+        public PlayByPlay GetPlayByPlayByTeamFinal(string season, int week, string hometeam)
+        {
+            return this.GetPlayByPlayByTeamFinalAsync(season, week, hometeam).Result;
         }
 
     }

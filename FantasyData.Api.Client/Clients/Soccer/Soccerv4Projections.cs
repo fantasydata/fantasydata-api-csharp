@@ -11,11 +11,11 @@ namespace FantasyData.Api.Client
         public Soccerv4ProjectionsClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Dfs Slates By Date Asynchronous
+        /// Get DFS Slates - by Date Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2020-02-18</code></param>
-        public Task<List<DfsSlate>> GetDfsSlatesByDateAsync(string competition, string date)
+        public Task<List<DfsSlate>> GetDFSSlatesByDateAsync(string competition, string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -26,20 +26,20 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Dfs Slates By Date
+        /// Get DFS Slates - by Date
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2020-02-18</code></param>
-        public List<DfsSlate> GetDfsSlatesByDate(string competition, string date)
+        public List<DfsSlate> GetDFSSlatesByDate(string competition, string date)
         {
-            return this.GetDfsSlatesByDateAsync(competition, date).Result;
+            return this.GetDFSSlatesByDateAsync(competition, date).Result;
         }
 
         /// <summary>
-        /// Get Injured Players By Competition Asynchronous
+        /// Get Player Details - by Injured Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public Task<List<Player>> GetInjuredPlayersByCompetitionAsync(string competition)
+        public Task<List<Player>> GetPlayerDetailsByInjuredAsync(string competition)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -49,16 +49,16 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Injured Players By Competition
+        /// Get Player Details - by Injured
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public List<Player> GetInjuredPlayersByCompetition(string competition)
+        public List<Player> GetPlayerDetailsByInjured(string competition)
         {
-            return this.GetInjuredPlayersByCompetitionAsync(competition).Result;
+            return this.GetPlayerDetailsByInjuredAsync(competition).Result;
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Date (w/ DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats - by Date Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
@@ -73,7 +73,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Date (w/ DFS Salaries)
+        /// Get Projected Player Game Stats - by Date
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
@@ -83,10 +83,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Upcoming Dfs Slates By Competition Asynchronous
+        /// Get Upcoming DFS Slates - by Competition Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public Task<List<DfsSlate>> GetUpcomingDfsSlatesByCompetitionAsync(string competition)
+        public Task<List<DfsSlate>> GetUpcomingDFSSlatesByCompetitionAsync(string competition)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -96,12 +96,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Upcoming Dfs Slates By Competition
+        /// Get Upcoming DFS Slates - by Competition
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public List<DfsSlate> GetUpcomingDfsSlatesByCompetition(string competition)
+        public List<DfsSlate> GetUpcomingDFSSlatesByCompetition(string competition)
         {
-            return this.GetUpcomingDfsSlatesByCompetitionAsync(competition).Result;
+            return this.GetUpcomingDFSSlatesByCompetitionAsync(competition).Result;
         }
 
     }

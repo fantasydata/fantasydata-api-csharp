@@ -625,9 +625,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal SpecialTeamsTouchdowns { get; set; }
 
         /// <summary>
-        /// Total touchdowns scored
+        /// Total touchdowns scored by this player. Note that this is not inclusive of passes thrown or other such assists; this field refers only to touchdowns scored by the player having the ball in the endzone.
         /// </summary>
-        [Description("Total touchdowns scored")]
+        [Description("Total touchdowns scored by this player. Note that this is not inclusive of passes thrown or other such assists; this field refers only to touchdowns scored by the player having the ball in the endzone.")]
         [DataMember(Name = "Touchdowns", Order = 89)]
         public decimal Touchdowns { get; set; }
 
@@ -1157,9 +1157,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int ScoreID { get; set; }
 
         /// <summary>
-        /// Fantasy points based on FantasyDraft's daily fantasy scoring system.
+        /// This field is no longer in use and will return null.
         /// </summary>
-        [Description("Fantasy points based on FantasyDraft's daily fantasy scoring system.")]
+        [Description("This field is no longer in use and will return null.")]
         [DataMember(Name = "FantasyPointsFantasyDraft", Order = 165)]
         public decimal? FantasyPointsFantasyDraft { get; set; }
 

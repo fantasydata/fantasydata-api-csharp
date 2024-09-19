@@ -11,10 +11,10 @@ namespace FantasyData.Api.Client
         public NASCARv2Client(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Driver Details Asynchronous
+        /// Get Driver Profiles - by Driver Asynchronous
         /// </summary>
         /// <param name="driverid">Unique FantasyData Driver ID. Example:<code>80000268</code>.</param>
-        public Task<Driver> GetDriverDetailsAsync(int driverid)
+        public Task<Driver> GetDriverProfilesByDriverAsync(int driverid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("driverid", driverid.ToString()));
@@ -24,19 +24,19 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Driver Details
+        /// Get Driver Profiles - by Driver
         /// </summary>
         /// <param name="driverid">Unique FantasyData Driver ID. Example:<code>80000268</code>.</param>
-        public Driver GetDriverDetails(int driverid)
+        public Driver GetDriverProfilesByDriver(int driverid)
         {
-            return this.GetDriverDetailsAsync(driverid).Result;
+            return this.GetDriverProfilesByDriverAsync(driverid).Result;
         }
 
         /// <summary>
-        /// Get Driver Race Projections (Entry List) Asynchronous
+        /// Get Projected Player Race Stats - by Race Asynchronous
         /// </summary>
         /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
-        public Task<List<DriverRaceProjection>> GetDriverRaceProjectionsEntryListAsync(int raceid)
+        public Task<List<DriverRaceProjection>> GetProjectedPlayerRaceStatsByRaceAsync(int raceid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("raceid", raceid.ToString()));
@@ -46,18 +46,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Driver Race Projections (Entry List)
+        /// Get Projected Player Race Stats - by Race
         /// </summary>
         /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
-        public List<DriverRaceProjection> GetDriverRaceProjectionsEntryList(int raceid)
+        public List<DriverRaceProjection> GetProjectedPlayerRaceStatsByRace(int raceid)
         {
-            return this.GetDriverRaceProjectionsEntryListAsync(raceid).Result;
+            return this.GetProjectedPlayerRaceStatsByRaceAsync(raceid).Result;
         }
 
         /// <summary>
-        /// Get Drivers Asynchronous
+        /// Get Driver Profiles - All Asynchronous
         /// </summary>
-        public Task<List<Driver>> GetDriversAsync()
+        public Task<List<Driver>> GetDriverProfilesAllAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Driver>>(() =>
@@ -66,18 +66,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Drivers
+        /// Get Driver Profiles - All
         /// </summary>
-        public List<Driver> GetDrivers()
+        public List<Driver> GetDriverProfilesAll()
         {
-            return this.GetDriversAsync().Result;
+            return this.GetDriverProfilesAllAsync().Result;
         }
 
         /// <summary>
-        /// Get Race Results Asynchronous
+        /// Get Leaderboard [Live & Final] Asynchronous
         /// </summary>
         /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
-        public Task<RaceResult> GetRaceResultsAsync(int raceid)
+        public Task<RaceResult> GetLeaderboardLiveFinalAsync(int raceid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("raceid", raceid.ToString()));
@@ -87,19 +87,19 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Race Results
+        /// Get Leaderboard [Live & Final]
         /// </summary>
         /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
-        public RaceResult GetRaceResults(int raceid)
+        public RaceResult GetLeaderboardLiveFinal(int raceid)
         {
-            return this.GetRaceResultsAsync(raceid).Result;
+            return this.GetLeaderboardLiveFinalAsync(raceid).Result;
         }
 
         /// <summary>
-        /// Get Races / Schedule Asynchronous
+        /// Get Schedules Asynchronous
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
-        public Task<List<Race>> GetRacesScheduleAsync(string season)
+        public Task<List<Race>> GetSchedulesAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -109,18 +109,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Races / Schedule
+        /// Get Schedules
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
-        public List<Race> GetRacesSchedule(string season)
+        public List<Race> GetSchedules(string season)
         {
-            return this.GetRacesScheduleAsync(season).Result;
+            return this.GetSchedulesAsync(season).Result;
         }
 
         /// <summary>
-        /// Get Series Asynchronous
+        /// Get Season Current Asynchronous
         /// </summary>
-        public Task<List<Series>> GetSeriesAsync()
+        public Task<List<Series>> GetSeasonCurrentAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Series>>(() =>
@@ -129,11 +129,162 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Series
+        /// Get Season Current
         /// </summary>
-        public List<Series> GetSeries()
+        public List<Series> GetSeasonCurrent()
         {
-            return this.GetSeriesAsync().Result;
+            return this.GetSeasonCurrentAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Drivers - by Active Asynchronous
+        /// </summary>
+        public Task<List<DriverBasic>> GetDriversByActiveAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<DriverBasic>>(() =>
+                base.Get<List<DriverBasic>>("/nascar/v2/{format}/driversbyactive", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Drivers - by Active
+        /// </summary>
+        public List<DriverBasic> GetDriversByActive()
+        {
+            return this.GetDriversByActiveAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Entry List - by Race Asynchronous
+        /// </summary>
+        /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
+        public Task<List<DriverRaceBasic>> GetEntryListByRaceAsync(int raceid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("raceid", raceid.ToString()));
+            return Task.Run<List<DriverRaceBasic>>(() =>
+                base.Get<List<DriverRaceBasic>>("/nascar/v2/{format}/EntryListbyRace/{raceid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Entry List - by Race
+        /// </summary>
+        /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
+        public List<DriverRaceBasic> GetEntryListByRace(int raceid)
+        {
+            return this.GetEntryListByRaceAsync(raceid).Result;
+        }
+
+        /// <summary>
+        /// Get Leaderboard [Final] Asynchronous
+        /// </summary>
+        /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
+        public Task<RaceResult> GetLeaderboardFinalAsync(int raceid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("raceid", raceid.ToString()));
+            return Task.Run<RaceResult>(() =>
+                base.Get<RaceResult>("/nascar/v2/{format}/raceresultfinal/{raceid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Leaderboard [Final]
+        /// </summary>
+        /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
+        public RaceResult GetLeaderboardFinal(int raceid)
+        {
+            return this.GetLeaderboardFinalAsync(raceid).Result;
+        }
+
+        /// <summary>
+        /// Get Tracks Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
+        public Task<List<Tracks>> GetTracksAsync(string season)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            return Task.Run<List<Tracks>>(() =>
+                base.Get<List<Tracks>>("/nascar/v2/{format}/tracks/{season}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Tracks
+        /// </summary>
+        /// <param name="season">Year of the season. Examples: <code>2015</code>, <code>2016</code>.</param>
+        public List<Tracks> GetTracks(string season)
+        {
+            return this.GetTracksAsync(season).Result;
+        }
+
+        /// <summary>
+        /// Get Fantasy Points - by Race Asynchronous
+        /// </summary>
+        /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
+        public Task<FantasyRace> GetFantasyPointsByRaceAsync(int raceid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("raceid", raceid.ToString()));
+            return Task.Run<FantasyRace>(() =>
+                base.Get<FantasyRace>("/nascar/v2/{format}/FantasyGameStatsByRace/{raceid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Fantasy Points - by Race
+        /// </summary>
+        /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
+        public FantasyRace GetFantasyPointsByRace(int raceid)
+        {
+            return this.GetFantasyPointsByRaceAsync(raceid).Result;
+        }
+
+        /// <summary>
+        /// Get Leaderboard (Basic) Asynchronous
+        /// </summary>
+        /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
+        public Task<RaceResultBasic> GetLeaderboardBasicAsync(int raceid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("raceid", raceid.ToString()));
+            return Task.Run<RaceResultBasic>(() =>
+                base.Get<RaceResultBasic>("/nascar/v2/{format}/LeaderboardBasic/{raceid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Leaderboard (Basic)
+        /// </summary>
+        /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
+        public RaceResultBasic GetLeaderboardBasic(int raceid)
+        {
+            return this.GetLeaderboardBasicAsync(raceid).Result;
+        }
+
+        /// <summary>
+        /// Get Leaderboard (Basic) [Final] Asynchronous
+        /// </summary>
+        /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
+        public Task<RaceResultBasic> GetLeaderboardBasicFinalAsync(int raceid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("raceid", raceid.ToString()));
+            return Task.Run<RaceResultBasic>(() =>
+                base.Get<RaceResultBasic>("/nascar/v2/{format}/LeaderboardBasicFinal/{raceid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Leaderboard (Basic) [Final]
+        /// </summary>
+        /// <param name="raceid">Unique FantasyData Race ID. Example:<code>1</code>, <code>2</code>, etc.</param>
+        public RaceResultBasic GetLeaderboardBasicFinal(int raceid)
+        {
+            return this.GetLeaderboardBasicFinalAsync(raceid).Result;
         }
 
     }

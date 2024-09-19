@@ -141,6 +141,20 @@ namespace FantasyData.Api.Client.Model.MLB
         [DataMember(Name = "ConsensusOutcomes", Order = 20019)]
         public ConsensusOutcome[] ConsensusOutcomes { get; set; }
 
+        /// <summary>
+        /// Indicates if the BettingOutcomes have been moved to the archives
+        /// </summary>
+        [Description("Indicates if the BettingOutcomes have been moved to the archives")]
+        [DataMember(Name = "IsArchived", Order = 20)]
+        public bool IsArchived { get; set; }
+
+        /// <summary>
+        /// f IsArchived is true, the location (URL) from where to retrieve the archived BettingOutcomes (API key and sportsbook grouping required); otherwise an empty string
+        /// </summary>
+        [Description("f IsArchived is true, the location (URL) from where to retrieve the archived BettingOutcomes (API key and sportsbook grouping required); otherwise an empty string")]
+        [DataMember(Name = "ArchiveLocation", Order = 21)]
+        public string ArchiveLocation { get; set; }
+
     }
 }
 

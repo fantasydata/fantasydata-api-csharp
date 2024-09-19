@@ -11,7 +11,7 @@ namespace FantasyData.Api.Client
         public NFLv3ProjectionsClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get DFS Slates by Date Asynchronous
+        /// Get DFS Slates - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the slates. Examples: <code>2017-SEP-25</code>, <code>2017-10-31</code>.</param>
         public Task<List<DfsSlate>> GetDFSSlatesByDateAsync(string date)
@@ -24,7 +24,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get DFS Slates by Date
+        /// Get DFS Slates - by Date
         /// </summary>
         /// <param name="date">The date of the slates. Examples: <code>2017-SEP-25</code>, <code>2017-10-31</code>.</param>
         public List<DfsSlate> GetDFSSlatesByDate(string date)
@@ -33,7 +33,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get DFS Slates by Week Asynchronous
+        /// Get DFS Slates - by Week Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code></param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -48,7 +48,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get DFS Slates by Week
+        /// Get DFS Slates - by Week
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code></param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -58,11 +58,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Fantasy Defense Game Stats (w/ DFS Salaries) Asynchronous
+        /// Get Projected Fantasy Defense Game Stats With DFS Salaries Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public Task<List<FantasyDefenseGameProjection>> GetProjectedFantasyDefenseGameStatsAsync(string season, int week)
+        public Task<List<FantasyDefenseGameProjection>> GetProjectedFantasyDefenseGameStatsWithDFSSalariesAsync(string season, int week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -73,20 +73,20 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Fantasy Defense Game Stats (w/ DFS Salaries)
+        /// Get Projected Fantasy Defense Game Stats With DFS Salaries
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public List<FantasyDefenseGameProjection> GetProjectedFantasyDefenseGameStats(string season, int week)
+        public List<FantasyDefenseGameProjection> GetProjectedFantasyDefenseGameStatsWithDFSSalaries(string season, int week)
         {
-            return this.GetProjectedFantasyDefenseGameStatsAsync(season, week).Result;
+            return this.GetProjectedFantasyDefenseGameStatsWithDFSSalariesAsync(season, week).Result;
         }
 
         /// <summary>
-        /// Get Projected Fantasy Defense Season Stats (w/ ADP) Asynchronous
+        /// Get Projected Fantasy Defense Season Stats With ADP Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
-        public Task<List<FantasyDefenseSeasonProjection>> GetProjectedFantasyDefenseSeasonStatsAsync(string season)
+        public Task<List<FantasyDefenseSeasonProjection>> GetProjectedFantasyDefenseSeasonStatsWithADPAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -96,16 +96,16 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Fantasy Defense Season Stats (w/ ADP)
+        /// Get Projected Fantasy Defense Season Stats With ADP
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
-        public List<FantasyDefenseSeasonProjection> GetProjectedFantasyDefenseSeasonStats(string season)
+        public List<FantasyDefenseSeasonProjection> GetProjectedFantasyDefenseSeasonStatsWithADP(string season)
         {
-            return this.GetProjectedFantasyDefenseSeasonStatsAsync(season).Result;
+            return this.GetProjectedFantasyDefenseSeasonStatsWithADPAsync(season).Result;
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Player (w/ Injuries, Lineups, DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats - by Player Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -122,7 +122,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Player (w/ Injuries, Lineups, DFS Salaries)
+        /// Get Projected Player Game Stats - by Player
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -133,7 +133,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Team (w/ Injuries, Lineups, DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats - by Team Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -150,7 +150,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Team (w/ Injuries, Lineups, DFS Salaries)
+        /// Get Projected Player Game Stats - by Team
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -161,7 +161,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Week (w/ Injuries, Lineups, DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats - by Week Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -176,7 +176,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Week (w/ Injuries, Lineups, DFS Salaries)
+        /// Get Projected Player Game Stats - by Week
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -186,10 +186,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats (w/ ADP) Asynchronous
+        /// Get Projected Player Season Stats With ADP Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
-        public Task<List<PlayerSeasonProjection>> GetProjectedPlayerSeasonStatsAsync(string season)
+        public Task<List<PlayerSeasonProjection>> GetProjectedPlayerSeasonStatsWithADPAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -199,20 +199,20 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats (w/ ADP)
+        /// Get Projected Player Season Stats With ADP
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
-        public List<PlayerSeasonProjection> GetProjectedPlayerSeasonStats(string season)
+        public List<PlayerSeasonProjection> GetProjectedPlayerSeasonStatsWithADP(string season)
         {
-            return this.GetProjectedPlayerSeasonStatsAsync(season).Result;
+            return this.GetProjectedPlayerSeasonStatsWithADPAsync(season).Result;
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Player (w/ ADP) Asynchronous
+        /// Get Projected Player Season Stats With ADP - by Player Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>14257</code>.</param>
-        public Task<PlayerSeasonProjection> GetProjectedPlayerSeasonStatsByPlayerAsync(string season, int playerid)
+        public Task<PlayerSeasonProjection> GetProjectedPlayerSeasonStatsWithADPByPlayerAsync(string season, int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -223,21 +223,21 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Player (w/ ADP)
+        /// Get Projected Player Season Stats With ADP - by Player
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>14257</code>.</param>
-        public PlayerSeasonProjection GetProjectedPlayerSeasonStatsByPlayer(string season, int playerid)
+        public PlayerSeasonProjection GetProjectedPlayerSeasonStatsWithADPByPlayer(string season, int playerid)
         {
-            return this.GetProjectedPlayerSeasonStatsByPlayerAsync(season, playerid).Result;
+            return this.GetProjectedPlayerSeasonStatsWithADPByPlayerAsync(season, playerid).Result;
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Team (w/ ADP) Asynchronous
+        /// Get Projected Player Season Stats With ADP - by Team Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
-        public Task<List<PlayerSeasonProjection>> GetProjectedPlayerSeasonStatsByTeamAsync(string season, string team)
+        public Task<List<PlayerSeasonProjection>> GetProjectedPlayerSeasonStatsWithADPByTeamAsync(string season, string team)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -248,17 +248,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Team (w/ ADP)
+        /// Get Projected Player Season Stats With ADP - by Team
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
-        public List<PlayerSeasonProjection> GetProjectedPlayerSeasonStatsByTeam(string season, string team)
+        public List<PlayerSeasonProjection> GetProjectedPlayerSeasonStatsWithADPByTeam(string season, string team)
         {
-            return this.GetProjectedPlayerSeasonStatsByTeamAsync(season, team).Result;
+            return this.GetProjectedPlayerSeasonStatsWithADPByTeamAsync(season, team).Result;
         }
 
         /// <summary>
-        /// Get IDP Projected Player Game Stats by Player (w/ Injuries, Lineups, DFS Salaries) Asynchronous
+        /// Get IDP Projected Player Game Stats - by Player Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -275,7 +275,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get IDP Projected Player Game Stats by Player (w/ Injuries, Lineups, DFS Salaries)
+        /// Get IDP Projected Player Game Stats - by Player
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -286,7 +286,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get IDP Projected Player Game Stats by Team (w/ Injuries, Lineups, DFS Salaries) Asynchronous
+        /// Get IDP Projected Player Game Stats - by Team Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -303,7 +303,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get IDP Projected Player Game Stats by Team (w/ Injuries, Lineups, DFS Salaries)
+        /// Get IDP Projected Player Game Stats - by Team
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -314,7 +314,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get IDP Projected Player Game Stats by Week (w/ Injuries, Lineups, DFS Salaries) Asynchronous
+        /// Get IDP Projected Player Game Stats - by Week Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -329,7 +329,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get IDP Projected Player Game Stats by Week (w/ Injuries, Lineups, DFS Salaries)
+        /// Get IDP Projected Player Game Stats - by Week
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -339,10 +339,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get DFS Slate Ownership Projections by SlateID Asynchronous
+        /// Get DFS Slate Ownership Projections - by Slate Asynchronous
         /// </summary>
         /// <param name="slateId">SlateID of the DFS Slate you wish to get ownership projections for. Will have an empty SlateOwnershipProjections if this slate was not projected</param>
-        public Task<DfsSlateWithOwnershipProjection> GetDFSSlateOwnershipProjectionsBySlateIDAsync(string slateId)
+        public Task<DfsSlateWithOwnershipProjection> GetDFSSlateOwnershipProjectionsBySlateAsync(string slateId)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("slateId", slateId.ToString()));
@@ -352,18 +352,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get DFS Slate Ownership Projections by SlateID
+        /// Get DFS Slate Ownership Projections - by Slate
         /// </summary>
         /// <param name="slateId">SlateID of the DFS Slate you wish to get ownership projections for. Will have an empty SlateOwnershipProjections if this slate was not projected</param>
-        public DfsSlateWithOwnershipProjection GetDFSSlateOwnershipProjectionsBySlateID(string slateId)
+        public DfsSlateWithOwnershipProjection GetDFSSlateOwnershipProjectionsBySlate(string slateId)
         {
-            return this.GetDFSSlateOwnershipProjectionsBySlateIDAsync(slateId).Result;
+            return this.GetDFSSlateOwnershipProjectionsBySlateAsync(slateId).Result;
         }
 
         /// <summary>
-        /// Get Upcoming DFS Slate Ownership Projections Asynchronous
+        /// Get DFS Slate Ownership Projections - Upcoming Asynchronous
         /// </summary>
-        public Task<List<DfsSlateWithOwnershipProjection>> GetUpcomingDFSSlateOwnershipProjectionsAsync()
+        public Task<List<DfsSlateWithOwnershipProjection>> GetDFSSlateOwnershipProjectionsUpcomingAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<DfsSlateWithOwnershipProjection>>(() =>
@@ -372,17 +372,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Upcoming DFS Slate Ownership Projections
+        /// Get DFS Slate Ownership Projections - Upcoming
         /// </summary>
-        public List<DfsSlateWithOwnershipProjection> GetUpcomingDFSSlateOwnershipProjections()
+        public List<DfsSlateWithOwnershipProjection> GetDFSSlateOwnershipProjectionsUpcoming()
         {
-            return this.GetUpcomingDFSSlateOwnershipProjectionsAsync().Result;
+            return this.GetDFSSlateOwnershipProjectionsUpcomingAsync().Result;
         }
 
         /// <summary>
-        /// Get Injured Players Asynchronous
+        /// Get Player Details - by Injured Asynchronous
         /// </summary>
-        public Task<List<Player>> GetInjuredPlayersAsync()
+        public Task<List<Player>> GetPlayerDetailsByInjuredAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Player>>(() =>
@@ -391,11 +391,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Injured Players
+        /// Get Player Details - by Injured
         /// </summary>
-        public List<Player> GetInjuredPlayers()
+        public List<Player> GetPlayerDetailsByInjured()
         {
-            return this.GetInjuredPlayersAsync().Result;
+            return this.GetPlayerDetailsByInjuredAsync().Result;
         }
 
     }
