@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// Total games
+        /// Indicates whether or not a player has recorded any stats for a given game.
         /// </summary>
-        [Description("Total games")]
+        [Description("Indicates whether or not a player has recorded any stats for a given game.")]
         [DataMember(Name = "Games", Order = 3)]
         public int? Games { get; set; }
 
@@ -380,9 +380,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public decimal? FumbleReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Total Quarterback Hurries
+        /// Total Quarterback Hurries. NOTE: This field is deprecated as of 2021.
         /// </summary>
-        [Description("Total Quarterback Hurries")]
+        [Description("Total Quarterback Hurries. NOTE: This field is deprecated as of 2021.")]
         [DataMember(Name = "QuarterbackHurries", Order = 54)]
         public decimal? QuarterbackHurries { get; set; }
 

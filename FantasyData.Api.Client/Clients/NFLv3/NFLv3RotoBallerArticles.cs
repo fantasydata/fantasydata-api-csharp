@@ -30,7 +30,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get RotoBaller Articles by Date Asynchronous
+        /// Get RotoBaller Articles - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the news. Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
         public Task<List<Article>> GetRotoBallerArticlesByDateAsync(string date)
@@ -43,7 +43,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get RotoBaller Articles by Date
+        /// Get RotoBaller Articles - by Date
         /// </summary>
         /// <param name="date">The date of the news. Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
         public List<Article> GetRotoBallerArticlesByDate(string date)
@@ -52,7 +52,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get RotoBaller Articles by Player Asynchronous
+        /// Get RotoBaller Articles - by Player Asynchronous
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code>.</param>
         public Task<List<Article>> GetRotoBallerArticlesByPlayerAsync(int playerid)
@@ -65,7 +65,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get RotoBaller Articles by Player
+        /// Get RotoBaller Articles - by Player
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>10000507</code>.</param>
         public List<Article> GetRotoBallerArticlesByPlayer(int playerid)

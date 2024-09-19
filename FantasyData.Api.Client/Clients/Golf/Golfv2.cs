@@ -11,9 +11,9 @@ namespace FantasyData.Api.Client
         public Golfv2Client(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Injuries Asynchronous
+        /// Get Player Details - by Injured Asynchronous
         /// </summary>
-        public Task<List<Injury>> GetInjuriesAsync()
+        public Task<List<Injury>> GetPlayerDetailsByInjuredAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Injury>>(() =>
@@ -22,11 +22,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Injuries
+        /// Get Player Details - by Injured
         /// </summary>
-        public List<Injury> GetInjuries()
+        public List<Injury> GetPlayerDetailsByInjured()
         {
-            return this.GetInjuriesAsync().Result;
+            return this.GetPlayerDetailsByInjuredAsync().Result;
         }
 
         /// <summary>
@@ -49,10 +49,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Leaderboard Asynchronous
+        /// Get Leaderboard [Live & Final] Asynchronous
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
-        public Task<Leaderboard> GetLeaderboardAsync(int tournamentid)
+        public Task<Leaderboard> GetLeaderboardLiveFinalAsync(int tournamentid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
@@ -62,12 +62,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Leaderboard
+        /// Get Leaderboard [Live & Final]
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
-        public Leaderboard GetLeaderboard(int tournamentid)
+        public Leaderboard GetLeaderboardLiveFinal(int tournamentid)
         {
-            return this.GetLeaderboardAsync(tournamentid).Result;
+            return this.GetLeaderboardLiveFinalAsync(tournamentid).Result;
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get News by Date Asynchronous
+        /// Get News - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.</param>
         public Task<List<News>> GetNewsByDateAsync(string date)
@@ -103,7 +103,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get News by Date
+        /// Get News - by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.</param>
         public List<News> GetNewsByDate(string date)
@@ -112,7 +112,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get News by Player Asynchronous
+        /// Get News - by Player Asynchronous
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>40000019</code>.</param>
         public Task<List<News>> GetNewsByPlayerAsync(int playerid)
@@ -125,7 +125,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get News by Player
+        /// Get News - by Player
         /// </summary>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>40000019</code>.</param>
         public List<News> GetNewsByPlayer(int playerid)
@@ -156,32 +156,32 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Season Stats (w/ World Golf Rankings) Asynchronous
+        /// Get Rankings Asynchronous
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
-        public Task<List<PlayerSeason>> GetPlayerSeasonStatsAsync(string season)
+        public Task<List<PlayerSeason>> GetRankingsAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
             return Task.Run<List<PlayerSeason>>(() =>
-                base.Get<List<PlayerSeason>>("/golf/v2/{format}/PlayerSeasonStats/{season}", parameters)
+                base.Get<List<PlayerSeason>>("/golf/v2/{format}/Rankings/{season}", parameters)
             );
         }
 
         /// <summary>
-        /// Get Player Season Stats (w/ World Golf Rankings)
+        /// Get Rankings
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
-        public List<PlayerSeason> GetPlayerSeasonStats(string season)
+        public List<PlayerSeason> GetRankings(string season)
         {
-            return this.GetPlayerSeasonStatsAsync(season).Result;
+            return this.GetRankingsAsync(season).Result;
         }
 
         /// <summary>
-        /// Get Player Tournament Projected Stats (w/ DraftKings Salaries) Asynchronous
+        /// Get Player Projected Stats - by Tournament Asynchronous
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>78</code>, <code>79</code>, <code>80</code>, etc.</param>
-        public Task<List<PlayerTournamentProjection>> GetPlayerTournamentProjectedStatsAsync(int tournamentid)
+        public Task<List<PlayerTournamentProjection>> GetPlayerProjectedStatsByTournamentAsync(int tournamentid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
@@ -191,16 +191,16 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Tournament Projected Stats (w/ DraftKings Salaries)
+        /// Get Player Projected Stats - by Tournament
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>78</code>, <code>79</code>, <code>80</code>, etc.</param>
-        public List<PlayerTournamentProjection> GetPlayerTournamentProjectedStats(int tournamentid)
+        public List<PlayerTournamentProjection> GetPlayerProjectedStatsByTournament(int tournamentid)
         {
-            return this.GetPlayerTournamentProjectedStatsAsync(tournamentid).Result;
+            return this.GetPlayerProjectedStatsByTournamentAsync(tournamentid).Result;
         }
 
         /// <summary>
-        /// Get Player Tournament Stats By Player Asynchronous
+        /// Get Player Tournament Stats - by Player Asynchronous
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>40000019</code>.</param>
@@ -215,7 +215,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Tournament Stats By Player
+        /// Get Player Tournament Stats - by Player
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>40000019</code>.</param>
@@ -225,9 +225,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Players Asynchronous
+        /// Get Player Profiles - All Asynchronous
         /// </summary>
-        public Task<List<Player>> GetPlayersAsync()
+        public Task<List<Player>> GetPlayerProfilesAllAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Player>>(() =>
@@ -236,17 +236,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Players
+        /// Get Player Profiles - All
         /// </summary>
-        public List<Player> GetPlayers()
+        public List<Player> GetPlayerProfilesAll()
         {
-            return this.GetPlayersAsync().Result;
+            return this.GetPlayerProfilesAllAsync().Result;
         }
 
         /// <summary>
-        /// Get Schedule Asynchronous
+        /// Get Schedules Asynchronous
         /// </summary>
-        public Task<List<Tournament>> GetScheduleAsync()
+        public Task<List<Tournament>> GetSchedulesAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Tournament>>(() =>
@@ -255,18 +255,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedule
+        /// Get Schedules
         /// </summary>
-        public List<Tournament> GetSchedule()
+        public List<Tournament> GetSchedules()
         {
-            return this.GetScheduleAsync().Result;
+            return this.GetSchedulesAsync().Result;
         }
 
         /// <summary>
-        /// Get DFS Slates Asynchronous
+        /// Get DFS Slates - by Tournament Asynchronous
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
-        public Task<List<DfsSlate>> GetDFSSlatesAsync(int tournamentid)
+        public Task<List<DfsSlate>> GetDFSSlatesByTournamentAsync(int tournamentid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
@@ -276,16 +276,16 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get DFS Slates
+        /// Get DFS Slates - by Tournament
         /// </summary>
         /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
-        public List<DfsSlate> GetDFSSlates(int tournamentid)
+        public List<DfsSlate> GetDFSSlatesByTournament(int tournamentid)
         {
-            return this.GetDFSSlatesAsync(tournamentid).Result;
+            return this.GetDFSSlatesByTournamentAsync(tournamentid).Result;
         }
 
         /// <summary>
-        /// Get Schedule by Season Asynchronous
+        /// Get Schedule - by Season Asynchronous
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
         public Task<List<Tournament>> GetScheduleBySeasonAsync(string season)
@@ -298,7 +298,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedule by Season
+        /// Get Schedule - by Season
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
         public List<Tournament> GetScheduleBySeason(string season)
@@ -307,9 +307,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Current Season Asynchronous
+        /// Get Season Current Asynchronous
         /// </summary>
-        public Task<Season> GetCurrentSeasonAsync()
+        public Task<Season> GetSeasonCurrentAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<Season>(() =>
@@ -318,11 +318,228 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Current Season
+        /// Get Season Current
         /// </summary>
-        public Season GetCurrentSeason()
+        public Season GetSeasonCurrent()
         {
-            return this.GetCurrentSeasonAsync().Result;
+            return this.GetSeasonCurrentAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Courses Asynchronous
+        /// </summary>
+        public Task<List<Courses>> GetCoursesAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<Courses>>(() =>
+                base.Get<List<Courses>>("/golf/v2/{format}/Courses", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Courses
+        /// </summary>
+        public List<Courses> GetCourses()
+        {
+            return this.GetCoursesAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Leaderboard (Basic) Asynchronous
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public Task<LeaderboardBasic> GetLeaderboardBasicAsync(int tournamentid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
+            return Task.Run<LeaderboardBasic>(() =>
+                base.Get<LeaderboardBasic>("/golf/v2/{format}/LeaderboardBasic/{tournamentid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Leaderboard (Basic)
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public LeaderboardBasic GetLeaderboardBasic(int tournamentid)
+        {
+            return this.GetLeaderboardBasicAsync(tournamentid).Result;
+        }
+
+        /// <summary>
+        /// Get Leaderboard (Basic) [Final] Asynchronous
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public Task<LeaderboardBasic> GetLeaderboardBasicFinalAsync(int tournamentid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
+            return Task.Run<LeaderboardBasic>(() =>
+                base.Get<LeaderboardBasic>("/golf/v2/{format}/LeaderboardBasicFinal/{tournamentid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Leaderboard (Basic) [Final]
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public LeaderboardBasic GetLeaderboardBasicFinal(int tournamentid)
+        {
+            return this.GetLeaderboardBasicFinalAsync(tournamentid).Result;
+        }
+
+        /// <summary>
+        /// Get Leaderboard [Final] Asynchronous
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public Task<Leaderboard> GetLeaderboardFinalAsync(int tournamentid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
+            return Task.Run<Leaderboard>(() =>
+                base.Get<Leaderboard>("/golf/v2/{format}/LeaderboardFinal/{tournamentid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Leaderboard [Final]
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public Leaderboard GetLeaderboardFinal(int tournamentid)
+        {
+            return this.GetLeaderboardFinalAsync(tournamentid).Result;
+        }
+
+        /// <summary>
+        /// Get Fantasy Points - by Tournament Asynchronous
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>78</code>, <code>79</code>, <code>80</code>, etc.</param>
+        public Task<FantasyTournament> GetFantasyPointsByTournamentAsync(int tournamentid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
+            return Task.Run<FantasyTournament>(() =>
+                base.Get<FantasyTournament>("/golf/v2/{format}/FantasyGameStatsByTournament/{tournamentid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Fantasy Points - by Tournament
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>78</code>, <code>79</code>, <code>80</code>, etc.</param>
+        public FantasyTournament GetFantasyPointsByTournament(int tournamentid)
+        {
+            return this.GetFantasyPointsByTournamentAsync(tournamentid).Result;
+        }
+
+        /// <summary>
+        /// Get Player Hole Scores - by Tournament [Live & Final] Asynchronous
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public Task<List<PlayerTournamentBasic>> GetPlayerHoleScoresByTournamentLiveFinalAsync(int tournamentid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
+            return Task.Run<List<PlayerTournamentBasic>>(() =>
+                base.Get<List<PlayerTournamentBasic>>("/golf/v2/{format}/PlayerTournamentHoleScores/{tournamentid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Hole Scores - by Tournament [Live & Final]
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public List<PlayerTournamentBasic> GetPlayerHoleScoresByTournamentLiveFinal(int tournamentid)
+        {
+            return this.GetPlayerHoleScoresByTournamentLiveFinalAsync(tournamentid).Result;
+        }
+
+        /// <summary>
+        /// Get Player Hole Scores - by Tournament [Final] Asynchronous
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public Task<List<PlayerTournamentBasic>> GetPlayerHoleScoresByTournamentFinalAsync(int tournamentid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
+            return Task.Run<List<PlayerTournamentBasic>>(() =>
+                base.Get<List<PlayerTournamentBasic>>("/golf/v2/{format}/PlayerTournamentHoleScoresFinal/{tournamentid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Hole Scores - by Tournament [Final]
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public List<PlayerTournamentBasic> GetPlayerHoleScoresByTournamentFinal(int tournamentid)
+        {
+            return this.GetPlayerHoleScoresByTournamentFinalAsync(tournamentid).Result;
+        }
+
+        /// <summary>
+        /// Get Scores - by Tournament [Live & Final] Asynchronous
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public Task<List<TournamentRound>> GetScoresByTournamentLiveFinalAsync(int tournamentid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
+            return Task.Run<List<TournamentRound>>(() =>
+                base.Get<List<TournamentRound>>("/golf/v2/{format}/PlayerTournamentRoundScores/{tournamentid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Scores - by Tournament [Live & Final]
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public List<TournamentRound> GetScoresByTournamentLiveFinal(int tournamentid)
+        {
+            return this.GetScoresByTournamentLiveFinalAsync(tournamentid).Result;
+        }
+
+        /// <summary>
+        /// Get Scores - by Tournament [Final] Asynchronous
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public Task<List<TournamentRound>> GetScoresByTournamentFinalAsync(int tournamentid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("tournamentid", tournamentid.ToString()));
+            return Task.Run<List<TournamentRound>>(() =>
+                base.Get<List<TournamentRound>>("/golf/v2/{format}/PlayerTournamentRoundScoresFinal/{tournamentid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Scores - by Tournament [Final]
+        /// </summary>
+        /// <param name="tournamentid">The TournamentID of a tournament. TournamentIDs can be found in the Tournaments API. Valid entries are <code>58</code>, <code>61</code>, etc.</param>
+        public List<TournamentRound> GetScoresByTournamentFinal(int tournamentid)
+        {
+            return this.GetScoresByTournamentFinalAsync(tournamentid).Result;
+        }
+
+        /// <summary>
+        /// Get Player Season Stats Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
+        public Task<List<PlayerSeason>> GetPlayerSeasonStatsAsync(string season)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            return Task.Run<List<PlayerSeason>>(() =>
+                base.Get<List<PlayerSeason>>("/golf/v2/{format}/PlayerSeasonStats/{season}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Season Stats
+        /// </summary>
+        /// <param name="season">Year of the season. Examples: <code>2016</code>, <code>2017</code>.</param>
+        public List<PlayerSeason> GetPlayerSeasonStats(string season)
+        {
+            return this.GetPlayerSeasonStatsAsync(season).Result;
         }
 
     }

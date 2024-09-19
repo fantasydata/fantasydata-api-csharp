@@ -33,10 +33,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fight Asynchronous
+        /// Get Fight [Live & Final] Asynchronous
         /// </summary>
         /// <param name="fightid">The unique ID of this fight. Examples: <code>1100</code>, etc.</param>
-        public Task<FightDetail> GetFightAsync(string fightid)
+        public Task<FightDetail> GetFightLiveFinalAsync(string fightid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("fightid", fightid.ToString()));
@@ -46,12 +46,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fight
+        /// Get Fight [Live & Final]
         /// </summary>
         /// <param name="fightid">The unique ID of this fight. Examples: <code>1100</code>, etc.</param>
-        public FightDetail GetFight(string fightid)
+        public FightDetail GetFightLiveFinal(string fightid)
         {
-            return this.GetFightAsync(fightid).Result;
+            return this.GetFightLiveFinalAsync(fightid).Result;
         }
 
         /// <summary>
@@ -77,9 +77,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fighters Asynchronous
+        /// Get Fighter Profiles - All Asynchronous
         /// </summary>
-        public Task<List<Fighter>> GetFightersAsync()
+        public Task<List<Fighter>> GetFighterProfilesAllAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Fighter>>(() =>
@@ -88,11 +88,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fighters
+        /// Get Fighter Profiles - All
         /// </summary>
-        public List<Fighter> GetFighters()
+        public List<Fighter> GetFighterProfilesAll()
         {
-            return this.GetFightersAsync().Result;
+            return this.GetFighterProfilesAllAsync().Result;
         }
 
         /// <summary>
@@ -115,11 +115,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedule Asynchronous
+        /// Get Schedules Asynchronous
         /// </summary>
         /// <param name="league">The name of the league. Examples: <code>UFC</code>, etc</param>
         /// <param name="season">Year of the season. Examples: <code>2019</code>, <code>2020</code>, etc.</param>
-        public Task<List<Event>> GetScheduleAsync(string league, string season)
+        public Task<List<Event>> GetSchedulesAsync(string league, string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("league", league.ToString()));
@@ -130,13 +130,79 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedule
+        /// Get Schedules
         /// </summary>
         /// <param name="league">The name of the league. Examples: <code>UFC</code>, etc</param>
         /// <param name="season">Year of the season. Examples: <code>2019</code>, <code>2020</code>, etc.</param>
-        public List<Event> GetSchedule(string league, string season)
+        public List<Event> GetSchedules(string league, string season)
         {
-            return this.GetScheduleAsync(league, season).Result;
+            return this.GetSchedulesAsync(league, season).Result;
+        }
+
+        /// <summary>
+        /// Get Fight [Final] Asynchronous
+        /// </summary>
+        /// <param name="fightid">The unique ID of this fight. Examples: <code>1100</code>, etc.</param>
+        public Task<FightDetail> GetFightFinalAsync(string fightid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("fightid", fightid.ToString()));
+            return Task.Run<FightDetail>(() =>
+                base.Get<FightDetail>("/v3/mma/stats/{format}/FightFinal/{fightid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Fight [Final]
+        /// </summary>
+        /// <param name="fightid">The unique ID of this fight. Examples: <code>1100</code>, etc.</param>
+        public FightDetail GetFightFinal(string fightid)
+        {
+            return this.GetFightFinalAsync(fightid).Result;
+        }
+
+        /// <summary>
+        /// Get Fight (Basic) [Live & Final] Asynchronous
+        /// </summary>
+        /// <param name="fightid">The unique ID of this fight. Examples: <code>1100</code>, etc.</param>
+        public Task<FightBasic> GetFightBasicLiveFinalAsync(string fightid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("fightid", fightid.ToString()));
+            return Task.Run<FightBasic>(() =>
+                base.Get<FightBasic>("/v3/mma/stats/{format}/FightBasic/{fightid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Fight (Basic) [Live & Final]
+        /// </summary>
+        /// <param name="fightid">The unique ID of this fight. Examples: <code>1100</code>, etc.</param>
+        public FightBasic GetFightBasicLiveFinal(string fightid)
+        {
+            return this.GetFightBasicLiveFinalAsync(fightid).Result;
+        }
+
+        /// <summary>
+        /// Get Fight (Basic) [Final] Asynchronous
+        /// </summary>
+        /// <param name="fightid">The unique ID of this fight. Examples: <code>1100</code>, etc.</param>
+        public Task<FightBasic> GetFightBasicFinalAsync(string fightid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("fightid", fightid.ToString()));
+            return Task.Run<FightBasic>(() =>
+                base.Get<FightBasic>("/v3/mma/stats/{format}/FightBasicFinal/{fightid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Fight (Basic) [Final]
+        /// </summary>
+        /// <param name="fightid">The unique ID of this fight. Examples: <code>1100</code>, etc.</param>
+        public FightBasic GetFightBasicFinal(string fightid)
+        {
+            return this.GetFightBasicFinalAsync(fightid).Result;
         }
 
     }

@@ -373,9 +373,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public bool? Canceled { get; set; }
 
         /// <summary>
-        /// Indicates whether the game is over and the final score has been verified and closed out.
+        /// NOTE: Use "IsClosed" instead as that's consistent with other sports. The field "Closed" does the exact same thing as "IsClosed" - marks that the game is closed out - but IsClosed exists in other sports as well.
         /// </summary>
-        [Description("Indicates whether the game is over and the final score has been verified and closed out.")]
+        [Description("NOTE: Use \"IsClosed\" instead as that's consistent with other sports. The field \"Closed\" does the exact same thing as \"IsClosed\" - marks that the game is closed out - but IsClosed exists in other sports as well.")]
         [DataMember(Name = "Closed", Order = 53)]
         public bool? Closed { get; set; }
 

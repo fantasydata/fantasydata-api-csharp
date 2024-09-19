@@ -11,7 +11,7 @@ namespace FantasyData.Api.Client
         public Soccerv4OddsClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Betting Events by Date Asynchronous
+        /// Get Betting Events - by Date Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2018-11-20</code>, <code>2018-11-23</code>.</param>
@@ -26,7 +26,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Events by Date
+        /// Get Betting Events - by Date
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2018-11-20</code>, <code>2018-11-23</code>.</param>
@@ -36,7 +36,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Events by Season Asynchronous
+        /// Get Betting Events - by Season Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
@@ -51,7 +51,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Events by Season
+        /// Get Betting Events - by Season
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
@@ -61,7 +61,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Futures by Season Asynchronous
+        /// Get Betting Futures - by Season Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
@@ -76,7 +76,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Futures by Season
+        /// Get Betting Futures - by Season
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
@@ -111,7 +111,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Markets by Event Asynchronous
+        /// Get Betting Markets - by Event Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
@@ -126,7 +126,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Markets by Event
+        /// Get Betting Markets - by Event
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
@@ -136,11 +136,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Markets by GameID Asynchronous
+        /// Get Betting Markets - by Game Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="gameid">The GameID of the desired game for which to pull all betting markets (includes outcomes/bets).</param>
-        public Task<List<BettingMarket>> GetBettingMarketsByGameIDAsync(string competition, int gameid)
+        public Task<List<BettingMarket>> GetBettingMarketsByGameAsync(string competition, int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -151,17 +151,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Markets by GameID
+        /// Get Betting Markets - by Game
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="gameid">The GameID of the desired game for which to pull all betting markets (includes outcomes/bets).</param>
-        public List<BettingMarket> GetBettingMarketsByGameID(string competition, int gameid)
+        public List<BettingMarket> GetBettingMarketsByGame(string competition, int gameid)
         {
-            return this.GetBettingMarketsByGameIDAsync(competition, gameid).Result;
+            return this.GetBettingMarketsByGameAsync(competition, gameid).Result;
         }
 
         /// <summary>
-        /// Get Betting Markets by Market Type Asynchronous
+        /// Get Betting Markets - by Market Type Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
@@ -178,7 +178,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Markets by Market Type
+        /// Get Betting Markets - by Market Type
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
@@ -208,11 +208,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Player Props by GameID Asynchronous
+        /// Get Betting Player Props - by Game Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="gameId">The unique GameID of the game in question.</param>
-        public Task<List<BettingMarket>> GetBettingPlayerPropsByGameIDAsync(string competition, int gameId)
+        public Task<List<BettingMarket>> GetBettingPlayerPropsByGameAsync(string competition, int gameId)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -223,21 +223,21 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Betting Player Props by GameID
+        /// Get Betting Player Props - by Game
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="gameId">The unique GameID of the game in question.</param>
-        public List<BettingMarket> GetBettingPlayerPropsByGameID(string competition, int gameId)
+        public List<BettingMarket> GetBettingPlayerPropsByGame(string competition, int gameId)
         {
-            return this.GetBettingPlayerPropsByGameIDAsync(competition, gameId).Result;
+            return this.GetBettingPlayerPropsByGameAsync(competition, gameId).Result;
         }
 
         /// <summary>
-        /// Get In-Game Odds by Date by Competition Asynchronous
+        /// Get In-Game Odds - by Date Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
-        public Task<List<GameInfo>> GetInGameOddsByDateByCompetitionAsync(string competition, string date)
+        public Task<List<GameInfo>> GetInGameOddsByDateAsync(string competition, string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -248,13 +248,13 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get In-Game Odds by Date by Competition
+        /// Get In-Game Odds - by Date
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
-        public List<GameInfo> GetInGameOddsByDateByCompetition(string competition, string date)
+        public List<GameInfo> GetInGameOddsByDate(string competition, string date)
         {
-            return this.GetInGameOddsByDateByCompetitionAsync(competition, date).Result;
+            return this.GetInGameOddsByDateAsync(competition, date).Result;
         }
 
         /// <summary>
@@ -283,11 +283,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Period Game Odds By Date By Competition Asynchronous
+        /// Get Period Game Odds - by Date Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public Task<List<GameInfo>> GetPeriodGameOddsByDateByCompetitionAsync(string competition, string date)
+        public Task<List<GameInfo>> GetPeriodGameOddsByDateAsync(string competition, string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -298,13 +298,13 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Period Game Odds By Date By Competition
+        /// Get Period Game Odds - by Date
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public List<GameInfo> GetPeriodGameOddsByDateByCompetition(string competition, string date)
+        public List<GameInfo> GetPeriodGameOddsByDate(string competition, string date)
         {
-            return this.GetPeriodGameOddsByDateByCompetitionAsync(competition, date).Result;
+            return this.GetPeriodGameOddsByDateAsync(competition, date).Result;
         }
 
         /// <summary>
@@ -333,11 +333,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Pre-Game Odds by Date by Competition Asynchronous
+        /// Get Pre-Game Odds - by Date Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public Task<List<GameInfo>> GetPreGameOddsByDateByCompetitionAsync(string competition, string date)
+        public Task<List<GameInfo>> GetPreGameOddsByDateAsync(string competition, string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -348,13 +348,13 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Pre-Game Odds by Date by Competition
+        /// Get Pre-Game Odds - by Date
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public List<GameInfo> GetPreGameOddsByDateByCompetition(string competition, string date)
+        public List<GameInfo> GetPreGameOddsByDate(string competition, string date)
         {
-            return this.GetPreGameOddsByDateByCompetitionAsync(competition, date).Result;
+            return this.GetPreGameOddsByDateAsync(competition, date).Result;
         }
 
         /// <summary>
@@ -383,9 +383,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Sportsbooks (Active) Asynchronous
+        /// Get Sportsbooks - by Active Asynchronous
         /// </summary>
-        public Task<List<Sportsbook>> GetSportsbooksActiveAsync()
+        public Task<List<Sportsbook>> GetSportsbooksByActiveAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Sportsbook>>(() =>
@@ -394,11 +394,350 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Sportsbooks (Active)
+        /// Get Sportsbooks - by Active
         /// </summary>
-        public List<Sportsbook> GetSportsbooksActive()
+        public List<Sportsbook> GetSportsbooksByActive()
         {
-            return this.GetSportsbooksActiveAsync().Result;
+            return this.GetSportsbooksByActiveAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Betting Futures - by Season [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<List<BettingEvent>> GetBettingFuturesBySeasonSportsbookGroupAsync(string competition, string season, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<List<BettingEvent>>(() =>
+                base.Get<List<BettingEvent>>("/v4/soccer/odds/{format}/BettingFuturesBySeason/{competition}/{season}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Futures - by Season [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public List<BettingEvent> GetBettingFuturesBySeasonSportsbookGroup(string competition, string season, string sportsbookgroup)
+        {
+            return this.GetBettingFuturesBySeasonSportsbookGroupAsync(competition, season, sportsbookgroup).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Market [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="marketId">The MarketId of the desired market for which to pull all outcomes/bets.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<BettingMarket> GetBettingMarketSportsbookGroupAsync(string competition, string marketId, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("marketId", marketId.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<BettingMarket>(() =>
+                base.Get<BettingMarket>("/v4/soccer/odds/{format}/BettingMarket/{competition}/{marketId}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Market [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="marketId">The MarketId of the desired market for which to pull all outcomes/bets.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public BettingMarket GetBettingMarketSportsbookGroup(string competition, string marketId, string sportsbookgroup)
+        {
+            return this.GetBettingMarketSportsbookGroupAsync(competition, marketId, sportsbookgroup).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Markets - by Event [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<List<BettingMarket>> GetBettingMarketsByEventSportsbookGroupAsync(string competition, string eventId, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("eventId", eventId.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<List<BettingMarket>>(() =>
+                base.Get<List<BettingMarket>>("/v4/soccer/odds/{format}/BettingMarketsByEvent/{competition}/{eventId}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Markets - by Event [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public List<BettingMarket> GetBettingMarketsByEventSportsbookGroup(string competition, string eventId, string sportsbookgroup)
+        {
+            return this.GetBettingMarketsByEventSportsbookGroupAsync(competition, eventId, sportsbookgroup).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Markets - by Game [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameid">The GameID of the desired game for which to pull all betting markets (includes outcomes/bets).</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<List<BettingMarket>> GetBettingMarketsByGameSportsbookGroupAsync(string competition, int gameid, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<List<BettingMarket>>(() =>
+                base.Get<List<BettingMarket>>("/v4/soccer/odds/{format}/BettingMarketsByGameID/{competition}/{gameid}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Markets - by Game [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameid">The GameID of the desired game for which to pull all betting markets (includes outcomes/bets).</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public List<BettingMarket> GetBettingMarketsByGameSportsbookGroup(string competition, int gameid, string sportsbookgroup)
+        {
+            return this.GetBettingMarketsByGameSportsbookGroupAsync(competition, gameid, sportsbookgroup).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Markets - by Market Type [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
+        /// <param name="marketTypeID">The Market Type ID of the desired MarketTypes to pull. Some common types include: <code>1</code> for Game Lines, <code>2</code> for Player Props, <code>3</code> for Team Props, <code>6</code> for Game Props</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<List<BettingMarket>> GetBettingMarketsByMarketTypeSportsbookGroupAsync(string competition, string eventId, string marketTypeID, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("eventId", eventId.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("marketTypeID", marketTypeID.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<List<BettingMarket>>(() =>
+                base.Get<List<BettingMarket>>("/v4/soccer/odds/{format}/BettingMarketsByMarketType/{competition}/{eventId}/{marketTypeID}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Markets - by Market Type [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="eventId">The EventId of the desired event/game for which to pull all betting markets (includes outcomes/bets).</param>
+        /// <param name="marketTypeID">The Market Type ID of the desired MarketTypes to pull. Some common types include: <code>1</code> for Game Lines, <code>2</code> for Player Props, <code>3</code> for Team Props, <code>6</code> for Game Props</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public List<BettingMarket> GetBettingMarketsByMarketTypeSportsbookGroup(string competition, string eventId, string marketTypeID, string sportsbookgroup)
+        {
+            return this.GetBettingMarketsByMarketTypeSportsbookGroupAsync(competition, eventId, marketTypeID, sportsbookgroup).Result;
+        }
+
+        /// <summary>
+        /// Get Betting Player Props - by Game [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameId">The unique GameID of the game in question.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<List<BettingMarket>> GetBettingPlayerPropsByGameSportsbookGroupAsync(string competition, int gameId, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("gameId", gameId.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<List<BettingMarket>>(() =>
+                base.Get<List<BettingMarket>>("/v4/soccer/odds/{format}/BettingPlayerPropsByGameID/{competition}/{gameId}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Betting Player Props - by Game [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameId">The unique GameID of the game in question.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public List<BettingMarket> GetBettingPlayerPropsByGameSportsbookGroup(string competition, int gameId, string sportsbookgroup)
+        {
+            return this.GetBettingPlayerPropsByGameSportsbookGroupAsync(competition, gameId, sportsbookgroup).Result;
+        }
+
+        /// <summary>
+        /// Get In-Game Odds - by Date [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<List<GameInfo>> GetInGameOddsByDateSportsbookGroupAsync(string competition, string date, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v4/soccer/odds/{format}/InGameOddsByDate/{competition}/{date}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get In-Game Odds - by Date [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2018-06-20</code>, <code>2018-06-23</code>.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public List<GameInfo> GetInGameOddsByDateSportsbookGroup(string competition, string date, string sportsbookgroup)
+        {
+            return this.GetInGameOddsByDateSportsbookGroupAsync(competition, date, sportsbookgroup).Result;
+        }
+
+        /// <summary>
+        /// Get In-Game Odds Line Movement [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>14060</code>, <code>14061</code>, etc.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<List<GameInfo>> GetInGameOddsLineMovementSportsbookGroupAsync(string competition, int gameid, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v4/soccer/odds/{format}/InGameOddsLineMovement/{competition}/{gameid}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get In-Game Odds Line Movement [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>14060</code>, <code>14061</code>, etc.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public List<GameInfo> GetInGameOddsLineMovementSportsbookGroup(string competition, int gameid, string sportsbookgroup)
+        {
+            return this.GetInGameOddsLineMovementSportsbookGroupAsync(competition, gameid, sportsbookgroup).Result;
+        }
+
+        /// <summary>
+        /// Get In-Game Odds Line Movement with Resulting [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>14060</code>, <code>14061</code>, etc.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<List<GameInfoResult>> GetInGameOddsLineMovementWithResultingSportsbookGroupAsync(string competition, int gameid, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<List<GameInfoResult>>(() =>
+                base.Get<List<GameInfoResult>>("/v4/soccer/odds/{format}/InGameOddsLineMovementWithResulting/{competition}/{gameid}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get In-Game Odds Line Movement with Resulting [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>14060</code>, <code>14061</code>, etc.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public List<GameInfoResult> GetInGameOddsLineMovementWithResultingSportsbookGroup(string competition, int gameid, string sportsbookgroup)
+        {
+            return this.GetInGameOddsLineMovementWithResultingSportsbookGroupAsync(competition, gameid, sportsbookgroup).Result;
+        }
+
+        /// <summary>
+        /// Get Pre-Game and Period Game Odds - by Date [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<List<GameInfo>> GetPreGameAndPeriodGameOddsByDateSportsbookGroupAsync(string competition, string date, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v4/soccer/odds/{format}/PreGameOddsByDate/{competition}/{date}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Pre-Game and Period Game Odds - by Date [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public List<GameInfo> GetPreGameAndPeriodGameOddsByDateSportsbookGroup(string competition, string date, string sportsbookgroup)
+        {
+            return this.GetPreGameAndPeriodGameOddsByDateSportsbookGroupAsync(competition, date, sportsbookgroup).Result;
+        }
+
+        /// <summary>
+        /// Get Pre-Game and Period Game Odds Line Movement [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>14060</code>, <code>14061</code>, etc.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<List<GameInfo>> GetPreGameAndPeriodGameOddsLineMovementSportsbookGroupAsync(string competition, int gameid, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<List<GameInfo>>(() =>
+                base.Get<List<GameInfo>>("/v4/soccer/odds/{format}/PreGameOddsLineMovement/{competition}/{gameid}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Pre-Game and Period Game Odds Line Movement [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>14060</code>, <code>14061</code>, etc.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public List<GameInfo> GetPreGameAndPeriodGameOddsLineMovementSportsbookGroup(string competition, int gameid, string sportsbookgroup)
+        {
+            return this.GetPreGameAndPeriodGameOddsLineMovementSportsbookGroupAsync(competition, gameid, sportsbookgroup).Result;
+        }
+
+        /// <summary>
+        /// Get Pre-Game and Period Game Odds Line Movement with Resulting [Sportsbook Group] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>14060</code>, <code>14061</code>, etc.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public Task<List<GameInfoResult>> GetPreGameAndPeriodGameOddsLineMovementWithResultingSportsbookGroupAsync(string competition, int gameid, string sportsbookgroup)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("sportsbookgroup", sportsbookgroup.ToString()));
+            return Task.Run<List<GameInfoResult>>(() =>
+                base.Get<List<GameInfoResult>>("/v4/soccer/odds/{format}/PreGameOddsLineMovementWithResulting/{competition}/{gameid}/{sportsbookgroup}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Pre-Game and Period Game Odds Line Movement with Resulting [Sportsbook Group]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>14060</code>, <code>14061</code>, etc.</param>
+        /// <param name="sportsbookgroup">The name of the Sportsbook grouping. Examples: <code>G1100</code></param>
+        public List<GameInfoResult> GetPreGameAndPeriodGameOddsLineMovementWithResultingSportsbookGroup(string competition, int gameid, string sportsbookgroup)
+        {
+            return this.GetPreGameAndPeriodGameOddsLineMovementWithResultingSportsbookGroupAsync(competition, gameid, sportsbookgroup).Result;
         }
 
     }

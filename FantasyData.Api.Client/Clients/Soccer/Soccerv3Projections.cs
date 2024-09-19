@@ -11,7 +11,7 @@ namespace FantasyData.Api.Client
         public Soccerv3ProjectionsClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Competition (w/ DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats - by Competition Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
@@ -26,7 +26,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Competition (w/ DFS Salaries)
+        /// Get Projected Player Game Stats - by Competition
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
@@ -36,7 +36,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Date (w/ DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         public Task<List<PlayerGameProjection>> GetProjectedPlayerGameStatsByDateAsync(string date)
@@ -49,7 +49,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Date (w/ DFS Salaries)
+        /// Get Projected Player Game Stats - by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         public List<PlayerGameProjection> GetProjectedPlayerGameStatsByDate(string date)
@@ -58,7 +58,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Player (w/ DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats - by Player Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>
@@ -73,7 +73,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Player (w/ DFS Salaries)
+        /// Get Projected Player Game Stats - by Player
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>90026231</code>.</param>

@@ -176,6 +176,55 @@ namespace FantasyData.Api.Client.Model.NFLv3
         [DataMember(Name = "ConferenceRank", Order = 24)]
         public int ConferenceRank { get; set; }
 
+        /// <summary>
+        /// Home wins for this team.
+        /// </summary>
+        [Description("Home wins for this team.")]
+        [DataMember(Name = "HomeWins", Order = 25)]
+        public int? HomeWins { get; set; }
+
+        /// <summary>
+        /// Home losses for this team.
+        /// </summary>
+        [Description("Home losses for this team.")]
+        [DataMember(Name = "HomeLosses", Order = 26)]
+        public int? HomeLosses { get; set; }
+
+        /// <summary>
+        /// Home ties for this team.
+        /// </summary>
+        [Description("Home ties for this team.")]
+        [DataMember(Name = "HomeTies", Order = 27)]
+        public int? HomeTies { get; set; }
+
+        /// <summary>
+        /// Away wins for this team.
+        /// </summary>
+        [Description("Away wins for this team.")]
+        [DataMember(Name = "AwayWins", Order = 28)]
+        public int? AwayWins { get; set; }
+
+        /// <summary>
+        /// Away losses for this team.
+        /// </summary>
+        [Description("Away losses for this team.")]
+        [DataMember(Name = "AwayLosses", Order = 29)]
+        public int? AwayLosses { get; set; }
+
+        /// <summary>
+        /// Away ties for this team.
+        /// </summary>
+        [Description("Away ties for this team.")]
+        [DataMember(Name = "AwayTies", Order = 30)]
+        public int? AwayTies { get; set; }
+
+        /// <summary>
+        /// The current winning or losing streak for this team. (negative numbers represent losing streaks)
+        /// </summary>
+        [Description("The current winning or losing streak for this team. (negative numbers represent losing streaks)")]
+        [DataMember(Name = "Streak", Order = 31)]
+        public int? Streak { get; set; }
+
     }
 }
 

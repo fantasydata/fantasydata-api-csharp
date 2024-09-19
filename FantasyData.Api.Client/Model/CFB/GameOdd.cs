@@ -134,6 +134,13 @@ namespace FantasyData.Api.Client.Model.CFB
         [DataMember(Name = "SportsbookUrl", Order = 18)]
         public string SportsbookUrl { get; set; }
 
+        /// <summary>
+        /// The timestamp when these odds were no longer seen, based on US Eastern Time (EST/EDT)
+        /// </summary>
+        [Description("The timestamp when these odds were no longer seen, based on US Eastern Time (EST/EDT)")]
+        [DataMember(Name = "Unlisted", Order = 19)]
+        public DateTime? Unlisted { get; set; }
+
     }
 }
 

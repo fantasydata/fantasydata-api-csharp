@@ -30,10 +30,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Box Score by GameID V3 (formerly Box Score by ScoreID V3) Asynchronous
+        /// Get Box Score [Live & Final] Asynchronous
         /// </summary>
         /// <param name="scoreid">The ScoreID of the game. Possible values include: <code>16247</code>, <code>16245</code>, etc.</param>
-        public Task<BoxScoreV3> GetBoxScoreByGameIDVFormerlyBoxScoreByScoreIDVAsync(int scoreid)
+        public Task<BoxScoreV3> GetBoxScoreLiveFinalAsync(int scoreid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("scoreid", scoreid.ToString()));
@@ -43,21 +43,21 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Box Score by GameID V3 (formerly Box Score by ScoreID V3)
+        /// Get Box Score [Live & Final]
         /// </summary>
         /// <param name="scoreid">The ScoreID of the game. Possible values include: <code>16247</code>, <code>16245</code>, etc.</param>
-        public BoxScoreV3 GetBoxScoreByGameIDVFormerlyBoxScoreByScoreIDV(int scoreid)
+        public BoxScoreV3 GetBoxScoreLiveFinal(int scoreid)
         {
-            return this.GetBoxScoreByGameIDVFormerlyBoxScoreByScoreIDVAsync(scoreid).Result;
+            return this.GetBoxScoreLiveFinalAsync(scoreid).Result;
         }
 
         /// <summary>
-        /// Get Box Score V3 Asynchronous
+        /// Get Box Score - by Team [Live & Final] Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="hometeam">Abbreviation of a team playing in this game. Example: <code>WAS</code>.</param>
-        public Task<BoxScoreV3> GetBoxScoreVAsync(string season, int week, string hometeam)
+        public Task<BoxScoreV3> GetBoxScoreByTeamLiveFinalAsync(string season, int week, string hometeam)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -69,24 +69,24 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Box Score V3
+        /// Get Box Score - by Team [Live & Final]
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="hometeam">Abbreviation of a team playing in this game. Example: <code>WAS</code>.</param>
-        public BoxScoreV3 GetBoxScoreV(string season, int week, string hometeam)
+        public BoxScoreV3 GetBoxScoreByTeamLiveFinal(string season, int week, string hometeam)
         {
-            return this.GetBoxScoreVAsync(season, week, hometeam).Result;
+            return this.GetBoxScoreByTeamLiveFinalAsync(season, week, hometeam).Result;
         }
 
         /// <summary>
-        /// Get Box Scores Delta V3 Asynchronous
+        /// Get Box Scores Delta - by Week Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="playerstoinclude">The subcategory of players to include in the returned PlayerGame records. Possible values include: <code>all</code> Returns all players <code>fantasy</code> Returns traditional fantasy players (QB, RB, WR, TE, K, DST) <code>idp</code> Returns traditional fantasy players and IDP players.</param>
         /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code>, <code>2</code>, etc.</param>
-        public Task<List<BoxScoreV3>> GetBoxScoresDeltaVAsync(string season, int week, string playerstoinclude, string minutes)
+        public Task<List<BoxScoreV3>> GetBoxScoresDeltaByWeekAsync(string season, int week, string playerstoinclude, string minutes)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -99,15 +99,15 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Box Scores Delta V3
+        /// Get Box Scores Delta - by Week
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="playerstoinclude">The subcategory of players to include in the returned PlayerGame records. Possible values include: <code>all</code> Returns all players <code>fantasy</code> Returns traditional fantasy players (QB, RB, WR, TE, K, DST) <code>idp</code> Returns traditional fantasy players and IDP players.</param>
         /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code>, <code>2</code>, etc.</param>
-        public List<BoxScoreV3> GetBoxScoresDeltaV(string season, int week, string playerstoinclude, string minutes)
+        public List<BoxScoreV3> GetBoxScoresDeltaByWeek(string season, int week, string playerstoinclude, string minutes)
         {
-            return this.GetBoxScoresDeltaVAsync(season, week, playerstoinclude, minutes).Result;
+            return this.GetBoxScoresDeltaByWeekAsync(season, week, playerstoinclude, minutes).Result;
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get DFS Slates by Date Asynchronous
+        /// Get DFS Slates - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the slates. Examples: <code>2017-SEP-25</code>, <code>2017-10-31</code>.</param>
         public Task<List<DfsSlate>> GetDFSSlatesByDateAsync(string date)
@@ -190,7 +190,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get DFS Slates by Date
+        /// Get DFS Slates - by Date
         /// </summary>
         /// <param name="date">The date of the slates. Examples: <code>2017-SEP-25</code>, <code>2017-10-31</code>.</param>
         public List<DfsSlate> GetDFSSlatesByDate(string date)
@@ -199,7 +199,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get DFS Slates by Week Asynchronous
+        /// Get DFS Slates - by Week Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -214,7 +214,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get DFS Slates by Week
+        /// Get DFS Slates - by Week
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -224,11 +224,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fantasy Defense Game Stats Asynchronous
+        /// Get Fantasy Defense Game Stats - All Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public Task<List<FantasyDefenseGame>> GetFantasyDefenseGameStatsAsync(string season, int week)
+        public Task<List<FantasyDefenseGame>> GetFantasyDefenseGameStatsAllAsync(string season, int week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -239,17 +239,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fantasy Defense Game Stats
+        /// Get Fantasy Defense Game Stats - All
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public List<FantasyDefenseGame> GetFantasyDefenseGameStats(string season, int week)
+        public List<FantasyDefenseGame> GetFantasyDefenseGameStatsAll(string season, int week)
         {
-            return this.GetFantasyDefenseGameStatsAsync(season, week).Result;
+            return this.GetFantasyDefenseGameStatsAllAsync(season, week).Result;
         }
 
         /// <summary>
-        /// Get Fantasy Defense Game Stats by Team Asynchronous
+        /// Get Fantasy Defense Game Stats - by Team Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -266,7 +266,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fantasy Defense Game Stats by Team
+        /// Get Fantasy Defense Game Stats - by Team
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -277,10 +277,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fantasy Defense Season Stats Asynchronous
+        /// Get Fantasy Defense Season Stats - All Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
-        public Task<List<FantasyDefenseSeason>> GetFantasyDefenseSeasonStatsAsync(string season)
+        public Task<List<FantasyDefenseSeason>> GetFantasyDefenseSeasonStatsAllAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -290,16 +290,16 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fantasy Defense Season Stats
+        /// Get Fantasy Defense Season Stats - All
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
-        public List<FantasyDefenseSeason> GetFantasyDefenseSeasonStats(string season)
+        public List<FantasyDefenseSeason> GetFantasyDefenseSeasonStatsAll(string season)
         {
-            return this.GetFantasyDefenseSeasonStatsAsync(season).Result;
+            return this.GetFantasyDefenseSeasonStatsAllAsync(season).Result;
         }
 
         /// <summary>
-        /// Get Fantasy Defense Season Stats by Team Asynchronous
+        /// Get Fantasy Defense Season Stats - by Team Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
@@ -314,7 +314,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fantasy Defense Season Stats by Team
+        /// Get Fantasy Defense Season Stats - by Team
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
@@ -324,11 +324,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fantasy Player Ownership Percentages (Season-Long) Asynchronous
+        /// Get Fantasy Player Ownership Percentages (Season-Long) - by Week Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public Task<List<PlayerOwnership>> GetFantasyPlayerOwnershipPercentagesSeasonLongAsync(string season, int week)
+        public Task<List<PlayerOwnership>> GetFantasyPlayerOwnershipPercentagesSeasonLongByWeekAsync(string season, int week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -339,17 +339,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fantasy Player Ownership Percentages (Season-Long)
+        /// Get Fantasy Player Ownership Percentages (Season-Long) - by Week
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public List<PlayerOwnership> GetFantasyPlayerOwnershipPercentagesSeasonLong(string season, int week)
+        public List<PlayerOwnership> GetFantasyPlayerOwnershipPercentagesSeasonLongByWeek(string season, int week)
         {
-            return this.GetFantasyPlayerOwnershipPercentagesSeasonLongAsync(season, week).Result;
+            return this.GetFantasyPlayerOwnershipPercentagesSeasonLongByWeekAsync(season, week).Result;
         }
 
         /// <summary>
-        /// Get Fantasy Players with ADP Asynchronous
+        /// Get Fantasy Players - with ADP Asynchronous
         /// </summary>
         public Task<List<FantasyPlayer>> GetFantasyPlayersWithADPAsync()
         {
@@ -360,7 +360,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Fantasy Players with ADP
+        /// Get Fantasy Players - with ADP
         /// </summary>
         public List<FantasyPlayer> GetFantasyPlayersWithADP()
         {
@@ -434,11 +434,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Injuries Asynchronous
+        /// Get Injuries - All Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public Task<List<Injury>> GetInjuriesAsync(string season, int week)
+        public Task<List<Injury>> GetInjuriesAllAsync(string season, int week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -449,17 +449,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Injuries
+        /// Get Injuries - All
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public List<Injury> GetInjuries(string season, int week)
+        public List<Injury> GetInjuriesAll(string season, int week)
         {
-            return this.GetInjuriesAsync(season, week).Result;
+            return this.GetInjuriesAllAsync(season, week).Result;
         }
 
         /// <summary>
-        /// Get Injuries by Team Asynchronous
+        /// Get Injuries - by Team Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -476,7 +476,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Injuries by Team
+        /// Get Injuries - by Team
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -725,7 +725,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get News by Date Asynchronous
+        /// Get News - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the news. Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
         public Task<List<News>> GetNewsByDateAsync(string date)
@@ -738,7 +738,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get News by Date
+        /// Get News - by Date
         /// </summary>
         /// <param name="date">The date of the news. Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.</param>
         public List<News> GetNewsByDate(string date)
@@ -747,7 +747,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get News by Player Asynchronous
+        /// Get News - by Player Asynchronous
         /// </summary>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>14257</code>.</param>
         public Task<List<News>> GetNewsByPlayerAsync(int playerid)
@@ -760,7 +760,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get News by Player
+        /// Get News - by Player
         /// </summary>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>14257</code>.</param>
         public List<News> GetNewsByPlayer(int playerid)
@@ -769,7 +769,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get News by Team Asynchronous
+        /// Get News - by Team Asynchronous
         /// </summary>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
         public Task<List<News>> GetNewsByTeamAsync(string team)
@@ -782,7 +782,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get News by Team
+        /// Get News - by Team
         /// </summary>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
         public List<News> GetNewsByTeam(string team)
@@ -791,7 +791,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Available Asynchronous
+        /// Get Player Details - by Available Asynchronous
         /// </summary>
         public Task<List<Player>> GetPlayerDetailsByAvailableAsync()
         {
@@ -802,7 +802,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Available
+        /// Get Player Details - by Available
         /// </summary>
         public List<Player> GetPlayerDetailsByAvailable()
         {
@@ -810,7 +810,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Free Agents Asynchronous
+        /// Get Player Details - by Free Agents Asynchronous
         /// </summary>
         public Task<List<Player>> GetPlayerDetailsByFreeAgentsAsync()
         {
@@ -821,7 +821,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Free Agents
+        /// Get Player Details - by Free Agents
         /// </summary>
         public List<Player> GetPlayerDetailsByFreeAgents()
         {
@@ -829,7 +829,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Player Asynchronous
+        /// Get Player Details - by Player Asynchronous
         /// </summary>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
         public Task<PlayerDetail> GetPlayerDetailsByPlayerAsync(int playerid)
@@ -842,7 +842,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Player
+        /// Get Player Details - by Player
         /// </summary>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
         public PlayerDetail GetPlayerDetailsByPlayer(int playerid)
@@ -851,7 +851,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Team Asynchronous
+        /// Get Player Details - by Team Asynchronous
         /// </summary>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
         public Task<List<PlayerDetail>> GetPlayerDetailsByTeamAsync(string team)
@@ -864,7 +864,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Team
+        /// Get Player Details - by Team
         /// </summary>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
         public List<PlayerDetail> GetPlayerDetailsByTeam(string team)
@@ -926,12 +926,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Game Stats by Team Asynchronous
+        /// Get Player Game Stats - by Team [Live & Final] Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
-        public Task<List<PlayerGame>> GetPlayerGameStatsByTeamAsync(string season, int week, string team)
+        public Task<List<PlayerGame>> GetPlayerGameStatsByTeamLiveFinalAsync(string season, int week, string team)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -943,22 +943,22 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Game Stats by Team
+        /// Get Player Game Stats - by Team [Live & Final]
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
-        public List<PlayerGame> GetPlayerGameStatsByTeam(string season, int week, string team)
+        public List<PlayerGame> GetPlayerGameStatsByTeamLiveFinal(string season, int week, string team)
         {
-            return this.GetPlayerGameStatsByTeamAsync(season, week, team).Result;
+            return this.GetPlayerGameStatsByTeamLiveFinalAsync(season, week, team).Result;
         }
 
         /// <summary>
-        /// Get Player Game Stats by Week Asynchronous
+        /// Get Player Game Stats - by Week [Live & Final] Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public Task<List<PlayerGame>> GetPlayerGameStatsByWeekAsync(string season, int week)
+        public Task<List<PlayerGame>> GetPlayerGameStatsByWeekLiveFinalAsync(string season, int week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -969,22 +969,22 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Game Stats by Week
+        /// Get Player Game Stats - by Week [Live & Final]
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public List<PlayerGame> GetPlayerGameStatsByWeek(string season, int week)
+        public List<PlayerGame> GetPlayerGameStatsByWeekLiveFinal(string season, int week)
         {
-            return this.GetPlayerGameStatsByWeekAsync(season, week).Result;
+            return this.GetPlayerGameStatsByWeekLiveFinalAsync(season, week).Result;
         }
 
         /// <summary>
-        /// Get Player Game Stats by Week Delta Asynchronous
+        /// Get Player Game Stats Delta - by Week Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code> or <code>2</code>.</param>
-        public Task<List<PlayerGame>> GetPlayerGameStatsByWeekDeltaAsync(string season, int week, string minutes)
+        public Task<List<PlayerGame>> GetPlayerGameStatsDeltaByWeekAsync(string season, int week, string minutes)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -996,14 +996,14 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Game Stats by Week Delta
+        /// Get Player Game Stats Delta - by Week
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
         /// <param name="minutes">Only returns player statistics that have changed in the last X minutes. You specify how many minutes in time to go back. Valid entries are: <code>1</code> or <code>2</code>.</param>
-        public List<PlayerGame> GetPlayerGameStatsByWeekDelta(string season, int week, string minutes)
+        public List<PlayerGame> GetPlayerGameStatsDeltaByWeek(string season, int week, string minutes)
         {
-            return this.GetPlayerGameStatsByWeekDeltaAsync(season, week, minutes).Result;
+            return this.GetPlayerGameStatsDeltaByWeekAsync(season, week, minutes).Result;
         }
 
         /// <summary>
@@ -1073,7 +1073,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Season Stats by Player Asynchronous
+        /// Get Player Season Stats - by Player Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
@@ -1088,7 +1088,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Season Stats by Player
+        /// Get Player Season Stats - by Player
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="playerid">Each NFL player has a unique ID assigned by FantasyData. Player IDs can be determined by pulling player related data. Example:<code>732</code>.</param>
@@ -1098,7 +1098,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Season Stats by Team Asynchronous
+        /// Get Player Season Stats - by Team Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
@@ -1113,7 +1113,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Season Stats by Team
+        /// Get Player Season Stats - by Team
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
@@ -1145,10 +1145,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedule Asynchronous
+        /// Get Schedules Asynchronous
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
-        public Task<List<Schedule>> GetScheduleAsync(string season)
+        public Task<List<Schedule>> GetSchedulesAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -1158,19 +1158,19 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedule
+        /// Get Schedules
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
-        public List<Schedule> GetSchedule(string season)
+        public List<Schedule> GetSchedules(string season)
         {
-            return this.GetScheduleAsync(season).Result;
+            return this.GetSchedulesAsync(season).Result;
         }
 
         /// <summary>
-        /// Get Games by Season (formerly Scores by Season) Asynchronous
+        /// Get Games - by Season [Live & Final] Asynchronous
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
-        public Task<List<Score>> GetGamesBySeasonFormerlyScoresBySeasonAsync(string season)
+        public Task<List<Score>> GetGamesBySeasonLiveFinalAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -1180,20 +1180,20 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Games by Season (formerly Scores by Season)
+        /// Get Games - by Season [Live & Final]
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
-        public List<Score> GetGamesBySeasonFormerlyScoresBySeason(string season)
+        public List<Score> GetGamesBySeasonLiveFinal(string season)
         {
-            return this.GetGamesBySeasonFormerlyScoresBySeasonAsync(season).Result;
+            return this.GetGamesBySeasonLiveFinalAsync(season).Result;
         }
 
         /// <summary>
-        /// Get Games by Week (formerly Scores by Week) Asynchronous
+        /// Get Games - by Week [Live & Final] Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public Task<List<Score>> GetGamesByWeekFormerlyScoresByWeekAsync(string season, int week)
+        public Task<List<Score>> GetGamesByWeekLiveFinalAsync(string season, int week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -1204,17 +1204,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Games by Week (formerly Scores by Week)
+        /// Get Games - by Week [Live & Final]
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public List<Score> GetGamesByWeekFormerlyScoresByWeek(string season, int week)
+        public List<Score> GetGamesByWeekLiveFinal(string season, int week)
         {
-            return this.GetGamesByWeekFormerlyScoresByWeekAsync(season, week).Result;
+            return this.GetGamesByWeekLiveFinalAsync(season, week).Result;
         }
 
         /// <summary>
-        /// Get Season Current Asynchronous
+        /// Get Season - Current Asynchronous
         /// </summary>
         public Task<int?> GetSeasonCurrentAsync()
         {
@@ -1225,7 +1225,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Season Current
+        /// Get Season - Current
         /// </summary>
         public int? GetSeasonCurrent()
         {
@@ -1233,7 +1233,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Season Last Completed Asynchronous
+        /// Get Season - Last Completed Asynchronous
         /// </summary>
         public Task<int?> GetSeasonLastCompletedAsync()
         {
@@ -1244,7 +1244,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Season Last Completed
+        /// Get Season - Last Completed
         /// </summary>
         public int? GetSeasonLastCompleted()
         {
@@ -1252,7 +1252,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Season Upcoming Asynchronous
+        /// Get Season - Upcoming Asynchronous
         /// </summary>
         public Task<int?> GetSeasonUpcomingAsync()
         {
@@ -1263,7 +1263,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Season Upcoming
+        /// Get Season - Upcoming
         /// </summary>
         public int? GetSeasonUpcoming()
         {
@@ -1312,11 +1312,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Team Game Stats Asynchronous
+        /// Get Team Game Stats - by Game [Live & Final] Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public Task<List<TeamGame>> GetTeamGameStatsAsync(string season, int week)
+        public Task<List<TeamGame>> GetTeamGameStatsByGameLiveFinalAsync(string season, int week)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -1327,13 +1327,13 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Team Game Stats
+        /// Get Team Game Stats - by Game [Live & Final]
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
-        public List<TeamGame> GetTeamGameStats(string season, int week)
+        public List<TeamGame> GetTeamGameStatsByGameLiveFinal(string season, int week)
         {
-            return this.GetTeamGameStatsAsync(season, week).Result;
+            return this.GetTeamGameStatsByGameLiveFinalAsync(season, week).Result;
         }
 
         /// <summary>
@@ -1359,9 +1359,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Teams (Active) Asynchronous
+        /// Get Team Profiles - by Active Asynchronous
         /// </summary>
-        public Task<List<Team>> GetTeamsActiveAsync()
+        public Task<List<Team>> GetTeamProfilesByActiveAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Team>>(() =>
@@ -1370,17 +1370,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Teams (Active)
+        /// Get Team Profiles - by Active
         /// </summary>
-        public List<Team> GetTeamsActive()
+        public List<Team> GetTeamProfilesByActive()
         {
-            return this.GetTeamsActiveAsync().Result;
+            return this.GetTeamProfilesByActiveAsync().Result;
         }
 
         /// <summary>
-        /// Get Teams (All) Asynchronous
+        /// Get Team Profiles - All Asynchronous
         /// </summary>
-        public Task<List<Team>> GetTeamsAllAsync()
+        public Task<List<Team>> GetTeamProfilesAllAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Team>>(() =>
@@ -1389,18 +1389,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Teams (All)
+        /// Get Team Profiles - All
         /// </summary>
-        public List<Team> GetTeamsAll()
+        public List<Team> GetTeamProfilesAll()
         {
-            return this.GetTeamsAllAsync().Result;
+            return this.GetTeamProfilesAllAsync().Result;
         }
 
         /// <summary>
-        /// Get Teams by Season Asynchronous
+        /// Get Team Profiles - by Season Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
-        public Task<List<Team>> GetTeamsBySeasonAsync(string season)
+        public Task<List<Team>> GetTeamProfilesBySeasonAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -1410,12 +1410,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Teams by Season
+        /// Get Team Profiles - by Season
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
-        public List<Team> GetTeamsBySeason(string season)
+        public List<Team> GetTeamProfilesBySeason(string season)
         {
-            return this.GetTeamsBySeasonAsync(season).Result;
+            return this.GetTeamProfilesBySeasonAsync(season).Result;
         }
 
         /// <summary>
@@ -1441,7 +1441,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Week Current Asynchronous
+        /// Get Week - Current Asynchronous
         /// </summary>
         public Task<int?> GetWeekCurrentAsync()
         {
@@ -1452,7 +1452,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Week Current
+        /// Get Week - Current
         /// </summary>
         public int? GetWeekCurrent()
         {
@@ -1460,7 +1460,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Week Last Completed Asynchronous
+        /// Get Week - Last Completed Asynchronous
         /// </summary>
         public Task<int?> GetWeekLastCompletedAsync()
         {
@@ -1471,7 +1471,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Week Last Completed
+        /// Get Week - Last Completed
         /// </summary>
         public int? GetWeekLastCompleted()
         {
@@ -1479,7 +1479,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Week Upcoming Asynchronous
+        /// Get Week - Upcoming Asynchronous
         /// </summary>
         public Task<int?> GetWeekUpcomingAsync()
         {
@@ -1490,7 +1490,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Week Upcoming
+        /// Get Week - Upcoming
         /// </summary>
         public int? GetWeekUpcoming()
         {
@@ -1520,10 +1520,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Box Scores V3 Simulation Asynchronous
+        /// Get Box Scores Simulation Asynchronous
         /// </summary>
         /// <param name="numberofplays">The number of plays to progress in this NFL live game simulation. Example entries are <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>150</code>, <code>200</code>, etc.</param>
-        public Task<List<BoxScoreV3>> GetBoxScoresVSimulationAsync(string numberofplays)
+        public Task<List<BoxScoreV3>> GetBoxScoresSimulationAsync(string numberofplays)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("numberofplays", numberofplays.ToString()));
@@ -1533,12 +1533,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Box Scores V3 Simulation
+        /// Get Box Scores Simulation
         /// </summary>
         /// <param name="numberofplays">The number of plays to progress in this NFL live game simulation. Example entries are <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>150</code>, <code>200</code>, etc.</param>
-        public List<BoxScoreV3> GetBoxScoresVSimulation(string numberofplays)
+        public List<BoxScoreV3> GetBoxScoresSimulation(string numberofplays)
         {
-            return this.GetBoxScoresVSimulationAsync(numberofplays).Result;
+            return this.GetBoxScoresSimulationAsync(numberofplays).Result;
         }
 
         /// <summary>
@@ -1564,7 +1564,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Game Red Zone Stats Inside Five Asynchronous
+        /// Get Player Game Red Zone Stats (Inside Five) Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -1579,7 +1579,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Game Red Zone Stats Inside Five
+        /// Get Player Game Red Zone Stats (Inside Five)
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -1589,7 +1589,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Game Red Zone Stats Inside Ten Asynchronous
+        /// Get Player Game Red Zone Stats (Inside Ten) Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -1604,7 +1604,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Game Red Zone Stats Inside Ten
+        /// Get Player Game Red Zone Stats (Inside Ten)
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
@@ -1614,7 +1614,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Season Red Zone Stats Inside Five Asynchronous
+        /// Get Player Season Red Zone Stats (Inside Five) Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         public Task<List<PlayerSeasonRedZone>> GetPlayerSeasonRedZoneStatsInsideFiveAsync(string season)
@@ -1627,7 +1627,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Season Red Zone Stats Inside Five
+        /// Get Player Season Red Zone Stats (Inside Five)
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         public List<PlayerSeasonRedZone> GetPlayerSeasonRedZoneStatsInsideFive(string season)
@@ -1636,7 +1636,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Season Red Zone Stats Inside Ten Asynchronous
+        /// Get Player Season Red Zone Stats (Inside Ten) Asynchronous
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         public Task<List<PlayerSeasonRedZone>> GetPlayerSeasonRedZoneStatsInsideTenAsync(string season)
@@ -1649,7 +1649,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Season Red Zone Stats Inside Ten
+        /// Get Player Season Red Zone Stats (Inside Ten)
         /// </summary>
         /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
         public List<PlayerSeasonRedZone> GetPlayerSeasonRedZoneStatsInsideTen(string season)
@@ -1658,7 +1658,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Rookie Draft Year Asynchronous
+        /// Get Player Details - by Rookie Draft Year Asynchronous
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2018</code>, <code>2019</code>, etc.</param>
         public Task<List<Player>> GetPlayerDetailsByRookieDraftYearAsync(string season)
@@ -1671,7 +1671,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details by Rookie Draft Year
+        /// Get Player Details - by Rookie Draft Year
         /// </summary>
         /// <param name="season">Year of the season. Examples: <code>2018</code>, <code>2019</code>, etc.</param>
         public List<Player> GetPlayerDetailsByRookieDraftYear(string season)
@@ -1680,7 +1680,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Game Logs By Season Asynchronous
+        /// Get Player Game Logs - by Season Asynchronous
         /// </summary>
         /// <param name="season">Season to get games from. Example <code>2019POST</code>, <code>2020</code></param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>17920</code>.</param>
@@ -1697,7 +1697,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Game Logs By Season
+        /// Get Player Game Logs - by Season
         /// </summary>
         /// <param name="season">Season to get games from. Example <code>2019POST</code>, <code>2020</code></param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>17920</code>.</param>
@@ -1708,10 +1708,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Games by Date (formerly Scores by Date) Asynchronous
+        /// Get Games - by Date [Live & Final] Asynchronous
         /// </summary>
         /// <param name="date">The date of the games. Examples: <code>2021-SEP-12</code>, <code>2021-NOV-28</code>.</param>
-        public Task<List<Score>> GetGamesByDateFormerlyScoresByDateAsync(string date)
+        public Task<List<Score>> GetGamesByDateLiveFinalAsync(string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
@@ -1721,16 +1721,16 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Games by Date (formerly Scores by Date)
+        /// Get Games - by Date [Live & Final]
         /// </summary>
         /// <param name="date">The date of the games. Examples: <code>2021-SEP-12</code>, <code>2021-NOV-28</code>.</param>
-        public List<Score> GetGamesByDateFormerlyScoresByDate(string date)
+        public List<Score> GetGamesByDateLiveFinal(string date)
         {
-            return this.GetGamesByDateFormerlyScoresByDateAsync(date).Result;
+            return this.GetGamesByDateLiveFinalAsync(date).Result;
         }
 
         /// <summary>
-        /// Get Team Game Logs By Season Asynchronous
+        /// Get Team Game Logs - by Season Asynchronous
         /// </summary>
         /// <param name="season">Season to get games from. Example <code>2019POST</code>, <code>2020</code></param>
         /// <param name="teamid">Unique ID of team. Example <code> 8 </code></param>
@@ -1747,7 +1747,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Team Game Logs By Season
+        /// Get Team Game Logs - by Season
         /// </summary>
         /// <param name="season">Season to get games from. Example <code>2019POST</code>, <code>2020</code></param>
         /// <param name="teamid">Unique ID of team. Example <code> 8 </code></param>
@@ -1755,6 +1755,231 @@ namespace FantasyData.Api.Client
         public List<TeamGame> GetTeamGameLogsBySeason(string season, int teamid, string numberofgames)
         {
             return this.GetTeamGameLogsBySeasonAsync(season, teamid, numberofgames).Result;
+        }
+
+        /// <summary>
+        /// Get Box Score [Final] Asynchronous
+        /// </summary>
+        /// <param name="scoreid">The ScoreID of the game. Possible values include: <code>16247</code>, <code>16245</code>, etc.</param>
+        public Task<BoxScoreV3> GetBoxScoreFinalAsync(int scoreid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("scoreid", scoreid.ToString()));
+            return Task.Run<BoxScoreV3>(() =>
+                base.Get<BoxScoreV3>("/v3/nfl/stats/{format}/BoxScoreFinal/{scoreid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Box Score [Final]
+        /// </summary>
+        /// <param name="scoreid">The ScoreID of the game. Possible values include: <code>16247</code>, <code>16245</code>, etc.</param>
+        public BoxScoreV3 GetBoxScoreFinal(int scoreid)
+        {
+            return this.GetBoxScoreFinalAsync(scoreid).Result;
+        }
+
+        /// <summary>
+        /// Get Box Scores - by Week [Final] Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public Task<List<BoxScoreV3>> GetBoxScoresByWeekFinalAsync(string season, int week)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            return Task.Run<List<BoxScoreV3>>(() =>
+                base.Get<List<BoxScoreV3>>("/v3/nfl/stats/{format}/BoxScoresFinal/{season}/{week}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Box Scores - by Week [Final]
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public List<BoxScoreV3> GetBoxScoresByWeekFinal(string season, int week)
+        {
+            return this.GetBoxScoresByWeekFinalAsync(season, week).Result;
+        }
+
+        /// <summary>
+        /// Get Player Game Stats - by Week [Final] Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public Task<List<PlayerGame>> GetPlayerGameStatsByWeekFinalAsync(string season, int week)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            return Task.Run<List<PlayerGame>>(() =>
+                base.Get<List<PlayerGame>>("/v3/nfl/stats/{format}/PlayerGameStatsByWeekFinal/{season}/{week}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Game Stats - by Week [Final]
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public List<PlayerGame> GetPlayerGameStatsByWeekFinal(string season, int week)
+        {
+            return this.GetPlayerGameStatsByWeekFinalAsync(season, week).Result;
+        }
+
+        /// <summary>
+        /// Get Team Game Stats - by Game [Final] Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public Task<List<TeamGame>> GetTeamGameStatsByGameFinalAsync(string season, int week)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            return Task.Run<List<TeamGame>>(() =>
+                base.Get<List<TeamGame>>("/v3/nfl/stats/{format}/TeamGameStatsFinal/{season}/{week}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Team Game Stats - by Game [Final]
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public List<TeamGame> GetTeamGameStatsByGameFinal(string season, int week)
+        {
+            return this.GetTeamGameStatsByGameFinalAsync(season, week).Result;
+        }
+
+        /// <summary>
+        /// Get Games - by Season [Final] Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
+        public Task<List<Score>> GetGamesBySeasonFinalAsync(string season)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            return Task.Run<List<Score>>(() =>
+                base.Get<List<Score>>("/v3/nfl/stats/{format}/ScoresFinal/{season}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Games - by Season [Final]
+        /// </summary>
+        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc.</param>
+        public List<Score> GetGamesBySeasonFinal(string season)
+        {
+            return this.GetGamesBySeasonFinalAsync(season).Result;
+        }
+
+        /// <summary>
+        /// Get Games - by Week [Final] Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public Task<List<Score>> GetGamesByWeekFinalAsync(string season, int week)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            return Task.Run<List<Score>>(() =>
+                base.Get<List<Score>>("/v3/nfl/stats/{format}/ScoresByWeekFinal/{season}/{week}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Games - by Week [Final]
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public List<Score> GetGamesByWeekFinal(string season, int week)
+        {
+            return this.GetGamesByWeekFinalAsync(season, week).Result;
+        }
+
+        /// <summary>
+        /// Get Player Game Stats - by Team [Final] Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
+        public Task<List<PlayerGame>> GetPlayerGameStatsByTeamFinalAsync(string season, int week, string team)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
+            return Task.Run<List<PlayerGame>>(() =>
+                base.Get<List<PlayerGame>>("/v3/nfl/stats/{format}/PlayerGameStatsByTeamFinal/{season}/{week}/{team}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Player Game Stats - by Team [Final]
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        /// <param name="team">Abbreviation of the team. Example: <code>WAS</code>.</param>
+        public List<PlayerGame> GetPlayerGameStatsByTeamFinal(string season, int week, string team)
+        {
+            return this.GetPlayerGameStatsByTeamFinalAsync(season, week, team).Result;
+        }
+
+        /// <summary>
+        /// Get Box Score - by Team [Final] Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        /// <param name="hometeam">Abbreviation of a team playing in this game. Example: <code>WAS</code>.</param>
+        public Task<BoxScoreV3> GetBoxScoreByTeamFinalAsync(string season, int week, string hometeam)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("hometeam", hometeam.ToString()));
+            return Task.Run<BoxScoreV3>(() =>
+                base.Get<BoxScoreV3>("/v3/nfl/stats/{format}/BoxScoreByTeamFinal/{season}/{week}/{hometeam}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Box Score - by Team [Final]
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        /// <param name="hometeam">Abbreviation of a team playing in this game. Example: <code>WAS</code>.</param>
+        public BoxScoreV3 GetBoxScoreByTeamFinal(string season, int week, string hometeam)
+        {
+            return this.GetBoxScoreByTeamFinalAsync(season, week, hometeam).Result;
+        }
+
+        /// <summary>
+        /// Get Fantasy Points - by Week Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public Task<List<FantasyGame>> GetFantasyPointsByWeekAsync(string season, int week)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            return Task.Run<List<FantasyGame>>(() =>
+                base.Get<List<FantasyGame>>("/v3/nfl/stats/{format}/FantasyGameStatsByWeek/{season}/{week}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Fantasy Points - by Week
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public List<FantasyGame> GetFantasyPointsByWeek(string season, int week)
+        {
+            return this.GetFantasyPointsByWeekAsync(season, week).Result;
         }
 
     }

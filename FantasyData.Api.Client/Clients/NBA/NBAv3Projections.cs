@@ -11,7 +11,7 @@ namespace FantasyData.Api.Client
         public NBAv3ProjectionsClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get DFS Slates by Date Asynchronous
+        /// Get DFS Slates - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-DEC-01</code>, <code>2018-FEB-15</code>.</param>
         public Task<List<DfsSlate>> GetDFSSlatesByDateAsync(string date)
@@ -24,7 +24,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get DFS Slates by Date
+        /// Get DFS Slates - by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2017-DEC-01</code>, <code>2018-FEB-15</code>.</param>
         public List<DfsSlate> GetDFSSlatesByDate(string date)
@@ -33,7 +33,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Date (w/ Injuries, DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.</param>
         public Task<List<PlayerGameProjection>> GetProjectedPlayerGameStatsByDateAsync(string date)
@@ -46,7 +46,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Date (w/ Injuries, DFS Salaries)
+        /// Get Projected Player Game Stats - by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.</param>
         public List<PlayerGameProjection> GetProjectedPlayerGameStatsByDate(string date)
@@ -55,7 +55,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Player (w/ Injuries, DFS Salaries) Asynchronous
+        /// Get Projected Player Game Stats - by Player Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>20000571</code>.</param>
@@ -70,7 +70,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Game Stats by Player (w/ Injuries, DFS Salaries)
+        /// Get Projected Player Game Stats - by Player
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>20000571</code>.</param>
@@ -102,7 +102,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Player Asynchronous
+        /// Get Projected Player Season Stats - by Player Asynchronous
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2019</code>, etc.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>20000571</code>.</param>
@@ -117,7 +117,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Player
+        /// Get Projected Player Season Stats - by Player
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2019</code>, etc.</param>
         /// <param name="playerid">Unique FantasyData Player ID. Example:<code>20000571</code>.</param>
@@ -127,7 +127,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Team Asynchronous
+        /// Get Projected Player Season Stats - by Team Asynchronous
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2019</code>, etc.</param>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>PHI</code>.</param>
@@ -142,7 +142,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Projected Player Season Stats by Team
+        /// Get Projected Player Season Stats - by Team
         /// </summary>
         /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2019</code>, etc.</param>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>MIA</code>, <code>PHI</code>.</param>
@@ -152,7 +152,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Starting Lineups by Date Asynchronous
+        /// Get Starting Lineups - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2021-OCT-12</code>, <code>2021-DEC-09</code>.</param>
         public Task<List<StartingLineups>> GetStartingLineupsByDateAsync(string date)
@@ -165,7 +165,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Starting Lineups by Date
+        /// Get Starting Lineups - by Date
         /// </summary>
         /// <param name="date">The date of the game(s). Examples: <code>2021-OCT-12</code>, <code>2021-DEC-09</code>.</param>
         public List<StartingLineups> GetStartingLineupsByDate(string date)
@@ -174,9 +174,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Injured Players Asynchronous
+        /// Get Player Details - by Injured Asynchronous
         /// </summary>
-        public Task<List<Player>> GetInjuredPlayersAsync()
+        public Task<List<Player>> GetPlayerDetailsByInjuredAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Player>>(() =>
@@ -185,11 +185,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Injured Players
+        /// Get Player Details - by Injured
         /// </summary>
-        public List<Player> GetInjuredPlayers()
+        public List<Player> GetPlayerDetailsByInjured()
         {
-            return this.GetInjuredPlayersAsync().Result;
+            return this.GetPlayerDetailsByInjuredAsync().Result;
         }
 
         /// <summary>

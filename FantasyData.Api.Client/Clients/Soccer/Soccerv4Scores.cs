@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Canceled Memberships Asynchronous
+        /// Get Memberships - by Canceled Asynchronous
         /// </summary>
-        public Task<CanceledMembership> GetCanceledMembershipsAsync()
+        public Task<CanceledMembership> GetMembershipsByCanceledAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<CanceledMembership>(() =>
@@ -41,18 +41,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Canceled Memberships
+        /// Get Memberships - by Canceled
         /// </summary>
-        public CanceledMembership GetCanceledMemberships()
+        public CanceledMembership GetMembershipsByCanceled()
         {
-            return this.GetCanceledMembershipsAsync().Result;
+            return this.GetMembershipsByCanceledAsync().Result;
         }
 
         /// <summary>
-        /// Get Competition Fixtures (League Details) Asynchronous
+        /// Get Games - by Competition [Live & Final] Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public Task<CompetitionDetail> GetCompetitionFixturesLeagueDetailsAsync(string competition)
+        public Task<CompetitionDetail> GetGamesByCompetitionLiveFinalAsync(string competition)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -62,12 +62,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Competition Fixtures (League Details)
+        /// Get Games - by Competition [Live & Final]
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public CompetitionDetail GetCompetitionFixturesLeagueDetails(string competition)
+        public CompetitionDetail GetGamesByCompetitionLiveFinal(string competition)
         {
-            return this.GetCompetitionFixturesLeagueDetailsAsync(competition).Result;
+            return this.GetGamesByCompetitionLiveFinalAsync(competition).Result;
         }
 
         /// <summary>
@@ -90,11 +90,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Games by Date - Legacy Asynchronous
+        /// Get Games - by Date [Live & Final] Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public Task<List<Game>> GetGamesByDateLegacyAsync(string competition, string date)
+        public Task<List<Game>> GetGamesByDateLiveFinalAsync(string competition, string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -105,20 +105,20 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Games by Date - Legacy
+        /// Get Games - by Date [Live & Final]
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public List<Game> GetGamesByDateLegacy(string competition, string date)
+        public List<Game> GetGamesByDateLiveFinal(string competition, string date)
         {
-            return this.GetGamesByDateLegacyAsync(competition, date).Result;
+            return this.GetGamesByDateLiveFinalAsync(competition, date).Result;
         }
 
         /// <summary>
-        /// Get Memberships (Active) Asynchronous
+        /// Get Memberships - by Active Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public Task<List<Membership>> GetMembershipsActiveAsync(string competition)
+        public Task<List<Membership>> GetMembershipsByActiveAsync(string competition)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -128,20 +128,20 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Memberships (Active)
+        /// Get Memberships - by Active
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public List<Membership> GetMembershipsActive(string competition)
+        public List<Membership> GetMembershipsByActive(string competition)
         {
-            return this.GetMembershipsActiveAsync(competition).Result;
+            return this.GetMembershipsByActiveAsync(competition).Result;
         }
 
         /// <summary>
-        /// Get Memberships (Recently Changed) Asynchronous
+        /// Get Memberships - by Recently Changed Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="days">The number of days since memberships were updated. For example, if you pass <code>3</code>, you'll receive all memberships that have been updated in the past 3 days. Valid entries are: <code>1</code>, <code>2</code> ... <code>30</code></param>
-        public Task<List<Membership>> GetMembershipsRecentlyChangedAsync(string competition, string days)
+        public Task<List<Membership>> GetMembershipsByRecentlyChangedAsync(string competition, string days)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -152,21 +152,21 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Memberships (Recently Changed)
+        /// Get Memberships - by Recently Changed
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="days">The number of days since memberships were updated. For example, if you pass <code>3</code>, you'll receive all memberships that have been updated in the past 3 days. Valid entries are: <code>1</code>, <code>2</code> ... <code>30</code></param>
-        public List<Membership> GetMembershipsRecentlyChanged(string competition, string days)
+        public List<Membership> GetMembershipsByRecentlyChanged(string competition, string days)
         {
-            return this.GetMembershipsRecentlyChangedAsync(competition, days).Result;
+            return this.GetMembershipsByRecentlyChangedAsync(competition, days).Result;
         }
 
         /// <summary>
-        /// Get Memberships by Team (Historical) Asynchronous
+        /// Get Memberships Historical - by Team Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
-        public Task<List<Membership>> GetMembershipsByTeamHistoricalAsync(string competition, int teamid)
+        public Task<List<Membership>> GetMembershipsHistoricalByTeamAsync(string competition, int teamid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -177,21 +177,21 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Memberships by Team (Historical)
+        /// Get Memberships Historical - by Team
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
-        public List<Membership> GetMembershipsByTeamHistorical(string competition, int teamid)
+        public List<Membership> GetMembershipsHistoricalByTeam(string competition, int teamid)
         {
-            return this.GetMembershipsByTeamHistoricalAsync(competition, teamid).Result;
+            return this.GetMembershipsHistoricalByTeamAsync(competition, teamid).Result;
         }
 
         /// <summary>
-        /// Get Players by Team - Legacy Asynchronous
+        /// Get Player Details - by Team Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
-        public Task<List<Player>> GetPlayersByTeamLegacyAsync(string competition, int teamid)
+        public Task<List<Player>> GetPlayerDetailsByTeamAsync(string competition, int teamid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -202,21 +202,21 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Players by Team - Legacy
+        /// Get Player Details - by Team
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
-        public List<Player> GetPlayersByTeamLegacy(string competition, int teamid)
+        public List<Player> GetPlayerDetailsByTeam(string competition, int teamid)
         {
-            return this.GetPlayersByTeamLegacyAsync(competition, teamid).Result;
+            return this.GetPlayerDetailsByTeamAsync(competition, teamid).Result;
         }
 
         /// <summary>
-        /// Get Schedule - Legacy Asynchronous
+        /// Get Schedules Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
-        public Task<List<Round>> GetScheduleLegacyAsync(string competition, string season)
+        public Task<List<Round>> GetSchedulesAsync(string competition, string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -227,21 +227,21 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedule - Legacy
+        /// Get Schedules
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
-        public List<Round> GetScheduleLegacy(string competition, string season)
+        public List<Round> GetSchedules(string competition, string season)
         {
-            return this.GetScheduleLegacyAsync(competition, season).Result;
+            return this.GetSchedulesAsync(competition, season).Result;
         }
 
         /// <summary>
-        /// Get Season Teams Asynchronous
+        /// Get Team Profiles - by Season Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="seasonid">Unique FantasyData Season ID. SeasonIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
-        public Task<List<SeasonTeam>> GetSeasonTeamsAsync(string competition, int seasonid)
+        public Task<List<SeasonTeam>> GetTeamProfilesBySeasonAsync(string competition, int seasonid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -252,13 +252,13 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Season Teams
+        /// Get Team Profiles - by Season
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="seasonid">Unique FantasyData Season ID. SeasonIDs can be found in the Competition Hierarchy (League Hierarchy). Examples: <code>1</code>, <code>2</code>, <code>3</code>, etc</param>
-        public List<SeasonTeam> GetSeasonTeams(string competition, int seasonid)
+        public List<SeasonTeam> GetTeamProfilesBySeason(string competition, int seasonid)
         {
-            return this.GetSeasonTeamsAsync(competition, seasonid).Result;
+            return this.GetTeamProfilesBySeasonAsync(competition, seasonid).Result;
         }
 
         /// <summary>
@@ -287,11 +287,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Team Game Stats by Date Asynchronous
+        /// Get Team Game Stats - by Date [Live & Final] Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public Task<List<TeamGame>> GetTeamGameStatsByDateAsync(string competition, string date)
+        public Task<List<TeamGame>> GetTeamGameStatsByDateLiveFinalAsync(string competition, string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -302,13 +302,13 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Team Game Stats by Date
+        /// Get Team Game Stats - by Date [Live & Final]
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public List<TeamGame> GetTeamGameStatsByDate(string competition, string date)
+        public List<TeamGame> GetTeamGameStatsByDateLiveFinal(string competition, string date)
         {
-            return this.GetTeamGameStatsByDateAsync(competition, date).Result;
+            return this.GetTeamGameStatsByDateLiveFinalAsync(competition, date).Result;
         }
 
         /// <summary>
@@ -337,10 +337,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Teams Asynchronous
+        /// Get Team Profiles - by Competition Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public Task<List<Team>> GetTeamsAsync(string competition)
+        public Task<List<Team>> GetTeamProfilesByCompetitionAsync(string competition)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -350,12 +350,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Teams
+        /// Get Team Profiles - by Competition
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
-        public List<Team> GetTeams(string competition)
+        public List<Team> GetTeamProfilesByCompetition(string competition)
         {
-            return this.GetTeamsAsync(competition).Result;
+            return this.GetTeamProfilesByCompetitionAsync(competition).Result;
         }
 
         /// <summary>
@@ -378,11 +378,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Scores by Date Asynchronous
+        /// Get Games - by Date [Live & Final] Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public Task<List<ScoreBasic>> GetScoresByDateAsync(string competition, string date)
+        public Task<List<ScoreBasic>> GetGamesByDateLiveFinal_1431Async(string competition, string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -393,21 +393,21 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Scores by Date
+        /// Get Games - by Date [Live & Final]
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
-        public List<ScoreBasic> GetScoresByDate(string competition, string date)
+        public List<ScoreBasic> GetGamesByDateLiveFinal_1431(string competition, string date)
         {
-            return this.GetScoresByDateAsync(competition, date).Result;
+            return this.GetGamesByDateLiveFinal_1431Async(competition, date).Result;
         }
 
         /// <summary>
-        /// Get Players by Team Asynchronous
+        /// Get Player Profiles - by Team Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
-        public Task<List<PlayerBasic>> GetPlayersByTeamAsync(string competition, int teamid)
+        public Task<List<PlayerBasic>> GetPlayerProfilesByTeamAsync(string competition, int teamid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -418,21 +418,21 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Players by Team
+        /// Get Player Profiles - by Team
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="teamid">Unique FantasyData Team ID. Example:<code>516</code>.</param>
-        public List<PlayerBasic> GetPlayersByTeam(string competition, int teamid)
+        public List<PlayerBasic> GetPlayerProfilesByTeam(string competition, int teamid)
         {
-            return this.GetPlayersByTeamAsync(competition, teamid).Result;
+            return this.GetPlayerProfilesByTeamAsync(competition, teamid).Result;
         }
 
         /// <summary>
-        /// Get Schedule Asynchronous
+        /// Get Schedules (Basic) Asynchronous
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
-        public Task<List<ScheduleBasic>> GetScheduleAsync(string competition, string season)
+        public Task<List<ScheduleBasic>> GetSchedulesBasicAsync(string competition, string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
@@ -443,13 +443,63 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Schedule
+        /// Get Schedules (Basic)
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="season">Year of the season Examples: <code>2020</code>, <code>2021</code>, etc.</param>
-        public List<ScheduleBasic> GetSchedule(string competition, string season)
+        public List<ScheduleBasic> GetSchedulesBasic(string competition, string season)
         {
-            return this.GetScheduleAsync(competition, season).Result;
+            return this.GetSchedulesBasicAsync(competition, season).Result;
+        }
+
+        /// <summary>
+        /// Get Games - by Date [Final] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public Task<List<Game>> GetGamesByDateFinalAsync(string competition, string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<Game>>(() =>
+                base.Get<List<Game>>("/v4/soccer/scores/{format}/GamesByDateFinal/{competition}/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Games - by Date [Final]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public List<Game> GetGamesByDateFinal(string competition, string date)
+        {
+            return this.GetGamesByDateFinalAsync(competition, date).Result;
+        }
+
+        /// <summary>
+        /// Get Games (Basic) - by Date [Final] Asynchronous
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public Task<List<ScoreBasic>> GetGamesBasicByDateFinalAsync(string competition, string date)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("date", date.ToString()));
+            return Task.Run<List<ScoreBasic>>(() =>
+                base.Get<List<ScoreBasic>>("/v4/soccer/scores/{format}/ScoresBasicFinal/{competition}/{date}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Games (Basic) - by Date [Final]
+        /// </summary>
+        /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
+        /// <param name="date">The date of the game(s). Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.</param>
+        public List<ScoreBasic> GetGamesBasicByDateFinal(string competition, string date)
+        {
+            return this.GetGamesBasicByDateFinalAsync(competition, date).Result;
         }
 
     }

@@ -30,7 +30,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Premium News by Date Asynchronous
+        /// Get Premium News - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the news. Examples: <code>2021-JAN-06</code>, <code>2021-JAN-31</code>.</param>
         public Task<List<News>> GetPremiumNewsByDateAsync(string date)
@@ -43,7 +43,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Premium News by Date
+        /// Get Premium News - by Date
         /// </summary>
         /// <param name="date">The date of the news. Examples: <code>2021-JAN-06</code>, <code>2021-JAN-31</code>.</param>
         public List<News> GetPremiumNewsByDate(string date)
@@ -52,7 +52,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Premium News by Player Asynchronous
+        /// Get Premium News - by Player Asynchronous
         /// </summary>
         /// <param name="playerid">Unique SportsDataIO Player ID. Example:<code>30001047</code>.</param>
         public Task<List<News>> GetPremiumNewsByPlayerAsync(int playerid)
@@ -65,7 +65,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Premium News by Player
+        /// Get Premium News - by Player
         /// </summary>
         /// <param name="playerid">Unique SportsDataIO Player ID. Example:<code>30001047</code>.</param>
         public List<News> GetPremiumNewsByPlayer(int playerid)

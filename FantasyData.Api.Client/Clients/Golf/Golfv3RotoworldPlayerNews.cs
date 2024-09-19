@@ -11,9 +11,9 @@ namespace FantasyData.Api.Client
         public Golfv3RotoworldPlayerNewsClient(Guid apiKey) : base(apiKey) { }
 
         /// <summary>
-        /// Get Rotoworld Player News (Recent) Asynchronous
+        /// Get Rotoworld Player News - by Recent Asynchronous
         /// </summary>
-        public Task<List<RotoworldPlayerNewsItem>> GetRotoworldPlayerNewsRecentAsync()
+        public Task<List<RotoworldPlayerNewsItem>> GetRotoworldPlayerNewsByRecentAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<RotoworldPlayerNewsItem>>(() =>
@@ -22,15 +22,15 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Rotoworld Player News (Recent)
+        /// Get Rotoworld Player News - by Recent
         /// </summary>
-        public List<RotoworldPlayerNewsItem> GetRotoworldPlayerNewsRecent()
+        public List<RotoworldPlayerNewsItem> GetRotoworldPlayerNewsByRecent()
         {
-            return this.GetRotoworldPlayerNewsRecentAsync().Result;
+            return this.GetRotoworldPlayerNewsByRecentAsync().Result;
         }
 
         /// <summary>
-        /// Get Rotoworld Player News by Date Asynchronous
+        /// Get Rotoworld Player News - by Date Asynchronous
         /// </summary>
         /// <param name="date">The date of the news. Examples: <code>2022-JUL-31</code>, <code>2022-SEP-01</code>.</param>
         public Task<List<RotoworldPlayerNewsItem>> GetRotoworldPlayerNewsByDateAsync(string date)
@@ -43,7 +43,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Rotoworld Player News by Date
+        /// Get Rotoworld Player News - by Date
         /// </summary>
         /// <param name="date">The date of the news. Examples: <code>2022-JUL-31</code>, <code>2022-SEP-01</code>.</param>
         public List<RotoworldPlayerNewsItem> GetRotoworldPlayerNewsByDate(string date)

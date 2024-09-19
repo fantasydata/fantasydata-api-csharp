@@ -30,7 +30,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Contestants by Season Asynchronous
+        /// Get Contestants - by Season Asynchronous
         /// </summary>
         /// <param name="seasonid">The SeasonId for which to pull Contestants. Ex: <code>27</code></param>
         public Task<List<Contestant>> GetContestantsBySeasonAsync(int seasonid)
@@ -43,7 +43,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Contestants by Season
+        /// Get Contestants - by Season
         /// </summary>
         /// <param name="seasonid">The SeasonId for which to pull Contestants. Ex: <code>27</code></param>
         public List<Contestant> GetContestantsBySeason(int seasonid)
@@ -52,12 +52,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Contestants by Season and Discipline and Gender Asynchronous
+        /// Get Contestants by Discipline and Gender - by Season Asynchronous
         /// </summary>
         /// <param name="seasonid">The SeasonId for which to pull Contestants. Ex: <code>27</code></param>
         /// <param name="discipline">The Discipline for which to pull Contestants. Valid Entries are <code> 1, 2, 3, singles, doubles, mixed </code>.</param>
         /// <param name="gender">The Gender for which to pull Contestants. Valid entries are <code> m, male, men, f, female, women, mixed </code>.</param>
-        public Task<List<Contestant>> GetContestantsBySeasonAndDisciplineAndGenderAsync(int seasonid, string discipline, string gender)
+        public Task<List<Contestant>> GetContestantsByDisciplineAndGenderBySeasonAsync(int seasonid, string discipline, string gender)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("seasonid", seasonid.ToString()));
@@ -69,14 +69,14 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Contestants by Season and Discipline and Gender
+        /// Get Contestants by Discipline and Gender - by Season
         /// </summary>
         /// <param name="seasonid">The SeasonId for which to pull Contestants. Ex: <code>27</code></param>
         /// <param name="discipline">The Discipline for which to pull Contestants. Valid Entries are <code> 1, 2, 3, singles, doubles, mixed </code>.</param>
         /// <param name="gender">The Gender for which to pull Contestants. Valid entries are <code> m, male, men, f, female, women, mixed </code>.</param>
-        public List<Contestant> GetContestantsBySeasonAndDisciplineAndGender(int seasonid, string discipline, string gender)
+        public List<Contestant> GetContestantsByDisciplineAndGenderBySeason(int seasonid, string discipline, string gender)
         {
-            return this.GetContestantsBySeasonAndDisciplineAndGenderAsync(seasonid, discipline, gender).Result;
+            return this.GetContestantsByDisciplineAndGenderBySeasonAsync(seasonid, discipline, gender).Result;
         }
 
         /// <summary>
@@ -99,10 +99,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Match Details Asynchronous
+        /// Get Scores - by Match [Live & Final] Asynchronous
         /// </summary>
         /// <param name="matchid">The MatchId for which to pull details. Ex: <code> 2 </code></param>
-        public Task<Match> GetMatchDetailsAsync(string matchid)
+        public Task<Match> GetScoresByMatchLiveFinalAsync(string matchid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("matchid", matchid.ToString()));
@@ -112,19 +112,19 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Match Details
+        /// Get Scores - by Match [Live & Final]
         /// </summary>
         /// <param name="matchid">The MatchId for which to pull details. Ex: <code> 2 </code></param>
-        public Match GetMatchDetails(string matchid)
+        public Match GetScoresByMatchLiveFinal(string matchid)
         {
-            return this.GetMatchDetailsAsync(matchid).Result;
+            return this.GetScoresByMatchLiveFinalAsync(matchid).Result;
         }
 
         /// <summary>
-        /// Get Matches by Round (Schedule) Asynchronous
+        /// Get Schedule by Matches - by Round Asynchronous
         /// </summary>
         /// <param name="roundid">The RoundId for which to pull the schedule. Ex. <code> 1 </code></param>
-        public Task<List<Match>> GetMatchesByRoundScheduleAsync(int roundid)
+        public Task<List<Match>> GetScheduleByMatchesByRoundAsync(int roundid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("roundid", roundid.ToString()));
@@ -134,20 +134,20 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Matches by Round (Schedule)
+        /// Get Schedule by Matches - by Round
         /// </summary>
         /// <param name="roundid">The RoundId for which to pull the schedule. Ex. <code> 1 </code></param>
-        public List<Match> GetMatchesByRoundSchedule(int roundid)
+        public List<Match> GetScheduleByMatchesByRound(int roundid)
         {
-            return this.GetMatchesByRoundScheduleAsync(roundid).Result;
+            return this.GetScheduleByMatchesByRoundAsync(roundid).Result;
         }
 
         /// <summary>
-        /// Get Matches by Season and Date Asynchronous
+        /// Get Schedule by Season - by Date Asynchronous
         /// </summary>
         /// <param name="seasonid">The SeasonId for which to pull matches. Ex: <code>27</code></param>
         /// <param name="date">The date for which to pull matches. Ex: <code> 2022-06-03 </code></param>
-        public Task<List<Match>> GetMatchesBySeasonAndDateAsync(int seasonid, string date)
+        public Task<List<Match>> GetScheduleBySeasonByDateAsync(int seasonid, string date)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("seasonid", seasonid.ToString()));
@@ -158,20 +158,20 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Matches by Season and Date
+        /// Get Schedule by Season - by Date
         /// </summary>
         /// <param name="seasonid">The SeasonId for which to pull matches. Ex: <code>27</code></param>
         /// <param name="date">The date for which to pull matches. Ex: <code> 2022-06-03 </code></param>
-        public List<Match> GetMatchesBySeasonAndDate(int seasonid, string date)
+        public List<Match> GetScheduleBySeasonByDate(int seasonid, string date)
         {
-            return this.GetMatchesBySeasonAndDateAsync(seasonid, date).Result;
+            return this.GetScheduleBySeasonByDateAsync(seasonid, date).Result;
         }
 
         /// <summary>
-        /// Get Player Details Asynchronous
+        /// Get Player Profile Asynchronous
         /// </summary>
         /// <param name="playerid">The unique PlayerId of the player to pull details. Ex. <code>160000001</code></param>
-        public Task<Player> GetPlayerDetailsAsync(int playerid)
+        public Task<Player> GetPlayerProfileAsync(int playerid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("playerid", playerid.ToString()));
@@ -181,18 +181,18 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details
+        /// Get Player Profile
         /// </summary>
         /// <param name="playerid">The unique PlayerId of the player to pull details. Ex. <code>160000001</code></param>
-        public Player GetPlayerDetails(int playerid)
+        public Player GetPlayerProfile(int playerid)
         {
-            return this.GetPlayerDetailsAsync(playerid).Result;
+            return this.GetPlayerProfileAsync(playerid).Result;
         }
 
         /// <summary>
-        /// Get Players Asynchronous
+        /// Get Player Profiles - All Asynchronous
         /// </summary>
-        public Task<List<Player>> GetPlayersAsync()
+        public Task<List<Player>> GetPlayerProfilesAllAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Player>>(() =>
@@ -201,19 +201,19 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Players
+        /// Get Player Profiles - All
         /// </summary>
-        public List<Player> GetPlayers()
+        public List<Player> GetPlayerProfilesAll()
         {
-            return this.GetPlayersAsync().Result;
+            return this.GetPlayerProfilesAllAsync().Result;
         }
 
         /// <summary>
-        /// Get Players by Rank Asynchronous
+        /// Get Player Profiles - by Rank Asynchronous
         /// </summary>
         /// <param name="discipline">The Discipline for which to pull player rankings. Valid Entries are <code> 1, 2, 3, singles, doubles, mixed <code>.</param>
         /// <param name="gender">The gender for which to pull player rankings. Valid entries are <code> m, male, men, f, female, women, mixed <code>.</param>
-        public Task<List<Player>> GetPlayersByRankAsync(string discipline, string gender)
+        public Task<List<Player>> GetPlayerProfilesByRankAsync(string discipline, string gender)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("discipline", discipline.ToString()));
@@ -224,17 +224,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Players by Rank
+        /// Get Player Profiles - by Rank
         /// </summary>
         /// <param name="discipline">The Discipline for which to pull player rankings. Valid Entries are <code> 1, 2, 3, singles, doubles, mixed <code>.</param>
         /// <param name="gender">The gender for which to pull player rankings. Valid entries are <code> m, male, men, f, female, women, mixed <code>.</param>
-        public List<Player> GetPlayersByRank(string discipline, string gender)
+        public List<Player> GetPlayerProfilesByRank(string discipline, string gender)
         {
-            return this.GetPlayersByRankAsync(discipline, gender).Result;
+            return this.GetPlayerProfilesByRankAsync(discipline, gender).Result;
         }
 
         /// <summary>
-        /// Get Rounds by Season Asynchronous
+        /// Get Rounds - by Season Asynchronous
         /// </summary>
         /// <param name="seasonid">The SeasonID for which to pull Round records. Ex: <code>27</code></param>
         public Task<List<Round>> GetRoundsBySeasonAsync(int seasonid)
@@ -247,7 +247,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Rounds by Season
+        /// Get Rounds - by Season
         /// </summary>
         /// <param name="seasonid">The SeasonID for which to pull Round records. Ex: <code>27</code></param>
         public List<Round> GetRoundsBySeason(int seasonid)
@@ -256,7 +256,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Seasons by Competition Asynchronous
+        /// Get Seasons - by Competition Asynchronous
         /// </summary>
         /// <param name="competitionId">The CompetitionId for which to pull Season records. Ex: <code> 28 </code></param>
         public Task<List<Season>> GetSeasonsByCompetitionAsync(string competitionId)
@@ -269,7 +269,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Seasons by Competition
+        /// Get Seasons - by Competition
         /// </summary>
         /// <param name="competitionId">The CompetitionId for which to pull Season records. Ex: <code> 28 </code></param>
         public List<Season> GetSeasonsByCompetition(string competitionId)
@@ -278,7 +278,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Seasons by Tour Season Asynchronous
+        /// Get Seasons - by Tour Season Asynchronous
         /// </summary>
         /// <param name="tourSeasonId">The TourSeasonId for which to pull Seasons by TourSeason. Ex: <code> 1 </code></param>
         public Task<List<Season>> GetSeasonsByTourSeasonAsync(string tourSeasonId)
@@ -291,7 +291,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Seasons by Tour Season
+        /// Get Seasons - by Tour Season
         /// </summary>
         /// <param name="tourSeasonId">The TourSeasonId for which to pull Seasons by TourSeason. Ex: <code> 1 </code></param>
         public List<Season> GetSeasonsByTourSeason(string tourSeasonId)
@@ -300,7 +300,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Seasons by Year Asynchronous
+        /// Get Seasons - by Year Asynchronous
         /// </summary>
         /// <param name="year">The year for which to pull Season records. Ex: <code>2022</code></param>
         public Task<List<Season>> GetSeasonsByYearAsync(string year)
@@ -313,7 +313,7 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Seasons by Year
+        /// Get Seasons - by Year
         /// </summary>
         /// <param name="year">The year for which to pull Season records. Ex: <code>2022</code></param>
         public List<Season> GetSeasonsByYear(string year)
@@ -357,6 +357,28 @@ namespace FantasyData.Api.Client
         public List<Venue> GetVenues()
         {
             return this.GetVenuesAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Scores - by Match [Final] Asynchronous
+        /// </summary>
+        /// <param name="matchid">The MatchId for which to pull details. Ex: <code> 2 </code></param>
+        public Task<Match> GetScoresByMatchFinalAsync(string matchid)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("matchid", matchid.ToString()));
+            return Task.Run<Match>(() =>
+                base.Get<Match>("/v3/tennis/scores/{format}/MatchFinal/{matchid}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Scores - by Match [Final]
+        /// </summary>
+        /// <param name="matchid">The MatchId for which to pull details. Ex: <code> 2 </code></param>
+        public Match GetScoresByMatchFinal(string matchid)
+        {
+            return this.GetScoresByMatchFinalAsync(matchid).Result;
         }
 
     }
