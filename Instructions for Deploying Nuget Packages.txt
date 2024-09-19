@@ -2,3 +2,14 @@
 2) Rebuild the project(s) in RELEASE mode.
 3) This will also generate the Nuget package for upload (in the bin\Release folder).
 4) Login to nuget.org and upload the latest version of the package.
+
+
+updated 2024:
+
+steps to update c# SDK
+- run surrogate generation in TaskManager
+- open C# FantasyData.Api.Client.sln
+- update nuspec version number (and description if necessary)
+- when ready to push, build in release
+- confirm that .nupkg file exists with new version number
+- upload at nuget.org by going to 'Upload a Package' and dragging and dropping from file explorer
