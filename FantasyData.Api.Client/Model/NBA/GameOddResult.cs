@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class GameOddResult
     {
         /// <summary>
-        /// Unique ID of this odd
+        /// The unique ID of this odd
         /// </summary>
-        [Description("Unique ID of this odd")]
+        [Description("The unique ID of this odd")]
         [DataMember(Name = "GameOddID", Order = 1)]
         public int GameOddID { get; set; }
 
@@ -23,23 +23,23 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Sportsbook { get; set; }
 
         /// <summary>
-        /// The unique ID of the game
+        /// The unique ID of the game associated with this GameOdd
         /// </summary>
-        [Description("The unique ID of the game")]
+        [Description("The unique ID of the game associated with this GameOdd")]
         [DataMember(Name = "GameID", Order = 3)]
         public int GameID { get; set; }
 
         /// <summary>
-        /// The timestamp of when these odds were first created, based on US Eatern Time (EST/EDT).
+        /// The timestamp of when these odds were first created (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp of when these odds were first created, based on US Eatern Time (EST/EDT).")]
+        [Description("The timestamp of when these odds were first created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 4)]
         public DateTime Created { get; set; }
 
         /// <summary>
-        /// The timestamp of when these odds were last updated, based on US Eatern Time (EST/EDT). If these are the latest odds for this game, and they have not been updated within the last few minutes, then it indicates that there were problems connecting to the sportsbook.
+        /// The timestamp of when these odds were last updated (US Eastern Time). If these are the latest odds for this game; and they have not been updated within the last few minutes; then it indicates that there were problems connecting to the sportsbook
         /// </summary>
-        [Description("The timestamp of when these odds were last updated, based on US Eatern Time (EST/EDT). If these are the latest odds for this game, and they have not been updated within the last few minutes, then it indicates that there were problems connecting to the sportsbook.")]
+        [Description("The timestamp of when these odds were last updated (US Eastern Time). If these are the latest odds for this game; and they have not been updated within the last few minutes; then it indicates that there were problems connecting to the sportsbook")]
         [DataMember(Name = "Updated", Order = 5)]
         public DateTime Updated { get; set; }
 
@@ -128,9 +128,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string OddType { get; set; }
 
         /// <summary>
-        /// The list of outcomes under this Game Odd Record with results
+        /// List of outcomes showing results of betting markets that were bet on for the given game
         /// </summary>
-        [Description("The list of outcomes under this Game Odd Record with results")]
+        [Description("List of outcomes showing results of betting markets that were bet on for the given game")]
         [DataMember(Name = "GameOddOutcomeResults", Order = 20018)]
         public GameOddOutcome[] GameOddOutcomeResults { get; set; }
 

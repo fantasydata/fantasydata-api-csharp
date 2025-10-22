@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public decimal? FinalPosition { get; set; }
 
         /// <summary>
-        /// The driver's differential between the final position and the starting position
+        /// The driver's differential between their final position and their starting position
         /// </summary>
-        [Description("The driver's differential between the final position and the starting position")]
+        [Description("The driver's differential between their final position and their starting position")]
         [DataMember(Name = "PositionDifferential", Order = 3)]
         public decimal? PositionDifferential { get; set; }
 
@@ -37,16 +37,16 @@ namespace FantasyData.Api.Client.Model.Nascar
         public decimal? Laps { get; set; }
 
         /// <summary>
-        /// The total number of laps that this driver finished in first place
+        /// The total number of laps that this driver completed while in first place
         /// </summary>
-        [Description("The total number of laps that this driver finished in first place")]
+        [Description("The total number of laps that this driver completed while in first place")]
         [DataMember(Name = "LapsLed", Order = 5)]
         public decimal? LapsLed { get; set; }
 
         /// <summary>
-        /// The total points scored by this drive
+        /// The total points scored by this driver
         /// </summary>
-        [Description("The total points scored by this drive")]
+        [Description("The total points scored by this driver")]
         [DataMember(Name = "Points", Order = 6)]
         public decimal? Points { get; set; }
 
@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public decimal? Poles { get; set; }
 
         /// <summary>
-        /// Driver's current position in the race, updated live.
+        /// Driver's current position in the race; updated live
         /// </summary>
-        [Description("Driver's current position in the race, updated live.")]
+        [Description("Driver's current position in the race; updated live")]
         [DataMember(Name = "CurrentPosition", Order = 9)]
         public decimal? CurrentPosition { get; set; }
 

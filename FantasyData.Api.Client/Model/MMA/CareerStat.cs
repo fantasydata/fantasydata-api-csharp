@@ -16,65 +16,65 @@ namespace FantasyData.Api.Client.Model.MMA
         public int? FighterId { get; set; }
 
         /// <summary>
-        /// The fighter's first name
+        /// The first name of the fighter
         /// </summary>
-        [Description("The fighter's first name")]
+        [Description("The first name of the fighter")]
         [DataMember(Name = "FirstName", Order = 2)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// The fighter's last name
+        /// The last name of the fighter
         /// </summary>
-        [Description("The fighter's last name")]
+        [Description("The last name of the fighter")]
         [DataMember(Name = "LastName", Order = 3)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Significant strikes landed per minute over career
+        /// Significant strikes landed per minute over the fighter's career
         /// </summary>
-        [Description("Significant strikes landed per minute over career")]
+        [Description("Significant strikes landed per minute over the fighter's career")]
         [DataMember(Name = "SigStrikesLandedPerMinute", Order = 4)]
         public decimal? SigStrikesLandedPerMinute { get; set; }
 
         /// <summary>
-        /// Significant strikes landed divided by strikes attempted over career
+        /// Significant strikes landed divided by strikes attempted over the fighter's career
         /// </summary>
-        [Description("Significant strikes landed divided by strikes attempted over career")]
+        [Description("Significant strikes landed divided by strikes attempted over the fighter's career")]
         [DataMember(Name = "SigStrikeAccuracy", Order = 5)]
         public decimal? SigStrikeAccuracy { get; set; }
 
         /// <summary>
-        /// Average takedowns landed per 15 minutes
+        /// Average takedowns landed per 15 minutes in the fighter's career
         /// </summary>
-        [Description("Average takedowns landed per 15 minutes")]
+        [Description("Average takedowns landed per 15 minutes in the fighter's career")]
         [DataMember(Name = "TakedownAverage", Order = 6)]
         public decimal? TakedownAverage { get; set; }
 
         /// <summary>
-        /// Average number of submissions attempted per 15 minutes
+        /// Average number of submissions attempted per 15 minutes in the fighter's career
         /// </summary>
-        [Description("Average number of submissions attempted per 15 minutes")]
+        [Description("Average number of submissions attempted per 15 minutes in the fighter's career")]
         [DataMember(Name = "SubmissionAverage", Order = 7)]
         public decimal? SubmissionAverage { get; set; }
 
         /// <summary>
-        /// Percentage of wins ending by knockout
+        /// The percentage of wins ending in a knockout by the fighter
         /// </summary>
-        [Description("Percentage of wins ending by knockout")]
+        [Description("The percentage of wins ending in a knockout by the fighter")]
         [DataMember(Name = "KnockoutPercentage", Order = 8)]
         public decimal? KnockoutPercentage { get; set; }
 
         /// <summary>
-        /// Percentage of wins ending by TKO
+        /// Percentage of wins ending by TKO in the fighter's career
         /// </summary>
-        [Description("Percentage of wins ending by TKO")]
+        [Description("Percentage of wins ending by TKO in the fighter's career")]
         [DataMember(Name = "TechnicalKnockoutPercentage", Order = 9)]
         public decimal? TechnicalKnockoutPercentage { get; set; }
 
         /// <summary>
-        /// Percentage of wins ending in a decision
+        /// The percentage of wins ending in a decision by the fighter in their career
         /// </summary>
-        [Description("Percentage of wins ending in a decision")]
+        [Description("The percentage of wins ending in a decision by the fighter in their career")]
         [DataMember(Name = "DecisionPercentage", Order = 10)]
         public decimal? DecisionPercentage { get; set; }
 

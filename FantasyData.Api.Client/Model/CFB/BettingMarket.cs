@@ -9,58 +9,58 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class BettingMarket
     {
         /// <summary>
-        /// The unique identifier of this betting market
+        /// The unique ID associated with the betting market
         /// </summary>
-        [Description("The unique identifier of this betting market")]
+        [Description("The unique ID associated with the betting market")]
         [DataMember(Name = "BettingMarketID", Order = 1)]
         public int BettingMarketID { get; set; }
 
         /// <summary>
-        /// The unique identifier of the event this betting market exists for
+        /// The unique ID assocated with the betting event
         /// </summary>
-        [Description("The unique identifier of the event this betting market exists for")]
+        [Description("The unique ID assocated with the betting event")]
         [DataMember(Name = "BettingEventID", Order = 2)]
         public int BettingEventID { get; set; }
 
         /// <summary>
-        /// The BettingMarketTypeID of this market
+        /// ID that distinguishes the different types of Market Types
         /// </summary>
-        [Description("The BettingMarketTypeID of this market")]
+        [Description("ID that distinguishes the different types of Market Types")]
         [DataMember(Name = "BettingMarketTypeID", Order = 3)]
         public int? BettingMarketTypeID { get; set; }
 
         /// <summary>
-        /// The BettingMarketType of this market
+        /// The type of Market Type (e.g. Player Prop, Team Prop, Game Prop, etc.)
         /// </summary>
-        [Description("The BettingMarketType of this market")]
+        [Description("The type of Market Type (e.g. Player Prop, Team Prop, Game Prop, etc.)")]
         [DataMember(Name = "BettingMarketType", Order = 4)]
         public string BettingMarketType { get; set; }
 
         /// <summary>
-        /// The BettingBetTypeID of this market
+        /// The ID associated with the name of the bet type within a market
         /// </summary>
-        [Description("The BettingBetTypeID of this market")]
+        [Description("The ID associated with the name of the bet type within a market")]
         [DataMember(Name = "BettingBetTypeID", Order = 5)]
         public int? BettingBetTypeID { get; set; }
 
         /// <summary>
-        /// The BettingBetType of this market
+        /// The name of the bet type within a market (e.g. Total Points, Moneyline, Spread, etc.)
         /// </summary>
-        [Description("The BettingBetType of this market")]
+        [Description("The name of the bet type within a market (e.g. Total Points, Moneyline, Spread, etc.)")]
         [DataMember(Name = "BettingBetType", Order = 6)]
         public string BettingBetType { get; set; }
 
         /// <summary>
-        /// The BettingPeriodTypeID of this market
+        /// The BettingPeriodTypeID of this type of market which we can result
         /// </summary>
-        [Description("The BettingPeriodTypeID of this market")]
+        [Description("The BettingPeriodTypeID of this type of market which we can result")]
         [DataMember(Name = "BettingPeriodTypeID", Order = 7)]
         public int? BettingPeriodTypeID { get; set; }
 
         /// <summary>
-        /// The BettingPeriodType of this market
+        /// The BettingPeriodType of this market (e.g. Full Game; 1st Quarter; Overtime; Regular Season)
         /// </summary>
-        [Description("The BettingPeriodType of this market")]
+        [Description("The BettingPeriodType of this market (e.g. Full Game; 1st Quarter; Overtime; Regular Season)")]
         [DataMember(Name = "BettingPeriodType", Order = 8)]
         public string BettingPeriodType { get; set; }
 
@@ -72,23 +72,23 @@ namespace FantasyData.Api.Client.Model.CFB
         public string Name { get; set; }
 
         /// <summary>
-        /// The team id of the team tied to this market (if applicable)
+        /// The unique ID of the team associated with this betting market
         /// </summary>
-        [Description("The team id of the team tied to this market (if applicable)")]
+        [Description("The unique ID of the team associated with this betting market")]
         [DataMember(Name = "TeamID", Order = 10)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The team key of the team tied to this market (if applicable)
+        /// The key of the team tied to this market (if applicable)
         /// </summary>
-        [Description("The team key of the team tied to this market (if applicable)")]
+        [Description("The key of the team tied to this market (if applicable)")]
         [DataMember(Name = "TeamKey", Order = 11)]
         public string TeamKey { get; set; }
 
         /// <summary>
-        /// The player id of the player tied to this market (if applicable)
+        /// The unique ID of the player as assigned by SportsDataIO tied this market (if applicable). Note: this ID remains with the player their entire collegiate career
         /// </summary>
-        [Description("The player id of the player tied to this market (if applicable)")]
+        [Description("The unique ID of the player as assigned by SportsDataIO tied this market (if applicable). Note: this ID remains with the player their entire collegiate career")]
         [DataMember(Name = "PlayerID", Order = 12)]
         public int? PlayerID { get; set; }
 
@@ -107,23 +107,23 @@ namespace FantasyData.Api.Client.Model.CFB
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// The last updated date of this market
+        /// The last updated timestamp of this market (US Eastern Time)
         /// </summary>
-        [Description("The last updated date of this market")]
+        [Description("The last updated timestamp of this market (US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 15)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The sportsbooks that have had odds in this market
+        /// The sportsbooks that have published odds within this market
         /// </summary>
-        [Description("The sportsbooks that have had odds in this market")]
+        [Description("The sportsbooks that have published odds within this market")]
         [DataMember(Name = "AvailableSportsbooks", Order = 20016)]
         public Sportsbook[] AvailableSportsbooks { get; set; }
 
         /// <summary>
-        /// Shows if any bets are currently available for betting in this market
+        /// A field that returns "True" if there are any available bets to make within the market in question. If there are no bets available to make, the field returns "False"
         /// </summary>
-        [Description("Shows if any bets are currently available for betting in this market")]
+        [Description("A field that returns \"True\" if there are any available bets to make within the market in question. If there are no bets available to make, the field returns \"False\"")]
         [DataMember(Name = "AnyBetsAvailable", Order = 17)]
         public bool? AnyBetsAvailable { get; set; }
 
@@ -142,16 +142,16 @@ namespace FantasyData.Api.Client.Model.CFB
         public ConsensusOutcome[] ConsensusOutcomes { get; set; }
 
         /// <summary>
-        /// Indicates if the BettingOutcomes have been moved to the archives.
+        /// Indicates if the BettingOutcomes have been moved to the archives
         /// </summary>
-        [Description("Indicates if the BettingOutcomes have been moved to the archives.")]
+        [Description("Indicates if the BettingOutcomes have been moved to the archives")]
         [DataMember(Name = "IsArchived", Order = 20)]
         public bool IsArchived { get; set; }
 
         /// <summary>
-        /// If IsArchived is true, the location (URL) from where to retrieve the archived BettingOutcomes (API key and sportsbook grouping required); otherwise an empty string.
+        /// If IsArchived is true, this returns the URL that can be used to retrieve the archived BettingOutcomes. An API Key and Sportsbook Grouping will be required to retrieve this information. If IsArchived is false, this returns an emtpy string
         /// </summary>
-        [Description("If IsArchived is true, the location (URL) from where to retrieve the archived BettingOutcomes (API key and sportsbook grouping required); otherwise an empty string.")]
+        [Description("If IsArchived is true, this returns the URL that can be used to retrieve the archived BettingOutcomes. An API Key and Sportsbook Grouping will be required to retrieve this information. If IsArchived is false, this returns an emtpy string")]
         [DataMember(Name = "ArchiveLocation", Order = 21)]
         public string ArchiveLocation { get; set; }
 

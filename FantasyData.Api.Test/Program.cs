@@ -9,13 +9,13 @@ namespace FantasyData.Api.Test
         static void Main(string[] args)
         {
             // Connect to client and get data
-            var client = new  NFLv3ScoresClient("<api_key_goes_here>");
-            var scores = client.GetSchedules("2023POST");
+            var client = new  NFLv3ScoresClient("paste_api_key_here");
+            var scores = client.GetGamesBasicByWeekLiveFinal("2025", 7);
 
             // Write data to console
             foreach (var score in scores)
             {
-                Console.WriteLine($"{score.AwayTeam} @ {score.HomeTeam}");
+                Console.WriteLine($"{score.AwayTeam} {score.AwayScore} @ {score.HomeTeam} {score.HomeScore}");
             }
 
             Console.WriteLine();

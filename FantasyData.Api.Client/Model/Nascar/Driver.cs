@@ -51,16 +51,16 @@ namespace FantasyData.Api.Client.Model.Nascar
         public string Team { get; set; }
 
         /// <summary>
-        /// The driver's birth date
+        /// The driver's birthdate
         /// </summary>
-        [Description("The driver's birth date")]
+        [Description("The driver's birthdate")]
         [DataMember(Name = "BirthDate", Order = 7)]
         public DateTime? BirthDate { get; set; }
 
         /// <summary>
-        /// The driver's birth place
+        /// The driver's birthplace
         /// </summary>
-        [Description("The driver's birth place")]
+        [Description("The driver's birthplace")]
         [DataMember(Name = "BirthPlace", Order = 8)]
         public string BirthPlace { get; set; }
 
@@ -135,9 +135,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The date/time when this driver was created
+        /// The date/time when this driver was created (in US Eastern Time)
         /// </summary>
-        [Description("The date/time when this driver was created")]
+        [Description("The date/time when this driver was created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 19)]
         public DateTime? Created { get; set; }
 

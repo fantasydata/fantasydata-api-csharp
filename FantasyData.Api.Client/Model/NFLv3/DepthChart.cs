@@ -30,37 +30,37 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// Player Name
+        /// Player's full name
         /// </summary>
-        [Description("Player Name")]
+        [Description("Player's full name")]
         [DataMember(Name = "Name", Order = 4)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Player Position Category (OFF, DEF, ST)
+        /// The category of the player's depth chart position (OFF; DEF; ST)
         /// </summary>
-        [Description("Player Position Category (OFF, DEF, ST)")]
+        [Description("The category of the player's depth chart position (OFF; DEF; ST)")]
         [DataMember(Name = "PositionCategory", Order = 5)]
         public string PositionCategory { get; set; }
 
         /// <summary>
-        /// Player Position
+        /// The player's depth chart position
         /// </summary>
-        [Description("Player Position")]
+        [Description("The player's depth chart position")]
         [DataMember(Name = "Position", Order = 6)]
         public string Position { get; set; }
 
         /// <summary>
-        /// Depth Chart Order
+        /// The order this player is at his position (1 = Starter; 2 = Backup; 3 = 3rd String; 4 = 4th String; 5 = 5th String)
         /// </summary>
-        [Description("Depth Chart Order")]
+        [Description("The order this player is at his position (1 = Starter; 2 = Backup; 3 = 3rd String; 4 = 4th String; 5 = 5th String)")]
         [DataMember(Name = "DepthOrder", Order = 7)]
         public int? DepthOrder { get; set; }
 
         /// <summary>
-        /// Date and Time Last Updated
+        /// Date and time last updated (in US Eastern Time)
         /// </summary>
-        [Description("Date and Time Last Updated")]
+        [Description("Date and time last updated (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 8)]
         public DateTime? Updated { get; set; }
 

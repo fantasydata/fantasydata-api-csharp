@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class ScheduleBasic
     {
         /// <summary>
-        /// The GameID of this NFL game
+        /// The unique ID of the game
         /// </summary>
-        [Description("The GameID of this NFL game")]
+        [Description("The unique ID of the game")]
         [DataMember(Name = "GameID", Order = 1)]
         public int? GameID { get; set; }
 
@@ -23,16 +23,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? GlobalGameID { get; set; }
 
         /// <summary>
-        /// Unique ID of the Score/Game.
+        /// Unique ID of the score/game
         /// </summary>
-        [Description("Unique ID of the Score/Game.")]
+        [Description("Unique ID of the score/game")]
         [DataMember(Name = "ScoreID", Order = 3)]
         public int? ScoreID { get; set; }
 
         /// <summary>
-        /// A 9 digit unique code identifying the game that this record corresponds to.  The GameID is composed of Season, SeasonType, Week and HomeTeam.  This value will be NULL for bye weeks.
+        /// A 9 digit unique code identifying the game that this record corresponds to. The GameKey is composed of Season; SeasonType; Week and HomeTeam. Note: This value will be NULL for bye weeks
         /// </summary>
-        [Description("A 9 digit unique code identifying the game that this record corresponds to.  The GameID is composed of Season, SeasonType, Week and HomeTeam.  This value will be NULL for bye weeks.")]
+        [Description("A 9 digit unique code identifying the game that this record corresponds to. The GameKey is composed of Season; SeasonType; Week and HomeTeam. Note: This value will be NULL for bye weeks")]
         [DataMember(Name = "GameKey", Order = 4)]
         public string GameKey { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled, Forfeit
+        /// The status of the game. For a description of possible values, see <a href="https://support.sportsdata.io/hc/en-us/articles/14287629964567-Process-Guide-Game-Status" target="_blank">here.</a> For how suspended and postponed games are handled specifically, see <a href="https://support.sportsdata.io/hc/en-us/articles/4404845580567-Postponed-and-Rescheduled-Games" target="_blank">here</a>.
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled, Forfeit")]
+        [Description("The status of the game. For a description of possible values, see <a href=\"https://support.sportsdata.io/hc/en-us/articles/14287629964567-Process-Guide-Game-Status\" target=\"_blank\">here.</a> For how suspended and postponed games are handled specifically, see <a href=\"https://support.sportsdata.io/hc/en-us/articles/4404845580567-Postponed-and-Rescheduled-Games\" target=\"_blank\">here</a>.")]
         [DataMember(Name = "Status", Order = 7)]
         public string Status { get; set; }
 
@@ -65,44 +65,44 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public bool? Canceled { get; set; }
 
         /// <summary>
-        /// The date/time of the game
+        /// The date and time of the game (in US Eastern Time)
         /// </summary>
-        [Description("The date/time of the game")]
+        [Description("The date and time of the game (in US Eastern Time)")]
         [DataMember(Name = "Date", Order = 9)]
         public DateTime? Date { get; set; }
 
         /// <summary>
-        /// The date of the game in US Eastern Time
+        /// The date of the game (in US Eastern Time)
         /// </summary>
-        [Description("The date of the game in US Eastern Time")]
+        [Description("The date of the game (in US Eastern Time)")]
         [DataMember(Name = "Day", Order = 10)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date and time of the game in US Eastern Time
+        /// The date and time of the game (in US Eastern Time)
         /// </summary>
-        [Description("The date and time of the game in US Eastern Time")]
+        [Description("The date and time of the game (in US Eastern Time)")]
         [DataMember(Name = "DateTime", Order = 11)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// The date and time of the game in UTC
+        /// The date and time of the game (in UTC)
         /// </summary>
-        [Description("The date and time of the game in UTC")]
+        [Description("The date and time of the game (in UTC)")]
         [DataMember(Name = "DateTimeUTC", Order = 12)]
         public DateTime? DateTimeUTC { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Away Team
+        /// The abbreviation [Key] of the away team
         /// </summary>
-        [Description("The abbreviation of the Away Team")]
+        [Description("The abbreviation [Key] of the away team")]
         [DataMember(Name = "AwayTeam", Order = 13)]
         public string AwayTeam { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Home Team
+        /// The abbreviation [Key] of the home team
         /// </summary>
-        [Description("The abbreviation of the Home Team")]
+        [Description("The abbreviation [Key] of the home team")]
         [DataMember(Name = "HomeTeam", Order = 14)]
         public string HomeTeam { get; set; }
 
@@ -142,16 +142,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? StadiumID { get; set; }
 
         /// <summary>
-        /// Indicates whether the game is over and the final score has been verified and closed out.
+        /// Indicates whether the game is over and the final score has been verified and closed out. Note: it is recommend for bet resulting to use IsClosed = True rather than simply Final game status
         /// </summary>
-        [Description("Indicates whether the game is over and the final score has been verified and closed out.")]
+        [Description("Indicates whether the game is over and the final score has been verified and closed out. Note: it is recommend for bet resulting to use IsClosed = True rather than simply Final game status")]
         [DataMember(Name = "Closed", Order = 20)]
         public bool? Closed { get; set; }
 
         /// <summary>
-        /// The date and time that this game was last updated (US Eastern Time)
+        /// The date and time that this game was last updated (in US Eastern Time)
         /// </summary>
-        [Description("The date and time that this game was last updated (US Eastern Time)")]
+        [Description("The date and time that this game was last updated (in US Eastern Time)")]
         [DataMember(Name = "LastUpdated", Order = 21)]
         public DateTime? LastUpdated { get; set; }
 
@@ -163,9 +163,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public bool? IsClosed { get; set; }
 
         /// <summary>
-        /// The NFL week of the game (regular season: 1 to 17, preseason: 0 to 4, postseason: 1 to 4)
+        /// The NFL week of the game (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). Note: seasons after 2021 will have only 3 preseason weeks
         /// </summary>
-        [Description("The NFL week of the game (regular season: 1 to 17, preseason: 0 to 4, postseason: 1 to 4)")]
+        [Description("The NFL week of the game (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). Note: seasons after 2021 will have only 3 preseason weeks")]
         [DataMember(Name = "Week", Order = 23)]
         public int Week { get; set; }
 

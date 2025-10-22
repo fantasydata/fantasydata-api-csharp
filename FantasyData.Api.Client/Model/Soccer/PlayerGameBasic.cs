@@ -9,100 +9,100 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class PlayerGameBasic
     {
         /// <summary>
-        /// The timestamp of when the record was last updated (US Eastern Time)
+        /// The timestamp of when the record was last updated (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp of when the record was last updated (US Eastern Time)")]
+        [Description("The timestamp of when the record was last updated (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 1)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The timestamp of when the record was last updated (UTC Time)
+        /// The timestamp of when the record was last updated (in UTC Time)
         /// </summary>
-        [Description("The timestamp of when the record was last updated (UTC Time)")]
+        [Description("The timestamp of when the record was last updated (in UTC Time)")]
         [DataMember(Name = "UpdatedUtc", Order = 2)]
         public DateTime? UpdatedUtc { get; set; }
 
         /// <summary>
-        /// The number of games played
+        /// Total number of games played by the player in the game
         /// </summary>
-        [Description("The number of games played")]
+        [Description("Total number of games played by the player in the game")]
         [DataMember(Name = "Games", Order = 3)]
         public int? Games { get; set; }
 
         /// <summary>
-        /// Total minutes played
+        /// Total minutes played by the player in the game
         /// </summary>
-        [Description("Total minutes played")]
+        [Description("Total minutes played by the player in the game")]
         [DataMember(Name = "Minutes", Order = 4)]
         public decimal? Minutes { get; set; }
 
         /// <summary>
-        /// Total goals scored
+        /// Total goals scored by the player in the game
         /// </summary>
-        [Description("Total goals scored")]
+        [Description("Total goals scored by the player in the game")]
         [DataMember(Name = "Goals", Order = 5)]
         public decimal? Goals { get; set; }
 
         /// <summary>
-        /// Total assists scored
+        /// Total assists scored by the player in the game
         /// </summary>
-        [Description("Total assists scored")]
+        [Description("Total assists scored by the player in the game")]
         [DataMember(Name = "Assists", Order = 6)]
         public decimal? Assists { get; set; }
 
         /// <summary>
-        /// Total shots attempted
+        /// Total shots attempted by the player in the game
         /// </summary>
-        [Description("Total shots attempted")]
+        [Description("Total shots attempted by the player in the game")]
         [DataMember(Name = "Shots", Order = 7)]
         public decimal? Shots { get; set; }
 
         /// <summary>
-        /// Total shots on goal attempted
+        /// Total shots on goal attempted by the player in the game
         /// </summary>
-        [Description("Total shots on goal attempted")]
+        [Description("Total shots on goal attempted by the player in the game")]
         [DataMember(Name = "ShotsOnGoal", Order = 8)]
         public decimal? ShotsOnGoal { get; set; }
 
         /// <summary>
-        /// Total yellow cards against
+        /// Total yellow cards against the player in the game
         /// </summary>
-        [Description("Total yellow cards against")]
+        [Description("Total yellow cards against the player in the game")]
         [DataMember(Name = "YellowCards", Order = 9)]
         public decimal? YellowCards { get; set; }
 
         /// <summary>
-        /// Total red cards against
+        /// Total red cards against by the player in the game
         /// </summary>
-        [Description("Total red cards against")]
+        [Description("Total red cards against by the player in the game")]
         [DataMember(Name = "RedCards", Order = 10)]
         public decimal? RedCards { get; set; }
 
         /// <summary>
-        /// Total double yellow cards against (which result in a red card)
+        /// Total double yellow cards against the player in the game. Note: A double yellow card results in a red card
         /// </summary>
-        [Description("Total double yellow cards against (which result in a red card)")]
+        [Description("Total double yellow cards against the player in the game. Note: A double yellow card results in a red card")]
         [DataMember(Name = "YellowRedCards", Order = 11)]
         public decimal? YellowRedCards { get; set; }
 
         /// <summary>
-        /// Total passes from a wide area of the field towards the center of the field near the opponent's goal
+        /// Total crosses by the player in the game. Note: a cross means a pass from a wide area of the field towards the center of the field near the opponent's goal.
         /// </summary>
-        [Description("Total passes from a wide area of the field towards the center of the field near the opponent's goal")]
+        [Description("Total crosses by the player in the game. Note: a cross means a pass from a wide area of the field towards the center of the field near the opponent's goal.")]
         [DataMember(Name = "Crosses", Order = 12)]
         public decimal? Crosses { get; set; }
 
         /// <summary>
-        /// Total tackles won
+        /// Total tackles won by the player in the game
         /// </summary>
-        [Description("Total tackles won")]
+        [Description("Total tackles won by the player in the game")]
         [DataMember(Name = "TacklesWon", Order = 13)]
         public decimal? TacklesWon { get; set; }
 
         /// <summary>
-        /// Total interceptions made
+        /// Total interceptions made by the player in the game
         /// </summary>
-        [Description("Total interceptions made")]
+        [Description("Total interceptions made by the player in the game")]
         [DataMember(Name = "Interceptions", Order = 14)]
         public decimal? Interceptions { get; set; }
 
@@ -114,170 +114,170 @@ namespace FantasyData.Api.Client.Model.Soccer
         public decimal? OwnGoals { get; set; }
 
         /// <summary>
-        /// Total fouls made
+        /// Total fouls made by the player in the game
         /// </summary>
-        [Description("Total fouls made")]
+        [Description("Total fouls made by the player in the game")]
         [DataMember(Name = "Fouls", Order = 16)]
         public decimal? Fouls { get; set; }
 
         /// <summary>
-        /// Total times fouled
+        /// Total times the player was fouled in the game
         /// </summary>
-        [Description("Total times fouled")]
+        [Description("Total times the player was fouled in the game")]
         [DataMember(Name = "Fouled", Order = 17)]
         public decimal? Fouled { get; set; }
 
         /// <summary>
-        /// Total offsides against
+        /// Total offsides against by the player in the game
         /// </summary>
-        [Description("Total offsides against")]
+        [Description("Total offsides against by the player in the game")]
         [DataMember(Name = "Offsides", Order = 18)]
         public decimal? Offsides { get; set; }
 
         /// <summary>
-        /// Total passes attempted
+        /// Total passes attempted by the player in the game
         /// </summary>
-        [Description("Total passes attempted")]
+        [Description("Total passes attempted by the player in the game")]
         [DataMember(Name = "Passes", Order = 19)]
         public decimal? Passes { get; set; }
 
         /// <summary>
-        /// Total passes completed successfully to teammate
+        /// Total passes completed by the player in the game
         /// </summary>
-        [Description("Total passes completed successfully to teammate")]
+        [Description("Total passes completed by the player in the game")]
         [DataMember(Name = "PassesCompleted", Order = 20)]
         public decimal? PassesCompleted { get; set; }
 
         /// <summary>
-        /// Total tackles made when there is no one else available to stop the opponent from scoring (this can be the goalkeeper)
+        /// Total tackles made by the player when there is no one else available to stop the opponent from scoring in the game
         /// </summary>
-        [Description("Total tackles made when there is no one else available to stop the opponent from scoring (this can be the goalkeeper)")]
+        [Description("Total tackles made by the player when there is no one else available to stop the opponent from scoring in the game")]
         [DataMember(Name = "LastManTackle", Order = 21)]
         public decimal? LastManTackle { get; set; }
 
         /// <summary>
-        /// Total corner kicks awarded
+        /// Total corner kicks awarded to the player in the game
         /// </summary>
-        [Description("Total corner kicks awarded")]
+        [Description("Total corner kicks awarded to the player in the game")]
         [DataMember(Name = "CornersWon", Order = 22)]
         public decimal? CornersWon { get; set; }
 
         /// <summary>
-        /// Total shots blocked
+        /// Total shots blocked by the player in the game
         /// </summary>
-        [Description("Total shots blocked")]
+        [Description("Total shots blocked by the player in the game")]
         [DataMember(Name = "BlockedShots", Order = 23)]
         public decimal? BlockedShots { get; set; }
 
         /// <summary>
-        /// Total times this player touched the ball
+        /// Total times the player touched the ball in the game
         /// </summary>
-        [Description("Total times this player touched the ball")]
+        [Description("Total times the player touched the ball in the game")]
         [DataMember(Name = "Touches", Order = 24)]
         public decimal? Touches { get; set; }
 
         /// <summary>
-        /// Total defender clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes)
+        /// Total defender clean sheets by the player in the game. Note: clean sheets are awarded when zero goals were allowed to the opponent and the player played at least 60 minutes).
         /// </summary>
-        [Description("Total defender clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes)")]
+        [Description("Total defender clean sheets by the player in the game. Note: clean sheets are awarded when zero goals were allowed to the opponent and the player played at least 60 minutes).")]
         [DataMember(Name = "DefenderCleanSheets", Order = 25)]
         public decimal? DefenderCleanSheets { get; set; }
 
         /// <summary>
-        /// Total saves made by goalkeeper
+        /// Total saves made by goalkeeper in the game
         /// </summary>
-        [Description("Total saves made by goalkeeper")]
+        [Description("Total saves made by goalkeeper in the game")]
         [DataMember(Name = "GoalkeeperSaves", Order = 26)]
         public decimal? GoalkeeperSaves { get; set; }
 
         /// <summary>
-        /// Total goals allowed by goalkeeper
+        /// Total goals allowed by goalkeeper in the game
         /// </summary>
-        [Description("Total goals allowed by goalkeeper")]
+        [Description("Total goals allowed by goalkeeper in the game")]
         [DataMember(Name = "GoalkeeperGoalsAgainst", Order = 27)]
         public decimal? GoalkeeperGoalsAgainst { get; set; }
 
         /// <summary>
-        /// Total games where this goalkeeper allowed exactly one goal
+        /// Total games where the goalkeeper allowed exactly one goal in the game
         /// </summary>
-        [Description("Total games where this goalkeeper allowed exactly one goal")]
+        [Description("Total games where the goalkeeper allowed exactly one goal in the game")]
         [DataMember(Name = "GoalkeeperSingleGoalAgainst", Order = 28)]
         public decimal? GoalkeeperSingleGoalAgainst { get; set; }
 
         /// <summary>
-        /// Total goalkeeper clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes)
+        /// Total number of clean sheets by the goalkeeper in the game. Note: Awarded when zero goals were allowed to the opponent and the player played at least 60 minutes
         /// </summary>
-        [Description("Total goalkeeper clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes)")]
+        [Description("Total number of clean sheets by the goalkeeper in the game. Note: Awarded when zero goals were allowed to the opponent and the player played at least 60 minutes")]
         [DataMember(Name = "GoalkeeperCleanSheets", Order = 29)]
         public decimal? GoalkeeperCleanSheets { get; set; }
 
         /// <summary>
-        /// Total goalkeeper wins (awarded when zero goals were allowed to the opponent and the player played at least 45 minutes)
+        /// Total wins by the goalkeeper in the game
         /// </summary>
-        [Description("Total goalkeeper wins (awarded when zero goals were allowed to the opponent and the player played at least 45 minutes)")]
+        [Description("Total wins by the goalkeeper in the game")]
         [DataMember(Name = "GoalkeeperWins", Order = 30)]
         public decimal? GoalkeeperWins { get; set; }
 
         /// <summary>
-        /// Total penalty kick goals
+        /// Total penalty kick goals scored by the player in the game
         /// </summary>
-        [Description("Total penalty kick goals")]
+        [Description("Total penalty kick goals scored by the player in the game")]
         [DataMember(Name = "PenaltyKickGoals", Order = 31)]
         public decimal? PenaltyKickGoals { get; set; }
 
         /// <summary>
-        /// Total penalty kick misses
+        /// Total penalty kicks missed by the player in the game
         /// </summary>
-        [Description("Total penalty kick misses")]
+        [Description("Total penalty kicks missed by the player in the game")]
         [DataMember(Name = "PenaltyKickMisses", Order = 32)]
         public decimal? PenaltyKickMisses { get; set; }
 
         /// <summary>
-        /// Total penalty kick saves
+        /// Total penalty kicks saved by the player in the game
         /// </summary>
-        [Description("Total penalty kick saves")]
+        [Description("Total penalty kicks saved by the player in the game")]
         [DataMember(Name = "PenaltyKickSaves", Order = 33)]
         public decimal? PenaltyKickSaves { get; set; }
 
         /// <summary>
-        /// Total penalties won
+        /// Total penalties won by the player in the game
         /// </summary>
-        [Description("Total penalties won")]
+        [Description("Total penalties won by the player in the game")]
         [DataMember(Name = "PenaltiesWon", Order = 34)]
         public decimal? PenaltiesWon { get; set; }
 
         /// <summary>
-        /// Total penalties conceded
+        /// Total penalties conceded by the player in the game
         /// </summary>
-        [Description("Total penalties conceded")]
+        [Description("Total penalties conceded by the player in the game")]
         [DataMember(Name = "PenaltiesConceded", Order = 35)]
         public decimal? PenaltiesConceded { get; set; }
 
         /// <summary>
-        /// Goals scored by entire team
+        /// Total goals scored by the player's team in the game
         /// </summary>
-        [Description("Goals scored by entire team")]
+        [Description("Total goals scored by the player's team in the game")]
         [DataMember(Name = "Score", Order = 36)]
         public decimal? Score { get; set; }
 
         /// <summary>
-        /// Goals allowed to opponent
+        /// Total goals scored against own team by the player in the game
         /// </summary>
-        [Description("Goals allowed to opponent")]
+        [Description("Total goals scored against own team by the player in the game")]
         [DataMember(Name = "OpponentScore", Order = 37)]
         public decimal? OpponentScore { get; set; }
 
         /// <summary>
-        /// Total Tackles
+        /// Total tackles by the player in the game
         /// </summary>
-        [Description("Total Tackles")]
+        [Description("Total tackles by the player in the game")]
         [DataMember(Name = "Tackles", Order = 38)]
         public decimal? Tackles { get; set; }
 
         /// <summary>
-        /// The unique ID of this game
+        /// The unique ID of the game
         /// </summary>
-        [Description("The unique ID of this game")]
+        [Description("The unique ID of the game")]
         [DataMember(Name = "GameId", Order = 39)]
         public int? GameId { get; set; }
 
@@ -289,9 +289,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? OpponentId { get; set; }
 
         /// <summary>
-        /// The name of the opponent
+        /// The name of the opponent team
         /// </summary>
-        [Description("The name of the opponent")]
+        [Description("The name of the opponent team")]
         [DataMember(Name = "Opponent", Order = 41)]
         public string Opponent { get; set; }
 
@@ -303,23 +303,23 @@ namespace FantasyData.Api.Client.Model.Soccer
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date and time of the game (UTC)
+        /// The date and time of the game (in UTC)
         /// </summary>
-        [Description("The date and time of the game (UTC)")]
+        [Description("The date and time of the game (in UTC)")]
         [DataMember(Name = "DateTime", Order = 43)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Whether the team is home or away
+        /// Whether the team is the home team or away team
         /// </summary>
-        [Description("Whether the team is home or away")]
+        [Description("Whether the team is the home team or away team")]
         [DataMember(Name = "HomeOrAway", Order = 44)]
         public string HomeOrAway { get; set; }
 
         /// <summary>
-        /// Whether the game is over (true/false)
+        /// Whether the game is over (true) or not (false)
         /// </summary>
-        [Description("Whether the game is over (true/false)")]
+        [Description("Whether the game is over (true) or not (false)")]
         [DataMember(Name = "IsGameOver", Order = 45)]
         public bool IsGameOver { get; set; }
 
@@ -338,9 +338,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? GlobalOpponentId { get; set; }
 
         /// <summary>
-        /// The unique ID of the stat
+        /// The unique ID of the stat associated with this player
         /// </summary>
-        [Description("The unique ID of the stat")]
+        [Description("The unique ID of the stat associated with this player")]
         [DataMember(Name = "StatId", Order = 48)]
         public int StatId { get; set; }
 
@@ -352,16 +352,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// The soccer season of the game
+        /// The soccer regular season for which these totals apply
         /// </summary>
-        [Description("The soccer season of the game")]
+        [Description("The soccer regular season for which these totals apply")]
         [DataMember(Name = "Season", Order = 50)]
         public int Season { get; set; }
 
         /// <summary>
-        /// The unique ID of the round
+        /// The unique ID of the round that this player is associated with
         /// </summary>
-        [Description("The unique ID of the round")]
+        [Description("The unique ID of the round that this player is associated with")]
         [DataMember(Name = "RoundId", Order = 51)]
         public int? RoundId { get; set; }
 
@@ -373,16 +373,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? TeamId { get; set; }
 
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career")]
         [DataMember(Name = "PlayerId", Order = 53)]
         public int? PlayerId { get; set; }
 
         /// <summary>
-        /// Player's name
+        /// The player's full name
         /// </summary>
-        [Description("Player's name")]
+        [Description("The player's full name")]
         [DataMember(Name = "Name", Order = 54)]
         public string Name { get; set; }
 
@@ -394,37 +394,37 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string ShortName { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the player's team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the player's team")]
         [DataMember(Name = "Team", Order = 56)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The player's position category.
+        /// The player's position category
         /// </summary>
-        [Description("The player's position category.")]
+        [Description("The player's position category")]
         [DataMember(Name = "PositionCategory", Order = 57)]
         public string PositionCategory { get; set; }
 
         /// <summary>
-        /// The position of the player. Possible values include: A (Attacker), M (Midfielder), D (Defender), GK (Goalkeeper)
+        /// The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper)
         /// </summary>
-        [Description("The position of the player. Possible values include: A (Attacker), M (Midfielder), D (Defender), GK (Goalkeeper)")]
+        [Description("The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper)")]
         [DataMember(Name = "Position", Order = 58)]
         public string Position { get; set; }
 
         /// <summary>
-        /// The player's jersey number.
+        /// The player's jersey number
         /// </summary>
-        [Description("The player's jersey number.")]
+        [Description("The player's jersey number")]
         [DataMember(Name = "Jersey", Order = 59)]
         public int Jersey { get; set; }
 
         /// <summary>
-        /// Number of games the player started
+        /// The total number of games the player started
         /// </summary>
-        [Description("Number of games the player started")]
+        [Description("The total number of games the player started")]
         [DataMember(Name = "Started", Order = 60)]
         public int? Started { get; set; }
 
@@ -436,16 +436,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public bool? Captain { get; set; }
 
         /// <summary>
-        /// Whether the player is suspended (true/false)
+        /// Whether the player is suspended or not (true/false)
         /// </summary>
-        [Description("Whether the player is suspended (true/false)")]
+        [Description("Whether the player is suspended or not (true/false)")]
         [DataMember(Name = "Suspension", Order = 62)]
         public bool? Suspension { get; set; }
 
         /// <summary>
-        /// The reason for the suspension
+        /// The reason given for the player's suspension
         /// </summary>
-        [Description("The reason for the suspension")]
+        [Description("The reason given for the player's suspension")]
         [DataMember(Name = "SuspensionReason", Order = 63)]
         public string SuspensionReason { get; set; }
 

@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int BookingId { get; set; }
 
         /// <summary>
-        /// The unique ID of the game
+        /// The unique ID of the game tied to this booking
         /// </summary>
-        [Description("The unique ID of the game")]
+        [Description("The unique ID of the game tied to this booking")]
         [DataMember(Name = "GameId", Order = 2)]
         public int GameId { get; set; }
 
@@ -30,23 +30,23 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Type { get; set; }
 
         /// <summary>
-        /// The unique ID of the team
+        /// The unique ID of the team associated with this booking
         /// </summary>
-        [Description("The unique ID of the team")]
+        [Description("The unique ID of the team associated with this booking")]
         [DataMember(Name = "TeamId", Order = 4)]
         public int TeamId { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID as assigned by SportsDataIO
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career
         /// </summary>
-        [Description("The player's unique PlayerID as assigned by SportsDataIO")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career")]
         [DataMember(Name = "PlayerId", Order = 5)]
         public int? PlayerId { get; set; }
 
         /// <summary>
-        /// The name of the player who was booked 
+        /// The full name of the player who was booked
         /// </summary>
-        [Description("The name of the player who was booked ")]
+        [Description("The full name of the player who was booked")]
         [DataMember(Name = "Name", Order = 6)]
         public string Name { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? GameMinute { get; set; }
 
         /// <summary>
-        /// The extra minute in the game in which the booking occurred
+        /// The extra minute in the game in which the booking occurred
         /// </summary>
-        [Description("The extra minute in the game in which the booking occurred")]
+        [Description("The extra minute in the game in which the booking occurred")]
         [DataMember(Name = "GameMinuteExtra", Order = 8)]
         public int? GameMinuteExtra { get; set; }
 

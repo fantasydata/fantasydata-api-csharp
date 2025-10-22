@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public int Season { get; set; }
 
         /// <summary>
-        /// The driver's name
+        /// The driver's full name
         /// </summary>
-        [Description("The driver's name")]
+        [Description("The driver's full name")]
         [DataMember(Name = "Name", Order = 4)]
         public string Name { get; set; }
 

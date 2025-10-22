@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class BettingResultingMetadata
     {
         /// <summary>
-        /// The BettingMarketTypeID of this type of market which we can result
+        /// The unique ID that distinguishes the different types of Market Types
         /// </summary>
-        [Description("The BettingMarketTypeID of this type of market which we can result")]
+        [Description("The unique ID that distinguishes the different types of Market Types")]
         [DataMember(Name = "BettingMarketTypeId", Order = 1)]
         public int BettingMarketTypeId { get; set; }
 
         /// <summary>
-        /// The BettingBetTypeID of this type of market which we can result
+        /// The ID associated with the name of the bet type within a market
         /// </summary>
-        [Description("The BettingBetTypeID of this type of market which we can result")]
+        [Description("The ID associated with the name of the bet type within a market")]
         [DataMember(Name = "BettingBetTypeId", Order = 2)]
         public int BettingBetTypeId { get; set; }
 

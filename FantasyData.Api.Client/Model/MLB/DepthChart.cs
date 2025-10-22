@@ -9,58 +9,58 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class DepthChart
     {
         /// <summary>
-        /// Unique ID of Depth Chard Record
+        /// The unique ID of the Depth Chard record
         /// </summary>
-        [Description("Unique ID of Depth Chard Record")]
+        [Description("The unique ID of the Depth Chard record")]
         [DataMember(Name = "DepthChartID", Order = 1)]
         public int DepthChartID { get; set; }
 
         /// <summary>
-        /// Unique ID of Team
+        /// The team's unique TeamID as assigned by SportsDataIO
         /// </summary>
-        [Description("Unique ID of Team")]
+        [Description("The team's unique TeamID as assigned by SportsDataIO")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Unique ID of Player
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career
         /// </summary>
-        [Description("Unique ID of Player")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career")]
         [DataMember(Name = "PlayerID", Order = 3)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// Player Name
+        /// Player's full name
         /// </summary>
-        [Description("Player Name")]
+        [Description("Player's full name")]
         [DataMember(Name = "Name", Order = 4)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Player Position Category (IF, OF, P, etc)
+        /// The player's position category. Possible values: DH; IF; OF; P; PH; PR
         /// </summary>
-        [Description("Player Position Category (IF, OF, P, etc)")]
+        [Description("The player's position category. Possible values: DH; IF; OF; P; PH; PR")]
         [DataMember(Name = "PositionCategory", Order = 5)]
         public string PositionCategory { get; set; }
 
         /// <summary>
-        /// Player Position
+        /// Player's position in the depth chart. Note: a player can be listed in multiple positions of the depth chart
         /// </summary>
-        [Description("Player Position")]
+        [Description("Player's position in the depth chart. Note: a player can be listed in multiple positions of the depth chart")]
         [DataMember(Name = "Position", Order = 6)]
         public string Position { get; set; }
 
         /// <summary>
-        /// Depth Chart Order 
+        /// The Depth Chart order of the player and where they are placed in the depth chart
         /// </summary>
-        [Description("Depth Chart Order ")]
+        [Description("The Depth Chart order of the player and where they are placed in the depth chart")]
         [DataMember(Name = "DepthOrder", Order = 7)]
         public int? DepthOrder { get; set; }
 
         /// <summary>
-        /// Date and Time Last Updated
+        /// The date and time of the last update made to this depth chart (in US Eastern Time)
         /// </summary>
-        [Description("Date and Time Last Updated")]
+        [Description("The date and time of the last update made to this depth chart (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 8)]
         public DateTime? Updated { get; set; }
 

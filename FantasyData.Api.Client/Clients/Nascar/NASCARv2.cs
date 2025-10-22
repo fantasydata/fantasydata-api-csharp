@@ -118,9 +118,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Season Current Asynchronous
+        /// Get Series Asynchronous
         /// </summary>
-        public Task<List<Series>> GetSeasonCurrentAsync()
+        public Task<List<Series>> GetSeriesAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<Series>>(() =>
@@ -129,11 +129,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Season Current
+        /// Get Series
         /// </summary>
-        public List<Series> GetSeasonCurrent()
+        public List<Series> GetSeries()
         {
-            return this.GetSeasonCurrentAsync().Result;
+            return this.GetSeriesAsync().Result;
         }
 
         /// <summary>

@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class BettingEvent
     {
         /// <summary>
-        /// The unique identifier for this betting event
+        /// The unique ID associated with the betting event
         /// </summary>
-        [Description("The unique identifier for this betting event")]
+        [Description("The unique ID associated with the betting event")]
         [DataMember(Name = "BettingEventID", Order = 1)]
         public int BettingEventID { get; set; }
 
@@ -23,23 +23,23 @@ namespace FantasyData.Api.Client.Model.Golf
         public string Name { get; set; }
 
         /// <summary>
-        /// The season of this betting event
+        /// The PGA season of this betting event
         /// </summary>
-        [Description("The season of this betting event")]
+        [Description("The PGA season of this betting event")]
         [DataMember(Name = "Season", Order = 3)]
         public int? Season { get; set; }
 
         /// <summary>
-        /// The identifier of the bet type of this betting event
+        /// The ID associated with the type of betting event
         /// </summary>
-        [Description("The identifier of the bet type of this betting event")]
+        [Description("The ID associated with the type of betting event")]
         [DataMember(Name = "BettingEventTypeID", Order = 4)]
         public int BettingEventTypeID { get; set; }
 
         /// <summary>
-        /// The name of the bet type of this betting event
+        /// Indicates the type of betting event. Note: golf does not have the concept of a future type betting event
         /// </summary>
-        [Description("The name of the bet type of this betting event")]
+        [Description("Indicates the type of betting event. Note: golf does not have the concept of a future type betting event")]
         [DataMember(Name = "BettingEventType", Order = 5)]
         public string BettingEventType { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// The created date of this betting event
+        /// The timestamp of when this betting event was created
         /// </summary>
-        [Description("The created date of this betting event")]
+        [Description("The timestamp of when this betting event was created")]
         [DataMember(Name = "Created", Order = 7)]
         public DateTime? Created { get; set; }
 
@@ -65,16 +65,16 @@ namespace FantasyData.Api.Client.Model.Golf
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The TournamentId of the tournament tied to this event
+        /// The unique ID of the tournament tied to this event
         /// </summary>
-        [Description("The TournamentId of the tournament tied to this event")]
+        [Description("The unique ID of the tournament tied to this event")]
         [DataMember(Name = "TournamentId", Order = 9)]
         public int? TournamentId { get; set; }
 
         /// <summary>
-        /// The list of betting markets for this event
+        /// A list of the possible betting markets within a betting event
         /// </summary>
-        [Description("The list of betting markets for this event")]
+        [Description("A list of the possible betting markets within a betting event")]
         [DataMember(Name = "BettingMarkets", Order = 20010)]
         public BettingMarket[] BettingMarkets { get; set; }
 

@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.MMA
     public partial class FightOdds
     {
         /// <summary>
-        /// The unique ID of this Fight Odd
+        /// The unique ID of this FIghtOdd
         /// </summary>
-        [Description("The unique ID of this Fight Odd")]
+        [Description("The unique ID of this FIghtOdd")]
         [DataMember(Name = "FightOddId", Order = 1)]
         public int? FightOddId { get; set; }
 
@@ -58,16 +58,16 @@ namespace FantasyData.Api.Client.Model.MMA
         public Fighter FighterB { get; set; }
 
         /// <summary>
-        /// The Sportsbook's money line for Fighter A
+        /// The sportsbook's moneyline for Fighter A
         /// </summary>
-        [Description("The Sportsbook's money line for Fighter A")]
+        [Description("The sportsbook's moneyline for Fighter A")]
         [DataMember(Name = "FighterAMoneyline", Order = 8)]
         public int? FighterAMoneyline { get; set; }
 
         /// <summary>
-        /// The Sportsbook's money line for Fighter B
+        /// The sportsbook's moneyline for Fighter B
         /// </summary>
-        [Description("The Sportsbook's money line for Fighter B")]
+        [Description("The sportsbook's moneyline for Fighter B")]
         [DataMember(Name = "FighterBMoneyline", Order = 9)]
         public int? FighterBMoneyline { get; set; }
 
@@ -79,16 +79,16 @@ namespace FantasyData.Api.Client.Model.MMA
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// The timestamp of when these odds were last updated based on US Eastern Time
+        /// The timestamp of when these odds were last updated (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp of when these odds were last updated based on US Eastern Time")]
+        [Description("The timestamp of when these odds were last updated (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 11)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The URL for sportsbook event
+        /// The URL for the sportsbook event
         /// </summary>
-        [Description("The URL for sportsbook event")]
+        [Description("The URL for the sportsbook event")]
         [DataMember(Name = "SportsbookUrl", Order = 12)]
         public string SportsbookUrl { get; set; }
 

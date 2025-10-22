@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class BettingEntityMetadataCollection
     {
         /// <summary>
-        /// A list of the possible BettingBetTypes (e.g. Moneyline, Spread)
+        /// The list of the bet types that can be found within a market
         /// </summary>
-        [Description("A list of the possible BettingBetTypes (e.g. Moneyline, Spread)")]
+        [Description("The list of the bet types that can be found within a market")]
         [DataMember(Name = "BettingBetTypes", Order = 20001)]
         public BettingEntityMetadata[] BettingBetTypes { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingMartketTypes (e.g. Game Line, Team Prop)
+        /// A list of the possible market types within a Betting Event (e.g. Game Line, Team prop, Player Future, etc.)
         /// </summary>
-        [Description("A list of the possible BettingMartketTypes (e.g. Game Line, Team Prop)")]
+        [Description("A list of the possible market types within a Betting Event (e.g. Game Line, Team prop, Player Future, etc.)")]
         [DataMember(Name = "BettingMarketTypes", Order = 20002)]
         public BettingEntityMetadata[] BettingMarketTypes { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingPeriodTypes (e.g. Full Game, Regulation Time, 1st Half)
+        /// The name of the period type of a market (e.g. Regular Season; 1st half; 90 Minutes and Stoppage Time; etc.)
         /// </summary>
-        [Description("A list of the possible BettingPeriodTypes (e.g. Full Game, Regulation Time, 1st Half)")]
+        [Description("The name of the period type of a market (e.g. Regular Season; 1st half; 90 Minutes and Stoppage Time; etc.)")]
         [DataMember(Name = "BettingPeriodTypes", Order = 20003)]
         public BettingEntityMetadata[] BettingPeriodTypes { get; set; }
 
@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public BettingEntityMetadata[] BettingEventTypes { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingOutcomeTypes (e.g. Home, Over)
+        /// A list of the possible BettingOutcomeTypes (e.g. Home; Away; Under; Over)
         /// </summary>
-        [Description("A list of the possible BettingOutcomeTypes (e.g. Home, Over)")]
+        [Description("A list of the possible BettingOutcomeTypes (e.g. Home; Away; Under; Over)")]
         [DataMember(Name = "BettingOutcomeTypes", Order = 20005)]
         public BettingEntityMetadata[] BettingOutcomeTypes { get; set; }
 

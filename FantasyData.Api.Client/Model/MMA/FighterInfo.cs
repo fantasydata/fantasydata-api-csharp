@@ -16,16 +16,16 @@ namespace FantasyData.Api.Client.Model.MMA
         public int? FighterId { get; set; }
 
         /// <summary>
-        /// The fighter's first name
+        /// The first name of the fighter
         /// </summary>
-        [Description("The fighter's first name")]
+        [Description("The first name of the fighter")]
         [DataMember(Name = "FirstName", Order = 2)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// The fighter's last name
+        /// The last name of the fighter
         /// </summary>
-        [Description("The fighter's last name")]
+        [Description("The last name of the fighter")]
         [DataMember(Name = "LastName", Order = 3)]
         public string LastName { get; set; }
 
@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.MMA
         public bool? Winner { get; set; }
 
         /// <summary>
-        /// Moneyline for the fighters odds to win the fight
+        /// Moneyline for the fighter's odds to win the fight
         /// </summary>
-        [Description("Moneyline for the fighters odds to win the fight")]
+        [Description("Moneyline for the fighter's odds to win the fight")]
         [DataMember(Name = "Moneyline", Order = 9)]
         public int? Moneyline { get; set; }
 

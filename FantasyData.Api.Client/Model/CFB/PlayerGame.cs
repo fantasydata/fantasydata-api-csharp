@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class PlayerGame
     {
         /// <summary>
-        /// The unique ID of the stat
+        /// The unique ID of the stats associated with the player in this game
         /// </summary>
-        [Description("The unique ID of the stat")]
+        [Description("The unique ID of the stats associated with the player in this game")]
         [DataMember(Name = "StatID", Order = 1)]
         public int StatID { get; set; }
 
         /// <summary>
-        /// The unique ID of the team
+        /// The unique ID of the team associated with this player
         /// </summary>
-        [Description("The unique ID of the team")]
+        [Description("The unique ID of the team associated with this player")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The unique ID of the player as assigned by SportsDataIO. Note: this ID remains with the player their entire collegiate career
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The unique ID of the player as assigned by SportsDataIO. Note: this ID remains with the player their entire collegiate career")]
         [DataMember(Name = "PlayerID", Order = 3)]
         public int? PlayerID { get; set; }
 
@@ -44,23 +44,23 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? Season { get; set; }
 
         /// <summary>
-        /// Player's name
+        /// The player's full name
         /// </summary>
-        [Description("Player's name")]
+        [Description("The player's full name")]
         [DataMember(Name = "Name", Order = 6)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team that the player is on
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team that the player is on")]
         [DataMember(Name = "Team", Order = 7)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The player's primary position. Possible values: QB, RB, WR, TE
+        /// The player's primary position. Possible values: C; CB; DB; DE; DL; DT; FB; G; K; KR; LB; LS; NT; OL; OLB; OT; P; PR; QB; RB; S; SS; TE; WR
         /// </summary>
-        [Description("The player's primary position. Possible values: QB, RB, WR, TE")]
+        [Description("The player's primary position. Possible values: C; CB; DB; DE; DL; DT; FB; G; K; KR; LB; LS; NT; OL; OLB; OT; P; PR; QB; RB; S; SS; TE; WR")]
         [DataMember(Name = "Position", Order = 8)]
         public string Position { get; set; }
 
@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public string InjuryBodyPart { get; set; }
 
         /// <summary>
-        /// The day that the injury started or first discovered.
+        /// The day that the injury started or was first discovered.
         /// </summary>
-        [Description("The day that the injury started or first discovered.")]
+        [Description("The day that the injury started or was first discovered.")]
         [DataMember(Name = "InjuryStartDate", Order = 12)]
         public DateTime? InjuryStartDate { get; set; }
 
@@ -107,16 +107,16 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? GlobalTeamID { get; set; }
 
         /// <summary>
-        /// The Draft Kings player position for this game.
+        /// The DraftKings player position for this game.
         /// </summary>
-        [Description("The Draft Kings player position for this game.")]
+        [Description("The DraftKings player position for this game.")]
         [DataMember(Name = "DraftKingsPosition", Order = 15)]
         public string DraftKingsPosition { get; set; }
 
         /// <summary>
-        /// A DraftKings salary for the next "standard" draft kings slate this game is in. (this may change as slates start & this value changes to the next slate's salary).
+        /// A DraftKings salary for the next "standard" slate this game is in. NOTE: this may change as slates start & this value changes to the next slate's salary.
         /// </summary>
-        [Description("A DraftKings salary for the next \"standard\" draft kings slate this game is in. (this may change as slates start & this value changes to the next slate's salary).")]
+        [Description("A DraftKings salary for the next \"standard\" slate this game is in. NOTE: this may change as slates start & this value changes to the next slate's salary.")]
         [DataMember(Name = "DraftKingsSalary", Order = 16)]
         public int? DraftKingsSalary { get; set; }
 

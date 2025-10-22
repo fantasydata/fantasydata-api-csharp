@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class BettingEvent
     {
         /// <summary>
-        /// The unique identifier for this betting event
+        /// The unique ID assocated with the betting event
         /// </summary>
-        [Description("The unique identifier for this betting event")]
+        [Description("The unique ID assocated with the betting event")]
         [DataMember(Name = "BettingEventID", Order = 1)]
         public int BettingEventID { get; set; }
 
@@ -23,23 +23,23 @@ namespace FantasyData.Api.Client.Model.CFB
         public string Name { get; set; }
 
         /// <summary>
-        /// The season of this betting event
+        /// The college football season of the game
         /// </summary>
-        [Description("The season of this betting event")]
+        [Description("The college football season of the game")]
         [DataMember(Name = "Season", Order = 3)]
         public int? Season { get; set; }
 
         /// <summary>
-        /// The identifier of the bet type of this betting event
+        /// The ID associated with the type of betting event - Game or Future
         /// </summary>
-        [Description("The identifier of the bet type of this betting event")]
+        [Description("The ID associated with the type of betting event - Game or Future")]
         [DataMember(Name = "BettingEventTypeID", Order = 4)]
         public int BettingEventTypeID { get; set; }
 
         /// <summary>
-        /// The name of the bet type of this betting event
+        /// Indicates the type of betting event - Game or Future
         /// </summary>
-        [Description("The name of the bet type of this betting event")]
+        [Description("Indicates the type of betting event - Game or Future")]
         [DataMember(Name = "BettingEventType", Order = 5)]
         public string BettingEventType { get; set; }
 
@@ -58,23 +58,23 @@ namespace FantasyData.Api.Client.Model.CFB
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// The last updated date of this betting event
+        /// The last updated timestamp of this betting event (US Eastern Time)
         /// </summary>
-        [Description("The last updated date of this betting event")]
+        [Description("The last updated timestamp of this betting event (US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 8)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The GameId of the game tied to this event
+        /// The unique ID of this game tied to this event
         /// </summary>
-        [Description("The GameId of the game tied to this event")]
+        [Description("The unique ID of this game tied to this event")]
         [DataMember(Name = "GameID", Order = 9)]
         public int? GameID { get; set; }
 
         /// <summary>
-        /// The GlobalGameId of the game tied to this event
+        /// A globally unique ID for this game tied to this event. Note: This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("The GlobalGameId of the game tied to this event")]
+        [Description("A globally unique ID for this game tied to this event. Note: This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalGameID", Order = 10)]
         public int? GlobalGameID { get; set; }
 
@@ -86,44 +86,44 @@ namespace FantasyData.Api.Client.Model.CFB
         public string GameStatus { get; set; }
 
         /// <summary>
-        /// The Away Team Key of the game tied to this event
+        /// The abbreviation [Key] of the away team tied to this event
         /// </summary>
-        [Description("The Away Team Key of the game tied to this event")]
+        [Description("The abbreviation [Key] of the away team tied to this event")]
         [DataMember(Name = "AwayTeam", Order = 12)]
         public string AwayTeam { get; set; }
 
         /// <summary>
-        /// The Home team key of the game tied to this event
+        /// The abbreviation [Key] of the home team
         /// </summary>
-        [Description("The Home team key of the game tied to this event")]
+        [Description("The abbreviation [Key] of the home team")]
         [DataMember(Name = "HomeTeam", Order = 13)]
         public string HomeTeam { get; set; }
 
         /// <summary>
-        /// The Away team ID of the game tied to this event
+        /// The unique ID of the away team tied to this event
         /// </summary>
-        [Description("The Away team ID of the game tied to this event")]
+        [Description("The unique ID of the away team tied to this event")]
         [DataMember(Name = "AwayTeamID", Order = 14)]
         public int? AwayTeamID { get; set; }
 
         /// <summary>
-        /// The Home team ID of the game tied to this event
+        /// The unique ID of the home team
         /// </summary>
-        [Description("The Home team ID of the game tied to this event")]
+        [Description("The unique ID of the home team")]
         [DataMember(Name = "HomeTeamID", Order = 15)]
         public int? HomeTeamID { get; set; }
 
         /// <summary>
-        /// The global away team id of the game tied to this event
+        /// A globally unique ID for the away team tied this event. Note: This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("The global away team id of the game tied to this event")]
+        [Description("A globally unique ID for the away team tied this event. Note: This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalAwayTeamID", Order = 16)]
         public int? GlobalAwayTeamID { get; set; }
 
         /// <summary>
-        /// The global home team id of the game tied to this event
+        /// A globally unique ID for the home team. Note: This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("The global home team id of the game tied to this event")]
+        [Description("A globally unique ID for the home team. Note: This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalHomeTeamID", Order = 17)]
         public int? GlobalHomeTeamID { get; set; }
 
@@ -135,16 +135,16 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? AwayTeamScore { get; set; }
 
         /// <summary>
-        /// The home team score of the game tied to this event (post-game)
+        /// The home team score of the game tied to this event (postgame)
         /// </summary>
-        [Description("The home team score of the game tied to this event (post-game)")]
+        [Description("The home team score of the game tied to this event (postgame)")]
         [DataMember(Name = "HomeTeamScore", Order = 19)]
         public int? HomeTeamScore { get; set; }
 
         /// <summary>
-        /// The combined scores of the home and away team of the game tied to this event (post-game)
+        /// The total points scored by both teams in the game tied to this event (updated after game ends to allow for resolving bets)
         /// </summary>
-        [Description("The combined scores of the home and away team of the game tied to this event (post-game)")]
+        [Description("The total points scored by both teams in the game tied to this event (updated after game ends to allow for resolving bets)")]
         [DataMember(Name = "TotalScore", Order = 20)]
         public int? TotalScore { get; set; }
 
@@ -156,9 +156,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? AwayRotationNumber { get; set; }
 
         /// <summary>
-        /// The home team rotation number of the game tied to this event
+        /// Rotation number of home team tied to this event
         /// </summary>
-        [Description("The home team rotation number of the game tied to this event")]
+        [Description("Rotation number of home team tied to this event")]
         [DataMember(Name = "HomeRotationNumber", Order = 22)]
         public int? HomeRotationNumber { get; set; }
 

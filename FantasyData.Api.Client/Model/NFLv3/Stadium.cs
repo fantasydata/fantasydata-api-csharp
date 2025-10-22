@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string City { get; set; }
 
         /// <summary>
-        /// The US state where the stadium is located (if Stadium is outside US, this value is NULL)
+        /// The city where the venue is located
         /// </summary>
-        [Description("The US state where the stadium is located (if Stadium is outside US, this value is NULL)")]
+        [Description("The city where the venue is located")]
         [DataMember(Name = "State", Order = 4)]
         public string State { get; set; }
 
         /// <summary>
-        /// The 2-digit country code where the stadium is located
+        /// The 3-digit country code where the stadium is located
         /// </summary>
-        [Description("The 2-digit country code where the stadium is located")]
+        [Description("The 3-digit country code where the stadium is located")]
         [DataMember(Name = "Country", Order = 5)]
         public string Country { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string PlayingSurface { get; set; }
 
         /// <summary>
-        /// The geographic latitude coordinate of this venue.
+        /// The geographic latitude coordinate of this venue
         /// </summary>
-        [Description("The geographic latitude coordinate of this venue.")]
+        [Description("The geographic latitude coordinate of this venue")]
         [DataMember(Name = "GeoLat", Order = 8)]
         public decimal? GeoLat { get; set; }
 

@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class BettingEntityMetadataCollection
     {
         /// <summary>
-        /// A list of the possible BettingBetTypes (e.g. Moneyline, Spread)
+        /// The list of the bet types that can be found within a market
         /// </summary>
-        [Description("A list of the possible BettingBetTypes (e.g. Moneyline, Spread)")]
+        [Description("The list of the bet types that can be found within a market")]
         [DataMember(Name = "BettingBetTypes", Order = 20001)]
         public BettingEntityMetadata[] BettingBetTypes { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingMarketTypes (e.g. Game Line, Team Prop)
+        /// A list of the possible market types within a Betting Event (e.g. Game Line, Team Prop, Player Future, etc.)
         /// </summary>
-        [Description("A list of the possible BettingMarketTypes (e.g. Game Line, Team Prop)")]
+        [Description("A list of the possible market types within a Betting Event (e.g. Game Line, Team Prop, Player Future, etc.)")]
         [DataMember(Name = "BettingMarketTypes", Order = 20002)]
         public BettingEntityMetadata[] BettingMarketTypes { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingPeriodTypes (e.g. Full Game, Regulation Time, 1st Half)
+        /// A list of the possible BettingPeriodTypes (e.g. Full Game; Regulation; 1st Period)
         /// </summary>
-        [Description("A list of the possible BettingPeriodTypes (e.g. Full Game, Regulation Time, 1st Half)")]
+        [Description("A list of the possible BettingPeriodTypes (e.g. Full Game; Regulation; 1st Period)")]
         [DataMember(Name = "BettingPeriodTypes", Order = 20003)]
         public BettingEntityMetadata[] BettingPeriodTypes { get; set; }
 
@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public BettingEntityMetadata[] BettingEventTypes { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingOutcomeTypes (e.g. Home, Over)
+        /// A list of the possible BettingOutcomeTypes (e.g. Home; Away; Under; Over)
         /// </summary>
-        [Description("A list of the possible BettingOutcomeTypes (e.g. Home, Over)")]
+        [Description("A list of the possible BettingOutcomeTypes (e.g. Home; Away; Under; Over)")]
         [DataMember(Name = "BettingOutcomeTypes", Order = 20005)]
         public BettingEntityMetadata[] BettingOutcomeTypes { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public BettingResultingMetadata[] ResultedMarketMetaData { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingResultTypes (e.g. Won, Lost, Push)
+        /// A list of the possible BettingResultTypes (e.g. Win; Loss; Push; Not Resulted; Incomplete)
         /// </summary>
-        [Description("A list of the possible BettingResultTypes (e.g. Won, Lost, Push)")]
+        [Description("A list of the possible BettingResultTypes (e.g. Win; Loss; Push; Not Resulted; Incomplete)")]
         [DataMember(Name = "BettingResultTypes", Order = 20007)]
         public BettingEntityMetadata[] BettingResultTypes { get; set; }
 

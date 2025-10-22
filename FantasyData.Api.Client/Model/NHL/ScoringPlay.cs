@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public int ScoringPlayID { get; set; }
 
         /// <summary>
-        /// The unique ID of the period
+        /// The unique ID associated of this period
         /// </summary>
-        [Description("The unique ID of the period")]
+        [Description("The unique ID associated of this period")]
         [DataMember(Name = "PeriodID", Order = 2)]
         public int PeriodID { get; set; }
 
@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? Sequence { get; set; }
 
         /// <summary>
-        /// Number of minutes that have passed in the current period. Please note this field name is misleading, and actually represents the game clock minutes, which are the number of minutes that have already passed in the period. Possible values: 0-20.
+        /// Number of minutes that have passed in the current period.  NOTE: this field name might be misleading as it actually represents the game clock minutes which are the number of minutes that have already passed in the period.
         /// </summary>
-        [Description("Number of minutes that have passed in the current period. Please note this field name is misleading, and actually represents the game clock minutes, which are the number of minutes that have already passed in the period. Possible values: 0-20.")]
+        [Description("Number of minutes that have passed in the current period.  NOTE: this field name might be misleading as it actually represents the game clock minutes which are the number of minutes that have already passed in the period.")]
         [DataMember(Name = "TimeRemainingMinutes", Order = 4)]
         public int? TimeRemainingMinutes { get; set; }
 
         /// <summary>
-        /// Number of seconds that have passed in the current period. Please note this field name is misleading, and actually represents the game clock seconds, which are the number of seconds that have already passed in the period. Possible values: 0-60.
+        /// Number of seconds that have passed in the current period.  NOTE: this field name might be misleading as it actually represents the game clock sconds which are the number of minutes that have already passed in the period.
         /// </summary>
-        [Description("Number of seconds that have passed in the current period. Please note this field name is misleading, and actually represents the game clock seconds, which are the number of seconds that have already passed in the period. Possible values: 0-60.")]
+        [Description("Number of seconds that have passed in the current period.  NOTE: this field name might be misleading as it actually represents the game clock sconds which are the number of minutes that have already passed in the period.")]
         [DataMember(Name = "TimeRemainingSeconds", Order = 5)]
         public int? TimeRemainingSeconds { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? ScoredByTeamID { get; set; }
 
         /// <summary>
-        /// The TeamID of the team that allowe the goal
+        /// The TeamID of the team that allowed the goal
         /// </summary>
-        [Description("The TeamID of the team that allowe the goal")]
+        [Description("The TeamID of the team that allowed the goal")]
         [DataMember(Name = "AllowedByTeamID", Order = 7)]
         public int? AllowedByTeamID { get; set; }
 
@@ -65,51 +65,51 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? ScoredByPlayerID { get; set; }
 
         /// <summary>
-        /// The PlayerID of the player who assisted on the goal
+        /// The PlayerID of the FIRST player who assisted on the goal
         /// </summary>
-        [Description("The PlayerID of the player who assisted on the goal")]
+        [Description("The PlayerID of the FIRST player who assisted on the goal")]
         [DataMember(Name = "AssistedByPlayerID1", Order = 9)]
         public int? AssistedByPlayerID1 { get; set; }
 
         /// <summary>
-        /// The PlayerID of the player who assisted on the goal
+        /// The PlayerID of the SECOND player who assisted on the goal
         /// </summary>
-        [Description("The PlayerID of the player who assisted on the goal")]
+        [Description("The PlayerID of the SECOND player who assisted on the goal")]
         [DataMember(Name = "AssistedByPlayerID2", Order = 10)]
         public int? AssistedByPlayerID2 { get; set; }
 
         /// <summary>
-        /// Whether the goal was scored on the power play (true/false)
+        /// Whether or not the goal was scored on the power play
         /// </summary>
-        [Description("Whether the goal was scored on the power play (true/false)")]
+        [Description("Whether or not the goal was scored on the power play")]
         [DataMember(Name = "PowerPlay", Order = 11)]
         public bool? PowerPlay { get; set; }
 
         /// <summary>
-        /// Whether the goal was scored shorthanded (true/false)
+        /// Whether the goal was scored shorthanded
         /// </summary>
-        [Description("Whether the goal was scored shorthanded (true/false)")]
+        [Description("Whether the goal was scored shorthanded")]
         [DataMember(Name = "ShortHanded", Order = 12)]
         public bool? ShortHanded { get; set; }
 
         /// <summary>
-        /// Whether the goal was an empty net goal (true/false)
+        /// Whether the goal was an empty net goal or not
         /// </summary>
-        [Description("Whether the goal was an empty net goal (true/false)")]
+        [Description("Whether the goal was an empty net goal or not")]
         [DataMember(Name = "EmptyNet", Order = 13)]
         public bool? EmptyNet { get; set; }
 
         /// <summary>
-        /// The away team score after the play ended
+        /// The score of the away team after the conclusion of the scoring play
         /// </summary>
-        [Description("The away team score after the play ended")]
+        [Description("The score of the away team after the conclusion of the scoring play")]
         [DataMember(Name = "AwayTeamScore", Order = 14)]
         public int? AwayTeamScore { get; set; }
 
         /// <summary>
-        /// The home team score after the play ended
+        /// The score of the home team after the conclusion of the scoring play
         /// </summary>
-        [Description("The home team score after the play ended")]
+        [Description("The score of the home team after the conclusion of the scoring play")]
         [DataMember(Name = "HomeTeamScore", Order = 15)]
         public int? HomeTeamScore { get; set; }
 

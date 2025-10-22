@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int QuarterID { get; set; }
 
         /// <summary>
-        /// The name of the Quarter that this play occurred in.
+        /// The name of the quarter that this play occurred in
         /// </summary>
-        [Description("The name of the Quarter that this play occurred in.")]
+        [Description("The name of the quarter that this play occurred in")]
         [DataMember(Name = "QuarterName", Order = 3)]
         public string QuarterName { get; set; }
 
@@ -37,30 +37,30 @@ namespace FantasyData.Api.Client.Model.NBA
         public int Sequence { get; set; }
 
         /// <summary>
-        /// The number of minutes remaining in the Quarter when this play completed.
+        /// The number of minutes remaining in the quarter when this play occurred
         /// </summary>
-        [Description("The number of minutes remaining in the Quarter when this play completed.")]
+        [Description("The number of minutes remaining in the quarter when this play occurred")]
         [DataMember(Name = "TimeRemainingMinutes", Order = 5)]
         public int? TimeRemainingMinutes { get; set; }
 
         /// <summary>
-        /// The number of seconds remaining in the Quarter when this play completed.
+        /// The number of seconds remaining in the quarter when the play occurred
         /// </summary>
-        [Description("The number of seconds remaining in the Quarter when this play completed.")]
+        [Description("The number of seconds remaining in the quarter when the play occurred")]
         [DataMember(Name = "TimeRemainingSeconds", Order = 6)]
         public int? TimeRemainingSeconds { get; set; }
 
         /// <summary>
-        /// The score of the away team after this play completed.
+        /// Total number of points the away team scored after this play completed
         /// </summary>
-        [Description("The score of the away team after this play completed.")]
+        [Description("Total number of points the away team scored after this play completed")]
         [DataMember(Name = "AwayTeamScore", Order = 7)]
         public int? AwayTeamScore { get; set; }
 
         /// <summary>
-        /// The score of the home team after this play completed.
+        /// Total points scored by the home team after the completion of this play
         /// </summary>
-        [Description("The score of the home team after this play completed.")]
+        [Description("Total points scored by the home team after the completion of this play")]
         [DataMember(Name = "HomeTeamScore", Order = 8)]
         public int? HomeTeamScore { get; set; }
 
@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public bool? ShotMade { get; set; }
 
         /// <summary>
-        /// The category the play. Possible values: Period, Timeout, JumpBall, Shot, Rebound, Foul, Substitution, Turnover
+        /// The category the play. Possible values: Period, Timeout, JumpBall, Shot, Rebound, Foul, Substitution, Turnover, Challenge.
         /// </summary>
-        [Description("The category the play. Possible values: Period, Timeout, JumpBall, Shot, Rebound, Foul, Substitution, Turnover")]
+        [Description("The category the play. Possible values: Period, Timeout, JumpBall, Shot, Rebound, Foul, Substitution, Turnover, Challenge.")]
         [DataMember(Name = "Category", Order = 12)]
         public string Category { get; set; }
 
@@ -100,30 +100,30 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Type { get; set; }
 
         /// <summary>
-        /// The TeamID of the team associated with this play.
+        /// The unique ID of the team associated with this play
         /// </summary>
-        [Description("The TeamID of the team associated with this play.")]
+        [Description("The unique ID of the team associated with this play")]
         [DataMember(Name = "TeamID", Order = 14)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The Team Key of the team associated with this play.
+        /// The abbreviation [Key] of the team associated with this play
         /// </summary>
-        [Description("The Team Key of the team associated with this play.")]
+        [Description("The abbreviation [Key] of the team associated with this play")]
         [DataMember(Name = "Team", Order = 15)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The TeamID of the opponent associated with this play.
+        /// The unique ID of the opponent team associated with this play
         /// </summary>
-        [Description("The TeamID of the opponent associated with this play.")]
+        [Description("The unique ID of the opponent team associated with this play")]
         [DataMember(Name = "OpponentID", Order = 16)]
         public int? OpponentID { get; set; }
 
         /// <summary>
-        /// The Team Key of the opponent associated with this play.
+        /// Abbreviation [Key] of the opponent team (e.g. LAL; PHI; BOS; CHI; etc.)
         /// </summary>
-        [Description("The Team Key of the opponent associated with this play.")]
+        [Description("Abbreviation [Key] of the opponent team (e.g. LAL; PHI; BOS; CHI; etc.)")]
         [DataMember(Name = "Opponent", Order = 17)]
         public string Opponent { get; set; }
 
@@ -135,9 +135,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? ReceivingTeamID { get; set; }
 
         /// <summary>
-        /// The Team Key of the team that won the jump ball.
+        /// The team abbreviation [Key] of the team that won the jump ball
         /// </summary>
-        [Description("The Team Key of the team that won the jump ball.")]
+        [Description("The team abbreviation [Key] of the team that won the jump ball")]
         [DataMember(Name = "ReceivingTeam", Order = 19)]
         public string ReceivingTeam { get; set; }
 
@@ -149,16 +149,16 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Description { get; set; }
 
         /// <summary>
-        /// The PlayerID of the primary player on this play (if any).
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("The PlayerID of the primary player on this play (if any).")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 21)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// The PlayerID of the player who got a field goal assist on this play (if any).
+        /// The PlayerID of the player who recorded an assist on a made field goal by another player (if applicable)
         /// </summary>
-        [Description("The PlayerID of the player who got a field goal assist on this play (if any).")]
+        [Description("The PlayerID of the player who recorded an assist on a made field goal by another player (if applicable)")]
         [DataMember(Name = "AssistedByPlayerID", Order = 22)]
         public int? AssistedByPlayerID { get; set; }
 
@@ -184,16 +184,16 @@ namespace FantasyData.Api.Client.Model.NBA
         public string SideOfBasket { get; set; }
 
         /// <summary>
-        /// The database generated timestamp of when this Play was last updated.
+        /// The timestamp of when this play was last updated (in US Eastern Time)
         /// </summary>
-        [Description("The database generated timestamp of when this Play was last updated.")]
+        [Description("The timestamp of when this play was last updated (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 26)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The database generated timestamp of when this Play was first created.
+        /// The database generated timestamp of when this play was first created (in US Eastern Time)
         /// </summary>
-        [Description("The database generated timestamp of when this Play was first created.")]
+        [Description("The database generated timestamp of when this play was first created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 27)]
         public DateTime? Created { get; set; }
 
@@ -212,9 +212,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? SubstituteOutPlayerID { get; set; }
 
         /// <summary>
-        /// The PlayerID of the player who is involved in the play from the away team
+        /// The PlayerID of the player who is involved in the play from the away team (if applicable)
         /// </summary>
-        [Description("The PlayerID of the player who is involved in the play from the away team")]
+        [Description("The PlayerID of the player who is involved in the play from the away team (if applicable)")]
         [DataMember(Name = "AwayPlayerID", Order = 30)]
         public int? AwayPlayerID { get; set; }
 
@@ -254,9 +254,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Coordinates { get; set; }
 
         /// <summary>
-        /// The PlayerId of the player which stole the ball (if applicable).
+        /// The PlayerID of the player who stole the ball (if applicable)
         /// </summary>
-        [Description("The PlayerId of the player which stole the ball (if applicable).")]
+        [Description("The PlayerID of the player who stole the ball (if applicable)")]
         [DataMember(Name = "StolenByPlayerID", Order = 36)]
         public int? StolenByPlayerID { get; set; }
 

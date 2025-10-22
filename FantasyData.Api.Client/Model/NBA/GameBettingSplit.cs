@@ -9,51 +9,51 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class GameBettingSplit
     {
         /// <summary>
-        /// Unique Game ID associated with relevant game.
+        /// The unique ID of the game associated with this GameBettingSplit
         /// </summary>
-        [Description("Unique Game ID associated with relevant game.")]
+        [Description("The unique ID of the game associated with this GameBettingSplit")]
         [DataMember(Name = "GameID", Order = 1)]
         public int GameID { get; set; }
 
         /// <summary>
-        /// Season Type (e.g.  Preseason, Regular Season, Postseason)
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition)
         /// </summary>
-        [Description("Season Type (e.g.  Preseason, Regular Season, Postseason)")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition)")]
         [DataMember(Name = "SeasonType", Order = 2)]
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// End Year of Season (2021-22 would be 2022)
+        /// The NBA season of the game
         /// </summary>
-        [Description("End Year of Season (2021-22 would be 2022)")]
+        [Description("The NBA season of the game")]
         [DataMember(Name = "Season", Order = 3)]
         public int Season { get; set; }
 
         /// <summary>
-        /// Day of Game
+        /// The day of the game
         /// </summary>
-        [Description("Day of Game")]
+        [Description("The day of the game")]
         [DataMember(Name = "Day", Order = 4)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// Away Team
+        /// The abbreviation [Key] of the away team
         /// </summary>
-        [Description("Away Team")]
+        [Description("The abbreviation [Key] of the away team")]
         [DataMember(Name = "AwayTeam", Order = 5)]
         public string AwayTeam { get; set; }
 
         /// <summary>
-        /// Home Team
+        /// The abbreviation [Key] of the home team
         /// </summary>
-        [Description("Home Team")]
+        [Description("The abbreviation [Key] of the home team")]
         [DataMember(Name = "HomeTeam", Order = 6)]
         public string HomeTeam { get; set; }
 
         /// <summary>
-        /// The Betting Markets included in this game that have splits
+        /// Shows the BettingMarketSplits included in a given game
         /// </summary>
-        [Description("The Betting Markets included in this game that have splits")]
+        [Description("Shows the BettingMarketSplits included in a given game")]
         [DataMember(Name = "BettingMarketSplits", Order = 20007)]
         public BettingMarketSplit[] BettingMarketSplits { get; set; }
 

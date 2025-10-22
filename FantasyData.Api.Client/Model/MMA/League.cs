@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.MMA
     public partial class League
     {
         /// <summary>
-        /// The unique ID of this MMA league
+        /// The unique ID of the MMA league
         /// </summary>
-        [Description("The unique ID of this MMA league")]
+        [Description("The unique ID of the MMA league")]
         [DataMember(Name = "LeagueId", Order = 1)]
         public int LeagueId { get; set; }
 
@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.MMA
         public string Name { get; set; }
 
         /// <summary>
-        /// The key of this MMA league
+        /// The league abbreviation of the MMA league
         /// </summary>
-        [Description("The key of this MMA league")]
+        [Description("The league abbreviation of the MMA league")]
         [DataMember(Name = "Key", Order = 3)]
         public string Key { get; set; }
 

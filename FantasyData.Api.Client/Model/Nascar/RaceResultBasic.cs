@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Nascar
     public partial class RaceResultBasic
     {
         /// <summary>
-        /// RaceBasic Object
+        /// RaceBasic object (Includes basic information such as RaceID, Day, DateTime, Updated, and Created)
         /// </summary>
-        [Description("RaceBasic Object")]
+        [Description("RaceBasic object (Includes basic information such as RaceID, Day, DateTime, Updated, and Created)")]
         [DataMember(Name = "Race", Order = 10001)]
         public RaceBasic Race { get; set; }
 
         /// <summary>
-        /// StatBasic Object
+        /// StatBasic object (includes basic information on the drivers race performance such as DriveID, Season, Driver's Name, Start and Final positions, Lap information, etc.)
         /// </summary>
-        [Description("StatBasic Object")]
+        [Description("StatBasic object (includes basic information on the drivers race performance such as DriveID, Season, Driver's Name, Start and Final positions, Lap information, etc.)")]
         [DataMember(Name = "DriverRaces", Order = 20002)]
         public DriverRaceBasic[] DriverRaces { get; set; }
 

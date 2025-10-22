@@ -16,30 +16,30 @@ namespace FantasyData.Api.Client.Model.NBA
         public int GameID { get; set; }
 
         /// <summary>
-        /// The calendar year of the season during which this game occurs.
+        /// The NBA season of the game
         /// </summary>
-        [Description("The calendar year of the season during which this game occurs.")]
+        [Description("The NBA season of the game")]
         [DataMember(Name = "Season", Order = 2)]
         public int Season { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition)")]
         [DataMember(Name = "SeasonType", Order = 3)]
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// The day that the game is scheduled to be played in UTC.
+        /// The day of the game
         /// </summary>
-        [Description("The day that the game is scheduled to be played in UTC.")]
+        [Description("The day of the game")]
         [DataMember(Name = "Day", Order = 4)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date/time that the game is scheduled to be played in UTC.
+        /// The date and time of the game
         /// </summary>
-        [Description("The date/time that the game is scheduled to be played in UTC.")]
+        [Description("The date and time of the game")]
         [DataMember(Name = "DateTime", Order = 5)]
         public DateTime? DateTime { get; set; }
 
@@ -51,30 +51,30 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Status { get; set; }
 
         /// <summary>
-        /// The TeamId of the away team.
+        /// The unique ID of the away team
         /// </summary>
-        [Description("The TeamId of the away team.")]
+        [Description("The unique ID of the away team")]
         [DataMember(Name = "AwayTeamID", Order = 7)]
         public int? AwayTeamID { get; set; }
 
         /// <summary>
-        /// The TeamId of the home team.
+        /// The unique ID of the home team
         /// </summary>
-        [Description("The TeamId of the home team.")]
+        [Description("The unique ID of the home team")]
         [DataMember(Name = "HomeTeamID", Order = 8)]
         public int? HomeTeamID { get; set; }
 
         /// <summary>
-        /// The name of the away team.
+        /// The abbreviation [Key] of the away team
         /// </summary>
-        [Description("The name of the away team.")]
+        [Description("The abbreviation [Key] of the away team")]
         [DataMember(Name = "AwayTeamName", Order = 9)]
         public string AwayTeamName { get; set; }
 
         /// <summary>
-        /// The name of the home team.
+        /// The abbreviation [Key] of the home team
         /// </summary>
-        [Description("The name of the home team.")]
+        [Description("The abbreviation [Key] of the home team")]
         [DataMember(Name = "HomeTeamName", Order = 10)]
         public string HomeTeamName { get; set; }
 
@@ -107,44 +107,44 @@ namespace FantasyData.Api.Client.Model.NBA
         public GameOddResult[] PregameOdds { get; set; }
 
         /// <summary>
-        /// Score of the home team (updated after game ends to allow for resolving bets)
+        /// Total points scored by the home team in the game (updated after the game ends to allow for resolving bets)
         /// </summary>
-        [Description("Score of the home team (updated after game ends to allow for resolving bets)")]
+        [Description("Total points scored by the home team in the game (updated after the game ends to allow for resolving bets)")]
         [DataMember(Name = "HomeTeamScore", Order = 15)]
         public int? HomeTeamScore { get; set; }
 
         /// <summary>
-        /// Score of the away team (updated after game ends to allow for resolving bets)
+        /// Total number of points the away team scored in the game (updated after game ends to allow for resolving bets)
         /// </summary>
-        [Description("Score of the away team (updated after game ends to allow for resolving bets)")]
+        [Description("Total number of points the away team scored in the game (updated after game ends to allow for resolving bets)")]
         [DataMember(Name = "AwayTeamScore", Order = 16)]
         public int? AwayTeamScore { get; set; }
 
         /// <summary>
-        /// Total scored points in the game (updated after game ends to allow for resolving bets)
+        /// The total amount of points scored in the game by both teams. Updated after the game ends to allow for resulting bets
         /// </summary>
-        [Description("Total scored points in the game (updated after game ends to allow for resolving bets)")]
+        [Description("The total amount of points scored in the game by both teams. Updated after the game ends to allow for resulting bets")]
         [DataMember(Name = "TotalScore", Order = 17)]
         public int? TotalScore { get; set; }
 
         /// <summary>
-        /// The Rotation number of the home team for this game
+        /// The rotation number of the home team for this game
         /// </summary>
-        [Description("The Rotation number of the home team for this game")]
+        [Description("The rotation number of the home team for this game")]
         [DataMember(Name = "HomeRotationNumber", Order = 18)]
         public int? HomeRotationNumber { get; set; }
 
         /// <summary>
-        /// The Rotation number of the away team for this game
+        /// The rotation number of the away team for this game
         /// </summary>
-        [Description("The Rotation number of the away team for this game")]
+        [Description("The rotation number of the away team for this game")]
         [DataMember(Name = "AwayRotationNumber", Order = 19)]
         public int? AwayRotationNumber { get; set; }
 
         /// <summary>
-        /// List of Alternate Market GameOdds from different sportsbooks (such as 1st-half, 1st-qtr, etc)
+        /// A list of Alternate Market Pregame GameOdds from different sportsbooks (such as 1st-half; 1st-qtr; etc)
         /// </summary>
-        [Description("List of Alternate Market GameOdds from different sportsbooks (such as 1st-half, 1st-qtr, etc)")]
+        [Description("A list of Alternate Market Pregame GameOdds from different sportsbooks (such as 1st-half; 1st-qtr; etc)")]
         [DataMember(Name = "AlternateMarketPregameOdds", Order = 20020)]
         public GameOddResult[] AlternateMarketPregameOdds { get; set; }
 
@@ -156,16 +156,16 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Quarter { get; set; }
 
         /// <summary>
-        /// Number of minutes remaining in the quarter
+        /// The number of minutes remaining in the quarter
         /// </summary>
-        [Description("Number of minutes remaining in the quarter")]
+        [Description("The number of minutes remaining in the quarter")]
         [DataMember(Name = "TimeRemainingMinutes", Order = 22)]
         public int? TimeRemainingMinutes { get; set; }
 
         /// <summary>
-        /// Number of seconds remaining in the quarter
+        /// The number of seconds remaining in the quarter
         /// </summary>
-        [Description("Number of seconds remaining in the quarter")]
+        [Description("The number of seconds remaining in the quarter")]
         [DataMember(Name = "TimeRemainingSeconds", Order = 23)]
         public int? TimeRemainingSeconds { get; set; }
 
@@ -177,9 +177,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public Quarter[] Quarters { get; set; }
 
         /// <summary>
-        /// Indicates whether the game is over and the final score has been verified and closed out.
+        /// Indicates whether the game is over and the final score has been verified and closed out. Note: it is recommend for bet resulting to use IsClosed = True rather than simply Final game status
         /// </summary>
-        [Description("Indicates whether the game is over and the final score has been verified and closed out.")]
+        [Description("Indicates whether the game is over and the final score has been verified and closed out. Note: it is recommend for bet resulting to use IsClosed = True rather than simply Final game status")]
         [DataMember(Name = "IsClosed", Order = 25)]
         public bool IsClosed { get; set; }
 

@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class BettingMarketResult
     {
         /// <summary>
-        /// The unique identifier of this market
+        /// The unique ID associated with the betting market
         /// </summary>
-        [Description("The unique identifier of this market")]
+        [Description("The unique ID associated with the betting market")]
         [DataMember(Name = "BettingMarketID", Order = 1)]
         public int BettingMarketID { get; set; }
 
         /// <summary>
-        /// The BettingMarketTypeID of this market
+        /// The unique ID associated with the market type of the betting market
         /// </summary>
-        [Description("The BettingMarketTypeID of this market")]
+        [Description("The unique ID associated with the market type of the betting market")]
         [DataMember(Name = "BettingMarketTypeID", Order = 2)]
         public int BettingMarketTypeID { get; set; }
 
         /// <summary>
-        /// The BettingMarketType of this market
+        /// The name of the market type within a market (e.g. Player Prop, Team Prop, Game Prop, etc.)
         /// </summary>
-        [Description("The BettingMarketType of this market")]
+        [Description("The name of the market type within a market (e.g. Player Prop, Team Prop, Game Prop, etc.)")]
         [DataMember(Name = "BettingMarketType", Order = 3)]
         public string BettingMarketType { get; set; }
 
         /// <summary>
-        /// The BettingBetTypeID of this market
+        /// The ID associated with the name of the bet type within a market
         /// </summary>
-        [Description("The BettingBetTypeID of this market")]
+        [Description("The ID associated with the name of the bet type within a market")]
         [DataMember(Name = "BettingBetTypeID", Order = 4)]
         public int BettingBetTypeID { get; set; }
 
         /// <summary>
-        /// The BettingBetType of this market
+        /// The name of the bet type within a market (e.g. Total Runs, Moneyline, Run Line, etc.)
         /// </summary>
-        [Description("The BettingBetType of this market")]
+        [Description("The name of the bet type within a market (e.g. Total Runs, Moneyline, Run Line, etc.)")]
         [DataMember(Name = "BettingBetType", Order = 5)]
         public string BettingBetType { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int BettingPeriodTypeID { get; set; }
 
         /// <summary>
-        /// The BettingPeriodType of this market
+        /// The BettingPeriodType of this market (e.g. Full Game; 1st-5th Inning; 2nd Inning; Regular Season)
         /// </summary>
-        [Description("The BettingPeriodType of this market")]
+        [Description("The BettingPeriodType of this market (e.g. Full Game; 1st-5th Inning; 2nd Inning; Regular Season)")]
         [DataMember(Name = "BettingPeriodType", Order = 7)]
         public string BettingPeriodType { get; set; }
 
@@ -65,30 +65,30 @@ namespace FantasyData.Api.Client.Model.MLB
         public string Name { get; set; }
 
         /// <summary>
-        /// The team id of the team tied to this market (if applicable)
+        /// The team's unique TeamID as assigned by SportsDataIO tied this market (if applicable)
         /// </summary>
-        [Description("The team id of the team tied to this market (if applicable)")]
+        [Description("The team's unique TeamID as assigned by SportsDataIO tied this market (if applicable)")]
         [DataMember(Name = "TeamID", Order = 9)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The team key of the team tied to this market (if applicable)
+        /// The abbreviation [Key]  of the team tied to this market (if applicable)
         /// </summary>
-        [Description("The team key of the team tied to this market (if applicable)")]
+        [Description("The abbreviation [Key]  of the team tied to this market (if applicable)")]
         [DataMember(Name = "TeamKey", Order = 10)]
         public string TeamKey { get; set; }
 
         /// <summary>
-        /// The player id of the player tied to this market (if applicable)
+        /// The player's unique PlayerID as assigned by SportsDataIO tied to this result (if applicable) Note: this ID will stay with the player throughout their MLB career
         /// </summary>
-        [Description("The player id of the player tied to this market (if applicable)")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO tied to this result (if applicable) Note: this ID will stay with the player throughout their MLB career")]
         [DataMember(Name = "PlayerID", Order = 11)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// The name of the player tied to this market (if applicable)
+        /// The full name of the player associated with this market
         /// </summary>
-        [Description("The name of the player tied to this market (if applicable)")]
+        [Description("The full name of the player associated with this market")]
         [DataMember(Name = "PlayerName", Order = 12)]
         public string PlayerName { get; set; }
 
@@ -100,9 +100,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public BettingOutcomeResult[] BettingOutcomeResults { get; set; }
 
         /// <summary>
-        /// Indicates whether resulting is supported for this kind of BettingMarket
+        /// Indicates whether resulting is supported for this kind of BettingMarket  (true/false)
         /// </summary>
-        [Description("Indicates whether resulting is supported for this kind of BettingMarket")]
+        [Description("Indicates whether resulting is supported for this kind of BettingMarket  (true/false)")]
         [DataMember(Name = "IsMarketResultingSupported", Order = 14)]
         public bool IsMarketResultingSupported { get; set; }
 

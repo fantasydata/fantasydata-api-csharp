@@ -44,16 +44,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public DateTime? OperatorDay { get; set; }
 
         /// <summary>
-        /// The date/time (in EST/EDT) that the slate begins (assigned by the operator).
+        /// The date and time that the slate begins; assigned by the operator (in US Eastern Time)
         /// </summary>
-        [Description("The date/time (in EST/EDT) that the slate begins (assigned by the operator).")]
+        [Description("The date and time that the slate begins; assigned by the operator (in US Eastern Time)")]
         [DataMember(Name = "OperatorStartTime", Order = 6)]
         public DateTime? OperatorStartTime { get; set; }
 
         /// <summary>
-        /// The number of actual games that this slate covers.
+        /// The day that the slate begins; assigned by the operator (in US Eastern Time)
         /// </summary>
-        [Description("The number of actual games that this slate covers.")]
+        [Description("The day that the slate begins; assigned by the operator (in US Eastern Time)")]
         [DataMember(Name = "NumberOfGames", Order = 7)]
         public int? NumberOfGames { get; set; }
 
@@ -79,16 +79,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string OperatorGameType { get; set; }
 
         /// <summary>
-        /// The games that are included in this slate.
+        /// The games that are included in this slate
         /// </summary>
-        [Description("The games that are included in this slate.")]
+        [Description("The games that are included in this slate")]
         [DataMember(Name = "DfsSlateGames", Order = 20011)]
         public DfsSlateGame[] DfsSlateGames { get; set; }
 
         /// <summary>
-        /// The players that are included in this slate.
+        /// The players that are included in this slate
         /// </summary>
-        [Description("The players that are included in this slate.")]
+        [Description("The players that are included in this slate")]
         [DataMember(Name = "DfsSlatePlayers", Order = 20012)]
         public DfsSlatePlayer[] DfsSlatePlayers { get; set; }
 

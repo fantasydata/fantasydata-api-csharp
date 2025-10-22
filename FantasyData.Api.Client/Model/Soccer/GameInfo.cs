@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class GameInfo
     {
         /// <summary>
-        /// The unique ID of the game.
+        /// The unique ID of the game
         /// </summary>
-        [Description("The unique ID of the game.")]
+        [Description("The unique ID of the game")]
         [DataMember(Name = "GameId", Order = 1)]
         public int GameId { get; set; }
 
         /// <summary>
-        /// The RoundId of the round that this game is associated with.
+        /// The unique ID of the round that this game is associated with
         /// </summary>
-        [Description("The RoundId of the round that this game is associated with.")]
+        [Description("The unique ID of the round that this game is associated with")]
         [DataMember(Name = "RoundId", Order = 2)]
         public int RoundId { get; set; }
 
         /// <summary>
-        /// The calendar year of the season during which this game occurs.
+        /// The soccer regular season for which these totals apply
         /// </summary>
-        [Description("The calendar year of the season during which this game occurs.")]
+        [Description("The soccer regular season for which these totals apply")]
         [DataMember(Name = "Season", Order = 3)]
         public int Season { get; set; }
 
@@ -37,23 +37,23 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// The week during the season/round in which this game occurs.
+        /// The week during the season/round in which this game occurs
         /// </summary>
-        [Description("The week during the season/round in which this game occurs.")]
+        [Description("The week during the season/round in which this game occurs")]
         [DataMember(Name = "Week", Order = 5)]
         public int? Week { get; set; }
 
         /// <summary>
-        /// The day that the game is scheduled to be played in UTC.
+        /// The day of the game
         /// </summary>
-        [Description("The day that the game is scheduled to be played in UTC.")]
+        [Description("The day of the game")]
         [DataMember(Name = "Day", Order = 6)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date/time that the game is scheduled to be played in UTC.
+        /// The date and time of the game (in UTC)
         /// </summary>
-        [Description("The date/time that the game is scheduled to be played in UTC.")]
+        [Description("The date and time of the game (in UTC)")]
         [DataMember(Name = "DateTime", Order = 7)]
         public DateTime? DateTime { get; set; }
 
@@ -65,30 +65,30 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Status { get; set; }
 
         /// <summary>
-        /// The TeamId of the away team.
+        /// The unique ID of the away team
         /// </summary>
-        [Description("The TeamId of the away team.")]
+        [Description("The unique ID of the away team")]
         [DataMember(Name = "AwayTeamId", Order = 9)]
         public int? AwayTeamId { get; set; }
 
         /// <summary>
-        /// The TeamId of the home team.
+        /// The unique ID of the home team
         /// </summary>
-        [Description("The TeamId of the home team.")]
+        [Description("The unique ID of the home team")]
         [DataMember(Name = "HomeTeamId", Order = 10)]
         public int? HomeTeamId { get; set; }
 
         /// <summary>
-        /// The name of the away team.
+        /// The name of the away team
         /// </summary>
-        [Description("The name of the away team.")]
+        [Description("The name of the away team")]
         [DataMember(Name = "AwayTeamName", Order = 11)]
         public string AwayTeamName { get; set; }
 
         /// <summary>
-        /// The name of the home team.
+        /// The name of the home team
         /// </summary>
-        [Description("The name of the home team.")]
+        [Description("The name of the home team")]
         [DataMember(Name = "HomeTeamName", Order = 12)]
         public string HomeTeamName { get; set; }
 
@@ -142,9 +142,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? AwayTeamScore { get; set; }
 
         /// <summary>
-        /// Total scored points in the game (updated after game ends to allow for resolving bets)
+        /// The total combined score of both teams in the game (updated after game ends to allow for resolving bets)
         /// </summary>
-        [Description("Total scored points in the game (updated after game ends to allow for resolving bets)")]
+        [Description("The total combined score of both teams in the game (updated after game ends to allow for resolving bets)")]
         [DataMember(Name = "TotalScore", Order = 20)]
         public int? TotalScore { get; set; }
 

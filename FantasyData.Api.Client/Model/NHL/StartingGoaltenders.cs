@@ -9,86 +9,86 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class StartingGoaltenders
     {
         /// <summary>
-        /// Unique ID of Game
+        /// The unique ID of the game tied to the StartingGoaltenders
         /// </summary>
-        [Description("Unique ID of Game")]
+        [Description("The unique ID of the game tied to the StartingGoaltenders")]
         [DataMember(Name = "GameID", Order = 1)]
         public int GameID { get; set; }
 
         /// <summary>
-        /// End Year of Season
+        /// The end year of season (2021-22 would be 2022)
         /// </summary>
-        [Description("End Year of Season")]
+        [Description("The end year of season (2021-22 would be 2022)")]
         [DataMember(Name = "Season", Order = 2)]
         public int Season { get; set; }
 
         /// <summary>
-        /// The Type of Season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 5=AllStar; 6=Exhibition).
         /// </summary>
-        [Description("The Type of Season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 5=AllStar; 6=Exhibition).")]
         [DataMember(Name = "SeasonType", Order = 3)]
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// Day of Game
+        /// The date of the game
         /// </summary>
-        [Description("Day of Game")]
+        [Description("The date of the game")]
         [DataMember(Name = "Day", Order = 4)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// Date and Time of Game
+        /// The date and time of the game in US Eastern Time
         /// </summary>
-        [Description("Date and Time of Game")]
+        [Description("The date and time of the game in US Eastern Time")]
         [DataMember(Name = "DateTime", Order = 5)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Game Status (ex.  Scheduled, Final, Cancelled)
+        /// Indicates the game's status. Possible values include: Scheduled; InProgress; Final; F/SO; F/OT; Suspended; Postponed; Delayed; Canceled; Forfeit
         /// </summary>
-        [Description("Game Status (ex.  Scheduled, Final, Cancelled)")]
+        [Description("Indicates the game's status. Possible values include: Scheduled; InProgress; Final; F/SO; F/OT; Suspended; Postponed; Delayed; Canceled; Forfeit")]
         [DataMember(Name = "Status", Order = 6)]
         public string Status { get; set; }
 
         /// <summary>
-        /// Unique ID of Home Team
+        /// The unique ID of the home team tied to these StartingGoaltenders
         /// </summary>
-        [Description("Unique ID of Home Team")]
+        [Description("The unique ID of the home team tied to these StartingGoaltenders")]
         [DataMember(Name = "HomeTeamID", Order = 7)]
         public int? HomeTeamID { get; set; }
 
         /// <summary>
-        /// Name of Home Team
+        /// The abbreviation [Key] of the home team
         /// </summary>
-        [Description("Name of Home Team")]
+        [Description("The abbreviation [Key] of the home team")]
         [DataMember(Name = "HomeTeam", Order = 8)]
         public string HomeTeam { get; set; }
 
         /// <summary>
-        /// Unique ID of Away Team
+        /// The unique ID of the away team as it relates to the starting goaltenders
         /// </summary>
-        [Description("Unique ID of Away Team")]
+        [Description("The unique ID of the away team as it relates to the starting goaltenders")]
         [DataMember(Name = "AwayTeamID", Order = 9)]
         public int? AwayTeamID { get; set; }
 
         /// <summary>
-        /// Name of Away Team
+        /// The abbreviation [Key] of the away team
         /// </summary>
-        [Description("Name of Away Team")]
+        [Description("The abbreviation [Key] of the away team")]
         [DataMember(Name = "AwayTeam", Order = 10)]
         public string AwayTeam { get; set; }
 
         /// <summary>
-        /// Information on the Home Team Goaltender
+        /// The information of the home goaltender (PlayerID, TeamID, Team, First & Last Name, Jersey Number, Confirmed)
         /// </summary>
-        [Description("Information on the Home Team Goaltender")]
+        [Description("The information of the home goaltender (PlayerID, TeamID, Team, First & Last Name, Jersey Number, Confirmed)")]
         [DataMember(Name = "HomeGoaltender", Order = 10011)]
         public Goaltender HomeGoaltender { get; set; }
 
         /// <summary>
-        /// Information on the Away Team Goaltender
+        /// The information of the away goaltender (PlayerID, TeamID, Team, First & Last Name, Jersey Number, Confirmed)
         /// </summary>
-        [Description("Information on the Away Team Goaltender")]
+        [Description("The information of the away goaltender (PlayerID, TeamID, Team, First & Last Name, Jersey Number, Confirmed)")]
         [DataMember(Name = "AwayGoaltender", Order = 10012)]
         public Goaltender AwayGoaltender { get; set; }
 

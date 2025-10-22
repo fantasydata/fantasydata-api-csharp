@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public DepthChart[] DepthCharts { get; set; }
 
         /// <summary>
-        /// Unique ID of Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("Unique ID of Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int TeamID { get; set; }
 

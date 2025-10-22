@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public TournamentBasic Tournament { get; set; }
 
         /// <summary>
-        /// The details of the players who competed in this tournament
+        /// The details of the golfers who competed in this tournament
         /// </summary>
-        [Description("The details of the players who competed in this tournament")]
+        [Description("The details of the golfers who competed in this tournament")]
         [DataMember(Name = "Players", Order = 20002)]
         public PlayerTournamentBasic[] Players { get; set; }
 

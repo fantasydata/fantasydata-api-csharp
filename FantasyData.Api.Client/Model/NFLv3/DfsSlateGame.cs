@@ -16,23 +16,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int SlateGameID { get; set; }
 
         /// <summary>
-        /// The SlateID that this SlateGame refers to.
+        /// Unique ID of a Slate (assigned by SportsDataIO).
         /// </summary>
-        [Description("The SlateID that this SlateGame refers to.")]
+        [Description("Unique ID of a Slate (assigned by SportsDataIO).")]
         [DataMember(Name = "SlateID", Order = 2)]
         public int SlateID { get; set; }
 
         /// <summary>
-        /// The SportsDataIO GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.
+        /// The unique ID of this game tied to this SlateGame
         /// </summary>
-        [Description("The SportsDataIO GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.")]
+        [Description("The unique ID of this game tied to this SlateGame")]
         [DataMember(Name = "GameID", Order = 3)]
         public int? GameID { get; set; }
 
         /// <summary>
-        /// Unique ID of a SlateGame (assigned by the operator).
+        /// Unique ID of a SlateGame (assigned by the operator)
         /// </summary>
-        [Description("Unique ID of a SlateGame (assigned by the operator).")]
+        [Description("Unique ID of a SlateGame (assigned by the operator)")]
         [DataMember(Name = "OperatorGameID", Order = 4)]
         public int? OperatorGameID { get; set; }
 
@@ -44,16 +44,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public bool? RemovedByOperator { get; set; }
 
         /// <summary>
-        /// Unique ID of the Score/Game.
+        /// Unique ID of the Score/Game
         /// </summary>
-        [Description("Unique ID of the Score/Game.")]
+        [Description("Unique ID of the Score/Game")]
         [DataMember(Name = "ScoreID", Order = 6)]
         public int? ScoreID { get; set; }
 
         /// <summary>
-        /// The details of the Score/Game that this SlateGame refers to.
+        /// The details of the Score/Game that this SlateGame refers to
         /// </summary>
-        [Description("The details of the Score/Game that this SlateGame refers to.")]
+        [Description("The details of the Score/Game that this SlateGame refers to")]
         [DataMember(Name = "Game", Order = 10007)]
         public Schedule Game { get; set; }
 

@@ -23,58 +23,58 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition).
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition).")]
         [DataMember(Name = "SeasonType", Order = 3)]
         public int? SeasonType { get; set; }
 
         /// <summary>
-        /// The NBA regular season for which these totals apply
+        /// The NBA season that these totals apply for
         /// </summary>
-        [Description("The NBA regular season for which these totals apply")]
+        [Description("The NBA season that these totals apply for")]
         [DataMember(Name = "Season", Order = 4)]
         public int? Season { get; set; }
 
         /// <summary>
-        /// Team name
+        /// The name of the team
         /// </summary>
-        [Description("Team name")]
+        [Description("The name of the team")]
         [DataMember(Name = "Name", Order = 5)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 6)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Total number of wins
+        /// Total number of team wins on the season
         /// </summary>
-        [Description("Total number of wins")]
+        [Description("Total number of team wins on the season")]
         [DataMember(Name = "Wins", Order = 7)]
         public int? Wins { get; set; }
 
         /// <summary>
-        /// Total number of losses
+        /// Total number of team losses on the season
         /// </summary>
-        [Description("Total number of losses")]
+        [Description("Total number of team losses on the season")]
         [DataMember(Name = "Losses", Order = 8)]
         public int? Losses { get; set; }
 
         /// <summary>
-        /// Indicates which position is included in opponent stats that are aggregated together
+        /// This field is expected to be NULL
         /// </summary>
-        [Description("Indicates which position is included in opponent stats that are aggregated together")]
+        [Description("This field is expected to be NULL")]
         [DataMember(Name = "OpponentPosition", Order = 9)]
         public string OpponentPosition { get; set; }
 
         /// <summary>
-        /// The team's estimated number of possessions as defined by the formula here: http://www.basketball-reference.com/about/glossary.html
+        /// Total number of estimated possessions by the team in the season
         /// </summary>
-        [Description("The team's estimated number of possessions as defined by the formula here: http://www.basketball-reference.com/about/glossary.html")]
+        [Description("Total number of estimated possessions by the team in the season")]
         [DataMember(Name = "Possessions", Order = 10)]
         public decimal? Possessions { get; set; }
 

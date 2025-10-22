@@ -9,30 +9,30 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class Series
     {
         /// <summary>
-        /// Number of Wins by the Home Team 
+        /// Number of wins by the home team on in the series. Note: this is for postseason series only.
         /// </summary>
-        [Description("Number of Wins by the Home Team ")]
+        [Description("Number of wins by the home team on in the series. Note: this is for postseason series only.")]
         [DataMember(Name = "HomeTeamWins", Order = 1)]
         public int HomeTeamWins { get; set; }
 
         /// <summary>
-        /// Number of Wins by the Away Team
+        /// Number of wins by the away team in the series. Note: This is for postseason series only.
         /// </summary>
-        [Description("Number of Wins by the Away Team")]
+        [Description("Number of wins by the away team in the series. Note: This is for postseason series only.")]
         [DataMember(Name = "AwayTeamWins", Order = 2)]
         public int AwayTeamWins { get; set; }
 
         /// <summary>
-        /// Game Number in Series
+        /// Game number in series. Note: this applies to postseason series only.
         /// </summary>
-        [Description("Game Number in Series")]
+        [Description("Game number in series. Note: this applies to postseason series only.")]
         [DataMember(Name = "GameNumber", Order = 3)]
         public int GameNumber { get; set; }
 
         /// <summary>
-        /// Maximum Number of Games in Series
+        /// Maximum number of games in the series. Note: this is for postseason series only.
         /// </summary>
-        [Description("Maximum Number of Games in Series")]
+        [Description("Maximum number of games in the series. Note: this is for postseason series only.")]
         [DataMember(Name = "MaxLength", Order = 4)]
         public int MaxLength { get; set; }
 

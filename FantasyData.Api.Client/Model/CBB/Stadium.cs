@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int StadiumID { get; set; }
 
         /// <summary>
-        /// Whether or not this stadium is the home venue for an active team
+        /// Whether or not this stadium is the home venue for an active team. Note: Active = True & Inactive = False
         /// </summary>
-        [Description("Whether or not this stadium is the home venue for an active team")]
+        [Description("Whether or not this stadium is the home venue for an active team. Note: Active = True & Inactive = False")]
         [DataMember(Name = "Active", Order = 2)]
         public bool Active { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public string Name { get; set; }
 
         /// <summary>
-        /// The address where the stadium is located
+        /// The address where the stadium is located (street name). Note: some stadiums will not have an address field
         /// </summary>
-        [Description("The address where the stadium is located")]
+        [Description("The address where the stadium is located (street name). Note: some stadiums will not have an address field")]
         [DataMember(Name = "Address", Order = 4)]
         public string Address { get; set; }
 
@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public string City { get; set; }
 
         /// <summary>
-        /// The US state where the stadium is located (if Stadium is outside US, this value is NULL)
+        /// The US state where the stadium is located. Note: if Stadium is outside US; this value is NULL
         /// </summary>
-        [Description("The US state where the stadium is located (if Stadium is outside US, this value is NULL)")]
+        [Description("The US state where the stadium is located. Note: if Stadium is outside US; this value is NULL")]
         [DataMember(Name = "State", Order = 6)]
         public string State { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public string Zip { get; set; }
 
         /// <summary>
-        /// The 2-digit country code where the stadium is located
+        /// The 3-letter country abbreviation where the stadium is located
         /// </summary>
-        [Description("The 2-digit country code where the stadium is located")]
+        [Description("The 3-letter country abbreviation where the stadium is located")]
         [DataMember(Name = "Country", Order = 8)]
         public string Country { get; set; }
 

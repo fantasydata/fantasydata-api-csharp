@@ -22,6 +22,13 @@ namespace FantasyData.Api.Client.Model.CBB
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// Denotes the name of the type  (e.g. Betting Market Type, Betting Event Type, Betting Period Type)
+        /// </summary>
+        [Description("Denotes the name of the type  (e.g. Betting Market Type, Betting Event Type, Betting Period Type)")]
+        [DataMember(Name = "Active", Order = 3)]
+        public bool? Active { get; set; }
+
     }
 }
 

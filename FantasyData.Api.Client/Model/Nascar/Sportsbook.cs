@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Nascar
     public partial class Sportsbook
     {
         /// <summary>
-        /// The unique identifier of the sportsbook
+        /// The unique ID of the sportsbook
         /// </summary>
-        [Description("The unique identifier of the sportsbook")]
+        [Description("The unique ID of the sportsbook")]
         [DataMember(Name = "SportsbookID", Order = 1)]
         public int SportsbookID { get; set; }
 

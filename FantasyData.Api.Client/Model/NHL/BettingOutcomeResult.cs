@@ -9,51 +9,51 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class BettingOutcomeResult
     {
         /// <summary>
-        /// The unique identifier of the outcome
+        /// The unique ID associated with this specific outcome
         /// </summary>
-        [Description("The unique identifier of the outcome")]
+        [Description("The unique ID associated with this specific outcome")]
         [DataMember(Name = "BettingOutcomeID", Order = 1)]
         public int BettingOutcomeID { get; set; }
+
+        /// <summary>
+        /// The ID associated with the betting result type of this outcome
+        /// </summary>
+        [Description("The ID associated with the betting result type of this outcome")]
+        [DataMember(Name = "BettingResultTypeID", Order = 2)]
+        public int? BettingResultTypeID { get; set; }
 
         /// <summary>
         /// The BettingResultType of this outcome
         /// </summary>
         [Description("The BettingResultType of this outcome")]
-        [DataMember(Name = "BettingResultTypeID", Order = 2)]
-        public int? BettingResultTypeID { get; set; }
-
-        /// <summary>
-        /// The string identifier of the BettingResultType of this outcome (e.g. Won, Lost, Push, Not Resulted, Incomplete, Void)
-        /// </summary>
-        [Description("The string identifier of the BettingResultType of this outcome (e.g. Won, Lost, Push, Not Resulted, Incomplete, Void)")]
         [DataMember(Name = "BettingResultType", Order = 3)]
         public string BettingResultType { get; set; }
 
         /// <summary>
-        /// The BettingOutcomeTypeID of this outcome
+        /// The ID associated with the betting outcome type
         /// </summary>
-        [Description("The BettingOutcomeTypeID of this outcome")]
+        [Description("The ID associated with the betting outcome type")]
         [DataMember(Name = "BettingOutcomeTypeID", Order = 4)]
         public int? BettingOutcomeTypeID { get; set; }
 
         /// <summary>
-        /// The BettingOutcomeType of this outcome
+        /// The name of the betting outcome within a betting market (e.g. Home; Away; Under; Over)
         /// </summary>
-        [Description("The BettingOutcomeType of this outcome")]
+        [Description("The name of the betting outcome within a betting market (e.g. Home; Away; Under; Over)")]
         [DataMember(Name = "BettingOutcomeType", Order = 5)]
         public string BettingOutcomeType { get; set; }
 
         /// <summary>
-        /// The value that was bet in this outcome (if applicable)
+        /// The offered betting line from a sportsbook for a game (i.e. If a team won a game by 2 and the spread was -1.5, the actual value would be 2 and the bet value would be -1.5)
         /// </summary>
-        [Description("The value that was bet in this outcome (if applicable)")]
+        [Description("The offered betting line from a sportsbook for a game (i.e. If a team won a game by 2 and the spread was -1.5, the actual value would be 2 and the bet value would be -1.5)")]
         [DataMember(Name = "BetValue", Order = 6)]
         public decimal? BetValue { get; set; }
 
         /// <summary>
-        /// The value that actually occurred in game (if applicable)
+        /// The value of the actual result that occured in game (i.e. If a team won a game by 2 and the spread was -1.5, the actual value would be 2 and the bet value would be -1.5)
         /// </summary>
-        [Description("The value that actually occurred in game (if applicable)")]
+        [Description("The value of the actual result that occured in game (i.e. If a team won a game by 2 and the spread was -1.5, the actual value would be 2 and the bet value would be -1.5)")]
         [DataMember(Name = "ActualValue", Order = 7)]
         public decimal? ActualValue { get; set; }
 

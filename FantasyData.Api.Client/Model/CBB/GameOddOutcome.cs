@@ -16,30 +16,30 @@ namespace FantasyData.Api.Client.Model.CBB
         public int GameOddId { get; set; }
 
         /// <summary>
-        /// The GameOddResultType of this outcome as an integer
+        /// The GameOddResultType of an outcome in the form of an integer
         /// </summary>
-        [Description("The GameOddResultType of this outcome as an integer")]
+        [Description("The GameOddResultType of an outcome in the form of an integer")]
         [DataMember(Name = "GameOddResultTypeId", Order = 2)]
         public int? GameOddResultTypeId { get; set; }
 
         /// <summary>
-        /// The string identifier of the GameOddResultType of this outcome (e.g. Won, Lost, Push, Not Resulted, Incomplete)
+        /// The result/outcome of a bet (e.g. Won; Lost; Push; Not Resulted; Incomplete)
         /// </summary>
-        [Description("The string identifier of the GameOddResultType of this outcome (e.g. Won, Lost, Push, Not Resulted, Incomplete)")]
+        [Description("The result/outcome of a bet (e.g. Won; Lost; Push; Not Resulted; Incomplete)")]
         [DataMember(Name = "GameOddResultType", Order = 3)]
         public string GameOddResultType { get; set; }
 
         /// <summary>
-        /// The market type of the odd (ex: live, pregame, 1st-5th Inning, etc)
+        /// The market type of the odd (ex: live; pregame; 1st-half; etc.)
         /// </summary>
-        [Description("The market type of the odd (ex: live, pregame, 1st-5th Inning, etc)")]
+        [Description("The market type of the odd (ex: live; pregame; 1st-half; etc.)")]
         [DataMember(Name = "OddType", Order = 4)]
         public string OddType { get; set; }
 
         /// <summary>
-        /// The GameOddOutcomeType of this outcome as a string
+        /// The GameOddResultType of an outcome in the form of a string
         /// </summary>
-        [Description("The GameOddOutcomeType of this outcome as a string")]
+        [Description("The GameOddResultType of an outcome in the form of a string")]
         [DataMember(Name = "GameOddType", Order = 5)]
         public string GameOddType { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public decimal? BetValue { get; set; }
 
         /// <summary>
-        /// The value that actually occurred in game (if applicable)
+        /// The value of the given result from a sportsbook for a game (i.e. If a team won a game by 5 and the spread was -6.5, the actual value would be 5 and the bet value would be -6.5)
         /// </summary>
-        [Description("The value that actually occurred in game (if applicable)")]
+        [Description("The value of the given result from a sportsbook for a game (i.e. If a team won a game by 5 and the spread was -6.5, the actual value would be 5 and the bet value would be -6.5)")]
         [DataMember(Name = "ActualValue", Order = 7)]
         public decimal? ActualValue { get; set; }
 

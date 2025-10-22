@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public string Track { get; set; }
 
         /// <summary>
-        /// The station broadcasting this race
+        /// The broadcast airing this race
         /// </summary>
-        [Description("The station broadcasting this race")]
+        [Description("The broadcast airing this race")]
         [DataMember(Name = "Broadcast", Order = 9)]
         public string Broadcast { get; set; }
 
@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public int? PoleWinnerID { get; set; }
 
         /// <summary>
-        /// Indicates whether this race is currently in progress. 
+        /// Indicates whether this race is currently in progress
         /// </summary>
-        [Description("Indicates whether this race is currently in progress. ")]
+        [Description("Indicates whether this race is currently in progress")]
         [DataMember(Name = "IsInProgress", Order = 12)]
         public bool IsInProgress { get; set; }
 
@@ -107,9 +107,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The date/time when this race was created
+        /// The date/time when this race was created (in US Eastern Time)
         /// </summary>
-        [Description("The date/time when this race was created")]
+        [Description("The date/time when this race was created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 15)]
         public DateTime? Created { get; set; }
 
@@ -142,9 +142,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public int? ScheduledLaps { get; set; }
 
         /// <summary>
-        /// Number of laps ran for this race
+        /// Total number of laps ran for this race
         /// </summary>
-        [Description("Number of laps ran for this race")]
+        [Description("Total number of laps ran for this race")]
         [DataMember(Name = "ActualLaps", Order = 20)]
         public int? ActualLaps { get; set; }
 

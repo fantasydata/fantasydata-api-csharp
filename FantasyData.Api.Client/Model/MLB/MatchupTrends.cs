@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class MatchupTrends
     {
         /// <summary>
-        /// Upcoming game between the team and the opponent
+        /// Next scheduled game for the team with a specified opposing team
         /// </summary>
-        [Description("Upcoming game between the team and the opponent")]
+        [Description("Next scheduled game for the team with a specified opposing team")]
         [DataMember(Name = "UpcomingGame", Order = 10001)]
         public Game UpcomingGame { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public TeamGameTrends[] TeamMatchupTrends { get; set; }
 
         /// <summary>
-        /// The collection of opponent game trends against team
+        /// The collection of opponent game trends against the team
         /// </summary>
-        [Description("The collection of opponent game trends against team")]
+        [Description("The collection of opponent game trends against the team")]
         [DataMember(Name = "OpponentMatchupTrends", Order = 20004)]
         public TeamGameTrends[] OpponentMatchupTrends { get; set; }
 

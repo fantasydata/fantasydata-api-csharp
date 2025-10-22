@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class News
     {
         /// <summary>
-        /// Unique ID of news story
+        /// The unique ID assigned to this news story
         /// </summary>
-        [Description("Unique ID of news story")]
+        [Description("The unique ID assigned to this news story")]
         [DataMember(Name = "NewsID", Order = 1)]
         public int NewsID { get; set; }
 
@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public string Source { get; set; }
 
         /// <summary>
-        /// The date/time that the content was published (UTC time zone)
+        /// The timestamp of when this news story was published
         /// </summary>
-        [Description("The date/time that the content was published (UTC time zone)")]
+        [Description("The timestamp of when this news story was published")]
         [DataMember(Name = "Updated", Order = 3)]
         public DateTime Updated { get; set; }
 
@@ -37,23 +37,23 @@ namespace FantasyData.Api.Client.Model.MLB
         public string TimeAgo { get; set; }
 
         /// <summary>
-        /// The brief title of the news (typically less than 100 characters)
+        /// The brief title of the news story (typically less than 100 characters)
         /// </summary>
-        [Description("The brief title of the news (typically less than 100 characters)")]
+        [Description("The brief title of the news story (typically less than 100 characters)")]
         [DataMember(Name = "Title", Order = 5)]
         public string Title { get; set; }
 
         /// <summary>
-        /// The full body content of the story
+        /// The entirety of the content of the news story
         /// </summary>
-        [Description("The full body content of the story")]
+        [Description("The entirety of the content of the news story")]
         [DataMember(Name = "Content", Order = 6)]
         public string Content { get; set; }
 
         /// <summary>
-        /// The url of the full story
+        /// The website URL of the full news story
         /// </summary>
-        [Description("The url of the full story")]
+        [Description("The website URL of the full news story")]
         [DataMember(Name = "Url", Order = 7)]
         public string Url { get; set; }
 
@@ -79,23 +79,23 @@ namespace FantasyData.Api.Client.Model.MLB
         public string Categories { get; set; }
 
         /// <summary>
-        /// The PlayerID of the player who relates to this story
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career
         /// </summary>
-        [Description("The PlayerID of the player who relates to this story")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career")]
         [DataMember(Name = "PlayerID", Order = 11)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// The TeamID of the team that relates to this story
+        /// The team's unique TeamID as assigned by SportsDataIO
         /// </summary>
-        [Description("The TeamID of the team that relates to this story")]
+        [Description("The team's unique TeamID as assigned by SportsDataIO")]
         [DataMember(Name = "TeamID", Order = 12)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The team that relates to this story
+        /// The abbreviation [Key] of the team that relates to this story
         /// </summary>
-        [Description("The team that relates to this story")]
+        [Description("The abbreviation [Key] of the team that relates to this story")]
         [DataMember(Name = "Team", Order = 13)]
         public string Team { get; set; }
 
@@ -107,30 +107,30 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? PlayerID2 { get; set; }
 
         /// <summary>
-        /// The TeamID of the team that relates to this story
+        /// The TeamID of the second team that relates to this story
         /// </summary>
-        [Description("The TeamID of the team that relates to this story")]
+        [Description("The TeamID of the second team that relates to this story")]
         [DataMember(Name = "TeamID2", Order = 15)]
         public int? TeamID2 { get; set; }
 
         /// <summary>
-        /// The team that relates to this story
+        /// The abbreviation [Key] of the second team that relates to this story
         /// </summary>
-        [Description("The team that relates to this story")]
+        [Description("The abbreviation [Key] of the second team that relates to this story")]
         [DataMember(Name = "Team2", Order = 16)]
         public string Team2 { get; set; }
 
         /// <summary>
-        /// The original source who broke this news (before it was picked up by the publisher of this blurb)
+        /// The original source who broke this news (before it was picked up by the publisher of this story)
         /// </summary>
-        [Description("The original source who broke this news (before it was picked up by the publisher of this blurb)")]
+        [Description("The original source who broke this news (before it was picked up by the publisher of this story)")]
         [DataMember(Name = "OriginalSource", Order = 17)]
         public string OriginalSource { get; set; }
 
         /// <summary>
-        /// The URL of the original source who broke this news blurb
+        /// The URL of the original source who broke this news story
         /// </summary>
-        [Description("The URL of the original source who broke this news blurb")]
+        [Description("The URL of the original source who broke this news story")]
         [DataMember(Name = "OriginalSourceUrl", Order = 18)]
         public string OriginalSourceUrl { get; set; }
 

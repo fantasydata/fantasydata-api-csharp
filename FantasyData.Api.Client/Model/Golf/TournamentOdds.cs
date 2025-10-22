@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class TournamentOdds
     {
         /// <summary>
-        /// The Tournament object.
+        /// The details of the tournament
         /// </summary>
-        [Description("The Tournament object.")]
+        [Description("The details of the tournament")]
         [DataMember(Name = "Tournament", Order = 10001)]
         public Tournament Tournament { get; set; }
 
         /// <summary>
-        /// The Tournament’s collection of PlayerTournamentOdds.
+        /// The tournaments collection of PlayerTournamentOdds
         /// </summary>
-        [Description("The Tournament’s collection of PlayerTournamentOdds.")]
+        [Description("The tournaments collection of PlayerTournamentOdds")]
         [DataMember(Name = "PlayerTournamentOdds", Order = 20002)]
         public PlayerTournamentOdd[] PlayerTournamentOdds { get; set; }
 

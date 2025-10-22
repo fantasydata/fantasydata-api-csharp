@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.MMA
     public partial class EventOdds
     {
         /// <summary>
-        /// The Event object
+        /// The Event as an object - including the EventID, LeagueID, Name (and ShortName)of the Event, Season, Day, DateTime, & Status
         /// </summary>
-        [Description("The Event object")]
+        [Description("The Event as an object - including the EventID, LeagueID, Name (and ShortName)of the Event, Season, Day, DateTime, & Status")]
         [DataMember(Name = "Event", Order = 10001)]
         public Event Event { get; set; }
 

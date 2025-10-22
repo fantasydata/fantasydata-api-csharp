@@ -16,16 +16,16 @@ namespace FantasyData.Api.Client.Model.NBA
         public int NumberOfSportsbooks { get; set; }
 
         /// <summary>
-        /// The unique identifier of this outcome
+        /// The unique ID associated with this specific outcome
         /// </summary>
-        [Description("The unique identifier of this outcome")]
+        [Description("The unique ID associated with this specific outcome")]
         [DataMember(Name = "BettingOutcomeID", Order = 2)]
         public int? BettingOutcomeID { get; set; }
 
         /// <summary>
-        /// The unique identifier of the market this betting outcome exists for
+        /// The unique ID associated with the betting market
         /// </summary>
-        [Description("The unique identifier of the market this betting outcome exists for")]
+        [Description("The unique ID associated with the betting market")]
         [DataMember(Name = "BettingMarketID", Order = 3)]
         public int? BettingMarketID { get; set; }
 
@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? BettingOutcomeTypeID { get; set; }
 
         /// <summary>
-        /// The BettingOutcomeType of this outcome
+        /// The name of outcome type (e.g. Home; Away; Under; Over)
         /// </summary>
-        [Description("The BettingOutcomeType of this outcome")]
+        [Description("The name of outcome type (e.g. Home; Away; Under; Over)")]
         [DataMember(Name = "BettingOutcomeType", Order = 6)]
         public string BettingOutcomeType { get; set; }
 
@@ -65,23 +65,23 @@ namespace FantasyData.Api.Client.Model.NBA
         public decimal? PayoutDecimal { get; set; }
 
         /// <summary>
-        /// The number associated with the outcome (spread/total/etc)
+        /// The number associated with the outcome of a market (e.g. the spread, game total, etc.)
         /// </summary>
-        [Description("The number associated with the outcome (spread/total/etc)")]
+        [Description("The number associated with the outcome of a market (e.g. the spread, game total, etc.)")]
         [DataMember(Name = "Value", Order = 9)]
         public decimal? Value { get; set; }
 
         /// <summary>
-        /// The name of the participant (typically team or player) associated with the outcome. NOTE: This is provided by the sportsbook. In the case of Player odds, we highly recommend using PlayerID as names of players can be inconsistent between sportsbooks.
+        /// The name of the participant (typically team or player) associated with the outcome. NOTE: this is provided by the sportsbook. In the case of Player odds, we highly recommend using PlayerID as names of players can be inconsistent between sportsbooks.
         /// </summary>
-        [Description("The name of the participant (typically team or player) associated with the outcome. NOTE: This is provided by the sportsbook. In the case of Player odds, we highly recommend using PlayerID as names of players can be inconsistent between sportsbooks.")]
+        [Description("The name of the participant (typically team or player) associated with the outcome. NOTE: this is provided by the sportsbook. In the case of Player odds, we highly recommend using PlayerID as names of players can be inconsistent between sportsbooks.")]
         [DataMember(Name = "Participant", Order = 10)]
         public string Participant { get; set; }
 
         /// <summary>
-        /// Is this outcome available for betting as of last update
+        /// Indicates whether a BettingOutcome is available for betting or not
         /// </summary>
-        [Description("Is this outcome available for betting as of last update")]
+        [Description("Indicates whether a BettingOutcome is available for betting or not")]
         [DataMember(Name = "IsAvailable", Order = 11)]
         public bool? IsAvailable { get; set; }
 
@@ -93,44 +93,44 @@ namespace FantasyData.Api.Client.Model.NBA
         public bool? IsAlternate { get; set; }
 
         /// <summary>
-        /// The created date of the outcome
+        /// The date and time when this betting outcome was created (in US Eastern Time)
         /// </summary>
-        [Description("The created date of the outcome")]
+        [Description("The date and time when this betting outcome was created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 13)]
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// The last updated date of the outcome
+        /// The timestamp of the last time this betting outcome was updated (in US Eastern Time)
         /// </summary>
-        [Description("The last updated date of the outcome")]
+        [Description("The timestamp of the last time this betting outcome was updated (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 14)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The datetime the outcome was unlisted (no longer available for bets)
+        /// The timestamp of when these odds were first made unavailable to be bet on any further (in US Eastern Time)
         /// </summary>
-        [Description("The datetime the outcome was unlisted (no longer available for bets)")]
+        [Description("The timestamp of when these odds were first made unavailable to be bet on any further (in US Eastern Time)")]
         [DataMember(Name = "Unlisted", Order = 15)]
         public DateTime? Unlisted { get; set; }
 
         /// <summary>
-        /// The TeamID of the team assocated with this outcome (where applicable)
+        /// The unique ID of the team tied to this outcome (if applicable)
         /// </summary>
-        [Description("The TeamID of the team assocated with this outcome (where applicable)")]
+        [Description("The unique ID of the team tied to this outcome (if applicable)")]
         [DataMember(Name = "TeamID", Order = 16)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The PlayerID of the player assocated with this outcome (where applicable)
+        /// The player's unique PlayerID as assigned by SportsDataIO (where applicable). Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("The PlayerID of the player assocated with this outcome (where applicable)")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO (where applicable). Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 17)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// The GlobalTeamID of the team assocated with this outcome (where applicable)
+        /// A globally unique ID for this team (where applicable). This value is guaranteed to be unique across all sports/leagues.
         /// </summary>
-        [Description("The GlobalTeamID of the team assocated with this outcome (where applicable)")]
+        [Description("A globally unique ID for this team (where applicable). This value is guaranteed to be unique across all sports/leagues.")]
         [DataMember(Name = "GlobalTeamID", Order = 18)]
         public int? GlobalTeamID { get; set; }
 

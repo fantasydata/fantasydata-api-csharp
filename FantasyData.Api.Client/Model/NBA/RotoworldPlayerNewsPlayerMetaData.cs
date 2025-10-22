@@ -51,30 +51,30 @@ namespace FantasyData.Api.Client.Model.NBA
         public string PlayerStatus { get; set; }
 
         /// <summary>
-        /// The team key of the team related to the news item as listed by Rotoworld Player News (the league's abbreviation will be used for general news, not specific to a team)
+        /// The abbreviation [Key] of the team associated with this market
         /// </summary>
-        [Description("The team key of the team related to the news item as listed by Rotoworld Player News (the league's abbreviation will be used for general news, not specific to a team)")]
+        [Description("The abbreviation [Key] of the team associated with this market")]
         [DataMember(Name = "TeamKey", Order = 7)]
         public string TeamKey { get; set; }
 
         /// <summary>
-        /// The team city of the team related to the news item as listed by Rotoworld Player News
+        /// The city of the team related to this news story
         /// </summary>
-        [Description("The team city of the team related to the news item as listed by Rotoworld Player News")]
+        [Description("The city of the team related to this news story")]
         [DataMember(Name = "TeamCity", Order = 8)]
         public string TeamCity { get; set; }
 
         /// <summary>
-        /// The team name of the team related to the news item as listed by Rotoworld Player News
+        /// The name of the team related to this news story
         /// </summary>
-        [Description("The team name of the team related to the news item as listed by Rotoworld Player News")]
+        [Description("The name of the team related to this news story")]
         [DataMember(Name = "TeamName", Order = 9)]
         public string TeamName { get; set; }
 
         /// <summary>
-        /// The hex color of the team related to the news item as listed by Rotoworld Player News
+        /// The hex color of the team related to this news story
         /// </summary>
-        [Description("The hex color of the team related to the news item as listed by Rotoworld Player News")]
+        [Description("The hex color of the team related to this news story")]
         [DataMember(Name = "TeamColor", Order = 10)]
         public string TeamColor { get; set; }
 

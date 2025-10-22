@@ -34,13 +34,13 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>702</code>, <code>1274</code>, etc.</param>
-        public Task<BoxScore> GetBoxScoreLiveFinalAsync(string competition, int gameid)
+        public Task<List<BoxScore>> GetBoxScoreLiveFinalAsync(string competition, int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
-            return Task.Run<BoxScore>(() =>
-                base.Get<BoxScore>("/v4/soccer/stats/{format}/BoxScore/{competition}/{gameid}", parameters)
+            return Task.Run<List<BoxScore>>(() =>
+                base.Get<List<BoxScore>>("/v4/soccer/stats/{format}/BoxScore/{competition}/{gameid}", parameters)
             );
         }
 
@@ -49,7 +49,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>702</code>, <code>1274</code>, etc.</param>
-        public BoxScore GetBoxScoreLiveFinal(string competition, int gameid)
+        public List<BoxScore> GetBoxScoreLiveFinal(string competition, int gameid)
         {
             return this.GetBoxScoreLiveFinalAsync(competition, gameid).Result;
         }
@@ -538,13 +538,13 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>702</code>, <code>1274</code>, etc.</param>
-        public Task<BoxScore> GetBoxScoreFinalAsync(string competition, int gameid)
+        public Task<List<BoxScore>> GetBoxScoreFinalAsync(string competition, int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("competition", competition.ToString()));
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
-            return Task.Run<BoxScore>(() =>
-                base.Get<BoxScore>("/v4/soccer/stats/{format}/BoxScoreFinal/{competition}/{gameid}", parameters)
+            return Task.Run<List<BoxScore>>(() =>
+                base.Get<List<BoxScore>>("/v4/soccer/stats/{format}/BoxScoreFinal/{competition}/{gameid}", parameters)
             );
         }
 
@@ -553,7 +553,7 @@ namespace FantasyData.Api.Client
         /// </summary>
         /// <param name="competition">An indication of a soccer competition/league. This value can be the CompetitionId or the Competition Key. Possible values include: <code>EPL</code>, <code>1</code>, <code>MLS</code>, <code>8</code>, etc.</param>
         /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>702</code>, <code>1274</code>, etc.</param>
-        public BoxScore GetBoxScoreFinal(string competition, int gameid)
+        public List<BoxScore> GetBoxScoreFinal(string competition, int gameid)
         {
             return this.GetBoxScoreFinalAsync(competition, gameid).Result;
         }

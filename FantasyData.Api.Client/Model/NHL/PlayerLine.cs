@@ -16,37 +16,37 @@ namespace FantasyData.Api.Client.Model.NHL
         public int LineNumber { get; set; }
 
         /// <summary>
-        /// The position of the player on the line (e.g. C, RW, LW, or D)
+        /// The player's primary position. Possible values: C; RW; LW; D; or G
         /// </summary>
-        [Description("The position of the player on the line (e.g. C, RW, LW, or D)")]
+        [Description("The player's primary position. Possible values: C; RW; LW; D; or G")]
         [DataMember(Name = "Position", Order = 2)]
         public string Position { get; set; }
 
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 3)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// The name of the player on the line
+        /// The full name of the player on the line
         /// </summary>
-        [Description("The name of the player on the line")]
+        [Description("The full name of the player on the line")]
         [DataMember(Name = "Name", Order = 4)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The handedness of the player (Possible values: left or right)
+        /// The hand the player shoots the puck with (right or left)
         /// </summary>
-        [Description("The handedness of the player (Possible values: left or right)")]
+        [Description("The hand the player shoots the puck with (right or left)")]
         [DataMember(Name = "Shoots", Order = 5)]
         public string Shoots { get; set; }
 
         /// <summary>
-        /// The type of line the player is on (e.g. first, second, third, etc.)
+        /// The type of line the player is on (e.g. EvenStrength (EV); PowerPlay (PP); ShortHanded (SH))
         /// </summary>
-        [Description("The type of line the player is on (e.g. first, second, third, etc.)")]
+        [Description("The type of line the player is on (e.g. EvenStrength (EV); PowerPlay (PP); ShortHanded (SH))")]
         [DataMember(Name = "LineType", Order = 6)]
         public string LineType { get; set; }
 

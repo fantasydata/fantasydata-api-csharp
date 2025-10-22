@@ -16,51 +16,51 @@ namespace FantasyData.Api.Client.Model.CBB
         public int StatID { get; set; }
 
         /// <summary>
-        /// The unique ID of the team
+        /// The unique ID of the player's team
         /// </summary>
-        [Description("The unique ID of the team")]
+        [Description("The unique ID of the player's team")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their collegiate career
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their collegiate career")]
         [DataMember(Name = "PlayerID", Order = 3)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar)")]
         [DataMember(Name = "SeasonType", Order = 4)]
         public int? SeasonType { get; set; }
 
         /// <summary>
-        /// The college basketball season of the game
+        /// The season that the game the player is playing in occurs. Note: season is a single year that the majority of the season occurs in
         /// </summary>
-        [Description("The college basketball season of the game")]
+        [Description("The season that the game the player is playing in occurs. Note: season is a single year that the majority of the season occurs in")]
         [DataMember(Name = "Season", Order = 5)]
         public int? Season { get; set; }
 
         /// <summary>
-        /// Player's name
+        /// Player's full name
         /// </summary>
-        [Description("Player's name")]
+        [Description("Player's full name")]
         [DataMember(Name = "Name", Order = 6)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the player's team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the player's team")]
         [DataMember(Name = "Team", Order = 7)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The player's position associated with the given game or season. Possible values: C, F, FC, G, GF, PF, PG, SF, SG
+        /// The player's eligible position(s). Possible values: C; F; F-C; G; G-F, PG, SG, SF, PF
         /// </summary>
-        [Description("The player's position associated with the given game or season. Possible values: C, F, FC, G, GF, PF, PG, SF, SG")]
+        [Description("The player's eligible position(s). Possible values: C; F; F-C; G; G-F, PG, SG, SF, PF")]
         [DataMember(Name = "Position", Order = 8)]
         public string Position { get; set; }
 
@@ -86,44 +86,44 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? FantasyDataSalary { get; set; }
 
         /// <summary>
-        /// The player's salary for Yahoo daily fantasy contests.
+        /// The player's salary for Yahoo daily fantasy contests
         /// </summary>
-        [Description("The player's salary for Yahoo daily fantasy contests.")]
+        [Description("The player's salary for Yahoo daily fantasy contests")]
         [DataMember(Name = "YahooSalary", Order = 12)]
         public int? YahooSalary { get; set; }
 
         /// <summary>
-        /// Indicates the player's injury status.  Free text, can vary.
+        /// Injury status used to project availability. Statuses: Probable; Questionable; Doubtful; Out
         /// </summary>
-        [Description("Indicates the player's injury status.  Free text, can vary.")]
+        [Description("Injury status used to project availability. Statuses: Probable; Questionable; Doubtful; Out")]
         [DataMember(Name = "InjuryStatus", Order = 13)]
         public string InjuryStatus { get; set; }
 
         /// <summary>
-        /// The body part that is injured (Knee, Groin, Calf, Hamstring, etc.)
+        /// The player's body part(s) that are injured (e.g. Knee; Groin; Calf; Hamstring; etc.). Note: if a player has multiple injured body parts they will appear like such: Hamstring/Ankle
         /// </summary>
-        [Description("The body part that is injured (Knee, Groin, Calf, Hamstring, etc.)")]
+        [Description("The player's body part(s) that are injured (e.g. Knee; Groin; Calf; Hamstring; etc.). Note: if a player has multiple injured body parts they will appear like such: Hamstring/Ankle")]
         [DataMember(Name = "InjuryBodyPart", Order = 14)]
         public string InjuryBodyPart { get; set; }
 
         /// <summary>
-        /// The day that the injury started or first discovered.
+        /// The date that the injury occurred, was first discovered, or was freshly updated
         /// </summary>
-        [Description("The day that the injury started or first discovered.")]
+        [Description("The date that the injury occurred, was first discovered, or was freshly updated")]
         [DataMember(Name = "InjuryStartDate", Order = 15)]
         public DateTime? InjuryStartDate { get; set; }
 
         /// <summary>
-        /// Brief description of the player's injury and expected availability.
+        /// Short description of injury involving injured body part(s), game status, player name, team name, and other extra news necessary. Notes are custom and can be unique
         /// </summary>
-        [Description("Brief description of the player's injury and expected availability.")]
+        [Description("Short description of injury involving injured body part(s), game status, player name, team name, and other extra news necessary. Notes are custom and can be unique")]
         [DataMember(Name = "InjuryNotes", Order = 16)]
         public string InjuryNotes { get; set; }
 
         /// <summary>
-        /// The player's eligible position in FanDuel's daily fantasy sports platform.
+        /// The player's eligible position(s) in FanDuel's daily fantasy sports platform.
         /// </summary>
-        [Description("The player's eligible position in FanDuel's daily fantasy sports platform.")]
+        [Description("The player's eligible position(s) in FanDuel's daily fantasy sports platform.")]
         [DataMember(Name = "FanDuelPosition", Order = 17)]
         public string FanDuelPosition { get; set; }
 
@@ -135,9 +135,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public string DraftKingsPosition { get; set; }
 
         /// <summary>
-        /// The player's eligible position in Yahoo's daily fantasy sports platform.
+        /// The player's eligible position in Yahoo's daily fantasy sports platform
         /// </summary>
-        [Description("The player's eligible position in Yahoo's daily fantasy sports platform.")]
+        [Description("The player's eligible position in Yahoo's daily fantasy sports platform")]
         [DataMember(Name = "YahooPosition", Order = 19)]
         public string YahooPosition { get; set; }
 
@@ -156,9 +156,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? OpponentPositionRank { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this player's team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this player's team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalTeamID", Order = 22)]
         public int? GlobalTeamID { get; set; }
 

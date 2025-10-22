@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class PlayerTournamentOdd
     {
         /// <summary>
-        /// Unique Id of the PlayerTournamentOdd record.
+        /// The unique ID of this player/tournament odd record
         /// </summary>
-        [Description("Unique Id of the PlayerTournamentOdd record.")]
+        [Description("The unique ID of this player/tournament odd record")]
         [DataMember(Name = "PlayerTournamentOddId", Order = 1)]
         public int PlayerTournamentOddId { get; set; }
 
@@ -23,37 +23,37 @@ namespace FantasyData.Api.Client.Model.Golf
         public int SportsbookId { get; set; }
 
         /// <summary>
-        /// The name of the Sportbook.
+        /// The name of the sportsbook
         /// </summary>
-        [Description("The name of the Sportbook.")]
+        [Description("The name of the sportsbook")]
         [DataMember(Name = "SportbookName", Order = 3)]
         public string SportbookName { get; set; }
 
         /// <summary>
-        /// The name of the golfer.
+        /// The name of the golfer
         /// </summary>
-        [Description("The name of the golfer.")]
+        [Description("The name of the golfer")]
         [DataMember(Name = "Name", Order = 4)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The Id of the Player associated with this record.
+        /// The unique ID of the golfer associated with this record
         /// </summary>
-        [Description("The Id of the Player associated with this record.")]
+        [Description("The unique ID of the golfer associated with this record")]
         [DataMember(Name = "PlayerId", Order = 5)]
         public int PlayerId { get; set; }
 
         /// <summary>
-        /// The odds for this record, in American format i.e. +800, -200, etc.
+        /// The odds for this record; in American format (i.e. +800; -200; etc.)
         /// </summary>
-        [Description("The odds for this record, in American format i.e. +800, -200, etc.")]
+        [Description("The odds for this record; in American format (i.e. +800; -200; etc.)")]
         [DataMember(Name = "OddsToWin", Order = 6)]
         public int OddsToWin { get; set; }
 
         /// <summary>
-        /// The date and time when this record was created.
+        /// The timestamp of when this odds record was created
         /// </summary>
-        [Description("The date and time when this record was created.")]
+        [Description("The timestamp of when this odds record was created")]
         [DataMember(Name = "Created", Order = 7)]
         public DateTime Created { get; set; }
 
@@ -65,16 +65,16 @@ namespace FantasyData.Api.Client.Model.Golf
         public DateTime Updated { get; set; }
 
         /// <summary>
-        /// Indicates whether the odd is available for wagering at the related Sportsbook (excludes Consensus).
+        /// Indicates whether the odd is available for wagering at the related sportsbook (excludes Consensus)
         /// </summary>
-        [Description("Indicates whether the odd is available for wagering at the related Sportsbook (excludes Consensus).")]
+        [Description("Indicates whether the odd is available for wagering at the related sportsbook (excludes Consensus)")]
         [DataMember(Name = "IsAvailable", Order = 9)]
         public bool IsAvailable { get; set; }
 
         /// <summary>
-        /// The market type of the odd (e.g. live, pregame, 1st-half, 2nd-quarter)
+        /// The market type of the odd (e.g. live; pregame; Round 1; Thru Round 4)
         /// </summary>
-        [Description("The market type of the odd (e.g. live, pregame, 1st-half, 2nd-quarter)")]
+        [Description("The market type of the odd (e.g. live; pregame; Round 1; Thru Round 4)")]
         [DataMember(Name = "OddType", Order = 10)]
         public string OddType { get; set; }
 

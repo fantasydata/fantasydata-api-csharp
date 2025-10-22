@@ -16,16 +16,16 @@ namespace FantasyData.Api.Client.Model.MLB
         public int StatID { get; set; }
 
         /// <summary>
-        /// The unique ID of the team
+        /// The team's unique TeamID as assigned by SportsDataIO
         /// </summary>
-        [Description("The unique ID of the team")]
+        [Description("The team's unique TeamID as assigned by SportsDataIO")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar)")]
         [DataMember(Name = "SeasonType", Order = 3)]
         public int? SeasonType { get; set; }
 
@@ -37,23 +37,23 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? Season { get; set; }
 
         /// <summary>
-        /// Team's name
+        /// Team's full name (city and mascot)
         /// </summary>
-        [Description("Team's name")]
+        [Description("Team's full name (city and mascot)")]
         [DataMember(Name = "Name", Order = 5)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 6)]
         public string Team { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalTeamID", Order = 7)]
         public int? GlobalTeamID { get; set; }
 

@@ -9,30 +9,30 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class BettingSplit
     {
         /// <summary>
-        /// The unique id of this specific instance of the split
+        /// The unique ID assciated with the betting split
         /// </summary>
-        [Description("The unique id of this specific instance of the split")]
+        [Description("The unique ID assciated with the betting split")]
         [DataMember(Name = "BettingMarketSplitID", Order = 1)]
         public int BettingMarketSplitID { get; set; }
 
         /// <summary>
-        /// The id of the market associated
+        /// The unique ID associated with the betting market
         /// </summary>
-        [Description("The id of the market associated")]
+        [Description("The unique ID associated with the betting market")]
         [DataMember(Name = "BettingMarketID", Order = 2)]
         public int BettingMarketID { get; set; }
 
         /// <summary>
-        /// The outcome type id this split is associated with
+        /// The BettingOutcomeTypeID of this outcome
         /// </summary>
-        [Description("The outcome type id this split is associated with")]
+        [Description("The BettingOutcomeTypeID of this outcome")]
         [DataMember(Name = "BettingOutcomeTypeID", Order = 3)]
         public int? BettingOutcomeTypeID { get; set; }
 
         /// <summary>
-        /// The string description of this outcome type
+        /// Name of Betting Outcome Type (e.g. Home; Away; Under; Over)
         /// </summary>
-        [Description("The string description of this outcome type")]
+        [Description("Name of Betting Outcome Type (e.g. Home; Away; Under; Over)")]
         [DataMember(Name = "BettingOutcomeType", Order = 4)]
         public string BettingOutcomeType { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public DateTime Created { get; set; }
 
         /// <summary>
-        /// The timestamp this set of values was last seen
+        /// The timestamp this set of values was last seen (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp this set of values was last seen")]
+        [Description("The timestamp this set of values was last seen (in US Eastern Time)")]
         [DataMember(Name = "LastSeen", Order = 8)]
         public DateTime LastSeen { get; set; }
 

@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.WNBA
     public partial class Season
     {
         /// <summary>
-        /// The WNBA regular season for which these totals apply
+        /// The WNBA season for which these totals apply
         /// </summary>
-        [Description("The WNBA regular season for which these totals apply")]
+        [Description("The WNBA season for which these totals apply")]
         [DataMember(Name = "Year", Order = 1)]
         public int Year { get; set; }
 
         /// <summary>
-        /// The year in which the season started
+        /// The start date of the preseason
         /// </summary>
-        [Description("The year in which the season started")]
+        [Description("The start date of the preseason")]
         [DataMember(Name = "PreseasonStartDate", Order = 2)]
         public DateTime PreseasonStartDate { get; set; }
 
@@ -37,16 +37,16 @@ namespace FantasyData.Api.Client.Model.WNBA
         public DateTime? PostSeasonStartDate { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to  (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to  (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar)")]
         [DataMember(Name = "CurrentSeasonType", Order = 5)]
         public string CurrentSeasonType { get; set; }
 
         /// <summary>
-        /// The string to pass into subsequent API calls in the season parameter
+        /// The string to pass into subsequent API calls in the season parameter (e.g. 2025REG, 2025POST, etc.).
         /// </summary>
-        [Description("The string to pass into subsequent API calls in the season parameter")]
+        [Description("The string to pass into subsequent API calls in the season parameter (e.g. 2025REG, 2025POST, etc.).")]
         [DataMember(Name = "ApiSeason", Order = 6)]
         public string ApiSeason { get; set; }
 

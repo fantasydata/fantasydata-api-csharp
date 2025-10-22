@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class PlayerSeasonProjection
     {
         /// <summary>
-        /// The unique ID of the stat
+        /// The unique ID of the stat associated with this player
         /// </summary>
-        [Description("The unique ID of the stat")]
+        [Description("The unique ID of the stat associated with this player")]
         [DataMember(Name = "StatId", Order = 1)]
         public int StatId { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int Season { get; set; }
 
         /// <summary>
-        /// The unique ID of the round
+        /// The unique ID of the round that this player is associated with
         /// </summary>
-        [Description("The unique ID of the round")]
+        [Description("The unique ID of the round that this player is associated with")]
         [DataMember(Name = "RoundId", Order = 4)]
         public int? RoundId { get; set; }
 
@@ -44,16 +44,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? TeamId { get; set; }
 
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career")]
         [DataMember(Name = "PlayerId", Order = 6)]
         public int? PlayerId { get; set; }
 
         /// <summary>
-        /// Player's name
+        /// The player's full name
         /// </summary>
-        [Description("Player's name")]
+        [Description("The player's full name")]
         [DataMember(Name = "Name", Order = 7)]
         public string Name { get; set; }
 
@@ -65,16 +65,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string ShortName { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 9)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The player's position category. 
+        /// The player's position category
         /// </summary>
-        [Description("The player's position category. ")]
+        [Description("The player's position category")]
         [DataMember(Name = "PositionCategory", Order = 10)]
         public string PositionCategory { get; set; }
 
@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Position { get; set; }
 
         /// <summary>
-        /// Number of games started
+        /// The total number of games the player started in the season
         /// </summary>
-        [Description("Number of games started")]
+        [Description("The total number of games the player started in the season")]
         [DataMember(Name = "Started", Order = 12)]
         public int? Started { get; set; }
 

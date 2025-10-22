@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The date/time when this race was created
+        /// The date/time when this race was created (in US Eastern Time)
         /// </summary>
-        [Description("The date/time when this race was created")]
+        [Description("The date/time when this race was created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 5)]
         public DateTime? Created { get; set; }
 

@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class Standing
     {
         /// <summary>
-        /// The unique ID of the standing
+        /// The unique ID of the standing
         /// </summary>
-        [Description("The unique ID of the standing")]
+        [Description("The unique ID of the standing")]
         [DataMember(Name = "StandingId", Order = 1)]
         public int StandingId { get; set; }
 
         /// <summary>
-        /// The unique ID of the round
+        /// The unique ID of the round that this team is associated with
         /// </summary>
-        [Description("The unique ID of the round")]
+        [Description("The unique ID of the round that this team is associated with")]
         [DataMember(Name = "RoundId", Order = 2)]
         public int RoundId { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int TeamId { get; set; }
 
         /// <summary>
-        /// The full name of the team
+        /// The team's full name
         /// </summary>
-        [Description("The full name of the team")]
+        [Description("The team's full name")]
         [DataMember(Name = "Name", Order = 4)]
         public string Name { get; set; }
 
@@ -51,65 +51,65 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Scope { get; set; }
 
         /// <summary>
-        /// The order of the teams in the standing (e.g 1, 2, 3, 4, etc.)
+        /// The order of the teams in the standing (e.g 1; 2; 3; 4; etc.)
         /// </summary>
-        [Description("The order of the teams in the standing (e.g 1, 2, 3, 4, etc.)")]
+        [Description("The order of the teams in the standing (e.g 1; 2; 3; 4; etc.)")]
         [DataMember(Name = "Order", Order = 7)]
         public int? Order { get; set; }
 
         /// <summary>
-        /// Number of games played
+        /// Total number of games played by the team in the season
         /// </summary>
-        [Description("Number of games played")]
+        [Description("Total number of games played by the team in the season")]
         [DataMember(Name = "Games", Order = 8)]
         public int? Games { get; set; }
 
         /// <summary>
-        /// Number of wins
+        /// Number of wins by the team in the season
         /// </summary>
-        [Description("Number of wins")]
+        [Description("Number of wins by the team in the season")]
         [DataMember(Name = "Wins", Order = 9)]
         public int? Wins { get; set; }
 
         /// <summary>
-        /// Number of losses
+        /// The number of losses for the team
         /// </summary>
-        [Description("Number of losses")]
+        [Description("The number of losses for the team")]
         [DataMember(Name = "Losses", Order = 10)]
         public int? Losses { get; set; }
 
         /// <summary>
-        /// Number of draws
+        /// Number of draws by the team in the season
         /// </summary>
-        [Description("Number of draws")]
+        [Description("Number of draws by the team in the season")]
         [DataMember(Name = "Draws", Order = 11)]
         public int? Draws { get; set; }
 
         /// <summary>
-        /// Number of goals scored
+        /// Total number of goals scored by the team in the season
         /// </summary>
-        [Description("Number of goals scored")]
+        [Description("Total number of goals scored by the team in the season")]
         [DataMember(Name = "GoalsScored", Order = 12)]
         public int? GoalsScored { get; set; }
 
         /// <summary>
-        /// Number of goals against
+        /// Total number of goals against by the team in the season
         /// </summary>
-        [Description("Number of goals against")]
+        [Description("Total number of goals against by the team in the season")]
         [DataMember(Name = "GoalsAgainst", Order = 13)]
         public int? GoalsAgainst { get; set; }
 
         /// <summary>
-        /// Total goal differential
+        /// The goal differential of the team in the season. Note: GoalDifferential = GoalsScored - GoalsAgainst
         /// </summary>
-        [Description("Total goal differential")]
+        [Description("The goal differential of the team in the season. Note: GoalDifferential = GoalsScored - GoalsAgainst")]
         [DataMember(Name = "GoalsDifferential", Order = 14)]
         public int? GoalsDifferential { get; set; }
 
         /// <summary>
-        /// Total points accumulated
+        /// Total points accumulated by the team
         /// </summary>
-        [Description("Total points accumulated")]
+        [Description("Total points accumulated by the team")]
         [DataMember(Name = "Points", Order = 15)]
         public int? Points { get; set; }
 

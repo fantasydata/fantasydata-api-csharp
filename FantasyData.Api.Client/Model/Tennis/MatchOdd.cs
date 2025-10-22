@@ -9,177 +9,177 @@ namespace FantasyData.Api.Client.Model.Tennis
     public partial class MatchOdd
     {
         /// <summary>
-        /// Unique ID of MatchOdd Record.
+        /// The unique ID of the MatchOdd record
         /// </summary>
-        [Description("Unique ID of MatchOdd Record.")]
+        [Description("The unique ID of the MatchOdd record")]
         [DataMember(Name = "MatchOddId", Order = 1)]
         public int MatchOddId { get; set; }
 
         /// <summary>
-        /// Unique ID of Sportsbook.
+        /// The unique ID of the sportsbook
         /// </summary>
-        [Description("Unique ID of Sportsbook.")]
+        [Description("The unique ID of the sportsbook")]
         [DataMember(Name = "SportsbookId", Order = 2)]
         public int SportsbookId { get; set; }
 
         /// <summary>
-        /// Name of Sportsbook.
+        /// The name of the sportsbook
         /// </summary>
-        [Description("Name of Sportsbook.")]
+        [Description("The name of the sportsbook")]
         [DataMember(Name = "Sportsbook", Order = 3)]
         public string Sportsbook { get; set; }
 
         /// <summary>
-        /// Unique ID of associated Match.
+        /// The unique ID of the match associated with this odd
         /// </summary>
-        [Description("Unique ID of associated Match.")]
+        [Description("The unique ID of the match associated with this odd")]
         [DataMember(Name = "MatchId", Order = 4)]
         public int MatchId { get; set; }
 
         /// <summary>
-        /// Unique ID of Contestant.
+        /// The unique ID of contestant A
         /// </summary>
-        [Description("Unique ID of Contestant.")]
+        [Description("The unique ID of contestant A")]
         [DataMember(Name = "ContestantAId", Order = 5)]
         public int? ContestantAId { get; set; }
 
         /// <summary>
-        /// Name of Contestant.
+        /// The name of the first (or single) player of contestant A
         /// </summary>
-        [Description("Name of Contestant.")]
+        [Description("The name of the first (or single) player of contestant A")]
         [DataMember(Name = "ContestantA1Name", Order = 6)]
         public string ContestantA1Name { get; set; }
 
         /// <summary>
-        /// Name of Contestant (if doubles).
+        /// The name of the second player (if doubles) of contestant A
         /// </summary>
-        [Description("Name of Contestant (if doubles).")]
+        [Description("The name of the second player (if doubles) of contestant A")]
         [DataMember(Name = "ContestantA2Name", Order = 7)]
         public string ContestantA2Name { get; set; }
 
         /// <summary>
-        /// Unique ID of Contestant.
+        /// The unique ID of contestant B
         /// </summary>
-        [Description("Unique ID of Contestant.")]
+        [Description("The unique ID of contestant B")]
         [DataMember(Name = "ContestantBId", Order = 8)]
         public int? ContestantBId { get; set; }
 
         /// <summary>
-        /// Name of Contestant.
+        /// The name of the first (or single) player of contestant B
         /// </summary>
-        [Description("Name of Contestant.")]
+        [Description("The name of the first (or single) player of contestant B")]
         [DataMember(Name = "ContestantB1Name", Order = 9)]
         public string ContestantB1Name { get; set; }
 
         /// <summary>
-        /// Name of Contestant (if doubles).
+        /// The name of the second player (if doubles) of contestant B
         /// </summary>
-        [Description("Name of Contestant (if doubles).")]
+        [Description("The name of the second player (if doubles) of contestant B")]
         [DataMember(Name = "ContestantB2Name", Order = 10)]
         public string ContestantB2Name { get; set; }
 
         /// <summary>
-        /// Moneyline Odds for Contestant A.
+        /// Moneyline odds for contestant A
         /// </summary>
-        [Description("Moneyline Odds for Contestant A.")]
+        [Description("Moneyline odds for contestant A")]
         [DataMember(Name = "ContestantAMoneyline", Order = 11)]
         public int? ContestantAMoneyline { get; set; }
 
         /// <summary>
-        /// Moneyline Odds for Contestant B.
+        /// Moneyline odds for contestant B
         /// </summary>
-        [Description("Moneyline Odds for Contestant B.")]
+        [Description("Moneyline odds for contestant B")]
         [DataMember(Name = "ContestantBMoneyline", Order = 12)]
         public int? ContestantBMoneyline { get; set; }
 
         /// <summary>
-        /// Total Games O/U Value.
+        /// Total games over/under line value
         /// </summary>
-        [Description("Total Games O/U Value.")]
+        [Description("Total games over/under line value")]
         [DataMember(Name = "TotalGames", Order = 13)]
         public decimal? TotalGames { get; set; }
 
         /// <summary>
-        /// Total Games Over Odds.
+        /// The payout for over result in total games over/under line
         /// </summary>
-        [Description("Total Games Over Odds.")]
+        [Description("The payout for over result in total games over/under line")]
         [DataMember(Name = "TotalGamesOverPayout", Order = 14)]
         public int? TotalGamesOverPayout { get; set; }
 
         /// <summary>
-        /// Total Games Under Odds.
+        /// The payout for under result in total games over/under line
         /// </summary>
-        [Description("Total Games Under Odds.")]
+        [Description("The payout for under result in total games over/under line")]
         [DataMember(Name = "TotalGamesUnderPayout", Order = 15)]
         public int? TotalGamesUnderPayout { get; set; }
 
         /// <summary>
-        /// Total Sets O/U Value.
+        /// Total sets over/under line value
         /// </summary>
-        [Description("Total Sets O/U Value.")]
+        [Description("Total sets over/under line value")]
         [DataMember(Name = "TotalSets", Order = 16)]
         public decimal? TotalSets { get; set; }
 
         /// <summary>
-        /// Total Sets Over Odds.
+        /// The payout for over result in total sets over/under line
         /// </summary>
-        [Description("Total Sets Over Odds.")]
+        [Description("The payout for over result in total sets over/under line")]
         [DataMember(Name = "TotalSetsOverPayout", Order = 17)]
         public int? TotalSetsOverPayout { get; set; }
 
         /// <summary>
-        /// Total Sets Under Odds.
+        /// The payout for under result in total sets over/under line
         /// </summary>
-        [Description("Total Sets Under Odds.")]
+        [Description("The payout for under result in total sets over/under line")]
         [DataMember(Name = "TotalSetsUnderPayout", Order = 18)]
         public int? TotalSetsUnderPayout { get; set; }
 
         /// <summary>
-        /// Describes what kind of odd this is, eg. pregame.
+        /// Describes what kind of odd this is (e.g. pregame)
         /// </summary>
-        [Description("Describes what kind of odd this is, eg. pregame.")]
+        [Description("Describes what kind of odd this is (e.g. pregame)")]
         [DataMember(Name = "OddType", Order = 19)]
         public string OddType { get; set; }
 
         /// <summary>
-        /// Time at which this record was created.
+        /// Timestamp of this record's creation (in US Eastern Time)
         /// </summary>
-        [Description("Time at which this record was created.")]
+        [Description("Timestamp of this record's creation (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 20)]
         public DateTime Created { get; set; }
 
         /// <summary>
-        /// Time at which this record was last updated.
+        /// Timestamp of the last update of this record (in US Eastern Time)
         /// </summary>
-        [Description("Time at which this record was last updated.")]
+        [Description("Timestamp of the last update of this record (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 21)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// Spread Value for Contestant A.
+        /// Spread value for contestant A
         /// </summary>
-        [Description("Spread Value for Contestant A.")]
+        [Description("Spread value for contestant A")]
         [DataMember(Name = "ContestantAGameSpread", Order = 22)]
         public decimal? ContestantAGameSpread { get; set; }
 
         /// <summary>
-        /// Odds for Contestant A Spread.
+        /// Spread payout for contestant A
         /// </summary>
-        [Description("Odds for Contestant A Spread.")]
+        [Description("Spread payout for contestant A")]
         [DataMember(Name = "ContestantAGameSpreadPayout", Order = 23)]
         public int? ContestantAGameSpreadPayout { get; set; }
 
         /// <summary>
-        /// Spread Value for Contestant B.
+        /// Spread value for contestant B
         /// </summary>
-        [Description("Spread Value for Contestant B.")]
+        [Description("Spread value for contestant B")]
         [DataMember(Name = "ContestantBGameSpread", Order = 24)]
         public decimal? ContestantBGameSpread { get; set; }
 
         /// <summary>
-        /// Odds for Contestant B Spread.
+        /// Spread payout for contestant B
         /// </summary>
-        [Description("Odds for Contestant B Spread.")]
+        [Description("Spread payout for contestant B")]
         [DataMember(Name = "ContestantBGameSpreadPayout", Order = 25)]
         public int? ContestantBGameSpreadPayout { get; set; }
 

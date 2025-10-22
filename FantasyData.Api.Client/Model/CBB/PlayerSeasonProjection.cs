@@ -23,51 +23,51 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their collegiate career
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their collegiate career")]
         [DataMember(Name = "PlayerID", Order = 3)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar)")]
         [DataMember(Name = "SeasonType", Order = 4)]
         public int? SeasonType { get; set; }
 
         /// <summary>
-        /// The college basketball regular season for which these totals apply
+        /// The season that the game the player is playing in occurs. Note: season is a single year that the majority of the season occurs in
         /// </summary>
-        [Description("The college basketball regular season for which these totals apply")]
+        [Description("The season that the game the player is playing in occurs. Note: season is a single year that the majority of the season occurs in")]
         [DataMember(Name = "Season", Order = 5)]
         public int? Season { get; set; }
 
         /// <summary>
-        /// Player's name
+        /// Player's full name
         /// </summary>
-        [Description("Player's name")]
+        [Description("Player's full name")]
         [DataMember(Name = "Name", Order = 6)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the player's team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the player's team")]
         [DataMember(Name = "Team", Order = 7)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Player's position in the starting lineup (if started), otherwise the position he substituted for
+        /// The player's eligible position(s). Possible values: C; F; F-C; G; G-F, PG, SG, SF, PF
         /// </summary>
-        [Description("Player's position in the starting lineup (if started), otherwise the position he substituted for")]
+        [Description("The player's eligible position(s). Possible values: C; F; F-C; G; G-F, PG, SG, SF, PF")]
         [DataMember(Name = "Position", Order = 8)]
         public string Position { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this player's team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this player's team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalTeamID", Order = 9)]
         public int? GlobalTeamID { get; set; }
 

@@ -16,16 +16,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int SeasonTeamId { get; set; }
 
         /// <summary>
-        /// Unique ID of the season associated with this record
+        /// The unique ID of the season this record is associated with
         /// </summary>
-        [Description("Unique ID of the season associated with this record")]
+        [Description("The unique ID of the season this record is associated with")]
         [DataMember(Name = "SeasonId", Order = 2)]
         public int SeasonId { get; set; }
 
         /// <summary>
-        /// Unique ID of the team associated with this record
+        /// The unique ID of the team
         /// </summary>
-        [Description("Unique ID of the team associated with this record")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamId", Order = 3)]
         public int TeamId { get; set; }
 
@@ -37,30 +37,30 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string TeamName { get; set; }
 
         /// <summary>
-        /// Whether this team is actively associated with this season
+        /// Whether this team is actively associated with this season (true/false)
         /// </summary>
-        [Description("Whether this team is actively associated with this season")]
+        [Description("Whether this team is actively associated with this season (true/false)")]
         [DataMember(Name = "Active", Order = 5)]
         public bool Active { get; set; }
 
         /// <summary>
-        /// Indicates the gender of the players on this team (possible values: Make, Female)
+        /// The gender of the players on the team. Possible Values: Male; Female
         /// </summary>
-        [Description("Indicates the gender of the players on this team (possible values: Make, Female)")]
+        [Description("The gender of the players on the team. Possible Values: Male; Female")]
         [DataMember(Name = "Gender", Order = 6)]
         public string Gender { get; set; }
 
         /// <summary>
-        /// The type of this season/team (possible values: Club, National)
+        /// The type of season/team. Possible values: Club; National
         /// </summary>
-        [Description("The type of this season/team (possible values: Club, National)")]
+        [Description("The type of season/team. Possible values: Club; National")]
         [DataMember(Name = "Type", Order = 7)]
         public string Type { get; set; }
 
         /// <summary>
-        /// The team details of this season/team association
+        /// The details of the team for the given season/team association
         /// </summary>
-        [Description("The team details of this season/team association")]
+        [Description("The details of the team for the given season/team association")]
         [DataMember(Name = "Team", Order = 10008)]
         public Team Team { get; set; }
 

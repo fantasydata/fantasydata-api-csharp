@@ -9,30 +9,30 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class DfsSlatePlayer
     {
         /// <summary>
-        /// Unique ID of a SlatePlayer (assigned by SportsDataIO).
+        /// The unique ID of a SlatePlayer as assigned by SportsDataIO
         /// </summary>
-        [Description("Unique ID of a SlatePlayer (assigned by SportsDataIO).")]
+        [Description("The unique ID of a SlatePlayer as assigned by SportsDataIO")]
         [DataMember(Name = "SlatePlayerID", Order = 1)]
         public int SlatePlayerID { get; set; }
 
         /// <summary>
-        /// The SlateID that this SlatePlayer refers to.
+        /// The unique ID of the slate that this SlateGame refers to
         /// </summary>
-        [Description("The SlateID that this SlatePlayer refers to.")]
+        [Description("The unique ID of the slate that this SlateGame refers to")]
         [DataMember(Name = "SlateID", Order = 2)]
         public int SlateID { get; set; }
 
         /// <summary>
-        /// The SlateGameID that this SlatePlayer refers to.
+        /// The unique ID of the SlateGame that this SlatePlayer refers to as assigned by SportsDataIO
         /// </summary>
-        [Description("The SlateGameID that this SlatePlayer refers to.")]
+        [Description("The unique ID of the SlateGame that this SlatePlayer refers to as assigned by SportsDataIO")]
         [DataMember(Name = "SlateGameID", Order = 3)]
         public int? SlateGameID { get; set; }
 
         /// <summary>
-        /// The SportsDataIO PlayerID that this SlatePlayer refers to. This points to data in the respective sports' player feeds.
+        /// The unique ID of the player as assigned by SportsDataIO that this slate player refers to. Note: this ID remains with the player their entire collegiate career
         /// </summary>
-        [Description("The SportsDataIO PlayerID that this SlatePlayer refers to. This points to data in the respective sports' player feeds.")]
+        [Description("The unique ID of the player as assigned by SportsDataIO that this slate player refers to. Note: this ID remains with the player their entire collegiate career")]
         [DataMember(Name = "PlayerID", Order = 4)]
         public int? PlayerID { get; set; }
 
@@ -86,23 +86,23 @@ namespace FantasyData.Api.Client.Model.CFB
         public string[] OperatorRosterSlots { get; set; }
 
         /// <summary>
-        /// Indicates whether this player was removed/deleted by the operator.
+        /// Indicates whether this slate was removed/deleted by the operator
         /// </summary>
-        [Description("Indicates whether this player was removed/deleted by the operator.")]
+        [Description("Indicates whether this slate was removed/deleted by the operator")]
         [DataMember(Name = "RemovedByOperator", Order = 12)]
         public bool? RemovedByOperator { get; set; }
 
         /// <summary>
-        /// The team the player plays for.
+        /// The abbreviation [Key] of the team that the player is on. Note: If this player is a free agent; this field is NULL
         /// </summary>
-        [Description("The team the player plays for.")]
+        [Description("The abbreviation [Key] of the team that the player is on. Note: If this player is a free agent; this field is NULL")]
         [DataMember(Name = "Team", Order = 13)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The TeamID of the team the player plays for.
+        /// The unique ID of the team associated with this player
         /// </summary>
-        [Description("The TeamID of the team the player plays for.")]
+        [Description("The unique ID of the team associated with this player")]
         [DataMember(Name = "TeamID", Order = 14)]
         public int? TeamID { get; set; }
 

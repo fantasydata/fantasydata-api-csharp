@@ -44,23 +44,23 @@ namespace FantasyData.Api.Client.Model.CFB
         public string City { get; set; }
 
         /// <summary>
-        /// The US state where the stadium is located (if Stadium is outside US, this value is NULL)
+        /// The US state where the stadium is located  Note: if stadium is outside United States; this value is NULL
         /// </summary>
-        [Description("The US state where the stadium is located (if Stadium is outside US, this value is NULL)")]
+        [Description("The US state where the stadium is located  Note: if stadium is outside United States; this value is NULL")]
         [DataMember(Name = "State", Order = 6)]
         public string State { get; set; }
 
         /// <summary>
-        /// The geographic latitude coordinate of this venue.
+        /// The geographic latitude coordinate of this venue
         /// </summary>
-        [Description("The geographic latitude coordinate of this venue.")]
+        [Description("The geographic latitude coordinate of this venue")]
         [DataMember(Name = "GeoLat", Order = 7)]
         public decimal? GeoLat { get; set; }
 
         /// <summary>
-        /// The geographic longitude coordinate of this venue.
+        /// The geographic longitude coordinate of this venue
         /// </summary>
-        [Description("The geographic longitude coordinate of this venue.")]
+        [Description("The geographic longitude coordinate of this venue")]
         [DataMember(Name = "GeoLong", Order = 8)]
         public decimal? GeoLong { get; set; }
 

@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class Team
     {
         /// <summary>
-        /// The auto-generated unique ID of the Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("The auto-generated unique ID of the Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamId", Order = 1)]
         public int TeamId { get; set; }
 
@@ -23,16 +23,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? AreaId { get; set; }
 
         /// <summary>
-        /// The unique ID of the team's current home venue
+        /// The unique ID of the team's venue
         /// </summary>
-        [Description("The unique ID of the team's current home venue")]
+        [Description("The unique ID of the team's venue")]
         [DataMember(Name = "VenueId", Order = 3)]
         public int? VenueId { get; set; }
 
         /// <summary>
-        /// Abbreviation of the team (e.g. LIV, ARS, etc.)
+        /// Abbreviation of the team (e.g. LIV; ARS; MNU; etc.)
         /// </summary>
-        [Description("Abbreviation of the team (e.g. LIV, ARS, etc.)")]
+        [Description("Abbreviation of the team (e.g. LIV; ARS; MNU; etc.)")]
         [DataMember(Name = "Key", Order = 4)]
         public string Key { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string FullName { get; set; }
 
         /// <summary>
-        /// Whether or not this team is active
+        /// Whether or not this team is active (true/false)
         /// </summary>
-        [Description("Whether or not this team is active")]
+        [Description("Whether or not this team is active (true/false)")]
         [DataMember(Name = "Active", Order = 7)]
         public bool Active { get; set; }
 
@@ -65,16 +65,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string AreaName { get; set; }
 
         /// <summary>
-        /// The venue name of the home team
+        /// The name of the home team's venue
         /// </summary>
-        [Description("The venue name of the home team")]
+        [Description("The name of the home team's venue")]
         [DataMember(Name = "VenueName", Order = 9)]
         public string VenueName { get; set; }
 
         /// <summary>
-        /// Indicates the gender of the players on this team (possible values: Make, Female)
+        /// The gender of the players on the team. Possible Values: Male; Female
         /// </summary>
-        [Description("Indicates the gender of the players on this team (possible values: Make, Female)")]
+        [Description("The gender of the players on the team. Possible Values: Male; Female")]
         [DataMember(Name = "Gender", Order = 10)]
         public string Gender { get; set; }
 
@@ -86,23 +86,23 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Type { get; set; }
 
         /// <summary>
-        /// The address of the home team
+        /// The address of the home team
         /// </summary>
-        [Description("The address of the home team")]
+        [Description("The address of the home team")]
         [DataMember(Name = "Address", Order = 12)]
         public string Address { get; set; }
 
         /// <summary>
-        /// The city of the home team
+        /// The city of the home team
         /// </summary>
-        [Description("The city of the home team")]
+        [Description("The city of the home team")]
         [DataMember(Name = "City", Order = 13)]
         public string City { get; set; }
 
         /// <summary>
-        /// The zip code of the home team
+        /// The zip code of the team's home location
         /// </summary>
-        [Description("The zip code of the home team")]
+        [Description("The zip code of the team's home location")]
         [DataMember(Name = "Zip", Order = 14)]
         public string Zip { get; set; }
 
@@ -135,9 +135,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Email { get; set; }
 
         /// <summary>
-        /// The year the team was founded (e.g. 1950, 1960, etc.)
+        /// The calendar year that the team was founded
         /// </summary>
-        [Description("The year the team was founded (e.g. 1950, 1960, etc.)")]
+        [Description("The calendar year that the team was founded")]
         [DataMember(Name = "Founded", Order = 19)]
         public int? Founded { get; set; }
 
@@ -184,16 +184,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Nickname3 { get; set; }
 
         /// <summary>
-        /// The link to the team's logo hosted on Wikipedia. (This is not licensed for public or commercial use)
+        /// The link to the team's logo hosted on Wikipedia (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The link to the team's logo hosted on Wikipedia. (This is not licensed for public or commercial use)")]
+        [Description("The link to the team's logo hosted on Wikipedia (This is not licensed for public or commercial use)")]
         [DataMember(Name = "WikipediaLogoUrl", Order = 26)]
         public string WikipediaLogoUrl { get; set; }
 
         /// <summary>
-        /// The link to the team's wordmark logo hosted on Wikipedia. (This is not licensed for public or commercial use)
+        /// The link to the team's wordmark logo hosted on Wikipedia (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The link to the team's wordmark logo hosted on Wikipedia. (This is not licensed for public or commercial use)")]
+        [Description("The link to the team's wordmark logo hosted on Wikipedia (This is not licensed for public or commercial use)")]
         [DataMember(Name = "WikipediaWordMarkUrl", Order = 27)]
         public string WikipediaWordMarkUrl { get; set; }
 

@@ -23,23 +23,23 @@ namespace FantasyData.Api.Client.Model.MMA
         public int? Order { get; set; }
 
         /// <summary>
-        /// Indicates the fight's status. Possible values: Scheduled, Pre-fight, Walkouts, Intros, In Progress, End of Round, Final, Canceled, and NULL.
+        /// Indicates the event's status. Possible values include: Scheduled; In Progress; Final; Suspended; Postponed; Canceled; NULL
         /// </summary>
-        [Description("Indicates the fight's status. Possible values: Scheduled, Pre-fight, Walkouts, Intros, In Progress, End of Round, Final, Canceled, and NULL.")]
+        [Description("Indicates the event's status. Possible values include: Scheduled; In Progress; Final; Suspended; Postponed; Canceled; NULL")]
         [DataMember(Name = "Status", Order = 3)]
         public string Status { get; set; }
 
         /// <summary>
-        /// The weight class for this fight
+        /// The weight class this fight is taking place at
         /// </summary>
-        [Description("The weight class for this fight")]
+        [Description("The weight class this fight is taking place at")]
         [DataMember(Name = "WeightClass", Order = 4)]
         public string WeightClass { get; set; }
 
         /// <summary>
-        /// The card segment for this fight
+        /// What segment of the card this fight is on (Main Card, Prelims, Early Prelims)
         /// </summary>
-        [Description("The card segment for this fight")]
+        [Description("What segment of the card this fight is on (Main Card, Prelims, Early Prelims)")]
         [DataMember(Name = "CardSegment", Order = 5)]
         public string CardSegment { get; set; }
 
@@ -79,16 +79,16 @@ namespace FantasyData.Api.Client.Model.MMA
         public string ResultType { get; set; }
 
         /// <summary>
-        /// The unique ID of the winning fighter
+        /// The unique ID of the fighter who won the fight
         /// </summary>
-        [Description("The unique ID of the winning fighter")]
+        [Description("The unique ID of the fighter who won the fight")]
         [DataMember(Name = "WinnerId", Order = 11)]
         public int? WinnerId { get; set; }
 
         /// <summary>
-        /// The fighters competing in this fight
+        /// The fighters competing in this fight and their info (FIghterID, FirstName, LastName, PreFightWins, PreFightLosses, PreFightDraws, PreFightNoContests, Winner, Moneyline)
         /// </summary>
-        [Description("The fighters competing in this fight")]
+        [Description("The fighters competing in this fight and their info (FIghterID, FirstName, LastName, PreFightWins, PreFightLosses, PreFightDraws, PreFightNoContests, Winner, Moneyline)")]
         [DataMember(Name = "Fighters", Order = 20012)]
         public FighterInfo[] Fighters { get; set; }
 

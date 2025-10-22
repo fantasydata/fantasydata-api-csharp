@@ -51,16 +51,16 @@ namespace FantasyData.Api.Client.Model.NHL
         public DateTime? PostSeasonStartDate { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 5=AllStar; 6=Exhibition).
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 5=AllStar; 6=Exhibition).")]
         [DataMember(Name = "SeasonType", Order = 7)]
         public string SeasonType { get; set; }
 
         /// <summary>
-        /// The string to pass into subsequent API calls in the season parameter
+        /// The string to pass into subsequent API calls in the season parameter (e.g. 2025REG, 2025POST, etc.)
         /// </summary>
-        [Description("The string to pass into subsequent API calls in the season parameter")]
+        [Description("The string to pass into subsequent API calls in the season parameter (e.g. 2025REG, 2025POST, etc.)")]
         [DataMember(Name = "ApiSeason", Order = 8)]
         public string ApiSeason { get; set; }
 

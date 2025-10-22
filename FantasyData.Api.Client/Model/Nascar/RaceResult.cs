@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Nascar
     public partial class RaceResult
     {
         /// <summary>
-        /// The details of the race
+        /// The details of the race including general information about the race itself (Ex: Name; DateTime; Track; WinnerID; IsInProgress; Scheduled Laps; etc.)
         /// </summary>
-        [Description("The details of the race")]
+        [Description("The details of the race including general information about the race itself (Ex: Name; DateTime; Track; WinnerID; IsInProgress; Scheduled Laps; etc.)")]
         [DataMember(Name = "Race", Order = 10001)]
         public Race Race { get; set; }
 

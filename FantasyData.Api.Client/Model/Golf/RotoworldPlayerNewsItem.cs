@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public string RotoworldPlayerNewsLine { get; set; }
 
         /// <summary>
-        /// The short headline
+        /// The short headline of the news story
         /// </summary>
-        [Description("The short headline")]
+        [Description("The short headline of the news story")]
         [DataMember(Name = "Headline", Order = 2)]
         public string Headline { get; set; }
 
@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public string MoreName { get; set; }
 
         /// <summary>
-        /// Information about the player related to the article
+        /// The information about the player related to the article
         /// </summary>
-        [Description("Information about the player related to the article")]
+        [Description("The information about the player related to the article")]
         [DataMember(Name = "PlayerInfo", Order = 10012)]
         public PlayerInfo PlayerInfo { get; set; }
 

@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class News
     {
         /// <summary>
-        /// Unique ID of news story
+        /// The unique ID of the news story
         /// </summary>
-        [Description("Unique ID of news story")]
+        [Description("The unique ID of the news story")]
         [DataMember(Name = "NewsID", Order = 1)]
         public int NewsID { get; set; }
 
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 2)]
         public int? PlayerID { get; set; }
 
@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 4)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The brief title of the news (typically less than 100 characters)
+        /// The title of the news story
         /// </summary>
-        [Description("The brief title of the news (typically less than 100 characters)")]
+        [Description("The title of the news story")]
         [DataMember(Name = "Title", Order = 5)]
         public string Title { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public string Content { get; set; }
 
         /// <summary>
-        /// The url of the full story
+        /// The URL of the full news story
         /// </summary>
-        [Description("The url of the full story")]
+        [Description("The URL of the full news story")]
         [DataMember(Name = "Url", Order = 7)]
         public string Url { get; set; }
 
@@ -72,9 +72,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public string TermsOfUse { get; set; }
 
         /// <summary>
-        /// The date the news story was updated
+        /// The timestamp of when the news story was last updated
         /// </summary>
-        [Description("The date the news story was updated")]
+        [Description("The timestamp of when the news story was last updated")]
         [DataMember(Name = "Updated", Order = 10)]
         public DateTime? Updated { get; set; }
 

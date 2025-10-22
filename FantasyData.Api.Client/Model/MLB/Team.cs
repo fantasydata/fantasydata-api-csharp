@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class Team
     {
         /// <summary>
-        /// The auto-generated unique ID of the Team
+        /// The team's unique TeamID as assigned by SportsDataIO
         /// </summary>
-        [Description("The auto-generated unique ID of the Team")]
+        [Description("The team's unique TeamID as assigned by SportsDataIO")]
         [DataMember(Name = "TeamID", Order = 1)]
         public int TeamID { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public string League { get; set; }
 
         /// <summary>
-        /// The division of the team (possible values East, Central, or West)
+        /// The division of the team (e.g. East; Central; West)
         /// </summary>
-        [Description("The division of the team (possible values East, Central, or West)")]
+        [Description("The division of the team (e.g. East; Central; West)")]
         [DataMember(Name = "Division", Order = 8)]
         public string Division { get; set; }
 
@@ -107,30 +107,30 @@ namespace FantasyData.Api.Client.Model.MLB
         public string WikipediaWordMarkUrl { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalTeamID", Order = 15)]
         public int GlobalTeamID { get; set; }
 
         /// <summary>
-        /// The current head coach of the team
+        /// The current head coach (manager) of the team
         /// </summary>
-        [Description("The current head coach of the team")]
+        [Description("The current head coach (manager) of the team")]
         [DataMember(Name = "HeadCoach", Order = 16)]
         public string HeadCoach { get; set; }
 
         /// <summary>
-        /// The current hitting coach of the team
+        /// The current hitting coach of the team. Note: some teams may have multiple or no hitting coaches
         /// </summary>
-        [Description("The current hitting coach of the team")]
+        [Description("The current hitting coach of the team. Note: some teams may have multiple or no hitting coaches")]
         [DataMember(Name = "HittingCoach", Order = 17)]
         public string HittingCoach { get; set; }
 
         /// <summary>
-        /// The current pitching coach of the team
+        /// The current pitching coach of the team. Note: some teams may have multiple or no pitching coaches
         /// </summary>
-        [Description("The current pitching coach of the team")]
+        [Description("The current pitching coach of the team. Note: some teams may have multiple or no pitching coaches")]
         [DataMember(Name = "PitchingCoach", Order = 18)]
         public string PitchingCoach { get; set; }
 

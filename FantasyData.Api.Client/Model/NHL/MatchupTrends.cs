@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public TeamGameTrends[] TeamMatchupTrends { get; set; }
 
         /// <summary>
-        /// The collection of opponent game trends against team
+        /// The collection of opponent game trends against a specific team
         /// </summary>
-        [Description("The collection of opponent game trends against team")]
+        [Description("The collection of opponent game trends against a specific team")]
         [DataMember(Name = "OpponentMatchupTrends", Order = 20004)]
         public TeamGameTrends[] OpponentMatchupTrends { get; set; }
 

@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class Season
     {
         /// <summary>
-        /// The MLB regular season for which these totals apply
+        /// The MLB season for which these totals apply
         /// </summary>
-        [Description("The MLB regular season for which these totals apply")]
+        [Description("The MLB season for which these totals apply")]
         [DataMember(Name = "Season", Order = 1)]
         public int Year { get; set; }
 
@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public string SeasonType { get; set; }
 
         /// <summary>
-        /// The current season's value to be used to pass into subsequent API calls (sample values: 2017REG, 2018PRE, 2018REG, 2018POST, etc)
+        /// The string to pass into subsequent API calls in the season parameter (e.g. 2025REG, 2025POST, etc.).
         /// </summary>
-        [Description("The current season's value to be used to pass into subsequent API calls (sample values: 2017REG, 2018PRE, 2018REG, 2018POST, etc)")]
+        [Description("The string to pass into subsequent API calls in the season parameter (e.g. 2025REG, 2025POST, etc.).")]
         [DataMember(Name = "ApiSeason", Order = 5)]
         public string ApiSeason { get; set; }
 

@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? Sequence { get; set; }
 
         /// <summary>
-        /// Number of minutes that have passed in the current period. Please note this field name is misleading, and actually represents the game clock minutes, which are the number of minutes that have already passed in the period. Possible values: 0-20.
+        /// Number of minutes that have passed in the current period.  NOTE: this field name might be misleading as it actually represents the game clock minutes which are the number of minutes that have already passed in the period.
         /// </summary>
-        [Description("Number of minutes that have passed in the current period. Please note this field name is misleading, and actually represents the game clock minutes, which are the number of minutes that have already passed in the period. Possible values: 0-20.")]
+        [Description("Number of minutes that have passed in the current period.  NOTE: this field name might be misleading as it actually represents the game clock minutes which are the number of minutes that have already passed in the period.")]
         [DataMember(Name = "TimeRemainingMinutes", Order = 4)]
         public int? TimeRemainingMinutes { get; set; }
 
         /// <summary>
-        /// Number of seconds that have passed in the current period. Please note this field name is misleading, and actually represents the game clock seconds, which are the number of seconds that have already passed in the period. Possible values: 0-60.
+        /// Number of seconds that have passed in the current period.  NOTE: this field name might be misleading as it actually represents the game clock seconds which are the number of minutes that have already passed in the period.
         /// </summary>
-        [Description("Number of seconds that have passed in the current period. Please note this field name is misleading, and actually represents the game clock seconds, which are the number of seconds that have already passed in the period. Possible values: 0-60.")]
+        [Description("Number of seconds that have passed in the current period.  NOTE: this field name might be misleading as it actually represents the game clock seconds which are the number of minutes that have already passed in the period.")]
         [DataMember(Name = "TimeRemainingSeconds", Order = 5)]
         public int? TimeRemainingSeconds { get; set; }
 
@@ -51,44 +51,44 @@ namespace FantasyData.Api.Client.Model.NHL
         public string Description { get; set; }
 
         /// <summary>
-        /// The number of minutes the penalty lasts
+        /// Total minutes the penalty lasts
         /// </summary>
-        [Description("The number of minutes the penalty lasts")]
+        [Description("Total minutes the penalty lasts")]
         [DataMember(Name = "PenaltyMinutes", Order = 7)]
         public int? PenaltyMinutes { get; set; }
 
         /// <summary>
-        /// The TeamID of the penalized team
+        /// The TeamID of the team who committed the penalty
         /// </summary>
-        [Description("The TeamID of the penalized team")]
+        [Description("The TeamID of the team who committed the penalty")]
         [DataMember(Name = "PenalizedTeamID", Order = 8)]
         public int? PenalizedTeamID { get; set; }
 
         /// <summary>
-        /// The PlayerID who commited the penalty
+        /// The PlayerID of the player who committed the penalty
         /// </summary>
-        [Description("The PlayerID who commited the penalty")]
+        [Description("The PlayerID of the player who committed the penalty")]
         [DataMember(Name = "PenalizedPlayerID", Order = 9)]
         public int? PenalizedPlayerID { get; set; }
 
         /// <summary>
-        /// The TeamID of the team who drew the penalty
+        /// The TeamID of the player/team that drew the penalty
         /// </summary>
-        [Description("The TeamID of the team who drew the penalty")]
+        [Description("The TeamID of the player/team that drew the penalty")]
         [DataMember(Name = "DrawnByTeamID", Order = 10)]
         public int? DrawnByTeamID { get; set; }
 
         /// <summary>
-        /// The PlayerID who drew the penalty
+        /// The PlayerID of the player who drew the penalty
         /// </summary>
-        [Description("The PlayerID who drew the penalty")]
+        [Description("The PlayerID of the player who drew the penalty")]
         [DataMember(Name = "DrawnByPlayerID", Order = 11)]
         public int? DrawnByPlayerID { get; set; }
 
         /// <summary>
-        /// Whether or not the penalty is a bench penalty (true/false)
+        /// Whether or not the penalty is a bench penalty
         /// </summary>
-        [Description("Whether or not the penalty is a bench penalty (true/false)")]
+        [Description("Whether or not the penalty is a bench penalty")]
         [DataMember(Name = "IsBenchPenalty", Order = 12)]
         public bool? IsBenchPenalty { get; set; }
 

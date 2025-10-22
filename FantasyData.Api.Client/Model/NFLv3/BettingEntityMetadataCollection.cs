@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class BettingEntityMetadataCollection
     {
         /// <summary>
-        /// A list of the possible BettingBetTypes (e.g. Moneyline, Spread)
+        /// The list of the bet types that can be found within a market
         /// </summary>
-        [Description("A list of the possible BettingBetTypes (e.g. Moneyline, Spread)")]
+        [Description("The list of the bet types that can be found within a market")]
         [DataMember(Name = "BettingBetTypes", Order = 20001)]
         public BettingEntityMetadata[] BettingBetTypes { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingMartketTypes (e.g. Game Line, Team Prop)
+        /// A list of the possible Market Types within a Betting Event (e.g. Game Line, Team prop, Player Future, etc.)
         /// </summary>
-        [Description("A list of the possible BettingMartketTypes (e.g. Game Line, Team Prop)")]
+        [Description("A list of the possible Market Types within a Betting Event (e.g. Game Line, Team prop, Player Future, etc.)")]
         [DataMember(Name = "BettingMarketTypes", Order = 20002)]
         public BettingEntityMetadata[] BettingMarketTypes { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingPeriodTypes (e.g. Full Game, Regulation Time, 1st Half)
+        /// A list of the possible BettingPeriodTypes (e.g. Full Game; Regulation ; 1st Quarter)
         /// </summary>
-        [Description("A list of the possible BettingPeriodTypes (e.g. Full Game, Regulation Time, 1st Half)")]
+        [Description("A list of the possible BettingPeriodTypes (e.g. Full Game; Regulation ; 1st Quarter)")]
         [DataMember(Name = "BettingPeriodTypes", Order = 20003)]
         public BettingEntityMetadata[] BettingPeriodTypes { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingEventTypes (e.g. Game, Future)
+        /// A list of the possible BettingEventTypes (e.g. Game; Future)
         /// </summary>
-        [Description("A list of the possible BettingEventTypes (e.g. Game, Future)")]
+        [Description("A list of the possible BettingEventTypes (e.g. Game; Future)")]
         [DataMember(Name = "BettingEventTypes", Order = 20004)]
         public BettingEntityMetadata[] BettingEventTypes { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingOutcomeTypes (e.g. Home, Over)
+        /// A list of the possible BettingOutcomeTypes (e.g. Home; Away; Under; Over)
         /// </summary>
-        [Description("A list of the possible BettingOutcomeTypes (e.g. Home, Over)")]
+        [Description("A list of the possible BettingOutcomeTypes (e.g. Home; Away; Under; Over)")]
         [DataMember(Name = "BettingOutcomeTypes", Order = 20005)]
         public BettingEntityMetadata[] BettingOutcomeTypes { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public BettingResultingMetadata[] ResultedMarketMetaData { get; set; }
 
         /// <summary>
-        /// A list of the possible BettingResultTypes (e.g. Win, Loss, Push)
+        /// The string identifier of the BettingResultType of this outcome (e.g. Won; Lost; Push; Not Resulted; Incomplete)
         /// </summary>
-        [Description("A list of the possible BettingResultTypes (e.g. Win, Loss, Push)")]
+        [Description("The string identifier of the BettingResultType of this outcome (e.g. Won; Lost; Push; Not Resulted; Incomplete)")]
         [DataMember(Name = "BettingResultTypes", Order = 20007)]
         public BettingEntityMetadata[] BettingResultTypes { get; set; }
 

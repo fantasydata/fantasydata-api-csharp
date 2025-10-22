@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition)")]
         [DataMember(Name = "SeasonType", Order = 3)]
         public int? SeasonType { get; set; }
 
@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 6)]
         public string Team { get; set; }
 
@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? Losses { get; set; }
 
         /// <summary>
-        /// Total number of team possessions
+        /// Total number of estimated possessions by the team in the game
         /// </summary>
-        [Description("Total number of team possessions")]
+        [Description("Total number of estimated possessions by the team in the game")]
         [DataMember(Name = "Possessions", Order = 9)]
         public decimal? Possessions { get; set; }
 

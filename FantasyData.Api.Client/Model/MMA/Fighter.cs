@@ -16,23 +16,23 @@ namespace FantasyData.Api.Client.Model.MMA
         public int FighterId { get; set; }
 
         /// <summary>
-        /// The fighter's first name
+        /// The first name of the fighter
         /// </summary>
-        [Description("The fighter's first name")]
+        [Description("The first name of the fighter")]
         [DataMember(Name = "FirstName", Order = 2)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// The fighter's last name
+        /// The last name of the fighter
         /// </summary>
-        [Description("The fighter's last name")]
+        [Description("The last name of the fighter")]
         [DataMember(Name = "LastName", Order = 3)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// The fighter's nickname
+        /// The nickname of the fighter
         /// </summary>
-        [Description("The fighter's nickname")]
+        [Description("The nickname of the fighter")]
         [DataMember(Name = "Nickname", Order = 4)]
         public string Nickname { get; set; }
 
@@ -44,23 +44,23 @@ namespace FantasyData.Api.Client.Model.MMA
         public string WeightClass { get; set; }
 
         /// <summary>
-        /// The fighter's DOB
+        /// The fighter's date of birth
         /// </summary>
-        [Description("The fighter's DOB")]
+        [Description("The fighter's date of birth")]
         [DataMember(Name = "BirthDate", Order = 6)]
         public DateTime? BirthDate { get; set; }
 
         /// <summary>
-        /// The fighter's height
+        /// The height of the fighter
         /// </summary>
-        [Description("The fighter's height")]
+        [Description("The height of the fighter")]
         [DataMember(Name = "Height", Order = 7)]
         public decimal? Height { get; set; }
 
         /// <summary>
-        /// The fighter's weight
+        /// The fighter's weight in pounds (lbs.)
         /// </summary>
-        [Description("The fighter's weight")]
+        [Description("The fighter's weight in pounds (lbs.)")]
         [DataMember(Name = "Weight", Order = 8)]
         public decimal? Weight { get; set; }
 
@@ -72,72 +72,72 @@ namespace FantasyData.Api.Client.Model.MMA
         public decimal? Reach { get; set; }
 
         /// <summary>
-        /// The fighter's wins
+        /// The total number of wins the fighter has in their career
         /// </summary>
-        [Description("The fighter's wins")]
+        [Description("The total number of wins the fighter has in their career")]
         [DataMember(Name = "Wins", Order = 10)]
         public int? Wins { get; set; }
 
         /// <summary>
-        /// The fighter's losses
+        /// Total number of losses by the fighter in their career
         /// </summary>
-        [Description("The fighter's losses")]
+        [Description("Total number of losses by the fighter in their career")]
         [DataMember(Name = "Losses", Order = 11)]
         public int? Losses { get; set; }
 
         /// <summary>
-        /// The fighter's fights that ended in a draw
+        /// The total number of fights in the fighter's career that ended in a draw
         /// </summary>
-        [Description("The fighter's fights that ended in a draw")]
+        [Description("The total number of fights in the fighter's career that ended in a draw")]
         [DataMember(Name = "Draws", Order = 12)]
         public int? Draws { get; set; }
 
         /// <summary>
-        /// The fighter's fights that ended in a no contest
+        /// The total number of fights in the fighter's career that ended in a no contest
         /// </summary>
-        [Description("The fighter's fights that ended in a no contest")]
+        [Description("The total number of fights in the fighter's career that ended in a no contest")]
         [DataMember(Name = "NoContests", Order = 13)]
         public int? NoContests { get; set; }
 
         /// <summary>
-        /// The fighter's TKO wins
+        /// Total technical knockout (TKO) wins by the fighter in their career
         /// </summary>
-        [Description("The fighter's TKO wins")]
+        [Description("Total technical knockout (TKO) wins by the fighter in their career")]
         [DataMember(Name = "TechnicalKnockouts", Order = 14)]
         public int? TechnicalKnockouts { get; set; }
 
         /// <summary>
-        /// The fighter's TKO losses
+        /// Total technical knockout (TKO) losses by the fighter in their career
         /// </summary>
-        [Description("The fighter's TKO losses")]
+        [Description("Total technical knockout (TKO) losses by the fighter in their career")]
         [DataMember(Name = "TechnicalKnockoutLosses", Order = 15)]
         public int? TechnicalKnockoutLosses { get; set; }
 
         /// <summary>
-        /// The fighter's submission wins
+        /// Total submission wins by the fighter in their career
         /// </summary>
-        [Description("The fighter's submission wins")]
+        [Description("Total submission wins by the fighter in their career")]
         [DataMember(Name = "Submissions", Order = 16)]
         public int? Submissions { get; set; }
 
         /// <summary>
-        /// The fighter's submission losses
+        /// Total submission losses by the fighter in their career
         /// </summary>
-        [Description("The fighter's submission losses")]
+        [Description("Total submission losses by the fighter in their career")]
         [DataMember(Name = "SubmissionLosses", Order = 17)]
         public int? SubmissionLosses { get; set; }
 
         /// <summary>
-        /// The fighter's title wins
+        /// Total title fight wins by the fighter in their career
         /// </summary>
-        [Description("The fighter's title wins")]
+        [Description("Total title fight wins by the fighter in their career")]
         [DataMember(Name = "TitleWins", Order = 18)]
         public int? TitleWins { get; set; }
 
         /// <summary>
-        /// The fighter's title losses
+        /// Total title fight losses by the fighter in their career
         /// </summary>
-        [Description("The fighter's title losses")]
+        [Description("Total title fight losses by the fighter in their career")]
         [DataMember(Name = "TitleLosses", Order = 19)]
         public int? TitleLosses { get; set; }
 

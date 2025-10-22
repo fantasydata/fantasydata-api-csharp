@@ -9,51 +9,51 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class Lineup
     {
         /// <summary>
-        /// The unique ID of the lineup 
+        /// The unique ID of this lineup
         /// </summary>
-        [Description("The unique ID of the lineup ")]
+        [Description("The unique ID of this lineup")]
         [DataMember(Name = "LineupId", Order = 1)]
         public int LineupId { get; set; }
 
         /// <summary>
-        /// The unique ID of the game
+        /// The unique ID of the game tied to this lineup
         /// </summary>
-        [Description("The unique ID of the game")]
+        [Description("The unique ID of the game tied to this lineup")]
         [DataMember(Name = "GameId", Order = 2)]
         public int GameId { get; set; }
 
         /// <summary>
-        /// The player's status in the lineup. Possible values: Substitute In, Starter, Bench
+        /// The player's status in the lineup. Possible values: Substitute In; Starter; Bench.
         /// </summary>
-        [Description("The player's status in the lineup. Possible values: Substitute In, Starter, Bench")]
+        [Description("The player's status in the lineup. Possible values: Substitute In; Starter; Bench.")]
         [DataMember(Name = "Type", Order = 3)]
         public string Type { get; set; }
 
         /// <summary>
-        /// The unique ID of the team
+        /// The unique ID of the team associated with this lineup
         /// </summary>
-        [Description("The unique ID of the team")]
+        [Description("The unique ID of the team associated with this lineup")]
         [DataMember(Name = "TeamId", Order = 4)]
         public int TeamId { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID as assigned by SportsDataIO
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career.
         /// </summary>
-        [Description("The player's unique PlayerID as assigned by SportsDataIO")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career.")]
         [DataMember(Name = "PlayerId", Order = 5)]
         public int PlayerId { get; set; }
 
         /// <summary>
-        /// The name of the player in the lineup
+        /// The player's full name
         /// </summary>
-        [Description("The name of the player in the lineup")]
+        [Description("The player's full name")]
         [DataMember(Name = "Name", Order = 6)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The position of the player
+        /// The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper).
         /// </summary>
-        [Description("The position of the player")]
+        [Description("The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper).")]
         [DataMember(Name = "Position", Order = 7)]
         public string Position { get; set; }
 
@@ -86,16 +86,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? GameMinuteExtra { get; set; }
 
         /// <summary>
-        /// The pitch position of where this player lined up on the field. This is used for rendering an image of a soccer/football field with the players marked as such. This will be a number between 0 and 50.
+        /// The pitch position of where this player lined up on the field. Note: This is used for rendering an image of a soccer/football field with the players marked as such. This will be a number between 0 and 50.
         /// </summary>
-        [Description("The pitch position of where this player lined up on the field. This is used for rendering an image of a soccer/football field with the players marked as such. This will be a number between 0 and 50.")]
+        [Description("The pitch position of where this player lined up on the field. Note: This is used for rendering an image of a soccer/football field with the players marked as such. This will be a number between 0 and 50.")]
         [DataMember(Name = "PitchPositionHorizontal", Order = 12)]
         public int? PitchPositionHorizontal { get; set; }
 
         /// <summary>
-        /// The pitch position of where this player lined up on the field. This is used for rendering an image of a soccer/football field with the players marked as such. This will be a number between 0 and 50.
+        /// The pitch position of where this player lined up on the field. Note: This is used for rendering an image of a soccer/football field with the players marked as such. This will be a number between 0 and 50.
         /// </summary>
-        [Description("The pitch position of where this player lined up on the field. This is used for rendering an image of a soccer/football field with the players marked as such. This will be a number between 0 and 50.")]
+        [Description("The pitch position of where this player lined up on the field. Note: This is used for rendering an image of a soccer/football field with the players marked as such. This will be a number between 0 and 50.")]
         [DataMember(Name = "PitchPositionVertical", Order = 13)]
         public int? PitchPositionVertical { get; set; }
 

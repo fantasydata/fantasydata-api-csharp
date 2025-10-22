@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Tennis
     public partial class Discipline
     {
         /// <summary>
-        /// Unique ID of Discipline
+        /// The ID of associated discipline
         /// </summary>
-        [Description("Unique ID of Discipline")]
+        [Description("The ID of associated discipline")]
         [DataMember(Name = "DisciplineId", Order = 1)]
         public int DisciplineId { get; set; }
 
         /// <summary>
-        /// Name of Discipline
+        /// The name of the discipline(Singles; Doubles; Mixed Doubles)
         /// </summary>
-        [Description("Name of Discipline")]
+        [Description("The name of the discipline(Singles; Doubles; Mixed Doubles)")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 

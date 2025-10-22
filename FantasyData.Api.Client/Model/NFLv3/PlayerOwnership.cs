@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class PlayerOwnership
     {
         /// <summary>
-        /// Unique ID of the Player (assigned by SportsDataIO).
+        /// The unique PlayerID of the player as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID of the Player (assigned by SportsDataIO).")]
+        [Description("The unique PlayerID of the player as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
@@ -30,37 +30,37 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// The NFL week of the game (regular season: 1 to 17, preseason: 0 to 4, postseason: 1 to 4)
+        /// The NFL week of the game (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). Note: seasons after 2021 will have only 3 preseason weeks
         /// </summary>
-        [Description("The NFL week of the game (regular season: 1 to 17, preseason: 0 to 4, postseason: 1 to 4)")]
+        [Description("The NFL week of the game (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). Note: seasons after 2021 will have only 3 preseason weeks")]
         [DataMember(Name = "Week", Order = 4)]
         public int Week { get; set; }
 
         /// <summary>
-        /// Player's name
+        /// The player's full name
         /// </summary>
-        [Description("Player's name")]
+        [Description("The player's full name")]
         [DataMember(Name = "Name", Order = 5)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Player's fantasy position
+        /// The player's fantasy football position. Possible values: QB; RB; WR; TE; DL; LB; DB; K; P; OL
         /// </summary>
-        [Description("Player's fantasy position")]
+        [Description("The player's fantasy football position. Possible values: QB; RB; WR; TE; DL; LB; DB; K; P; OL")]
         [DataMember(Name = "Position", Order = 6)]
         public string Position { get; set; }
 
         /// <summary>
-        /// Player's unique team key
+        /// The abbreviation [Key] of the team that the player is on
         /// </summary>
-        [Description("Player's unique team key")]
+        [Description("The abbreviation [Key] of the team that the player is on")]
         [DataMember(Name = "Team", Order = 7)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Player's unique team ID
+        /// The unique ID of the team that the player is on. Note: If the player is a free agent; this field is NULL
         /// </summary>
-        [Description("Player's unique team ID")]
+        [Description("The unique ID of the team that the player is on. Note: If the player is a free agent; this field is NULL")]
         [DataMember(Name = "TeamID", Order = 8)]
         public int? TeamID { get; set; }
 

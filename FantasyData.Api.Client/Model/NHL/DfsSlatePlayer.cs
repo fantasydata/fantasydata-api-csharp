@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? SlateGameID { get; set; }
 
         /// <summary>
-        /// The SportsDataIO PlayerID that this SlatePlayer refers to. This points to data in the respective sports' player feeds.
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("The SportsDataIO PlayerID that this SlatePlayer refers to. This points to data in the respective sports' player feeds.")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 4)]
         public int? PlayerID { get; set; }
 
@@ -44,51 +44,51 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? PlayerGameProjectionStatID { get; set; }
 
         /// <summary>
-        /// Unique ID of the Player (assigned by the operator).
+        /// The unique ID of the player as assigned by the operator
         /// </summary>
-        [Description("Unique ID of the Player (assigned by the operator).")]
+        [Description("The unique ID of the player as assigned by the operator")]
         [DataMember(Name = "OperatorPlayerID", Order = 6)]
         public string OperatorPlayerID { get; set; }
 
         /// <summary>
-        /// Unique ID of the SlatePlayer (assigned by the operator).
+        /// The unique ID of the SlatePlayer as assigned by the operator
         /// </summary>
-        [Description("Unique ID of the SlatePlayer (assigned by the operator).")]
+        [Description("The unique ID of the SlatePlayer as assigned by the operator")]
         [DataMember(Name = "OperatorSlatePlayerID", Order = 7)]
         public string OperatorSlatePlayerID { get; set; }
 
         /// <summary>
-        /// The player's name (assigned by the operator).
+        /// The player's name as assigned by the operator
         /// </summary>
-        [Description("The player's name (assigned by the operator).")]
+        [Description("The player's name as assigned by the operator")]
         [DataMember(Name = "OperatorPlayerName", Order = 8)]
         public string OperatorPlayerName { get; set; }
 
         /// <summary>
-        /// The player's eligible positions for the contest (assigned by the operator).
+        /// The player's eligible positions for the contest assigned by the operator
         /// </summary>
-        [Description("The player's eligible positions for the contest (assigned by the operator).")]
+        [Description("The player's eligible positions for the contest assigned by the operator")]
         [DataMember(Name = "OperatorPosition", Order = 9)]
         public string OperatorPosition { get; set; }
 
         /// <summary>
-        /// The player's salary for the contest (assigned by the operator).
+        /// The player's salary for the contest as assigned by the operator
         /// </summary>
-        [Description("The player's salary for the contest (assigned by the operator).")]
+        [Description("The player's salary for the contest as assigned by the operator")]
         [DataMember(Name = "OperatorSalary", Order = 10)]
         public int? OperatorSalary { get; set; }
 
         /// <summary>
-        /// The player's eligible positions to be played in the contest (assigned by the operator). This would include UTIL, etc plays for those that are eligible.
+        /// The player's eligible positions to be played in the contest as assigned by the operator. NOTE: This would include UTIL; etc plays for those that are eligible
         /// </summary>
-        [Description("The player's eligible positions to be played in the contest (assigned by the operator). This would include UTIL, etc plays for those that are eligible.")]
+        [Description("The player's eligible positions to be played in the contest as assigned by the operator. NOTE: This would include UTIL; etc plays for those that are eligible")]
         [DataMember(Name = "OperatorRosterSlots", Order = 10011)]
         public string[] OperatorRosterSlots { get; set; }
 
         /// <summary>
-        /// Indicates whether this player was removed/deleted by the operator.
+        /// Indicates whether this slate was removed/deleted by the operator
         /// </summary>
-        [Description("Indicates whether this player was removed/deleted by the operator.")]
+        [Description("Indicates whether this slate was removed/deleted by the operator")]
         [DataMember(Name = "RemovedByOperator", Order = 12)]
         public bool? RemovedByOperator { get; set; }
 
@@ -100,9 +100,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public string Team { get; set; }
 
         /// <summary>
-        /// The TeamID of the team the player plays for
+        /// The unique ID of the team
         /// </summary>
-        [Description("The TeamID of the team the player plays for")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 14)]
         public int? TeamID { get; set; }
 

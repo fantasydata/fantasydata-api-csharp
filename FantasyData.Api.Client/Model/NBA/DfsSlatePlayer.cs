@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? SlateGameID { get; set; }
 
         /// <summary>
-        /// The SportsDataIO PlayerID that this SlatePlayer refers to. This points to data in the respective sports' player feeds.
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("The SportsDataIO PlayerID that this SlatePlayer refers to. This points to data in the respective sports' player feeds.")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 4)]
         public int? PlayerID { get; set; }
 
@@ -93,16 +93,16 @@ namespace FantasyData.Api.Client.Model.NBA
         public bool? RemovedByOperator { get; set; }
 
         /// <summary>
-        /// Name of the team the player belongs to.
+        /// The abbreviation [Key] of the player's team
         /// </summary>
-        [Description("Name of the team the player belongs to.")]
+        [Description("The abbreviation [Key] of the player's team")]
         [DataMember(Name = "Team", Order = 13)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Unique ID of the Team the player belongs to (assigned by SportsDataIO).
+        /// The unique ID of the player's team
         /// </summary>
-        [Description("Unique ID of the Team the player belongs to (assigned by SportsDataIO).")]
+        [Description("The unique ID of the player's team")]
         [DataMember(Name = "TeamID", Order = 14)]
         public int? TeamID { get; set; }
 

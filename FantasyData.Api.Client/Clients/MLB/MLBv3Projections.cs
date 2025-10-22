@@ -208,6 +208,47 @@ namespace FantasyData.Api.Client
             return this.GetBAKERProjectedPlayerGameStatsByDate_1441Async(date, team).Result;
         }
 
+        /// <summary>
+        /// Get DFS Slate Ownership Projections - by Slate Asynchronous
+        /// </summary>
+        /// <param name="slateId">SlateID of the DFS Slate you wish to get ownership projections for. Will have an empty SlateOwnershipProjections if this slate was not projected</param>
+        public Task<DfsSlateWithOwnershipProjection> GetDFSSlateOwnershipProjectionsBySlateAsync(int slateId)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("slateId", slateId.ToString()));
+            return Task.Run<DfsSlateWithOwnershipProjection>(() =>
+                base.Get<DfsSlateWithOwnershipProjection>("/v3/mlb/projections/{format}/DfsSlateOwnershipProjectionsBySlateID/{slateId}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get DFS Slate Ownership Projections - by Slate
+        /// </summary>
+        /// <param name="slateId">SlateID of the DFS Slate you wish to get ownership projections for. Will have an empty SlateOwnershipProjections if this slate was not projected</param>
+        public DfsSlateWithOwnershipProjection GetDFSSlateOwnershipProjectionsBySlate(int slateId)
+        {
+            return this.GetDFSSlateOwnershipProjectionsBySlateAsync(slateId).Result;
+        }
+
+        /// <summary>
+        /// Get DFS Slate Ownership Projections - Upcoming Asynchronous
+        /// </summary>
+        public Task<List<DfsSlateWithOwnershipProjection>> GetDFSSlateOwnershipProjectionsUpcomingAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<DfsSlateWithOwnershipProjection>>(() =>
+                base.Get<List<DfsSlateWithOwnershipProjection>>("/v3/mlb/projections/{format}/UpcomingDfsSlateOwnershipProjections", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get DFS Slate Ownership Projections - Upcoming
+        /// </summary>
+        public List<DfsSlateWithOwnershipProjection> GetDFSSlateOwnershipProjectionsUpcoming()
+        {
+            return this.GetDFSSlateOwnershipProjectionsUpcomingAsync().Result;
+        }
+
     }
 }
 

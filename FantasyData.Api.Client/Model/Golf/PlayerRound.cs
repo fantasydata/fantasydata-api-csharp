@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class PlayerRound
     {
         /// <summary>
-        /// The unique ID of this player/round combination
+        /// The unique ID of this golfer/round combination
         /// </summary>
-        [Description("The unique ID of this player/round combination")]
+        [Description("The unique ID of this golfer/round combination")]
         [DataMember(Name = "PlayerRoundID", Order = 1)]
         public int PlayerRoundID { get; set; }
 
@@ -23,16 +23,16 @@ namespace FantasyData.Api.Client.Model.Golf
         public int PlayerTournamentID { get; set; }
 
         /// <summary>
-        /// The round number of this round
+        /// The number of the round associated with these stats
         /// </summary>
-        [Description("The round number of this round")]
+        [Description("The number of the round associated with these stats")]
         [DataMember(Name = "Number", Order = 3)]
         public int? Number { get; set; }
 
         /// <summary>
-        /// The day that this round is played on
+        /// The date that this round is being played on
         /// </summary>
-        [Description("The day that this round is played on")]
+        [Description("The date that this round is being played on")]
         [DataMember(Name = "Day", Order = 4)]
         public DateTime Day { get; set; }
 
@@ -72,93 +72,93 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? DoubleEagles { get; set; }
 
         /// <summary>
-        /// Total number of eagles shot by this player on this round
+        /// Total eagles scored by the golfer in this round
         /// </summary>
-        [Description("Total number of eagles shot by this player on this round")]
+        [Description("Total eagles scored by the golfer in this round")]
         [DataMember(Name = "Eagles", Order = 10)]
         public int? Eagles { get; set; }
 
         /// <summary>
-        /// Total number of birdies shot by this player on this round
+        /// Total birdies scored by the golfer for this round
         /// </summary>
-        [Description("Total number of birdies shot by this player on this round")]
+        [Description("Total birdies scored by the golfer for this round")]
         [DataMember(Name = "Birdies", Order = 11)]
         public int? Birdies { get; set; }
 
         /// <summary>
-        /// Total number of pars shot by this player on this round
+        /// Total pars scored by the player in this round of the tournament
         /// </summary>
-        [Description("Total number of pars shot by this player on this round")]
+        [Description("Total pars scored by the player in this round of the tournament")]
         [DataMember(Name = "Pars", Order = 12)]
         public int? Pars { get; set; }
 
         /// <summary>
-        /// Total number of bogeys shot by this player on this round
+        /// Total bogeys scored by the golfer for this round
         /// </summary>
-        [Description("Total number of bogeys shot by this player on this round")]
+        [Description("Total bogeys scored by the golfer for this round")]
         [DataMember(Name = "Bogeys", Order = 13)]
         public int? Bogeys { get; set; }
 
         /// <summary>
-        /// Total number of double bogeys shot by this player on this round
+        /// Total double bogeys scored by the golfer in this round
         /// </summary>
-        [Description("Total number of double bogeys shot by this player on this round")]
+        [Description("Total double bogeys scored by the golfer in this round")]
         [DataMember(Name = "DoubleBogeys", Order = 14)]
         public int? DoubleBogeys { get; set; }
 
         /// <summary>
-        /// Total number of worse than double bogeys shot by this player on this round
+        /// Total holes the golfer scored worse than a double bogey for the round
         /// </summary>
-        [Description("Total number of worse than double bogeys shot by this player on this round")]
+        [Description("Total holes the golfer scored worse than a double bogey for the round")]
         [DataMember(Name = "WorseThanDoubleBogey", Order = 15)]
         public int? WorseThanDoubleBogey { get; set; }
 
         /// <summary>
-        /// Total number of holes in one shot by this player on this round
+        /// Total holes-in-one scored by the golfer in this round
         /// </summary>
-        [Description("Total number of holes in one shot by this player on this round")]
+        [Description("Total holes-in-one scored by the golfer in this round")]
         [DataMember(Name = "HoleInOnes", Order = 16)]
         public int? HoleInOnes { get; set; }
 
         /// <summary>
-        /// Total number of triple bogeys shot by this player on this round
+        /// Total triple bogeys this golfer scored for the round
         /// </summary>
-        [Description("Total number of triple bogeys shot by this player on this round")]
+        [Description("Total triple bogeys this golfer scored for the round")]
         [DataMember(Name = "TripleBogeys", Order = 17)]
         public int? TripleBogeys { get; set; }
 
         /// <summary>
-        /// Total number of worse than triple bogeys shot by this player on this round
+        /// Total holes the golfer scored worse than a triple bogey for the round
         /// </summary>
-        [Description("Total number of worse than triple bogeys shot by this player on this round")]
+        [Description("Total holes the golfer scored worse than a triple bogey for the round")]
         [DataMember(Name = "WorseThanTripleBogey", Order = 18)]
         public int? WorseThanTripleBogey { get; set; }
 
         /// <summary>
-        /// The hole-by-hole results of this player on this round
+        /// The hole-by-hole results for this player in this round
         /// </summary>
-        [Description("The hole-by-hole results of this player on this round")]
+        [Description("The hole-by-hole results for this player in this round")]
         [DataMember(Name = "Holes", Order = 20019)]
         public PlayerHole[] Holes { get; set; }
 
         /// <summary>
-        /// The longest streak of birdies (or better)
+        /// The longest streak of birdies (or better) by the golfer
         /// </summary>
-        [Description("The longest streak of birdies (or better)")]
+        [Description("The longest streak of birdies (or better) by the golfer")]
         [DataMember(Name = "LongestBirdieOrBetterStreak", Order = 20)]
         public decimal? LongestBirdieOrBetterStreak { get; set; }
 
         /// <summary>
-        /// The longest streak of consecutive birdies (or better)
+        /// The sum of all back to back birdies (or better) by the golfer in this round
         /// </summary>
-        [Description("The longest streak of consecutive birdies (or better)")]
+        [Description("The sum of all back to back birdies (or better) by the golfer in this round")]
         [DataMember(Name = "ConsecutiveBirdieOrBetterCount", Order = 21)]
         public decimal? ConsecutiveBirdieOrBetterCount { get; set; }
 
         /// <summary>
-        /// The total bouncebacks this player had on this round
+        /// Total bounce back holes by the golfer for this round
         /// </summary>
-        [Description("The total bouncebacks this player had on this round")]
+        [Description("Total bounce back holes by the golfer for this round")]
         [DataMember(Name = "BounceBackCount", Order = 22)]
         public decimal? BounceBackCount { get; set; }
 
@@ -191,16 +191,16 @@ namespace FantasyData.Api.Client.Model.Golf
         public bool IncludesStreakOfSixBirdiesOrBetter { get; set; }
 
         /// <summary>
-        /// Indicates the Player's Tee Time this round (from 2020)
+        /// The time that this golfer tees off for the upcoming round (in US Eastern Time)
         /// </summary>
-        [Description("Indicates the Player's Tee Time this round (from 2020)")]
+        [Description("The time that this golfer tees off for the upcoming round (in US Eastern Time)")]
         [DataMember(Name = "TeeTime", Order = 27)]
         public DateTime? TeeTime { get; set; }
 
         /// <summary>
-        /// Indicates whether the player started with the back nine holes.
+        /// Indicates whether the player started with the back nine holes
         /// </summary>
-        [Description("Indicates whether the player started with the back nine holes.")]
+        [Description("Indicates whether the player started with the back nine holes")]
         [DataMember(Name = "BackNineStart", Order = 28)]
         public bool? BackNineStart { get; set; }
 

@@ -9,58 +9,58 @@ namespace FantasyData.Api.Client.Model.CWBB
     public partial class Game
     {
         /// <summary>
-        /// The unique ID of this game
+        /// The unique ID of the game
         /// </summary>
-        [Description("The unique ID of this game")]
+        [Description("The unique ID of the game")]
         [DataMember(Name = "GameID", Order = 1)]
         public int GameID { get; set; }
 
         /// <summary>
-        /// The College Basketball season of the game
+        /// The season that the game occurs in Note: season is a single year that the majority of the season occurs in
         /// </summary>
-        [Description("The College Basketball season of the game")]
+        [Description("The season that the game occurs in Note: season is a single year that the majority of the season occurs in")]
         [DataMember(Name = "Season", Order = 2)]
         public int Season { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar)")]
         [DataMember(Name = "SeasonType", Order = 3)]
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled
+        /// Indicates the game's status. Possible values include: Scheduled; InProgress; Final; F/OT; Suspended; Postponed; Delayed; Canceled; Forfeit; NotNecessary
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Canceled")]
+        [Description("Indicates the game's status. Possible values include: Scheduled; InProgress; Final; F/OT; Suspended; Postponed; Delayed; Canceled; Forfeit; NotNecessary")]
         [DataMember(Name = "Status", Order = 4)]
         public string Status { get; set; }
 
         /// <summary>
-        /// The date of the game
+        /// The date the game is scheduled to occur
         /// </summary>
-        [Description("The date of the game")]
+        [Description("The date the game is scheduled to occur")]
         [DataMember(Name = "Day", Order = 5)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date and time of the game
+        /// The timestamp of when the game is scheduled to start
         /// </summary>
-        [Description("The date and time of the game")]
+        [Description("The timestamp of when the game is scheduled to start")]
         [DataMember(Name = "DateTime", Order = 6)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Away Team
+        /// The abbreviation [Key] of the away team
         /// </summary>
-        [Description("The abbreviation of the Away Team")]
+        [Description("The abbreviation [Key] of the away team")]
         [DataMember(Name = "AwayTeam", Order = 7)]
         public string AwayTeam { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Home Team
+        /// The abbreviation [Key] of the home team
         /// </summary>
-        [Description("The abbreviation of the Home Team")]
+        [Description("The abbreviation [Key] of the home team")]
         [DataMember(Name = "HomeTeam", Order = 8)]
         public string HomeTeam { get; set; }
 
@@ -79,9 +79,9 @@ namespace FantasyData.Api.Client.Model.CWBB
         public int? HomeTeamID { get; set; }
 
         /// <summary>
-        /// Total number of points the away team scored in this game
+        /// Total number of points the away team scored in the game
         /// </summary>
-        [Description("Total number of points the away team scored in this game")]
+        [Description("Total number of points the away team scored in the game")]
         [DataMember(Name = "AwayTeamScore", Order = 11)]
         public int? AwayTeamScore { get; set; }
 
@@ -100,9 +100,9 @@ namespace FantasyData.Api.Client.Model.CWBB
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The current quarter of the game (Possible Values: 1, 2, 3, 4, OT, F, F/OT, NULL)
+        /// The current quarter of the game (Possible Values: 1, 2, 3, 4, OT, NULL)
         /// </summary>
-        [Description("The current quarter of the game (Possible Values: 1, 2, 3, 4, OT, F, F/OT, NULL)")]
+        [Description("The current quarter of the game (Possible Values: 1, 2, 3, 4, OT, NULL)")]
         [DataMember(Name = "Period", Order = 14)]
         public string Period { get; set; }
 
@@ -121,37 +121,37 @@ namespace FantasyData.Api.Client.Model.CWBB
         public int? TimeRemainingSeconds { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalGameID", Order = 17)]
         public int GlobalGameID { get; set; }
 
         /// <summary>
-        /// A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalAwayTeamID", Order = 18)]
         public int? GlobalAwayTeamID { get; set; }
 
         /// <summary>
-        /// A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalHomeTeamID", Order = 19)]
         public int? GlobalHomeTeamID { get; set; }
 
         /// <summary>
-        /// The details of the periods (quarters & overtime) for this game.
+        /// The details of the periods (quarters & overtime) for this game
         /// </summary>
-        [Description("The details of the periods (quarters & overtime) for this game.")]
+        [Description("The details of the periods (quarters & overtime) for this game")]
         [DataMember(Name = "Periods", Order = 20020)]
         public Period[] Periods { get; set; }
 
         /// <summary>
-        /// The date and time of game in UTC
+        /// The timestamp in UTC of when the game is scheduled to start
         /// </summary>
-        [Description("The date and time of game in UTC")]
+        [Description("The timestamp in UTC of when the game is scheduled to start")]
         [DataMember(Name = "DateTimeUTC", Order = 21)]
         public DateTime? DateTimeUTC { get; set; }
 

@@ -9,72 +9,72 @@ namespace FantasyData.Api.Client.Model.Nascar
     public partial class BettingMarket
     {
         /// <summary>
-        /// The unique identifier of this betting market
+        /// The unique ID associated with the betting market
         /// </summary>
-        [Description("The unique identifier of this betting market")]
+        [Description("The unique ID associated with the betting market")]
         [DataMember(Name = "BettingMarketID", Order = 1)]
         public int BettingMarketID { get; set; }
 
         /// <summary>
-        /// The unique identifier of the event this betting market exists for
+        /// The unique ID associated with the betting market within the betting event
         /// </summary>
-        [Description("The unique identifier of the event this betting market exists for")]
+        [Description("The unique ID associated with the betting market within the betting event")]
         [DataMember(Name = "BettingEventID", Order = 2)]
         public int BettingEventID { get; set; }
 
         /// <summary>
-        /// The BettingMarketTypeID of this market
+        /// The ID that distinguishes the different types of Market Types
         /// </summary>
-        [Description("The BettingMarketTypeID of this market")]
+        [Description("The ID that distinguishes the different types of Market Types")]
         [DataMember(Name = "BettingMarketTypeID", Order = 3)]
         public int? BettingMarketTypeID { get; set; }
 
         /// <summary>
-        /// The BettingMarketType of this market
+        /// The name of the market type within a market (e.g. Race Prop, Driver Future, Race Line, etc.)
         /// </summary>
-        [Description("The BettingMarketType of this market")]
+        [Description("The name of the market type within a market (e.g. Race Prop, Driver Future, Race Line, etc.)")]
         [DataMember(Name = "BettingMarketType", Order = 4)]
         public string BettingMarketType { get; set; }
 
         /// <summary>
-        /// The BettingBetTypeID of this market
+        /// The ID associated with the name of the bet type within a market
         /// </summary>
-        [Description("The BettingBetTypeID of this market")]
+        [Description("The ID associated with the name of the bet type within a market")]
         [DataMember(Name = "BettingBetTypeID", Order = 5)]
         public int? BettingBetTypeID { get; set; }
 
         /// <summary>
-        /// The BettingBetType of this market
+        /// The name of the bet type within a market (e.g. Tournament Winner, Best Score, etc.)
         /// </summary>
-        [Description("The BettingBetType of this market")]
+        [Description("The name of the bet type within a market (e.g. Tournament Winner, Best Score, etc.)")]
         [DataMember(Name = "BettingBetType", Order = 6)]
         public string BettingBetType { get; set; }
 
         /// <summary>
-        /// The BettingPeriodTypeID of this market
+        /// The BettingPeriodTypeID of this type of market which we can result
         /// </summary>
-        [Description("The BettingPeriodTypeID of this market")]
+        [Description("The BettingPeriodTypeID of this type of market which we can result")]
         [DataMember(Name = "BettingPeriodTypeID", Order = 7)]
         public int? BettingPeriodTypeID { get; set; }
 
         /// <summary>
-        /// The BettingPeriodType of this market
+        /// The name of the period type of this market
         /// </summary>
-        [Description("The BettingPeriodType of this market")]
+        [Description("The name of the period type of this market")]
         [DataMember(Name = "BettingPeriodType", Order = 8)]
         public string BettingPeriodType { get; set; }
 
         /// <summary>
-        /// The generic name of this market
+        /// The name of this betting market
         /// </summary>
-        [Description("The generic name of this market")]
+        [Description("The name of this betting market")]
         [DataMember(Name = "Name", Order = 9)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The driver id of the driver tied to this market (if applicable)
+        /// The unique ID of the driver tied to this market (if applicable)
         /// </summary>
-        [Description("The driver id of the driver tied to this market (if applicable)")]
+        [Description("The unique ID of the driver tied to this market (if applicable)")]
         [DataMember(Name = "DriverID", Order = 10)]
         public int? DriverID { get; set; }
 
@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public string DriverName { get; set; }
 
         /// <summary>
-        /// The created date of this market
+        /// The date/time when this betting market was created (in US Eastern Time)
         /// </summary>
-        [Description("The created date of this market")]
+        [Description("The date/time when this betting market was created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 12)]
         public DateTime? Created { get; set; }
 
@@ -114,9 +114,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public bool? AnyBetsAvailable { get; set; }
 
         /// <summary>
-        /// The list of betting outcomes from each sportsbook in this market
+        /// A list of the possible betting outcomes from each sportsbook in this market
         /// </summary>
-        [Description("The list of betting outcomes from each sportsbook in this market")]
+        [Description("A list of the possible betting outcomes from each sportsbook in this market")]
         [DataMember(Name = "BettingOutcomes", Order = 20016)]
         public BettingOutcome[] BettingOutcomes { get; set; }
 

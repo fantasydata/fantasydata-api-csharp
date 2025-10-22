@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class Player
     {
         /// <summary>
-        /// The player's unique PlayerID as assigned by SportsDataIO.
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career
         /// </summary>
-        [Description("The player's unique PlayerID as assigned by SportsDataIO.")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.MLB
         public string Status { get; set; }
 
         /// <summary>
-        /// The TeamID of the team this player is employed by.
+        /// The team's unique TeamID as assigned by SportsDataIO
         /// </summary>
-        [Description("The TeamID of the team this player is employed by.")]
+        [Description("The team's unique TeamID as assigned by SportsDataIO")]
         [DataMember(Name = "TeamID", Order = 4)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The key/abbreviation of the team this player is employed by.
+        /// The abbreviation [Key] of the team that the player belongs to
         /// </summary>
-        [Description("The key/abbreviation of the team this player is employed by.")]
+        [Description("The abbreviation [Key] of the team that the player belongs to")]
         [DataMember(Name = "Team", Order = 5)]
         public string Team { get; set; }
 
@@ -58,30 +58,30 @@ namespace FantasyData.Api.Client.Model.MLB
         public string PositionCategory { get; set; }
 
         /// <summary>
-        /// The player's primary position. Possible values: 1B, 2B, 3B, C, CF, DH, IF, LF, OF, P, PH, PR, RF, RP, SP, SS
+        /// The player's position associated with the given game or season. Possible values: 1B; 2B; 3B; C; CF; DH; IF; LF; OF; P; PH; PR; RF; RP; SP; SS
         /// </summary>
-        [Description("The player's primary position. Possible values: 1B, 2B, 3B, C, CF, DH, IF, LF, OF, P, PH, PR, RF, RP, SP, SS")]
+        [Description("The player's position associated with the given game or season. Possible values: 1B; 2B; 3B; C; CF; DH; IF; LF; OF; P; PH; PR; RF; RP; SP; SS")]
         [DataMember(Name = "Position", Order = 8)]
         public string Position { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID for cross reference use with MLB AM.
+        /// The player's unique PlayerID for cross reference use with MLB AM
         /// </summary>
-        [Description("The player's unique PlayerID for cross reference use with MLB AM.")]
+        [Description("The player's unique PlayerID for cross reference use with MLB AM")]
         [DataMember(Name = "MLBAMID", Order = 9)]
         public int? MLBAMID { get; set; }
 
         /// <summary>
-        /// The player's first name.
+        /// The player's first name
         /// </summary>
-        [Description("The player's first name.")]
+        [Description("The player's first name")]
         [DataMember(Name = "FirstName", Order = 10)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// The player's last name.
+        /// The player's last name
         /// </summary>
-        [Description("The player's last name.")]
+        [Description("The player's last name")]
         [DataMember(Name = "LastName", Order = 11)]
         public string LastName { get; set; }
 
@@ -100,58 +100,58 @@ namespace FantasyData.Api.Client.Model.MLB
         public string ThrowHand { get; set; }
 
         /// <summary>
-        /// The player's height in inches.
+        /// The player's height in inches
         /// </summary>
-        [Description("The player's height in inches.")]
+        [Description("The player's height in inches")]
         [DataMember(Name = "Height", Order = 14)]
         public int? Height { get; set; }
 
         /// <summary>
-        /// The player's weight in pounds (lbs).
+        /// The weight of the player in pounds (lbs).
         /// </summary>
-        [Description("The player's weight in pounds (lbs).")]
+        [Description("The weight of the player in pounds (lbs).")]
         [DataMember(Name = "Weight", Order = 15)]
         public int? Weight { get; set; }
 
         /// <summary>
-        /// The player's date of birth.
+        /// The player's date of birth
         /// </summary>
-        [Description("The player's date of birth.")]
+        [Description("The player's date of birth")]
         [DataMember(Name = "BirthDate", Order = 16)]
         public DateTime? BirthDate { get; set; }
 
         /// <summary>
-        /// The city in which the player was born.
+        /// The city in which the player was born
         /// </summary>
-        [Description("The city in which the player was born.")]
+        [Description("The city in which the player was born")]
         [DataMember(Name = "BirthCity", Order = 17)]
         public string BirthCity { get; set; }
 
         /// <summary>
-        /// The state in which the player was born.
+        /// The state in which the player was born. Note: State will be NULL for all countries outside of North America and Australia
         /// </summary>
-        [Description("The state in which the player was born.")]
+        [Description("The state in which the player was born. Note: State will be NULL for all countries outside of North America and Australia")]
         [DataMember(Name = "BirthState", Order = 18)]
         public string BirthState { get; set; }
 
         /// <summary>
-        /// The country in which the player was born.
+        /// The country in which the player was born
         /// </summary>
-        [Description("The country in which the player was born.")]
+        [Description("The country in which the player was born")]
         [DataMember(Name = "BirthCountry", Order = 19)]
         public string BirthCountry { get; set; }
 
         /// <summary>
-        /// The high school that the player attended.
+        /// The high school that the player attended. Note: If the player attended a college, this field will be NULL
         /// </summary>
-        [Description("The high school that the player attended.")]
+        [Description("The high school that the player attended. Note: If the player attended a college, this field will be NULL")]
         [DataMember(Name = "HighSchool", Order = 20)]
         public string HighSchool { get; set; }
 
         /// <summary>
-        /// The college that the player attended.
+        /// The college that the player attended. Note: If player did not attend college this field will contain "None" and a high school will be added if applicable
         /// </summary>
-        [Description("The college that the player attended.")]
+        [Description("The college that the player attended. Note: If player did not attend college this field will contain \"None\" and a high school will be added if applicable")]
         [DataMember(Name = "College", Order = 21)]
         public string College { get; set; }
 
@@ -163,23 +163,23 @@ namespace FantasyData.Api.Client.Model.MLB
         public DateTime? ProDebut { get; set; }
 
         /// <summary>
-        /// Deprecated (do not use)
+        /// Field is expected to be NULL
         /// </summary>
-        [Description("Deprecated (do not use)")]
+        [Description("Field is expected to be NULL")]
         [DataMember(Name = "Salary", Order = 23)]
         public int? Salary { get; set; }
 
         /// <summary>
-        /// This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.
+        /// Field is expected to be NULL
         /// </summary>
-        [Description("This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.")]
+        [Description("Field is expected to be NULL")]
         [DataMember(Name = "PhotoUrl", Order = 24)]
         public string PhotoUrl { get; set; }
 
         /// <summary>
-        /// This player's unique ID for cross reference use with the SportRadar API.
+        /// The player's unique PlayerID for cross reference use with Stats Player
         /// </summary>
-        [Description("This player's unique ID for cross reference use with the SportRadar API.")]
+        [Description("The player's unique PlayerID for cross reference use with Stats Player")]
         [DataMember(Name = "SportRadarPlayerID", Order = 25)]
         public string SportRadarPlayerID { get; set; }
 
@@ -198,9 +198,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? RotoWirePlayerID { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID for cross reference use with FantasyAlarm.
+        /// The player's unique PlayerID for cross reference use with FantasyAlarm
         /// </summary>
-        [Description("The player's unique PlayerID for cross reference use with FantasyAlarm.")]
+        [Description("The player's unique PlayerID for cross reference use with FantasyAlarm")]
         [DataMember(Name = "FantasyAlarmPlayerID", Order = 28)]
         public int? FantasyAlarmPlayerID { get; set; }
 
@@ -212,51 +212,51 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? StatsPlayerID { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID for cross reference use with Sports Direct.
+        /// The player's cross reference PlayerID to the SportsDirect data feeds, now part of Nielsen GraceNote.
         /// </summary>
-        [Description("The player's unique PlayerID for cross reference use with Sports Direct.")]
+        [Description("The player's cross reference PlayerID to the SportsDirect data feeds, now part of Nielsen GraceNote.")]
         [DataMember(Name = "SportsDirectPlayerID", Order = 30)]
         public int? SportsDirectPlayerID { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID for cross reference use with Xml Team.
+        /// The player's unique PlayerID for cross reference use with Xml Team
         /// </summary>
-        [Description("The player's unique PlayerID for cross reference use with Xml Team.")]
+        [Description("The player's unique PlayerID for cross reference use with Xml Team")]
         [DataMember(Name = "XmlTeamPlayerID", Order = 31)]
         public int? XmlTeamPlayerID { get; set; }
 
         /// <summary>
-        /// Indicates the player's injury status. Possible values include: Probable, Questionable, Doubtful, Out, 7 Day Disabled List, 15 Day Disabled List, 60 Day Disabled List
+        /// The player's current injury status; in the form of likelihood that player plays. Possible values: Probable; Questionable; Doubtful; Out
         /// </summary>
-        [Description("Indicates the player's injury status. Possible values include: Probable, Questionable, Doubtful, Out, 7 Day Disabled List, 15 Day Disabled List, 60 Day Disabled List")]
+        [Description("The player's current injury status; in the form of likelihood that player plays. Possible values: Probable; Questionable; Doubtful; Out")]
         [DataMember(Name = "InjuryStatus", Order = 32)]
         public string InjuryStatus { get; set; }
 
         /// <summary>
-        /// Indicates the player's injured body part. (e.g. ankle, knee, etc.) 
+        /// Indicates the player's injured body part. (e.g. ankle; knee; elbow; etc.)
         /// </summary>
-        [Description("Indicates the player's injured body part. (e.g. ankle, knee, etc.) ")]
+        [Description("Indicates the player's injured body part. (e.g. ankle; knee; elbow; etc.)")]
         [DataMember(Name = "InjuryBodyPart", Order = 33)]
         public string InjuryBodyPart { get; set; }
 
         /// <summary>
-        /// Indicates the start date of the player's injury.
+        /// The day that the injury started or first discovered.
         /// </summary>
-        [Description("Indicates the start date of the player's injury.")]
+        [Description("The day that the injury started or first discovered.")]
         [DataMember(Name = "InjuryStartDate", Order = 34)]
         public DateTime? InjuryStartDate { get; set; }
 
         /// <summary>
-        /// Inidcates any notes about the player's injury.
+        /// Brief description of the player's injury and expected availability
         /// </summary>
-        [Description("Inidcates any notes about the player's injury.")]
+        [Description("Brief description of the player's injury and expected availability")]
         [DataMember(Name = "InjuryNotes", Order = 35)]
         public string InjuryNotes { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID for cross reference use with FanDuel.
+        /// The player's unique PlayerID for cross reference use with FanDuel
         /// </summary>
-        [Description("The player's unique PlayerID for cross reference use with FanDuel.")]
+        [Description("The player's unique PlayerID for cross reference use with FanDuel")]
         [DataMember(Name = "FanDuelPlayerID", Order = 36)]
         public int? FanDuelPlayerID { get; set; }
 
@@ -268,58 +268,58 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? DraftKingsPlayerID { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID for cross reference use with Yahoo.
+        /// The player's unique PlayerID for cross reference use with Yahoo
         /// </summary>
-        [Description("The player's unique PlayerID for cross reference use with Yahoo.")]
+        [Description("The player's unique PlayerID for cross reference use with Yahoo")]
         [DataMember(Name = "YahooPlayerID", Order = 38)]
         public int? YahooPlayerID { get; set; }
 
         /// <summary>
-        /// The GameID of this player's upcoming game.
+        /// The unique ID of a player's next upcoming game
         /// </summary>
-        [Description("The GameID of this player's upcoming game.")]
+        [Description("The unique ID of a player's next upcoming game")]
         [DataMember(Name = "UpcomingGameID", Order = 39)]
         public int? UpcomingGameID { get; set; }
 
         /// <summary>
-        /// The player's name on FanDuel.
+        /// The player's name on FanDuel
         /// </summary>
-        [Description("The player's name on FanDuel.")]
+        [Description("The player's name on FanDuel")]
         [DataMember(Name = "FanDuelName", Order = 40)]
         public string FanDuelName { get; set; }
 
         /// <summary>
-        /// The player's name on Fan DraftKings.
+        /// The player's name on DraftKings
         /// </summary>
-        [Description("The player's name on Fan DraftKings.")]
+        [Description("The player's name on DraftKings")]
         [DataMember(Name = "DraftKingsName", Order = 41)]
         public string DraftKingsName { get; set; }
 
         /// <summary>
-        /// The player's name on Yahoo.
+        /// The player's name as displayed on/by Yahoo
         /// </summary>
-        [Description("The player's name on Yahoo.")]
+        [Description("The player's name as displayed on/by Yahoo")]
         [DataMember(Name = "YahooName", Order = 42)]
         public string YahooName { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this player. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this player. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalTeamID", Order = 43)]
         public int? GlobalTeamID { get; set; }
 
         /// <summary>
-        /// The player's name on Fantasy Draft.
+        /// The player's name on Fantasy Draft
         /// </summary>
-        [Description("The player's name on Fantasy Draft.")]
+        [Description("The player's name on Fantasy Draft")]
         [DataMember(Name = "FantasyDraftName", Order = 44)]
         public string FantasyDraftName { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID for cross reference use with Fantasy Draft.
+        /// The player's unique PlayerID for cross reference use with Fantasy Draft
         /// </summary>
-        [Description("The player's unique PlayerID for cross reference use with Fantasy Draft.")]
+        [Description("The player's unique PlayerID for cross reference use with Fantasy Draft")]
         [DataMember(Name = "FantasyDraftPlayerID", Order = 45)]
         public int? FantasyDraftPlayerID { get; set; }
 

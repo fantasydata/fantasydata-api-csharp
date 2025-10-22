@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class TeamGame
     {
         /// <summary>
-        /// The unique ID of the stat
+        /// The unique ID of the stats associated with the team in this game
         /// </summary>
-        [Description("The unique ID of the stat")]
+        [Description("The unique ID of the stats associated with the team in this game")]
         [DataMember(Name = "StatID", Order = 1)]
         public int StatID { get; set; }
 
@@ -30,107 +30,107 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? SeasonType { get; set; }
 
         /// <summary>
-        /// The college basketball season of the game
+        /// The college football season of the game
         /// </summary>
-        [Description("The college basketball season of the game")]
+        [Description("The college football season of the game")]
         [DataMember(Name = "Season", Order = 4)]
         public int? Season { get; set; }
 
         /// <summary>
-        /// Team's name
+        /// The team's full name
         /// </summary>
-        [Description("Team's name")]
+        [Description("The team's full name")]
         [DataMember(Name = "Name", Order = 5)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 6)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The final score of the Team
+        /// Total points scored by the team in the game
         /// </summary>
-        [Description("The final score of the Team")]
+        [Description("Total points scored by the team in the game")]
         [DataMember(Name = "Score", Order = 7)]
         public int? Score { get; set; }
 
         /// <summary>
-        /// The final score of the Opponent
+        /// Total points scored by the opponent team
         /// </summary>
-        [Description("The final score of the Opponent")]
+        [Description("Total points scored by the opponent team")]
         [DataMember(Name = "OpponentScore", Order = 8)]
         public int? OpponentScore { get; set; }
 
         /// <summary>
-        /// Total first downs
+        /// Total first downs converted by the team in the game
         /// </summary>
-        [Description("Total first downs")]
+        [Description("Total first downs converted by the team in the game")]
         [DataMember(Name = "FirstDowns", Order = 9)]
         public int? FirstDowns { get; set; }
 
         /// <summary>
-        /// Third down conversions
+        /// Total third down conversions by the team in the game
         /// </summary>
-        [Description("Third down conversions")]
+        [Description("Total third down conversions by the team in the game")]
         [DataMember(Name = "ThirdDownConversions", Order = 10)]
         public int? ThirdDownConversions { get; set; }
 
         /// <summary>
-        /// Third down attempts
+        /// Total third down attempts by the team in the game
         /// </summary>
-        [Description("Third down attempts")]
+        [Description("Total third down attempts by the team in the game")]
         [DataMember(Name = "ThirdDownAttempts", Order = 11)]
         public int? ThirdDownAttempts { get; set; }
 
         /// <summary>
-        /// Fourth down conversions
+        /// Total fourth down conversions by the team in the game
         /// </summary>
-        [Description("Fourth down conversions")]
+        [Description("Total fourth down conversions by the team in the game")]
         [DataMember(Name = "FourthDownConversions", Order = 12)]
         public int? FourthDownConversions { get; set; }
 
         /// <summary>
-        /// Fourth down attempts
+        /// Total fourth down attempts by the team in the game
         /// </summary>
-        [Description("Fourth down attempts")]
+        [Description("Total fourth down attempts by the team in the game")]
         [DataMember(Name = "FourthDownAttempts", Order = 13)]
         public int? FourthDownAttempts { get; set; }
 
         /// <summary>
-        /// Penalties committed
+        /// Total penalties committed by the team in the game
         /// </summary>
-        [Description("Penalties committed")]
+        [Description("Total penalties committed by the team in the game")]
         [DataMember(Name = "Penalties", Order = 14)]
         public int? Penalties { get; set; }
 
         /// <summary>
-        /// Penalty yards enforced against team
+        /// Total penalties yards enforced against the team in the game
         /// </summary>
-        [Description("Penalty yards enforced against team")]
+        [Description("Total penalties yards enforced against the team in the game")]
         [DataMember(Name = "PenaltyYards", Order = 15)]
         public int? PenaltyYards { get; set; }
 
         /// <summary>
-        /// Time of possession minutes
+        /// Total number of minutes the team possessed the ball for in the game
         /// </summary>
-        [Description("Time of possession minutes")]
+        [Description("Total number of minutes the team possessed the ball for in the game")]
         [DataMember(Name = "TimeOfPossessionMinutes", Order = 16)]
         public int? TimeOfPossessionMinutes { get; set; }
 
         /// <summary>
-        /// Time of possession seconds
+        /// Total number of seconds the team possessed the ball for in the game
         /// </summary>
-        [Description("Time of possession seconds")]
+        [Description("Total number of seconds the team possessed the ball for in the game")]
         [DataMember(Name = "TimeOfPossessionSeconds", Order = 17)]
         public int? TimeOfPossessionSeconds { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for the team. Note: This value is guaranteed to be unique across all sports/leagues.
         /// </summary>
-        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for the team. Note: This value is guaranteed to be unique across all sports/leagues.")]
         [DataMember(Name = "GlobalTeamID", Order = 18)]
         public int? GlobalTeamID { get; set; }
 

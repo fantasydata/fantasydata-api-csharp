@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class Courses
     {
         /// <summary>
-        /// The unique ID of this tournament
+        /// The unique ID of the tournament
         /// </summary>
-        [Description("The unique ID of this tournament")]
+        [Description("The unique ID of the tournament")]
         [DataMember(Name = "TournamentID", Order = 1)]
         public int TournamentID { get; set; }
 
         /// <summary>
-        /// The name of this tournament
+        /// The name of the tournament that is being played at this course
         /// </summary>
-        [Description("The name of this tournament")]
+        [Description("The name of the tournament that is being played at this course")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public string Venue { get; set; }
 
         /// <summary>
-        /// The physical location of this tournament
+        /// The location of this course
         /// </summary>
-        [Description("The physical location of this tournament")]
+        [Description("The location of this course")]
         [DataMember(Name = "Location", Order = 6)]
         public string Location { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? Par { get; set; }
 
         /// <summary>
-        /// The total yards of all 18 holes of this course
+        /// The total course yardage
         /// </summary>
-        [Description("The total yards of all 18 holes of this course")]
+        [Description("The total course yardage")]
         [DataMember(Name = "Yards", Order = 8)]
         public int? Yards { get; set; }
 

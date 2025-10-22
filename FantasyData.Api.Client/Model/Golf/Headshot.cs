@@ -9,58 +9,58 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class Headshot
     {
         /// <summary>
-        /// Unique ID of the Player (assigned by SportsDataIO).
+        /// The unique ID of the golfer
         /// </summary>
-        [Description("Unique ID of the Player (assigned by SportsDataIO).")]
+        [Description("The unique ID of the golfer")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Name of Player.
+        /// The name of the golfer
         /// </summary>
-        [Description("Name of Player.")]
+        [Description("The name of the golfer")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The player's preferred hosted headshot URL. This returns the headshot with transparent background, if available.
+        /// The player's preferred hosted headshot URL. This returns the headshot with transparent background; if available
         /// </summary>
-        [Description("The player's preferred hosted headshot URL. This returns the headshot with transparent background, if available.")]
+        [Description("The player's preferred hosted headshot URL. This returns the headshot with transparent background; if available")]
         [DataMember(Name = "PreferredHostedHeadshotUrl", Order = 3)]
         public string PreferredHostedHeadshotUrl { get; set; }
 
         /// <summary>
-        /// The last updated date of the player's preferred hosted headshot.
+        /// The last updated date of the player's preferred hosted headshot
         /// </summary>
-        [Description("The last updated date of the player's preferred hosted headshot.")]
+        [Description("The last updated date of the player's preferred hosted headshot")]
         [DataMember(Name = "PreferredHostedHeadshotUpdated", Order = 4)]
         public DateTime? PreferredHostedHeadshotUpdated { get; set; }
 
         /// <summary>
-        /// The player's hosted headshot URL.
+        /// The player's hosted headshot URL
         /// </summary>
-        [Description("The player's hosted headshot URL.")]
+        [Description("The player's hosted headshot URL")]
         [DataMember(Name = "HostedHeadshotWithBackgroundUrl", Order = 5)]
         public string HostedHeadshotWithBackgroundUrl { get; set; }
 
         /// <summary>
-        /// The last updated date of the player's hosted headshot.
+        /// The timestamp of when the player's hosted headshot was last updated
         /// </summary>
-        [Description("The last updated date of the player's hosted headshot.")]
+        [Description("The timestamp of when the player's hosted headshot was last updated")]
         [DataMember(Name = "HostedHeadshotWithBackgroundUpdated", Order = 6)]
         public DateTime? HostedHeadshotWithBackgroundUpdated { get; set; }
 
         /// <summary>
-        /// The player's transparent background hosted headshot URL.
+        /// The player's transparent background hosted headshot URL
         /// </summary>
-        [Description("The player's transparent background hosted headshot URL.")]
+        [Description("The player's transparent background hosted headshot URL")]
         [DataMember(Name = "HostedHeadshotNoBackgroundUrl", Order = 7)]
         public string HostedHeadshotNoBackgroundUrl { get; set; }
 
         /// <summary>
-        /// The last updated date of the player's transparent background hosted headshot.
+        /// The timestamp of when the player's transparent background hosted headshot was last updated
         /// </summary>
-        [Description("The last updated date of the player's transparent background hosted headshot.")]
+        [Description("The timestamp of when the player's transparent background hosted headshot was last updated")]
         [DataMember(Name = "HostedHeadshotNoBackgroundUpdated", Order = 8)]
         public DateTime? HostedHeadshotNoBackgroundUpdated { get; set; }
 

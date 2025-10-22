@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.Tennis
         public string CommonName { get; set; }
 
         /// <summary>
-        /// The player's short name
+        /// The player's short name (example: J. Sinner)
         /// </summary>
-        [Description("The player's short name")]
+        [Description("The player's short name (example: J. Sinner)")]
         [DataMember(Name = "ShortName", Order = 5)]
         public string ShortName { get; set; }
 
@@ -93,9 +93,9 @@ namespace FantasyData.Api.Client.Model.Tennis
         public int? Weight { get; set; }
 
         /// <summary>
-        /// The player's status
+        /// The player's status (active or inactive)
         /// </summary>
-        [Description("The player's status")]
+        [Description("The player's status (active or inactive)")]
         [DataMember(Name = "Status", Order = 13)]
         public string Status { get; set; }
 

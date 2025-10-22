@@ -9,30 +9,30 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class StartingLineups
     {
         /// <summary>
-        /// Unique ID of Game
+        /// The unique ID of the game associated with this lineup
         /// </summary>
-        [Description("Unique ID of Game")]
+        [Description("The unique ID of the game associated with this lineup")]
         [DataMember(Name = "GameID", Order = 1)]
         public int GameID { get; set; }
 
         /// <summary>
-        /// End year of season that this game belongs to
+        /// The NBA season of the game that the lineups is associated with
         /// </summary>
-        [Description("End year of season that this game belongs to")]
+        [Description("The NBA season of the game that the lineups is associated with")]
         [DataMember(Name = "Season", Order = 2)]
         public int Season { get; set; }
 
         /// <summary>
-        /// Type of Season that this game corresponds to (eg. 1 = Regular Season, 2 = Preseason, 3 = Postseason)
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition).
         /// </summary>
-        [Description("Type of Season that this game corresponds to (eg. 1 = Regular Season, 2 = Preseason, 3 = Postseason)")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition).")]
         [DataMember(Name = "SeasonType", Order = 3)]
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// Day of Game
+        /// The day of the game
         /// </summary>
-        [Description("Day of Game")]
+        [Description("The day of the game")]
         [DataMember(Name = "Day", Order = 4)]
         public DateTime? Day { get; set; }
 
@@ -44,23 +44,23 @@ namespace FantasyData.Api.Client.Model.NBA
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Game Status (eg.  Scheduled, Final, Cancelled)
+        /// Indicates the game's status. Possible values include: Scheduled; InProgress; Final; F/OT; Suspended; Postponed; Delayed; Canceled; Forfeit
         /// </summary>
-        [Description("Game Status (eg.  Scheduled, Final, Cancelled)")]
+        [Description("Indicates the game's status. Possible values include: Scheduled; InProgress; Final; F/OT; Suspended; Postponed; Delayed; Canceled; Forfeit")]
         [DataMember(Name = "Status", Order = 6)]
         public string Status { get; set; }
 
         /// <summary>
-        /// Unique ID of Home Team
+        /// The unique ID of the home team
         /// </summary>
-        [Description("Unique ID of Home Team")]
+        [Description("The unique ID of the home team")]
         [DataMember(Name = "HomeTeamID", Order = 7)]
         public int? HomeTeamID { get; set; }
 
         /// <summary>
-        /// Name of Home Team
+        /// The abbreviation [Key] of the home team
         /// </summary>
-        [Description("Name of Home Team")]
+        [Description("The abbreviation [Key] of the home team")]
         [DataMember(Name = "HomeTeam", Order = 8)]
         public string HomeTeam { get; set; }
 
@@ -72,23 +72,23 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? AwayTeamID { get; set; }
 
         /// <summary>
-        /// Name of Away Team
+        /// The abbreviation [Key] of the away team
         /// </summary>
-        [Description("Name of Away Team")]
+        [Description("The abbreviation [Key] of the away team")]
         [DataMember(Name = "AwayTeam", Order = 10)]
         public string AwayTeam { get; set; }
 
         /// <summary>
-        /// Home Team Lineup, including Starters and Bench Players
+        /// The lineup (starters and bench players) of the home team in a given game
         /// </summary>
-        [Description("Home Team Lineup, including Starters and Bench Players")]
+        [Description("The lineup (starters and bench players) of the home team in a given game")]
         [DataMember(Name = "HomeLineup", Order = 20011)]
         public Lineup[] HomeLineup { get; set; }
 
         /// <summary>
-        /// Away Team Lineup, including Starters and Bench Players
+        /// The lineup (starters and bench players) of the away team in a given game
         /// </summary>
-        [Description("Away Team Lineup, including Starters and Bench Players")]
+        [Description("The lineup (starters and bench players) of the away team in a given game")]
         [DataMember(Name = "AwayLineup", Order = 20012)]
         public Lineup[] AwayLineup { get; set; }
 

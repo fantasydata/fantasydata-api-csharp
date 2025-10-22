@@ -9,30 +9,30 @@ namespace FantasyData.Api.Client.Model.CBB
     public partial class TeamBasic
     {
         /// <summary>
-        /// The auto-generated unique ID of the Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("The auto-generated unique ID of the Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 1)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// A unique abbreviation of the team (e.g. OU, TTU, USC, UK, etc.) These are not recommended for front end use as they may not match common usage; see the ShortDisplayName instead.
+        /// A unique abbreviation of the team (e.g. OKL; TXTECH; USC; UK; etc.). Note: Due to being selected for uniqueness; these are not always a match with broadcaster abbreviations. For that use case; use ShortDisplayName.
         /// </summary>
-        [Description("A unique abbreviation of the team (e.g. OU, TTU, USC, UK, etc.) These are not recommended for front end use as they may not match common usage; see the ShortDisplayName instead.")]
+        [Description("A unique abbreviation of the team (e.g. OKL; TXTECH; USC; UK; etc.). Note: Due to being selected for uniqueness; these are not always a match with broadcaster abbreviations. For that use case; use ShortDisplayName.")]
         [DataMember(Name = "Key", Order = 2)]
         public string Key { get; set; }
 
         /// <summary>
-        /// Whether or not this team is active
+        /// Whether or not this team is active. Note: Active = True & Inactive = False
         /// </summary>
-        [Description("Whether or not this team is active")]
+        [Description("Whether or not this team is active. Note: Active = True & Inactive = False")]
         [DataMember(Name = "Active", Order = 3)]
         public bool Active { get; set; }
 
         /// <summary>
-        /// The school of the team (e.g. Oklahoma University, Texas Tech University, University of Southern California, Kentucky University, etc)
+        /// The name of the school as used in college sports (e.g. SMU; South Florida; Stony Brook; UCLA; etc.)
         /// </summary>
-        [Description("The school of the team (e.g. Oklahoma University, Texas Tech University, University of Southern California, Kentucky University, etc)")]
+        [Description("The name of the school as used in college sports (e.g. SMU; South Florida; Stony Brook; UCLA; etc.)")]
         [DataMember(Name = "School", Order = 4)]
         public string School { get; set; }
 
@@ -58,32 +58,60 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? ConferenceID { get; set; }
 
         /// <summary>
-        /// The name of the team's conference
+        /// The name of the team's conference (e.g.  American Athletic, Big Ten, Conference USA)
         /// </summary>
-        [Description("The name of the team's conference")]
+        [Description("The name of the team's conference (e.g.  American Athletic, Big Ten, Conference USA)")]
         [DataMember(Name = "Conference", Order = 8)]
         public string Conference { get; set; }
 
         /// <summary>
-        /// The url of the team logo image.
+        /// The URL of the team logo image (png format)
         /// </summary>
-        [Description("The url of the team logo image.")]
+        [Description("The URL of the team logo image (png format)")]
         [DataMember(Name = "TeamLogoUrl", Order = 9)]
         public string TeamLogoUrl { get; set; }
 
         /// <summary>
-        /// The short display name of the team, recommended for front end applications. May not be unique; if you need a 100% unique letter identifier see the Key field in this table.
+        /// A abbreviation of the team as seen on most broadcasts. Note: This field could have the same name for multiple teams. If a completely unique name is need use [Key]
         /// </summary>
-        [Description("The short display name of the team, recommended for front end applications. May not be unique; if you need a 100% unique letter identifier see the Key field in this table.")]
+        [Description("A abbreviation of the team as seen on most broadcasts. Note: This field could have the same name for multiple teams. If a completely unique name is need use [Key]")]
         [DataMember(Name = "ShortDisplayName", Order = 10)]
         public string ShortDisplayName { get; set; }
 
         /// <summary>
-        /// The home stadium of the team
+        /// The active home stadium of the team
         /// </summary>
-        [Description("The home stadium of the team")]
+        [Description("The active home stadium of the team")]
         [DataMember(Name = "Stadium", Order = 10011)]
         public Stadium Stadium { get; set; }
+
+        /// <summary>
+        /// The team's primary color. (This is not licensed for public or commercial use)
+        /// </summary>
+        [Description("The team's primary color. (This is not licensed for public or commercial use)")]
+        [DataMember(Name = "PrimaryColor", Order = 12)]
+        public string PrimaryColor { get; set; }
+
+        /// <summary>
+        /// The team's secondary color. (This is not licensed for public or commercial use)
+        /// </summary>
+        [Description("The team's secondary color. (This is not licensed for public or commercial use)")]
+        [DataMember(Name = "SecondaryColor", Order = 13)]
+        public string SecondaryColor { get; set; }
+
+        /// <summary>
+        /// The team's tertiary color. (This is not licensed for public or commercial use)
+        /// </summary>
+        [Description("The team's tertiary color. (This is not licensed for public or commercial use)")]
+        [DataMember(Name = "TertiaryColor", Order = 14)]
+        public string TertiaryColor { get; set; }
+
+        /// <summary>
+        /// The team's quaternary color. (This is not licensed for public or commercial use)
+        /// </summary>
+        [Description("The team's quaternary color. (This is not licensed for public or commercial use)")]
+        [DataMember(Name = "QuaternaryColor", Order = 15)]
+        public string QuaternaryColor { get; set; }
 
     }
 }

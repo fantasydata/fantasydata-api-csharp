@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class GameOddOutcome
     {
         /// <summary>
-        /// Unique ID of this odd
+        /// The unique ID of this odd
         /// </summary>
-        [Description("Unique ID of this odd")]
+        [Description("The unique ID of this odd")]
         [DataMember(Name = "GameOddId", Order = 1)]
         public int GameOddId { get; set; }
 
         /// <summary>
-        /// The GameOddResultType of this outcome as an integer
+        /// The unique ID of this GameOddResultType
         /// </summary>
-        [Description("The GameOddResultType of this outcome as an integer")]
+        [Description("The unique ID of this GameOddResultType")]
         [DataMember(Name = "GameOddResultTypeId", Order = 2)]
         public int? GameOddResultTypeId { get; set; }
 
         /// <summary>
-        /// The string identifier of the GameOddResultType of this outcome (e.g. Won, Lost, Push, Not Resulted, Incomplete)
+        /// The result/outcome of a bet (e.g. Won; Lost; Push; Not Resulted; Incomplete)
         /// </summary>
-        [Description("The string identifier of the GameOddResultType of this outcome (e.g. Won, Lost, Push, Not Resulted, Incomplete)")]
+        [Description("The result/outcome of a bet (e.g. Won; Lost; Push; Not Resulted; Incomplete)")]
         [DataMember(Name = "GameOddResultType", Order = 3)]
         public string GameOddResultType { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? BetValue { get; set; }
 
         /// <summary>
-        /// The value that actually occurred in game (if applicable)
+        /// The value of the actual result that occured in game (i.e. If a team won a game by 5 and the spread was -6.5, the actual value would be 5 and the bet value would be -6.5)
         /// </summary>
-        [Description("The value that actually occurred in game (if applicable)")]
+        [Description("The value of the actual result that occured in game (i.e. If a team won a game by 5 and the spread was -6.5, the actual value would be 5 and the bet value would be -6.5)")]
         [DataMember(Name = "ActualValue", Order = 7)]
         public decimal? ActualValue { get; set; }
 

@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int ConferenceID { get; set; }
 
         /// <summary>
-        /// The name of the team's conference
+        /// The name of the team's conference (e.g.  American Athletic, Big Ten, Conference USA)
         /// </summary>
-        [Description("The name of the team's conference")]
+        [Description("The name of the team's conference (e.g.  American Athletic, Big Ten, Conference USA)")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 

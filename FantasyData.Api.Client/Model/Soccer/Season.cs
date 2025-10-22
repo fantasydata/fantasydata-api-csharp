@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int Year { get; set; }
 
         /// <summary>
-        /// The display name of the season (example: 2017/2018, 2018-19, etc)
+        /// The display name of the season (e.g. 2017/2018; 2018/19; etc)
         /// </summary>
-        [Description("The display name of the season (example: 2017/2018, 2018-19, etc)")]
+        [Description("The display name of the season (e.g. 2017/2018; 2018/19; etc)")]
         [DataMember(Name = "Name", Order = 4)]
         public string Name { get; set; }
 
@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string CompetitionName { get; set; }
 
         /// <summary>
-        /// The start date of the season (UTC)
+        /// The start date of the season
         /// </summary>
-        [Description("The start date of the season (UTC)")]
+        [Description("The start date of the season")]
         [DataMember(Name = "StartDate", Order = 6)]
         public DateTime? StartDate { get; set; }
 
@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public bool CurrentSeason { get; set; }
 
         /// <summary>
-        /// The rounds associated with this season
+        /// The unique ID of the round that this season is associated with
         /// </summary>
-        [Description("The rounds associated with this season")]
+        [Description("The unique ID of the round that this season is associated with")]
         [DataMember(Name = "Rounds", Order = 20009)]
         public Round[] Rounds { get; set; }
 

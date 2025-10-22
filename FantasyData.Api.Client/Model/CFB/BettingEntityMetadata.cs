@@ -16,11 +16,18 @@ namespace FantasyData.Api.Client.Model.CFB
         public int RecordId { get; set; }
 
         /// <summary>
-        /// A text value for the record (e.g. Moneyline, Player Prop, 3rd Quarter)
+        /// Denotes the name of the *Type  (e.g. Betting Market Type, Betting Event Type, Betting Period Type)
         /// </summary>
-        [Description("A text value for the record (e.g. Moneyline, Player Prop, 3rd Quarter)")]
+        [Description("Denotes the name of the *Type  (e.g. Betting Market Type, Betting Event Type, Betting Period Type)")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Whether or not this market is currently is use
+        /// </summary>
+        [Description("Whether or not this market is currently is use")]
+        [DataMember(Name = "Active", Order = 3)]
+        public bool? Active { get; set; }
 
     }
 }

@@ -16,37 +16,37 @@ namespace FantasyData.Api.Client.Model.NBA
         public int RefereeID { get; set; }
 
         /// <summary>
-        /// Name of Referee
+        /// The referee's full name
         /// </summary>
-        [Description("Name of Referee")]
+        [Description("The referee's full name")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Number of Referee
+        /// The number of the referee
         /// </summary>
-        [Description("Number of Referee")]
+        [Description("The number of the referee")]
         [DataMember(Name = "Number", Order = 3)]
         public int? Number { get; set; }
 
         /// <summary>
-        /// Position of Referee
+        /// The position of the referee in the crew
         /// </summary>
-        [Description("Position of Referee")]
+        [Description("The position of the referee in the crew")]
         [DataMember(Name = "Position", Order = 4)]
         public string Position { get; set; }
 
         /// <summary>
-        /// College of Referee
+        /// The college of the referee
         /// </summary>
-        [Description("College of Referee")]
+        [Description("The college of the referee")]
         [DataMember(Name = "College", Order = 5)]
         public string College { get; set; }
 
         /// <summary>
-        /// Years of Experience of Referee
+        /// The number of years experience the referee has in the NBA.
         /// </summary>
-        [Description("Years of Experience of Referee")]
+        [Description("The number of years experience the referee has in the NBA.")]
         [DataMember(Name = "Experience", Order = 6)]
         public int? Experience { get; set; }
 

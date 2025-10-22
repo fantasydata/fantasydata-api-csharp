@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class Conference
     {
         /// <summary>
-        /// The ID of the team's conference
+        /// The unique ID of the team's conference
         /// </summary>
-        [Description("The ID of the team's conference")]
+        [Description("The unique ID of the team's conference")]
         [DataMember(Name = "ConferenceID", Order = 1)]
         public int ConferenceID { get; set; }
 
@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public string ConferenceName { get; set; }
 
         /// <summary>
-        /// The name of the team's division (e.g. East, West, Atlantic, etc)
+        /// The name of the team's division (e.g. East; West; Atlantic; etc). Note: Not all conferences have divisons
         /// </summary>
-        [Description("The name of the team's division (e.g. East, West, Atlantic, etc)")]
+        [Description("The name of the team's division (e.g. East; West; Atlantic; etc). Note: Not all conferences have divisons")]
         [DataMember(Name = "DivisionName", Order = 5)]
         public string DivisionName { get; set; }
 

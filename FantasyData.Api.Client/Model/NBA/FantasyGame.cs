@@ -16,16 +16,16 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? GameID { get; set; }
 
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 2)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// The season type of the timeframe (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=All-Star)
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition)
         /// </summary>
-        [Description("The season type of the timeframe (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=All-Star)")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar; 6=Exhibition)")]
         [DataMember(Name = "SeasonType", Order = 3)]
         public int? SeasonType { get; set; }
 
@@ -44,23 +44,23 @@ namespace FantasyData.Api.Client.Model.NBA
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date and time of the game
+        /// The date and time of the game (in US Eastern Time)
         /// </summary>
-        [Description("The date and time of the game")]
+        [Description("The date and time of the game (in US Eastern Time)")]
         [DataMember(Name = "DateTime", Order = 6)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 7)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The name of the opponent
+        /// Abbreviation [Key] of the opponent team (e.g. LAL; PHI; BOS; CHI; etc.)
         /// </summary>
-        [Description("The name of the opponent")]
+        [Description("Abbreviation [Key] of the opponent team (e.g. LAL; PHI; BOS; CHI; etc.)")]
         [DataMember(Name = "Opponent", Order = 8)]
         public string Opponent { get; set; }
 
@@ -79,16 +79,16 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? Jersey { get; set; }
 
         /// <summary>
-        /// The player's name
+        /// The player's full name
         /// </summary>
-        [Description("The player's name")]
+        [Description("The player's full name")]
         [DataMember(Name = "Name", Order = 11)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The player's position associated with the given game or season. Possible values: C, F, FC, G, GF, PF, PG, SF, SG
+        /// The player's primary position. Possible values: PG; SG; SF; PF; C
         /// </summary>
-        [Description("The player's position associated with the given game or season. Possible values: C, F, FC, G, GF, PF, PG, SF, SG")]
+        [Description("The player's primary position. Possible values: PG; SG; SF; PF; C")]
         [DataMember(Name = "Position", Order = 12)]
         public string Position { get; set; }
 
@@ -100,23 +100,23 @@ namespace FantasyData.Api.Client.Model.NBA
         public string PositionCategory { get; set; }
 
         /// <summary>
-        /// The number of games played
+        /// The number of games played by the player in the game Note: this will be one or zero for single game feeds
         /// </summary>
-        [Description("The number of games played")]
+        [Description("The number of games played by the player in the game Note: this will be one or zero for single game feeds")]
         [DataMember(Name = "Games", Order = 14)]
         public int? Games { get; set; }
 
         /// <summary>
-        /// Whether the player started
+        /// Indicates whether or not the player started the game Note: this will be one or zero for single game feeds
         /// </summary>
-        [Description("Whether the player started")]
+        [Description("Indicates whether or not the player started the game Note: this will be one or zero for single game feeds")]
         [DataMember(Name = "Started", Order = 15)]
         public int? Started { get; set; }
 
         /// <summary>
-        /// Total fantasy points
+        /// Total fantasy points by the player in the game
         /// </summary>
-        [Description("Total fantasy points")]
+        [Description("Total fantasy points by the player in the game")]
         [DataMember(Name = "FantasyPoints", Order = 16)]
         public decimal? FantasyPoints { get; set; }
 
@@ -191,9 +191,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? GlobalGameID { get; set; }
 
         /// <summary>
-        /// The timestamp of when the record was last updated (US Eastern Time)
+        /// The timestamp of when this game was last updated (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp of when the record was last updated (US Eastern Time)")]
+        [Description("The timestamp of when this game was last updated (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 27)]
         public DateTime? Updated { get; set; }
 

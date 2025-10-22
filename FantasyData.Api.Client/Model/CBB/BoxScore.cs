@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.CBB
     public partial class BoxScore
     {
         /// <summary>
-        /// The game details of this box score
+        /// Returns the game details for a given game's box score
         /// </summary>
-        [Description("The game details of this box score")]
+        [Description("Returns the game details for a given game's box score")]
         [DataMember(Name = "Game", Order = 10001)]
         public Game Game { get; set; }
 
         /// <summary>
-        /// The period details of this box score
+        /// The details of the periods (halves & overtime) for this game. Note: the scores are for that half/period only, not total score of game at that point.
         /// </summary>
-        [Description("The period details of this box score")]
+        [Description("The details of the periods (halves & overtime) for this game. Note: the scores are for that half/period only, not total score of game at that point.")]
         [DataMember(Name = "Periods", Order = 20002)]
         public Period[] Periods { get; set; }
 

@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class Referee
     {
         /// <summary>
-        /// The unique ID of the referee
+        /// The last name of the referee
         /// </summary>
-        [Description("The unique ID of the referee")]
+        [Description("The last name of the referee")]
         [DataMember(Name = "RefereeId", Order = 1)]
         public int RefereeId { get; set; }
 
         /// <summary>
-        /// Referee's first name
+        /// The first name of the referee
         /// </summary>
-        [Description("Referee's first name")]
+        [Description("The first name of the referee")]
         [DataMember(Name = "FirstName", Order = 2)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Referee's last name
+        /// The last name of the referee
         /// </summary>
-        [Description("Referee's last name")]
+        [Description("The last name of the referee")]
         [DataMember(Name = "LastName", Order = 3)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Referee's short name
+        /// The short name of the referee
         /// </summary>
-        [Description("Referee's short name")]
+        [Description("The short name of the referee")]
         [DataMember(Name = "ShortName", Order = 4)]
         public string ShortName { get; set; }
 
         /// <summary>
-        /// Referee's nationality
+        /// The nationality of the referee
         /// </summary>
-        [Description("Referee's nationality")]
+        [Description("The nationality of the referee")]
         [DataMember(Name = "Nationality", Order = 5)]
         public string Nationality { get; set; }
 

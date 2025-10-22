@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.CBB
     public partial class Season
     {
         /// <summary>
-        /// The college basketball season of the game
+        /// The season that the game occurs in. Note: season is a single year that the majority of the season occurs in
         /// </summary>
-        [Description("The college basketball season of the game")]
+        [Description("The season that the game occurs in. Note: season is a single year that the majority of the season occurs in")]
         [DataMember(Name = "Season", Order = 1)]
         public int Year { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int EndYear { get; set; }
 
         /// <summary>
-        /// The description of this season for display purposes (e.g. 2017-18, 2018-19, etc)
+        /// The description of this season for display purposes (e.g. 2024-25; 2025-26; etc)
         /// </summary>
-        [Description("The description of this season for display purposes (e.g. 2017-18, 2018-19, etc)")]
+        [Description("The description of this season for display purposes (e.g. 2024-25; 2025-26; etc)")]
         [DataMember(Name = "Description", Order = 4)]
         public string Description { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public DateTime? PostSeasonStartDate { get; set; }
 
         /// <summary>
-        /// The string to pass into subsequent API calls in the season parameter
+        /// The string to pass into subsequent API calls in the season parameter (e.g. 2025REG, 2025POST, etc.)
         /// </summary>
-        [Description("The string to pass into subsequent API calls in the season parameter")]
+        [Description("The string to pass into subsequent API calls in the season parameter (e.g. 2025REG, 2025POST, etc.)")]
         [DataMember(Name = "ApiSeason", Order = 7)]
         public string ApiSeason { get; set; }
 

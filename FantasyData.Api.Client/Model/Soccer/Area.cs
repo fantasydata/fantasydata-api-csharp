@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int AreaId { get; set; }
 
         /// <summary>
-        /// The country code of the area
+        /// The 3-digit country or continent code where the area is located
         /// </summary>
-        [Description("The country code of the area")]
+        [Description("The 3-digit country or continent code where the area is located")]
         [DataMember(Name = "CountryCode", Order = 2)]
         public string CountryCode { get; set; }
 

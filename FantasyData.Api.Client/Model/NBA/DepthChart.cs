@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class DepthChart
     {
         /// <summary>
-        /// Unique ID of Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("Unique ID of Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 1)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Unique ID of Player
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID of Player")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 2)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// Name of Player
+        /// The player's full name
         /// </summary>
-        [Description("Name of Player")]
+        [Description("The player's full name")]
         [DataMember(Name = "Name", Order = 3)]
         public string Name { get; set; }
 
         /// <summary>
-        /// General Position of Player (G, F, or C)
+        /// The player's position category. Possible values: C; F; G
         /// </summary>
-        [Description("General Position of Player (G, F, or C)")]
+        [Description("The player's position category. Possible values: C; F; G")]
         [DataMember(Name = "PositionCategory", Order = 4)]
         public string PositionCategory { get; set; }
 
         /// <summary>
-        /// Position of Player (PG, SG, SF, PF, or C)
+        /// The player's primary position. Possible values: C; PF; PG; SF; SG
         /// </summary>
-        [Description("Position of Player (PG, SG, SF, PF, or C)")]
+        [Description("The player's primary position. Possible values: C; PF; PG; SF; SG")]
         [DataMember(Name = "Position", Order = 5)]
         public string Position { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int? DepthOrder { get; set; }
 
         /// <summary>
-        /// Date and Time Last Updated
+        /// The date and time that this depth chart was last updated (in US Eastern Time)
         /// </summary>
-        [Description("Date and Time Last Updated")]
+        [Description("The date and time that this depth chart was last updated (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 7)]
         public DateTime? Updated { get; set; }
 

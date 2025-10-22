@@ -9,79 +9,79 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class Transaction
     {
         /// <summary>
-        /// Unique ID of Player
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID of Player")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Player Name
+        /// The player's full name
         /// </summary>
-        [Description("Player Name")]
+        [Description("The player's full name")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
         /// <summary>
-        /// ID of Player's former team
+        /// The unique ID of the player's former team
         /// </summary>
-        [Description("ID of Player's former team")]
+        [Description("The unique ID of the player's former team")]
         [DataMember(Name = "FormerTeamID", Order = 3)]
         public int? FormerTeamID { get; set; }
 
         /// <summary>
-        /// Player's former team in abbreviated format (e.g. SD, PHI, NE, IND etc.)
+        /// The abbreviation [Key] of the player's former team
         /// </summary>
-        [Description("Player's former team in abbreviated format (e.g. SD, PHI, NE, IND etc.)")]
+        [Description("The abbreviation [Key] of the player's former team")]
         [DataMember(Name = "FormerTeam", Order = 4)]
         public string FormerTeam { get; set; }
 
         /// <summary>
-        /// Unique ID of the former team.
+        /// The unique ID of the team
         /// </summary>
-        [Description("Unique ID of the former team.")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 5)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Player's new team, when applicable, in abbreviated format (e.g. SD, PHI, NE, IND etc.)
+        /// The abbreviation [Key] of the player's team
         /// </summary>
-        [Description("Player's new team, when applicable, in abbreviated format (e.g. SD, PHI, NE, IND etc.)")]
+        [Description("The abbreviation [Key] of the player's team")]
         [DataMember(Name = "Team", Order = 6)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Type of Transaction. Released, Waived, Signed, Promoted, Elevated, Demoted, and Traded.
+        /// The type of transaction that occurred for a player. Transaction types can be: Released; Waived; Signed; Promoted; Elevated; Demoted; and Traded.
         /// </summary>
-        [Description("Type of Transaction. Released, Waived, Signed, Promoted, Elevated, Demoted, and Traded.")]
+        [Description("The type of transaction that occurred for a player. Transaction types can be: Released; Waived; Signed; Promoted; Elevated; Demoted; and Traded.")]
         [DataMember(Name = "Type", Order = 7)]
         public string Type { get; set; }
 
         /// <summary>
-        /// Date and Time Transaction took place
+        /// The date this transaction was created
         /// </summary>
-        [Description("Date and Time Transaction took place")]
+        [Description("The date this transaction was created")]
         [DataMember(Name = "Date", Order = 8)]
         public DateTime? Date { get; set; }
 
         /// <summary>
-        /// Transaction Summary (e.g. "Harris has signed with the Commanders.")
+        /// A short summary of the transaction that occurred (e.g. "Harris has signed with the Pelicans.")
         /// </summary>
-        [Description("Transaction Summary (e.g. \"Harris has signed with the Commanders.\")")]
+        [Description("A short summary of the transaction that occurred (e.g. \"Harris has signed with the Pelicans.\")")]
         [DataMember(Name = "Note", Order = 9)]
         public string Note { get; set; }
 
         /// <summary>
-        /// Date and Time Created
+        /// The date and time this transaction took place
         /// </summary>
-        [Description("Date and Time Created")]
+        [Description("The date and time this transaction took place")]
         [DataMember(Name = "Created", Order = 10)]
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// Date and Time Last Updated
+        /// The date and time that this transaction was last updated (US Eastern Time)
         /// </summary>
-        [Description("Date and Time Last Updated")]
+        [Description("The date and time that this transaction was last updated (US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 11)]
         public DateTime? Updated { get; set; }
 

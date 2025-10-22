@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class TeamSeason
     {
         /// <summary>
-        /// The unique ID of the stat
+        /// The unique ID of the stats associated with the team in this season
         /// </summary>
-        [Description("The unique ID of the stat")]
+        [Description("The unique ID of the stats associated with the team in this season")]
         [DataMember(Name = "StatID", Order = 1)]
         public int StatID { get; set; }
 
@@ -30,198 +30,198 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? SeasonType { get; set; }
 
         /// <summary>
-        /// The college football regular season for which these totals apply
+        /// The college football season of the game
         /// </summary>
-        [Description("The college football regular season for which these totals apply")]
+        [Description("The college football season of the game")]
         [DataMember(Name = "Season", Order = 4)]
         public int? Season { get; set; }
 
         /// <summary>
-        /// Team name
+        /// The team's full name
         /// </summary>
-        [Description("Team name")]
+        [Description("The team's full name")]
         [DataMember(Name = "Name", Order = 5)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 6)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Total number of wins
+        /// Total number of wins by the team in the season
         /// </summary>
-        [Description("Total number of wins")]
+        [Description("Total number of wins by the team in the season")]
         [DataMember(Name = "Wins", Order = 7)]
         public int? Wins { get; set; }
 
         /// <summary>
-        /// Total number of losses
+        /// The total number of losses by the team in the season
         /// </summary>
-        [Description("Total number of losses")]
+        [Description("The total number of losses by the team in the season")]
         [DataMember(Name = "Losses", Order = 8)]
         public int? Losses { get; set; }
 
         /// <summary>
-        /// Total team points for
+        /// Total points scored by the team in the season
         /// </summary>
-        [Description("Total team points for")]
+        [Description("Total points scored by the team in the season")]
         [DataMember(Name = "PointsFor", Order = 9)]
         public int? PointsFor { get; set; }
 
         /// <summary>
-        /// Total team points against
+        /// Total points scored against the team in the season
         /// </summary>
-        [Description("Total team points against")]
+        [Description("Total points scored against the team in the season")]
         [DataMember(Name = "PointsAgainst", Order = 10)]
         public int? PointsAgainst { get; set; }
 
         /// <summary>
-        /// Total team conference wins
+        /// The total number of conference wins by the team
         /// </summary>
-        [Description("Total team conference wins")]
+        [Description("The total number of conference wins by the team")]
         [DataMember(Name = "ConferenceWins", Order = 11)]
         public int? ConferenceWins { get; set; }
 
         /// <summary>
-        /// Total team conference losses
+        /// The total number of conference losses by the team
         /// </summary>
-        [Description("Total team conference losses")]
+        [Description("The total number of conference losses by the team")]
         [DataMember(Name = "ConferenceLosses", Order = 12)]
         public int? ConferenceLosses { get; set; }
 
         /// <summary>
-        /// Total team conference points for
+        /// Total conference points scored by the team
         /// </summary>
-        [Description("Total team conference points for")]
+        [Description("Total conference points scored by the team")]
         [DataMember(Name = "ConferencePointsFor", Order = 13)]
         public int? ConferencePointsFor { get; set; }
 
         /// <summary>
-        /// Total team conference points against
+        /// Total conference points against the team
         /// </summary>
-        [Description("Total team conference points against")]
+        [Description("Total conference points against the team")]
         [DataMember(Name = "ConferencePointsAgainst", Order = 14)]
         public int? ConferencePointsAgainst { get; set; }
 
         /// <summary>
-        /// Total team home wins
+        /// Total home wins by the team in the season
         /// </summary>
-        [Description("Total team home wins")]
+        [Description("Total home wins by the team in the season")]
         [DataMember(Name = "HomeWins", Order = 15)]
         public int? HomeWins { get; set; }
 
         /// <summary>
-        /// Total team home losses
+        /// Total home losses by the team in the season
         /// </summary>
-        [Description("Total team home losses")]
+        [Description("Total home losses by the team in the season")]
         [DataMember(Name = "HomeLosses", Order = 16)]
         public int? HomeLosses { get; set; }
 
         /// <summary>
-        /// Total team road wins
+        /// Total road wins by the team in the season
         /// </summary>
-        [Description("Total team road wins")]
+        [Description("Total road wins by the team in the season")]
         [DataMember(Name = "RoadWins", Order = 17)]
         public int? RoadWins { get; set; }
 
         /// <summary>
-        /// Total team road losses
+        /// Total road losses by the team in the season
         /// </summary>
-        [Description("Total team road losses")]
+        [Description("Total road losses by the team in the season")]
         [DataMember(Name = "RoadLosses", Order = 18)]
         public int? RoadLosses { get; set; }
 
         /// <summary>
-        /// Win/Loss streak of the team
+        /// The current winning or losing streak of the team in the season. A positive number indicates a winning streak, and a negative number indicates a losing streak.
         /// </summary>
-        [Description("Win/Loss streak of the team")]
+        [Description("The current winning or losing streak of the team in the season. A positive number indicates a winning streak, and a negative number indicates a losing streak.")]
         [DataMember(Name = "Streak", Order = 19)]
         public int? Streak { get; set; }
 
         /// <summary>
-        /// Total points scored
+        /// Total points scored by the team in the season
         /// </summary>
-        [Description("Total points scored")]
+        [Description("Total points scored by the team in the season")]
         [DataMember(Name = "Score", Order = 20)]
         public int? Score { get; set; }
 
         /// <summary>
-        /// Total opponent points scored
+        /// Total points scored by the opponent team
         /// </summary>
-        [Description("Total opponent points scored")]
+        [Description("Total points scored by the opponent team")]
         [DataMember(Name = "OpponentScore", Order = 21)]
         public int? OpponentScore { get; set; }
 
         /// <summary>
-        /// Total first downs
+        /// Total first downs converted by the team in the season
         /// </summary>
-        [Description("Total first downs")]
+        [Description("Total first downs converted by the team in the season")]
         [DataMember(Name = "FirstDowns", Order = 22)]
         public int? FirstDowns { get; set; }
 
         /// <summary>
-        /// Third down conversions
+        /// Total third down conversions by the team in the season
         /// </summary>
-        [Description("Third down conversions")]
+        [Description("Total third down conversions by the team in the season")]
         [DataMember(Name = "ThirdDownConversions", Order = 23)]
         public int? ThirdDownConversions { get; set; }
 
         /// <summary>
-        /// Third down attempts
+        /// Total third down attempts by the team in the season
         /// </summary>
-        [Description("Third down attempts")]
+        [Description("Total third down attempts by the team in the season")]
         [DataMember(Name = "ThirdDownAttempts", Order = 24)]
         public int? ThirdDownAttempts { get; set; }
 
         /// <summary>
-        /// Fourth down conversions
+        /// Total fourth down conversions by the team in the season
         /// </summary>
-        [Description("Fourth down conversions")]
+        [Description("Total fourth down conversions by the team in the season")]
         [DataMember(Name = "FourthDownConversions", Order = 25)]
         public int? FourthDownConversions { get; set; }
 
         /// <summary>
-        /// Fourth down attempts
+        /// Total fourth down attempts by the team in the season
         /// </summary>
-        [Description("Fourth down attempts")]
+        [Description("Total fourth down attempts by the team in the season")]
         [DataMember(Name = "FourthDownAttempts", Order = 26)]
         public int? FourthDownAttempts { get; set; }
 
         /// <summary>
-        /// Penalties committed
+        /// Total penalties committed by the team in the season
         /// </summary>
-        [Description("Penalties committed")]
+        [Description("Total penalties committed by the team in the season")]
         [DataMember(Name = "Penalties", Order = 27)]
         public int? Penalties { get; set; }
 
         /// <summary>
-        /// Penalty yards enforced against the Team
+        /// Total penalties yards enforced against the team in the season
         /// </summary>
-        [Description("Penalty yards enforced against the Team")]
+        [Description("Total penalties yards enforced against the team in the season")]
         [DataMember(Name = "PenaltyYards", Order = 28)]
         public int? PenaltyYards { get; set; }
 
         /// <summary>
-        /// Time of possesion minutes
+        /// Total number of minutes the team possessed the ball for in the season
         /// </summary>
-        [Description("Time of possesion minutes")]
+        [Description("Total number of minutes the team possessed the ball for in the season")]
         [DataMember(Name = "TimeOfPossessionMinutes", Order = 29)]
         public int? TimeOfPossessionMinutes { get; set; }
 
         /// <summary>
-        /// Time of possession seconds
+        /// Total number of seconds the team possessed the ball for in the season
         /// </summary>
-        [Description("Time of possession seconds")]
+        [Description("Total number of seconds the team possessed the ball for in the season")]
         [DataMember(Name = "TimeOfPossessionSeconds", Order = 30)]
         public int? TimeOfPossessionSeconds { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for the team. Note: This value is guaranteed to be unique across all sports/leagues.
         /// </summary>
-        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for the team. Note: This value is guaranteed to be unique across all sports/leagues.")]
         [DataMember(Name = "GlobalTeamID", Order = 31)]
         public int? GlobalTeamID { get; set; }
 

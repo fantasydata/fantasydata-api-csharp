@@ -33,12 +33,12 @@ namespace FantasyData.Api.Client
         /// Get Box Score Asynchronous
         /// </summary>
         /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>702</code>, <code>1274</code>, etc.</param>
-        public Task<BoxScore> GetBoxScoreAsync(int gameid)
+        public Task<List<BoxScore>> GetBoxScoreAsync(int gameid)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("gameid", gameid.ToString()));
-            return Task.Run<BoxScore>(() =>
-                base.Get<BoxScore>("/v3/soccer/stats/{format}/BoxScore/{gameid}", parameters)
+            return Task.Run<List<BoxScore>>(() =>
+                base.Get<List<BoxScore>>("/v3/soccer/stats/{format}/BoxScore/{gameid}", parameters)
             );
         }
 
@@ -46,7 +46,7 @@ namespace FantasyData.Api.Client
         /// Get Box Score
         /// </summary>
         /// <param name="gameid">The GameID of a Soccer game. GameIDs can be found in the Games API. Valid entries are <code>702</code>, <code>1274</code>, etc.</param>
-        public BoxScore GetBoxScore(int gameid)
+        public List<BoxScore> GetBoxScore(int gameid)
         {
             return this.GetBoxScoreAsync(gameid).Result;
         }

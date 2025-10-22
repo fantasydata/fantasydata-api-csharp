@@ -9,30 +9,30 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class DfsSlateGame
     {
         /// <summary>
-        /// Unique ID of a SlateGame (assigned by SportsDataIO).
+        /// The unique ID of the SlateGame as assigned by SportsDataIO
         /// </summary>
-        [Description("Unique ID of a SlateGame (assigned by SportsDataIO).")]
+        [Description("The unique ID of the SlateGame as assigned by SportsDataIO")]
         [DataMember(Name = "SlateGameID", Order = 1)]
         public int SlateGameID { get; set; }
 
         /// <summary>
-        /// The SlateID that this SlateGame refers to.
+        /// The unique ID of the slate that this SlateGame refers to
         /// </summary>
-        [Description("The SlateID that this SlateGame refers to.")]
+        [Description("The unique ID of the slate that this SlateGame refers to")]
         [DataMember(Name = "SlateID", Order = 2)]
         public int SlateID { get; set; }
 
         /// <summary>
-        /// The SportsDataIO GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.
+        /// The unique ID of the game that this SlateGame refers to
         /// </summary>
-        [Description("The SportsDataIO GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.")]
+        [Description("The unique ID of the game that this SlateGame refers to")]
         [DataMember(Name = "GameID", Order = 3)]
         public int? GameID { get; set; }
 
         /// <summary>
-        /// The details of the Game that this SlateGame refers to.
+        /// The details of the Game that this SlateGame refers to
         /// </summary>
-        [Description("The details of the Game that this SlateGame refers to.")]
+        [Description("The details of the Game that this SlateGame refers to")]
         [DataMember(Name = "Game", Order = 10004)]
         public Game Game { get; set; }
 

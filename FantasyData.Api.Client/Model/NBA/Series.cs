@@ -9,30 +9,30 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class Series
     {
         /// <summary>
-        /// Number of Wins by the Home Team 
+        /// Total number of wins by the home team in the series
         /// </summary>
-        [Description("Number of Wins by the Home Team ")]
+        [Description("Total number of wins by the home team in the series")]
         [DataMember(Name = "HomeTeamWins", Order = 1)]
         public int HomeTeamWins { get; set; }
 
         /// <summary>
-        /// Number of Wins by the Away Team
+        /// Total wins in the series by the away team
         /// </summary>
-        [Description("Number of Wins by the Away Team")]
+        [Description("Total wins in the series by the away team")]
         [DataMember(Name = "AwayTeamWins", Order = 2)]
         public int AwayTeamWins { get; set; }
 
         /// <summary>
-        /// Game Number in Series
+        /// The game number in the series
         /// </summary>
-        [Description("Game Number in Series")]
+        [Description("The game number in the series")]
         [DataMember(Name = "GameNumber", Order = 3)]
         public int GameNumber { get; set; }
 
         /// <summary>
-        /// Maximum Number of Games in Series
+        /// The maximum number of games that can be played in a series
         /// </summary>
-        [Description("Maximum Number of Games in Series")]
+        [Description("The maximum number of games that can be played in a series")]
         [DataMember(Name = "MaxLength", Order = 4)]
         public int MaxLength { get; set; }
 

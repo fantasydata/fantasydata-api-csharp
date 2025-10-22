@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class PlayerBasic
     {
         /// <summary>
-        /// The unique ID of this golfer
+        /// The unique ID of the golfer
         /// </summary>
-        [Description("The unique ID of this golfer")]
+        [Description("The unique ID of the golfer")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// The first name of this golfer
+        /// The first name of the golfer
         /// </summary>
-        [Description("The first name of this golfer")]
+        [Description("The first name of the golfer")]
         [DataMember(Name = "FirstName", Order = 2)]
         public string FirstName { get; set; }
 
@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? Weight { get; set; }
 
         /// <summary>
-        /// Indicates whether this golfer is right-handed or left-handed (Possible values: R, L)
+        /// Indicates whether this golfer swings right-handed (R) or left-handed (L)
         /// </summary>
-        [Description("Indicates whether this golfer is right-handed or left-handed (Possible values: R, L)")]
+        [Description("Indicates whether this golfer swings right-handed (R) or left-handed (L)")]
         [DataMember(Name = "Swings", Order = 5)]
         public string Swings { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public string Country { get; set; }
 
         /// <summary>
-        /// The birthday of this golfer
+        /// The golfer's date of birth
         /// </summary>
-        [Description("The birthday of this golfer")]
+        [Description("The golfer's date of birth")]
         [DataMember(Name = "BirthDate", Order = 8)]
         public DateTime? BirthDate { get; set; }
 
@@ -72,9 +72,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public string BirthCity { get; set; }
 
         /// <summary>
-        /// The state where this golfer was born
+        /// The state where this golfer was born. Note: This field is null for any golfer born outside the US, Canada, and Australia
         /// </summary>
-        [Description("The state where this golfer was born")]
+        [Description("The state where this golfer was born. Note: This field is null for any golfer born outside the US, Canada, and Australia")]
         [DataMember(Name = "BirthState", Order = 10)]
         public string BirthState { get; set; }
 

@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class BettingOutcome
     {
         /// <summary>
-        /// The unique identifier of this outcome
+        /// The unique ID associated with this specific outcome
         /// </summary>
-        [Description("The unique identifier of this outcome")]
+        [Description("The unique ID associated with this specific outcome")]
         [DataMember(Name = "BettingOutcomeID", Order = 1)]
         public int? BettingOutcomeID { get; set; }
 
         /// <summary>
-        /// The unique identifier of the market this betting outcome exists for
+        /// The unique ID associated with the betting market
         /// </summary>
-        [Description("The unique identifier of the market this betting outcome exists for")]
+        [Description("The unique ID associated with the betting market")]
         [DataMember(Name = "BettingMarketID", Order = 2)]
         public int? BettingMarketID { get; set; }
 
@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.Golf
         public Sportsbook SportsBook { get; set; }
 
         /// <summary>
-        /// The BettingOutcomeTypeID of this outcome
+        /// The ID of this specific outcome type
         /// </summary>
-        [Description("The BettingOutcomeTypeID of this outcome")]
+        [Description("The ID of this specific outcome type")]
         [DataMember(Name = "BettingOutcomeTypeID", Order = 4)]
         public int? BettingOutcomeTypeID { get; set; }
 
         /// <summary>
-        /// The BettingOutcomeType of this outcome
+        /// The name of betting outcome type
         /// </summary>
-        [Description("The BettingOutcomeType of this outcome")]
+        [Description("The name of betting outcome type")]
         [DataMember(Name = "BettingOutcomeType", Order = 5)]
         public string BettingOutcomeType { get; set; }
 
@@ -72,23 +72,23 @@ namespace FantasyData.Api.Client.Model.Golf
         public string Participant { get; set; }
 
         /// <summary>
-        /// Is this outcome available for betting as of last update
+        /// Indicates if this outcome is available for betting as of last update
         /// </summary>
-        [Description("Is this outcome available for betting as of last update")]
+        [Description("Indicates if this outcome is available for betting as of last update")]
         [DataMember(Name = "IsAvailable", Order = 10)]
         public bool? IsAvailable { get; set; }
 
         /// <summary>
-        /// Is this an alternate value or the core value
+        /// Indicates if this is an alternate value or the core value
         /// </summary>
-        [Description("Is this an alternate value or the core value")]
+        [Description("Indicates if this is an alternate value or the core value")]
         [DataMember(Name = "IsAlternate", Order = 11)]
         public bool? IsAlternate { get; set; }
 
         /// <summary>
-        /// The created date of the outcome
+        /// The timestamp of when this betting outcome was created
         /// </summary>
-        [Description("The created date of the outcome")]
+        [Description("The timestamp of when this betting outcome was created")]
         [DataMember(Name = "Created", Order = 12)]
         public DateTime? Created { get; set; }
 
@@ -107,9 +107,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public DateTime? Unlisted { get; set; }
 
         /// <summary>
-        /// The PlayerID of the player assocated with this outcome (where applicable)
+        /// The unique ID of the golfer tied to this outcome
         /// </summary>
-        [Description("The PlayerID of the player assocated with this outcome (where applicable)")]
+        [Description("The unique ID of the golfer tied to this outcome")]
         [DataMember(Name = "PlayerID", Order = 15)]
         public int? PlayerID { get; set; }
 
@@ -128,9 +128,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? GroupKey { get; set; }
 
         /// <summary>
-        /// Indicates if this outcome is considered “in-play/live” (was created after the tournament start date)
+        /// Indicates if this outcome is considered in-play/live (i.e. was created after the tournament start date)
         /// </summary>
-        [Description("Indicates if this outcome is considered “in-play/live” (was created after the tournament start date)")]
+        [Description("Indicates if this outcome is considered in-play/live (i.e. was created after the tournament start date)")]
         [DataMember(Name = "IsInPlayTournamentOdd", Order = 18)]
         public bool? IsInPlayTournamentOdd { get; set; }
 

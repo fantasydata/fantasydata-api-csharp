@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class Referee
     {
         /// <summary>
-        /// The unique identifier of the referee
+        /// The unique ID of the referee
         /// </summary>
-        [Description("The unique identifier of the referee")]
+        [Description("The unique ID of the referee")]
         [DataMember(Name = "RefereeID", Order = 1)]
         public int RefereeID { get; set; }
 

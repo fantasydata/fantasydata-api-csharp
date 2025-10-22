@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class PlayerInfo
     {
         /// <summary>
-        /// Unique ID of the Player (assigned by SportsDataIO)
+        /// The unique ID of the golfer
         /// </summary>
-        [Description("Unique ID of the Player (assigned by SportsDataIO)")]
+        [Description("The unique ID of the golfer")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Full Name of the Golfer
+        /// The full name of the golfer
         /// </summary>
-        [Description("Full Name of the Golfer")]
+        [Description("The full name of the golfer")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 

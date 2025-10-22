@@ -9,65 +9,65 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class GoalieDepthChart
     {
         /// <summary>
-        /// Unique ID of Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("Unique ID of Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 1)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// The key/abbreviation of the team this player is employed by.
+        /// The abbreviation [Key] of the team this player is employed by
         /// </summary>
-        [Description("The key/abbreviation of the team this player is employed by.")]
+        [Description("The abbreviation [Key] of the team this player is employed by")]
         [DataMember(Name = "Team", Order = 2)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID as assigned by SportsDataIO.
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("The player's unique PlayerID as assigned by SportsDataIO.")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 3)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// Name of Player
+        /// The full name of the goaltender
         /// </summary>
-        [Description("Name of Player")]
+        [Description("The full name of the goaltender")]
         [DataMember(Name = "Name", Order = 4)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Type of Depth
+        /// Indicates whether it is a goalie tandem or not for a goalie depth chart (returns Tandem; Regular)
         /// </summary>
-        [Description("Type of Depth")]
+        [Description("Indicates whether it is a goalie tandem or not for a goalie depth chart (returns Tandem; Regular)")]
         [DataMember(Name = "DepthType", Order = 5)]
         public string DepthType { get; set; }
 
         /// <summary>
-        /// Type of Display
+        /// If the goalie depth chart is displayed as a Tandem or as Regular
         /// </summary>
-        [Description("Type of Display")]
+        [Description("If the goalie depth chart is displayed as a Tandem or as Regular")]
         [DataMember(Name = "DisplayType", Order = 6)]
         public string DisplayType { get; set; }
 
         /// <summary>
-        /// Order of Depth
+        /// The order of the goalie in the team's depth chart
         /// </summary>
-        [Description("Order of Depth")]
+        [Description("The order of the goalie in the team's depth chart")]
         [DataMember(Name = "DepthOrder", Order = 7)]
         public int? DepthOrder { get; set; }
 
         /// <summary>
-        /// The timestamp of when the record was created (US Eastern Time).
+        /// The timestamp of when this depth chart was last edited; based on US Eastern Time (EST/EDT)
         /// </summary>
-        [Description("The timestamp of when the record was created (US Eastern Time).")]
+        [Description("The timestamp of when this depth chart was last edited; based on US Eastern Time (EST/EDT)")]
         [DataMember(Name = "Created", Order = 8)]
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// The timestamp of when the record was last updated (US Eastern Time).
+        /// The timestamp of when the record was last updated (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp of when the record was last updated (US Eastern Time).")]
+        [Description("The timestamp of when the record was last updated (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 9)]
         public DateTime? Updated { get; set; }
 

@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class Team
     {
         /// <summary>
-        /// The auto-generated unique ID of the Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("The auto-generated unique ID of the Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 1)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// A unique abbreviation of the team (e.g. OU, TTU, USC, UK, etc.) Due to being selected for uniqueness, these are not always a match with broadcaster abbreviations. For that use case, use ShortDisplayName.
+        /// A unique abbreviation of the team (e.g. OAE; TAS; UAD; KAF; etc.)  Note: Due to being selected for uniqueness; these are not always a match with broadcaster abbreviations. For that use case; use ShortDisplayName
         /// </summary>
-        [Description("A unique abbreviation of the team (e.g. OU, TTU, USC, UK, etc.) Due to being selected for uniqueness, these are not always a match with broadcaster abbreviations. For that use case, use ShortDisplayName.")]
+        [Description("A unique abbreviation of the team (e.g. OAE; TAS; UAD; KAF; etc.)  Note: Due to being selected for uniqueness; these are not always a match with broadcaster abbreviations. For that use case; use ShortDisplayName")]
         [DataMember(Name = "Key", Order = 2)]
         public string Key { get; set; }
 
@@ -44,116 +44,144 @@ namespace FantasyData.Api.Client.Model.CFB
         public string Name { get; set; }
 
         /// <summary>
-        /// The unique ID of the stadium
+        /// The unique ID of the stadium that the team plays its home games at
         /// </summary>
-        [Description("The unique ID of the stadium")]
+        [Description("The unique ID of the stadium that the team plays its home games at")]
         [DataMember(Name = "StadiumID", Order = 6)]
         public int StadiumID { get; set; }
 
         /// <summary>
-        /// The AP Rank of the team 
+        /// The rank of the team assigned to them by the Associated Press (AP)
         /// </summary>
-        [Description("The AP Rank of the team ")]
+        [Description("The rank of the team assigned to them by the Associated Press (AP)")]
         [DataMember(Name = "ApRank", Order = 7)]
         public int? ApRank { get; set; }
 
         /// <summary>
-        /// The total number of wins by the school
+        /// Total number of wins by the team
         /// </summary>
-        [Description("The total number of wins by the school")]
+        [Description("Total number of wins by the team")]
         [DataMember(Name = "Wins", Order = 8)]
         public int? Wins { get; set; }
 
         /// <summary>
-        /// The total number of losses by the school
+        /// The total number of losses by the team in the current season
         /// </summary>
-        [Description("The total number of losses by the school")]
+        [Description("The total number of losses by the team in the current season")]
         [DataMember(Name = "Losses", Order = 9)]
         public int? Losses { get; set; }
 
         /// <summary>
-        /// The total number of conference wins by the school
+        /// The total number of conference wins by the team
         /// </summary>
-        [Description("The total number of conference wins by the school")]
+        [Description("The total number of conference wins by the team")]
         [DataMember(Name = "ConferenceWins", Order = 10)]
         public int? ConferenceWins { get; set; }
 
         /// <summary>
-        /// The total number of conference losses by the school
+        /// The total number of conference losses by the team
         /// </summary>
-        [Description("The total number of conference losses by the school")]
+        [Description("The total number of conference losses by the team")]
         [DataMember(Name = "ConferenceLosses", Order = 11)]
         public int? ConferenceLosses { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for the team. Note: This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for the team. Note: This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalTeamID", Order = 12)]
         public int GlobalTeamID { get; set; }
 
         /// <summary>
-        /// The Coaches Rank of the team 
+        /// The Coaches Rank of the team
         /// </summary>
-        [Description("The Coaches Rank of the team ")]
+        [Description("The Coaches Rank of the team")]
         [DataMember(Name = "CoachesRank", Order = 13)]
         public int? CoachesRank { get; set; }
 
         /// <summary>
-        /// The Playoff Rank of the team 
+        /// The CFP Rank of the team
         /// </summary>
-        [Description("The Playoff Rank of the team ")]
+        [Description("The CFP Rank of the team")]
         [DataMember(Name = "PlayoffRank", Order = 14)]
         public int? PlayoffRank { get; set; }
 
         /// <summary>
-        /// The url of the team logo image.
+        /// The url of the team logo image
         /// </summary>
-        [Description("The url of the team logo image.")]
+        [Description("The url of the team logo image")]
         [DataMember(Name = "TeamLogoUrl", Order = 15)]
         public string TeamLogoUrl { get; set; }
 
         /// <summary>
-        /// The ID of the team's conference
+        /// The unique ID of the team's conference
         /// </summary>
-        [Description("The ID of the team's conference")]
+        [Description("The unique ID of the team's conference")]
         [DataMember(Name = "ConferenceID", Order = 16)]
         public int? ConferenceID { get; set; }
 
         /// <summary>
-        /// The name of the team's conference
+        /// The name of the team's parent conference (e.g. SEC; Big Ten; etc)
         /// </summary>
-        [Description("The name of the team's conference")]
+        [Description("The name of the team's parent conference (e.g. SEC; Big Ten; etc)")]
         [DataMember(Name = "Conference", Order = 17)]
         public string Conference { get; set; }
 
         /// <summary>
-        /// The short display name of the team
+        /// The shortened name of the team
         /// </summary>
-        [Description("The short display name of the team")]
+        [Description("The shortened name of the team")]
         [DataMember(Name = "ShortDisplayName", Order = 18)]
         public string ShortDisplayName { get; set; }
 
         /// <summary>
-        /// The week that the ApRank/CoachesRank was last updated
+        /// The week that the AP Rank/CoachesRank was last updated
         /// </summary>
-        [Description("The week that the ApRank/CoachesRank was last updated")]
+        [Description("The week that the AP Rank/CoachesRank was last updated")]
         [DataMember(Name = "RankWeek", Order = 19)]
         public int? RankWeek { get; set; }
 
         /// <summary>
-        /// The season that the ApRank/CoachesRank was last updated
+        /// The season that the AP Rank/CoachesRank was last updated
         /// </summary>
-        [Description("The season that the ApRank/CoachesRank was last updated")]
+        [Description("The season that the AP Rank/CoachesRank was last updated")]
         [DataMember(Name = "RankSeason", Order = 20)]
         public int? RankSeason { get; set; }
 
         /// <summary>
-        /// The season type that the ApRank/CoachesRank was last updated
+        /// The season type that the AP Rank/CoachesRank was last updated
         /// </summary>
-        [Description("The season type that the ApRank/CoachesRank was last updated")]
+        [Description("The season type that the AP Rank/CoachesRank was last updated")]
         [DataMember(Name = "RankSeasonType", Order = 21)]
         public int? RankSeasonType { get; set; }
+
+        /// <summary>
+        /// The team's primary color. (This is not licensed for public or commercial use)
+        /// </summary>
+        [Description("The team's primary color. (This is not licensed for public or commercial use)")]
+        [DataMember(Name = "PrimaryColor", Order = 22)]
+        public string PrimaryColor { get; set; }
+
+        /// <summary>
+        /// The team's secondary color. (This is not licensed for public or commercial use)
+        /// </summary>
+        [Description("The team's secondary color. (This is not licensed for public or commercial use)")]
+        [DataMember(Name = "SecondaryColor", Order = 23)]
+        public string SecondaryColor { get; set; }
+
+        /// <summary>
+        /// The team's tertiary color. (This is not licensed for public or commercial use)
+        /// </summary>
+        [Description("The team's tertiary color. (This is not licensed for public or commercial use)")]
+        [DataMember(Name = "TertiaryColor", Order = 24)]
+        public string TertiaryColor { get; set; }
+
+        /// <summary>
+        /// The team's quaternary color. (This is not licensed for public or commercial use)
+        /// </summary>
+        [Description("The team's quaternary color. (This is not licensed for public or commercial use)")]
+        [DataMember(Name = "QuaternaryColor", Order = 25)]
+        public string QuaternaryColor { get; set; }
 
     }
 }

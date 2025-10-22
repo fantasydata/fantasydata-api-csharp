@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class TeamTrends
     {
         /// <summary>
-        /// Abbreviation of the team (e.g. LAL, PHI, BOS, CHI, etc.)
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("Abbreviation of the team (e.g. LAL, PHI, BOS, CHI, etc.)")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 1)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The auto-generated unique ID of the Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("The auto-generated unique ID of the Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Upcoming game for this team
+        /// Next scheduled game for the team
         /// </summary>
-        [Description("Upcoming game for this team")]
+        [Description("Next scheduled game for the team")]
         [DataMember(Name = "UpcomingGame", Order = 10003)]
         public Game UpcomingGame { get; set; }
 

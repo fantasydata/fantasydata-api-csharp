@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class RotoworldPlayerNewsPlayerMetaData
     {
         /// <summary>
-        /// The first name of the player as listed by Rotoworld Player News
+        /// The first name of the golfer as listed by Rotoworld Player News
         /// </summary>
-        [Description("The first name of the player as listed by Rotoworld Player News")]
+        [Description("The first name of the golfer as listed by Rotoworld Player News")]
         [DataMember(Name = "PlayerFirstName", Order = 1)]
         public string PlayerFirstName { get; set; }
 
         /// <summary>
-        /// The last name of the player as listed by Rotoworld Player News
+        /// The last name of the golfer as listed by Rotoworld Player News
         /// </summary>
-        [Description("The last name of the player as listed by Rotoworld Player News")]
+        [Description("The last name of the golfer as listed by Rotoworld Player News")]
         [DataMember(Name = "PlayerLastName", Order = 2)]
         public string PlayerLastName { get; set; }
 
@@ -30,23 +30,23 @@ namespace FantasyData.Api.Client.Model.Golf
         public string RotoworldPlayerId { get; set; }
 
         /// <summary>
-        /// The Stats Player ID of the player related to the news item as listed by Rotoworld Player News
+        /// The Stats Player ID of the golfer related to the news item as listed by Rotoworld Player News
         /// </summary>
-        [Description("The Stats Player ID of the player related to the news item as listed by Rotoworld Player News")]
+        [Description("The Stats Player ID of the golfer related to the news item as listed by Rotoworld Player News")]
         [DataMember(Name = "StatsPlayerID", Order = 4)]
         public int? StatsPlayerID { get; set; }
 
         /// <summary>
-        /// The SportRadar Player ID of the player related to the news item as listed by Rotoworld Player News
+        /// The SportRadar Player ID of the golfer related to the news item as listed by Rotoworld Player News
         /// </summary>
-        [Description("The SportRadar Player ID of the player related to the news item as listed by Rotoworld Player News")]
+        [Description("The SportRadar Player ID of the golfer related to the news item as listed by Rotoworld Player News")]
         [DataMember(Name = "SportRadarPlayerID", Order = 5)]
         public string SportRadarPlayerID { get; set; }
 
         /// <summary>
-        /// The status of the player related to the news item as listed by Rotoworld Player News
+        /// The status of the golfer related to the news item as listed by Rotoworld Player News
         /// </summary>
-        [Description("The status of the player related to the news item as listed by Rotoworld Player News")]
+        [Description("The status of the golfer related to the news item as listed by Rotoworld Player News")]
         [DataMember(Name = "PlayerStatus", Order = 6)]
         public string PlayerStatus { get; set; }
 

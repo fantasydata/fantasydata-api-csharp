@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.Tennis
     public partial class TourSeason
     {
         /// <summary>
-        /// Unique ID of Tour Season.
+        /// The unique ID of tour season
         /// </summary>
-        [Description("Unique ID of Tour Season.")]
+        [Description("The unique ID of tour season")]
         [DataMember(Name = "TourSeasonId", Order = 1)]
         public int TourSeasonId { get; set; }
 
         /// <summary>
-        /// ID of associated Tour.
+        /// The unique ID of the tour
         /// </summary>
-        [Description("ID of associated Tour.")]
+        [Description("The unique ID of the tour")]
         [DataMember(Name = "TourId", Order = 2)]
         public int TourId { get; set; }
 
         /// <summary>
-        /// Year of Tour Season.
+        /// The year in which the tour season takes place
         /// </summary>
-        [Description("Year of Tour Season.")]
+        [Description("The year in which the tour season takes place")]
         [DataMember(Name = "Year", Order = 3)]
         public int? Year { get; set; }
 

@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public int SeasonID { get; set; }
 
         /// <summary>
-        /// The calendar years spanned by this season
+        /// The calendar year that the current season is happening
         /// </summary>
-        [Description("The calendar years spanned by this season")]
+        [Description("The calendar year that the current season is happening")]
         [DataMember(Name = "Description", Order = 2)]
         public string Description { get; set; }
 

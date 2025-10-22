@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.CFB
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// The CFB week of the game (e.g. 1, 2, 3, etc.)
+        /// The week of the game
         /// </summary>
-        [Description("The CFB week of the game (e.g. 1, 2, 3, etc.)")]
+        [Description("The week of the game")]
         [DataMember(Name = "Week", Order = 4)]
         public int? Week { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled, Forfeit
+        /// The status of the game. Possible values include: Scheduled; InProgress; Final; F/OT; Suspended; Postponed; Delayed; Canceled; Forfeit
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled, Forfeit")]
+        [Description("The status of the game. Possible values include: Scheduled; InProgress; Final; F/OT; Suspended; Postponed; Delayed; Canceled; Forfeit")]
         [DataMember(Name = "Status", Order = 5)]
         public string Status { get; set; }
 
@@ -51,23 +51,23 @@ namespace FantasyData.Api.Client.Model.CFB
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date and time of the game
+        /// The date and time of the game (in US Eastern Time)
         /// </summary>
-        [Description("The date and time of the game")]
+        [Description("The date and time of the game (in US Eastern Time)")]
         [DataMember(Name = "DateTime", Order = 7)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Away Team
+        /// The abbreviation [Key] of the away team
         /// </summary>
-        [Description("The abbreviation of the Away Team")]
+        [Description("The abbreviation [Key] of the away team")]
         [DataMember(Name = "AwayTeam", Order = 8)]
         public string AwayTeam { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Home Team
+        /// The abbreviation [Key] of the home team
         /// </summary>
-        [Description("The abbreviation of the Home Team")]
+        [Description("The abbreviation [Key] of the home team")]
         [DataMember(Name = "HomeTeam", Order = 9)]
         public string HomeTeam { get; set; }
 
@@ -114,51 +114,51 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? HomeTeamScore { get; set; }
 
         /// <summary>
-        /// The current quarter in the game (Possible Values: 1, 2, 3, 4, Half, OT, F, F/OT, NULL)
+        /// The current quarter in the game  (Possible Values: 1; 2; 3; 4; Half; OT; F; F/OT; NULL)
         /// </summary>
-        [Description("The current quarter in the game (Possible Values: 1, 2, 3, 4, Half, OT, F, F/OT, NULL)")]
+        [Description("The current quarter in the game  (Possible Values: 1; 2; 3; 4; Half; OT; F; F/OT; NULL)")]
         [DataMember(Name = "Period", Order = 16)]
         public string Period { get; set; }
 
         /// <summary>
-        /// Number of minutes remaining in the quarter
+        /// Total number of minutes remaining in the quarter
         /// </summary>
-        [Description("Number of minutes remaining in the quarter")]
+        [Description("Total number of minutes remaining in the quarter")]
         [DataMember(Name = "TimeRemainingMinutes", Order = 17)]
         public int? TimeRemainingMinutes { get; set; }
 
         /// <summary>
-        /// Number of seconds remaining in the quarter
+        /// Total number of seconds remaining in the quarter
         /// </summary>
-        [Description("Number of seconds remaining in the quarter")]
+        [Description("Total number of seconds remaining in the quarter")]
         [DataMember(Name = "TimeRemainingSeconds", Order = 18)]
         public int? TimeRemainingSeconds { get; set; }
 
         /// <summary>
-        /// The oddsmaker Point Spread at game start from the perspective of the HomeTeam (negative numbers indicate the HomeTeam is favored, positive numbers indicate the AwayTeam is favored). This is updated once daily at 4:00 AM ET.
+        /// The oddsmaker Point Spread at game start from the perspective of the HomeTeam. Note: negative numbers indicate the HomeTeam is favored; positive numbers indicate the AwayTeam is favored
         /// </summary>
-        [Description("The oddsmaker Point Spread at game start from the perspective of the HomeTeam (negative numbers indicate the HomeTeam is favored, positive numbers indicate the AwayTeam is favored). This is updated once daily at 4:00 AM ET.")]
+        [Description("The oddsmaker Point Spread at game start from the perspective of the HomeTeam. Note: negative numbers indicate the HomeTeam is favored; positive numbers indicate the AwayTeam is favored")]
         [DataMember(Name = "PointSpread", Order = 19)]
         public decimal? PointSpread { get; set; }
 
         /// <summary>
-        /// The oddsmaker Over/Under at game start. This is updated once daily at 4:00 AM ET.
+        /// The sportsbook's total points line at game start
         /// </summary>
-        [Description("The oddsmaker Over/Under at game start. This is updated once daily at 4:00 AM ET.")]
+        [Description("The sportsbook's total points line at game start")]
         [DataMember(Name = "OverUnder", Order = 20)]
         public decimal? OverUnder { get; set; }
 
         /// <summary>
-        /// Money line from the perspective of the away team. This is updated once daily at 4:00 AM ET.
+        /// The sportsbook's moneyline for the away team
         /// </summary>
-        [Description("Money line from the perspective of the away team. This is updated once daily at 4:00 AM ET.")]
+        [Description("The sportsbook's moneyline for the away team")]
         [DataMember(Name = "AwayTeamMoneyLine", Order = 21)]
         public int? AwayTeamMoneyLine { get; set; }
 
         /// <summary>
-        /// Money line from the perspective of the home team. This is updated once daily at 4:00 AM ET.
+        /// The sportsbook's moneyline for the home team
         /// </summary>
-        [Description("Money line from the perspective of the home team. This is updated once daily at 4:00 AM ET.")]
+        [Description("The sportsbook's moneyline for the home team")]
         [DataMember(Name = "HomeTeamMoneyLine", Order = 22)]
         public int? HomeTeamMoneyLine { get; set; }
 
@@ -170,37 +170,37 @@ namespace FantasyData.Api.Client.Model.CFB
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The timestamp of when this game was first created (US Eastern Time)
+        /// The timestamp of when this game was first created (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp of when this game was first created (US Eastern Time)")]
+        [Description("The timestamp of when this game was first created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 24)]
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this game.  Note: This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this game.  Note: This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalGameID", Order = 25)]
         public int GlobalGameID { get; set; }
 
         /// <summary>
-        /// A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for the away team. Note: This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for the away team. Note: This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalAwayTeamID", Order = 26)]
         public int GlobalAwayTeamID { get; set; }
 
         /// <summary>
-        /// A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for the home team. Note: This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for the home team. Note: This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalHomeTeamID", Order = 27)]
         public int GlobalHomeTeamID { get; set; }
 
         /// <summary>
-        /// The unique ID of the stadium/venue where this game was played.
+        /// The unique ID of the stadium/venue where this game was played
         /// </summary>
-        [Description("The unique ID of the stadium/venue where this game was played.")]
+        [Description("The unique ID of the stadium/venue where this game was played")]
         [DataMember(Name = "StadiumID", Order = 28)]
         public int? StadiumID { get; set; }
 
@@ -212,16 +212,16 @@ namespace FantasyData.Api.Client.Model.CFB
         public Stadium Stadium { get; set; }
 
         /// <summary>
-        /// The yard line the ball is on
+        /// The yard line that the ball is on at the current state of the game
         /// </summary>
-        [Description("The yard line the ball is on")]
+        [Description("The yard line that the ball is on at the current state of the game")]
         [DataMember(Name = "YardLine", Order = 30)]
         public int? YardLine { get; set; }
 
         /// <summary>
-        /// Which team's side of the field the ball is on
+        /// The team's side of the field that the ball is on
         /// </summary>
-        [Description("Which team's side of the field the ball is on")]
+        [Description("The team's side of the field that the ball is on")]
         [DataMember(Name = "YardLineTerritory", Order = 31)]
         public string YardLineTerritory { get; set; }
 
@@ -254,16 +254,16 @@ namespace FantasyData.Api.Client.Model.CFB
         public Period[] Periods { get; set; }
 
         /// <summary>
-        /// Indicates whether the game is over and the final score has been verified and closed out
+        /// Indicates whether the game is over and the final score has been verified
         /// </summary>
-        [Description("Indicates whether the game is over and the final score has been verified and closed out")]
+        [Description("Indicates whether the game is over and the final score has been verified")]
         [DataMember(Name = "IsClosed", Order = 36)]
         public bool IsClosed { get; set; }
 
         /// <summary>
-        /// The date and time that the game ended in US Eastern Time
+        /// The date and time that the game ended (in US Eastern Time)
         /// </summary>
-        [Description("The date and time that the game ended in US Eastern Time")]
+        [Description("The date and time that the game ended (in US Eastern Time)")]
         [DataMember(Name = "GameEndDateTime", Order = 37)]
         public DateTime? GameEndDateTime { get; set; }
 
@@ -303,9 +303,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public bool? NeutralVenue { get; set; }
 
         /// <summary>
-        /// The point spread payout for the away team
+        /// The sportsbook's point spread payout for the away team
         /// </summary>
-        [Description("The point spread payout for the away team")]
+        [Description("The sportsbook's point spread payout for the away team")]
         [DataMember(Name = "AwayPointSpreadPayout", Order = 43)]
         public int? AwayPointSpreadPayout { get; set; }
 
@@ -317,30 +317,30 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? HomePointSpreadPayout { get; set; }
 
         /// <summary>
-        /// The payout when betting the Over of the Over/Under
+        /// The sportsbook's payout for the over in the total points line
         /// </summary>
-        [Description("The payout when betting the Over of the Over/Under")]
+        [Description("The sportsbook's payout for the over in the total points line")]
         [DataMember(Name = "OverPayout", Order = 45)]
         public int? OverPayout { get; set; }
 
         /// <summary>
-        /// The payout when betting the Under of the Over/Under
+        /// The sportsbook's payout for the under
         /// </summary>
-        [Description("The payout when betting the Under of the Over/Under")]
+        [Description("The sportsbook's payout for the under")]
         [DataMember(Name = "UnderPayout", Order = 46)]
         public int? UnderPayout { get; set; }
 
         /// <summary>
-        /// The date and time of the game in UTC
+        /// The date and time of the game (in UTC)
         /// </summary>
-        [Description("The date and time of the game in UTC")]
+        [Description("The date and time of the game (in UTC)")]
         [DataMember(Name = "DateTimeUTC", Order = 47)]
         public DateTime? DateTimeUTC { get; set; }
 
         /// <summary>
-        /// The attendance of the game when available
+        /// The total number of people who attended the game
         /// </summary>
-        [Description("The attendance of the game when available")]
+        [Description("The total number of people who attended the game")]
         [DataMember(Name = "Attendance", Order = 48)]
         public int? Attendance { get; set; }
 

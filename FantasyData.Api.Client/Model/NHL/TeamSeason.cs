@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 5=AllStar; 6=Exhibition)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 5=AllStar; 6=Exhibition)")]
         [DataMember(Name = "SeasonType", Order = 3)]
         public int? SeasonType { get; set; }
 
@@ -37,37 +37,37 @@ namespace FantasyData.Api.Client.Model.NHL
         public int? Season { get; set; }
 
         /// <summary>
-        /// Team name
+        /// The team's full name (ex. Minnesota Wild; New York Islanders)
         /// </summary>
-        [Description("Team name")]
+        [Description("The team's full name (ex. Minnesota Wild; New York Islanders)")]
         [DataMember(Name = "Name", Order = 5)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 6)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Total number of wins
+        /// Total number of wins by the team in the season
         /// </summary>
-        [Description("Total number of wins")]
+        [Description("Total number of wins by the team in the season")]
         [DataMember(Name = "Wins", Order = 7)]
         public int? Wins { get; set; }
 
         /// <summary>
-        /// Total number of losses
+        /// Total losses for the team in the season
         /// </summary>
-        [Description("Total number of losses")]
+        [Description("Total losses for the team in the season")]
         [DataMember(Name = "Losses", Order = 8)]
         public int? Losses { get; set; }
 
         /// <summary>
-        /// Total number of overtime losses
+        /// Total overtime losses by the team in the season
         /// </summary>
-        [Description("Total number of overtime losses")]
+        [Description("Total overtime losses by the team in the season")]
         [DataMember(Name = "OvertimeLosses", Order = 9)]
         public int? OvertimeLosses { get; set; }
 
@@ -79,9 +79,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public string OpponentPosition { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalTeamID", Order = 11)]
         public int? GlobalTeamID { get; set; }
 

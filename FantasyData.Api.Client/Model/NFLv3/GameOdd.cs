@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class GameOdd
     {
         /// <summary>
-        /// Unique ID of this odd
+        /// The unique ID of this odd
         /// </summary>
-        [Description("Unique ID of this odd")]
+        [Description("The unique ID of this odd")]
         [DataMember(Name = "GameOddId", Order = 1)]
         public int GameOddId { get; set; }
 
@@ -23,16 +23,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Sportsbook { get; set; }
 
         /// <summary>
-        /// Unique ID of the Score/Game.
+        /// Unique ID of the score/game
         /// </summary>
-        [Description("Unique ID of the Score/Game.")]
+        [Description("Unique ID of the score/game")]
         [DataMember(Name = "ScoreId", Order = 3)]
         public int ScoreId { get; set; }
 
         /// <summary>
-        /// The timestamp of when these odds were first created, based on US Eatern Time (EST/EDT).
+        /// The timestamp of when these odds were first created (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp of when these odds were first created, based on US Eatern Time (EST/EDT).")]
+        [Description("The timestamp of when these odds were first created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 4)]
         public DateTime Created { get; set; }
 
@@ -44,23 +44,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public DateTime Updated { get; set; }
 
         /// <summary>
-        /// The sportsbook's money line for the home team
+        /// The sportsbook's moneyline for the home team
         /// </summary>
-        [Description("The sportsbook's money line for the home team")]
+        [Description("The sportsbook's moneyline for the home team")]
         [DataMember(Name = "HomeMoneyLine", Order = 6)]
         public int? HomeMoneyLine { get; set; }
 
         /// <summary>
-        /// The sportsbook's money line for the away team
+        /// The sportsbook's moneyline for the away team
         /// </summary>
-        [Description("The sportsbook's money line for the away team")]
+        [Description("The sportsbook's moneyline for the away team")]
         [DataMember(Name = "AwayMoneyLine", Order = 7)]
         public int? AwayMoneyLine { get; set; }
 
         /// <summary>
-        /// The sportsbook's money line for a draw
+        /// The sportsbook's moneyline for a draw
         /// </summary>
-        [Description("The sportsbook's money line for a draw")]
+        [Description("The sportsbook's moneyline for a draw")]
         [DataMember(Name = "DrawMoneyLine", Order = 8)]
         public int? DrawMoneyLine { get; set; }
 
@@ -93,16 +93,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? AwayPointSpreadPayout { get; set; }
 
         /// <summary>
-        /// The sportsbook's total points scored over under for the game
+        /// The sportsbook's total points scored (over/under) for the game
         /// </summary>
-        [Description("The sportsbook's total points scored over under for the game")]
+        [Description("The sportsbook's total points scored (over/under) for the game")]
         [DataMember(Name = "OverUnder", Order = 13)]
         public decimal? OverUnder { get; set; }
 
         /// <summary>
-        /// The sportsbook's payout for the over
+        /// The sportsbook's payout for over the total points line
         /// </summary>
-        [Description("The sportsbook's payout for the over")]
+        [Description("The sportsbook's payout for over the total points line")]
         [DataMember(Name = "OverPayout", Order = 14)]
         public int? OverPayout { get; set; }
 
@@ -135,16 +135,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string SportsbookUrl { get; set; }
 
         /// <summary>
-        /// Unique ID of the Score/Game (identical to ScoreID but using the updated naming)
+        /// The unique ID of this game
         /// </summary>
-        [Description("Unique ID of the Score/Game (identical to ScoreID but using the updated naming)")]
+        [Description("The unique ID of this game")]
         [DataMember(Name = "GameId", Order = 19)]
         public int GameId { get; set; }
 
         /// <summary>
-        /// The timestamp when these odds were no longer seen, based on US Eastern Time (EST/EDT)
+        /// The datetime the outcome was unlisted (no longer available for bets) in US eastern time
         /// </summary>
-        [Description("The timestamp when these odds were no longer seen, based on US Eastern Time (EST/EDT)")]
+        [Description("The datetime the outcome was unlisted (no longer available for bets) in US eastern time")]
         [DataMember(Name = "Unlisted", Order = 20)]
         public DateTime? Unlisted { get; set; }
 

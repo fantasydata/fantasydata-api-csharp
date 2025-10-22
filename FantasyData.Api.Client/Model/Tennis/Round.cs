@@ -9,65 +9,65 @@ namespace FantasyData.Api.Client.Model.Tennis
     public partial class Round
     {
         /// <summary>
-        /// Unique ID of Round.
+        /// The unique ID of the round
         /// </summary>
-        [Description("Unique ID of Round.")]
+        [Description("The unique ID of the round")]
         [DataMember(Name = "RoundId", Order = 1)]
         public int RoundId { get; set; }
 
         /// <summary>
-        /// ID of associated Season
+        /// The unique ID of the season associated with this round
         /// </summary>
-        [Description("ID of associated Season")]
+        [Description("The unique ID of the season associated with this round")]
         [DataMember(Name = "SeasonId", Order = 2)]
         public int SeasonId { get; set; }
 
         /// <summary>
-        /// ID of associated Discipline.
+        /// The ID of associated discipline
         /// </summary>
-        [Description("ID of associated Discipline.")]
+        [Description("The ID of associated discipline")]
         [DataMember(Name = "DisciplineId", Order = 3)]
         public int DisciplineId { get; set; }
 
         /// <summary>
-        /// Name of associated Season.
+        /// The name of the season associated with this round
         /// </summary>
-        [Description("Name of associated Season.")]
+        [Description("The name of the season associated with this round")]
         [DataMember(Name = "SeasonName", Order = 4)]
         public string SeasonName { get; set; }
 
         /// <summary>
-        /// Name of associated Discipline.
+        /// Name of the associated discipline (Singles; Doubles; Mixed Doubles)
         /// </summary>
-        [Description("Name of associated Discipline.")]
+        [Description("Name of the associated discipline (Singles; Doubles; Mixed Doubles)")]
         [DataMember(Name = "DisciplineType", Order = 5)]
         public string DisciplineType { get; set; }
 
         /// <summary>
-        /// Gender of Round.
+        /// Gender of players associated with this round
         /// </summary>
-        [Description("Gender of Round.")]
+        [Description("Gender of players associated with this round")]
         [DataMember(Name = "Gender", Order = 6)]
         public string Gender { get; set; }
 
         /// <summary>
-        /// Name of Round (eg. Round of 128, Semi Finals, etc.)
+        /// The name of round (e.g. Round of 128; Semi Finals; etc.)
         /// </summary>
-        [Description("Name of Round (eg. Round of 128, Semi Finals, etc.)")]
+        [Description("The name of round (e.g. Round of 128; Semi Finals; etc.)")]
         [DataMember(Name = "Name", Order = 7)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Start Date of Round.
+        /// Start date of round
         /// </summary>
-        [Description("Start Date of Round.")]
+        [Description("Start date of round")]
         [DataMember(Name = "StartDate", Order = 8)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// End Date of Round.
+        /// End date of round (last day of matches)
         /// </summary>
-        [Description("End Date of Round.")]
+        [Description("End date of round (last day of matches)")]
         [DataMember(Name = "EndDate", Order = 9)]
         public DateTime? EndDate { get; set; }
 

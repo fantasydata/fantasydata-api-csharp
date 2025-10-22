@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class PlayerBasic
     {
         /// <summary>
-        /// The player's unique PlayerID as assigned by SportsDataIO.
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("The player's unique PlayerID as assigned by SportsDataIO.")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Status { get; set; }
 
         /// <summary>
-        /// The TeamID of the team this player is employed by.
+        /// The unique ID of the player's team
         /// </summary>
-        [Description("The TeamID of the team this player is employed by.")]
+        [Description("The unique ID of the player's team")]
         [DataMember(Name = "TeamID", Order = 4)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The key/abbreviation of the team this player is employed by.
+        /// The abbreviation [Key] of the player's team
         /// </summary>
-        [Description("The key/abbreviation of the team this player is employed by.")]
+        [Description("The abbreviation [Key] of the player's team")]
         [DataMember(Name = "Team", Order = 5)]
         public string Team { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string PositionCategory { get; set; }
 
         /// <summary>
-        /// The player's primary position. Possible values: C, PF, PG, SF, SG
+        /// The player's primary position. Possible values: PG; SG; SF; PF; C
         /// </summary>
-        [Description("The player's primary position. Possible values: C, PF, PG, SF, SG")]
+        [Description("The player's primary position. Possible values: PG; SG; SF; PF; C")]
         [DataMember(Name = "Position", Order = 8)]
         public string Position { get; set; }
 

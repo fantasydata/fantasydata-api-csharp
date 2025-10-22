@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class Tournament
     {
         /// <summary>
-        /// The unique ID of this tournament
+        /// The unique ID of the tournament
         /// </summary>
-        [Description("The unique ID of this tournament")]
+        [Description("The unique ID of the tournament")]
         [DataMember(Name = "TournamentID", Order = 1)]
         public int TournamentID { get; set; }
 
         /// <summary>
-        /// The name of this tournament
+        /// The name of the tournament
         /// </summary>
-        [Description("The name of this tournament")]
+        [Description("The name of the tournament")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public string Venue { get; set; }
 
         /// <summary>
-        /// The physical location of this tournament
+        /// The location where this tournament is played
         /// </summary>
-        [Description("The physical location of this tournament")]
+        [Description("The location where this tournament is played")]
         [DataMember(Name = "Location", Order = 8)]
         public string Location { get; set; }
 
@@ -72,9 +72,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? Par { get; set; }
 
         /// <summary>
-        /// The total yards of all 18 holes of this course
+        /// The total course yardage
         /// </summary>
-        [Description("The total yards of all 18 holes of this course")]
+        [Description("The total course yardage")]
         [DataMember(Name = "Yards", Order = 10)]
         public int? Yards { get; set; }
 
@@ -86,23 +86,23 @@ namespace FantasyData.Api.Client.Model.Golf
         public decimal? Purse { get; set; }
 
         /// <summary>
-        /// The first tee time of the upcoming round of this tournament (starting after 2020, this value will be in ET)
+        /// The first tee time of the upcoming round of this tournament (in US Eastern Time)
         /// </summary>
-        [Description("The first tee time of the upcoming round of this tournament (starting after 2020, this value will be in ET)")]
+        [Description("The first tee time of the upcoming round of this tournament (in US Eastern Time)")]
         [DataMember(Name = "StartDateTime", Order = 12)]
         public DateTime? StartDateTime { get; set; }
 
         /// <summary>
-        /// Indicates whether this tournament is canceled
+        /// Indicates whether this tournament is canceled or not
         /// </summary>
-        [Description("Indicates whether this tournament is canceled")]
+        [Description("Indicates whether this tournament is canceled or not")]
         [DataMember(Name = "Canceled", Order = 13)]
         public bool? Canceled { get; set; }
 
         /// <summary>
-        /// Indicates whether this tournament is covered (only stroke format tournaments are covered)
+        /// Indicates whether this tournament is covered. Note: only stroke format tournaments are covered
         /// </summary>
-        [Description("Indicates whether this tournament is covered (only stroke format tournaments are covered)")]
+        [Description("Indicates whether this tournament is covered. Note: only stroke format tournaments are covered")]
         [DataMember(Name = "Covered", Order = 14)]
         public bool? Covered { get; set; }
 
@@ -163,9 +163,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public string SportRadarTournamentID { get; set; }
 
         /// <summary>
-        /// Indicates coverage status for odds ('None', 'Limited', 'Full')
+        /// Shows the type of odds coverage for the tournament, with possible values being 'None'; 'Limited'; or 'Full'
         /// </summary>
-        [Description("Indicates coverage status for odds ('None', 'Limited', 'Full')")]
+        [Description("Shows the type of odds coverage for the tournament, with possible values being 'None'; 'Limited'; or 'Full'")]
         [DataMember(Name = "OddsCoverage", Order = 23)]
         public string OddsCoverage { get; set; }
 

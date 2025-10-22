@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class GameInfo
     {
         /// <summary>
-        /// Unique ID of the Game.
+        /// The unique ID of this game
         /// </summary>
-        [Description("Unique ID of the Game.")]
+        [Description("The unique ID of this game")]
         [DataMember(Name = "GameId", Order = 1)]
         public int GameId { get; set; }
 
         /// <summary>
-        /// The calendar year of the season during which this game occurs.
+        /// The college football season of the game
         /// </summary>
-        [Description("The calendar year of the season during which this game occurs.")]
+        [Description("The college football season of the game")]
         [DataMember(Name = "Season", Order = 2)]
         public int Season { get; set; }
 
@@ -30,79 +30,79 @@ namespace FantasyData.Api.Client.Model.CFB
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// The week during the season/round in which this game occurs.
+        /// The week of the game
         /// </summary>
-        [Description("The week during the season/round in which this game occurs.")]
+        [Description("The week of the game")]
         [DataMember(Name = "Week", Order = 4)]
         public int? Week { get; set; }
 
         /// <summary>
-        /// The day that the game is scheduled to be played in UTC.
+        /// The date of the game
         /// </summary>
-        [Description("The day that the game is scheduled to be played in UTC.")]
+        [Description("The date of the game")]
         [DataMember(Name = "Day", Order = 5)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date/time that the game is scheduled to be played in UTC.
+        /// The date and time of the game (in US Eastern Time)
         /// </summary>
-        [Description("The date/time that the game is scheduled to be played in UTC.")]
+        [Description("The date and time of the game (in US Eastern Time)")]
         [DataMember(Name = "DateTime", Order = 6)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled, Forfeit
+        /// The status of the game. Possible values include: Scheduled; InProgress; Final; F/OT; Suspended; Postponed; Delayed; Canceled; Forfeit
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, F/OT, Suspended, Postponed, Delayed, Canceled, Forfeit")]
+        [Description("The status of the game. Possible values include: Scheduled; InProgress; Final; F/OT; Suspended; Postponed; Delayed; Canceled; Forfeit")]
         [DataMember(Name = "Status", Order = 7)]
         public string Status { get; set; }
 
         /// <summary>
-        /// The TeamId of the away team.
+        /// The unique ID of the away team
         /// </summary>
-        [Description("The TeamId of the away team.")]
+        [Description("The unique ID of the away team")]
         [DataMember(Name = "AwayTeamId", Order = 8)]
         public int? AwayTeamId { get; set; }
 
         /// <summary>
-        /// The TeamId of the home team.
+        /// The unique ID of the home team
         /// </summary>
-        [Description("The TeamId of the home team.")]
+        [Description("The unique ID of the home team")]
         [DataMember(Name = "HomeTeamId", Order = 9)]
         public int? HomeTeamId { get; set; }
 
         /// <summary>
-        /// The name of the away team.
+        /// The name of the away team
         /// </summary>
-        [Description("The name of the away team.")]
+        [Description("The name of the away team")]
         [DataMember(Name = "AwayTeamName", Order = 10)]
         public string AwayTeamName { get; set; }
 
         /// <summary>
-        /// The name of the home team.
+        /// The name of the home team
         /// </summary>
-        [Description("The name of the home team.")]
+        [Description("The name of the home team")]
         [DataMember(Name = "HomeTeamName", Order = 11)]
         public string HomeTeamName { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this game.  Note: This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this game.  Note: This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalGameId", Order = 12)]
         public int GlobalGameId { get; set; }
 
         /// <summary>
-        /// A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for the away team. Note: This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for the away team. Note: This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalAwayTeamId", Order = 13)]
         public int? GlobalAwayTeamId { get; set; }
 
         /// <summary>
-        /// A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for the home team. Note: This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for the home team. Note: This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalHomeTeamId", Order = 14)]
         public int? GlobalHomeTeamId { get; set; }
 
@@ -135,9 +135,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? AwayTeamScore { get; set; }
 
         /// <summary>
-        /// Total scored points in the game (updated after game ends to allow for resolving bets)
+        /// The total points scored by both teams in the game tied to this event (updated after game ends to allow for resolving bets)
         /// </summary>
-        [Description("Total scored points in the game (updated after game ends to allow for resolving bets)")]
+        [Description("The total points scored by both teams in the game tied to this event (updated after game ends to allow for resolving bets)")]
         [DataMember(Name = "TotalScore", Order = 19)]
         public int? TotalScore { get; set; }
 

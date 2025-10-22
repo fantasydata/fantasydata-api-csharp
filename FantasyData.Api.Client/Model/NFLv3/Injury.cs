@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class Injury
     {
         /// <summary>
-        /// Unique ID of the injury status
+        /// The unique ID of the injury record for the player
         /// </summary>
-        [Description("Unique ID of the injury status")]
+        [Description("The unique ID of the injury record for the player")]
         [DataMember(Name = "InjuryID", Order = 1)]
         public int InjuryID { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this player corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=All-Star)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this player corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=All-Star)")]
         [DataMember(Name = "SeasonType", Order = 2)]
         public int SeasonType { get; set; }
 
@@ -30,107 +30,107 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int Season { get; set; }
 
         /// <summary>
-        /// The week of the game that this injury leads up to
+        /// The NFL week of the game that this injury leads up to (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). Note: seasons prior to 2021 will have 3 preseason weeks.
         /// </summary>
-        [Description("The week of the game that this injury leads up to")]
+        [Description("The NFL week of the game that this injury leads up to (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). Note: seasons prior to 2021 will have 3 preseason weeks.")]
         [DataMember(Name = "Week", Order = 4)]
         public int Week { get; set; }
 
         /// <summary>
-        /// The PlayerID of the injured player
+        /// The unique PlayerID of the player as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career.
         /// </summary>
-        [Description("The PlayerID of the injured player")]
+        [Description("The unique PlayerID of the player as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career.")]
         [DataMember(Name = "PlayerID", Order = 5)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// The full name of the injured player
+        /// Player's full name
         /// </summary>
-        [Description("The full name of the injured player")]
+        [Description("Player's full name")]
         [DataMember(Name = "Name", Order = 6)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The position of the injured player
+        /// The primary position of the player. Possible Values: C; CB; DB; DE; DL; DT; FB; FS; G; ILB; K; KR; LB; LS; NT; OL; OLB; OT; P; QB; RB; S; SS; T; TE; WR.
         /// </summary>
-        [Description("The position of the injured player")]
+        [Description("The primary position of the player. Possible Values: C; CB; DB; DE; DL; DT; FB; FS; G; ILB; K; KR; LB; LS; NT; OL; OLB; OT; P; QB; RB; S; SS; T; TE; WR.")]
         [DataMember(Name = "Position", Order = 7)]
         public string Position { get; set; }
 
         /// <summary>
-        /// The jersey number of the injured player
+        /// Player's jersey number
         /// </summary>
-        [Description("The jersey number of the injured player")]
+        [Description("Player's jersey number")]
         [DataMember(Name = "Number", Order = 8)]
         public int Number { get; set; }
 
         /// <summary>
-        /// The team the injured player is on
+        /// The abbreviation [Key] of the team that the player is on. Note: If this player is a free agent; this field is NULL.
         /// </summary>
-        [Description("The team the injured player is on")]
+        [Description("The abbreviation [Key] of the team that the player is on. Note: If this player is a free agent; this field is NULL.")]
         [DataMember(Name = "Team", Order = 9)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The upcoming opponent of the injured player
+        /// The abbreviation [Key] of the opponent team of the injured player
         /// </summary>
-        [Description("The upcoming opponent of the injured player")]
+        [Description("The abbreviation [Key] of the opponent team of the injured player")]
         [DataMember(Name = "Opponent", Order = 10)]
         public string Opponent { get; set; }
 
         /// <summary>
-        /// The body part that is injured (Knee, Groin, Calf, Hamstring, etc.)
+        /// The body part that is injured (Knee; Groin; Calf; Hamstring; etc.)
         /// </summary>
-        [Description("The body part that is injured (Knee, Groin, Calf, Hamstring, etc.)")]
+        [Description("The body part that is injured (Knee; Groin; Calf; Hamstring; etc.)")]
         [DataMember(Name = "BodyPart", Order = 11)]
         public string BodyPart { get; set; }
 
         /// <summary>
-        /// Likelihood that player plays (Probable, Questionable, Doubtful, Out)
+        /// The injury designation assigned to the player (Probable; Questionable; Doubtful; Out)
         /// </summary>
-        [Description("Likelihood that player plays (Probable, Questionable, Doubtful, Out)")]
+        [Description("The injury designation assigned to the player (Probable; Questionable; Doubtful; Out)")]
         [DataMember(Name = "Status", Order = 12)]
         public string Status { get; set; }
 
         /// <summary>
-        /// deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "Practice", Order = 13)]
         public string Practice { get; set; }
 
         /// <summary>
-        /// deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "PracticeDescription", Order = 14)]
         public string PracticeDescription { get; set; }
 
         /// <summary>
-        /// The date/time the injury status was updated
+        /// The date/time the injury status was updated (in US Eastern time)
         /// </summary>
-        [Description("The date/time the injury status was updated")]
+        [Description("The date/time the injury status was updated (in US Eastern time)")]
         [DataMember(Name = "Updated", Order = 15)]
         public DateTime Updated { get; set; }
 
         /// <summary>
-        /// Whether the player has been declared inactive.  This value is updated in the hours leading up to game start time, as teams announce their inactive players.  This is only updated for offensive skill position players (QB, RB, WR, TE)
+        /// Whether the player has been declared inactive. This value is updated in the hours leading up to game start time; as teams announce their inactive players. Note: This is only updated for offensive skill position players (QB; RB; WR; TE).
         /// </summary>
-        [Description("Whether the player has been declared inactive.  This value is updated in the hours leading up to game start time, as teams announce their inactive players.  This is only updated for offensive skill position players (QB, RB, WR, TE)")]
+        [Description("Whether the player has been declared inactive. This value is updated in the hours leading up to game start time; as teams announce their inactive players. Note: This is only updated for offensive skill position players (QB; RB; WR; TE).")]
         [DataMember(Name = "DeclaredInactive", Order = 16)]
         public bool? DeclaredInactive { get; set; }
 
         /// <summary>
-        /// The TeamID of the team this player played on during this game.
+        /// The unique ID of the team that the player is on. Note: If the player is a free agent; this field is NULL.
         /// </summary>
-        [Description("The TeamID of the team this player played on during this game.")]
+        [Description("The unique ID of the team that the player is on. Note: If the player is a free agent; this field is NULL.")]
         [DataMember(Name = "TeamID", Order = 17)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The TeamID of the opponent this player played on during this game.
+        /// The unique ID of the opponent this player played on during this game
         /// </summary>
-        [Description("The TeamID of the opponent this player played on during this game.")]
+        [Description("The unique ID of the opponent this player played on during this game")]
         [DataMember(Name = "OpponentID", Order = 18)]
         public int? OpponentID { get; set; }
 

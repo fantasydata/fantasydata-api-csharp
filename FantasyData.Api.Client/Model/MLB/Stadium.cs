@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int StadiumID { get; set; }
 
         /// <summary>
-        /// The stadium will be set to Active if it exists. Expect available stadiums to be set to Active. For finding a team's current home stadium, Teams endpoints should be used.
+        /// Whether or not this stadium is active
         /// </summary>
-        [Description("The stadium will be set to Active if it exists. Expect available stadiums to be set to Active. For finding a team's current home stadium, Teams endpoints should be used.")]
+        [Description("Whether or not this stadium is active")]
         [DataMember(Name = "Active", Order = 2)]
         public bool Active { get; set; }
 
@@ -37,16 +37,16 @@ namespace FantasyData.Api.Client.Model.MLB
         public string City { get; set; }
 
         /// <summary>
-        /// The US state where the stadium is located (if Stadium is outside US, this value is NULL)
+        /// The state where the stadium is located (only US and Canadian stadiums will have values)
         /// </summary>
-        [Description("The US state where the stadium is located (if Stadium is outside US, this value is NULL)")]
+        [Description("The state where the stadium is located (only US and Canadian stadiums will have values)")]
         [DataMember(Name = "State", Order = 5)]
         public string State { get; set; }
 
         /// <summary>
-        /// The 2-digit country code where the stadium is located
+        /// The 3-digit country code where the stadium is located
         /// </summary>
-        [Description("The 2-digit country code where the stadium is located")]
+        [Description("The 3-digit country code where the stadium is located")]
         [DataMember(Name = "Country", Order = 6)]
         public string Country { get; set; }
 
@@ -65,86 +65,86 @@ namespace FantasyData.Api.Client.Model.MLB
         public string Surface { get; set; }
 
         /// <summary>
-        /// The estimated distance between home plate and the left field wall.
+        /// The estimated distance between home plate and the left field wall
         /// </summary>
-        [Description("The estimated distance between home plate and the left field wall.")]
+        [Description("The estimated distance between home plate and the left field wall")]
         [DataMember(Name = "LeftField", Order = 9)]
         public int? LeftField { get; set; }
 
         /// <summary>
-        /// The estimated distance between home plate and the mid left field wall.
+        /// The estimated distance between home plate and the mid left field wall
         /// </summary>
-        [Description("The estimated distance between home plate and the mid left field wall.")]
+        [Description("The estimated distance between home plate and the mid left field wall")]
         [DataMember(Name = "MidLeftField", Order = 10)]
         public int? MidLeftField { get; set; }
 
         /// <summary>
-        /// The estimated distance between home plate and the left center field wall.
+        /// The estimated distance between home plate and the left center field wall
         /// </summary>
-        [Description("The estimated distance between home plate and the left center field wall.")]
+        [Description("The estimated distance between home plate and the left center field wall")]
         [DataMember(Name = "LeftCenterField", Order = 11)]
         public int? LeftCenterField { get; set; }
 
         /// <summary>
-        /// The estimated distance between home plate and the mid left center field wall.
+        /// The estimated distance between home plate and the mid left center field wall
         /// </summary>
-        [Description("The estimated distance between home plate and the mid left center field wall.")]
+        [Description("The estimated distance between home plate and the mid left center field wall")]
         [DataMember(Name = "MidLeftCenterField", Order = 12)]
         public int? MidLeftCenterField { get; set; }
 
         /// <summary>
-        /// The estimated distance between home plate and the center field wall.
+        /// The estimated distance between home plate and the center field wall
         /// </summary>
-        [Description("The estimated distance between home plate and the center field wall.")]
+        [Description("The estimated distance between home plate and the center field wall")]
         [DataMember(Name = "CenterField", Order = 13)]
         public int? CenterField { get; set; }
 
         /// <summary>
-        /// The estimated distance between home plate and the mid right center field wall.
+        /// The estimated distance between home plate and the mid right center field wall
         /// </summary>
-        [Description("The estimated distance between home plate and the mid right center field wall.")]
+        [Description("The estimated distance between home plate and the mid right center field wall")]
         [DataMember(Name = "MidRightCenterField", Order = 14)]
         public int? MidRightCenterField { get; set; }
 
         /// <summary>
-        /// The estimated distance between home plate and the right center field wall.
+        /// The estimated distance between home plate and the right center field wall
         /// </summary>
-        [Description("The estimated distance between home plate and the right center field wall.")]
+        [Description("The estimated distance between home plate and the right center field wall")]
         [DataMember(Name = "RightCenterField", Order = 15)]
         public int? RightCenterField { get; set; }
 
         /// <summary>
-        /// The estimated distance between home plate and the mid right field wall.
+        /// The estimated distance between home plate and the mid right field wall
         /// </summary>
-        [Description("The estimated distance between home plate and the mid right field wall.")]
+        [Description("The estimated distance between home plate and the mid right field wall")]
         [DataMember(Name = "MidRightField", Order = 16)]
         public int? MidRightField { get; set; }
 
         /// <summary>
-        /// The estimated distance between home plate and the right field wall.
+        /// The estimated distance between home plate and the right field wall
         /// </summary>
-        [Description("The estimated distance between home plate and the right field wall.")]
+        [Description("The estimated distance between home plate and the right field wall")]
         [DataMember(Name = "RightField", Order = 17)]
         public int? RightField { get; set; }
 
         /// <summary>
-        /// The geographic latitude coordinate of this venue.
+        /// The geographic latitude coordinate of this venue
         /// </summary>
-        [Description("The geographic latitude coordinate of this venue.")]
+        [Description("The geographic latitude coordinate of this venue")]
         [DataMember(Name = "GeoLat", Order = 18)]
         public decimal? GeoLat { get; set; }
 
         /// <summary>
-        /// The geographic longitude coordinate of this venue.
+        /// The geographic longitude coordinate of this venue
         /// </summary>
-        [Description("The geographic longitude coordinate of this venue.")]
+        [Description("The geographic longitude coordinate of this venue")]
         [DataMember(Name = "GeoLong", Order = 19)]
         public decimal? GeoLong { get; set; }
 
         /// <summary>
-        /// The altitude of the stadium in feet.
+        /// The altitude of the stadium in feet
         /// </summary>
-        [Description("The altitude of the stadium in feet.")]
+        [Description("The altitude of the stadium in feet")]
         [DataMember(Name = "Altitude", Order = 20)]
         public int? Altitude { get; set; }
 

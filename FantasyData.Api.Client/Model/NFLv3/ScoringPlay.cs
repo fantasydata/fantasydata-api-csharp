@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class ScoringPlay
     {
         /// <summary>
-        /// A 9 digit unique code identifying the game that this record corresponds to.  The GameID is composed of Season, SeasonType, Week and HomeTeam.
+        /// A 9 digit unique code identifying the game that this record corresponds to. The GameID is composed of Season; SeasonType; Week and HomeTeam. Note: This value will be NULL for bye weeks
         /// </summary>
-        [Description("A 9 digit unique code identifying the game that this record corresponds to.  The GameID is composed of Season, SeasonType, Week and HomeTeam.")]
+        [Description("A 9 digit unique code identifying the game that this record corresponds to. The GameID is composed of Season; SeasonType; Week and HomeTeam. Note: This value will be NULL for bye weeks")]
         [DataMember(Name = "GameKey", Order = 1)]
         public string GameKey { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this game corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=All-Star)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this game corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=All-Star)")]
         [DataMember(Name = "SeasonType", Order = 2)]
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// Unique id of the scoring play
+        /// Unique ID of the scoring play
         /// </summary>
-        [Description("Unique id of the scoring play")]
+        [Description("Unique ID of the scoring play")]
         [DataMember(Name = "ScoringPlayID", Order = 3)]
         public int ScoringPlayID { get; set; }
 
@@ -37,30 +37,30 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int Season { get; set; }
 
         /// <summary>
-        /// The NFL week of the game (regular season: 1 to 17, preseason: 0 to 4, postseason: 1 to 4)
+        /// The NFL week of the game (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). Note: seasons after 2021 will have only 3 preseason weeks
         /// </summary>
-        [Description("The NFL week of the game (regular season: 1 to 17, preseason: 0 to 4, postseason: 1 to 4)")]
+        [Description("The NFL week of the game (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). Note: seasons after 2021 will have only 3 preseason weeks")]
         [DataMember(Name = "Week", Order = 5)]
         public int Week { get; set; }
 
         /// <summary>
-        /// The abbreviation of the away team
+        /// The abbreviation [Key} of the away team
         /// </summary>
-        [Description("The abbreviation of the away team")]
+        [Description("The abbreviation [Key} of the away team")]
         [DataMember(Name = "AwayTeam", Order = 6)]
         public string AwayTeam { get; set; }
 
         /// <summary>
-        /// The abbreviation of the home team
+        /// The abbreviation [Key] of the home team
         /// </summary>
-        [Description("The abbreviation of the home team")]
+        [Description("The abbreviation [Key] of the home team")]
         [DataMember(Name = "HomeTeam", Order = 7)]
         public string HomeTeam { get; set; }
 
         /// <summary>
-        /// The date/time of the game
+        /// The date and time of the game (in US Eastern Time)
         /// </summary>
-        [Description("The date/time of the game")]
+        [Description("The date and time of the game (in US Eastern Time)")]
         [DataMember(Name = "Date", Order = 8)]
         public DateTime? Date { get; set; }
 
@@ -72,23 +72,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? Sequence { get; set; }
 
         /// <summary>
-        /// The abbreviation of the team that scored
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the team that scored")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 10)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The quarter that the score occurred in
+        /// The quarter of the scoring play (1; 2; 3; 4; OT)
         /// </summary>
-        [Description("The quarter that the score occurred in")]
+        [Description("The quarter of the scoring play (1; 2; 3; 4; OT)")]
         [DataMember(Name = "Quarter", Order = 11)]
         public string Quarter { get; set; }
 
         /// <summary>
-        /// The time remaining in the quarter when the score occurred
+        /// The amount of time remaining in the current quarter when the scoring play occurred (e.g. 11:23; 5:34; NULL if game is not in progress or at halftime)
         /// </summary>
-        [Description("The time remaining in the quarter when the score occurred")]
+        [Description("The amount of time remaining in the current quarter when the scoring play occurred (e.g. 11:23; 5:34; NULL if game is not in progress or at halftime)")]
         [DataMember(Name = "TimeRemaining", Order = 12)]
         public string TimeRemaining { get; set; }
 
@@ -114,9 +114,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? HomeScore { get; set; }
 
         /// <summary>
-        /// Unique ID of the Score/Game.
+        /// Unique ID of the score/game
         /// </summary>
-        [Description("Unique ID of the Score/Game.")]
+        [Description("Unique ID of the score/game")]
         [DataMember(Name = "ScoreID", Order = 16)]
         public int ScoreID { get; set; }
 

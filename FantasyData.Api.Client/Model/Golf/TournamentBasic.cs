@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class TournamentBasic
     {
         /// <summary>
-        /// The unique ID of this tournament
+        /// The unique ID of the tournament
         /// </summary>
-        [Description("The unique ID of this tournament")]
+        [Description("The unique ID of the tournament")]
         [DataMember(Name = "TournamentID", Order = 1)]
         public int TournamentID { get; set; }
 
         /// <summary>
-        /// The name of this tournament
+        /// The name of the tournament
         /// </summary>
-        [Description("The name of this tournament")]
+        [Description("The name of the tournament")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 

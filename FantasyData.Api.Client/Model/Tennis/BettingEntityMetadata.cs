@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Tennis
     public partial class BettingEntityMetadata
     {
         /// <summary>
-        /// The id of the record. Unique only within the same entity type (i.e. BettingMarketType Ids overlap with BettingBetType Ids)
+        /// The ID of the record. Unique only within the same entity type (i.e. BettingMarketType IDs overlap with BettingBetType IDs)
         /// </summary>
-        [Description("The id of the record. Unique only within the same entity type (i.e. BettingMarketType Ids overlap with BettingBetType Ids)")]
+        [Description("The ID of the record. Unique only within the same entity type (i.e. BettingMarketType IDs overlap with BettingBetType IDs)")]
         [DataMember(Name = "RecordId", Order = 1)]
         public int RecordId { get; set; }
 
         /// <summary>
-        /// A text value for the record (e.g. Moneyline, Player Prop, 3rd Quarter)
+        /// A text value for the record
         /// </summary>
-        [Description("A text value for the record (e.g. Moneyline, Player Prop, 3rd Quarter)")]
+        [Description("A text value for the record")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 

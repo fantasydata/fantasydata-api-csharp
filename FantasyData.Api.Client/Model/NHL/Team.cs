@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class Team
     {
         /// <summary>
-        /// The auto-generated unique ID of the Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("The auto-generated unique ID of the Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 1)]
         public int TeamID { get; set; }
 
@@ -58,37 +58,37 @@ namespace FantasyData.Api.Client.Model.NHL
         public string Conference { get; set; }
 
         /// <summary>
-        /// The division of the team (e.g. Atlantic, Metropolitan, etc)
+        /// The division of the team (e.g. Atlantic; Metropolitan; Central; or Pacific)
         /// </summary>
-        [Description("The division of the team (e.g. Atlantic, Metropolitan, etc)")]
+        [Description("The division of the team (e.g. Atlantic; Metropolitan; Central; or Pacific)")]
         [DataMember(Name = "Division", Order = 8)]
         public string Division { get; set; }
 
         /// <summary>
-        /// The team's primary color. (This is not licensed for public or commercial use)
+        /// The team's first color (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's primary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's first color (This is not licensed for public or commercial use)")]
         [DataMember(Name = "PrimaryColor", Order = 9)]
         public string PrimaryColor { get; set; }
 
         /// <summary>
-        /// The team's secondary color. (This is not licensed for public or commercial use)
+        /// The team's second color (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's secondary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's second color (This is not licensed for public or commercial use)")]
         [DataMember(Name = "SecondaryColor", Order = 10)]
         public string SecondaryColor { get; set; }
 
         /// <summary>
-        /// The team's tertiary color. (This is not licensed for public or commercial use)
+        /// The team's third color (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's tertiary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's third color (This is not licensed for public or commercial use)")]
         [DataMember(Name = "TertiaryColor", Order = 11)]
         public string TertiaryColor { get; set; }
 
         /// <summary>
-        /// The team's quaternary color. (This is not licensed for public or commercial use)
+        /// The team's fourth color (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's quaternary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's fourth color (This is not licensed for public or commercial use)")]
         [DataMember(Name = "QuaternaryColor", Order = 12)]
         public string QuaternaryColor { get; set; }
 

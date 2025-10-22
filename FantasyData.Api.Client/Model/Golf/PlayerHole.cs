@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class PlayerHole
     {
         /// <summary>
-        /// The unique ID of this player/round combination
+        /// The unique ID of this golfer/round combination
         /// </summary>
-        [Description("The unique ID of this player/round combination")]
+        [Description("The unique ID of this golfer/round combination")]
         [DataMember(Name = "PlayerRoundID", Order = 1)]
         public int PlayerRoundID { get; set; }
 
         /// <summary>
-        /// The hole number on this round
+        /// The number of the hole associated with these stats
         /// </summary>
-        [Description("The hole number on this round")]
+        [Description("The number of the hole associated with these stats")]
         [DataMember(Name = "Number", Order = 2)]
         public int? Number { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? Par { get; set; }
 
         /// <summary>
-        /// The player's score on this hole (total strokes)
+        /// The golfer's total strokes on the hole
         /// </summary>
-        [Description("The player's score on this hole (total strokes)")]
+        [Description("The golfer's total strokes on the hole")]
         [DataMember(Name = "Score", Order = 4)]
         public int? Score { get; set; }
 

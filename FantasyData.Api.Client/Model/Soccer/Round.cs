@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int SeasonId { get; set; }
 
         /// <summary>
-        /// The soccer season for which these totals apply
+        /// The soccer regular season for which these totals apply
         /// </summary>
-        [Description("The soccer season for which these totals apply")]
+        [Description("The soccer regular season for which these totals apply")]
         [DataMember(Name = "Season", Order = 3)]
         public int Season { get; set; }
 
@@ -44,23 +44,23 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Name { get; set; }
 
         /// <summary>
-        /// The type of this round. Possible values include: Cup, Table
+        /// The type of this round. Possible values: Cup; Table
         /// </summary>
-        [Description("The type of this round. Possible values include: Cup, Table")]
+        [Description("The type of this round. Possible values: Cup; Table")]
         [DataMember(Name = "Type", Order = 6)]
         public string Type { get; set; }
 
         /// <summary>
-        /// The start date of the round (UTC)
+        /// The start date of the round
         /// </summary>
-        [Description("The start date of the round (UTC)")]
+        [Description("The start date of the round")]
         [DataMember(Name = "StartDate", Order = 7)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// The end date of the round (UTC)
+        /// The end date of the round
         /// </summary>
-        [Description("The end date of the round (UTC)")]
+        [Description("The end date of the round")]
         [DataMember(Name = "EndDate", Order = 8)]
         public DateTime? EndDate { get; set; }
 
@@ -79,23 +79,23 @@ namespace FantasyData.Api.Client.Model.Soccer
         public bool CurrentRound { get; set; }
 
         /// <summary>
-        /// Games that are part of this round
+        /// The games and their details that are apart of this round
         /// </summary>
-        [Description("Games that are part of this round")]
+        [Description("The games and their details that are apart of this round")]
         [DataMember(Name = "Games", Order = 20011)]
         public Game[] Games { get; set; }
 
         /// <summary>
-        /// Standing records associated with this round
+        /// The standings details associated with this round of the competition
         /// </summary>
-        [Description("Standing records associated with this round")]
+        [Description("The standings details associated with this round of the competition")]
         [DataMember(Name = "Standings", Order = 20012)]
         public Standing[] Standings { get; set; }
 
         /// <summary>
-        /// Team Stat records associated with this round.
+        /// The team stat records associated with this round
         /// </summary>
-        [Description("Team Stat records associated with this round.")]
+        [Description("The team stat records associated with this round")]
         [DataMember(Name = "TeamSeasons", Order = 20013)]
         public TeamSeason[] TeamSeasons { get; set; }
 

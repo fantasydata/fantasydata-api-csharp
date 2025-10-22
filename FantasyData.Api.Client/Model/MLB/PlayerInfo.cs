@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class PlayerInfo
     {
         /// <summary>
-        /// Unique ID of the Player (assigned by SportsDataIO).
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career.
         /// </summary>
-        [Description("Unique ID of the Player (assigned by SportsDataIO).")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career.")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Name of Player.
+        /// Player's full name
         /// </summary>
-        [Description("Name of Player.")]
+        [Description("Player's full name")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Unique ID of the Team the player belongs to (assigned by SportsDataIO).
+        /// The team's unique TeamID as assigned by SportsDataIO
         /// </summary>
-        [Description("Unique ID of the Team the player belongs to (assigned by SportsDataIO).")]
+        [Description("The team's unique TeamID as assigned by SportsDataIO")]
         [DataMember(Name = "TeamID", Order = 3)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Name of the team the player belongs to.
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("Name of the team the player belongs to.")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 4)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Position player plays.
+        /// The player's position associated with the given game or season. Possible values: 1B; 2B; 3B; C; CF; DH; IF; LF; OF; P; PH; PR; RF; RP; SP; SS.
         /// </summary>
-        [Description("Position player plays.")]
+        [Description("The player's position associated with the given game or season. Possible values: 1B; 2B; 3B; C; CF; DH; IF; LF; OF; P; PH; PR; RF; RP; SP; SS.")]
         [DataMember(Name = "Position", Order = 5)]
         public string Position { get; set; }
 

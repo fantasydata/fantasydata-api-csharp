@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class TeamTrends
     {
         /// <summary>
-        /// Abbreviation of the team (e.g. LA, PHI, BOS, CHI, etc.)
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("Abbreviation of the team (e.g. LA, PHI, BOS, CHI, etc.)")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 1)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The auto-generated unique ID of the Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("The auto-generated unique ID of the Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int? TeamID { get; set; }
 

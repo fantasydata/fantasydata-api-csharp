@@ -16,16 +16,16 @@ namespace FantasyData.Api.Client.Model.MMA
         public int? FighterId { get; set; }
 
         /// <summary>
-        /// The fighter's first name
+        /// The first name of the fighter
         /// </summary>
-        [Description("The fighter's first name")]
+        [Description("The first name of the fighter")]
         [DataMember(Name = "FirstName", Order = 2)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// The fighter's last name
+        /// The last name of the fighter
         /// </summary>
-        [Description("The fighter's last name")]
+        [Description("The last name of the fighter")]
         [DataMember(Name = "LastName", Order = 3)]
         public string LastName { get; set; }
 
@@ -37,86 +37,86 @@ namespace FantasyData.Api.Client.Model.MMA
         public bool? Winner { get; set; }
 
         /// <summary>
-        /// Total fantasy points scored
+        /// Total fantasy points scored by the fighter in the fight
         /// </summary>
-        [Description("Total fantasy points scored")]
+        [Description("Total fantasy points scored by the fighter in the fight")]
         [DataMember(Name = "FantasyPoints", Order = 5)]
         public decimal? FantasyPoints { get; set; }
 
         /// <summary>
-        /// Total DraftKings daily fantasy points scored
+        /// Total DraftKings fantasy points scored by the fighter in the fight
         /// </summary>
-        [Description("Total DraftKings daily fantasy points scored")]
+        [Description("Total DraftKings fantasy points scored by the fighter in the fight")]
         [DataMember(Name = "FantasyPointsDraftKings", Order = 6)]
         public decimal? FantasyPointsDraftKings { get; set; }
 
         /// <summary>
-        /// Number of times the fighter knocks opponent down due to debilitation for an appreciable amount of time
+        /// The total number of official knockdowns by the fighter to the opponent
         /// </summary>
-        [Description("Number of times the fighter knocks opponent down due to debilitation for an appreciable amount of time")]
+        [Description("The total number of official knockdowns by the fighter to the opponent")]
         [DataMember(Name = "Knockdowns", Order = 7)]
         public decimal? Knockdowns { get; set; }
 
         /// <summary>
-        /// Total number of all strikes attempted
+        /// Total number of all strikes attempted by the fighter in this fight
         /// </summary>
-        [Description("Total number of all strikes attempted")]
+        [Description("Total number of all strikes attempted by the fighter in this fight")]
         [DataMember(Name = "TotalStrikesAttempted", Order = 8)]
         public decimal? TotalStrikesAttempted { get; set; }
 
         /// <summary>
-        /// Total number of all strikes landed
+        /// Total number of all strikes landed by the fighter in this fight
         /// </summary>
-        [Description("Total number of all strikes landed")]
+        [Description("Total number of all strikes landed by the fighter in this fight")]
         [DataMember(Name = "TotalStrikesLanded", Order = 9)]
         public decimal? TotalStrikesLanded { get; set; }
 
         /// <summary>
-        /// Total number of strikes attempted that officials deem 'Power Strikes'
+        /// Total number of strikes attempted that officials deem significant strikes by the fighter in this fight
         /// </summary>
-        [Description("Total number of strikes attempted that officials deem 'Power Strikes'")]
+        [Description("Total number of strikes attempted that officials deem significant strikes by the fighter in this fight")]
         [DataMember(Name = "SigStrikesAttempted", Order = 10)]
         public decimal? SigStrikesAttempted { get; set; }
 
         /// <summary>
-        /// Total number of strikes landed that officials deem 'Power Strikes'
+        /// Total number of strikes landed that officials deem significant strikes by the fighter in this fight
         /// </summary>
-        [Description("Total number of strikes landed that officials deem 'Power Strikes'")]
+        [Description("Total number of strikes landed that officials deem significant strikes by the fighter in this fight")]
         [DataMember(Name = "SigStrikesLanded", Order = 11)]
         public decimal? SigStrikesLanded { get; set; }
 
         /// <summary>
-        /// Total number of takedowns attempted
+        /// Total number of takedowns attempted by the fighter in this fight
         /// </summary>
-        [Description("Total number of takedowns attempted")]
+        [Description("Total number of takedowns attempted by the fighter in this fight")]
         [DataMember(Name = "TakedownsAttempted", Order = 12)]
         public decimal? TakedownsAttempted { get; set; }
 
         /// <summary>
-        /// Total number of takedowns landed
+        /// Total number of takedowns landed by the fighter in this fight
         /// </summary>
-        [Description("Total number of takedowns landed")]
+        [Description("Total number of takedowns landed by the fighter in this fight")]
         [DataMember(Name = "TakedownsLanded", Order = 13)]
         public decimal? TakedownsLanded { get; set; }
 
         /// <summary>
-        /// Total number of takedowns that were a result of forcefully slamming opponent to ground
+        /// Total number of takedowns that were a result of forcefully slamming opponent to ground by the fighter in this fight
         /// </summary>
-        [Description("Total number of takedowns that were a result of forcefully slamming opponent to ground")]
+        [Description("Total number of takedowns that were a result of forcefully slamming opponent to ground by the fighter in this fight")]
         [DataMember(Name = "TakedownsSlams", Order = 14)]
         public decimal? TakedownsSlams { get; set; }
 
         /// <summary>
-        /// Number of takedowns landed divided by number of takedowns attempted
+        /// Total number of takedowns landed divided by number of takedowns attempted
         /// </summary>
-        [Description("Number of takedowns landed divided by number of takedowns attempted")]
+        [Description("Total number of takedowns landed divided by number of takedowns attempted")]
         [DataMember(Name = "TakedownAccuracy", Order = 15)]
         public decimal? TakedownAccuracy { get; set; }
 
         /// <summary>
-        /// Total number of advances to half guard, side control, mount or back control.
+        /// Total number of advances to half guard, side control, mount, or back control
         /// </summary>
-        [Description("Total number of advances to half guard, side control, mount or back control.")]
+        [Description("Total number of advances to half guard, side control, mount, or back control")]
         [DataMember(Name = "Advances", Order = 16)]
         public decimal? Advances { get; set; }
 

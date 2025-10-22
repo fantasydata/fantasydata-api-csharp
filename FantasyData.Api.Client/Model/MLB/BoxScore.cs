@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public Game Game { get; set; }
 
         /// <summary>
-        /// The details of the innings associated with this box score
+        /// The inning details associated with the box score
         /// </summary>
-        [Description("The details of the innings associated with this box score")]
+        [Description("The inning details associated with the box score")]
         [DataMember(Name = "Innings", Order = 20002)]
         public Inning[] Innings { get; set; }
 

@@ -9,30 +9,30 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class DfsSlatePlayer
     {
         /// <summary>
-        /// Unique ID of a SlatePlayer (assigned by SportsDataIO).
+        /// The unique ID of the SlatePlayer as assigned by SportsDataIO
         /// </summary>
-        [Description("Unique ID of a SlatePlayer (assigned by SportsDataIO).")]
+        [Description("The unique ID of the SlatePlayer as assigned by SportsDataIO")]
         [DataMember(Name = "SlatePlayerID", Order = 1)]
         public int SlatePlayerID { get; set; }
 
         /// <summary>
-        /// The SlateID that this SlatePlayer refers to.
+        /// The unique ID of the slate that this SlatePlayer refers to
         /// </summary>
-        [Description("The SlateID that this SlatePlayer refers to.")]
+        [Description("The unique ID of the slate that this SlatePlayer refers to")]
         [DataMember(Name = "SlateID", Order = 2)]
         public int SlateID { get; set; }
 
         /// <summary>
-        /// The SlateGameID that this SlatePlayer refers to.
+        /// The unique ID of the SlateGame that this SlatePlayer refers to
         /// </summary>
-        [Description("The SlateGameID that this SlatePlayer refers to.")]
+        [Description("The unique ID of the SlateGame that this SlatePlayer refers to")]
         [DataMember(Name = "SlateGameID", Order = 3)]
         public int? SlateGameID { get; set; }
 
         /// <summary>
-        /// The SportsDataIO PlayerID that this SlatePlayer refers to. This points to data in the respective sports' player feeds.
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career
         /// </summary>
-        [Description("The SportsDataIO PlayerID that this SlatePlayer refers to. This points to data in the respective sports' player feeds.")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career")]
         [DataMember(Name = "PlayerID", Order = 4)]
         public int? PlayerID { get; set; }
 
@@ -79,9 +79,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? OperatorSalary { get; set; }
 
         /// <summary>
-        /// The player's eligible positions to be played in the contest (assigned by the operator). This would include UTIL, etc plays for those that are eligible.
+        /// The player's eligible positions to be played in the contest (assigned by the operator). This would include UTIL plays for those that are eligible.
         /// </summary>
-        [Description("The player's eligible positions to be played in the contest (assigned by the operator). This would include UTIL, etc plays for those that are eligible.")]
+        [Description("The player's eligible positions to be played in the contest (assigned by the operator). This would include UTIL plays for those that are eligible.")]
         [DataMember(Name = "OperatorRosterSlots", Order = 10011)]
         public string[] OperatorRosterSlots { get; set; }
 
@@ -93,16 +93,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public bool? RemovedByOperator { get; set; }
 
         /// <summary>
-        /// Name of the team to which the player is associated.
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("Name of the team to which the player is associated.")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 13)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Unique ID of the Team to which the player is associated.
+        /// The unique ID of the team associated with this SlatePlayer record
         /// </summary>
-        [Description("Unique ID of the Team to which the player is associated.")]
+        [Description("The unique ID of the team associated with this SlatePlayer record")]
         [DataMember(Name = "TeamID", Order = 14)]
         public int? TeamID { get; set; }
 

@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class DfsSlate
     {
         /// <summary>
-        /// Unique ID of a Slate (assigned by SportsDataIO).
+        /// The SlateID that this SlateGame refers to
         /// </summary>
-        [Description("Unique ID of a Slate (assigned by SportsDataIO).")]
+        [Description("The SlateID that this SlateGame refers to")]
         [DataMember(Name = "SlateID", Order = 1)]
         public int SlateID { get; set; }
 
         /// <summary>
-        /// The name of the operator who is running contests for this slate. Possible values: FanDuel, DraftKings, Yahoo, FantasyDraft, etc.
+        /// The name of the operator who is running contests for this slate Possible values: FanDuel; DraftKings; Yahoo; FantasyDraft; etc.
         /// </summary>
-        [Description("The name of the operator who is running contests for this slate. Possible values: FanDuel, DraftKings, Yahoo, FantasyDraft, etc.")]
+        [Description("The name of the operator who is running contests for this slate Possible values: FanDuel; DraftKings; Yahoo; FantasyDraft; etc.")]
         [DataMember(Name = "Operator", Order = 2)]
         public string Operator { get; set; }
 
@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public string OperatorName { get; set; }
 
         /// <summary>
-        /// The day (in EST/EDT) that the slate begins (assigned by the operator).
+        /// The day (in EST/EDT) that the slate begins (assigned by the operator)
         /// </summary>
-        [Description("The day (in EST/EDT) that the slate begins (assigned by the operator).")]
+        [Description("The day (in EST/EDT) that the slate begins (assigned by the operator)")]
         [DataMember(Name = "OperatorDay", Order = 5)]
         public DateTime? OperatorDay { get; set; }
 
@@ -51,16 +51,16 @@ namespace FantasyData.Api.Client.Model.MLB
         public DateTime? OperatorStartTime { get; set; }
 
         /// <summary>
-        /// The number of actual games that this slate covers.
+        /// The number of actual games that this slate covers
         /// </summary>
-        [Description("The number of actual games that this slate covers.")]
+        [Description("The number of actual games that this slate covers")]
         [DataMember(Name = "NumberOfGames", Order = 7)]
         public int? NumberOfGames { get; set; }
 
         /// <summary>
-        /// Whether this slate uses games that take place on different days.
+        /// Whether or not this slate uses games that take place on different days (true/false)
         /// </summary>
-        [Description("Whether this slate uses games that take place on different days.")]
+        [Description("Whether or not this slate uses games that take place on different days (true/false)")]
         [DataMember(Name = "IsMultiDaySlate", Order = 8)]
         public bool? IsMultiDaySlate { get; set; }
 
@@ -72,9 +72,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public bool? RemovedByOperator { get; set; }
 
         /// <summary>
-        /// The game type of the slate. Will often be null as most operators only have one game type.
+        /// The game type of the slate. Note: Will often be null as most operators only have one game type
         /// </summary>
-        [Description("The game type of the slate. Will often be null as most operators only have one game type.")]
+        [Description("The game type of the slate. Note: Will often be null as most operators only have one game type")]
         [DataMember(Name = "OperatorGameType", Order = 10)]
         public string OperatorGameType { get; set; }
 

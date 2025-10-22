@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.WNBA
     public partial class Quarter
     {
         /// <summary>
-        /// Unique identifier for each Quarter.
+        /// Unique ID for the quarter.
         /// </summary>
-        [Description("Unique identifier for each Quarter.")]
+        [Description("Unique ID for the quarter.")]
         [DataMember(Name = "QuarterID", Order = 1)]
         public int QuarterID { get; set; }
 
         /// <summary>
-        /// The unique ID for this game.
+        /// The unique ID of this game
         /// </summary>
-        [Description("The unique ID for this game.")]
+        [Description("The unique ID of this game")]
         [DataMember(Name = "GameID", Order = 2)]
         public int GameID { get; set; }
 
@@ -37,16 +37,16 @@ namespace FantasyData.Api.Client.Model.WNBA
         public string Name { get; set; }
 
         /// <summary>
-        /// The total points scored by the away team in this Quarter.
+        /// The total points scored by the away team in the given period only
         /// </summary>
-        [Description("The total points scored by the away team in this Quarter.")]
+        [Description("The total points scored by the away team in the given period only")]
         [DataMember(Name = "AwayScore", Order = 5)]
         public int? AwayScore { get; set; }
 
         /// <summary>
-        /// The total points scored by the home team in this Quarter.
+        /// The total points scored by the home team in the given period only
         /// </summary>
-        [Description("The total points scored by the home team in this Quarter.")]
+        [Description("The total points scored by the home team in the given period only")]
         [DataMember(Name = "HomeScore", Order = 6)]
         public int? HomeScore { get; set; }
 

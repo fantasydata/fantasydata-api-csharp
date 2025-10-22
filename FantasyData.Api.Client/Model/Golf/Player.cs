@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class Player
     {
         /// <summary>
-        /// The unique ID of this golfer
+        /// The unique ID of the golfer
         /// </summary>
-        [Description("The unique ID of this golfer")]
+        [Description("The unique ID of the golfer")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// The first name of this golfer
+        /// The first name of the golfer
         /// </summary>
-        [Description("The first name of this golfer")]
+        [Description("The first name of the golfer")]
         [DataMember(Name = "FirstName", Order = 2)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// The last name of this golfer
+        /// The last name of the golfer
         /// </summary>
-        [Description("The last name of this golfer")]
+        [Description("The last name of the golfer")]
         [DataMember(Name = "LastName", Order = 3)]
         public string LastName { get; set; }
 
@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? Weight { get; set; }
 
         /// <summary>
-        /// Indicates whether this golfer is right-handed or left-handed (Possible values: R, L)
+        /// Indicates whether this golfer swings right-handed (R) or left-handed (L)
         /// </summary>
-        [Description("Indicates whether this golfer is right-handed or left-handed (Possible values: R, L)")]
+        [Description("Indicates whether this golfer swings right-handed (R) or left-handed (L)")]
         [DataMember(Name = "Swings", Order = 5)]
         public string Swings { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public string Country { get; set; }
 
         /// <summary>
-        /// The birthday of this golfer
+        /// The golfer's date of birth
         /// </summary>
-        [Description("The birthday of this golfer")]
+        [Description("The golfer's date of birth")]
         [DataMember(Name = "BirthDate", Order = 8)]
         public DateTime? BirthDate { get; set; }
 
@@ -72,23 +72,23 @@ namespace FantasyData.Api.Client.Model.Golf
         public string BirthCity { get; set; }
 
         /// <summary>
-        /// The state where this golfer was born
+        /// The state where this golfer was born. Note: This field is null for any golfer born outside the US, Canada, and Australia
         /// </summary>
-        [Description("The state where this golfer was born")]
+        [Description("The state where this golfer was born. Note: This field is null for any golfer born outside the US, Canada, and Australia")]
         [DataMember(Name = "BirthState", Order = 10)]
         public string BirthState { get; set; }
 
         /// <summary>
-        /// The college that this golfer attended
+        /// The college that this golfer attended (if applicable)
         /// </summary>
-        [Description("The college that this golfer attended")]
+        [Description("The college that this golfer attended (if applicable)")]
         [DataMember(Name = "College", Order = 11)]
         public string College { get; set; }
 
         /// <summary>
-        /// This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.
+        /// This field is deprecated
         /// </summary>
-        [Description("This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "PhotoUrl", Order = 12)]
         public string PhotoUrl { get; set; }
 
@@ -100,9 +100,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public string SportRadarPlayerID { get; set; }
 
         /// <summary>
-        /// The unique ID of this golfer on PGATour.com
+        /// The unique ID of the golfer from PGATour(dot)Com
         /// </summary>
-        [Description("The unique ID of this golfer on PGATour.com")]
+        [Description("The unique ID of the golfer from PGATour(dot)Com")]
         [DataMember(Name = "PgaTourPlayerID", Order = 14)]
         public int? PgaTourPlayerID { get; set; }
 
@@ -121,51 +121,51 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? RotoWirePlayerID { get; set; }
 
         /// <summary>
-        /// The unique ID of this golfer on FantasyAlarm
+        /// The golfer's cross reference Player ID to FantasyAlarm
         /// </summary>
-        [Description("The unique ID of this golfer on FantasyAlarm")]
+        [Description("The golfer's cross reference Player ID to FantasyAlarm")]
         [DataMember(Name = "FantasyAlarmPlayerID", Order = 17)]
         public int? FantasyAlarmPlayerID { get; set; }
 
         /// <summary>
-        /// The name of this golfer on DraftKings
+        /// The golfer's full name in DraftKings' daily fantasy sports platform
         /// </summary>
-        [Description("The name of this golfer on DraftKings")]
+        [Description("The golfer's full name in DraftKings' daily fantasy sports platform")]
         [DataMember(Name = "DraftKingsName", Order = 18)]
         public string DraftKingsName { get; set; }
 
         /// <summary>
-        /// The name of this golfer on FantasyDraft
+        /// The golfer's full name in FantasyDraft's daily fantasy sports platform
         /// </summary>
-        [Description("The name of this golfer on FantasyDraft")]
+        [Description("The golfer's full name in FantasyDraft's daily fantasy sports platform")]
         [DataMember(Name = "FantasyDraftName", Order = 19)]
         public string FantasyDraftName { get; set; }
 
         /// <summary>
-        /// The name of this golfer on FanDuel
+        /// The golfer's full name in Fanduel's daily fantasy sports platform
         /// </summary>
-        [Description("The name of this golfer on FanDuel")]
+        [Description("The golfer's full name in Fanduel's daily fantasy sports platform")]
         [DataMember(Name = "FanDuelName", Order = 20)]
         public string FanDuelName { get; set; }
 
         /// <summary>
-        /// The unique ID of this golfer on FantasyDraft
+        /// The golfer's cross reference PlayerID to FantasyDraft
         /// </summary>
-        [Description("The unique ID of this golfer on FantasyDraft")]
+        [Description("The golfer's cross reference PlayerID to FantasyDraft")]
         [DataMember(Name = "FantasyDraftPlayerID", Order = 21)]
         public int? FantasyDraftPlayerID { get; set; }
 
         /// <summary>
-        /// The unique ID of this golfer on DraftKings
+        /// The golfer's cross reference PlayerID to DraftKings
         /// </summary>
-        [Description("The unique ID of this golfer on DraftKings")]
+        [Description("The golfer's cross reference PlayerID to DraftKings")]
         [DataMember(Name = "DraftKingsPlayerID", Order = 22)]
         public int? DraftKingsPlayerID { get; set; }
 
         /// <summary>
-        /// The unique ID of this golfer on FanDuel
+        /// The golfer's cross reference PlayerID to FanDuel
         /// </summary>
-        [Description("The unique ID of this golfer on FanDuel")]
+        [Description("The golfer's cross reference PlayerID to FanDuel")]
         [DataMember(Name = "FanDuelPlayerID", Order = 23)]
         public int? FanDuelPlayerID { get; set; }
 

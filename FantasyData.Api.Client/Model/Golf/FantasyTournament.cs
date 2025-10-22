@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class FantasyTournament
     {
         /// <summary>
-        /// The TournamentID of the tournament
+        /// The unique ID of the tournament
         /// </summary>
-        [Description("The TournamentID of the tournament")]
+        [Description("The unique ID of the tournament")]
         [DataMember(Name = "TournamentID", Order = 1)]
         public int TournamentID { get; set; }
 
         /// <summary>
-        /// The PlayerID of the golfer
+        /// The unique ID of the golfer
         /// </summary>
-        [Description("The PlayerID of the golfer")]
+        [Description("The unique ID of the golfer")]
         [DataMember(Name = "PlayerID", Order = 2)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// The season of this tournament
+        /// The PGA season for which this record applies
         /// </summary>
-        [Description("The season of this tournament")]
+        [Description("The PGA season for which this record applies")]
         [DataMember(Name = "Season", Order = 3)]
         public int? Season { get; set; }
 
         /// <summary>
-        /// Indicates the Player's Tee Time this round (from 2020)
+        /// The time that this golfer tees off for the upcoming round (in US Eastern Time)
         /// </summary>
-        [Description("Indicates the Player's Tee Time this round (from 2020)")]
+        [Description("The time that this golfer tees off for the upcoming round (in US Eastern Time)")]
         [DataMember(Name = "TeeTime", Order = 4)]
         public DateTime? TeeTime { get; set; }
 
         /// <summary>
-        /// The player's name
+        /// The name of the golfer
         /// </summary>
-        [Description("The player's name")]
+        [Description("The name of the golfer")]
         [DataMember(Name = "Name", Order = 5)]
         public string Name { get; set; }
 
@@ -51,23 +51,23 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? Rank { get; set; }
 
         /// <summary>
-        /// Indicates whether a golfer is not playing in this tournament (if golfer is not playing, this will be Out)
+        /// Indicates whether a golfer is not playing in this tournament. Note: If golfer is not playing; this will be out
         /// </summary>
-        [Description("Indicates whether a golfer is not playing in this tournament (if golfer is not playing, this will be Out)")]
+        [Description("Indicates whether a golfer is not playing in this tournament. Note: If golfer is not playing; this will be out")]
         [DataMember(Name = "TournamentStatus", Order = 7)]
         public string TournamentStatus { get; set; }
 
         /// <summary>
-        /// The fantasy points this golfer scored using the FanDuel scoring system
+        /// Total fantasy points scored by the golfer in the tournament using FanDuel's scoring system
         /// </summary>
-        [Description("The fantasy points this golfer scored using the FanDuel scoring system")]
+        [Description("Total fantasy points scored by the golfer in the tournament using FanDuel's scoring system")]
         [DataMember(Name = "FantasyPointsFanDuel", Order = 8)]
         public decimal? FantasyPointsFanDuel { get; set; }
 
         /// <summary>
-        /// The fantasy points this golfer scored using the Yahoo scoring system
+        /// Total fantasy points scored by the golfer in the tournament using Yahoo's scoring system
         /// </summary>
-        [Description("The fantasy points this golfer scored using the Yahoo scoring system")]
+        [Description("Total fantasy points scored by the golfer in the tournament using Yahoo's scoring system")]
         [DataMember(Name = "FantasyPointsYahoo", Order = 9)]
         public decimal? FantasyPointsYahoo { get; set; }
 
@@ -77,6 +77,20 @@ namespace FantasyData.Api.Client.Model.Golf
         [Description("The date and time when this record was updated.")]
         [DataMember(Name = "Updated", Order = 10)]
         public DateTime? Updated { get; set; }
+
+        /// <summary>
+        /// Total fantasy points scored by the golfer in the tournament using the default SportsDataIO scoring system
+        /// </summary>
+        [Description("Total fantasy points scored by the golfer in the tournament using the default SportsDataIO scoring system")]
+        [DataMember(Name = "FantasyPoints", Order = 11)]
+        public decimal? FantasyPoints { get; set; }
+
+        /// <summary>
+        /// Total fantasy points scored by the golfer in the tournament using DraftKings' scoring system
+        /// </summary>
+        [Description("Total fantasy points scored by the golfer in the tournament using DraftKings' scoring system")]
+        [DataMember(Name = "FantasyPointsDraftKings", Order = 12)]
+        public decimal? FantasyPointsDraftKings { get; set; }
 
     }
 }

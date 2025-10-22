@@ -411,10 +411,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Profiles (Basic) - by Team Asynchronous
+        /// Get Player Profiles - by Team Asynchronous
         /// </summary>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
-        public Task<List<PlayerBasic>> GetPlayerProfilesBasicByTeamAsync(string team)
+        public Task<List<PlayerBasic>> GetPlayerProfilesByTeamAsync(string team)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("team", team.ToString()));
@@ -424,12 +424,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Profiles (Basic) - by Team
+        /// Get Player Profiles - by Team
         /// </summary>
         /// <param name="team">The abbreviation of the requested team. Examples: <code>SF</code>, <code>NYY</code>.</param>
-        public List<PlayerBasic> GetPlayerProfilesBasicByTeam(string team)
+        public List<PlayerBasic> GetPlayerProfilesByTeam(string team)
         {
-            return this.GetPlayerProfilesBasicByTeamAsync(team).Result;
+            return this.GetPlayerProfilesByTeamAsync(team).Result;
         }
 
         /// <summary>
@@ -455,9 +455,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details - by Active Asynchronous
+        /// Get Player Profiles - by Active Asynchronous
         /// </summary>
-        public Task<List<PlayerBasic>> GetPlayerDetailsByActive_1459Async()
+        public Task<List<PlayerBasic>> GetPlayerProfilesByActiveAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<PlayerBasic>>(() =>
@@ -466,17 +466,17 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details - by Active
+        /// Get Player Profiles - by Active
         /// </summary>
-        public List<PlayerBasic> GetPlayerDetailsByActive_1459()
+        public List<PlayerBasic> GetPlayerProfilesByActive()
         {
-            return this.GetPlayerDetailsByActive_1459Async().Result;
+            return this.GetPlayerProfilesByActiveAsync().Result;
         }
 
         /// <summary>
-        /// Get Player Details - by Free Agents Asynchronous
+        /// Get Player Profiles - by Free Agents Asynchronous
         /// </summary>
-        public Task<List<PlayerBasic>> GetPlayerDetailsByFreeAgents_1460Async()
+        public Task<List<PlayerBasic>> GetPlayerProfilesByFreeAgentsAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<PlayerBasic>>(() =>
@@ -485,11 +485,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Player Details - by Free Agents
+        /// Get Player Profiles - by Free Agents
         /// </summary>
-        public List<PlayerBasic> GetPlayerDetailsByFreeAgents_1460()
+        public List<PlayerBasic> GetPlayerProfilesByFreeAgents()
         {
-            return this.GetPlayerDetailsByFreeAgents_1460Async().Result;
+            return this.GetPlayerProfilesByFreeAgentsAsync().Result;
         }
 
         /// <summary>

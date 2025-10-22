@@ -16,30 +16,30 @@ namespace FantasyData.Api.Client.Model.CBB
         public int GameOddId { get; set; }
 
         /// <summary>
-        /// Name of sportsbook
+        /// The name of the sportsbook
         /// </summary>
-        [Description("Name of sportsbook")]
+        [Description("The name of the sportsbook")]
         [DataMember(Name = "Sportsbook", Order = 2)]
         public string Sportsbook { get; set; }
 
         /// <summary>
-        /// The unique ID of the game
+        /// The unique ID of this game
         /// </summary>
-        [Description("The unique ID of the game")]
+        [Description("The unique ID of this game")]
         [DataMember(Name = "GameId", Order = 3)]
         public int GameId { get; set; }
 
         /// <summary>
-        /// The timestamp of when these odds were first created, based on US Eatern Time (EST/EDT).
+        /// The timestamp of when these odds were first created (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp of when these odds were first created, based on US Eatern Time (EST/EDT).")]
+        [Description("The timestamp of when these odds were first created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 4)]
         public DateTime Created { get; set; }
 
         /// <summary>
-        /// The timestamp of when these odds were last updated, based on US Eatern Time (EST/EDT). If these are the latest odds for this game, and they have not been updated within the last few minutes, then it indicates that there were problems connecting to the sportsbook.
+        /// The timestamp of when these odds were last updated; based on US Eastern Time. If these are the latest odds for this game; and they have not been updated within the last few minutes; then it indicates that there were problems connecting to the sportsbook.
         /// </summary>
-        [Description("The timestamp of when these odds were last updated, based on US Eatern Time (EST/EDT). If these are the latest odds for this game, and they have not been updated within the last few minutes, then it indicates that there were problems connecting to the sportsbook.")]
+        [Description("The timestamp of when these odds were last updated; based on US Eastern Time. If these are the latest odds for this game; and they have not been updated within the last few minutes; then it indicates that there were problems connecting to the sportsbook.")]
         [DataMember(Name = "Updated", Order = 5)]
         public DateTime Updated { get; set; }
 
@@ -79,23 +79,23 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? HomePointSpreadPayout { get; set; }
 
         /// <summary>
-        /// The sportsbook's point spread payout for the away team
+        /// The sportsbook's point spread payout for the away team. Note: this line is a consensus.
         /// </summary>
-        [Description("The sportsbook's point spread payout for the away team")]
+        [Description("The sportsbook's point spread payout for the away team. Note: this line is a consensus.")]
         [DataMember(Name = "AwayPointSpreadPayout", Order = 11)]
         public int? AwayPointSpreadPayout { get; set; }
 
         /// <summary>
-        /// The sportsbook's total points scored over under for the game
+        /// The total points line (over/under) as given by the sportsbook
         /// </summary>
-        [Description("The sportsbook's total points scored over under for the game")]
+        [Description("The total points line (over/under) as given by the sportsbook")]
         [DataMember(Name = "OverUnder", Order = 12)]
         public decimal? OverUnder { get; set; }
 
         /// <summary>
-        /// The sportsbook's payout for the over
+        /// The odds at which the sportsbook will pay out winning Over bets at
         /// </summary>
-        [Description("The sportsbook's payout for the over")]
+        [Description("The odds at which the sportsbook will pay out winning Over bets at")]
         [DataMember(Name = "OverPayout", Order = 13)]
         public int? OverPayout { get; set; }
 
@@ -107,16 +107,16 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? UnderPayout { get; set; }
 
         /// <summary>
-        /// Unique ID of the sportsbook
+        /// The unique ID associated with this sportsbook
         /// </summary>
-        [Description("Unique ID of the sportsbook")]
+        [Description("The unique ID associated with this sportsbook")]
         [DataMember(Name = "SportsbookId", Order = 15)]
         public int? SportsbookId { get; set; }
 
         /// <summary>
-        /// The odd type of this specific odd
+        /// The market type of the odd (ex: live; pregame; 1st-half; etc.)
         /// </summary>
-        [Description("The odd type of this specific odd")]
+        [Description("The market type of the odd (ex: live; pregame; 1st-half; etc.)")]
         [DataMember(Name = "OddType", Order = 16)]
         public string OddType { get; set; }
 
@@ -128,9 +128,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public string SportsbookUrl { get; set; }
 
         /// <summary>
-        /// The timestamp when these odds were no longer seen, based on US Eastern Time (EST/EDT)
+        /// The timestamp of when these odds were first made unavailable to be bet on any further
         /// </summary>
-        [Description("The timestamp when these odds were no longer seen, based on US Eastern Time (EST/EDT)")]
+        [Description("The timestamp of when these odds were first made unavailable to be bet on any further")]
         [DataMember(Name = "Unlisted", Order = 18)]
         public DateTime? Unlisted { get; set; }
 

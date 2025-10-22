@@ -16,37 +16,37 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int GoalId { get; set; }
 
         /// <summary>
-        /// The unique ID of the game
+        /// The unique ID of the game tied to this goal
         /// </summary>
-        [Description("The unique ID of the game")]
+        [Description("The unique ID of the game tied to this goal")]
         [DataMember(Name = "GameId", Order = 2)]
         public int GameId { get; set; }
 
         /// <summary>
-        /// The unique ID of the team that scored the goal
+        /// The unique ID of the team associated with this goal
         /// </summary>
-        [Description("The unique ID of the team that scored the goal")]
+        [Description("The unique ID of the team associated with this goal")]
         [DataMember(Name = "TeamId", Order = 3)]
         public int TeamId { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID as assigned by SportsDataIO
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career.
         /// </summary>
-        [Description("The player's unique PlayerID as assigned by SportsDataIO")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career.")]
         [DataMember(Name = "PlayerId", Order = 4)]
         public int? PlayerId { get; set; }
 
         /// <summary>
-        /// The name of the player
+        /// The full name of the player who scored the goal
         /// </summary>
-        [Description("The name of the player")]
+        [Description("The full name of the player who scored the goal")]
         [DataMember(Name = "Name", Order = 5)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The type of goal scored
+        /// The type of goal scored
         /// </summary>
-        [Description("The type of goal scored")]
+        [Description("The type of goal scored")]
         [DataMember(Name = "Type", Order = 6)]
         public string Type { get; set; }
 

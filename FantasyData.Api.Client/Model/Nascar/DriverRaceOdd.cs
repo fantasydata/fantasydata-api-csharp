@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.Nascar
     public partial class DriverRaceOdd
     {
         /// <summary>
-        /// Unique Id of the DriverRaceOdd record.
+        /// The unique ID of the DriverRaceOdd record
         /// </summary>
-        [Description("Unique Id of the DriverRaceOdd record.")]
+        [Description("The unique ID of the DriverRaceOdd record")]
         [DataMember(Name = "DriverRaceOddID", Order = 1)]
         public int DriverRaceOddID { get; set; }
 
         /// <summary>
-        /// The Id of the Sportsbook associated with this record.
+        /// The ID of the Sportsbook associated with this record
         /// </summary>
-        [Description("The Id of the Sportsbook associated with this record.")]
+        [Description("The ID of the Sportsbook associated with this record")]
         [DataMember(Name = "SportsbookID", Order = 2)]
         public int? SportsbookID { get; set; }
 
         /// <summary>
-        /// The name of the Sportbook.
+        /// The name of the Sportbook
         /// </summary>
-        [Description("The name of the Sportbook.")]
+        [Description("The name of the Sportbook")]
         [DataMember(Name = "SportsbookName", Order = 3)]
         public string SportsbookName { get; set; }
 
         /// <summary>
-        /// The name of the driver.
+        /// The driver's full name
         /// </summary>
-        [Description("The name of the driver.")]
+        [Description("The driver's full name")]
         [DataMember(Name = "DriverName", Order = 4)]
         public string DriverName { get; set; }
 
         /// <summary>
-        /// The Id of the Driver associated with this record.
+        /// The unique ID of the driver associated with this record
         /// </summary>
-        [Description("The Id of the Driver associated with this record.")]
+        [Description("The unique ID of the driver associated with this record")]
         [DataMember(Name = "DriverID", Order = 5)]
         public int? DriverID { get; set; }
 
@@ -51,23 +51,23 @@ namespace FantasyData.Api.Client.Model.Nascar
         public int OddsToWin { get; set; }
 
         /// <summary>
-        /// The date and time when this record was created.
+        /// The date/time when this race was created (in US Eastern Time)
         /// </summary>
-        [Description("The date and time when this record was created.")]
+        [Description("The date/time when this race was created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 7)]
         public DateTime Created { get; set; }
 
         /// <summary>
-        /// The date and time when this record was last seen from the sportsbook.
+        /// The date and time when this record was last seen from the sportsbook
         /// </summary>
-        [Description("The date and time when this record was last seen from the sportsbook.")]
+        [Description("The date and time when this record was last seen from the sportsbook")]
         [DataMember(Name = "Updated", Order = 8)]
         public DateTime Updated { get; set; }
 
         /// <summary>
-        /// Indicates whether the odd is available for wagering at the related Sportsbook (excludes Consensus).
+        /// Indicates whether the odd is available for wagering at the related Sportsbook (excludes Consensus)
         /// </summary>
-        [Description("Indicates whether the odd is available for wagering at the related Sportsbook (excludes Consensus).")]
+        [Description("Indicates whether the odd is available for wagering at the related Sportsbook (excludes Consensus)")]
         [DataMember(Name = "IsAvailable", Order = 9)]
         public bool IsAvailable { get; set; }
 

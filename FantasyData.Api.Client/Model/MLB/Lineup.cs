@@ -9,65 +9,65 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class Lineup
     {
         /// <summary>
-        /// Unique ID of Player
+        /// The player's unique PlayerID as assigned by SportsDataIO Note: this ID will stay with the player throughout their MLB career
         /// </summary>
-        [Description("Unique ID of Player")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO Note: this ID will stay with the player throughout their MLB career")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Unique ID of Team
+        /// The team's unique TeamID as assigned by SportsDataIO
         /// </summary>
-        [Description("Unique ID of Team")]
+        [Description("The team's unique TeamID as assigned by SportsDataIO")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Name of Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("Name of Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 3)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Player First Name
+        /// The player's first name
         /// </summary>
-        [Description("Player First Name")]
+        [Description("The player's first name")]
         [DataMember(Name = "FirstName", Order = 4)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Player Last Name
+        /// The player's last name
         /// </summary>
-        [Description("Player Last Name")]
+        [Description("The player's last name")]
         [DataMember(Name = "LastName", Order = 5)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Batting Order 
+        /// Where the player batted in the lineup for the game (1;2;3; etc.)
         /// </summary>
-        [Description("Batting Order ")]
+        [Description("Where the player batted in the lineup for the game (1;2;3; etc.)")]
         [DataMember(Name = "BattingOrder", Order = 6)]
         public int? BattingOrder { get; set; }
 
         /// <summary>
-        /// Player Position
+        /// Player's position in the starting lineup (if started); otherwise the position he substituted for
         /// </summary>
-        [Description("Player Position")]
+        [Description("Player's position in the starting lineup (if started); otherwise the position he substituted for")]
         [DataMember(Name = "Position", Order = 7)]
         public string Position { get; set; }
 
         /// <summary>
-        /// Indicates if this player is starting
+        /// Indicates if this player is starting. Note: started = 1 and non starting= 0
         /// </summary>
-        [Description("Indicates if this player is starting")]
+        [Description("Indicates if this player is starting. Note: started = 1 and non starting= 0")]
         [DataMember(Name = "Starting", Order = 8)]
         public bool? Starting { get; set; }
 
         /// <summary>
-        /// Indicates if batting order has been confimred
+        /// Indicates if batting order has been confirmed (true/false)
         /// </summary>
-        [Description("Indicates if batting order has been confimred")]
+        [Description("Indicates if batting order has been confirmed (true/false)")]
         [DataMember(Name = "Confirmed", Order = 9)]
         public bool? Confirmed { get; set; }
 

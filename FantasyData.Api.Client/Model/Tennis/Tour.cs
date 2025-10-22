@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.Tennis
     public partial class Tour
     {
         /// <summary>
-        /// Unique ID of Tour
+        /// The unique ID of the tour
         /// </summary>
-        [Description("Unique ID of Tour")]
+        [Description("The unique ID of the tour")]
         [DataMember(Name = "TourId", Order = 1)]
         public int TourId { get; set; }
 
         /// <summary>
-        /// Name of Tour
+        /// The name of the tour
         /// </summary>
-        [Description("Name of Tour")]
+        [Description("The name of the tour")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gender of Tour
+        /// Gender of players associated with this tour
         /// </summary>
-        [Description("Gender of Tour")]
+        [Description("Gender of players associated with this tour")]
         [DataMember(Name = "Gender", Order = 3)]
         public string Gender { get; set; }
 

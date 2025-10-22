@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class Headshot
     {
         /// <summary>
-        /// Unique ID of the Player (assigned by SportsDataIO).
+        /// The unique PlayerID of the player as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID of the Player (assigned by SportsDataIO).")]
+        [Description("The unique PlayerID of the player as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Name of Player.
+        /// The player's full name
         /// </summary>
-        [Description("Name of Player.")]
+        [Description("The player's full name")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Unique ID of the Team the player belongs to (assigned by SportsDataIO).
+        /// The unique ID of the team
         /// </summary>
-        [Description("Unique ID of the Team the player belongs to (assigned by SportsDataIO).")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 3)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Name of the team the player belongs to.
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("Name of the team the player belongs to.")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 4)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Position player plays.
+        /// The primary position of the player. Possible Values: C; CB; DB; DE; DL; DT; FB; FS; G; ILB; K; KR; LB; LS; NT; OL; OLB; OT; P; QB; RB; S; SS; T; TE; WR
         /// </summary>
-        [Description("Position player plays.")]
+        [Description("The primary position of the player. Possible Values: C; CB; DB; DE; DL; DT; FB; FS; G; ILB; K; KR; LB; LS; NT; OL; OLB; OT; P; QB; RB; S; SS; T; TE; WR")]
         [DataMember(Name = "Position", Order = 5)]
         public string Position { get; set; }
 

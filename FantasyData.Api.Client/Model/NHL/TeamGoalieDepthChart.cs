@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class TeamGoalieDepthChart
     {
         /// <summary>
-        /// List of Goalie Depth Chart records for each team
+        /// List of players that make up the goalie depth chart for each team
         /// </summary>
-        [Description("List of Goalie Depth Chart records for each team")]
+        [Description("List of players that make up the goalie depth chart for each team")]
         [DataMember(Name = "GoalieDepthCharts", Order = 20001)]
         public GoalieDepthChart[] GoalieDepthCharts { get; set; }
 
         /// <summary>
-        /// Unique ID of each team
+        /// The unique ID of the team
         /// </summary>
-        [Description("Unique ID of each team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int TeamID { get; set; }
 

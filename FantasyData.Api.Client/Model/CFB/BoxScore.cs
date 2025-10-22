@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public Game Game { get; set; }
 
         /// <summary>
-        /// The period details of this box score
+        /// The details of the periods (quarters & overtime) for this box score
         /// </summary>
-        [Description("The period details of this box score")]
+        [Description("The details of the periods (quarters & overtime) for this box score")]
         [DataMember(Name = "Periods", Order = 20002)]
         public Period[] Periods { get; set; }
 

@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.CBB
     public partial class Tournament
     {
         /// <summary>
-        /// The unique ID of the tournament
+        /// The unique ID of the tournament. Note: this field is specific to March Madness tournament & does not include other tournaments
         /// </summary>
-        [Description("The unique ID of the tournament")]
+        [Description("The unique ID of the tournament. Note: this field is specific to March Madness tournament & does not include other tournaments")]
         [DataMember(Name = "TournamentID", Order = 1)]
         public int TournamentID { get; set; }
 
         /// <summary>
-        /// The college basketball season of the tournament
+        /// The season that the tournament occurs in. Note: season is a single year that the majority of the season occurs in
         /// </summary>
-        [Description("The college basketball season of the tournament")]
+        [Description("The season that the tournament occurs in. Note: season is a single year that the majority of the season occurs in")]
         [DataMember(Name = "Season", Order = 2)]
         public int Season { get; set; }
 
@@ -30,44 +30,44 @@ namespace FantasyData.Api.Client.Model.CBB
         public string Name { get; set; }
 
         /// <summary>
-        /// The location of the tournament
+        /// Where the tournament in question is located/being played
         /// </summary>
-        [Description("The location of the tournament")]
+        [Description("Where the tournament in question is located/being played")]
         [DataMember(Name = "Location", Order = 4)]
         public string Location { get; set; }
 
         /// <summary>
-        /// The games of this tournament
+        /// Shows a list of games that are held within a tournament for a given season
         /// </summary>
-        [Description("The games of this tournament")]
+        [Description("Shows a list of games that are held within a tournament for a given season")]
         [DataMember(Name = "Games", Order = 20005)]
         public Game[] Games { get; set; }
 
         /// <summary>
-        /// The conference that is displayed on the top-left when rendering the tournament bracket.
+        /// The region that is designated to be in the top-left of the NCAA Tournament bracket
         /// </summary>
-        [Description("The conference that is displayed on the top-left when rendering the tournament bracket.")]
+        [Description("The region that is designated to be in the top-left of the NCAA Tournament bracket")]
         [DataMember(Name = "LeftTopBracketConference", Order = 6)]
         public string LeftTopBracketConference { get; set; }
 
         /// <summary>
-        /// The conference that is displayed on the bottom-left when rendering the tournament bracket.
+        /// The region that is designated to be in the bottom-left of the NCAA Tournament bracket
         /// </summary>
-        [Description("The conference that is displayed on the bottom-left when rendering the tournament bracket.")]
+        [Description("The region that is designated to be in the bottom-left of the NCAA Tournament bracket")]
         [DataMember(Name = "LeftBottomBracketConference", Order = 7)]
         public string LeftBottomBracketConference { get; set; }
 
         /// <summary>
-        /// The conference that is displayed on the top-right when rendering the tournament bracket.
+        /// The region that is designated to be in the top-right of the NCAA Tournament bracket
         /// </summary>
-        [Description("The conference that is displayed on the top-right when rendering the tournament bracket.")]
+        [Description("The region that is designated to be in the top-right of the NCAA Tournament bracket")]
         [DataMember(Name = "RightTopBracketConference", Order = 8)]
         public string RightTopBracketConference { get; set; }
 
         /// <summary>
-        /// The conference that is displayed on the bottom-right when rendering the tournament bracket.
+        /// The region that is designated to be in the bottom-right of the NCAA Tournament bracket
         /// </summary>
-        [Description("The conference that is displayed on the bottom-right when rendering the tournament bracket.")]
+        [Description("The region that is designated to be in the bottom-right of the NCAA Tournament bracket")]
         [DataMember(Name = "RightBottomBracketConference", Order = 9)]
         public string RightBottomBracketConference { get; set; }
 

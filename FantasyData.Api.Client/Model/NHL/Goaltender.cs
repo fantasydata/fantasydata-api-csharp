@@ -9,44 +9,44 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class Goaltender
     {
         /// <summary>
-        /// Unique ID of Player
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID of Player")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Unique ID of Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("Unique ID of Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Name of Team
+        /// The abbreviation [Key] of the team the goaltender belongs to
         /// </summary>
-        [Description("Name of Team")]
+        [Description("The abbreviation [Key] of the team the goaltender belongs to")]
         [DataMember(Name = "Team", Order = 3)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Goaltender First Name
+        /// The first name of the goaltender
         /// </summary>
-        [Description("Goaltender First Name")]
+        [Description("The first name of the goaltender")]
         [DataMember(Name = "FirstName", Order = 4)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Goaltender Last Name
+        /// The goaltender's last name
         /// </summary>
-        [Description("Goaltender Last Name")]
+        [Description("The goaltender's last name")]
         [DataMember(Name = "LastName", Order = 5)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Goaltender Jersey Number
+        /// The goaltender's jersey number
         /// </summary>
-        [Description("Goaltender Jersey Number")]
+        [Description("The goaltender's jersey number")]
         [DataMember(Name = "Jersey", Order = 6)]
         public int? Jersey { get; set; }
 

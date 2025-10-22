@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class Quarter
     {
         /// <summary>
-        /// Unique identifier for each Quarter.
+        /// The unique ID of the quarter
         /// </summary>
-        [Description("Unique identifier for each Quarter.")]
+        [Description("The unique ID of the quarter")]
         [DataMember(Name = "QuarterID", Order = 1)]
         public int QuarterID { get; set; }
 
         /// <summary>
-        /// The unique identifier of the Score record this Quarter belongs to.
+        /// The unique ID of the score this quarter belongs to
         /// </summary>
-        [Description("The unique identifier of the Score record this Quarter belongs to.")]
+        [Description("The unique ID of the score this quarter belongs to")]
         [DataMember(Name = "ScoreID", Order = 2)]
         public int ScoreID { get; set; }
 
@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Name { get; set; }
 
         /// <summary>
-        /// The long description of the Quarter.
+        /// The long description of the quarter
         /// </summary>
-        [Description("The long description of the Quarter.")]
+        [Description("The long description of the quarter")]
         [DataMember(Name = "Description", Order = 5)]
         public string Description { get; set; }
 
@@ -58,16 +58,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? HomeTeamScore { get; set; }
 
         /// <summary>
-        /// The database generated timestamp of when this Quarter was last updated.
+        /// The database generated timestamp of when this Quarter was last updated (in US Eastern time)
         /// </summary>
-        [Description("The database generated timestamp of when this Quarter was last updated.")]
+        [Description("The database generated timestamp of when this Quarter was last updated (in US Eastern time)")]
         [DataMember(Name = "Updated", Order = 8)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The database generated timestamp of when this Quarter was first created.
+        /// The database generated timestamp of when this Quarter was first created (in US Eastern Time)
         /// </summary>
-        [Description("The database generated timestamp of when this Quarter was first created.")]
+        [Description("The database generated timestamp of when this Quarter was first created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 9)]
         public DateTime? Created { get; set; }
 

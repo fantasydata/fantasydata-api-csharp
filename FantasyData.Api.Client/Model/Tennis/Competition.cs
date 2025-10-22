@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.Tennis
     public partial class Competition
     {
         /// <summary>
-        /// Unique ID of Competition
+        /// The unique ID of the competition
         /// </summary>
-        [Description("Unique ID of Competition")]
+        [Description("The unique ID of the competition")]
         [DataMember(Name = "CompetitionId", Order = 1)]
         public int CompetitionId { get; set; }
 
         /// <summary>
-        /// ID of Area in which Competition takes place.
+        /// The ID of the area in which competition takes place
         /// </summary>
-        [Description("ID of Area in which Competition takes place.")]
+        [Description("The ID of the area in which competition takes place")]
         [DataMember(Name = "AreaId", Order = 2)]
         public int AreaId { get; set; }
 
         /// <summary>
-        /// Name of Area in which Competition takes place.
+        /// The name of the area in which competition takes place
         /// </summary>
-        [Description("Name of Area in which Competition takes place.")]
+        [Description("The name of the area in which competition takes place")]
         [DataMember(Name = "AreaName", Order = 3)]
         public string AreaName { get; set; }
 
         /// <summary>
-        /// Gender(s) participating in this Competition.
+        /// Gender(s) participating in this Competition
         /// </summary>
-        [Description("Gender(s) participating in this Competition.")]
+        [Description("Gender(s) participating in this Competition")]
         [DataMember(Name = "Gender", Order = 4)]
         public string Gender { get; set; }
 
         /// <summary>
-        /// Name of Competition
+        /// The name of the competition
         /// </summary>
-        [Description("Name of Competition")]
+        [Description("The name of the competition")]
         [DataMember(Name = "Name", Order = 5)]
         public string Name { get; set; }
 

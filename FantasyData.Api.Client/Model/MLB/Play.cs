@@ -9,149 +9,149 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class Play
     {
         /// <summary>
-        /// Unique ID for each Play.
+        /// The unique ID of the play assigned by SportsDataIO
         /// </summary>
-        [Description("Unique ID for each Play.")]
+        [Description("The unique ID of the play assigned by SportsDataIO")]
         [DataMember(Name = "PlayID", Order = 1)]
         public int PlayID { get; set; }
 
         /// <summary>
-        /// The InningID of the Inning record, in which this Play occurred.
+        /// The unique ID associated with this specific inning in which the play occurred
         /// </summary>
-        [Description("The InningID of the Inning record, in which this Play occurred.")]
+        [Description("The unique ID associated with this specific inning in which the play occurred")]
         [DataMember(Name = "InningID", Order = 2)]
         public int InningID { get; set; }
 
         /// <summary>
-        /// The inning in which the play occurred.
+        /// The inning number in which the particular play occurred
         /// </summary>
-        [Description("The inning in which the play occurred.")]
+        [Description("The inning number in which the particular play occurred")]
         [DataMember(Name = "InningNumber", Order = 3)]
         public int? InningNumber { get; set; }
 
         /// <summary>
-        /// The inning half in which the play occurred.
+        /// The inning half that the game is currently in; or the inning half in which the game ended (possible values: T; B; E: M: NULL)
         /// </summary>
-        [Description("The inning half in which the play occurred.")]
+        [Description("The inning half that the game is currently in; or the inning half in which the game ended (possible values: T; B; E: M: NULL)")]
         [DataMember(Name = "InningHalf", Order = 4)]
         public string InningHalf { get; set; }
 
         /// <summary>
-        /// The order in which this play occurred.
+        /// The order in which plays occurred in a game
         /// </summary>
-        [Description("The order in which this play occurred.")]
+        [Description("The order in which plays occurred in a game")]
         [DataMember(Name = "PlayNumber", Order = 5)]
         public int? PlayNumber { get; set; }
 
         /// <summary>
-        /// The batter number in the inning where the play occurred.
+        /// The batter number in the inning where the play occurred.
         /// </summary>
-        [Description("The batter number in the inning where the play occurred.")]
+        [Description("The batter number in the inning where the play occurred.")]
         [DataMember(Name = "InningBatterNumber", Order = 6)]
         public int? InningBatterNumber { get; set; }
 
         /// <summary>
-        /// This indicates the score of the away team (if any runs were scored on this play, otherwise this indicates zero)
+        /// Number of runs scored by the away team on this specific play
         /// </summary>
-        [Description("This indicates the score of the away team (if any runs were scored on this play, otherwise this indicates zero)")]
+        [Description("Number of runs scored by the away team on this specific play")]
         [DataMember(Name = "AwayTeamRuns", Order = 7)]
         public int? AwayTeamRuns { get; set; }
 
         /// <summary>
-        /// This indicates the score of the home team (if any runs were scored on this play, otherwise this indicates zero)
+        /// Number of runs scored by the home team on this specific play
         /// </summary>
-        [Description("This indicates the score of the home team (if any runs were scored on this play, otherwise this indicates zero)")]
+        [Description("Number of runs scored by the home team on this specific play")]
         [DataMember(Name = "HomeTeamRuns", Order = 8)]
         public int? HomeTeamRuns { get; set; }
 
         /// <summary>
-        /// The HitterID who represents the play.
+        /// The unique PlayerID of the hitter involved with the play
         /// </summary>
-        [Description("The HitterID who represents the play.")]
+        [Description("The unique PlayerID of the hitter involved with the play")]
         [DataMember(Name = "HitterID", Order = 9)]
         public int? HitterID { get; set; }
 
         /// <summary>
-        /// The PitcherID who represents the play.
+        /// The PlayerID of the pitcher involved in the play
         /// </summary>
-        [Description("The PitcherID who represents the play.")]
+        [Description("The PlayerID of the pitcher involved in the play")]
         [DataMember(Name = "PitcherID", Order = 10)]
         public int? PitcherID { get; set; }
 
         /// <summary>
-        /// The ID of the hitter's team.
+        /// The TeamID of the hitter's team.
         /// </summary>
-        [Description("The ID of the hitter's team.")]
+        [Description("The TeamID of the hitter's team.")]
         [DataMember(Name = "HitterTeamID", Order = 11)]
         public int? HitterTeamID { get; set; }
 
         /// <summary>
-        /// The ID of the pitcher's team.
+        /// The ID of the pitcher's team
         /// </summary>
-        [Description("The ID of the pitcher's team.")]
+        [Description("The ID of the pitcher's team")]
         [DataMember(Name = "PitcherTeamID", Order = 12)]
         public int? PitcherTeamID { get; set; }
 
         /// <summary>
-        /// The name of the hitter in the play.
+        /// The first and last name of the hitter involved in the play
         /// </summary>
-        [Description("The name of the hitter in the play.")]
+        [Description("The first and last name of the hitter involved in the play")]
         [DataMember(Name = "HitterName", Order = 13)]
         public string HitterName { get; set; }
 
         /// <summary>
-        /// The name of the pitcher in the play.
+        /// The full name of the pitcher involved in the play
         /// </summary>
-        [Description("The name of the pitcher in the play.")]
+        [Description("The full name of the pitcher involved in the play")]
         [DataMember(Name = "PitcherName", Order = 14)]
         public string PitcherName { get; set; }
 
         /// <summary>
-        /// The throwing hand of the pitcher in which the play occurred. (right or left)
+        /// The throwing hand of the pitcher in which the play occurred. (right or left)
         /// </summary>
-        [Description("The throwing hand of the pitcher in which the play occurred. (right or left)")]
+        [Description("The throwing hand of the pitcher in which the play occurred. (right or left)")]
         [DataMember(Name = "PitcherThrowHand", Order = 15)]
         public string PitcherThrowHand { get; set; }
 
         /// <summary>
-        /// The hand of the batter in which the play occurred. (right, left, or switch)
+        /// The batter's handedness for which the play occurred. (R; L; S)
         /// </summary>
-        [Description("The hand of the batter in which the play occurred. (right, left, or switch)")]
+        [Description("The batter's handedness for which the play occurred. (R; L; S)")]
         [DataMember(Name = "HitterBatHand", Order = 16)]
         public string HitterBatHand { get; set; }
 
         /// <summary>
-        /// The position of the player in which the play occrred. (P,C,1B, SS, OF)
+        /// TheÂ position of the player in which the play occrred. (e.g. P;C;1B; SS; OF)
         /// </summary>
-        [Description("The position of the player in which the play occrred. (P,C,1B, SS, OF)")]
+        [Description("TheÂ position of the player in which the play occrred. (e.g. P;C;1B; SS; OF)")]
         [DataMember(Name = "HitterPosition", Order = 17)]
         public string HitterPosition { get; set; }
 
         /// <summary>
-        /// The number of outs in which the play occurred.
+        /// The number of outs in which the play occurred
         /// </summary>
-        [Description("The number of outs in which the play occurred.")]
+        [Description("The number of outs in which the play occurred")]
         [DataMember(Name = "Outs", Order = 18)]
         public int? Outs { get; set; }
 
         /// <summary>
-        /// The number of balls in the count in which the play occurred.
+        /// The number of balls in the count in which the play occurred
         /// </summary>
-        [Description("The number of balls in the count in which the play occurred.")]
+        [Description("The number of balls in the count in which the play occurred")]
         [DataMember(Name = "Balls", Order = 19)]
         public int? Balls { get; set; }
 
         /// <summary>
-        /// The number of strikes in the count in which the play occurred.
+        /// The number of strikes in the count in which the play occurred
         /// </summary>
-        [Description("The number of strikes in the count in which the play occurred.")]
+        [Description("The number of strikes in the count in which the play occurred")]
         [DataMember(Name = "Strikes", Order = 20)]
         public int? Strikes { get; set; }
 
         /// <summary>
-        /// The number of pitchers in the at bat in which the play occurred.
+        /// The number of pitches in the at bat in which the play occurred
         /// </summary>
-        [Description("The number of pitchers in the at bat in which the play occurred.")]
+        [Description("The number of pitches in the at bat in which the play occurred")]
         [DataMember(Name = "PitchNumberThisAtBat", Order = 21)]
         public int? PitchNumberThisAtBat { get; set; }
 
@@ -163,72 +163,72 @@ namespace FantasyData.Api.Client.Model.MLB
         public string Result { get; set; }
 
         /// <summary>
-        /// The number of outs recorded on the play.
+        /// The number of outs recorded on the play
         /// </summary>
-        [Description("The number of outs recorded on the play.")]
+        [Description("The number of outs recorded on the play")]
         [DataMember(Name = "NumberOfOutsOnPlay", Order = 23)]
         public int? NumberOfOutsOnPlay { get; set; }
 
         /// <summary>
-        /// The number of runs batted in on the play.
+        /// The number of runs batted in on the play
         /// </summary>
-        [Description("The number of runs batted in on the play.")]
+        [Description("The number of runs batted in on the play")]
         [DataMember(Name = "RunsBattedIn", Order = 24)]
         public int? RunsBattedIn { get; set; }
 
         /// <summary>
-        /// Whether this play resulted in an at bat. (true/false)
+        /// Whether this plate appearance resulted in an at bat
         /// </summary>
-        [Description("Whether this play resulted in an at bat. (true/false)")]
+        [Description("Whether this plate appearance resulted in an at bat")]
         [DataMember(Name = "AtBat", Order = 25)]
         public bool? AtBat { get; set; }
 
         /// <summary>
-        /// Whether this play resulted in a strikeout. (true/false)
+        /// Whether the play resulted with a strikeout (returns true/false)
         /// </summary>
-        [Description("Whether this play resulted in a strikeout. (true/false)")]
+        [Description("Whether the play resulted with a strikeout (returns true/false)")]
         [DataMember(Name = "Strikeout", Order = 26)]
         public bool? Strikeout { get; set; }
 
         /// <summary>
-        /// Whether this play resulted in a walk. (true/false)
+        /// Indicates whether the play resulted in a walk for the hitter (returns true/false)
         /// </summary>
-        [Description("Whether this play resulted in a walk. (true/false)")]
+        [Description("Indicates whether the play resulted in a walk for the hitter (returns true/false)")]
         [DataMember(Name = "Walk", Order = 27)]
         public bool? Walk { get; set; }
 
         /// <summary>
-        /// Whether this play resulted in a hit. (true/false)
+        /// Whether this play resulted in a hit (true/false)
         /// </summary>
-        [Description("Whether this play resulted in a hit. (true/false)")]
+        [Description("Whether this play resulted in a hit (true/false)")]
         [DataMember(Name = "Hit", Order = 28)]
         public bool? Hit { get; set; }
 
         /// <summary>
-        /// Whether this play resutled in an out. (true/false)
+        /// Whether this play resutled in an out (true/false)
         /// </summary>
-        [Description("Whether this play resutled in an out. (true/false)")]
+        [Description("Whether this play resutled in an out (true/false)")]
         [DataMember(Name = "Out", Order = 29)]
         public bool? Out { get; set; }
 
         /// <summary>
-        /// Whether this play resulted in a sacrifice. (true/false)
+        /// Whether the play resulted in a sacrifice (returns true/false)
         /// </summary>
-        [Description("Whether this play resulted in a sacrifice. (true/false)")]
+        [Description("Whether the play resulted in a sacrifice (returns true/false)")]
         [DataMember(Name = "Sacrifice", Order = 30)]
         public bool? Sacrifice { get; set; }
 
         /// <summary>
-        /// Whether this play resulted in an error. (true/false)
+        /// Whether this play resulted in an error (true/false)
         /// </summary>
-        [Description("Whether this play resulted in an error. (true/false)")]
+        [Description("Whether this play resulted in an error (true/false)")]
         [DataMember(Name = "Error", Order = 31)]
         public bool? Error { get; set; }
 
         /// <summary>
-        /// The database generated timestamp of when this Play was last updated.
+        /// The database generated timestamp of when this record was last updated (in US Eastern Time)
         /// </summary>
-        [Description("The database generated timestamp of when this Play was last updated.")]
+        [Description("The database generated timestamp of when this record was last updated (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 32)]
         public DateTime? Updated { get; set; }
 
@@ -240,30 +240,30 @@ namespace FantasyData.Api.Client.Model.MLB
         public string Description { get; set; }
 
         /// <summary>
-        /// The details of the pitches associated with this Play
+        /// The details of the pitches associated with this play
         /// </summary>
-        [Description("The details of the pitches associated with this Play")]
+        [Description("The details of the pitches associated with this play")]
         [DataMember(Name = "Pitches", Order = 20034)]
         public Pitch[] Pitches { get; set; }
 
         /// <summary>
-        /// The PlayerID of the first runner in the play.
+        /// The PlayerID of the player on first as a result of the play (post-play)
         /// </summary>
-        [Description("The PlayerID of the first runner in the play.")]
+        [Description("The PlayerID of the player on first as a result of the play (post-play)")]
         [DataMember(Name = "Runner1ID", Order = 35)]
         public int? Runner1ID { get; set; }
 
         /// <summary>
-        /// The PlayerID of the second runner in the play.
+        /// The PlayerID of the player on second as a result of the play (post-play)
         /// </summary>
-        [Description("The PlayerID of the second runner in the play.")]
+        [Description("The PlayerID of the player on second as a result of the play (post-play)")]
         [DataMember(Name = "Runner2ID", Order = 36)]
         public int? Runner2ID { get; set; }
 
         /// <summary>
-        /// The PlayerID of the third runner in the play.
+        /// The PlayerID of the player on third as a result of the play (post-play)
         /// </summary>
-        [Description("The PlayerID of the third runner in the play.")]
+        [Description("The PlayerID of the player on third as a result of the play (post-play)")]
         [DataMember(Name = "Runner3ID", Order = 37)]
         public int? Runner3ID { get; set; }
 

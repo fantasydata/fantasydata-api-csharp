@@ -23,72 +23,72 @@ namespace FantasyData.Api.Client.Model.Golf
         public string Operator { get; set; }
 
         /// <summary>
-        /// Unique ID of a slate (assigned by the operator).
+        /// The unique ID of a slate as assigned by the operator
         /// </summary>
-        [Description("Unique ID of a slate (assigned by the operator).")]
+        [Description("The unique ID of a slate as assigned by the operator")]
         [DataMember(Name = "OperatorSlateID", Order = 3)]
         public int? OperatorSlateID { get; set; }
 
         /// <summary>
-        /// The name of the slate (assigned by the operator). Possible values: Main, Express, Arcade, Late Night, etc.
+        /// The name of the slate as assigned by the operator. Possible values: Main; Express; Arcade; Late Night; etc.
         /// </summary>
-        [Description("The name of the slate (assigned by the operator). Possible values: Main, Express, Arcade, Late Night, etc.")]
+        [Description("The name of the slate as assigned by the operator. Possible values: Main; Express; Arcade; Late Night; etc.")]
         [DataMember(Name = "OperatorName", Order = 4)]
         public string OperatorName { get; set; }
 
         /// <summary>
-        /// The day (in EST/EDT) that the slate begins (assigned by the operator).
+        /// The day (in EST/EDT) that the slate begins, as assigned by the operator
         /// </summary>
-        [Description("The day (in EST/EDT) that the slate begins (assigned by the operator).")]
+        [Description("The day (in EST/EDT) that the slate begins, as assigned by the operator")]
         [DataMember(Name = "OperatorDay", Order = 5)]
         public DateTime? OperatorDay { get; set; }
 
         /// <summary>
-        /// The date/time (in EST/EDT) that the slate begins (assigned by the operator).
+        /// The date/time (in EST/EDT) that the slate begins as assigned by the operator)
         /// </summary>
-        [Description("The date/time (in EST/EDT) that the slate begins (assigned by the operator).")]
+        [Description("The date/time (in EST/EDT) that the slate begins as assigned by the operator)")]
         [DataMember(Name = "OperatorStartTime", Order = 6)]
         public DateTime? OperatorStartTime { get; set; }
 
         /// <summary>
-        /// The number of actual tournaments that this slate covers.
+        /// The total number of actual tournaments that this slate covers
         /// </summary>
-        [Description("The number of actual tournaments that this slate covers.")]
+        [Description("The total number of actual tournaments that this slate covers")]
         [DataMember(Name = "NumberOfTournaments", Order = 7)]
         public int? NumberOfTournaments { get; set; }
 
         /// <summary>
-        /// Whether this slate uses tournaments that take place on different days.
+        /// Indicates if this slate uses tournaments that take place on different days
         /// </summary>
-        [Description("Whether this slate uses tournaments that take place on different days.")]
+        [Description("Indicates if this slate uses tournaments that take place on different days")]
         [DataMember(Name = "IsMultiDaySlate", Order = 8)]
         public bool? IsMultiDaySlate { get; set; }
 
         /// <summary>
-        /// Indicates whether this slate was removed/deleted by the operator.
+        /// Indicates whether this slate was removed/deleted by the operator
         /// </summary>
-        [Description("Indicates whether this slate was removed/deleted by the operator.")]
+        [Description("Indicates whether this slate was removed/deleted by the operator")]
         [DataMember(Name = "RemovedByOperator", Order = 9)]
         public bool? RemovedByOperator { get; set; }
 
         /// <summary>
-        /// The game type of the slate. Will often be null as most operators only have one game type.
+        /// The game type of the slate as assigned by the operator. Note: will often be null as most operators only have one game type
         /// </summary>
-        [Description("The game type of the slate. Will often be null as most operators only have one game type.")]
+        [Description("The game type of the slate as assigned by the operator. Note: will often be null as most operators only have one game type")]
         [DataMember(Name = "OperatorGameType", Order = 10)]
         public string OperatorGameType { get; set; }
 
         /// <summary>
-        /// The tournament(s) that are included in this slate
+        /// The tournament(s) included in this slate
         /// </summary>
-        [Description("The tournament(s) that are included in this slate")]
+        [Description("The tournament(s) included in this slate")]
         [DataMember(Name = "DfsSlateTournaments", Order = 20011)]
         public DfsSlateTournament[] DfsSlateTournaments { get; set; }
 
         /// <summary>
-        /// The players that are included in this slate
+        /// The list of players that are included in this slate
         /// </summary>
-        [Description("The players that are included in this slate")]
+        [Description("The list of players that are included in this slate")]
         [DataMember(Name = "DfsSlatePlayers", Order = 20012)]
         public DfsSlatePlayer[] DfsSlatePlayers { get; set; }
 

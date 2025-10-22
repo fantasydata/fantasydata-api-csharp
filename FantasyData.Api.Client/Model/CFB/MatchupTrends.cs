@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class MatchupTrends
     {
         /// <summary>
-        /// Upcoming game between the team and the opponent
+        /// The most recent future game for the team and their opponent
         /// </summary>
-        [Description("Upcoming game between the team and the opponent")]
+        [Description("The most recent future game for the team and their opponent")]
         [DataMember(Name = "UpcomingGame", Order = 10001)]
         public Game UpcomingGame { get; set; }
 
@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public TeamTrends[] TeamTrends { get; set; }
 
         /// <summary>
-        /// The collection of team game trends against opponent
+        /// The collection of team game trends against the opponent
         /// </summary>
-        [Description("The collection of team game trends against opponent")]
+        [Description("The collection of team game trends against the opponent")]
         [DataMember(Name = "TeamMatchupTrends", Order = 20003)]
         public TeamGameTrends[] TeamMatchupTrends { get; set; }
 

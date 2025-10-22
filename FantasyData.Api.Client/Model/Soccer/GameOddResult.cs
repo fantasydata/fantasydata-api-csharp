@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class GameOddResult
     {
         /// <summary>
-        /// Unique ID of this odd
+        /// The unique ID of this odd
         /// </summary>
-        [Description("Unique ID of this odd")]
+        [Description("The unique ID of this odd")]
         [DataMember(Name = "GameOddID", Order = 1)]
         public int GameOddID { get; set; }
 
         /// <summary>
-        /// Name of sportsbook
+        /// The name of the sportsbook
         /// </summary>
-        [Description("Name of sportsbook")]
+        [Description("The name of the sportsbook")]
         [DataMember(Name = "Sportsbook", Order = 2)]
         public string Sportsbook { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int GameID { get; set; }
 
         /// <summary>
-        /// The timestamp of when these odds were first created, based on US Eatern Time (EST/EDT).
+        /// The timestamp of when these odds were first created (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp of when these odds were first created, based on US Eatern Time (EST/EDT).")]
+        [Description("The timestamp of when these odds were first created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 4)]
         public DateTime Created { get; set; }
 
@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public DateTime Updated { get; set; }
 
         /// <summary>
-        /// The sportsbook's money line for the home team
+        /// The sportsbook's moneyline for the home team
         /// </summary>
-        [Description("The sportsbook's money line for the home team")]
+        [Description("The sportsbook's moneyline for the home team")]
         [DataMember(Name = "HomeMoneyLine", Order = 6)]
         public int? HomeMoneyLine { get; set; }
 
@@ -86,16 +86,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? AwayPointSpreadPayout { get; set; }
 
         /// <summary>
-        /// The sportsbook's total points scored over under for the game
+        /// The sportsbook's total goals line (over/under) for the game
         /// </summary>
-        [Description("The sportsbook's total points scored over under for the game")]
+        [Description("The sportsbook's total goals line (over/under) for the game")]
         [DataMember(Name = "OverUnder", Order = 12)]
         public decimal? OverUnder { get; set; }
 
         /// <summary>
-        /// The sportsbook's payout for the over
+        /// The sportsbook's payout for the over bet on the total goals line
         /// </summary>
-        [Description("The sportsbook's payout for the over")]
+        [Description("The sportsbook's payout for the over bet on the total goals line")]
         [DataMember(Name = "OverPayout", Order = 13)]
         public int? OverPayout { get; set; }
 
@@ -107,9 +107,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? UnderPayout { get; set; }
 
         /// <summary>
-        /// Unique ID of the sportsbook
+        /// The unique ID of the sportsbook
         /// </summary>
-        [Description("Unique ID of the sportsbook")]
+        [Description("The unique ID of the sportsbook")]
         [DataMember(Name = "SportsbookID", Order = 15)]
         public int? SportsbookID { get; set; }
 
@@ -128,9 +128,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string OddType { get; set; }
 
         /// <summary>
-        /// The list of outcomes under this Game Odd Record with results
+        /// List of outcomes showing results of betting markets that were bet on for the given match
         /// </summary>
-        [Description("The list of outcomes under this Game Odd Record with results")]
+        [Description("List of outcomes showing results of betting markets that were bet on for the given match")]
         [DataMember(Name = "GameOddOutcomeResults", Order = 20018)]
         public GameOddOutcome[] GameOddOutcomeResults { get; set; }
 

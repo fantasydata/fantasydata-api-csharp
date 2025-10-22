@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.WNBA
     public partial class GameOdd
     {
         /// <summary>
-        /// Unique ID of this odd
+        /// The unique ID of this odd
         /// </summary>
-        [Description("Unique ID of this odd")]
+        [Description("The unique ID of this odd")]
         [DataMember(Name = "GameOddID", Order = 1)]
         public int GameOddID { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.WNBA
         public int SportsbookID { get; set; }
 
         /// <summary>
-        /// Unique ID of the game
+        /// The unique ID of this game
         /// </summary>
-        [Description("Unique ID of the game")]
+        [Description("The unique ID of this game")]
         [DataMember(Name = "GameID", Order = 4)]
         public int GameID { get; set; }
 
@@ -44,16 +44,16 @@ namespace FantasyData.Api.Client.Model.WNBA
         public string OddType { get; set; }
 
         /// <summary>
-        /// The timestamp of when these odds were first created, based on US Eatern Time (EST/EDT)
+        /// The timestamp of when these odds were first created in US Eastern Time
         /// </summary>
-        [Description("The timestamp of when these odds were first created, based on US Eatern Time (EST/EDT)")]
+        [Description("The timestamp of when these odds were first created in US Eastern Time")]
         [DataMember(Name = "Created", Order = 6)]
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// The timestamp of when these odds were last updated, based on US Eatern Time (EST/EDT). If these are the latest odds for this game, and they have not been updated within the last few minutes, then it indicates that there were problems connecting to the sportsbook.
+        /// The timestamp of when this record was last updated (in US Eastern time)
         /// </summary>
-        [Description("The timestamp of when these odds were last updated, based on US Eatern Time (EST/EDT). If these are the latest odds for this game, and they have not been updated within the last few minutes, then it indicates that there were problems connecting to the sportsbook.")]
+        [Description("The timestamp of when this record was last updated (in US Eastern time)")]
         [DataMember(Name = "Updated", Order = 7)]
         public DateTime? Updated { get; set; }
 
@@ -107,9 +107,9 @@ namespace FantasyData.Api.Client.Model.WNBA
         public int? AwayPointSpreadPayout { get; set; }
 
         /// <summary>
-        /// The sportsbook's total points scored over under for the game. Also known as the Total for the game.
+        /// The sportsbook's total points scored over or under for the game. Note: this is also known as the Total for the game.
         /// </summary>
-        [Description("The sportsbook's total points scored over under for the game. Also known as the Total for the game.")]
+        [Description("The sportsbook's total points scored over or under for the game. Note: this is also known as the Total for the game.")]
         [DataMember(Name = "OverUnder", Order = 15)]
         public decimal? OverUnder { get; set; }
 

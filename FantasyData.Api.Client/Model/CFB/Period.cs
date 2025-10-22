@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.CFB
     public partial class Period
     {
         /// <summary>
-        /// Unique identifier for each period.
+        /// Unique ID for each period
         /// </summary>
-        [Description("Unique identifier for each period.")]
+        [Description("Unique ID for each period")]
         [DataMember(Name = "PeriodID", Order = 1)]
         public int PeriodID { get; set; }
 
         /// <summary>
-        /// The unique ID for this game.
+        /// The unique ID of this game
         /// </summary>
-        [Description("The unique ID for this game.")]
+        [Description("The unique ID of this game")]
         [DataMember(Name = "GameID", Order = 2)]
         public int GameID { get; set; }
 
@@ -30,23 +30,23 @@ namespace FantasyData.Api.Client.Model.CFB
         public int Number { get; set; }
 
         /// <summary>
-        /// The Name of the Period (possible values: 1, 2, 3, 4, OT, OT2, OT3, etc)
+        /// The name of the period (possible values: 1; 2; 3; 4; OT; Final, F/OT)
         /// </summary>
-        [Description("The Name of the Period (possible values: 1, 2, 3, 4, OT, OT2, OT3, etc)")]
+        [Description("The name of the period (possible values: 1; 2; 3; 4; OT; Final, F/OT)")]
         [DataMember(Name = "Name", Order = 4)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The total points scored by the away team in this Period.
+        /// The total points scored by the away team in this period
         /// </summary>
-        [Description("The total points scored by the away team in this Period.")]
+        [Description("The total points scored by the away team in this period")]
         [DataMember(Name = "AwayScore", Order = 5)]
         public int? AwayScore { get; set; }
 
         /// <summary>
-        /// The total points scored by the home team in this Period.
+        /// The total points scored by the home team in this period
         /// </summary>
-        [Description("The total points scored by the home team in this Period.")]
+        [Description("The total points scored by the home team in this period")]
         [DataMember(Name = "HomeScore", Order = 6)]
         public int? HomeScore { get; set; }
 

@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Nascar
     public partial class BettingOutcome
     {
         /// <summary>
-        /// The unique identifier of this outcome
+        /// The unique ID associated with this specific outcome
         /// </summary>
-        [Description("The unique identifier of this outcome")]
+        [Description("The unique ID associated with this specific outcome")]
         [DataMember(Name = "BettingOutcomeID", Order = 1)]
         public int? BettingOutcomeID { get; set; }
 
         /// <summary>
-        /// The unique identifier of the market this betting outcome exists for
+        /// The unique ID associated with the betting market
         /// </summary>
-        [Description("The unique identifier of the market this betting outcome exists for")]
+        [Description("The unique ID associated with the betting market")]
         [DataMember(Name = "BettingMarketID", Order = 2)]
         public int? BettingMarketID { get; set; }
 
@@ -30,23 +30,23 @@ namespace FantasyData.Api.Client.Model.Nascar
         public Sportsbook SportsBook { get; set; }
 
         /// <summary>
-        /// The BettingOutcomeTypeID of this outcome
+        /// The ID of this specific outcome type
         /// </summary>
-        [Description("The BettingOutcomeTypeID of this outcome")]
+        [Description("The ID of this specific outcome type")]
         [DataMember(Name = "BettingOutcomeTypeID", Order = 4)]
         public int? BettingOutcomeTypeID { get; set; }
 
         /// <summary>
-        /// The BettingOutcomeType of this outcome
+        /// The name of betting outcome type
         /// </summary>
-        [Description("The BettingOutcomeType of this outcome")]
+        [Description("The name of betting outcome type")]
         [DataMember(Name = "BettingOutcomeType", Order = 5)]
         public string BettingOutcomeType { get; set; }
 
         /// <summary>
-        /// The american odds payout 
+        /// The American odds payout
         /// </summary>
-        [Description("The american odds payout ")]
+        [Description("The American odds payout")]
         [DataMember(Name = "PayoutAmerican", Order = 6)]
         public int? PayoutAmerican { get; set; }
 
@@ -72,23 +72,23 @@ namespace FantasyData.Api.Client.Model.Nascar
         public string Participant { get; set; }
 
         /// <summary>
-        /// Is this outcome available for betting as of last update
+        /// Denotes whether or not the betting outcome is currently available
         /// </summary>
-        [Description("Is this outcome available for betting as of last update")]
+        [Description("Denotes whether or not the betting outcome is currently available")]
         [DataMember(Name = "IsAvailable", Order = 10)]
         public bool? IsAvailable { get; set; }
 
         /// <summary>
-        /// Is this an alternate value or the core value
+        /// Denotes whether or not the betting outcome is an alternate line
         /// </summary>
-        [Description("Is this an alternate value or the core value")]
+        [Description("Denotes whether or not the betting outcome is an alternate line")]
         [DataMember(Name = "IsAlternate", Order = 11)]
         public bool? IsAlternate { get; set; }
 
         /// <summary>
-        /// The created date of the outcome
+        /// The date/time when this betting outcome was created (in US Eastern Time)
         /// </summary>
-        [Description("The created date of the outcome")]
+        [Description("The date/time when this betting outcome was created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 12)]
         public DateTime? Created { get; set; }
 
@@ -107,9 +107,9 @@ namespace FantasyData.Api.Client.Model.Nascar
         public DateTime? Unlisted { get; set; }
 
         /// <summary>
-        /// The DriverID of the driver assocated with this outcome (where applicable)
+        /// The unique ID of the driver tied to this outcome (if applicable)
         /// </summary>
-        [Description("The DriverID of the driver assocated with this outcome (where applicable)")]
+        [Description("The unique ID of the driver tied to this outcome (if applicable)")]
         [DataMember(Name = "DriverID", Order = 15)]
         public int? DriverID { get; set; }
 
@@ -121,16 +121,16 @@ namespace FantasyData.Api.Client.Model.Nascar
         public string SportsbookUrl { get; set; }
 
         /// <summary>
-        /// A key to identify outcomes which are related and part of the same offering at a sportsbook (for instance, with Group markets, this key would identify all the options for a particular group of drivers))
+        /// A key to identify outcomes which are related and part of the same offering at a sportsbook (for instance; with Group markets; this key would identify all the options for a particular group of drivers)
         /// </summary>
-        [Description("A key to identify outcomes which are related and part of the same offering at a sportsbook (for instance, with Group markets, this key would identify all the options for a particular group of drivers))")]
+        [Description("A key to identify outcomes which are related and part of the same offering at a sportsbook (for instance; with Group markets; this key would identify all the options for a particular group of drivers)")]
         [DataMember(Name = "GroupKey", Order = 17)]
         public int? GroupKey { get; set; }
 
         /// <summary>
-        /// Indicates if this outcome is considered “in-play/live” (was created after the race start date)
+        /// Indicates if this outcome is considered in-play/live (was created after the race start date)
         /// </summary>
-        [Description("Indicates if this outcome is considered “in-play/live” (was created after the race start date)")]
+        [Description("Indicates if this outcome is considered in-play/live (was created after the race start date)")]
         [DataMember(Name = "IsInPlayRaceOdd", Order = 18)]
         public bool? IsInPlayRaceOdd { get; set; }
 

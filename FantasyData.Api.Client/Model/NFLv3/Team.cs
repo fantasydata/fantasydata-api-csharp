@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class Team
     {
         /// <summary>
-        /// Abbreviation of the team (e.g. SD, PHI, NE, IND, etc.)
+        /// Abbreviation [Key] of the team (e.g. PHI; NE; IND; etc.)
         /// </summary>
-        [Description("Abbreviation of the team (e.g. SD, PHI, NE, IND, etc.)")]
+        [Description("Abbreviation [Key] of the team (e.g. PHI; NE; IND; etc.)")]
         [DataMember(Name = "Key", Order = 1)]
         public string Key { get; set; }
 
         /// <summary>
-        /// The auto-generated unique ID of the Team.
+        /// The unique ID of the team
         /// </summary>
-        [Description("The auto-generated unique ID of the Team.")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// The auto-generated unique ID of the Team, that avoids collisions with PlayerIDs.  This is useful when combining players and fantasy defenses to create fantasy teams.
+        /// The auto-generated unique ID of the Team; that avoids collisions with PlayerIDs. This is useful when combining players and fantasy defenses to create fantasy teams
         /// </summary>
-        [Description("The auto-generated unique ID of the Team, that avoids collisions with PlayerIDs.  This is useful when combining players and fantasy defenses to create fantasy teams.")]
+        [Description("The auto-generated unique ID of the Team; that avoids collisions with PlayerIDs. This is useful when combining players and fantasy defenses to create fantasy teams")]
         [DataMember(Name = "PlayerID", Order = 3)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// The city/location of the team (e.g. San Diego, Philadelphia, New England, Indianapolis, etc.)
+        /// The city/location of the team (e.g. Minnesota; Philadelphia; New England; Indianapolis; etc.)
         /// </summary>
-        [Description("The city/location of the team (e.g. San Diego, Philadelphia, New England, Indianapolis, etc.)")]
+        [Description("The city/location of the team (e.g. Minnesota; Philadelphia; New England; Indianapolis; etc.)")]
         [DataMember(Name = "City", Order = 4)]
         public string City { get; set; }
 
         /// <summary>
-        /// The mascot of the team (e.g. Chargers, Eagles, Patriots, Colts, etc.)
+        /// The mascot of the team (e.g. Eagles; Patriots; Colts; etc.)
         /// </summary>
-        [Description("The mascot of the team (e.g. Chargers, Eagles, Patriots, Colts, etc.)")]
+        [Description("The mascot of the team (e.g. Eagles; Patriots; Colts; etc.)")]
         [DataMember(Name = "Name", Order = 5)]
         public string Name { get; set; }
 
@@ -72,23 +72,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? StadiumID { get; set; }
 
         /// <summary>
-        /// The bye week of the team in the upcoming regular season
+        /// The bye week of the team in the upcoming or current regular season
         /// </summary>
-        [Description("The bye week of the team in the upcoming regular season")]
+        [Description("The bye week of the team in the upcoming or current regular season")]
         [DataMember(Name = "ByeWeek", Order = 10)]
         public int? ByeWeek { get; set; }
 
         /// <summary>
-        /// The average draft position of the team's fantasy defense (DST)
+        /// The average draft position of the team's fantasy defense (DST) in re-draft leagues
         /// </summary>
-        [Description("The average draft position of the team's fantasy defense (DST)")]
+        [Description("The average draft position of the team's fantasy defense (DST) in re-draft leagues")]
         [DataMember(Name = "AverageDraftPosition", Order = 11)]
         public decimal? AverageDraftPosition { get; set; }
 
         /// <summary>
-        /// The average draft position in PPR leagues of the team's fantasy defense (DST)
+        /// The average draft position of the team (DST) in Points Per Reception (PPR) leagues
         /// </summary>
-        [Description("The average draft position in PPR leagues of the team's fantasy defense (DST)")]
+        [Description("The average draft position of the team (DST) in Points Per Reception (PPR) leagues")]
         [DataMember(Name = "AverageDraftPositionPPR", Order = 12)]
         public decimal? AverageDraftPositionPPR { get; set; }
 
@@ -100,23 +100,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string HeadCoach { get; set; }
 
         /// <summary>
-        /// The current offensive coordinator of the team
+        /// The current offensive coordinator of the team. Note: field will be NULL if team doesn't have an OFF coordinator
         /// </summary>
-        [Description("The current offensive coordinator of the team")]
+        [Description("The current offensive coordinator of the team. Note: field will be NULL if team doesn't have an OFF coordinator")]
         [DataMember(Name = "OffensiveCoordinator", Order = 14)]
         public string OffensiveCoordinator { get; set; }
 
         /// <summary>
-        /// The current defensive coordinator of the team
+        /// The current offensive coordinator of the team. Note: field will be NULL if team doesn't have an DEF coordinator
         /// </summary>
-        [Description("The current defensive coordinator of the team")]
+        [Description("The current offensive coordinator of the team. Note: field will be NULL if team doesn't have an DEF coordinator")]
         [DataMember(Name = "DefensiveCoordinator", Order = 15)]
         public string DefensiveCoordinator { get; set; }
 
         /// <summary>
-        /// The current special teams coach of the team
+        /// The current special teams coordinator of the team. Note: field will be NULL if team doesn't have an ST coordinator
         /// </summary>
-        [Description("The current special teams coach of the team")]
+        [Description("The current special teams coordinator of the team. Note: field will be NULL if team doesn't have an ST coordinator")]
         [DataMember(Name = "SpecialTeamsCoach", Order = 16)]
         public string SpecialTeamsCoach { get; set; }
 
@@ -135,16 +135,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string DefensiveScheme { get; set; }
 
         /// <summary>
-        /// The team's DEF/ST salary for the upcoming week in accordance with a $50,000 salary cap.  This is used for daily fantasy sports salary cap contests.  Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game, the most recent DraftKings salary is used.
+        /// The team's DEF/ST salary for the upcoming week in accordance with a $50,000 salary cap. This is used for daily fantasy sports salary cap contests. Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game; the most recent DraftKings salary is used
         /// </summary>
-        [Description("The team's DEF/ST salary for the upcoming week in accordance with a $50,000 salary cap.  This is used for daily fantasy sports salary cap contests.  Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game, the most recent DraftKings salary is used.")]
+        [Description("The team's DEF/ST salary for the upcoming week in accordance with a $50,000 salary cap. This is used for daily fantasy sports salary cap contests. Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game; the most recent DraftKings salary is used")]
         [DataMember(Name = "UpcomingSalary", Order = 19)]
         public int? UpcomingSalary { get; set; }
 
         /// <summary>
-        /// The team's upcoming opponent's rank in DEF/ST fantasy points allowed.
+        /// The opponent team the team is playing against in the upcoming week
         /// </summary>
-        [Description("The team's upcoming opponent's rank in DEF/ST fantasy points allowed.")]
+        [Description("The opponent team the team is playing against in the upcoming week")]
         [DataMember(Name = "UpcomingOpponent", Order = 20)]
         public string UpcomingOpponent { get; set; }
 
@@ -163,23 +163,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? UpcomingOpponentPositionRank { get; set; }
 
         /// <summary>
-        /// The team's DEF/ST FanDuel salary for the upcoming week.
+        /// The team's DEF/ST DraftKings salary for the upcoming week. Note: We recommend using our new DFS endpoints instead.
         /// </summary>
-        [Description("The team's DEF/ST FanDuel salary for the upcoming week.")]
+        [Description("The team's DEF/ST DraftKings salary for the upcoming week. Note: We recommend using our new DFS endpoints instead.")]
         [DataMember(Name = "UpcomingFanDuelSalary", Order = 23)]
         public int? UpcomingFanDuelSalary { get; set; }
 
         /// <summary>
-        /// The team's DEF/ST DraftKings salary for the upcoming week.
+        /// The team's DEF/ST DraftKings salary for the upcoming week. Note: We recommend using our new DFS endpoints instead
         /// </summary>
-        [Description("The team's DEF/ST DraftKings salary for the upcoming week.")]
+        [Description("The team's DEF/ST DraftKings salary for the upcoming week. Note: We recommend using our new DFS endpoints instead")]
         [DataMember(Name = "UpcomingDraftKingsSalary", Order = 24)]
         public int? UpcomingDraftKingsSalary { get; set; }
 
         /// <summary>
-        /// The team's DEF/ST Yahoo salary for the upcoming week.
+        /// The team's DEF/ST Yahoo salary for the upcoming week
         /// </summary>
-        [Description("The team's DEF/ST Yahoo salary for the upcoming week.")]
+        [Description("The team's DEF/ST Yahoo salary for the upcoming week")]
         [DataMember(Name = "UpcomingYahooSalary", Order = 25)]
         public int? UpcomingYahooSalary { get; set; }
 
@@ -212,44 +212,44 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string QuaternaryColor { get; set; }
 
         /// <summary>
-        /// The link to the team's logo hosted on Wikipedia. (This is not licensed for public or commercial use)
+        /// The link to the team's logo hosted on Wikipedia (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The link to the team's logo hosted on Wikipedia. (This is not licensed for public or commercial use)")]
+        [Description("The link to the team's logo hosted on Wikipedia (This is not licensed for public or commercial use)")]
         [DataMember(Name = "WikipediaLogoUrl", Order = 30)]
         public string WikipediaLogoUrl { get; set; }
 
         /// <summary>
-        /// The link to the team's wordmark logo hosted on Wikipedia. (This is not licensed for public or commercial use)
+        /// The link to the team's wordmark logo hosted on Wikipedia (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The link to the team's wordmark logo hosted on Wikipedia. (This is not licensed for public or commercial use)")]
+        [Description("The link to the team's wordmark logo hosted on Wikipedia (This is not licensed for public or commercial use)")]
         [DataMember(Name = "WikipediaWordMarkUrl", Order = 31)]
         public string WikipediaWordMarkUrl { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalTeamID", Order = 32)]
         public int? GlobalTeamID { get; set; }
 
         /// <summary>
-        /// Team's DST name on DraftKings daily fantasy contests
+        /// Team's D/ST name on DraftKings daily fantasy contests
         /// </summary>
-        [Description("Team's DST name on DraftKings daily fantasy contests")]
+        [Description("Team's D/ST name on DraftKings daily fantasy contests")]
         [DataMember(Name = "DraftKingsName", Order = 33)]
         public string DraftKingsName { get; set; }
 
         /// <summary>
-        /// Team's DST player ID on DraftKings daily fantasy contests
+        /// Team's D/ST player ID on DraftKings daily fantasy contests
         /// </summary>
-        [Description("Team's DST player ID on DraftKings daily fantasy contests")]
+        [Description("Team's D/ST player ID on DraftKings daily fantasy contests")]
         [DataMember(Name = "DraftKingsPlayerID", Order = 34)]
         public int? DraftKingsPlayerID { get; set; }
 
         /// <summary>
-        /// Team's DST name on FanDuel daily fantasy contests
+        /// Team's D/ST name on FanDuel daily fantasy contests
         /// </summary>
-        [Description("Team's DST name on FanDuel daily fantasy contests")]
+        [Description("Team's D/ST name on FanDuel daily fantasy contests")]
         [DataMember(Name = "FanDuelName", Order = 35)]
         public string FanDuelName { get; set; }
 
@@ -261,30 +261,30 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? FanDuelPlayerID { get; set; }
 
         /// <summary>
-        /// Team's DST name on daily fantasyDraft daily fantasy contests
+        /// Team's D/ST name on daily FantasyDraft daily fantasy contests
         /// </summary>
-        [Description("Team's DST name on daily fantasyDraft daily fantasy contests")]
+        [Description("Team's D/ST name on daily FantasyDraft daily fantasy contests")]
         [DataMember(Name = "FantasyDraftName", Order = 37)]
         public string FantasyDraftName { get; set; }
 
         /// <summary>
-        /// Team's DST player ID on daily fantasyDraft daily fantasy contests
+        /// Team's D/ST player ID on daily FantasyDraft daily fantasy contests
         /// </summary>
-        [Description("Team's DST player ID on daily fantasyDraft daily fantasy contests")]
+        [Description("Team's D/ST player ID on daily FantasyDraft daily fantasy contests")]
         [DataMember(Name = "FantasyDraftPlayerID", Order = 38)]
         public int? FantasyDraftPlayerID { get; set; }
 
         /// <summary>
-        /// Team's DST name on Yahoo daily fantasy contests
+        /// Team's D/ST name on Yahoo daily fantasy contests
         /// </summary>
-        [Description("Team's DST name on Yahoo daily fantasy contests")]
+        [Description("Team's D/ST name on Yahoo daily fantasy contests")]
         [DataMember(Name = "YahooName", Order = 39)]
         public string YahooName { get; set; }
 
         /// <summary>
-        /// Team's DST player ID on Yahoo daily fantasy contests
+        /// Team's D/ST player ID on Yahoo daily fantasy contests
         /// </summary>
-        [Description("Team's DST player ID on Yahoo daily fantasy contests")]
+        [Description("Team's D/ST player ID on Yahoo daily fantasy contests")]
         [DataMember(Name = "YahooPlayerID", Order = 40)]
         public int? YahooPlayerID { get; set; }
 
@@ -296,16 +296,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public Stadium StadiumDetails { get; set; }
 
         /// <summary>
-        /// The average draft position in 2 QuarterBack Leagues of the team's fantasy defense (DST)
+        /// The average draft position of the team (DST) in 2 Quarterback leagues
         /// </summary>
-        [Description("The average draft position in 2 QuarterBack Leagues of the team's fantasy defense (DST)")]
+        [Description("The average draft position of the team (DST) in 2 Quarterback leagues")]
         [DataMember(Name = "AverageDraftPosition2QB", Order = 42)]
         public decimal? AverageDraftPosition2QB { get; set; }
 
         /// <summary>
-        /// The average draft position in dynasty of the team's fantasy defense (DST)
+        /// The average draft position of this team (DST) in dynasty leagues
         /// </summary>
-        [Description("The average draft position in dynasty of the team's fantasy defense (DST)")]
+        [Description("The average draft position of this team (DST) in dynasty leagues")]
         [DataMember(Name = "AverageDraftPositionDynasty", Order = 43)]
         public decimal? AverageDraftPositionDynasty { get; set; }
 

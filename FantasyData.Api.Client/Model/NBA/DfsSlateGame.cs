@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int SlateID { get; set; }
 
         /// <summary>
-        /// The SportsDataIO GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.
+        /// The unique ID of the game associated with this SlateGame. This points to data in the schedule/game/box score feeds.
         /// </summary>
-        [Description("The SportsDataIO GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.")]
+        [Description("The unique ID of the game associated with this SlateGame. This points to data in the schedule/game/box score feeds.")]
         [DataMember(Name = "GameID", Order = 3)]
         public int? GameID { get; set; }
 

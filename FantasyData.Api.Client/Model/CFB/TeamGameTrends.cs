@@ -16,107 +16,107 @@ namespace FantasyData.Api.Client.Model.CFB
         public string Scope { get; set; }
 
         /// <summary>
-        /// The auto-generated unique ID of the Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("The auto-generated unique ID of the Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Abbreviation of the Team (e.g. OU, TTU, USC, UK, etc.)
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("Abbreviation of the Team (e.g. OU, TTU, USC, UK, etc.)")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 3)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The auto-generated unique ID of the Opponent Team
+        /// The unique ID of the team's opponent
         /// </summary>
-        [Description("The auto-generated unique ID of the Opponent Team")]
+        [Description("The unique ID of the team's opponent")]
         [DataMember(Name = "OpponentID", Order = 4)]
         public int? OpponentID { get; set; }
 
         /// <summary>
-        /// Abbreviation of the Opponent Team (e.g. OU, TTU, USC, UK, etc.)
+        /// The abreviation [Key] of the opponent team
         /// </summary>
-        [Description("Abbreviation of the Opponent Team (e.g. OU, TTU, USC, UK, etc.)")]
+        [Description("The abreviation [Key] of the opponent team")]
         [DataMember(Name = "Opponent", Order = 5)]
         public string Opponent { get; set; }
 
         /// <summary>
-        /// Wins relating to the scope
+        /// Total number of wins by the team relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.
         /// </summary>
-        [Description("Wins relating to the scope")]
+        [Description("Total number of wins by the team relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.")]
         [DataMember(Name = "Wins", Order = 6)]
         public int Wins { get; set; }
 
         /// <summary>
-        /// Losses relating to the scope
+        /// The total number of losses by the team relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.
         /// </summary>
-        [Description("Losses relating to the scope")]
+        [Description("The total number of losses by the team relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.")]
         [DataMember(Name = "Losses", Order = 7)]
         public int Losses { get; set; }
 
         /// <summary>
-        /// Ties relating to the scope
+        /// Total number of ties by the team relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.
         /// </summary>
-        [Description("Ties relating to the scope")]
+        [Description("Total number of ties by the team relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.")]
         [DataMember(Name = "Ties", Order = 8)]
         public int Ties { get; set; }
 
         /// <summary>
-        /// Wins against the spread relating to the scope
+        /// Total number of wins against the spread relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.
         /// </summary>
-        [Description("Wins against the spread relating to the scope")]
+        [Description("Total number of wins against the spread relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.")]
         [DataMember(Name = "WinsAgainstTheSpread", Order = 9)]
         public int? WinsAgainstTheSpread { get; set; }
 
         /// <summary>
-        /// Losses against the spread relating to the scope
+        /// Losses by the team against the spread relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.
         /// </summary>
-        [Description("Losses against the spread relating to the scope")]
+        [Description("Losses by the team against the spread relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.")]
         [DataMember(Name = "LossesAgainstTheSpread", Order = 10)]
         public int? LossesAgainstTheSpread { get; set; }
 
         /// <summary>
-        /// Pushes against the spread relating to the scope
+        /// Total number of pushes against the spread relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.
         /// </summary>
-        [Description("Pushes against the spread relating to the scope")]
+        [Description("Total number of pushes against the spread relating to the scope. Examples of scopes include: Last 3 Games, Last 5 Home Games, Last 10 Games as Favorite, etc.")]
         [DataMember(Name = "PushesAgainstTheSpread", Order = 11)]
         public int? PushesAgainstTheSpread { get; set; }
 
         /// <summary>
-        /// Amount of times the total score goes over the OverUnder
+        /// Amount of times the total score goes over the total points line
         /// </summary>
-        [Description("Amount of times the total score goes over the OverUnder")]
+        [Description("Amount of times the total score goes over the total points line")]
         [DataMember(Name = "Overs", Order = 12)]
         public int? Overs { get; set; }
 
         /// <summary>
-        /// Amount of times the total score goes under the OverUnder
+        /// Amount of times the total score goes under the total points line
         /// </summary>
-        [Description("Amount of times the total score goes under the OverUnder")]
+        [Description("Amount of times the total score goes under the total points line")]
         [DataMember(Name = "Unders", Order = 13)]
         public int? Unders { get; set; }
 
         /// <summary>
-        /// Amount of times the total score pushes the OverUnder
+        /// Amount of times the total score pushes the total points line
         /// </summary>
-        [Description("Amount of times the total score pushes the OverUnder")]
+        [Description("Amount of times the total score pushes the total points line")]
         [DataMember(Name = "OverUnderPushes", Order = 14)]
         public int? OverUnderPushes { get; set; }
 
         /// <summary>
-        /// Average score of team
+        /// The average points scored by the team
         /// </summary>
-        [Description("Average score of team")]
+        [Description("The average points scored by the team")]
         [DataMember(Name = "AverageScore", Order = 15)]
         public decimal? AverageScore { get; set; }
 
         /// <summary>
-        /// Average score of opponent
+        /// The average points scored by the opposing team
         /// </summary>
-        [Description("Average score of opponent")]
+        [Description("The average points scored by the opposing team")]
         [DataMember(Name = "AverageOpponentScore", Order = 16)]
         public decimal? AverageOpponentScore { get; set; }
 

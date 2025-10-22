@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class DfsSlateTournament
     {
         /// <summary>
-        /// Unique ID of a SlateTournament (assigned by SportsDataIO).
+        /// The unique ID of a SlateTournament (assigned by SportsDataIO).
         /// </summary>
-        [Description("Unique ID of a SlateTournament (assigned by SportsDataIO).")]
+        [Description("The unique ID of a SlateTournament (assigned by SportsDataIO).")]
         [DataMember(Name = "SlateTournamentID", Order = 1)]
         public int SlateTournamentID { get; set; }
 
         /// <summary>
-        /// The SlateID that this SlateTournament refers to.
+        /// Unique ID of a Slate (assigned by SportsDataIO).
         /// </summary>
-        [Description("The SlateID that this SlateTournament refers to.")]
+        [Description("Unique ID of a Slate (assigned by SportsDataIO).")]
         [DataMember(Name = "SlateID", Order = 2)]
         public int SlateID { get; set; }
 
         /// <summary>
-        /// The SportsDataIO TournamentID that this SlateTournament refers to. This points to data in the respective sports' schedule/game/box score feeds.
+        /// The unique ID that this SlateTournament refers to. Note: This points to data in the respective sports' schedule/game/box score feeds.
         /// </summary>
-        [Description("The SportsDataIO TournamentID that this SlateTournament refers to. This points to data in the respective sports' schedule/game/box score feeds.")]
+        [Description("The unique ID that this SlateTournament refers to. Note: This points to data in the respective sports' schedule/game/box score feeds.")]
         [DataMember(Name = "TournamentID", Order = 3)]
         public int? TournamentID { get; set; }
 
@@ -37,16 +37,16 @@ namespace FantasyData.Api.Client.Model.Golf
         public Tournament Tournament { get; set; }
 
         /// <summary>
-        /// Unique ID of a SlateTournament (assigned by the operator).
+        /// The unique ID of the SlateTournament as assigned by the operator
         /// </summary>
-        [Description("Unique ID of a SlateTournament (assigned by the operator).")]
+        [Description("The unique ID of the SlateTournament as assigned by the operator")]
         [DataMember(Name = "OperatorTournamentID", Order = 5)]
         public int? OperatorTournamentID { get; set; }
 
         /// <summary>
-        /// Indicates whether this tournament was removed/deleted by the operator.
+        /// Indicates whether this tournament was removed/deleted by the operator
         /// </summary>
-        [Description("Indicates whether this tournament was removed/deleted by the operator.")]
+        [Description("Indicates whether this tournament was removed/deleted by the operator")]
         [DataMember(Name = "RemovedByOperator", Order = 6)]
         public bool? RemovedByOperator { get; set; }
 

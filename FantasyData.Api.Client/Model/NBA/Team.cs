@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class Team
     {
         /// <summary>
-        /// The auto-generated unique ID of the Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("The auto-generated unique ID of the Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 1)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Abbreviation of the team (e.g. LAL, PHI, BOS, CHI, etc.)
+        /// Abbreviation of the team (e.g. LAL; PHI; BOS; CHI; etc.)
         /// </summary>
-        [Description("Abbreviation of the team (e.g. LAL, PHI, BOS, CHI, etc.)")]
+        [Description("Abbreviation of the team (e.g. LAL; PHI; BOS; CHI; etc.)")]
         [DataMember(Name = "Key", Order = 2)]
         public string Key { get; set; }
 
@@ -72,30 +72,30 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Division { get; set; }
 
         /// <summary>
-        /// The team's primary color. (This is not licensed for public or commercial use)
+        /// The team's first color. (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's primary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's first color. (This is not licensed for public or commercial use)")]
         [DataMember(Name = "PrimaryColor", Order = 10)]
         public string PrimaryColor { get; set; }
 
         /// <summary>
-        /// The team's secondary color. (This is not licensed for public or commercial use)
+        /// The team's second color. (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's secondary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's second color. (This is not licensed for public or commercial use)")]
         [DataMember(Name = "SecondaryColor", Order = 11)]
         public string SecondaryColor { get; set; }
 
         /// <summary>
-        /// The team's tertiary color. (This is not licensed for public or commercial use)
+        /// The team's third color. (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's tertiary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's third color. (This is not licensed for public or commercial use)")]
         [DataMember(Name = "TertiaryColor", Order = 12)]
         public string TertiaryColor { get; set; }
 
         /// <summary>
-        /// The team's quaternary color. (This is not licensed for public or commercial use)
+        /// The team's fourth color. (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's quaternary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's fourth color. (This is not licensed for public or commercial use)")]
         [DataMember(Name = "QuaternaryColor", Order = 13)]
         public string QuaternaryColor { get; set; }
 
@@ -121,9 +121,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public int GlobalTeamID { get; set; }
 
         /// <summary>
-        /// The team's ID on nba dot com
+        /// The team's ID on NBAdotCom
         /// </summary>
-        [Description("The team's ID on nba dot com")]
+        [Description("The team's ID on NBAdotCom")]
         [DataMember(Name = "NbaDotComTeamID", Order = 17)]
         public int? NbaDotComTeamID { get; set; }
 

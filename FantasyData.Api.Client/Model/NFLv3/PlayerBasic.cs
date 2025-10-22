@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class PlayerBasic
     {
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The unique PlayerID of the player as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The unique PlayerID of the player as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// The abbreviation of the team this player is employed by, or if currently unemployed, the most recent team this player was employed by.
+        /// The abbreviation [Key] of the team that the player is on. Note: If this player is a free agent; this field is NULL
         /// </summary>
-        [Description("The abbreviation of the team this player is employed by, or if currently unemployed, the most recent team this player was employed by.")]
+        [Description("The abbreviation [Key] of the team that the player is on. Note: If this player is a free agent; this field is NULL")]
         [DataMember(Name = "Team", Order = 2)]
         public string Team { get; set; }
 
@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string LastName { get; set; }
 
         /// <summary>
-        /// Player's primary position. Possible values: C, CB, DB, DE, DE/LB, DL, DT, FB, FS, G, ILB, K, KR, LB, LS, NT, OL, OLB, OT, P, QB, RB, S, SS, T, TE, WR
+        /// The primary position of the player. Possible Values: C; CB; DB; DE; DL; DT; FB; FS; G; ILB; K; KR; LB; LS; NT; OL; OLB; OT; P; QB; RB; S; SS; T; TE; WR
         /// </summary>
-        [Description("Player's primary position. Possible values: C, CB, DB, DE, DE/LB, DL, DT, FB, FS, G, ILB, K, KR, LB, LS, NT, OL, OLB, OT, P, QB, RB, S, SS, T, TE, WR")]
+        [Description("The primary position of the player. Possible Values: C; CB; DB; DE; DL; DT; FB; FS; G; ILB; K; KR; LB; LS; NT; OL; OLB; OT; P; QB; RB; S; SS; T; TE; WR")]
         [DataMember(Name = "Position", Order = 6)]
         public string Position { get; set; }
 
@@ -72,51 +72,51 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? Weight { get; set; }
 
         /// <summary>
-        /// Date of birth
+        /// The player's date of birth
         /// </summary>
-        [Description("Date of birth")]
+        [Description("The player's date of birth")]
         [DataMember(Name = "BirthDate", Order = 10)]
         public DateTime? BirthDate { get; set; }
 
         /// <summary>
-        /// College
+        /// College team the player played for prior to turning professional
         /// </summary>
-        [Description("College")]
+        [Description("College team the player played for prior to turning professional")]
         [DataMember(Name = "College", Order = 11)]
         public string College { get; set; }
 
         /// <summary>
-        /// Number of years experience.  This number is incremented every year, in the Spring, when we load the rookies following the NFL Draft.  Rookies will have Experience = Zero, while second year players will have Experience = 2.
+        /// Number of years experience. Note: This number is incremented every year; in the Spring; when we load the rookies following the NFL Draft. Rookies will have Experience = Zero; while second year players will have Experience = 2.
         /// </summary>
-        [Description("Number of years experience.  This number is incremented every year, in the Spring, when we load the rookies following the NFL Draft.  Rookies will have Experience = Zero, while second year players will have Experience = 2.")]
+        [Description("Number of years experience. Note: This number is incremented every year; in the Spring; when we load the rookies following the NFL Draft. Rookies will have Experience = Zero; while second year players will have Experience = 2.")]
         [DataMember(Name = "Experience", Order = 12)]
         public int? Experience { get; set; }
 
         /// <summary>
-        /// The player's fantasy football position. Possible values: QB, RB, WR, TE, DL, LB, DB, K, P, OL
+        /// The player's fantasy football position. Possible values: QB; RB; WR; TE; DL; LB; DB; K; P; OL
         /// </summary>
-        [Description("The player's fantasy football position. Possible values: QB, RB, WR, TE, DL, LB, DB, K, P, OL")]
+        [Description("The player's fantasy football position. Possible values: QB; RB; WR; TE; DL; LB; DB; K; P; OL")]
         [DataMember(Name = "FantasyPosition", Order = 13)]
         public string FantasyPosition { get; set; }
 
         /// <summary>
-        /// Whether the player is currently under contract with an NFL team
+        /// Whether or not the player is on the active roster of the NFL team
         /// </summary>
-        [Description("Whether the player is currently under contract with an NFL team")]
+        [Description("Whether or not the player is on the active roster of the NFL team")]
         [DataMember(Name = "Active", Order = 14)]
         public bool? Active { get; set; }
 
         /// <summary>
-        /// The category (Offense, Defense or Special Teams) of the players position (OFF, DEF, ST)
+        /// The category of the player's position (OFF; DEF; ST)
         /// </summary>
-        [Description("The category (Offense, Defense or Special Teams) of the players position (OFF, DEF, ST)")]
+        [Description("The category of the player's position (OFF; DEF; ST)")]
         [DataMember(Name = "PositionCategory", Order = 15)]
         public string PositionCategory { get; set; }
 
         /// <summary>
-        /// Full name of the player (Cam Newton, Aaron Rodgers, etc.)
+        /// The player's full name
         /// </summary>
-        [Description("Full name of the player (Cam Newton, Aaron Rodgers, etc.)")]
+        [Description("The player's full name")]
         [DataMember(Name = "Name", Order = 16)]
         public string Name { get; set; }
 
@@ -128,9 +128,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? Age { get; set; }
 
         /// <summary>
-        /// A shortened version of the player's full name (C.Newton, A.Rodgers)
+        /// The first initial and last name of the player (J. Doe)
         /// </summary>
-        [Description("A shortened version of the player's full name (C.Newton, A.Rodgers)")]
+        [Description("The first initial and last name of the player (J. Doe)")]
         [DataMember(Name = "ShortName", Order = 18)]
         public string ShortName { get; set; }
 
@@ -149,9 +149,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? HeightInches { get; set; }
 
         /// <summary>
-        /// The unique ID of this team
+        /// The unique ID of the team that the player is on. Note: If the player is a free agent; this field is NULL
         /// </summary>
-        [Description("The unique ID of this team")]
+        [Description("The unique ID of the team that the player is on. Note: If the player is a free agent; this field is NULL")]
         [DataMember(Name = "TeamID", Order = 21)]
         public int? TeamID { get; set; }
 

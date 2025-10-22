@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public DepthChart[] DepthCharts { get; set; }
 
         /// <summary>
-        /// Unique ID of Team
+        /// The team's unique TeamID as assigned by SportsDataIO
         /// </summary>
-        [Description("Unique ID of Team")]
+        [Description("The team's unique TeamID as assigned by SportsDataIO")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int TeamID { get; set; }
 

@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class TeamGame
     {
         /// <summary>
-        /// A 9 digit unique code identifying the game that this record corresponds to.  The GameID is composed of Season, SeasonType, Week and HomeTeam.
+        /// A 9 digit unique code identifying the game that this record corresponds to. The GameID is composed of Season; SeasonType; Week and HomeTeam. Note: This value will be NULL for bye weeks
         /// </summary>
-        [Description("A 9 digit unique code identifying the game that this record corresponds to.  The GameID is composed of Season, SeasonType, Week and HomeTeam.")]
+        [Description("A 9 digit unique code identifying the game that this record corresponds to. The GameID is composed of Season; SeasonType; Week and HomeTeam. Note: This value will be NULL for bye weeks")]
         [DataMember(Name = "GameKey", Order = 1)]
         public string GameKey { get; set; }
 
         /// <summary>
-        /// The date/time of the game
+        /// The date and time of the game (in US Eastern Time)
         /// </summary>
-        [Description("The date/time of the game")]
+        [Description("The date and time of the game (in US Eastern Time)")]
         [DataMember(Name = "Date", Order = 2)]
         public DateTime? Date { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this team corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=All-Star)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this team corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=All-Star)")]
         [DataMember(Name = "SeasonType", Order = 3)]
         public int SeasonType { get; set; }
 
@@ -37,51 +37,51 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int Season { get; set; }
 
         /// <summary>
-        /// The NFL week of the game (regular season: 1 to 17, preseason: 0 to 4, postseason: 1 to 4)
+        /// The NFL week of the game (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). For seasons prior to 2021 there will be 3 preseason weeks
         /// </summary>
-        [Description("The NFL week of the game (regular season: 1 to 17, preseason: 0 to 4, postseason: 1 to 4)")]
+        [Description("The NFL week of the game (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). For seasons prior to 2021 there will be 3 preseason weeks")]
         [DataMember(Name = "Week", Order = 5)]
         public int? Week { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 6)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Opponent
+        /// The abbreviation [Key] of the opponent team
         /// </summary>
-        [Description("The abbreviation of the Opponent")]
+        [Description("The abbreviation [Key] of the opponent team")]
         [DataMember(Name = "Opponent", Order = 7)]
         public string Opponent { get; set; }
 
         /// <summary>
-        /// Whether the Team is Home or Away
+        /// Whether the team is home or away
         /// </summary>
-        [Description("Whether the Team is Home or Away")]
+        [Description("Whether the team is home or away")]
         [DataMember(Name = "HomeOrAway", Order = 8)]
         public string HomeOrAway { get; set; }
 
         /// <summary>
-        /// The final score of the Team
+        /// The final score of the team in the game
         /// </summary>
-        [Description("The final score of the Team")]
+        [Description("The final score of the team in the game")]
         [DataMember(Name = "Score", Order = 9)]
         public int Score { get; set; }
 
         /// <summary>
-        /// The final score of the Opponent
+        /// The final score of the opponent team in the game
         /// </summary>
-        [Description("The final score of the Opponent")]
+        [Description("The final score of the opponent team in the game")]
         [DataMember(Name = "OpponentScore", Order = 10)]
         public int OpponentScore { get; set; }
 
         /// <summary>
-        /// The total score of both teams
+        /// The total points scored by both teams in the game
         /// </summary>
-        [Description("The total score of both teams")]
+        [Description("The total points scored by both teams in the game")]
         [DataMember(Name = "TotalScore", Order = 11)]
         public int TotalScore { get; set; }
 
@@ -93,9 +93,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Stadium { get; set; }
 
         /// <summary>
-        /// Playing surface of the stadium
+        /// The playing surface of the stadium
         /// </summary>
-        [Description("Playing surface of the stadium")]
+        [Description("The playing surface of the stadium")]
         [DataMember(Name = "PlayingSurface", Order = 13)]
         public string PlayingSurface { get; set; }
 
@@ -107,247 +107,247 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? Temperature { get; set; }
 
         /// <summary>
-        /// Humidity at game start (Percentage)
+        /// The humidity percentage at the start of the game
         /// </summary>
-        [Description("Humidity at game start (Percentage)")]
+        [Description("The humidity percentage at the start of the game")]
         [DataMember(Name = "Humidity", Order = 15)]
         public int? Humidity { get; set; }
 
         /// <summary>
-        /// Wind speed at game start (MPH)
+        /// The wind speed at the start of the game (in MPH)
         /// </summary>
-        [Description("Wind speed at game start (MPH)")]
+        [Description("The wind speed at the start of the game (in MPH)")]
         [DataMember(Name = "WindSpeed", Order = 16)]
         public int? WindSpeed { get; set; }
 
         /// <summary>
-        /// The oddsmaker Over/Under at game start
+        /// The total points line (over/under) for the team in the game
         /// </summary>
-        [Description("The oddsmaker Over/Under at game start")]
+        [Description("The total points line (over/under) for the team in the game")]
         [DataMember(Name = "OverUnder", Order = 17)]
         public decimal? OverUnder { get; set; }
 
         /// <summary>
-        /// The oddsmaker Point Spread at game start from the perspective of the Team (negative numbers indicate the Team is favored, positive numbers indicate the Opponent is favored)
+        /// The oddsmaker point spread at game start from the perspective of the team (negative numbers indicate the HomeTeam is favored; positive numbers indicate the AwayTeam is favored)
         /// </summary>
-        [Description("The oddsmaker Point Spread at game start from the perspective of the Team (negative numbers indicate the Team is favored, positive numbers indicate the Opponent is favored)")]
+        [Description("The oddsmaker point spread at game start from the perspective of the team (negative numbers indicate the HomeTeam is favored; positive numbers indicate the AwayTeam is favored)")]
         [DataMember(Name = "PointSpread", Order = 18)]
         public decimal? PointSpread { get; set; }
 
         /// <summary>
-        /// Points scored during Quarter 1 for the Team
+        /// Points scored during Quarter 1 for the team in the game
         /// </summary>
-        [Description("Points scored during Quarter 1 for the Team")]
+        [Description("Points scored during Quarter 1 for the team in the game")]
         [DataMember(Name = "ScoreQuarter1", Order = 19)]
         public int? ScoreQuarter1 { get; set; }
 
         /// <summary>
-        /// Points scored during Quarter 2 for the Team
+        /// Points scored during Quarter 2 for the team in the game
         /// </summary>
-        [Description("Points scored during Quarter 2 for the Team")]
+        [Description("Points scored during Quarter 2 for the team in the game")]
         [DataMember(Name = "ScoreQuarter2", Order = 20)]
         public int? ScoreQuarter2 { get; set; }
 
         /// <summary>
-        /// Points scored during Quarter 3 for the Team
+        /// Points scored during Quarter 3 for the team in the game
         /// </summary>
-        [Description("Points scored during Quarter 3 for the Team")]
+        [Description("Points scored during Quarter 3 for the team in the game")]
         [DataMember(Name = "ScoreQuarter3", Order = 21)]
         public int? ScoreQuarter3 { get; set; }
 
         /// <summary>
-        /// Points scored during Quarter 4 for the Team
+        /// Points scored during Quarter 4 for the team in the game
         /// </summary>
-        [Description("Points scored during Quarter 4 for the Team")]
+        [Description("Points scored during Quarter 4 for the team in the game")]
         [DataMember(Name = "ScoreQuarter4", Order = 22)]
         public int? ScoreQuarter4 { get; set; }
 
         /// <summary>
-        /// Points scored during Overtime for the Team
+        /// Points scored during overtime for the team in the game
         /// </summary>
-        [Description("Points scored during Overtime for the Team")]
+        [Description("Points scored during overtime for the team in the game")]
         [DataMember(Name = "ScoreOvertime", Order = 23)]
         public int ScoreOvertime { get; set; }
 
         /// <summary>
-        /// Time of possession minutes
+        /// Total time of possession (minutes) by the team in the game
         /// </summary>
-        [Description("Time of possession minutes")]
+        [Description("Total time of possession (minutes) by the team in the game")]
         [DataMember(Name = "TimeOfPossessionMinutes", Order = 24)]
         public int? TimeOfPossessionMinutes { get; set; }
 
         /// <summary>
-        /// Time of possession seconds
+        /// Total time of possession (seconds) by the team in the game
         /// </summary>
-        [Description("Time of possession seconds")]
+        [Description("Total time of possession (seconds) by the team in the game")]
         [DataMember(Name = "TimeOfPossessionSeconds", Order = 25)]
         public int? TimeOfPossessionSeconds { get; set; }
 
         /// <summary>
-        /// Time of possession
+        /// Total time of possession by the team in the game
         /// </summary>
-        [Description("Time of possession")]
+        [Description("Total time of possession by the team in the game")]
         [DataMember(Name = "TimeOfPossession", Order = 26)]
         public string TimeOfPossession { get; set; }
 
         /// <summary>
-        /// Total first downs
+        /// Total first downs by the team in the game
         /// </summary>
-        [Description("Total first downs")]
+        [Description("Total first downs by the team in the game")]
         [DataMember(Name = "FirstDowns", Order = 27)]
         public int? FirstDowns { get; set; }
 
         /// <summary>
-        /// Total rushing first downs
+        /// Total rushing first downs by the team in the game
         /// </summary>
-        [Description("Total rushing first downs")]
+        [Description("Total rushing first downs by the team in the game")]
         [DataMember(Name = "FirstDownsByRushing", Order = 28)]
         public int? FirstDownsByRushing { get; set; }
 
         /// <summary>
-        /// Total passing first downs
+        /// Total passing first downs by the team in the game
         /// </summary>
-        [Description("Total passing first downs")]
+        [Description("Total passing first downs by the team in the game")]
         [DataMember(Name = "FirstDownsByPassing", Order = 29)]
         public int? FirstDownsByPassing { get; set; }
 
         /// <summary>
-        /// Total first downs by opponent's penalty
+        /// Total first downs by opponent's penalty by the team in the game
         /// </summary>
-        [Description("Total first downs by opponent's penalty")]
+        [Description("Total first downs by opponent's penalty by the team in the game")]
         [DataMember(Name = "FirstDownsByPenalty", Order = 30)]
         public int? FirstDownsByPenalty { get; set; }
 
         /// <summary>
-        /// Number of offensive plays run
+        /// Number of offensive plays run by the team in the game
         /// </summary>
-        [Description("Number of offensive plays run")]
+        [Description("Number of offensive plays run by the team in the game")]
         [DataMember(Name = "OffensivePlays", Order = 31)]
         public int OffensivePlays { get; set; }
 
         /// <summary>
-        /// Number of offensive yards gained
+        /// Total offensive yards gained by the team in the game
         /// </summary>
-        [Description("Number of offensive yards gained")]
+        [Description("Total offensive yards gained by the team in the game")]
         [DataMember(Name = "OffensiveYards", Order = 32)]
         public int OffensiveYards { get; set; }
 
         /// <summary>
-        /// Average yards gained per offensive play
+        /// Average yards gained per offensive play by the team in the game
         /// </summary>
-        [Description("Average yards gained per offensive play")]
+        [Description("Average yards gained per offensive play by the team in the game")]
         [DataMember(Name = "OffensiveYardsPerPlay", Order = 33)]
         public decimal OffensiveYardsPerPlay { get; set; }
 
         /// <summary>
-        /// Touchdowns scored
+        /// Total touchdowns scored by the team in the game
         /// </summary>
-        [Description("Touchdowns scored")]
+        [Description("Total touchdowns scored by the team in the game")]
         [DataMember(Name = "Touchdowns", Order = 34)]
         public int? Touchdowns { get; set; }
 
         /// <summary>
-        /// Number of rushing attempts
+        /// Total rushing attempts by the team in the game
         /// </summary>
-        [Description("Number of rushing attempts")]
+        [Description("Total rushing attempts by the team in the game")]
         [DataMember(Name = "RushingAttempts", Order = 35)]
         public int? RushingAttempts { get; set; }
 
         /// <summary>
-        /// Number of rushing yards
+        /// Total rushing yards by the team in the game
         /// </summary>
-        [Description("Number of rushing yards")]
+        [Description("Total rushing yards by the team in the game")]
         [DataMember(Name = "RushingYards", Order = 36)]
         public int? RushingYards { get; set; }
 
         /// <summary>
-        /// Average rushing yards gained per attempt
+        /// Total rushing yards per attempt by the team in the game
         /// </summary>
-        [Description("Average rushing yards gained per attempt")]
+        [Description("Total rushing yards per attempt by the team in the game")]
         [DataMember(Name = "RushingYardsPerAttempt", Order = 37)]
         public decimal RushingYardsPerAttempt { get; set; }
 
         /// <summary>
-        /// Rushing touchdowns scored
+        /// Total rushing touchdowns by the team in the game
         /// </summary>
-        [Description("Rushing touchdowns scored")]
+        [Description("Total rushing touchdowns by the team in the game")]
         [DataMember(Name = "RushingTouchdowns", Order = 38)]
         public int? RushingTouchdowns { get; set; }
 
         /// <summary>
-        /// Number of passes thrown
+        /// Total passes thrown by the team in the game
         /// </summary>
-        [Description("Number of passes thrown")]
+        [Description("Total passes thrown by the team in the game")]
         [DataMember(Name = "PassingAttempts", Order = 39)]
         public int? PassingAttempts { get; set; }
 
         /// <summary>
-        /// Number of pass completions
+        /// Total passes completed by the team in the game
         /// </summary>
-        [Description("Number of pass completions")]
+        [Description("Total passes completed by the team in the game")]
         [DataMember(Name = "PassingCompletions", Order = 40)]
         public int? PassingCompletions { get; set; }
 
         /// <summary>
-        /// Number of passing yards
+        /// Total passing yards by the team in the game
         /// </summary>
-        [Description("Number of passing yards")]
+        [Description("Total passing yards by the team in the game")]
         [DataMember(Name = "PassingYards", Order = 41)]
         public int? PassingYards { get; set; }
 
         /// <summary>
-        /// Passing touchdowns thrown
+        /// Total passing touchdowns by the team in the game
         /// </summary>
-        [Description("Passing touchdowns thrown")]
+        [Description("Total passing touchdowns by the team in the game")]
         [DataMember(Name = "PassingTouchdowns", Order = 42)]
         public int? PassingTouchdowns { get; set; }
 
         /// <summary>
-        /// Interceptions thrown
+        /// Total interceptions thrown by the team in the game
         /// </summary>
-        [Description("Interceptions thrown")]
+        [Description("Total interceptions thrown by the team in the game")]
         [DataMember(Name = "PassingInterceptions", Order = 43)]
         public int? PassingInterceptions { get; set; }
 
         /// <summary>
-        /// Average passing yards gained per attempt
+        /// Total average passing yards per attempt by the team in the game
         /// </summary>
-        [Description("Average passing yards gained per attempt")]
+        [Description("Total average passing yards per attempt by the team in the game")]
         [DataMember(Name = "PassingYardsPerAttempt", Order = 44)]
         public decimal PassingYardsPerAttempt { get; set; }
 
         /// <summary>
-        /// Average passing yards gained per completion
+        /// Total average passing yards per completion by the team in the game
         /// </summary>
-        [Description("Average passing yards gained per completion")]
+        [Description("Total average passing yards per completion by the team in the game")]
         [DataMember(Name = "PassingYardsPerCompletion", Order = 45)]
         public decimal PassingYardsPerCompletion { get; set; }
 
         /// <summary>
-        /// Percentage of passes that were completed
+        /// The date and time of the game (in US Eastern Time)
         /// </summary>
-        [Description("Percentage of passes that were completed")]
+        [Description("The date and time of the game (in US Eastern Time)")]
         [DataMember(Name = "CompletionPercentage", Order = 46)]
         public decimal CompletionPercentage { get; set; }
 
         /// <summary>
-        /// Passer rating
+        /// The team's passer rating in the game
         /// </summary>
-        [Description("Passer rating")]
+        [Description("The team's passer rating in the game")]
         [DataMember(Name = "PasserRating", Order = 47)]
         public decimal? PasserRating { get; set; }
 
         /// <summary>
-        /// Third down attempts
+        /// Total third down attempts by the team in the game
         /// </summary>
-        [Description("Third down attempts")]
+        [Description("Total third down attempts by the team in the game")]
         [DataMember(Name = "ThirdDownAttempts", Order = 48)]
         public int? ThirdDownAttempts { get; set; }
 
         /// <summary>
-        /// Third down conversions
+        /// Total percentage of third downs converted by the team in the game
         /// </summary>
-        [Description("Third down conversions")]
+        [Description("Total percentage of third downs converted by the team in the game")]
         [DataMember(Name = "ThirdDownConversions", Order = 49)]
         public int? ThirdDownConversions { get; set; }
 
@@ -359,520 +359,520 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? ThirdDownPercentage { get; set; }
 
         /// <summary>
-        /// Fourth down attempts
+        /// Total fourth down attempts by the team in the game
         /// </summary>
-        [Description("Fourth down attempts")]
+        [Description("Total fourth down attempts by the team in the game")]
         [DataMember(Name = "FourthDownAttempts", Order = 51)]
         public int? FourthDownAttempts { get; set; }
 
         /// <summary>
-        /// Fourth down conversions
+        /// Total fourth down conversions by the team in the game
         /// </summary>
-        [Description("Fourth down conversions")]
+        [Description("Total fourth down conversions by the team in the game")]
         [DataMember(Name = "FourthDownConversions", Order = 52)]
         public int? FourthDownConversions { get; set; }
 
         /// <summary>
-        /// Percentage of fourth downs converted
+        /// Percentage of fourth downs converted by the team in the game
         /// </summary>
-        [Description("Percentage of fourth downs converted")]
+        [Description("Percentage of fourth downs converted by the team in the game")]
         [DataMember(Name = "FourthDownPercentage", Order = 53)]
         public decimal? FourthDownPercentage { get; set; }
 
         /// <summary>
-        /// Red zone opportunities
+        /// Total red zone opportunities by the team in the game
         /// </summary>
-        [Description("Red zone opportunities")]
+        [Description("Total red zone opportunities by the team in the game")]
         [DataMember(Name = "RedZoneAttempts", Order = 54)]
         public int? RedZoneAttempts { get; set; }
 
         /// <summary>
-        /// Red zone opportunities converted to touchdowns
+        /// Total red zone opportunities converted into touchdowns by the team in the game
         /// </summary>
-        [Description("Red zone opportunities converted to touchdowns")]
+        [Description("Total red zone opportunities converted into touchdowns by the team in the game")]
         [DataMember(Name = "RedZoneConversions", Order = 55)]
         public int? RedZoneConversions { get; set; }
 
         /// <summary>
-        /// Deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("Deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "GoalToGoAttempts", Order = 56)]
         public int? GoalToGoAttempts { get; set; }
 
         /// <summary>
-        /// Deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("Deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "GoalToGoConversions", Order = 57)]
         public int? GoalToGoConversions { get; set; }
 
         /// <summary>
-        /// Total punt and defensive return yards
+        /// Total punt and defensive return yards by the team in the game
         /// </summary>
-        [Description("Total punt and defensive return yards")]
+        [Description("Total punt and defensive return yards by the team in the game")]
         [DataMember(Name = "ReturnYards", Order = 58)]
         public int? ReturnYards { get; set; }
 
         /// <summary>
-        /// Penalties committed
+        /// Total penalties committed by the team in the game
         /// </summary>
-        [Description("Penalties committed")]
+        [Description("Total penalties committed by the team in the game")]
         [DataMember(Name = "Penalties", Order = 59)]
         public int? Penalties { get; set; }
 
         /// <summary>
-        /// Penalty yards enforced against team
+        /// Total penalty yards enforced against the team
         /// </summary>
-        [Description("Penalty yards enforced against team")]
+        [Description("Total penalty yards enforced against the team")]
         [DataMember(Name = "PenaltyYards", Order = 60)]
         public int? PenaltyYards { get; set; }
 
         /// <summary>
-        /// Fumbles
+        /// Total fumbles by the team in the game
         /// </summary>
-        [Description("Fumbles")]
+        [Description("Total fumbles by the team in the game")]
         [DataMember(Name = "Fumbles", Order = 61)]
         public int? Fumbles { get; set; }
 
         /// <summary>
-        /// Fumbles lost
+        /// Total fumbles lost by the team in the game
         /// </summary>
-        [Description("Fumbles lost")]
+        [Description("Total fumbles lost by the team in the game")]
         [DataMember(Name = "FumblesLost", Order = 62)]
         public int? FumblesLost { get; set; }
 
         /// <summary>
-        /// Number of sacks allowed by Team
+        /// Total number of sacks allowed by the team in the game
         /// </summary>
-        [Description("Number of sacks allowed by Team")]
+        [Description("Total number of sacks allowed by the team in the game")]
         [DataMember(Name = "TimesSacked", Order = 63)]
         public int? TimesSacked { get; set; }
 
         /// <summary>
-        /// Number of yards lost as a result of sacks allowed
+        /// Total sack yards allowed by the team in the game
         /// </summary>
-        [Description("Number of yards lost as a result of sacks allowed")]
+        [Description("Total sack yards allowed by the team in the game")]
         [DataMember(Name = "TimesSackedYards", Order = 64)]
         public int? TimesSackedYards { get; set; }
 
         /// <summary>
-        /// Number of times the opposing QB was hit (includes sacks)
+        /// Total quarterback hits by the team in the game. Note: This is a defensive stat that includes sacks
         /// </summary>
-        [Description("Number of times the opposing QB was hit (includes sacks)")]
+        [Description("Total quarterback hits by the team in the game. Note: This is a defensive stat that includes sacks")]
         [DataMember(Name = "QuarterbackHits", Order = 65)]
         public int? QuarterbackHits { get; set; }
 
         /// <summary>
-        /// Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)
+        /// Total tackles for loss by the team in the game. Note: These are tackles behind the line of scrimmage for loss of yards (including sacks)
         /// </summary>
-        [Description("Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)")]
+        [Description("Total tackles for loss by the team in the game. Note: These are tackles behind the line of scrimmage for loss of yards (including sacks)")]
         [DataMember(Name = "TacklesForLoss", Order = 66)]
         public int? TacklesForLoss { get; set; }
 
         /// <summary>
-        /// Safeties scored
+        /// Total defensive safeties scored by the team in the game
         /// </summary>
-        [Description("Safeties scored")]
+        [Description("Total defensive safeties scored by the team in the game")]
         [DataMember(Name = "Safeties", Order = 67)]
         public int? Safeties { get; set; }
 
         /// <summary>
-        /// Number of punts
+        /// Total number of punts by the team in the game
         /// </summary>
-        [Description("Number of punts")]
+        [Description("Total number of punts by the team in the game")]
         [DataMember(Name = "Punts", Order = 68)]
         public int? Punts { get; set; }
 
         /// <summary>
-        /// Total punt yards
+        /// Total punt yards by the team in the game
         /// </summary>
-        [Description("Total punt yards")]
+        [Description("Total punt yards by the team in the game")]
         [DataMember(Name = "PuntYards", Order = 69)]
         public int? PuntYards { get; set; }
 
         /// <summary>
-        /// Average number of yards per punt
+        /// The average number of yards per punt by the team in the game
         /// </summary>
-        [Description("Average number of yards per punt")]
+        [Description("The average number of yards per punt by the team in the game")]
         [DataMember(Name = "PuntAverage", Order = 70)]
         public decimal PuntAverage { get; set; }
 
         /// <summary>
-        /// Number of giveaways
+        /// Total number of giveaways by the team in the game
         /// </summary>
-        [Description("Number of giveaways")]
+        [Description("Total number of giveaways by the team in the game")]
         [DataMember(Name = "Giveaways", Order = 71)]
         public int Giveaways { get; set; }
 
         /// <summary>
-        /// Number of takeaways
+        /// Total takeaways by the team in the game
         /// </summary>
-        [Description("Number of takeaways")]
+        [Description("Total takeaways by the team in the game")]
         [DataMember(Name = "Takeaways", Order = 72)]
         public int Takeaways { get; set; }
 
         /// <summary>
-        /// Number of takeaways minus giveaways
+        /// Total turnover differential (takeaways minus giveaways) by the team in the game
         /// </summary>
-        [Description("Number of takeaways minus giveaways")]
+        [Description("Total turnover differential (takeaways minus giveaways) by the team in the game")]
         [DataMember(Name = "TurnoverDifferential", Order = 73)]
         public int TurnoverDifferential { get; set; }
 
         /// <summary>
-        /// Points scored during Quarter 1 for the Team
+        /// Points scored during Quarter 1 for the opponent team in the game
         /// </summary>
-        [Description("Points scored during Quarter 1 for the Team")]
+        [Description("Points scored during Quarter 1 for the opponent team in the game")]
         [DataMember(Name = "OpponentScoreQuarter1", Order = 74)]
         public int? OpponentScoreQuarter1 { get; set; }
 
         /// <summary>
-        /// Points scored during Quarter 2 for the Team
+        /// Points scored during Quarter 2 for the opponent team in the game
         /// </summary>
-        [Description("Points scored during Quarter 2 for the Team")]
+        [Description("Points scored during Quarter 2 for the opponent team in the game")]
         [DataMember(Name = "OpponentScoreQuarter2", Order = 75)]
         public int? OpponentScoreQuarter2 { get; set; }
 
         /// <summary>
-        /// Points scored during Quarter 3 for the Team
+        /// Points scored during Quarter 3 for the opponent team in the game
         /// </summary>
-        [Description("Points scored during Quarter 3 for the Team")]
+        [Description("Points scored during Quarter 3 for the opponent team in the game")]
         [DataMember(Name = "OpponentScoreQuarter3", Order = 76)]
         public int? OpponentScoreQuarter3 { get; set; }
 
         /// <summary>
-        /// Points scored during Quarter 4 for the Team
+        /// Points scored during Quarter 4 for the opponent team in the game
         /// </summary>
-        [Description("Points scored during Quarter 4 for the Team")]
+        [Description("Points scored during Quarter 4 for the opponent team in the game")]
         [DataMember(Name = "OpponentScoreQuarter4", Order = 77)]
         public int? OpponentScoreQuarter4 { get; set; }
 
         /// <summary>
-        /// Points scored during Overtime for the Team
+        /// Points scored during overtime for the opponent team in the game
         /// </summary>
-        [Description("Points scored during Overtime for the Team")]
+        [Description("Points scored during overtime for the opponent team in the game")]
         [DataMember(Name = "OpponentScoreOvertime", Order = 78)]
         public int OpponentScoreOvertime { get; set; }
 
         /// <summary>
-        /// Time of possession minutes
+        /// Total time of possession minutes for the opponent team in the game
         /// </summary>
-        [Description("Time of possession minutes")]
+        [Description("Total time of possession minutes for the opponent team in the game")]
         [DataMember(Name = "OpponentTimeOfPossessionMinutes", Order = 79)]
         public int? OpponentTimeOfPossessionMinutes { get; set; }
 
         /// <summary>
-        /// Time of possession seconds
+        /// Total time of possession seconds for the opponent team in the game
         /// </summary>
-        [Description("Time of possession seconds")]
+        [Description("Total time of possession seconds for the opponent team in the game")]
         [DataMember(Name = "OpponentTimeOfPossessionSeconds", Order = 80)]
         public int? OpponentTimeOfPossessionSeconds { get; set; }
 
         /// <summary>
-        /// Time of possession
+        /// Total time of possession for the opponent team in the game
         /// </summary>
-        [Description("Time of possession")]
+        [Description("Total time of possession for the opponent team in the game")]
         [DataMember(Name = "OpponentTimeOfPossession", Order = 81)]
         public string OpponentTimeOfPossession { get; set; }
 
         /// <summary>
-        /// Total first downs
+        /// Total first downs converted by the opponent team in the game
         /// </summary>
-        [Description("Total first downs")]
+        [Description("Total first downs converted by the opponent team in the game")]
         [DataMember(Name = "OpponentFirstDowns", Order = 82)]
         public int? OpponentFirstDowns { get; set; }
 
         /// <summary>
-        /// Total rushing first downs
+        /// Total rushing first downs by the opponent team in the game
         /// </summary>
-        [Description("Total rushing first downs")]
+        [Description("Total rushing first downs by the opponent team in the game")]
         [DataMember(Name = "OpponentFirstDownsByRushing", Order = 83)]
         public int? OpponentFirstDownsByRushing { get; set; }
 
         /// <summary>
-        /// Total passing first downs
+        /// Total passing first downs converted by the opponent team in the game
         /// </summary>
-        [Description("Total passing first downs")]
+        [Description("Total passing first downs converted by the opponent team in the game")]
         [DataMember(Name = "OpponentFirstDownsByPassing", Order = 84)]
         public int? OpponentFirstDownsByPassing { get; set; }
 
         /// <summary>
-        /// Total first downs by opponent's penalty
+        /// Total first downs by penalty for the opponent team in the game
         /// </summary>
-        [Description("Total first downs by opponent's penalty")]
+        [Description("Total first downs by penalty for the opponent team in the game")]
         [DataMember(Name = "OpponentFirstDownsByPenalty", Order = 85)]
         public int? OpponentFirstDownsByPenalty { get; set; }
 
         /// <summary>
-        /// Number of offensive plays run
+        /// Total offensive plays by the opponent team in the game
         /// </summary>
-        [Description("Number of offensive plays run")]
+        [Description("Total offensive plays by the opponent team in the game")]
         [DataMember(Name = "OpponentOffensivePlays", Order = 86)]
         public int OpponentOffensivePlays { get; set; }
 
         /// <summary>
-        /// Number of offensive yards gained
+        /// Total offensive yards gained by the opponent team in the game
         /// </summary>
-        [Description("Number of offensive yards gained")]
+        [Description("Total offensive yards gained by the opponent team in the game")]
         [DataMember(Name = "OpponentOffensiveYards", Order = 87)]
         public int OpponentOffensiveYards { get; set; }
 
         /// <summary>
-        /// Average yards gained per offensive play
+        /// Average yards gained per offensive play by the opponent team in the game
         /// </summary>
-        [Description("Average yards gained per offensive play")]
+        [Description("Average yards gained per offensive play by the opponent team in the game")]
         [DataMember(Name = "OpponentOffensiveYardsPerPlay", Order = 88)]
         public decimal OpponentOffensiveYardsPerPlay { get; set; }
 
         /// <summary>
-        /// Touchdowns scored
+        /// Total touchdowns scored by the opponent team in the game
         /// </summary>
-        [Description("Touchdowns scored")]
+        [Description("Total touchdowns scored by the opponent team in the game")]
         [DataMember(Name = "OpponentTouchdowns", Order = 89)]
         public int? OpponentTouchdowns { get; set; }
 
         /// <summary>
-        /// Number of rushing attempts
+        /// Total rushing attempts by the opponent team in the game
         /// </summary>
-        [Description("Number of rushing attempts")]
+        [Description("Total rushing attempts by the opponent team in the game")]
         [DataMember(Name = "OpponentRushingAttempts", Order = 90)]
         public int? OpponentRushingAttempts { get; set; }
 
         /// <summary>
-        /// Number of rushing yards
+        /// Total rushing yards by the opponent team in the game
         /// </summary>
-        [Description("Number of rushing yards")]
+        [Description("Total rushing yards by the opponent team in the game")]
         [DataMember(Name = "OpponentRushingYards", Order = 91)]
         public int? OpponentRushingYards { get; set; }
 
         /// <summary>
-        /// Average rushing yards gained per attempt
+        /// Average rushing yards gained per attempt by the opponent team in the game
         /// </summary>
-        [Description("Average rushing yards gained per attempt")]
+        [Description("Average rushing yards gained per attempt by the opponent team in the game")]
         [DataMember(Name = "OpponentRushingYardsPerAttempt", Order = 92)]
         public decimal OpponentRushingYardsPerAttempt { get; set; }
 
         /// <summary>
-        /// Rushing touchdowns scored
+        /// Total rushing touchdowns by the opponent team in the game
         /// </summary>
-        [Description("Rushing touchdowns scored")]
+        [Description("Total rushing touchdowns by the opponent team in the game")]
         [DataMember(Name = "OpponentRushingTouchdowns", Order = 93)]
         public int? OpponentRushingTouchdowns { get; set; }
 
         /// <summary>
-        /// Number of passes thrown
+        /// Total passes thrown by the opponent team in the game
         /// </summary>
-        [Description("Number of passes thrown")]
+        [Description("Total passes thrown by the opponent team in the game")]
         [DataMember(Name = "OpponentPassingAttempts", Order = 94)]
         public int? OpponentPassingAttempts { get; set; }
 
         /// <summary>
-        /// Number of pass completions
+        /// Total passing completions by the opponent team in the game
         /// </summary>
-        [Description("Number of pass completions")]
+        [Description("Total passing completions by the opponent team in the game")]
         [DataMember(Name = "OpponentPassingCompletions", Order = 95)]
         public int? OpponentPassingCompletions { get; set; }
 
         /// <summary>
-        /// Number of passing yards
+        /// Total passing yards by the opponent team in the game
         /// </summary>
-        [Description("Number of passing yards")]
+        [Description("Total passing yards by the opponent team in the game")]
         [DataMember(Name = "OpponentPassingYards", Order = 96)]
         public int? OpponentPassingYards { get; set; }
 
         /// <summary>
-        /// Passing touchdowns thrown
+        /// Total passing touchdowns by the opponent team in the game
         /// </summary>
-        [Description("Passing touchdowns thrown")]
+        [Description("Total passing touchdowns by the opponent team in the game")]
         [DataMember(Name = "OpponentPassingTouchdowns", Order = 97)]
         public int? OpponentPassingTouchdowns { get; set; }
 
         /// <summary>
-        /// Interceptions thrown
+        /// Total interceptions thrown by the opponent team in the game
         /// </summary>
-        [Description("Interceptions thrown")]
+        [Description("Total interceptions thrown by the opponent team in the game")]
         [DataMember(Name = "OpponentPassingInterceptions", Order = 98)]
         public int? OpponentPassingInterceptions { get; set; }
 
         /// <summary>
-        /// Average passing yards gained per attempt
+        /// Average passing yards gained per attempt by the opponent team in the game
         /// </summary>
-        [Description("Average passing yards gained per attempt")]
+        [Description("Average passing yards gained per attempt by the opponent team in the game")]
         [DataMember(Name = "OpponentPassingYardsPerAttempt", Order = 99)]
         public decimal OpponentPassingYardsPerAttempt { get; set; }
 
         /// <summary>
-        /// Average passing yards gained per completion
+        /// Average passing yards gained per completion by the opponent team in the game
         /// </summary>
-        [Description("Average passing yards gained per completion")]
+        [Description("Average passing yards gained per completion by the opponent team in the game")]
         [DataMember(Name = "OpponentPassingYardsPerCompletion", Order = 100)]
         public decimal OpponentPassingYardsPerCompletion { get; set; }
 
         /// <summary>
-        /// Percentage of passes that were completed
+        /// Total completion percentage of the opponent team in the game
         /// </summary>
-        [Description("Percentage of passes that were completed")]
+        [Description("Total completion percentage of the opponent team in the game")]
         [DataMember(Name = "OpponentCompletionPercentage", Order = 101)]
         public decimal OpponentCompletionPercentage { get; set; }
 
         /// <summary>
-        /// Passer rating
+        /// Total passer rating by the opponent team in the game
         /// </summary>
-        [Description("Passer rating")]
+        [Description("Total passer rating by the opponent team in the game")]
         [DataMember(Name = "OpponentPasserRating", Order = 102)]
         public decimal? OpponentPasserRating { get; set; }
 
         /// <summary>
-        /// Third down attempts
+        /// Total third down attempts by the opponent team in the game
         /// </summary>
-        [Description("Third down attempts")]
+        [Description("Total third down attempts by the opponent team in the game")]
         [DataMember(Name = "OpponentThirdDownAttempts", Order = 103)]
         public int? OpponentThirdDownAttempts { get; set; }
 
         /// <summary>
-        /// Third down conversions
+        /// Total third down conversions by the opponent team in the game
         /// </summary>
-        [Description("Third down conversions")]
+        [Description("Total third down conversions by the opponent team in the game")]
         [DataMember(Name = "OpponentThirdDownConversions", Order = 104)]
         public int? OpponentThirdDownConversions { get; set; }
 
         /// <summary>
-        /// Percentage of third downs converted
+        /// Total third down percentage by the opponent team in the game
         /// </summary>
-        [Description("Percentage of third downs converted")]
+        [Description("Total third down percentage by the opponent team in the game")]
         [DataMember(Name = "OpponentThirdDownPercentage", Order = 105)]
         public decimal? OpponentThirdDownPercentage { get; set; }
 
         /// <summary>
-        /// Fourth down attempts
+        /// Total fourth downs attempted by the opponent team in the game
         /// </summary>
-        [Description("Fourth down attempts")]
+        [Description("Total fourth downs attempted by the opponent team in the game")]
         [DataMember(Name = "OpponentFourthDownAttempts", Order = 106)]
         public int? OpponentFourthDownAttempts { get; set; }
 
         /// <summary>
-        /// Fourth down conversions
+        /// Total fourth downs converted by the opponent team in the game
         /// </summary>
-        [Description("Fourth down conversions")]
+        [Description("Total fourth downs converted by the opponent team in the game")]
         [DataMember(Name = "OpponentFourthDownConversions", Order = 107)]
         public int? OpponentFourthDownConversions { get; set; }
 
         /// <summary>
-        /// Percentage of fourth downs converted
+        /// Total fourth down conversion percentage by the opponent team in the game
         /// </summary>
-        [Description("Percentage of fourth downs converted")]
+        [Description("Total fourth down conversion percentage by the opponent team in the game")]
         [DataMember(Name = "OpponentFourthDownPercentage", Order = 108)]
         public decimal? OpponentFourthDownPercentage { get; set; }
 
         /// <summary>
-        /// Red zone opportunities
+        /// Total red zone opportunities by the opponent team in the game
         /// </summary>
-        [Description("Red zone opportunities")]
+        [Description("Total red zone opportunities by the opponent team in the game")]
         [DataMember(Name = "OpponentRedZoneAttempts", Order = 109)]
         public int? OpponentRedZoneAttempts { get; set; }
 
         /// <summary>
-        /// Red zone opportunities converted to touchdowns
+        /// Total red zone opportunities converted to touchdowns by the opponent team in the game
         /// </summary>
-        [Description("Red zone opportunities converted to touchdowns")]
+        [Description("Total red zone opportunities converted to touchdowns by the opponent team in the game")]
         [DataMember(Name = "OpponentRedZoneConversions", Order = 110)]
         public int? OpponentRedZoneConversions { get; set; }
 
         /// <summary>
-        /// Deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("Deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "OpponentGoalToGoAttempts", Order = 111)]
         public int? OpponentGoalToGoAttempts { get; set; }
 
         /// <summary>
-        /// Deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("Deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "OpponentGoalToGoConversions", Order = 112)]
         public int? OpponentGoalToGoConversions { get; set; }
 
         /// <summary>
-        /// Total punt and defensive return yards
+        /// Total punt and defensive return yards by the opponent team in the game
         /// </summary>
-        [Description("Total punt and defensive return yards")]
+        [Description("Total punt and defensive return yards by the opponent team in the game")]
         [DataMember(Name = "OpponentReturnYards", Order = 113)]
         public int? OpponentReturnYards { get; set; }
 
         /// <summary>
-        /// Penalties committed
+        /// Total penalties enforced against the opponent team in the game
         /// </summary>
-        [Description("Penalties committed")]
+        [Description("Total penalties enforced against the opponent team in the game")]
         [DataMember(Name = "OpponentPenalties", Order = 114)]
         public int? OpponentPenalties { get; set; }
 
         /// <summary>
-        /// Penalty yards enforced against the opponent
+        /// Total penalty yards enforced against the opponent team in the game
         /// </summary>
-        [Description("Penalty yards enforced against the opponent")]
+        [Description("Total penalty yards enforced against the opponent team in the game")]
         [DataMember(Name = "OpponentPenaltyYards", Order = 115)]
         public int? OpponentPenaltyYards { get; set; }
 
         /// <summary>
-        /// Fumbles
+        /// Total offensive fumbles by the opponent team in the game
         /// </summary>
-        [Description("Fumbles")]
+        [Description("Total offensive fumbles by the opponent team in the game")]
         [DataMember(Name = "OpponentFumbles", Order = 116)]
         public int? OpponentFumbles { get; set; }
 
         /// <summary>
-        /// Fumbles lost
+        /// Total fumbles lost by the opponent team in the game
         /// </summary>
-        [Description("Fumbles lost")]
+        [Description("Total fumbles lost by the opponent team in the game")]
         [DataMember(Name = "OpponentFumblesLost", Order = 117)]
         public int? OpponentFumblesLost { get; set; }
 
         /// <summary>
-        /// Number of sacks allowed by Opponent
+        /// Total sacks allowed by the opponent team in the game
         /// </summary>
-        [Description("Number of sacks allowed by Opponent")]
+        [Description("Total sacks allowed by the opponent team in the game")]
         [DataMember(Name = "OpponentTimesSacked", Order = 118)]
         public int? OpponentTimesSacked { get; set; }
 
         /// <summary>
-        /// Number of yards opponent lost as a result of being sacked
+        /// Total yards as a result of a sack allowed by the opponent team in the game
         /// </summary>
-        [Description("Number of yards opponent lost as a result of being sacked")]
+        [Description("Total yards as a result of a sack allowed by the opponent team in the game")]
         [DataMember(Name = "OpponentTimesSackedYards", Order = 119)]
         public int? OpponentTimesSackedYards { get; set; }
 
         /// <summary>
-        /// Number of times hitting an opposing quarterback (this inludes sacks)
+        /// Total quarterback hits by the opponent team in the game
         /// </summary>
-        [Description("Number of times hitting an opposing quarterback (this inludes sacks)")]
+        [Description("Total quarterback hits by the opponent team in the game")]
         [DataMember(Name = "OpponentQuarterbackHits", Order = 120)]
         public int? OpponentQuarterbackHits { get; set; }
 
         /// <summary>
-        /// Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)
+        /// Total tackles for loss by the opponent team in the game
         /// </summary>
-        [Description("Tackles behind the opponent's line of scrimmage (sacks are also credited as a tackle for loss)")]
+        [Description("Total tackles for loss by the opponent team in the game")]
         [DataMember(Name = "OpponentTacklesForLoss", Order = 121)]
         public int? OpponentTacklesForLoss { get; set; }
 
         /// <summary>
-        /// Safeties scored
+        /// Total safeties recorded by the opponent team in the game
         /// </summary>
-        [Description("Safeties scored")]
+        [Description("Total safeties recorded by the opponent team in the game")]
         [DataMember(Name = "OpponentSafeties", Order = 122)]
         public int? OpponentSafeties { get; set; }
 
         /// <summary>
-        /// Number of punts
+        /// Total punts by the opponent team in the game
         /// </summary>
-        [Description("Number of punts")]
+        [Description("Total punts by the opponent team in the game")]
         [DataMember(Name = "OpponentPunts", Order = 123)]
         public int? OpponentPunts { get; set; }
 
         /// <summary>
-        /// Total punt yards
+        /// Total punt yards by the opponent team in the game
         /// </summary>
-        [Description("Total punt yards")]
+        [Description("Total punt yards by the opponent team in the game")]
         [DataMember(Name = "OpponentPuntYards", Order = 124)]
         public int? OpponentPuntYards { get; set; }
 
@@ -884,709 +884,709 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal OpponentPuntAverage { get; set; }
 
         /// <summary>
-        /// Number of giveaways
+        /// Total giveaways by the opponent team in the game
         /// </summary>
-        [Description("Number of giveaways")]
+        [Description("Total giveaways by the opponent team in the game")]
         [DataMember(Name = "OpponentGiveaways", Order = 126)]
         public int OpponentGiveaways { get; set; }
 
         /// <summary>
-        /// Number of takeaways
+        /// Total takeaways by the opponent team in the game
         /// </summary>
-        [Description("Number of takeaways")]
+        [Description("Total takeaways by the opponent team in the game")]
         [DataMember(Name = "OpponentTakeaways", Order = 127)]
         public int OpponentTakeaways { get; set; }
 
         /// <summary>
-        /// Number of takeaways minus giveaways
+        /// Total turnover differential by the opponent team in the game (takeaways minus giveaways)
         /// </summary>
-        [Description("Number of takeaways minus giveaways")]
+        [Description("Total turnover differential by the opponent team in the game (takeaways minus giveaways)")]
         [DataMember(Name = "OpponentTurnoverDifferential", Order = 128)]
         public int OpponentTurnoverDifferential { get; set; }
 
         /// <summary>
-        /// Percentage of red zone opportunities converted into touchdowns
+        /// Total percentage of red zone opportunities converted into touchdowns by the team in the game
         /// </summary>
-        [Description("Percentage of red zone opportunities converted into touchdowns")]
+        [Description("Total percentage of red zone opportunities converted into touchdowns by the team in the game")]
         [DataMember(Name = "RedZonePercentage", Order = 129)]
         public decimal? RedZonePercentage { get; set; }
 
         /// <summary>
-        /// Deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("Deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "GoalToGoPercentage", Order = 130)]
         public decimal? GoalToGoPercentage { get; set; }
 
         /// <summary>
-        /// The differential of hits on the opposing quarterback minus hits on own team's quarterback
+        /// The quarterback hits differential of the team in the game. Note: Determined by hits on opposing quarterback minus hits on own quarterback
         /// </summary>
-        [Description("The differential of hits on the opposing quarterback minus hits on own team's quarterback")]
+        [Description("The quarterback hits differential of the team in the game. Note: Determined by hits on opposing quarterback minus hits on own quarterback")]
         [DataMember(Name = "QuarterbackHitsDifferential", Order = 131)]
         public int? QuarterbackHitsDifferential { get; set; }
 
         /// <summary>
-        /// The differential of tackles for loss minus opponent's tackles for loss
+        /// Total tackles for loss differential by the team in the game
         /// </summary>
-        [Description("The differential of tackles for loss minus opponent's tackles for loss")]
+        [Description("Total tackles for loss differential by the team in the game")]
         [DataMember(Name = "TacklesForLossDifferential", Order = 132)]
         public int? TacklesForLossDifferential { get; set; }
 
         /// <summary>
-        /// The Team's sack differential (similar to a turnover differential)
+        /// Total sack differential of the team in the game
         /// </summary>
-        [Description("The Team's sack differential (similar to a turnover differential)")]
+        [Description("Total sack differential of the team in the game")]
         [DataMember(Name = "QuarterbackSacksDifferential", Order = 133)]
         public int QuarterbackSacksDifferential { get; set; }
 
         /// <summary>
-        /// Percentage of running plays defended that resulted in tackle for loss
+        /// Total percentage of plays defended that resulted in a tackle for loss by the team in the game
         /// </summary>
-        [Description("Percentage of running plays defended that resulted in tackle for loss")]
+        [Description("Total percentage of plays defended that resulted in a tackle for loss by the team in the game")]
         [DataMember(Name = "TacklesForLossPercentage", Order = 134)]
         public decimal? TacklesForLossPercentage { get; set; }
 
         /// <summary>
-        /// Percantage of opposing quarterback drop backs that resulted hitting the quarterback
+        /// Total percentage of opposing quarterback dropbacks that resulted in a quarterback hit by the team in the game
         /// </summary>
-        [Description("Percantage of opposing quarterback drop backs that resulted hitting the quarterback")]
+        [Description("Total percentage of opposing quarterback dropbacks that resulted in a quarterback hit by the team in the game")]
         [DataMember(Name = "QuarterbackHitsPercentage", Order = 135)]
         public decimal? QuarterbackHitsPercentage { get; set; }
 
         /// <summary>
-        /// Percentage of drop backs that resulted in a sack
+        /// Total percentage of drop backs that resulted in a sack by the team in the game
         /// </summary>
-        [Description("Percentage of drop backs that resulted in a sack")]
+        [Description("Total percentage of drop backs that resulted in a sack by the team in the game")]
         [DataMember(Name = "TimesSackedPercentage", Order = 136)]
         public decimal TimesSackedPercentage { get; set; }
 
         /// <summary>
-        /// Percentage of opponent's red zone opportunities converted into touchdowns
+        /// Percentage of opponent's red zone opportunities converted into touchdowns in the game
         /// </summary>
-        [Description("Percentage of opponent's red zone opportunities converted into touchdowns")]
+        [Description("Percentage of opponent's red zone opportunities converted into touchdowns in the game")]
         [DataMember(Name = "OpponentRedZonePercentage", Order = 137)]
         public decimal? OpponentRedZonePercentage { get; set; }
 
         /// <summary>
-        /// Deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("Deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "OpponentGoalToGoPercentage", Order = 138)]
         public decimal? OpponentGoalToGoPercentage { get; set; }
 
         /// <summary>
-        /// The inverse of QuarterbackHitsDifferential
+        /// Total quarterback hits differential by the opponent team in the game
         /// </summary>
-        [Description("The inverse of QuarterbackHitsDifferential")]
+        [Description("Total quarterback hits differential by the opponent team in the game")]
         [DataMember(Name = "OpponentQuarterbackHitsDifferential", Order = 139)]
         public int? OpponentQuarterbackHitsDifferential { get; set; }
 
         /// <summary>
-        /// The inverse of TacklesForLossDifferential
+        /// Total tackles for loss differential by the opponent team in the game
         /// </summary>
-        [Description("The inverse of TacklesForLossDifferential")]
+        [Description("Total tackles for loss differential by the opponent team in the game")]
         [DataMember(Name = "OpponentTacklesForLossDifferential", Order = 140)]
         public int? OpponentTacklesForLossDifferential { get; set; }
 
         /// <summary>
-        /// The inverse of QuarterbackSacksDifferential
+        /// Total quarterback sacks differential by the opponent team in the game
         /// </summary>
-        [Description("The inverse of QuarterbackSacksDifferential")]
+        [Description("Total quarterback sacks differential by the opponent team in the game")]
         [DataMember(Name = "OpponentQuarterbackSacksDifferential", Order = 141)]
         public int? OpponentQuarterbackSacksDifferential { get; set; }
 
         /// <summary>
-        /// Percentage of running plays defended that resulted in tackle for loss
+        /// Total percentage of tackles for loss by the opponent team in the game
         /// </summary>
-        [Description("Percentage of running plays defended that resulted in tackle for loss")]
+        [Description("Total percentage of tackles for loss by the opponent team in the game")]
         [DataMember(Name = "OpponentTacklesForLossPercentage", Order = 142)]
         public decimal? OpponentTacklesForLossPercentage { get; set; }
 
         /// <summary>
-        /// Percantage of own team's quarterback drop backs that resulted in our quarterback getting hit
+        /// Total quarterback hits percentage by the opponent team in the game
         /// </summary>
-        [Description("Percantage of own team's quarterback drop backs that resulted in our quarterback getting hit")]
+        [Description("Total quarterback hits percentage by the opponent team in the game")]
         [DataMember(Name = "OpponentQuarterbackHitsPercentage", Order = 143)]
         public decimal? OpponentQuarterbackHitsPercentage { get; set; }
 
         /// <summary>
-        /// Percentage of drop backs that resulted in a sack
+        /// Total percentage of dropbacks that resulted in a sack allowed by the opponent team in the game
         /// </summary>
-        [Description("Percentage of drop backs that resulted in a sack")]
+        [Description("Total percentage of dropbacks that resulted in a sack allowed by the opponent team in the game")]
         [DataMember(Name = "OpponentTimesSackedPercentage", Order = 144)]
         public decimal OpponentTimesSackedPercentage { get; set; }
 
         /// <summary>
-        /// Number of kickoffs
+        /// Total number of kickoffs by the team in the game
         /// </summary>
-        [Description("Number of kickoffs")]
+        [Description("Total number of kickoffs by the team in the game")]
         [DataMember(Name = "Kickoffs", Order = 145)]
         public int? Kickoffs { get; set; }
 
         /// <summary>
-        /// Number of kickoffs that went into the end zone
+        /// Total kickoffs that went into the end zone by the team in the game
         /// </summary>
-        [Description("Number of kickoffs that went into the end zone")]
+        [Description("Total kickoffs that went into the end zone by the team in the game")]
         [DataMember(Name = "KickoffsInEndZone", Order = 146)]
         public int? KickoffsInEndZone { get; set; }
 
         /// <summary>
-        /// Number of kickoffs that resulted in touchbacks
+        /// Total kickoffs that resulted in touchbacks by the team in the game
         /// </summary>
-        [Description("Number of kickoffs that resulted in touchbacks")]
+        [Description("Total kickoffs that resulted in touchbacks by the team in the game")]
         [DataMember(Name = "KickoffTouchbacks", Order = 147)]
         public int? KickoffTouchbacks { get; set; }
 
         /// <summary>
-        /// Number of punts that were blocked
+        /// Total punts by the team that were blocked in the game
         /// </summary>
-        [Description("Number of punts that were blocked")]
+        [Description("Total punts by the team that were blocked in the game")]
         [DataMember(Name = "PuntsHadBlocked", Order = 148)]
         public int? PuntsHadBlocked { get; set; }
 
         /// <summary>
-        /// Deprecated
+        /// The average net yards per punt by the team in the game
         /// </summary>
-        [Description("Deprecated")]
+        [Description("The average net yards per punt by the team in the game")]
         [DataMember(Name = "PuntNetAverage", Order = 149)]
         public decimal? PuntNetAverage { get; set; }
 
         /// <summary>
-        /// Extra point kick attempts
+        /// Total extra point kick attempts by the team in the game
         /// </summary>
-        [Description("Extra point kick attempts")]
+        [Description("Total extra point kick attempts by the team in the game")]
         [DataMember(Name = "ExtraPointKickingAttempts", Order = 150)]
         public int? ExtraPointKickingAttempts { get; set; }
 
         /// <summary>
-        /// Extra point kicks made
+        /// Total extra point kicks made by the team in the game
         /// </summary>
-        [Description("Extra point kicks made")]
+        [Description("Total extra point kicks made by the team in the game")]
         [DataMember(Name = "ExtraPointKickingConversions", Order = 151)]
         public int? ExtraPointKickingConversions { get; set; }
 
         /// <summary>
-        /// Extra point kick attempts that were blocked
+        /// Total extra point kick attempts by the team that were blocked in the game
         /// </summary>
-        [Description("Extra point kick attempts that were blocked")]
+        [Description("Total extra point kick attempts by the team that were blocked in the game")]
         [DataMember(Name = "ExtraPointsHadBlocked", Order = 152)]
         public int? ExtraPointsHadBlocked { get; set; }
 
         /// <summary>
-        /// Two point conversion passing attempts
+        /// Total two point conversions passing conversions by the team in the game
         /// </summary>
-        [Description("Two point conversion passing attempts")]
+        [Description("Total two point conversions passing conversions by the team in the game")]
         [DataMember(Name = "ExtraPointPassingAttempts", Order = 153)]
         public int? ExtraPointPassingAttempts { get; set; }
 
         /// <summary>
-        /// Two point conversion passing conversions
+        /// Total two point conversions passing conversions by the team in the game
         /// </summary>
-        [Description("Two point conversion passing conversions")]
+        [Description("Total two point conversions passing conversions by the team in the game")]
         [DataMember(Name = "ExtraPointPassingConversions", Order = 154)]
         public int? ExtraPointPassingConversions { get; set; }
 
         /// <summary>
-        /// Two point conversion rushing attempts
+        /// Total two point conversion rushing attempts by the team in the game
         /// </summary>
-        [Description("Two point conversion rushing attempts")]
+        [Description("Total two point conversion rushing attempts by the team in the game")]
         [DataMember(Name = "ExtraPointRushingAttempts", Order = 155)]
         public int? ExtraPointRushingAttempts { get; set; }
 
         /// <summary>
-        /// Two point conversion rushing conversions
+        /// Total two point conversion rushing conversions in the game
         /// </summary>
-        [Description("Two point conversion rushing conversions")]
+        [Description("Total two point conversion rushing conversions in the game")]
         [DataMember(Name = "ExtraPointRushingConversions", Order = 156)]
         public int? ExtraPointRushingConversions { get; set; }
 
         /// <summary>
-        /// Field goal attempts
+        /// Total field goal attempts by the team in the game
         /// </summary>
-        [Description("Field goal attempts")]
+        [Description("Total field goal attempts by the team in the game")]
         [DataMember(Name = "FieldGoalAttempts", Order = 157)]
         public int? FieldGoalAttempts { get; set; }
 
         /// <summary>
-        /// Field goals made
+        /// Total field goals made by the team in game
         /// </summary>
-        [Description("Field goals made")]
+        [Description("Total field goals made by the team in game")]
         [DataMember(Name = "FieldGoalsMade", Order = 158)]
         public int? FieldGoalsMade { get; set; }
 
         /// <summary>
-        /// Field goal attempts that were blocked
+        /// Total field goals by the team that were blocked in the game
         /// </summary>
-        [Description("Field goal attempts that were blocked")]
+        [Description("Total field goals by the team that were blocked in the game")]
         [DataMember(Name = "FieldGoalsHadBlocked", Order = 159)]
         public int? FieldGoalsHadBlocked { get; set; }
 
         /// <summary>
-        /// Punt returns
+        /// Total punt returns by the team in the game
         /// </summary>
-        [Description("Punt returns")]
+        [Description("Total punt returns by the team in the game")]
         [DataMember(Name = "PuntReturns", Order = 160)]
         public int? PuntReturns { get; set; }
 
         /// <summary>
-        /// Punt return yards
+        /// Total punt return yards by the team in the game
         /// </summary>
-        [Description("Punt return yards")]
+        [Description("Total punt return yards by the team in the game")]
         [DataMember(Name = "PuntReturnYards", Order = 161)]
         public int? PuntReturnYards { get; set; }
 
         /// <summary>
-        /// Kickoff returns
+        /// Total kickoff returns by the team in the game
         /// </summary>
-        [Description("Kickoff returns")]
+        [Description("Total kickoff returns by the team in the game")]
         [DataMember(Name = "KickReturns", Order = 162)]
         public int? KickReturns { get; set; }
 
         /// <summary>
-        /// Kickoff return yards
+        /// Total kickoff return yards by the team in the game
         /// </summary>
-        [Description("Kickoff return yards")]
+        [Description("Total kickoff return yards by the team in the game")]
         [DataMember(Name = "KickReturnYards", Order = 163)]
         public int? KickReturnYards { get; set; }
 
         /// <summary>
-        /// Defensive interceptions
+        /// Total defensive interception returns by the team in the game
         /// </summary>
-        [Description("Defensive interceptions")]
+        [Description("Total defensive interception returns by the team in the game")]
         [DataMember(Name = "InterceptionReturns", Order = 164)]
         public int? InterceptionReturns { get; set; }
 
         /// <summary>
-        /// Interception return yards
+        /// Total defensive interception return yards by the team in the game
         /// </summary>
-        [Description("Interception return yards")]
+        [Description("Total defensive interception return yards by the team in the game")]
         [DataMember(Name = "InterceptionReturnYards", Order = 165)]
         public int? InterceptionReturnYards { get; set; }
 
         /// <summary>
-        /// Number of kickoffs
+        /// Total kickoffs by the opponent team in the game
         /// </summary>
-        [Description("Number of kickoffs")]
+        [Description("Total kickoffs by the opponent team in the game")]
         [DataMember(Name = "OpponentKickoffs", Order = 166)]
         public int? OpponentKickoffs { get; set; }
 
         /// <summary>
-        /// Number of kickoffs that went into the end zone
+        /// Total kickoffs that went into the end zone by the opponent team in the game
         /// </summary>
-        [Description("Number of kickoffs that went into the end zone")]
+        [Description("Total kickoffs that went into the end zone by the opponent team in the game")]
         [DataMember(Name = "OpponentKickoffsInEndZone", Order = 167)]
         public int? OpponentKickoffsInEndZone { get; set; }
 
         /// <summary>
-        /// Number of kickoffs that resulted in touchbacks
+        /// Total kickoffs that resulted in touchbacks by the opponent team in the game
         /// </summary>
-        [Description("Number of kickoffs that resulted in touchbacks")]
+        [Description("Total kickoffs that resulted in touchbacks by the opponent team in the game")]
         [DataMember(Name = "OpponentKickoffTouchbacks", Order = 168)]
         public int? OpponentKickoffTouchbacks { get; set; }
 
         /// <summary>
-        /// Number of punts that were blocked
+        /// Total punt yard that were blocked for the opponent team in the game
         /// </summary>
-        [Description("Number of punts that were blocked")]
+        [Description("Total punt yard that were blocked for the opponent team in the game")]
         [DataMember(Name = "OpponentPuntsHadBlocked", Order = 169)]
         public int? OpponentPuntsHadBlocked { get; set; }
 
         /// <summary>
-        /// Deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("Deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "OpponentPuntNetAverage", Order = 170)]
         public decimal? OpponentPuntNetAverage { get; set; }
 
         /// <summary>
-        /// Extra point kick attempts
+        /// Total extra point kick attempts by the opponent team in the game
         /// </summary>
-        [Description("Extra point kick attempts")]
+        [Description("Total extra point kick attempts by the opponent team in the game")]
         [DataMember(Name = "OpponentExtraPointKickingAttempts", Order = 171)]
         public int? OpponentExtraPointKickingAttempts { get; set; }
 
         /// <summary>
-        /// Extra point kicks made
+        /// Total extra point kicks made by the opponent team in the game
         /// </summary>
-        [Description("Extra point kicks made")]
+        [Description("Total extra point kicks made by the opponent team in the game")]
         [DataMember(Name = "OpponentExtraPointKickingConversions", Order = 172)]
         public int? OpponentExtraPointKickingConversions { get; set; }
 
         /// <summary>
-        /// Extra point kick attempts that were blocked
+        /// Total extra point kick attempts that were blocked against the opponent team in the game
         /// </summary>
-        [Description("Extra point kick attempts that were blocked")]
+        [Description("Total extra point kick attempts that were blocked against the opponent team in the game")]
         [DataMember(Name = "OpponentExtraPointsHadBlocked", Order = 173)]
         public int? OpponentExtraPointsHadBlocked { get; set; }
 
         /// <summary>
-        /// Two point conversion passing attempts
+        /// Total two point conversion passing attempts by the opponent team in the game
         /// </summary>
-        [Description("Two point conversion passing attempts")]
+        [Description("Total two point conversion passing attempts by the opponent team in the game")]
         [DataMember(Name = "OpponentExtraPointPassingAttempts", Order = 174)]
         public int? OpponentExtraPointPassingAttempts { get; set; }
 
         /// <summary>
-        /// Two point conversion passing conversions
+        /// Total two point conversion passing conversions by the opponent team in the game
         /// </summary>
-        [Description("Two point conversion passing conversions")]
+        [Description("Total two point conversion passing conversions by the opponent team in the game")]
         [DataMember(Name = "OpponentExtraPointPassingConversions", Order = 175)]
         public int? OpponentExtraPointPassingConversions { get; set; }
 
         /// <summary>
-        /// Two point conversion rushing attempts
+        /// Total two point conversion rushing attempts by the opponent team in the game
         /// </summary>
-        [Description("Two point conversion rushing attempts")]
+        [Description("Total two point conversion rushing attempts by the opponent team in the game")]
         [DataMember(Name = "OpponentExtraPointRushingAttempts", Order = 176)]
         public int? OpponentExtraPointRushingAttempts { get; set; }
 
         /// <summary>
-        /// Two point conversion rushing conversions
+        /// Total two point conversion rushing conversions by the opponent team in the game
         /// </summary>
-        [Description("Two point conversion rushing conversions")]
+        [Description("Total two point conversion rushing conversions by the opponent team in the game")]
         [DataMember(Name = "OpponentExtraPointRushingConversions", Order = 177)]
         public int? OpponentExtraPointRushingConversions { get; set; }
 
         /// <summary>
-        /// Field goal attempts
+        /// Total field goal attempts by the opponent team in the game
         /// </summary>
-        [Description("Field goal attempts")]
+        [Description("Total field goal attempts by the opponent team in the game")]
         [DataMember(Name = "OpponentFieldGoalAttempts", Order = 178)]
         public int? OpponentFieldGoalAttempts { get; set; }
 
         /// <summary>
-        /// Field goals made
+        /// Total field goals made by the opponent team in the game
         /// </summary>
-        [Description("Field goals made")]
+        [Description("Total field goals made by the opponent team in the game")]
         [DataMember(Name = "OpponentFieldGoalsMade", Order = 179)]
         public int? OpponentFieldGoalsMade { get; set; }
 
         /// <summary>
-        /// Field goal attempts that were blocked
+        /// Total blocked field goals against the opponent team in the game
         /// </summary>
-        [Description("Field goal attempts that were blocked")]
+        [Description("Total blocked field goals against the opponent team in the game")]
         [DataMember(Name = "OpponentFieldGoalsHadBlocked", Order = 180)]
         public int? OpponentFieldGoalsHadBlocked { get; set; }
 
         /// <summary>
-        /// Punt returns
+        /// Total punt returns by the opponent team in the game
         /// </summary>
-        [Description("Punt returns")]
+        [Description("Total punt returns by the opponent team in the game")]
         [DataMember(Name = "OpponentPuntReturns", Order = 181)]
         public int? OpponentPuntReturns { get; set; }
 
         /// <summary>
-        /// Punt return yards
+        /// Total punt return yards by the opponent team in the game
         /// </summary>
-        [Description("Punt return yards")]
+        [Description("Total punt return yards by the opponent team in the game")]
         [DataMember(Name = "OpponentPuntReturnYards", Order = 182)]
         public int? OpponentPuntReturnYards { get; set; }
 
         /// <summary>
-        /// Kickoff returns
+        /// Total kickoff returns by the opponent team in the game
         /// </summary>
-        [Description("Kickoff returns")]
+        [Description("Total kickoff returns by the opponent team in the game")]
         [DataMember(Name = "OpponentKickReturns", Order = 183)]
         public int? OpponentKickReturns { get; set; }
 
         /// <summary>
-        /// Kickoff return yards
+        /// Total kickoff return yards by the opponent team in the game
         /// </summary>
-        [Description("Kickoff return yards")]
+        [Description("Total kickoff return yards by the opponent team in the game")]
         [DataMember(Name = "OpponentKickReturnYards", Order = 184)]
         public int? OpponentKickReturnYards { get; set; }
 
         /// <summary>
-        /// Defensive interceptions
+        /// Total defensive interceptions by the opponent team in the game
         /// </summary>
-        [Description("Defensive interceptions")]
+        [Description("Total defensive interceptions by the opponent team in the game")]
         [DataMember(Name = "OpponentInterceptionReturns", Order = 185)]
         public int? OpponentInterceptionReturns { get; set; }
 
         /// <summary>
-        /// Interception return yards
+        /// Total defensive interception return yards by the opponent team in the game
         /// </summary>
-        [Description("Interception return yards")]
+        [Description("Total defensive interception return yards by the opponent team in the game")]
         [DataMember(Name = "OpponentInterceptionReturnYards", Order = 186)]
         public int? OpponentInterceptionReturnYards { get; set; }
 
         /// <summary>
-        /// Defensive solo tackles
+        /// Total defensive solo (unassisted) tackles by the team in the game
         /// </summary>
-        [Description("Defensive solo tackles")]
+        [Description("Total defensive solo (unassisted) tackles by the team in the game")]
         [DataMember(Name = "SoloTackles", Order = 187)]
         public int? SoloTackles { get; set; }
 
         /// <summary>
-        /// Defensive assisted tackles
+        /// Total defensive assisted tackles by the team in the game
         /// </summary>
-        [Description("Defensive assisted tackles")]
+        [Description("Total defensive assisted tackles by the team in the game")]
         [DataMember(Name = "AssistedTackles", Order = 188)]
         public int? AssistedTackles { get; set; }
 
         /// <summary>
-        /// Defensive sacks
+        /// Total defensive sacks by the team in the game
         /// </summary>
-        [Description("Defensive sacks")]
+        [Description("Total defensive sacks by the team in the game")]
         [DataMember(Name = "Sacks", Order = 189)]
         public int? Sacks { get; set; }
 
         /// <summary>
-        /// Defensive sack yards
+        /// Total defensive sack yards by the team in the game
         /// </summary>
-        [Description("Defensive sack yards")]
+        [Description("Total defensive sack yards by the team in the game")]
         [DataMember(Name = "SackYards", Order = 190)]
         public int? SackYards { get; set; }
 
         /// <summary>
-        /// Defensive passes defended
+        /// Total passes defended by the team's defense in the game
         /// </summary>
-        [Description("Defensive passes defended")]
+        [Description("Total passes defended by the team's defense in the game")]
         [DataMember(Name = "PassesDefended", Order = 191)]
         public int? PassesDefended { get; set; }
 
         /// <summary>
-        /// Defensive fumbles forced
+        /// Total fumbles forced on defense by the team in the game
         /// </summary>
-        [Description("Defensive fumbles forced")]
+        [Description("Total fumbles forced on defense by the team in the game")]
         [DataMember(Name = "FumblesForced", Order = 192)]
         public int? FumblesForced { get; set; }
 
         /// <summary>
-        /// Fumbles recovered that resulted in change of possession
+        /// Total defensive fumble recoveries by the team in the game
         /// </summary>
-        [Description("Fumbles recovered that resulted in change of possession")]
+        [Description("Total defensive fumble recoveries by the team in the game")]
         [DataMember(Name = "FumblesRecovered", Order = 193)]
         public int? FumblesRecovered { get; set; }
 
         /// <summary>
-        /// Fumble return yards
+        /// Total fumble return yards by the team in the game
         /// </summary>
-        [Description("Fumble return yards")]
+        [Description("Total fumble return yards by the team in the game")]
         [DataMember(Name = "FumbleReturnYards", Order = 194)]
         public int? FumbleReturnYards { get; set; }
 
         /// <summary>
-        /// Fumble return touchdowns
+        /// Total fumble return touchdowns by the team in the game
         /// </summary>
-        [Description("Fumble return touchdowns")]
+        [Description("Total fumble return touchdowns by the team in the game")]
         [DataMember(Name = "FumbleReturnTouchdowns", Order = 195)]
         public int? FumbleReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Defensive interceptions
+        /// Total defensive interception return touchdowns by the team in the game
         /// </summary>
-        [Description("Defensive interceptions")]
+        [Description("Total defensive interception return touchdowns by the team in the game")]
         [DataMember(Name = "InterceptionReturnTouchdowns", Order = 196)]
         public int? InterceptionReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Total number of opponent's kicks that were blocked
+        /// Total blocked kicks by the team in the game. Note: BlockedKicks include Field Goals and Punts but NOT Extra Points
         /// </summary>
-        [Description("Total number of opponent's kicks that were blocked")]
+        [Description("Total blocked kicks by the team in the game. Note: BlockedKicks include Field Goals and Punts but NOT Extra Points")]
         [DataMember(Name = "BlockedKicks", Order = 197)]
         public int? BlockedKicks { get; set; }
 
         /// <summary>
-        /// Punt return touchdown
+        /// Total punt return touchdowns by the team in the game
         /// </summary>
-        [Description("Punt return touchdown")]
+        [Description("Total punt return touchdowns by the team in the game")]
         [DataMember(Name = "PuntReturnTouchdowns", Order = 198)]
         public int? PuntReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Longest punt return
+        /// The longest punt return by the team in the game
         /// </summary>
-        [Description("Longest punt return")]
+        [Description("The longest punt return by the team in the game")]
         [DataMember(Name = "PuntReturnLong", Order = 199)]
         public int? PuntReturnLong { get; set; }
 
         /// <summary>
-        /// Kick return touchdown
+        /// Total kickoff return touchdowns by the team in the game
         /// </summary>
-        [Description("Kick return touchdown")]
+        [Description("Total kickoff return touchdowns by the team in the game")]
         [DataMember(Name = "KickReturnTouchdowns", Order = 200)]
         public int? KickReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Longest kick return
+        /// Longest kick return by the team in the game
         /// </summary>
-        [Description("Longest kick return")]
+        [Description("Longest kick return by the team in the game")]
         [DataMember(Name = "KickReturnLong", Order = 201)]
         public int? KickReturnLong { get; set; }
 
         /// <summary>
-        /// Blocked kick recovery return yards
+        /// Total blocked kick recovery return yards for the team in the game
         /// </summary>
-        [Description("Blocked kick recovery return yards")]
+        [Description("Total blocked kick recovery return yards for the team in the game")]
         [DataMember(Name = "BlockedKickReturnYards", Order = 202)]
         public int? BlockedKickReturnYards { get; set; }
 
         /// <summary>
-        /// Blocked kick recovery return touchdowns
+        /// Total blocked kick recovery return touchdowns for the team in the game
         /// </summary>
-        [Description("Blocked kick recovery return touchdowns")]
+        [Description("Total blocked kick recovery return touchdowns for the team in the game")]
         [DataMember(Name = "BlockedKickReturnTouchdowns", Order = 203)]
         public int? BlockedKickReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Field goal return yards (excluding blocked field goals)
+        /// Total field goal return yards by the team in the game. Note: This field excludes blocked field goals
         /// </summary>
-        [Description("Field goal return yards (excluding blocked field goals)")]
+        [Description("Total field goal return yards by the team in the game. Note: This field excludes blocked field goals")]
         [DataMember(Name = "FieldGoalReturnYards", Order = 204)]
         public int? FieldGoalReturnYards { get; set; }
 
         /// <summary>
-        /// Field goal return touchdowns (excluding blocked field goals)
+        /// Total field goal return touchdowns by the team in the game. Note: This field excludes blocked field goals
         /// </summary>
-        [Description("Field goal return touchdowns (excluding blocked field goals)")]
+        [Description("Total field goal return touchdowns by the team in the game. Note: This field excludes blocked field goals")]
         [DataMember(Name = "FieldGoalReturnTouchdowns", Order = 205)]
         public int? FieldGoalReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Deprecated
+        /// The net yards of the punts by the team in the game
         /// </summary>
-        [Description("Deprecated")]
+        [Description("The net yards of the punts by the team in the game")]
         [DataMember(Name = "PuntNetYards", Order = 206)]
         public int? PuntNetYards { get; set; }
 
         /// <summary>
-        /// Defensive solo tackles
+        /// Total defensive solo tackles by the opponent team in the game
         /// </summary>
-        [Description("Defensive solo tackles")]
+        [Description("Total defensive solo tackles by the opponent team in the game")]
         [DataMember(Name = "OpponentSoloTackles", Order = 207)]
         public int? OpponentSoloTackles { get; set; }
 
         /// <summary>
-        /// Defensive assisted tackles
+        /// Total defensive assisted tackles by the opponent team in the game
         /// </summary>
-        [Description("Defensive assisted tackles")]
+        [Description("Total defensive assisted tackles by the opponent team in the game")]
         [DataMember(Name = "OpponentAssistedTackles", Order = 208)]
         public int? OpponentAssistedTackles { get; set; }
 
         /// <summary>
-        /// Defensive sacks
+        /// Total defensive sacks by the opponent team in the game
         /// </summary>
-        [Description("Defensive sacks")]
+        [Description("Total defensive sacks by the opponent team in the game")]
         [DataMember(Name = "OpponentSacks", Order = 209)]
         public int? OpponentSacks { get; set; }
 
         /// <summary>
-        /// Defensive sack yards
+        /// Total defensive sack yards by the opponent team in the game
         /// </summary>
-        [Description("Defensive sack yards")]
+        [Description("Total defensive sack yards by the opponent team in the game")]
         [DataMember(Name = "OpponentSackYards", Order = 210)]
         public int? OpponentSackYards { get; set; }
 
         /// <summary>
-        /// Defensive passes defended
+        /// Total passes defended by the opponent team in the game
         /// </summary>
-        [Description("Defensive passes defended")]
+        [Description("Total passes defended by the opponent team in the game")]
         [DataMember(Name = "OpponentPassesDefended", Order = 211)]
         public int? OpponentPassesDefended { get; set; }
 
         /// <summary>
-        /// Defensive fumbles forced
+        /// Total defensive fumbles forced by the opponent team in the game
         /// </summary>
-        [Description("Defensive fumbles forced")]
+        [Description("Total defensive fumbles forced by the opponent team in the game")]
         [DataMember(Name = "OpponentFumblesForced", Order = 212)]
         public int? OpponentFumblesForced { get; set; }
 
         /// <summary>
-        /// Fumbles recovered that resulted in change of possession
+        /// Total defensive fumble recoveries by the opponent team in the game
         /// </summary>
-        [Description("Fumbles recovered that resulted in change of possession")]
+        [Description("Total defensive fumble recoveries by the opponent team in the game")]
         [DataMember(Name = "OpponentFumblesRecovered", Order = 213)]
         public int? OpponentFumblesRecovered { get; set; }
 
         /// <summary>
-        /// Fumble return yards
+        /// Total defensive fumbles return yards by the opponent team in the game
         /// </summary>
-        [Description("Fumble return yards")]
+        [Description("Total defensive fumbles return yards by the opponent team in the game")]
         [DataMember(Name = "OpponentFumbleReturnYards", Order = 214)]
         public int? OpponentFumbleReturnYards { get; set; }
 
         /// <summary>
-        /// Fumble return touchdowns
+        /// Total defensive fumbles return touchdowns by the opponent team in the game
         /// </summary>
-        [Description("Fumble return touchdowns")]
+        [Description("Total defensive fumbles return touchdowns by the opponent team in the game")]
         [DataMember(Name = "OpponentFumbleReturnTouchdowns", Order = 215)]
         public int? OpponentFumbleReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Defensive interceptions
+        /// Total defensive interception touchdowns by the opponent team in the game
         /// </summary>
-        [Description("Defensive interceptions")]
+        [Description("Total defensive interception touchdowns by the opponent team in the game")]
         [DataMember(Name = "OpponentInterceptionReturnTouchdowns", Order = 216)]
         public int? OpponentInterceptionReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Total number of opponent's kicks that were blocked
+        /// Total blocked kicks against the opponent team in the game
         /// </summary>
-        [Description("Total number of opponent's kicks that were blocked")]
+        [Description("Total blocked kicks against the opponent team in the game")]
         [DataMember(Name = "OpponentBlockedKicks", Order = 217)]
         public int? OpponentBlockedKicks { get; set; }
 
         /// <summary>
-        /// Punt return touchdown
+        /// Total punt return touchdowns by the opponent team in the game
         /// </summary>
-        [Description("Punt return touchdown")]
+        [Description("Total punt return touchdowns by the opponent team in the game")]
         [DataMember(Name = "OpponentPuntReturnTouchdowns", Order = 218)]
         public int? OpponentPuntReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Longest punt return
+        /// Longest punt return by the opponent team in the game
         /// </summary>
-        [Description("Longest punt return")]
+        [Description("Longest punt return by the opponent team in the game")]
         [DataMember(Name = "OpponentPuntReturnLong", Order = 219)]
         public int? OpponentPuntReturnLong { get; set; }
 
         /// <summary>
-        /// Kick return touchdown
+        /// Total kickoff return touchdowns by the opponent team in the game
         /// </summary>
-        [Description("Kick return touchdown")]
+        [Description("Total kickoff return touchdowns by the opponent team in the game")]
         [DataMember(Name = "OpponentKickReturnTouchdowns", Order = 220)]
         public int? OpponentKickReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Longest kick return
+        /// Longest kick return by the opponent team in the game
         /// </summary>
-        [Description("Longest kick return")]
+        [Description("Longest kick return by the opponent team in the game")]
         [DataMember(Name = "OpponentKickReturnLong", Order = 221)]
         public int? OpponentKickReturnLong { get; set; }
 
         /// <summary>
-        /// Blocked kick recovery return yards
+        /// Total blocked kick return yards by the opponent team in the game
         /// </summary>
-        [Description("Blocked kick recovery return yards")]
+        [Description("Total blocked kick return yards by the opponent team in the game")]
         [DataMember(Name = "OpponentBlockedKickReturnYards", Order = 222)]
         public int? OpponentBlockedKickReturnYards { get; set; }
 
         /// <summary>
-        /// Blocked kick recovery return touchdowns
+        /// Total blocked kick return touchdowns by the opponent team in the game
         /// </summary>
-        [Description("Blocked kick recovery return touchdowns")]
+        [Description("Total blocked kick return touchdowns by the opponent team in the game")]
         [DataMember(Name = "OpponentBlockedKickReturnTouchdowns", Order = 223)]
         public int? OpponentBlockedKickReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Field goal return yards (excluding blocked field goals)
+        /// Total field goal return yards by the opponent team in the game. Note: Excludes blocked field goals (only for straight misses that are returned)
         /// </summary>
-        [Description("Field goal return yards (excluding blocked field goals)")]
+        [Description("Total field goal return yards by the opponent team in the game. Note: Excludes blocked field goals (only for straight misses that are returned)")]
         [DataMember(Name = "OpponentFieldGoalReturnYards", Order = 224)]
         public int? OpponentFieldGoalReturnYards { get; set; }
 
         /// <summary>
-        /// Field goal return touchdowns (excluding blocked field goals)
+        /// Total field goal return touchdowns by the opponent team in the game. Note: Excludes blocked field goals (only for straight misses that are returned)
         /// </summary>
-        [Description("Field goal return touchdowns (excluding blocked field goals)")]
+        [Description("Total field goal return touchdowns by the opponent team in the game. Note: Excludes blocked field goals (only for straight misses that are returned)")]
         [DataMember(Name = "OpponentFieldGoalReturnTouchdowns", Order = 225)]
         public int? OpponentFieldGoalReturnTouchdowns { get; set; }
 
         /// <summary>
-        /// Deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("Deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "OpponentPuntNetYards", Order = 226)]
         public int? OpponentPuntNetYards { get; set; }
 
@@ -1598,51 +1598,51 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public bool? IsGameOver { get; set; }
 
         /// <summary>
-        /// The full name of the team (e.g. New England Patriots)
+        /// The full name of the team (e.g. New England Patriots; Los Angeles Chargers)
         /// </summary>
-        [Description("The full name of the team (e.g. New England Patriots)")]
+        [Description("The full name of the team (e.g. New England Patriots; Los Angeles Chargers)")]
         [DataMember(Name = "TeamName", Order = 228)]
         public string TeamName { get; set; }
 
         /// <summary>
-        /// The day of the week this game was played on (e.g. Sunday, Monday)
+        /// The day of the week this game was played on (e.g. Sunday; Monday; Thursday)
         /// </summary>
-        [Description("The day of the week this game was played on (e.g. Sunday, Monday)")]
+        [Description("The day of the week this game was played on (e.g. Sunday; Monday; Thursday)")]
         [DataMember(Name = "DayOfWeek", Order = 229)]
         public string DayOfWeek { get; set; }
 
         /// <summary>
-        /// The number of times the offense dropped back to pass
+        /// Total number of times the team dropped back to pass in the game
         /// </summary>
-        [Description("The number of times the offense dropped back to pass")]
+        [Description("Total number of times the team dropped back to pass in the game")]
         [DataMember(Name = "PassingDropbacks", Order = 230)]
         public int? PassingDropbacks { get; set; }
 
         /// <summary>
-        /// The number of times the opponent dropped back to pass
+        /// Total passing dropbacks by the opponent team in the game
         /// </summary>
-        [Description("The number of times the opponent dropped back to pass")]
+        [Description("Total passing dropbacks by the opponent team in the game")]
         [DataMember(Name = "OpponentPassingDropbacks", Order = 231)]
         public int? OpponentPassingDropbacks { get; set; }
 
         /// <summary>
-        /// Unique ID of this TeamGame record (subject to change, although it very rarely does).  For a guaranteed static ID, use a combination of GameKey and Team.
+        /// Unique ID of this TeamGame record (subject to change; although it very rarely does). For a guaranteed static ID; use a combination of GameKey and Team.
         /// </summary>
-        [Description("Unique ID of this TeamGame record (subject to change, although it very rarely does).  For a guaranteed static ID, use a combination of GameKey and Team.")]
+        [Description("Unique ID of this TeamGame record (subject to change; although it very rarely does). For a guaranteed static ID; use a combination of GameKey and Team.")]
         [DataMember(Name = "TeamGameID", Order = 232)]
         public int TeamGameID { get; set; }
 
         /// <summary>
-        /// Two point conversion returns for two points.
+        /// Total successful two point conversion returns by the team in the game
         /// </summary>
-        [Description("Two point conversion returns for two points.")]
+        [Description("Total successful two point conversion returns by the team in the game")]
         [DataMember(Name = "TwoPointConversionReturns", Order = 233)]
         public int? TwoPointConversionReturns { get; set; }
 
         /// <summary>
-        /// Opponent's two point conversion returns for two points.
+        /// Total two point attempt returns converted by the defense for the opponent team in the game
         /// </summary>
-        [Description("Opponent's two point conversion returns for two points.")]
+        [Description("Total two point attempt returns converted by the defense for the opponent team in the game")]
         [DataMember(Name = "OpponentTwoPointConversionReturns", Order = 234)]
         public int? OpponentTwoPointConversionReturns { get; set; }
 
@@ -1654,51 +1654,51 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The unique ID of this opposing team
+        /// Total defensive interceptions by the opponent team in the game
         /// </summary>
-        [Description("The unique ID of this opposing team")]
+        [Description("Total defensive interceptions by the opponent team in the game")]
         [DataMember(Name = "OpponentID", Order = 236)]
         public int? OpponentID { get; set; }
 
         /// <summary>
-        /// The date of the game in US Eastern Time
+        /// The date of the game (in US Eastern Time)
         /// </summary>
-        [Description("The date of the game in US Eastern Time")]
+        [Description("The date of the game (in US Eastern Time)")]
         [DataMember(Name = "Day", Order = 237)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date and time of the game in US Eastern Time
+        /// The date of the game (in US Eastern Time)
         /// </summary>
-        [Description("The date and time of the game in US Eastern Time")]
+        [Description("The date of the game (in US Eastern Time)")]
         [DataMember(Name = "DateTime", Order = 238)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalGameID", Order = 239)]
         public int? GlobalGameID { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalTeamID", Order = 240)]
         public int? GlobalTeamID { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this opposing team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this team's opponent. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this opposing team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this team's opponent. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalOpponentID", Order = 241)]
         public int? GlobalOpponentID { get; set; }
 
         /// <summary>
-        /// Unique ID of the Score/Game.
+        /// Unique ID of the score/game
         /// </summary>
-        [Description("Unique ID of the Score/Game.")]
+        [Description("Unique ID of the score/game")]
         [DataMember(Name = "ScoreID", Order = 242)]
         public int ScoreID { get; set; }
 

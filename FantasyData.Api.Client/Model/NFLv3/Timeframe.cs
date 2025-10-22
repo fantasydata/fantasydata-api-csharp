@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int Season { get; set; }
 
         /// <summary>
-        /// The week of the timeframe (Regular Season=1 to 17, Preseason=1 to 4, Postseason=1 to4, Offseason=NULL)
+        /// The week of the timeframe (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to4; offseason=NULL). Note: seasons after 2021 will have only 3 preseason weeks
         /// </summary>
-        [Description("The week of the timeframe (Regular Season=1 to 17, Preseason=1 to 4, Postseason=1 to4, Offseason=NULL)")]
+        [Description("The week of the timeframe (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to4; offseason=NULL). Note: seasons after 2021 will have only 3 preseason weeks")]
         [DataMember(Name = "Week", Order = 3)]
         public int? Week { get; set; }
 
@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public DateTime StartDate { get; set; }
 
         /// <summary>
-        /// The end date/time of the Timeframe
+        /// The end date and time of the timeframe
         /// </summary>
-        [Description("The end date/time of the Timeframe")]
+        [Description("The end date and time of the timeframe")]
         [DataMember(Name = "EndDate", Order = 7)]
         public DateTime EndDate { get; set; }
 
@@ -121,16 +121,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public bool HasLastGameEnded { get; set; }
 
         /// <summary>
-        /// The value of the Season parameter used to pass into the API.
+        /// The value of the Season parameter used to pass into the API
         /// </summary>
-        [Description("The value of the Season parameter used to pass into the API.")]
+        [Description("The value of the Season parameter used to pass into the API")]
         [DataMember(Name = "ApiSeason", Order = 17)]
         public string ApiSeason { get; set; }
 
         /// <summary>
-        /// The value of the Week parameter used to pass into the API.
+        /// The value of the Week parameter used to pass into the API
         /// </summary>
-        [Description("The value of the Week parameter used to pass into the API.")]
+        [Description("The value of the Week parameter used to pass into the API")]
         [DataMember(Name = "ApiWeek", Order = 18)]
         public string ApiWeek { get; set; }
 

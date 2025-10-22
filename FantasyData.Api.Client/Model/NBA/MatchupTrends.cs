@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class MatchupTrends
     {
         /// <summary>
-        /// Upcoming game between the team and the opponent
+        /// Next scheduled game for the team with a specified opposing team
         /// </summary>
-        [Description("Upcoming game between the team and the opponent")]
+        [Description("Next scheduled game for the team with a specified opposing team")]
         [DataMember(Name = "UpcomingGame", Order = 10001)]
         public Game UpcomingGame { get; set; }
 

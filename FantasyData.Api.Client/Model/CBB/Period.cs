@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int PeriodID { get; set; }
 
         /// <summary>
-        /// The unique ID of the game
+        /// The unique ID of this game
         /// </summary>
-        [Description("The unique ID of the game")]
+        [Description("The unique ID of this game")]
         [DataMember(Name = "GameID", Order = 2)]
         public int GameID { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int Number { get; set; }
 
         /// <summary>
-        /// The Name of the Quarter (possible values: 1, 2, OT, OT2, OT3, etc)
+        /// The name of the period in the game (e.g. 1, 2, OT, OT2, etc.)
         /// </summary>
-        [Description("The Name of the Quarter (possible values: 1, 2, OT, OT2, OT3, etc)")]
+        [Description("The name of the period in the game (e.g. 1, 2, OT, OT2, etc.)")]
         [DataMember(Name = "Name", Order = 4)]
         public string Name { get; set; }
 
@@ -44,16 +44,16 @@ namespace FantasyData.Api.Client.Model.CBB
         public string Type { get; set; }
 
         /// <summary>
-        /// The total points scored by the away team in this Period.
+        /// The total points scored by the away team in this period only
         /// </summary>
-        [Description("The total points scored by the away team in this Period.")]
+        [Description("The total points scored by the away team in this period only")]
         [DataMember(Name = "AwayScore", Order = 6)]
         public int? AwayScore { get; set; }
 
         /// <summary>
-        /// The total points scored by the away team in this Period.
+        /// The total points scored by the home team in this period only
         /// </summary>
-        [Description("The total points scored by the away team in this Period.")]
+        [Description("The total points scored by the home team in this period only")]
         [DataMember(Name = "HomeScore", Order = 7)]
         public int? HomeScore { get; set; }
 

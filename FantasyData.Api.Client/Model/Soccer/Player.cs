@@ -9,156 +9,156 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class Player
     {
         /// <summary>
-        /// The player's unique PlayerID as assigned by SportsDataIO.
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career.
         /// </summary>
-        [Description("The player's unique PlayerID as assigned by SportsDataIO.")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career.")]
         [DataMember(Name = "PlayerId", Order = 1)]
         public int PlayerId { get; set; }
 
         /// <summary>
-        /// The player's first name.
+        /// The player's first name
         /// </summary>
-        [Description("The player's first name.")]
+        [Description("The player's first name")]
         [DataMember(Name = "FirstName", Order = 2)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// The player's last name.
+        /// The last name of the player
         /// </summary>
-        [Description("The player's last name.")]
+        [Description("The last name of the player")]
         [DataMember(Name = "LastName", Order = 3)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// The player's common name.
+        /// The player's common name
         /// </summary>
-        [Description("The player's common name.")]
+        [Description("The player's common name")]
         [DataMember(Name = "CommonName", Order = 4)]
         public string CommonName { get; set; }
 
         /// <summary>
-        /// The player's short name.
+        /// The short name of the player
         /// </summary>
-        [Description("The player's short name.")]
+        [Description("The short name of the player")]
         [DataMember(Name = "ShortName", Order = 5)]
         public string ShortName { get; set; }
 
         /// <summary>
-        /// The position of the player. Possible values include: A (Attacker), M (Midfielder), D (Defender), GK (Goalkeeper)
+        /// The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper).
         /// </summary>
-        [Description("The position of the player. Possible values include: A (Attacker), M (Midfielder), D (Defender), GK (Goalkeeper)")]
+        [Description("The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper).")]
         [DataMember(Name = "Position", Order = 6)]
         public string Position { get; set; }
 
         /// <summary>
-        /// The player's position category. 
+        /// The player's position category
         /// </summary>
-        [Description("The player's position category. ")]
+        [Description("The player's position category")]
         [DataMember(Name = "PositionCategory", Order = 7)]
         public string PositionCategory { get; set; }
 
         /// <summary>
-        /// The player's jersey number.
+        /// The player's jersey number
         /// </summary>
-        [Description("The player's jersey number.")]
+        [Description("The player's jersey number")]
         [DataMember(Name = "Jersey", Order = 8)]
         public int? Jersey { get; set; }
 
         /// <summary>
-        /// The primary foot of the player. Possible values: left or right
+        /// The primary foot of the player. Possible values: left or right.
         /// </summary>
-        [Description("The primary foot of the player. Possible values: left or right")]
+        [Description("The primary foot of the player. Possible values: left or right.")]
         [DataMember(Name = "Foot", Order = 9)]
         public string Foot { get; set; }
 
         /// <summary>
-        /// The player's height in cm.
+        /// The height of the player in centimeters (cm)
         /// </summary>
-        [Description("The player's height in cm.")]
+        [Description("The height of the player in centimeters (cm)")]
         [DataMember(Name = "Height", Order = 10)]
         public int? Height { get; set; }
 
         /// <summary>
-        /// The player's weight in kg.
+        /// The player's weight in kilograms (kg)
         /// </summary>
-        [Description("The player's weight in kg.")]
+        [Description("The player's weight in kilograms (kg)")]
         [DataMember(Name = "Weight", Order = 11)]
         public int? Weight { get; set; }
 
         /// <summary>
-        /// The gender of the player.
+        /// The gender of this player on the team. Possible Values: Male; Female.
         /// </summary>
-        [Description("The gender of the player.")]
+        [Description("The gender of this player on the team. Possible Values: Male; Female.")]
         [DataMember(Name = "Gender", Order = 12)]
         public string Gender { get; set; }
 
         /// <summary>
-        /// The player's date of birth.
+        /// The player's date of birth
         /// </summary>
-        [Description("The player's date of birth.")]
+        [Description("The player's date of birth")]
         [DataMember(Name = "BirthDate", Order = 13)]
         public DateTime? BirthDate { get; set; }
 
         /// <summary>
-        /// The city in which the player was born.
+        /// The city in which the player was born
         /// </summary>
-        [Description("The city in which the player was born.")]
+        [Description("The city in which the player was born")]
         [DataMember(Name = "BirthCity", Order = 14)]
         public string BirthCity { get; set; }
 
         /// <summary>
-        /// The country in which the player was born.
+        /// The country in which the player was born
         /// </summary>
-        [Description("The country in which the player was born.")]
+        [Description("The country in which the player was born")]
         [DataMember(Name = "BirthCountry", Order = 15)]
         public string BirthCountry { get; set; }
 
         /// <summary>
-        /// The nationality of the player.
+        /// The nationality of the player
         /// </summary>
-        [Description("The nationality of the player.")]
+        [Description("The nationality of the player")]
         [DataMember(Name = "Nationality", Order = 16)]
         public string Nationality { get; set; }
 
         /// <summary>
-        /// Indicates the player's injury status. Possible values include: Questionable, Out
+        /// Indicates the player's injury status. Possible values: Questionable; Out.
         /// </summary>
-        [Description("Indicates the player's injury status. Possible values include: Questionable, Out")]
+        [Description("Indicates the player's injury status. Possible values: Questionable; Out.")]
         [DataMember(Name = "InjuryStatus", Order = 17)]
         public string InjuryStatus { get; set; }
 
         /// <summary>
-        /// The body part that is injured (Knee, Groin, Calf, Hamstring, etc.)
+        /// The body part of the player that is injured (Knee; Groin; Calf; Hamstring; etc.)
         /// </summary>
-        [Description("The body part that is injured (Knee, Groin, Calf, Hamstring, etc.)")]
+        [Description("The body part of the player that is injured (Knee; Groin; Calf; Hamstring; etc.)")]
         [DataMember(Name = "InjuryBodyPart", Order = 18)]
         public string InjuryBodyPart { get; set; }
 
         /// <summary>
-        /// Not yet supported, will be null.
+        /// Not yet supported; will be null
         /// </summary>
-        [Description("Not yet supported, will be null.")]
+        [Description("Not yet supported; will be null")]
         [DataMember(Name = "InjuryNotes", Order = 19)]
         public string InjuryNotes { get; set; }
 
         /// <summary>
-        /// The day that the injury started or first discovered.
+        /// The date that the injury started or was first discovered
         /// </summary>
-        [Description("The day that the injury started or first discovered.")]
+        [Description("The date that the injury started or was first discovered")]
         [DataMember(Name = "InjuryStartDate", Order = 20)]
         public DateTime? InjuryStartDate { get; set; }
 
         /// <summary>
-        /// The date and time the player's status was updated. (EST/EDT)
+        /// The timestamp of when the record was last updated (US Eastern Time)
         /// </summary>
-        [Description("The date and time the player's status was updated. (EST/EDT)")]
+        [Description("The timestamp of when the record was last updated (US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 21)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.
+        /// This field is deprecated. Note: Photos are no longer available through this field. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.
         /// </summary>
-        [Description("This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.")]
+        [Description("This field is deprecated. Note: Photos are no longer available through this field. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.")]
         [DataMember(Name = "PhotoUrl", Order = 22)]
         public string PhotoUrl { get; set; }
 
@@ -170,16 +170,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? RotoWirePlayerID { get; set; }
 
         /// <summary>
-        /// The position of the player according to DraftKings.
+        /// The position of the player according to DraftKings
         /// </summary>
-        [Description("The position of the player according to DraftKings.")]
+        [Description("The position of the player according to DraftKings")]
         [DataMember(Name = "DraftKingsPosition", Order = 24)]
         public string DraftKingsPosition { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to USA Today headshot data feeds.
+        /// The player's cross reference PlayerID to USA Today headshot data feeds
         /// </summary>
-        [Description("The player's cross reference PlayerID to USA Today headshot data feeds.")]
+        [Description("The player's cross reference PlayerID to USA Today headshot data feeds")]
         [DataMember(Name = "UsaTodayPlayerID", Order = 25)]
         public int? UsaTodayPlayerID { get; set; }
 
@@ -198,16 +198,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string UsaTodayHeadshotNoBackgroundUrl { get; set; }
 
         /// <summary>
-        /// The last updated date of the player's headshot as provided by USA Today. License from USA Today is required.
+        /// The last updated timestamp of the player's headshot as provided by USA Today. License from USA Today is required.
         /// </summary>
-        [Description("The last updated date of the player's headshot as provided by USA Today. License from USA Today is required.")]
+        [Description("The last updated timestamp of the player's headshot as provided by USA Today. License from USA Today is required.")]
         [DataMember(Name = "UsaTodayHeadshotUpdated", Order = 28)]
         public DateTime? UsaTodayHeadshotUpdated { get; set; }
 
         /// <summary>
-        /// The last updated date of the player's transparent background headshot as provided by USA Today. License from USA Today is required.
+        /// The last updated timestamp of the player's transparent background headshot as provided by USA Today. License from USA Today is required.
         /// </summary>
-        [Description("The last updated date of the player's transparent background headshot as provided by USA Today. License from USA Today is required.")]
+        [Description("The last updated timestamp of the player's transparent background headshot as provided by USA Today. License from USA Today is required.")]
         [DataMember(Name = "UsaTodayHeadshotNoBackgroundUpdated", Order = 29)]
         public DateTime? UsaTodayHeadshotNoBackgroundUpdated { get; set; }
 

@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class DfsSlateGame
     {
         /// <summary>
-        /// Unique ID of a SlateGame (assigned by SportsDataIO).
+        /// The SlateGameID that this SlatePlayer refers to
         /// </summary>
-        [Description("Unique ID of a SlateGame (assigned by SportsDataIO).")]
+        [Description("The SlateGameID that this SlatePlayer refers to")]
         [DataMember(Name = "SlateGameID", Order = 1)]
         public int SlateGameID { get; set; }
 
         /// <summary>
-        /// The SlateID that this SlateGame refers to.
+        /// The SlateID that this SlateGame refers to
         /// </summary>
-        [Description("The SlateID that this SlateGame refers to.")]
+        [Description("The SlateID that this SlateGame refers to")]
         [DataMember(Name = "SlateID", Order = 2)]
         public int SlateID { get; set; }
 
         /// <summary>
-        /// The SportsDataIO GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.
+        /// The unique ID of the game tied to this SlateGame
         /// </summary>
-        [Description("The SportsDataIO GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.")]
+        [Description("The unique ID of the game tied to this SlateGame")]
         [DataMember(Name = "GameID", Order = 3)]
         public int? GameID { get; set; }
 
         /// <summary>
-        /// The details of the Game that this SlateGame refers to.
+        /// The details of the Game that this SlateGame refers to
         /// </summary>
-        [Description("The details of the Game that this SlateGame refers to.")]
+        [Description("The details of the Game that this SlateGame refers to")]
         [DataMember(Name = "Game", Order = 10004)]
         public Game Game { get; set; }
 
         /// <summary>
-        /// Unique ID of a SlateGame (assigned by the operator).
+        /// Unique ID of a SlateGame (assigned by the operator)
         /// </summary>
-        [Description("Unique ID of a SlateGame (assigned by the operator).")]
+        [Description("Unique ID of a SlateGame (assigned by the operator)")]
         [DataMember(Name = "OperatorGameID", Order = 5)]
         public int? OperatorGameID { get; set; }
 

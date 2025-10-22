@@ -9,65 +9,65 @@ namespace FantasyData.Api.Client.Model.CBB
     public partial class InjuredPlayer
     {
         /// <summary>
-        /// Unique ID of player
+        /// The player's unique PlayerID as assigned by SportsDataIO (if applicable). Note: this ID will stay with the player throughout their collegiate career.
         /// </summary>
-        [Description("Unique ID of player")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO (if applicable). Note: this ID will stay with the player throughout their collegiate career.")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Full name of player
+        /// Injured player's full name (first and last)
         /// </summary>
-        [Description("Full name of player")]
+        [Description("Injured player's full name (first and last)")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Unique ID of team
+        /// The unique ID of the player's team
         /// </summary>
-        [Description("Unique ID of team")]
+        [Description("The unique ID of the player's team")]
         [DataMember(Name = "TeamID", Order = 3)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Team name abbreviation
+        /// The abbreviation [Key] of the player's team
         /// </summary>
-        [Description("Team name abbreviation")]
+        [Description("The abbreviation [Key] of the player's team")]
         [DataMember(Name = "Team", Order = 4)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Position of player
+        /// The player's eligible position(s). Possible values: C; F; F-C; G; G-F, PG, SG, SF, PF.
         /// </summary>
-        [Description("Position of player")]
+        [Description("The player's eligible position(s). Possible values: C; F; F-C; G; G-F, PG, SG, SF, PF.")]
         [DataMember(Name = "Position", Order = 5)]
         public string Position { get; set; }
 
         /// <summary>
-        /// Injury status (Questionable, Out, etc)
+        /// Injury status used to project availability. Statuses: Probable; Questionable; Doubtful; Out.
         /// </summary>
-        [Description("Injury status (Questionable, Out, etc)")]
+        [Description("Injury status used to project availability. Statuses: Probable; Questionable; Doubtful; Out.")]
         [DataMember(Name = "InjuryStatus", Order = 6)]
         public string InjuryStatus { get; set; }
 
         /// <summary>
-        /// Body part injured
+        /// The player's body part(s) that are injured (e.g. Knee; Groin; Calf; Hamstring; etc.). Note: if a player has multiple injured body parts they will appear as such - Hamstring/Ankle.
         /// </summary>
-        [Description("Body part injured")]
+        [Description("The player's body part(s) that are injured (e.g. Knee; Groin; Calf; Hamstring; etc.). Note: if a player has multiple injured body parts they will appear as such - Hamstring/Ankle.")]
         [DataMember(Name = "InjuryBodyPart", Order = 7)]
         public string InjuryBodyPart { get; set; }
 
         /// <summary>
-        /// Injury description
+        /// Short description of injury involving injured body part(s), game status, player name, team name, and other extra news necessary. Notes are custom and can be unique.
         /// </summary>
-        [Description("Injury description")]
+        [Description("Short description of injury involving injured body part(s), game status, player name, team name, and other extra news necessary. Notes are custom and can be unique.")]
         [DataMember(Name = "InjuryNotes", Order = 8)]
         public string InjuryNotes { get; set; }
 
         /// <summary>
-        /// Date on which injury occurred
+        /// The date that the injury occurred, was first discovered, or was freshly updated
         /// </summary>
-        [Description("Date on which injury occurred")]
+        [Description("The date that the injury occurred, was first discovered, or was freshly updated")]
         [DataMember(Name = "InjuryStartDate", Order = 9)]
         public DateTime? InjuryStartDate { get; set; }
 

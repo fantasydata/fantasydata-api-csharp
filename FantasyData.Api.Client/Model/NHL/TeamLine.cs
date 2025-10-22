@@ -9,23 +9,23 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class TeamLine
     {
         /// <summary>
-        /// The unique ID for the team
+        /// The unique ID of the team
         /// </summary>
-        [Description("The unique ID for the team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 1)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Whether or not the team is active
+        /// "The abbreviation [Key] of the team associated with this market (Ex. BOS, EDM, LAK)"
         /// </summary>
-        [Description("Whether or not the team is active")]
+        [Description("\"The abbreviation [Key] of the team associated with this market (Ex. BOS, EDM, LAK)\"")]
         [DataMember(Name = "Key", Order = 2)]
         public string Key { get; set; }
 
         /// <summary>
-        /// The full team name
+        /// The team's full name (ex. Minnesota Wild; New York Islanders)
         /// </summary>
-        [Description("The full team name")]
+        [Description("The team's full name (ex. Minnesota Wild; New York Islanders)")]
         [DataMember(Name = "FullName", Order = 3)]
         public string FullName { get; set; }
 
@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public PlayerLine[] EvenStrengthLines { get; set; }
 
         /// <summary>
-        /// The power play lines for this team
+        /// The power play lines for a given team
         /// </summary>
-        [Description("The power play lines for this team")]
+        [Description("The power play lines for a given team")]
         [DataMember(Name = "PowerPlayLines", Order = 20005)]
         public PlayerLine[] PowerPlayLines { get; set; }
 

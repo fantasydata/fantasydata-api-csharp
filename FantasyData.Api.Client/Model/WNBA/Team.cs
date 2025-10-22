@@ -9,30 +9,30 @@ namespace FantasyData.Api.Client.Model.WNBA
     public partial class Team
     {
         /// <summary>
-        /// The auto-generated unique ID of the Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("The auto-generated unique ID of the Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 1)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Abbreviation of the team (e.g. LA, PHX, NY etc.)
+        /// A unique abbreviation of the team (e.g. LA; PHX; NY; etc.).  Note: Due to being selected for uniqueness; these are not always matching broadcaster abbreviations. For that use case; use ShortDisplayName.
         /// </summary>
-        [Description("Abbreviation of the team (e.g. LA, PHX, NY etc.)")]
+        [Description("A unique abbreviation of the team (e.g. LA; PHX; NY; etc.).  Note: Due to being selected for uniqueness; these are not always matching broadcaster abbreviations. For that use case; use ShortDisplayName.")]
         [DataMember(Name = "Key", Order = 2)]
         public string Key { get; set; }
 
         /// <summary>
-        /// Whether or not this team is active
+        /// Whether or not this team is active. Note: Active = True & Inactive = False
         /// </summary>
-        [Description("Whether or not this team is active")]
+        [Description("Whether or not this team is active. Note: Active = True & Inactive = False")]
         [DataMember(Name = "Active", Order = 3)]
         public bool Active { get; set; }
 
         /// <summary>
-        /// The city/location of the team (e.g. Los Angeles, Phoenix, New York,  etc.)
+        /// The city in which the team is located in (e.g. Los Angeles, Phoenix, New York, etc.)
         /// </summary>
-        [Description("The city/location of the team (e.g. Los Angeles, Phoenix, New York,  etc.)")]
+        [Description("The city in which the team is located in (e.g. Los Angeles, Phoenix, New York, etc.)")]
         [DataMember(Name = "City", Order = 4)]
         public string City { get; set; }
 
@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.WNBA
         public string Name { get; set; }
 
         /// <summary>
-        /// The conference of the team (possible values: Eastern, Western)
+        /// The conference of a given team (possible values: Eastern; Western)
         /// </summary>
-        [Description("The conference of the team (possible values: Eastern, Western)")]
+        [Description("The conference of a given team (possible values: Eastern; Western)")]
         [DataMember(Name = "Conference", Order = 6)]
         public string Conference { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.WNBA
         public string WikipediaLogoUrl { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for the team. This value is guaranteed to be unique across all sports/leagues.
         /// </summary>
-        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for the team. This value is guaranteed to be unique across all sports/leagues.")]
         [DataMember(Name = "GlobalTeamID", Order = 8)]
         public int GlobalTeamID { get; set; }
 

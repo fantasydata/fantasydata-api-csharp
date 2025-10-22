@@ -16,93 +16,93 @@ namespace FantasyData.Api.Client.Model.MLB
         public int StatID { get; set; }
 
         /// <summary>
-        /// The unique ID of the player's team
+        /// The team's unique TeamID as assigned by SportsDataIO
         /// </summary>
-        [Description("The unique ID of the player's team")]
+        [Description("The team's unique TeamID as assigned by SportsDataIO")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career")]
         [DataMember(Name = "PlayerID", Order = 3)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar)")]
         [DataMember(Name = "SeasonType", Order = 4)]
         public int? SeasonType { get; set; }
 
         /// <summary>
-        /// The MLB regular season for which these totals apply
+        /// The MLB season for which these totals apply
         /// </summary>
-        [Description("The MLB regular season for which these totals apply")]
+        [Description("The MLB season for which these totals apply")]
         [DataMember(Name = "Season", Order = 5)]
         public int? Season { get; set; }
 
         /// <summary>
-        /// Player's name
+        /// Player's full name
         /// </summary>
-        [Description("Player's name")]
+        [Description("Player's full name")]
         [DataMember(Name = "Name", Order = 6)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 7)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Player's position in the starting lineup (if started), otherwise the position he substituted for
+        /// The player's position associated with the given game or season. Possible values: 1B; 2B; 3B; C; CF; DH; IF; LF; OF; P; PH; PR; RF; RP; SP; SS
         /// </summary>
-        [Description("Player's position in the starting lineup (if started), otherwise the position he substituted for")]
+        [Description("The player's position associated with the given game or season. Possible values: 1B; 2B; 3B; C; CF; DH; IF; LF; OF; P; PH; PR; RF; RP; SP; SS")]
         [DataMember(Name = "Position", Order = 8)]
         public string Position { get; set; }
 
         /// <summary>
-        /// Abbreviation of the player's position (P, C, 1B, OF, etc.)
+        /// The player's position category. Possible values: DH; IF; OF; P; PH; PR
         /// </summary>
-        [Description("Abbreviation of the player's position (P, C, 1B, OF, etc.)")]
+        [Description("The player's position category. Possible values: DH; IF; OF; P; PH; PR")]
         [DataMember(Name = "PositionCategory", Order = 9)]
         public string PositionCategory { get; set; }
 
         /// <summary>
-        /// Number of games started
+        /// Number of games started in the season
         /// </summary>
-        [Description("Number of games started")]
+        [Description("Number of games started in the season")]
         [DataMember(Name = "Started", Order = 10)]
         public int? Started { get; set; }
 
         /// <summary>
-        /// Number in the batting order (1,2,3, etc.)
+        /// This field is expected to be NULL
         /// </summary>
-        [Description("Number in the batting order (1,2,3, etc.)")]
+        [Description("This field is expected to be NULL")]
         [DataMember(Name = "BattingOrder", Order = 11)]
         public int? BattingOrder { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalTeamID", Order = 12)]
         public int? GlobalTeamID { get; set; }
 
         /// <summary>
-        /// The average draft position of the player
+        /// The auction value for this player as it pertains to auction-style drafts for season-long fantasy baseball
         /// </summary>
-        [Description("The average draft position of the player")]
+        [Description("The auction value for this player as it pertains to auction-style drafts for season-long fantasy baseball")]
         [DataMember(Name = "AverageDraftPosition", Order = 13)]
         public decimal? AverageDraftPosition { get; set; }
 
         /// <summary>
-        /// The auction value for this player as it pertains to auction-style drafts for season-long fantasy baseball.
+        /// The auction value for this player as it pertains to auction-style drafts for season-long fantasy baseball
         /// </summary>
-        [Description("The auction value for this player as it pertains to auction-style drafts for season-long fantasy baseball.")]
+        [Description("The auction value for this player as it pertains to auction-style drafts for season-long fantasy baseball")]
         [DataMember(Name = "AuctionValue", Order = 14)]
         public int? AuctionValue { get; set; }
 

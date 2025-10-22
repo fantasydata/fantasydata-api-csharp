@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public Referee AssistantReferee2 { get; set; }
 
         /// <summary>
-        /// The fourth referee
+        /// The information about the fourth referee working the match
         /// </summary>
-        [Description("The fourth referee")]
+        [Description("The information about the fourth referee working the match")]
         [DataMember(Name = "FourthReferee", Order = 10007)]
         public Referee FourthReferee { get; set; }
 
@@ -100,9 +100,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public PenaltyShootout[] PenaltyShootouts { get; set; }
 
         /// <summary>
-        /// The team stats for this game
+        /// The stats by the team in the game
         /// </summary>
-        [Description("The team stats for this game")]
+        [Description("The stats by the team in the game")]
         [DataMember(Name = "TeamGames", Order = 20014)]
         public TeamGame[] TeamGames { get; set; }
 
@@ -114,9 +114,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public PlayerGame[] PlayerGames { get; set; }
 
         /// <summary>
-        /// The referee in charge of the video reviews (VAR)
+        /// The name of the referee in charge of the video reviews (VAR)
         /// </summary>
-        [Description("The referee in charge of the video reviews (VAR)")]
+        [Description("The name of the referee in charge of the video reviews (VAR)")]
         [DataMember(Name = "VideoAssistantReferee", Order = 10016)]
         public Referee VideoAssistantReferee { get; set; }
 

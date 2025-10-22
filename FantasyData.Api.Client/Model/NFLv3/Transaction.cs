@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class Transaction
     {
         /// <summary>
-        /// Unique ID of Player
+        /// The unique PlayerID of the player as assigned by SportsDataIO tied to this transaction. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID of Player")]
+        [Description("The unique PlayerID of the player as assigned by SportsDataIO tied to this transaction. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Player Name
+        /// Player's full name
         /// </summary>
-        [Description("Player Name")]
+        [Description("Player's full name")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
@@ -30,23 +30,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? FormerTeamID { get; set; }
 
         /// <summary>
-        /// Player's former team in abbreviated format (e.g. SD, PHI, NE, IND etc.)
+        /// Player's former team abbreviation [Key] (e.g. LAC; PHI; NE; IND etc.)
         /// </summary>
-        [Description("Player's former team in abbreviated format (e.g. SD, PHI, NE, IND etc.)")]
+        [Description("Player's former team abbreviation [Key] (e.g. LAC; PHI; NE; IND etc.)")]
         [DataMember(Name = "FormerTeam", Order = 4)]
         public string FormerTeam { get; set; }
 
         /// <summary>
-        /// Unique ID of the former team.
+        /// The unique ID of the team
         /// </summary>
-        [Description("Unique ID of the former team.")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 5)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Player's new team, when applicable, in abbreviated format (e.g. SD, PHI, NE, IND etc.)
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("Player's new team, when applicable, in abbreviated format (e.g. SD, PHI, NE, IND etc.)")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 6)]
         public string Team { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Type { get; set; }
 
         /// <summary>
-        /// Date and Time Transaction took place
+        /// Date & time that the transaction took place (in US Eastern Time)
         /// </summary>
-        [Description("Date and Time Transaction took place")]
+        [Description("Date & time that the transaction took place (in US Eastern Time)")]
         [DataMember(Name = "Date", Order = 8)]
         public DateTime? Date { get; set; }
 
@@ -72,16 +72,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Note { get; set; }
 
         /// <summary>
-        /// Date and Time Created
+        /// Date and time of the transaction creation (in US Eastern Time)
         /// </summary>
-        [Description("Date and Time Created")]
+        [Description("Date and time of the transaction creation (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 10)]
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// Date and Time Last Updated
+        /// Date and time last updated (in US Eastern Time)
         /// </summary>
-        [Description("Date and Time Last Updated")]
+        [Description("Date and time last updated (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 11)]
         public DateTime? Updated { get; set; }
 

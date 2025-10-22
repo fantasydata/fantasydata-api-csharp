@@ -9,44 +9,44 @@ namespace FantasyData.Api.Client.Model.NBA
     public partial class Lineup
     {
         /// <summary>
-        /// Unique ID of Player
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID of Player")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Unique ID of Team
+        /// The unique ID of the team
         /// </summary>
-        [Description("Unique ID of Team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int TeamID { get; set; }
 
         /// <summary>
-        /// Name of Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("Name of Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 3)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Player First Name
+        /// The player's first name
         /// </summary>
-        [Description("Player First Name")]
+        [Description("The player's first name")]
         [DataMember(Name = "FirstName", Order = 4)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Player Last Name
+        /// The player's last name
         /// </summary>
-        [Description("Player Last Name")]
+        [Description("The player's last name")]
         [DataMember(Name = "LastName", Order = 5)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Player Position
+        /// The player's primary position. Possible values: C; PF; PG; SF; SG
         /// </summary>
-        [Description("Player Position")]
+        [Description("The player's primary position. Possible values: C; PF; PG; SF; SG")]
         [DataMember(Name = "Position", Order = 6)]
         public string Position { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public bool? Starting { get; set; }
 
         /// <summary>
-        /// Indicates whether  Starting status has been confirmed for this player
+        /// Indicated whether the 'Starting' field has been confirmed for a player
         /// </summary>
-        [Description("Indicates whether  Starting status has been confirmed for this player")]
+        [Description("Indicated whether the 'Starting' field has been confirmed for a player")]
         [DataMember(Name = "Confirmed", Order = 8)]
         public bool? Confirmed { get; set; }
 

@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class GameInfoResult
     {
         /// <summary>
-        /// The unique ID of the game.
+        /// The unique ID of this game
         /// </summary>
-        [Description("The unique ID of the game.")]
+        [Description("The unique ID of this game")]
         [DataMember(Name = "GameID", Order = 1)]
         public int GameID { get; set; }
 
         /// <summary>
-        /// The calendar year of the season during which this game occurs.
+        /// The MLB season of the game
         /// </summary>
-        [Description("The calendar year of the season during which this game occurs.")]
+        [Description("The MLB season of the game")]
         [DataMember(Name = "Season", Order = 2)]
         public int Season { get; set; }
 
@@ -30,51 +30,51 @@ namespace FantasyData.Api.Client.Model.MLB
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// The day that the game is scheduled to be played in UTC.
+        /// The day of the game
         /// </summary>
-        [Description("The day that the game is scheduled to be played in UTC.")]
+        [Description("The day of the game")]
         [DataMember(Name = "Day", Order = 4)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date/time that the game is scheduled to be played in UTC.
+        /// The date and time of the game in US Eastern Time
         /// </summary>
-        [Description("The date/time that the game is scheduled to be played in UTC.")]
+        [Description("The date and time of the game in US Eastern Time")]
         [DataMember(Name = "DateTime", Order = 5)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Postponed, Delayed, Canceled
+        /// Indicates the game's status. Possible values include: Scheduled; InProgress; Final; Suspended; Delayed; Postponed; Canceled; Forfeit; NotNecessary
         /// </summary>
-        [Description("Indicates the game's status. Possible values include: Scheduled, InProgress, Final, Suspended, Postponed, Delayed, Canceled")]
+        [Description("Indicates the game's status. Possible values include: Scheduled; InProgress; Final; Suspended; Delayed; Postponed; Canceled; Forfeit; NotNecessary")]
         [DataMember(Name = "Status", Order = 6)]
         public string Status { get; set; }
 
         /// <summary>
-        /// The TeamId of the away team.
+        /// The unique TeamID of the away team
         /// </summary>
-        [Description("The TeamId of the away team.")]
+        [Description("The unique TeamID of the away team")]
         [DataMember(Name = "AwayTeamID", Order = 7)]
         public int? AwayTeamID { get; set; }
 
         /// <summary>
-        /// The TeamId of the home team.
+        /// The unique TeamID of the home team
         /// </summary>
-        [Description("The TeamId of the home team.")]
+        [Description("The unique TeamID of the home team")]
         [DataMember(Name = "HomeTeamID", Order = 8)]
         public int? HomeTeamID { get; set; }
 
         /// <summary>
-        /// The name of the away team.
+        /// The abbreviation [Key] of the away team
         /// </summary>
-        [Description("The name of the away team.")]
+        [Description("The abbreviation [Key] of the away team")]
         [DataMember(Name = "AwayTeamName", Order = 9)]
         public string AwayTeamName { get; set; }
 
         /// <summary>
-        /// The name of the home team.
+        /// The abbreviation [Key] of the home team
         /// </summary>
-        [Description("The name of the home team.")]
+        [Description("The abbreviation [Key] of the home team")]
         [DataMember(Name = "HomeTeamName", Order = 10)]
         public string HomeTeamName { get; set; }
 
@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int GlobalGameID { get; set; }
 
         /// <summary>
-        /// A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalAwayTeamID", Order = 12)]
         public int? GlobalAwayTeamID { get; set; }
 
@@ -100,9 +100,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? GlobalHomeTeamID { get; set; }
 
         /// <summary>
-        /// List of Pregame GameOdds from different sportsbooks with results.
+        /// List of Pregame GameOdds from different sportsbooks with results
         /// </summary>
-        [Description("List of Pregame GameOdds from different sportsbooks with results.")]
+        [Description("List of Pregame GameOdds from different sportsbooks with results")]
         [DataMember(Name = "PregameOdds", Order = 20014)]
         public GameOddResult[] PregameOdds { get; set; }
 
@@ -121,9 +121,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? AwayTeamScore { get; set; }
 
         /// <summary>
-        /// Total scored points in the game (updated after game ends to allow for resolving bets)
+        /// The combined scores of the home and away team of the game tied to this event (post-game)
         /// </summary>
-        [Description("Total scored points in the game (updated after game ends to allow for resolving bets)")]
+        [Description("The combined scores of the home and away team of the game tied to this event (post-game)")]
         [DataMember(Name = "TotalScore", Order = 17)]
         public int? TotalScore { get; set; }
 
@@ -156,30 +156,30 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? Inning { get; set; }
 
         /// <summary>
-        /// The inning half that the game is currently in, or the inning half in which the game ended (possible values: T, B, NULL)
+        /// The inning half that the game is currently in; or the inning half in which the game ended (possible values: T; B; E: M: NULL)
         /// </summary>
-        [Description("The inning half that the game is currently in, or the inning half in which the game ended (possible values: T, B, NULL)")]
+        [Description("The inning half that the game is currently in; or the inning half in which the game ended (possible values: T; B; E: M: NULL)")]
         [DataMember(Name = "InningHalf", Order = 22)]
         public string InningHalf { get; set; }
 
         /// <summary>
-        /// Indicates whether the game is over and the final score has been verified and closed out.
+        /// Indicates whether the game is over and the final score has been verified and closed out. Note: it is recommend for bet resulting to use IsClosed = True rather than simply Final game status
         /// </summary>
-        [Description("Indicates whether the game is over and the final score has been verified and closed out.")]
+        [Description("Indicates whether the game is over and the final score has been verified and closed out. Note: it is recommend for bet resulting to use IsClosed = True rather than simply Final game status")]
         [DataMember(Name = "IsClosed", Order = 23)]
         public bool IsClosed { get; set; }
 
         /// <summary>
-        /// The details of the innings associated with this game
+        /// The inning details associated with the game
         /// </summary>
-        [Description("The details of the innings associated with this game")]
+        [Description("The inning details associated with the game")]
         [DataMember(Name = "Innings", Order = 20024)]
         public Inning[] Innings { get; set; }
 
         /// <summary>
-        /// List of Live Odds from different sportsbooks with results
+        /// Shows a list of live odds from different sportsbooks with results
         /// </summary>
-        [Description("List of Live Odds from different sportsbooks with results")]
+        [Description("Shows a list of live odds from different sportsbooks with results")]
         [DataMember(Name = "LiveOdds", Order = 20025)]
         public GameOddResult[] LiveOdds { get; set; }
 

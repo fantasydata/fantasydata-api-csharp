@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class TeamSeason
     {
         /// <summary>
-        /// The unique ID of the stat
+        /// The unique ID of the stat associated with this team
         /// </summary>
-        [Description("The unique ID of the stat")]
+        [Description("The unique ID of the stat associated with this team")]
         [DataMember(Name = "StatId", Order = 1)]
         public int StatId { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int Season { get; set; }
 
         /// <summary>
-        /// The unique ID of the round
+        /// The unique ID of the round that this team is associated with
         /// </summary>
-        [Description("The unique ID of the round")]
+        [Description("The unique ID of the round that this team is associated with")]
         [DataMember(Name = "RoundId", Order = 4)]
         public int? RoundId { get; set; }
 
@@ -44,16 +44,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? TeamId { get; set; }
 
         /// <summary>
-        /// Team name
+        /// The team's full name
         /// </summary>
-        [Description("Team name")]
+        [Description("The team's full name")]
         [DataMember(Name = "Name", Order = 6)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 7)]
         public string Team { get; set; }
 
@@ -65,9 +65,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? GlobalTeamId { get; set; }
 
         /// <summary>
-        /// Percentage of ball possession, per game, for this season.
+        /// Percentage of ball possession by the team in the season
         /// </summary>
-        [Description("Percentage of ball possession, per game, for this season.")]
+        [Description("Percentage of ball possession by the team in the season")]
         [DataMember(Name = "Possession", Order = 9)]
         public decimal? Possession { get; set; }
 

@@ -9,18 +9,25 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class BettingEntityMetadata
     {
         /// <summary>
-        /// The id of the record.  Unique only within the same entity type (i.e. BettingMarketType Ids overlap with BettingBetType Ids)
+        /// The ID of the record; unique only within the same entity type (i.e. BettingMarketType IDs overlap with BettingBetType IDs)
         /// </summary>
-        [Description("The id of the record.  Unique only within the same entity type (i.e. BettingMarketType Ids overlap with BettingBetType Ids)")]
+        [Description("The ID of the record; unique only within the same entity type (i.e. BettingMarketType IDs overlap with BettingBetType IDs)")]
         [DataMember(Name = "RecordId", Order = 1)]
         public int RecordId { get; set; }
 
         /// <summary>
-        /// A text value for the record (e.g. Moneyline, Player Prop, 3rd Quarter)
+        /// Denotes the name of the Type  (e.g. Betting Market Type, Betting Event Type, Betting Period Type)
         /// </summary>
-        [Description("A text value for the record (e.g. Moneyline, Player Prop, 3rd Quarter)")]
+        [Description("Denotes the name of the Type  (e.g. Betting Market Type, Betting Event Type, Betting Period Type)")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Whether or not this betting entity is active
+        /// </summary>
+        [Description("Whether or not this betting entity is active")]
+        [DataMember(Name = "Active", Order = 3)]
+        public bool? Active { get; set; }
 
     }
 }

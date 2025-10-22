@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string City { get; set; }
 
         /// <summary>
-        /// The US state where the stadium is located (if Stadium is outside US, this value is NULL)
+        /// The US state in which the stadium is located. Note: If the stadium is outside of the US, this value is NULL
         /// </summary>
-        [Description("The US state where the stadium is located (if Stadium is outside US, this value is NULL)")]
+        [Description("The US state in which the stadium is located. Note: If the stadium is outside of the US, this value is NULL")]
         [DataMember(Name = "State", Order = 6)]
         public string State { get; set; }
 

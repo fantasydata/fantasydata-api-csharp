@@ -9,93 +9,93 @@ namespace FantasyData.Api.Client.Model.CBB
     public partial class BettingMarketSplit
     {
         /// <summary>
-        /// Unique ID of Betting Market
+        /// The unique ID associated with the betting market
         /// </summary>
-        [Description("Unique ID of Betting Market")]
+        [Description("The unique ID associated with the betting market")]
         [DataMember(Name = "BettingMarketID", Order = 1)]
         public int BettingMarketID { get; set; }
 
         /// <summary>
-        /// Unique ID of associated Betting Event
+        /// The unique ID associated with the betting event
         /// </summary>
-        [Description("Unique ID of associated Betting Event")]
+        [Description("The unique ID associated with the betting event")]
         [DataMember(Name = "BettingEventID", Order = 2)]
         public int BettingEventID { get; set; }
 
         /// <summary>
-        /// Market Type ID
+        /// ID that distinguishes the different types of Market Types
         /// </summary>
-        [Description("Market Type ID")]
+        [Description("ID that distinguishes the different types of Market Types")]
         [DataMember(Name = "BettingMarketTypeID", Order = 3)]
         public int BettingMarketTypeID { get; set; }
 
         /// <summary>
-        /// Name of Market Type
+        /// The name of the market type (e.g. Player Prop, Team Prop, Game Prop, etc.)
         /// </summary>
-        [Description("Name of Market Type")]
+        [Description("The name of the market type (e.g. Player Prop, Team Prop, Game Prop, etc.)")]
         [DataMember(Name = "BettingMarketType", Order = 4)]
         public string BettingMarketType { get; set; }
 
         /// <summary>
-        /// Bet Type ID 
+        /// The ID associated with the name of the bet type within a market
         /// </summary>
-        [Description("Bet Type ID ")]
+        [Description("The ID associated with the name of the bet type within a market")]
         [DataMember(Name = "BettingBetTypeID", Order = 5)]
         public int BettingBetTypeID { get; set; }
 
         /// <summary>
-        /// Name of Bet Type
+        /// The name of the bet type within a market (e.g. Total Points, Moneyline, Spread, etc.)
         /// </summary>
-        [Description("Name of Bet Type")]
+        [Description("The name of the bet type within a market (e.g. Total Points, Moneyline, Spread, etc.)")]
         [DataMember(Name = "BettingBetType", Order = 6)]
         public string BettingBetType { get; set; }
 
         /// <summary>
-        /// Betting Period Type ID
+        /// The BettingPeriodTypeID of this market
         /// </summary>
-        [Description("Betting Period Type ID")]
+        [Description("The BettingPeriodTypeID of this market")]
         [DataMember(Name = "BettingPeriodTypeID", Order = 7)]
         public int BettingPeriodTypeID { get; set; }
 
         /// <summary>
-        /// Name of Betting Period
+        /// The BettingPeriodType of this market (e.g. Full Game; 1st Half; 2nd Quarter; Regular Season)
         /// </summary>
-        [Description("Name of Betting Period")]
+        [Description("The BettingPeriodType of this market (e.g. Full Game; 1st Half; 2nd Quarter; Regular Season)")]
         [DataMember(Name = "BettingPeriodType", Order = 8)]
         public string BettingPeriodType { get; set; }
 
         /// <summary>
-        /// ID of associated Team
+        /// The unique ID of the team (if applicable)
         /// </summary>
-        [Description("ID of associated Team")]
+        [Description("The unique ID of the team (if applicable)")]
         [DataMember(Name = "TeamID", Order = 9)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Short Team Name
+        /// The abbreviation [Key] of the team tied to this market (if applicable)
         /// </summary>
-        [Description("Short Team Name")]
+        [Description("The abbreviation [Key] of the team tied to this market (if applicable)")]
         [DataMember(Name = "TeamKey", Order = 10)]
         public string TeamKey { get; set; }
 
         /// <summary>
-        /// ID of associated Team
+        /// The player's unique PlayerID as assigned by SportsDataIO (if applicable). Note: this ID will stay with the player throughout their collegiate career
         /// </summary>
-        [Description("ID of associated Team")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO (if applicable). Note: this ID will stay with the player throughout their collegiate career")]
         [DataMember(Name = "PlayerID", Order = 11)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// Name of Player
+        /// The full name of the player associated with this market
         /// </summary>
-        [Description("Name of Player")]
+        [Description("The full name of the player associated with this market")]
         [DataMember(Name = "PlayerName", Order = 12)]
         public string PlayerName { get; set; }
 
         /// <summary>
-        /// List of Splits
+        /// A list of betting splits for a given game
         /// </summary>
-        [Description("List of Splits")]
+        [Description("A list of betting splits for a given game")]
         [DataMember(Name = "BettingSplits", Order = 20013)]
         public BettingSplit[] BettingSplits { get; set; }
 

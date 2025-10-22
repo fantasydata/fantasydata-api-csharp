@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class PlayerSeason
     {
         /// <summary>
-        /// The unique ID of the player season record
+        /// The unique ID of the golfer season record
         /// </summary>
-        [Description("The unique ID of the player season record")]
+        [Description("The unique ID of the golfer season record")]
         [DataMember(Name = "PlayerSeasonID", Order = 1)]
         public int PlayerSeasonID { get; set; }
 
@@ -23,16 +23,16 @@ namespace FantasyData.Api.Client.Model.Golf
         public int Season { get; set; }
 
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The unique ID of the golfer
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The unique ID of the golfer")]
         [DataMember(Name = "PlayerID", Order = 3)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Player's name
+        /// The full name of the golfer
         /// </summary>
-        [Description("Player's name")]
+        [Description("The full name of the golfer")]
         [DataMember(Name = "Name", Order = 4)]
         public string Name { get; set; }
 
@@ -51,16 +51,16 @@ namespace FantasyData.Api.Client.Model.Golf
         public int? WorldGolfRankLastWeek { get; set; }
 
         /// <summary>
-        /// The total number of tournaments this player competed in during this season
+        /// The total number of tournaments the player competed in during the season
         /// </summary>
-        [Description("The total number of tournaments this player competed in during this season")]
+        [Description("The total number of tournaments the player competed in during the season")]
         [DataMember(Name = "Events", Order = 7)]
         public int? Events { get; set; }
 
         /// <summary>
-        /// Average World Golf Ranking points scored on tournaments during this season
+        /// The total Average World Golf Ranking points scored on tournaments during this season
         /// </summary>
-        [Description("Average World Golf Ranking points scored on tournaments during this season")]
+        [Description("The total Average World Golf Ranking points scored on tournaments during this season")]
         [DataMember(Name = "AveragePoints", Order = 8)]
         public decimal? AveragePoints { get; set; }
 
@@ -72,16 +72,16 @@ namespace FantasyData.Api.Client.Model.Golf
         public decimal? TotalPoints { get; set; }
 
         /// <summary>
-        /// Total World Golf Ranking points lost
+        /// Total World Golf Ranking points lost after the golfers most recent performance
         /// </summary>
-        [Description("Total World Golf Ranking points lost")]
+        [Description("Total World Golf Ranking points lost after the golfers most recent performance")]
         [DataMember(Name = "PointsLost", Order = 10)]
         public decimal? PointsLost { get; set; }
 
         /// <summary>
-        /// Total World Golf Ranking points gained
+        /// Total World Golf Ranking points gained after the golfers most recent performance
         /// </summary>
-        [Description("Total World Golf Ranking points gained")]
+        [Description("Total World Golf Ranking points gained after the golfers most recent performance")]
         [DataMember(Name = "PointsGained", Order = 11)]
         public decimal? PointsGained { get; set; }
 

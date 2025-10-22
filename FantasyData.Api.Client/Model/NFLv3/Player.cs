@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class Player
     {
         /// <summary>
-        /// Unique ID assigned to each player that stays with them throughout their career
+        /// The unique PlayerID of the player as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career.
         /// </summary>
-        [Description("Unique ID assigned to each player that stays with them throughout their career")]
+        [Description("The unique PlayerID of the player as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career.")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// The abbreviation of the team this player is employed by, or if currently unemployed, the most recent team this player was employed by.
+        /// The abbreviation [Key] of the team that the player is on. Note: If this player is a free agent; this field is NULL.
         /// </summary>
-        [Description("The abbreviation of the team this player is employed by, or if currently unemployed, the most recent team this player was employed by.")]
+        [Description("The abbreviation [Key] of the team that the player is on. Note: If this player is a free agent; this field is NULL.")]
         [DataMember(Name = "Team", Order = 2)]
         public string Team { get; set; }
 
@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string LastName { get; set; }
 
         /// <summary>
-        /// Player's primary position. Possible values: C, CB, DB, DE, DE/LB, DL, DT, FB, FS, G, ILB, K, KR, LB, LS, NT, OL, OLB, OT, P, QB, RB, S, SS, T, TE, WR
+        /// The primary position of the player. Possible Values: C; CB; DB; DE; DL; DT; FB; FS; G; ILB; K; KR; LB; LS; NT; OL; OLB; OT; P; QB; RB; S; SS; T; TE; WR.
         /// </summary>
-        [Description("Player's primary position. Possible values: C, CB, DB, DE, DE/LB, DL, DT, FB, FS, G, ILB, K, KR, LB, LS, NT, OL, OLB, OT, P, QB, RB, S, SS, T, TE, WR")]
+        [Description("The primary position of the player. Possible Values: C; CB; DB; DE; DL; DT; FB; FS; G; ILB; K; KR; LB; LS; NT; OL; OLB; OT; P; QB; RB; S; SS; T; TE; WR.")]
         [DataMember(Name = "Position", Order = 6)]
         public string Position { get; set; }
 
@@ -65,58 +65,58 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Height { get; set; }
 
         /// <summary>
-        /// Weight in pounds
+        /// Player's weight in pounds
         /// </summary>
-        [Description("Weight in pounds")]
+        [Description("Player's weight in pounds")]
         [DataMember(Name = "Weight", Order = 9)]
         public int? Weight { get; set; }
 
         /// <summary>
-        /// Date of birth
+        /// Player's date of birth
         /// </summary>
-        [Description("Date of birth")]
+        [Description("Player's date of birth")]
         [DataMember(Name = "BirthDate", Order = 10)]
         public DateTime? BirthDate { get; set; }
 
         /// <summary>
-        /// College
+        /// College team the player played for prior to turning professional
         /// </summary>
-        [Description("College")]
+        [Description("College team the player played for prior to turning professional")]
         [DataMember(Name = "College", Order = 11)]
         public string College { get; set; }
 
         /// <summary>
-        /// Number of years experience.  This number is incremented every year, in the Spring, when we load the rookies following the NFL Draft.  Rookies will have Experience = Zero, while second year players will have Experience = 2.
+        /// Number of years experience.  Note: This number is incremented every year; in the Spring; when we load the rookies following the NFL Draft. Rookies will have Experience = 0; while second year players will have Experience = 2.
         /// </summary>
-        [Description("Number of years experience.  This number is incremented every year, in the Spring, when we load the rookies following the NFL Draft.  Rookies will have Experience = Zero, while second year players will have Experience = 2.")]
+        [Description("Number of years experience.  Note: This number is incremented every year; in the Spring; when we load the rookies following the NFL Draft. Rookies will have Experience = 0; while second year players will have Experience = 2.")]
         [DataMember(Name = "Experience", Order = 12)]
         public int? Experience { get; set; }
 
         /// <summary>
-        /// The player's fantasy football position. Possible values: QB, RB, WR, TE, DL, LB, DB, K, P, OL
+        /// The player's fantasy football position. Possible values: QB; RB; WR; TE; DL; LB; DB; K; P; OL.
         /// </summary>
-        [Description("The player's fantasy football position. Possible values: QB, RB, WR, TE, DL, LB, DB, K, P, OL")]
+        [Description("The player's fantasy football position. Possible values: QB; RB; WR; TE; DL; LB; DB; K; P; OL.")]
         [DataMember(Name = "FantasyPosition", Order = 13)]
         public string FantasyPosition { get; set; }
 
         /// <summary>
-        /// Whether the player is currently under contract with an NFL team
+        /// Whether or not the player is on the active roster of the NFL team (True/False)
         /// </summary>
-        [Description("Whether the player is currently under contract with an NFL team")]
+        [Description("Whether or not the player is on the active roster of the NFL team (True/False)")]
         [DataMember(Name = "Active", Order = 14)]
         public bool? Active { get; set; }
 
         /// <summary>
-        /// The category (Offense, Defense or Special Teams) of the players position (OFF, DEF, ST)
+        /// The category of the player's position (OFF; DEF; ST)
         /// </summary>
-        [Description("The category (Offense, Defense or Special Teams) of the players position (OFF, DEF, ST)")]
+        [Description("The category of the player's position (OFF; DEF; ST)")]
         [DataMember(Name = "PositionCategory", Order = 15)]
         public string PositionCategory { get; set; }
 
         /// <summary>
-        /// Full name of the player (Cam Newton, Aaron Rodgers, etc.)
+        /// Player's full name
         /// </summary>
-        [Description("Full name of the player (Cam Newton, Aaron Rodgers, etc.)")]
+        [Description("Player's full name")]
         [DataMember(Name = "Name", Order = 16)]
         public string Name { get; set; }
 
@@ -142,23 +142,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string BirthDateString { get; set; }
 
         /// <summary>
-        /// This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.
+        /// This field is deprecated. Note: Headshots are now delivered through IMAGN. Please see our Headshots products for further information.
         /// </summary>
-        [Description("This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.")]
+        [Description("This field is deprecated. Note: Headshots are now delivered through IMAGN. Please see our Headshots products for further information.")]
         [DataMember(Name = "PhotoUrl", Order = 20)]
         public string PhotoUrl { get; set; }
 
         /// <summary>
-        /// The week the player is on Bye for the upcoming or current season
+        /// The week the player is on bye for the upcoming or current season
         /// </summary>
-        [Description("The week the player is on Bye for the upcoming or current season")]
+        [Description("The week the player is on bye for the upcoming or current season")]
         [DataMember(Name = "ByeWeek", Order = 21)]
         public int? ByeWeek { get; set; }
 
         /// <summary>
-        /// The opponent the player is playing in the upcoming week
+        /// The opposing team the player is playing against in the upcoming week
         /// </summary>
-        [Description("The opponent the player is playing in the upcoming week")]
+        [Description("The opposing team the player is playing against in the upcoming week")]
         [DataMember(Name = "UpcomingGameOpponent", Order = 22)]
         public string UpcomingGameOpponent { get; set; }
 
@@ -170,16 +170,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int UpcomingGameWeek { get; set; }
 
         /// <summary>
-        /// A shortened version of the player's full name (C.Newton, A.Rodgers)
+        /// The first initial and last name of the player (J. Doe)
         /// </summary>
-        [Description("A shortened version of the player's full name (C.Newton, A.Rodgers)")]
+        [Description("The first initial and last name of the player (J. Doe)")]
         [DataMember(Name = "ShortName", Order = 24)]
         public string ShortName { get; set; }
 
         /// <summary>
-        /// The average draft position of the player for the upcoming season's fantasy football draft
+        /// The average draft position of the player in re-draft leagues
         /// </summary>
-        [Description("The average draft position of the player for the upcoming season's fantasy football draft")]
+        [Description("The average draft position of the player in re-draft leagues")]
         [DataMember(Name = "AverageDraftPosition", Order = 25)]
         public decimal? AverageDraftPosition { get; set; }
 
@@ -191,16 +191,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string DepthPositionCategory { get; set; }
 
         /// <summary>
-        /// The position this player is listed at on his team's depth chart (e.g. QB, LWR, RDE, LILB)
+        /// The position this player is listed at on his team's depth chart (e.g. QB; LWR; RDE; LILB, K)
         /// </summary>
-        [Description("The position this player is listed at on his team's depth chart (e.g. QB, LWR, RDE, LILB)")]
+        [Description("The position this player is listed at on his team's depth chart (e.g. QB; LWR; RDE; LILB, K)")]
         [DataMember(Name = "DepthPosition", Order = 27)]
         public string DepthPosition { get; set; }
 
         /// <summary>
-        /// The order this player is at his position (1 = Starter, 2 = Backup, 3 = 3rd String)
+        /// The order this player is at his position (1 = Starter; 2 = Backup; 3 = 3rd String; 4 = 4th String; 5 = 5th String)
         /// </summary>
-        [Description("The order this player is at his position (1 = Starter, 2 = Backup, 3 = 3rd String)")]
+        [Description("The order this player is at his position (1 = Starter; 2 = Backup; 3 = 3rd String; 4 = 4th String; 5 = 5th String)")]
         [DataMember(Name = "DepthOrder", Order = 28)]
         public int? DepthOrder { get; set; }
 
@@ -212,44 +212,44 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? DepthDisplayOrder { get; set; }
 
         /// <summary>
-        /// The team who currently employs this player.  This value is null when this player is unemployed.
+        /// The team who currently employs this player. This value is null when this player is unemployed (for example a free agent or retired player).
         /// </summary>
-        [Description("The team who currently employs this player.  This value is null when this player is unemployed.")]
+        [Description("The team who currently employs this player. This value is null when this player is unemployed (for example a free agent or retired player).")]
         [DataMember(Name = "CurrentTeam", Order = 30)]
         public string CurrentTeam { get; set; }
 
         /// <summary>
-        /// The team who drafted this player.  If this player was an Undrafted Free Agent, then it's the team who first signed him as a rookie.
+        /// The team who drafted this player. Note: If this player was an Undrafted Free Agent; then it's the team who first signed him as a rookie.
         /// </summary>
-        [Description("The team who drafted this player.  If this player was an Undrafted Free Agent, then it's the team who first signed him as a rookie.")]
+        [Description("The team who drafted this player. Note: If this player was an Undrafted Free Agent; then it's the team who first signed him as a rookie.")]
         [DataMember(Name = "CollegeDraftTeam", Order = 31)]
         public string CollegeDraftTeam { get; set; }
 
         /// <summary>
-        /// The year this player entered the NFL as rookie.
+        /// The year this player entered the NFL as a rookie
         /// </summary>
-        [Description("The year this player entered the NFL as rookie.")]
+        [Description("The year this player entered the NFL as a rookie")]
         [DataMember(Name = "CollegeDraftYear", Order = 32)]
         public int? CollegeDraftYear { get; set; }
 
         /// <summary>
-        /// The round this player was drafted in.
+        /// The round this player was drafted in
         /// </summary>
-        [Description("The round this player was drafted in.")]
+        [Description("The round this player was drafted in")]
         [DataMember(Name = "CollegeDraftRound", Order = 33)]
         public int? CollegeDraftRound { get; set; }
 
         /// <summary>
-        /// The overall pick in the draft this player was selected.
+        /// The overall pick in the draft this player was selected
         /// </summary>
-        [Description("The overall pick in the draft this player was selected.")]
+        [Description("The overall pick in the draft this player was selected")]
         [DataMember(Name = "CollegeDraftPick", Order = 34)]
         public int? CollegeDraftPick { get; set; }
 
         /// <summary>
-        /// Whether this player was an undrafted free agent.  This value is True if the player was drafted.
+        /// Whether this player was an undrafted free agent. This value is True if the player was not drafted.
         /// </summary>
-        [Description("Whether this player was an undrafted free agent.  This value is True if the player was drafted.")]
+        [Description("Whether this player was an undrafted free agent. This value is True if the player was not drafted.")]
         [DataMember(Name = "IsUndraftedFreeAgent", Order = 35)]
         public bool IsUndraftedFreeAgent { get; set; }
 
@@ -268,16 +268,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? HeightInches { get; set; }
 
         /// <summary>
-        /// The player's upcoming opponent's rank in fantasy points allowed.
+        /// The player's upcoming opponent's rank in fantasy points allowed
         /// </summary>
-        [Description("The player's upcoming opponent's rank in fantasy points allowed.")]
+        [Description("The player's upcoming opponent's rank in fantasy points allowed")]
         [DataMember(Name = "UpcomingOpponentRank", Order = 38)]
         public int? UpcomingOpponentRank { get; set; }
 
         /// <summary>
-        /// The player's upcoming opponent's rank in fantasy points allowed to his fantasy position.
+        /// The player's upcoming opponent's rank in fantasy points allowed to his fantasy position
         /// </summary>
-        [Description("The player's upcoming opponent's rank in fantasy points allowed to his fantasy position.")]
+        [Description("The player's upcoming opponent's rank in fantasy points allowed to his fantasy position")]
         [DataMember(Name = "UpcomingOpponentPositionRank", Order = 39)]
         public int? UpcomingOpponentPositionRank { get; set; }
 
@@ -289,79 +289,79 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string CurrentStatus { get; set; }
 
         /// <summary>
-        /// The player's salary for the upcoming week in accordance with a $50,000 salary cap.  This is used for daily fantasy sports salary cap contests.  Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game, the most recent DraftKings salary is used.  We recommend using our new DFS endpoints instead.
+        /// The player's salary for the upcoming week in accordance with a $50,000 salary cap. This is used for daily fantasy sports salary cap contests. Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game; the most recent DraftKings salary is used. We recommend using our new DFS endpoints instead.
         /// </summary>
-        [Description("The player's salary for the upcoming week in accordance with a $50,000 salary cap.  This is used for daily fantasy sports salary cap contests.  Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game, the most recent DraftKings salary is used.  We recommend using our new DFS endpoints instead.")]
+        [Description("The player's salary for the upcoming week in accordance with a $50,000 salary cap. This is used for daily fantasy sports salary cap contests. Salaries represent those published by DraftKings. When DraftKings doesn't publish a salary for a given game; the most recent DraftKings salary is used. We recommend using our new DFS endpoints instead.")]
         [DataMember(Name = "UpcomingSalary", Order = 41)]
         public int? UpcomingSalary { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to the FantasyAlarm news feed.
+        /// The player's cross reference PlayerID to the FantasyAlarm news feed
         /// </summary>
-        [Description("The player's cross reference PlayerID to the FantasyAlarm news feed.")]
+        [Description("The player's cross reference PlayerID to the FantasyAlarm news feed")]
         [DataMember(Name = "FantasyAlarmPlayerID", Order = 42)]
         public int? FantasyAlarmPlayerID { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to the SportRadar API.
+        /// The player's cross reference PlayerID to the SportRadar API
         /// </summary>
-        [Description("The player's cross reference PlayerID to the SportRadar API.")]
+        [Description("The player's cross reference PlayerID to the SportRadar API")]
         [DataMember(Name = "SportRadarPlayerID", Order = 43)]
         public string SportRadarPlayerID { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to the Rotoworld news feed.
+        /// The player's cross reference PlayerID to the Rotoworld news feed
         /// </summary>
-        [Description("The player's cross reference PlayerID to the Rotoworld news feed.")]
+        [Description("The player's cross reference PlayerID to the Rotoworld news feed")]
         [DataMember(Name = "RotoworldPlayerID", Order = 44)]
         public int? RotoworldPlayerID { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to the RotoWire news feed.
+        /// The player's cross reference PlayerID to the RotoWire news feed
         /// </summary>
-        [Description("The player's cross reference PlayerID to the RotoWire news feed.")]
+        [Description("The player's cross reference PlayerID to the RotoWire news feed")]
         [DataMember(Name = "RotoWirePlayerID", Order = 45)]
         public int? RotoWirePlayerID { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to the STATS data feeds.
+        /// The player's cross reference PlayerID to the STATS data feeds
         /// </summary>
-        [Description("The player's cross reference PlayerID to the STATS data feeds.")]
+        [Description("The player's cross reference PlayerID to the STATS data feeds")]
         [DataMember(Name = "StatsPlayerID", Order = 46)]
         public int? StatsPlayerID { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to the SportsDirect data feeds.
+        /// The player's cross reference PlayerID to the SportsDirect data feeds, now part of Nielsen GraceNote
         /// </summary>
-        [Description("The player's cross reference PlayerID to the SportsDirect data feeds.")]
+        [Description("The player's cross reference PlayerID to the SportsDirect data feeds, now part of Nielsen GraceNote")]
         [DataMember(Name = "SportsDirectPlayerID", Order = 47)]
         public int? SportsDirectPlayerID { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to the XML Team data feeds.
+        /// The player's unique PlayerID for cross reference use with XML Team data feeds
         /// </summary>
-        [Description("The player's cross reference PlayerID to the XML Team data feeds.")]
+        [Description("The player's unique PlayerID for cross reference use with XML Team data feeds")]
         [DataMember(Name = "XmlTeamPlayerID", Order = 48)]
         public int? XmlTeamPlayerID { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to FanDuel.
+        /// The player's cross reference PlayerID to FanDuel
         /// </summary>
-        [Description("The player's cross reference PlayerID to FanDuel.")]
+        [Description("The player's cross reference PlayerID to FanDuel")]
         [DataMember(Name = "FanDuelPlayerID", Order = 49)]
         public int? FanDuelPlayerID { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to DraftKings.
+        /// The player's cross reference PlayerID to DraftKings
         /// </summary>
-        [Description("The player's cross reference PlayerID to DraftKings.")]
+        [Description("The player's cross reference PlayerID to DraftKings")]
         [DataMember(Name = "DraftKingsPlayerID", Order = 50)]
         public int? DraftKingsPlayerID { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to Yahoo Daily Fantasy Sports Contests.
+        /// The player's unique PlayerID for cross reference use with Yahoo
         /// </summary>
-        [Description("The player's cross reference PlayerID to Yahoo Daily Fantasy Sports Contests.")]
+        [Description("The player's unique PlayerID for cross reference use with Yahoo")]
         [DataMember(Name = "YahooPlayerID", Order = 51)]
         public int? YahooPlayerID { get; set; }
 
@@ -373,44 +373,44 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string InjuryStatus { get; set; }
 
         /// <summary>
-        /// The body part that is injured (Knee, Groin, Calf, Hamstring, etc.)
+        /// The body part that is injured for the player (Knee; Groin; Calf; Hamstring; etc.)
         /// </summary>
-        [Description("The body part that is injured (Knee, Groin, Calf, Hamstring, etc.)")]
+        [Description("The body part that is injured for the player (Knee; Groin; Calf; Hamstring; etc.)")]
         [DataMember(Name = "InjuryBodyPart", Order = 53)]
         public string InjuryBodyPart { get; set; }
 
         /// <summary>
-        /// The day that the injury started or first discovered.
+        /// The day that the player's injury started or was first discovered
         /// </summary>
-        [Description("The day that the injury started or first discovered.")]
+        [Description("The day that the player's injury started or was first discovered")]
         [DataMember(Name = "InjuryStartDate", Order = 54)]
         public DateTime? InjuryStartDate { get; set; }
 
         /// <summary>
-        /// Brief description of the player's injury and expected availability.
+        /// A brief description of the player's injury and expected availability
         /// </summary>
-        [Description("Brief description of the player's injury and expected availability.")]
+        [Description("A brief description of the player's injury and expected availability")]
         [DataMember(Name = "InjuryNotes", Order = 55)]
         public string InjuryNotes { get; set; }
 
         /// <summary>
-        /// The player's full name in FanDuel's daily fantasy sports platform.
+        /// The player's full name in FanDuel's daily fantasy sports platform
         /// </summary>
-        [Description("The player's full name in FanDuel's daily fantasy sports platform.")]
+        [Description("The player's full name in FanDuel's daily fantasy sports platform")]
         [DataMember(Name = "FanDuelName", Order = 56)]
         public string FanDuelName { get; set; }
 
         /// <summary>
-        /// The player's full name in DraftKings' daily fantasy sports platform.
+        /// The player's full name in DraftKings' daily fantasy sports platform
         /// </summary>
-        [Description("The player's full name in DraftKings' daily fantasy sports platform.")]
+        [Description("The player's full name in DraftKings' daily fantasy sports platform")]
         [DataMember(Name = "DraftKingsName", Order = 57)]
         public string DraftKingsName { get; set; }
 
         /// <summary>
-        /// The player's full name in Yahoo's daily fantasy sports platform.
+        /// The player's name in Yahoo's daily fantasy sports platform
         /// </summary>
-        [Description("The player's full name in Yahoo's daily fantasy sports platform.")]
+        [Description("The player's name in Yahoo's daily fantasy sports platform")]
         [DataMember(Name = "YahooName", Order = 58)]
         public string YahooName { get; set; }
 
@@ -422,37 +422,37 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? FantasyPositionDepthOrder { get; set; }
 
         /// <summary>
-        /// deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "InjuryPractice", Order = 60)]
         public string InjuryPractice { get; set; }
 
         /// <summary>
-        /// deprecated
+        /// This field is deprecated
         /// </summary>
-        [Description("deprecated")]
+        [Description("This field is deprecated")]
         [DataMember(Name = "InjuryPracticeDescription", Order = 61)]
         public string InjuryPracticeDescription { get; set; }
 
         /// <summary>
-        /// Whether the player has been declared inactive.  This value is updated in the hours leading up to game start time, as teams announce their inactive players.  This is only updated for offensive skill position players (QB, RB, WR, TE)
+        /// Whether the player has been declared inactive. This value is updated in the hours leading up to game start time; as teams announce their inactive players.  Note: This is only updated for offensive skill position players (QB; RB; WR; TE).
         /// </summary>
-        [Description("Whether the player has been declared inactive.  This value is updated in the hours leading up to game start time, as teams announce their inactive players.  This is only updated for offensive skill position players (QB, RB, WR, TE)")]
+        [Description("Whether the player has been declared inactive. This value is updated in the hours leading up to game start time; as teams announce their inactive players.  Note: This is only updated for offensive skill position players (QB; RB; WR; TE).")]
         [DataMember(Name = "DeclaredInactive", Order = 62)]
         public bool DeclaredInactive { get; set; }
 
         /// <summary>
-        /// The player's FanDuel salary for the upcoming week. We recommend using our new DFS endpoints instead.
+        /// The player's FanDuel salary for the upcoming week. Note: We recommend using our new DFS endpoints instead.
         /// </summary>
-        [Description("The player's FanDuel salary for the upcoming week. We recommend using our new DFS endpoints instead.")]
+        [Description("The player's FanDuel salary for the upcoming week. Note: We recommend using our new DFS endpoints instead.")]
         [DataMember(Name = "UpcomingFanDuelSalary", Order = 63)]
         public int? UpcomingFanDuelSalary { get; set; }
 
         /// <summary>
-        /// The player's DraftKings salary for the upcoming week. We recommend using our new DFS endpoints instead.
+        /// The player's DraftKings salary for the upcoming week. Note: We recommend using our new DFS endpoints instead.
         /// </summary>
-        [Description("The player's DraftKings salary for the upcoming week. We recommend using our new DFS endpoints instead.")]
+        [Description("The player's DraftKings salary for the upcoming week. Note: We recommend using our new DFS endpoints instead.")]
         [DataMember(Name = "UpcomingDraftKingsSalary", Order = 64)]
         public int? UpcomingDraftKingsSalary { get; set; }
 
@@ -464,9 +464,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? UpcomingYahooSalary { get; set; }
 
         /// <summary>
-        /// The unique ID of this team
+        /// The unique ID of the team that the player is on. Note: If the player is a free agent; this field is NULL
         /// </summary>
-        [Description("The unique ID of this team")]
+        [Description("The unique ID of the team that the player is on. Note: If the player is a free agent; this field is NULL")]
         [DataMember(Name = "TeamID", Order = 66)]
         public int? TeamID { get; set; }
 
@@ -478,23 +478,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? GlobalTeamID { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to FantasyDraft.
+        /// The player's cross reference PlayerID to FantasyDraft
         /// </summary>
-        [Description("The player's cross reference PlayerID to FantasyDraft.")]
+        [Description("The player's cross reference PlayerID to FantasyDraft")]
         [DataMember(Name = "FantasyDraftPlayerID", Order = 68)]
         public int? FantasyDraftPlayerID { get; set; }
 
         /// <summary>
-        /// The player's full name in FantasyDraft's daily fantasy sports platform.
+        /// The player's full name in FantasyDraft's daily fantasy sports platform
         /// </summary>
-        [Description("The player's full name in FantasyDraft's daily fantasy sports platform.")]
+        [Description("The player's full name in FantasyDraft's daily fantasy sports platform")]
         [DataMember(Name = "FantasyDraftName", Order = 69)]
         public string FantasyDraftName { get; set; }
 
         /// <summary>
-        /// The player's cross reference PlayerID to USA Today headshot data feeds.
+        /// The player's cross reference PlayerID to USA Today headshot data feeds
         /// </summary>
-        [Description("The player's cross reference PlayerID to USA Today headshot data feeds.")]
+        [Description("The player's cross reference PlayerID to USA Today headshot data feeds")]
         [DataMember(Name = "UsaTodayPlayerID", Order = 70)]
         public int? UsaTodayPlayerID { get; set; }
 

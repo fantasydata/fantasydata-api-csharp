@@ -16,23 +16,23 @@ namespace FantasyData.Api.Client.Model.CFB
         public int GameOddID { get; set; }
 
         /// <summary>
-        /// Name of sportsbook
+        /// The name of the sportsbook
         /// </summary>
-        [Description("Name of sportsbook")]
+        [Description("The name of the sportsbook")]
         [DataMember(Name = "Sportsbook", Order = 2)]
         public string Sportsbook { get; set; }
 
         /// <summary>
-        /// Unique ID of the Game.
+        /// The unique ID of this game
         /// </summary>
-        [Description("Unique ID of the Game.")]
+        [Description("The unique ID of this game")]
         [DataMember(Name = "GameID", Order = 3)]
         public int GameID { get; set; }
 
         /// <summary>
-        /// The timestamp of when these odds were first created, based on US Eastern Time (EST/EDT)
+        /// The timestamp of when these odds were first created (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp of when these odds were first created, based on US Eastern Time (EST/EDT)")]
+        [Description("The timestamp of when these odds were first created (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 4)]
         public DateTime Created { get; set; }
 
@@ -44,23 +44,23 @@ namespace FantasyData.Api.Client.Model.CFB
         public DateTime Updated { get; set; }
 
         /// <summary>
-        /// The sportsbook's money line for the home team
+        /// The sportsbook's moneyline for the home team
         /// </summary>
-        [Description("The sportsbook's money line for the home team")]
+        [Description("The sportsbook's moneyline for the home team")]
         [DataMember(Name = "HomeMoneyLine", Order = 6)]
         public int? HomeMoneyLine { get; set; }
 
         /// <summary>
-        /// The sportsbook's money line for the away team
+        /// The sportsbook's moneyline for the away team
         /// </summary>
-        [Description("The sportsbook's money line for the away team")]
+        [Description("The sportsbook's moneyline for the away team")]
         [DataMember(Name = "AwayMoneyLine", Order = 7)]
         public int? AwayMoneyLine { get; set; }
 
         /// <summary>
-        /// The sportsbook's money line for a draw
+        /// The sportsbook's moneyline for a draw
         /// </summary>
-        [Description("The sportsbook's money line for a draw")]
+        [Description("The sportsbook's moneyline for a draw")]
         [DataMember(Name = "DrawMoneyLine", Order = 8)]
         public int? DrawMoneyLine { get; set; }
 
@@ -93,16 +93,16 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? AwayPointSpreadPayout { get; set; }
 
         /// <summary>
-        /// The sportsbook's total points scored over under for the game
+        /// The sportsbook's total points line at game start
         /// </summary>
-        [Description("The sportsbook's total points scored over under for the game")]
+        [Description("The sportsbook's total points line at game start")]
         [DataMember(Name = "OverUnder", Order = 13)]
         public decimal? OverUnder { get; set; }
 
         /// <summary>
-        /// The sportsbook's payout for the over
+        /// The sportsbook's payout for the over in the total points line
         /// </summary>
-        [Description("The sportsbook's payout for the over")]
+        [Description("The sportsbook's payout for the over in the total points line")]
         [DataMember(Name = "OverPayout", Order = 14)]
         public int? OverPayout { get; set; }
 
@@ -114,9 +114,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public int? UnderPayout { get; set; }
 
         /// <summary>
-        /// Unique ID of the sportsbook
+        /// The unique ID of the sportsbook
         /// </summary>
-        [Description("Unique ID of the sportsbook")]
+        [Description("The unique ID of the sportsbook")]
         [DataMember(Name = "SportsbookID", Order = 16)]
         public int? SportsbookID { get; set; }
 
@@ -128,9 +128,9 @@ namespace FantasyData.Api.Client.Model.CFB
         public string SportsbookUrl { get; set; }
 
         /// <summary>
-        /// The odd type of this odd
+        /// The market type of the odd (ex: live; pregame; 1st-5th Inning; etc)
         /// </summary>
-        [Description("The odd type of this odd")]
+        [Description("The market type of the odd (ex: live; pregame; 1st-5th Inning; etc)")]
         [DataMember(Name = "OddType", Order = 18)]
         public string OddType { get; set; }
 

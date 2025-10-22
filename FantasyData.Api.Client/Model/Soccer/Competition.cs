@@ -37,23 +37,23 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string Name { get; set; }
 
         /// <summary>
-        /// Indicates the gender of the players on this team (possible values: Male, Female)
+        /// The gender of the players on the team Possible Values: Male; Female
         /// </summary>
-        [Description("Indicates the gender of the players on this team (possible values: Male, Female)")]
+        [Description("The gender of the players on the team Possible Values: Male; Female")]
         [DataMember(Name = "Gender", Order = 5)]
         public string Gender { get; set; }
 
         /// <summary>
-        /// The type of this competition/league (possible values: Club, International)
+        /// The type of this competition/league Possible values: Club; International
         /// </summary>
-        [Description("The type of this competition/league (possible values: Club, International)")]
+        [Description("The type of this competition/league Possible values: Club; International")]
         [DataMember(Name = "Type", Order = 6)]
         public string Type { get; set; }
 
         /// <summary>
-        /// The format of the competition/league (possible values: Domestic League, International Cup)
+        /// The format of the competition/league.  Possible values: Domestic League; International Cup
         /// </summary>
-        [Description("The format of the competition/league (possible values: Domestic League, International Cup)")]
+        [Description("The format of the competition/league.  Possible values: Domestic League; International Cup")]
         [DataMember(Name = "Format", Order = 7)]
         public string Format { get; set; }
 

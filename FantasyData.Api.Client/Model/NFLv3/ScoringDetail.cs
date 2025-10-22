@@ -9,30 +9,30 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class ScoringDetail
     {
         /// <summary>
-        /// A 9 digit unique code identifying the game that this record corresponds to.  The GameID is composed of Season, SeasonType, Week and HomeTeam.
+        /// A 9 digit unique code identifying the game that this record corresponds to. The GameID is composed of Season; SeasonType; Week and HomeTeam. Note: This value will be NULL for bye weeks
         /// </summary>
-        [Description("A 9 digit unique code identifying the game that this record corresponds to.  The GameID is composed of Season, SeasonType, Week and HomeTeam.")]
+        [Description("A 9 digit unique code identifying the game that this record corresponds to. The GameID is composed of Season; SeasonType; Week and HomeTeam. Note: This value will be NULL for bye weeks")]
         [DataMember(Name = "GameKey", Order = 1)]
         public string GameKey { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this game corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=All-Star)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this game corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=All-Star)")]
         [DataMember(Name = "SeasonType", Order = 2)]
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// PlayerID of the player who scored
+        /// The unique PlayerID of the player as assigned by SportsDataIO tied to this scoring detail. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("PlayerID of the player who scored")]
+        [Description("The unique PlayerID of the player as assigned by SportsDataIO tied to this scoring detail. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 3)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// The team who the player played for
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The team who the player played for")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 4)]
         public string Team { get; set; }
 
@@ -44,9 +44,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int Season { get; set; }
 
         /// <summary>
-        /// The week during which the score happened
+        /// The NFL week of the game (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). Note: seasons after 2021 will have only 3 preseason weeks
         /// </summary>
-        [Description("The week during which the score happened")]
+        [Description("The NFL week of the game (regular season: 1 to 18; preseason: 0 to 4; postseason: 1 to 4). Note: seasons after 2021 will have only 3 preseason weeks")]
         [DataMember(Name = "Week", Order = 6)]
         public int Week { get; set; }
 
@@ -65,23 +65,23 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int Length { get; set; }
 
         /// <summary>
-        /// Unique identifier of this scoring detail
+        /// Unique ID of this scoring detail
         /// </summary>
-        [Description("Unique identifier of this scoring detail")]
+        [Description("Unique ID of this scoring detail")]
         [DataMember(Name = "ScoringDetailID", Order = 9)]
         public int ScoringDetailID { get; set; }
 
         /// <summary>
-        /// PlayerGameID of the game that this scoring detail occurred
+        /// Unique ID of the PlayerGame record tied to this scoring detail
         /// </summary>
-        [Description("PlayerGameID of the game that this scoring detail occurred")]
+        [Description("Unique ID of the PlayerGame record tied to this scoring detail")]
         [DataMember(Name = "PlayerGameID", Order = 10)]
         public int PlayerGameID { get; set; }
 
         /// <summary>
-        /// Unique identifier of this scoring play associated with this scoring detail
+        /// Unique ID of the scoring play
         /// </summary>
-        [Description("Unique identifier of this scoring play associated with this scoring detail")]
+        [Description("Unique ID of the scoring play")]
         [DataMember(Name = "ScoringPlayID", Order = 11)]
         public int? ScoringPlayID { get; set; }
 

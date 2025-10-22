@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Golf
     public partial class News
     {
         /// <summary>
-        /// Unique ID of news story
+        /// The unique ID of the news story
         /// </summary>
-        [Description("Unique ID of news story")]
+        [Description("The unique ID of the news story")]
         [DataMember(Name = "NewsID", Order = 1)]
         public int NewsID { get; set; }
 
         /// <summary>
-        /// The PlayerID of the player who relates to this story
+        /// The unique ID of the golfer who relates to this news story
         /// </summary>
-        [Description("The PlayerID of the player who relates to this story")]
+        [Description("The unique ID of the golfer who relates to this news story")]
         [DataMember(Name = "PlayerID", Order = 2)]
         public int? PlayerID { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.Golf
         public string Title { get; set; }
 
         /// <summary>
-        /// The full body content of the story
+        /// The full body content of this news story
         /// </summary>
-        [Description("The full body content of the story")]
+        [Description("The full body content of this news story")]
         [DataMember(Name = "Content", Order = 4)]
         public string Content { get; set; }
 
@@ -65,30 +65,30 @@ namespace FantasyData.Api.Client.Model.Golf
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// The Author of the news item
+        /// The details of the golfers who competed in this tournament
         /// </summary>
-        [Description("The Author of the news item")]
+        [Description("The details of the golfers who competed in this tournament")]
         [DataMember(Name = "Author", Order = 9)]
         public string Author { get; set; }
 
         /// <summary>
-        /// The Categories of the news item
+        /// The category of news this story is under
         /// </summary>
-        [Description("The Categories of the news item")]
+        [Description("The category of news this story is under")]
         [DataMember(Name = "Categories", Order = 10)]
         public string Categories { get; set; }
 
         /// <summary>
-        /// The OriginalSource of the news item
+        /// The original source of the news item
         /// </summary>
-        [Description("The OriginalSource of the news item")]
+        [Description("The original source of the news item")]
         [DataMember(Name = "OriginalSource", Order = 11)]
         public string OriginalSource { get; set; }
 
         /// <summary>
-        /// The OriginalSourceUrl of the news item
+        /// The URL of the original source of the news item
         /// </summary>
-        [Description("The OriginalSourceUrl of the news item")]
+        [Description("The URL of the original source of the news item")]
         [DataMember(Name = "OriginalSourceUrl", Order = 12)]
         public string OriginalSourceUrl { get; set; }
 

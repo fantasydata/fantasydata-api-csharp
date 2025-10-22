@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Source { get; set; }
 
         /// <summary>
-        /// The date/time that the content was published (UTC time zone)
+        /// The date/time that the content was published (in US Eastern time)
         /// </summary>
-        [Description("The date/time that the content was published (UTC time zone)")]
+        [Description("The date/time that the content was published (in US Eastern time)")]
         [DataMember(Name = "Updated", Order = 3)]
         public DateTime Updated { get; set; }
 
@@ -79,44 +79,44 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string Categories { get; set; }
 
         /// <summary>
-        /// The PlayerID of the player who relates to this story
+        /// The unique PlayerID as assigned by SportsDataIO of the player tied to this news story. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("The PlayerID of the player who relates to this story")]
+        [Description("The unique PlayerID as assigned by SportsDataIO of the player tied to this news story. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 11)]
         public int? PlayerID { get; set; }
 
         /// <summary>
-        /// The TeamID of the team that relates to this story
+        /// The unique ID of the team that relates to this story
         /// </summary>
-        [Description("The TeamID of the team that relates to this story")]
+        [Description("The unique ID of the team that relates to this story")]
         [DataMember(Name = "TeamID", Order = 12)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// The team that relates to this story
+        /// The abbreviation [Key] of the team that relates to the story
         /// </summary>
-        [Description("The team that relates to this story")]
+        [Description("The abbreviation [Key] of the team that relates to the story")]
         [DataMember(Name = "Team", Order = 13)]
         public string Team { get; set; }
 
         /// <summary>
-        /// The PlayerID of the player who relates to this story
+        /// The unique PlayerID as assigned by SportsDataIO of the second player tied to this news story. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("The PlayerID of the player who relates to this story")]
+        [Description("The unique PlayerID as assigned by SportsDataIO of the second player tied to this news story. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID2", Order = 14)]
         public int? PlayerID2 { get; set; }
 
         /// <summary>
-        /// The TeamID of the team that relates to this story
+        /// The unique ID of the second team that relates to this story
         /// </summary>
-        [Description("The TeamID of the team that relates to this story")]
+        [Description("The unique ID of the second team that relates to this story")]
         [DataMember(Name = "TeamID2", Order = 15)]
         public int? TeamID2 { get; set; }
 
         /// <summary>
-        /// The team that relates to this story
+        /// The abbreviation [Key] of the second team that relates to the story
         /// </summary>
-        [Description("The team that relates to this story")]
+        [Description("The abbreviation [Key] of the second team that relates to the story")]
         [DataMember(Name = "Team2", Order = 16)]
         public string Team2 { get; set; }
 

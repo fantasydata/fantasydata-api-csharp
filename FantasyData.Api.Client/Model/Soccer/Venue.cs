@@ -37,16 +37,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string City { get; set; }
 
         /// <summary>
-        /// The zip code of the venue
+        /// The zip code of where the venue is located
         /// </summary>
-        [Description("The zip code of the venue")]
+        [Description("The zip code of where the venue is located")]
         [DataMember(Name = "Zip", Order = 5)]
         public string Zip { get; set; }
 
         /// <summary>
-        /// The 2-digit country code where the venue is located
+        /// The country name of where the venue is located
         /// </summary>
-        [Description("The 2-digit country code where the venue is located")]
+        [Description("The country name of where the venue is located")]
         [DataMember(Name = "Country", Order = 6)]
         public string Country { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public bool Open { get; set; }
 
         /// <summary>
-        /// The year the venue opened (e.g. 1950, 1960, etc)
+        /// The year the venue opened (e.g. 1950; 1960; etc)
         /// </summary>
-        [Description("The year the venue opened (e.g. 1950, 1960, etc)")]
+        [Description("The year the venue opened (e.g. 1950; 1960; etc)")]
         [DataMember(Name = "Opened", Order = 8)]
         public int? Opened { get; set; }
 
@@ -86,23 +86,23 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int? Capacity { get; set; }
 
         /// <summary>
-        /// The playing surface of the stadium (Grass or Artificial)
+        /// The playing surface of the stadium. Possible values: Grass; Artificial
         /// </summary>
-        [Description("The playing surface of the stadium (Grass or Artificial)")]
+        [Description("The playing surface of the stadium. Possible values: Grass; Artificial")]
         [DataMember(Name = "Surface", Order = 12)]
         public string Surface { get; set; }
 
         /// <summary>
-        /// The geographic latitude coordinate of this venue.
+        /// The geographic latitude coordinate of this venue
         /// </summary>
-        [Description("The geographic latitude coordinate of this venue.")]
+        [Description("The geographic latitude coordinate of this venue")]
         [DataMember(Name = "GeoLat", Order = 13)]
         public decimal? GeoLat { get; set; }
 
         /// <summary>
-        /// The geographic longitude coordinate of this venue.
+        /// The geographic latitude coordinate of this venue
         /// </summary>
-        [Description("The geographic longitude coordinate of this venue.")]
+        [Description("The geographic latitude coordinate of this venue")]
         [DataMember(Name = "GeoLong", Order = 14)]
         public decimal? GeoLong { get; set; }
 

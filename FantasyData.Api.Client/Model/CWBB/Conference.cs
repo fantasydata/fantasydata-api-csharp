@@ -16,16 +16,16 @@ namespace FantasyData.Api.Client.Model.CWBB
         public int ConferenceID { get; set; }
 
         /// <summary>
-        /// The name of the team's conference
+        /// The name of the team's conference (e.g.  American Conference; Big Ten Conference; Conference USA)
         /// </summary>
-        [Description("The name of the team's conference")]
+        [Description("The name of the team's conference (e.g.  American Conference; Big Ten Conference; Conference USA)")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The college teams within this conference
+        /// The list of teams within the conference
         /// </summary>
-        [Description("The college teams within this conference")]
+        [Description("The list of teams within the conference")]
         [DataMember(Name = "Teams", Order = 20003)]
         public Team[] Teams { get; set; }
 

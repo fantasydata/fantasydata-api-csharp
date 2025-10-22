@@ -9,44 +9,44 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class Transaction
     {
         /// <summary>
-        /// Unique ID of Player
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career.
         /// </summary>
-        [Description("Unique ID of Player")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their MLB career.")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Player Name
+        /// Player's full name
         /// </summary>
-        [Description("Player Name")]
+        [Description("Player's full name")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
         /// <summary>
-        /// ID of Player's former team
+        /// TeamID of player's former team
         /// </summary>
-        [Description("ID of Player's former team")]
+        [Description("TeamID of player's former team")]
         [DataMember(Name = "FormerTeamID", Order = 3)]
         public int? FormerTeamID { get; set; }
 
         /// <summary>
-        /// Player's former team in abbreviated format (e.g. SD, PHI, LAD, ATL etc.)
+        /// Player's former team in abbreviated format [Key] (e.g. SD; PHI; LAD; ATL etc.)
         /// </summary>
-        [Description("Player's former team in abbreviated format (e.g. SD, PHI, LAD, ATL etc.)")]
+        [Description("Player's former team in abbreviated format [Key] (e.g. SD; PHI; LAD; ATL etc.)")]
         [DataMember(Name = "FormerTeam", Order = 4)]
         public string FormerTeam { get; set; }
 
         /// <summary>
-        /// Unique ID of the former team.
+        /// The team's unique TeamID as assigned by SportsDataIO
         /// </summary>
-        [Description("Unique ID of the former team.")]
+        [Description("The team's unique TeamID as assigned by SportsDataIO")]
         [DataMember(Name = "TeamID", Order = 5)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Player's new team, when applicable, in abbreviated format (e.g. SD, PHI, LAD, ATL etc.)
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("Player's new team, when applicable, in abbreviated format (e.g. SD, PHI, LAD, ATL etc.)")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 6)]
         public string Team { get; set; }
 
@@ -58,30 +58,30 @@ namespace FantasyData.Api.Client.Model.MLB
         public string Type { get; set; }
 
         /// <summary>
-        /// Date and Time Transaction took place
+        /// The date that this transaction took place
         /// </summary>
-        [Description("Date and Time Transaction took place")]
+        [Description("The date that this transaction took place")]
         [DataMember(Name = "Date", Order = 8)]
         public DateTime? Date { get; set; }
 
         /// <summary>
-        /// Transaction Summary (e.g. "Harris has signed with the Commanders.")
+        /// A summary of the transaction (e.g. "Harris has signed with the Diamondbacks.")
         /// </summary>
-        [Description("Transaction Summary (e.g. \"Harris has signed with the Commanders.\")")]
+        [Description("A summary of the transaction (e.g. \"Harris has signed with the Diamondbacks.\")")]
         [DataMember(Name = "Note", Order = 9)]
         public string Note { get; set; }
 
         /// <summary>
-        /// Date and Time Created
+        /// The date and time this transaction was created in US Eastern Time
         /// </summary>
-        [Description("Date and Time Created")]
+        [Description("The date and time this transaction was created in US Eastern Time")]
         [DataMember(Name = "Created", Order = 10)]
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// Date and Time Last Updated
+        /// The date and time of the last update made to this transaction (in US Eastern Time)
         /// </summary>
-        [Description("Date and Time Last Updated")]
+        [Description("The date and time of the last update made to this transaction (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 11)]
         public DateTime? Updated { get; set; }
 

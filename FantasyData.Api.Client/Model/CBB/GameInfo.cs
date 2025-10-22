@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.CBB
     public partial class GameInfo
     {
         /// <summary>
-        /// The unique ID of the game.
+        /// The unique ID of this game
         /// </summary>
-        [Description("The unique ID of the game.")]
+        [Description("The unique ID of this game")]
         [DataMember(Name = "GameId", Order = 1)]
         public int GameId { get; set; }
 
         /// <summary>
-        /// The calendar year of the season during which this game occurs.
+        /// The season that the game occurs in. Note: season is a single year that the majority of the season occurs in.
         /// </summary>
-        [Description("The calendar year of the season during which this game occurs.")]
+        [Description("The season that the game occurs in. Note: season is a single year that the majority of the season occurs in.")]
         [DataMember(Name = "Season", Order = 2)]
         public int Season { get; set; }
 
@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.CBB
         public int SeasonType { get; set; }
 
         /// <summary>
-        /// The day that the game is scheduled to be played in UTC.
+        /// The day that the game is scheduled to be played in
         /// </summary>
-        [Description("The day that the game is scheduled to be played in UTC.")]
+        [Description("The day that the game is scheduled to be played in")]
         [DataMember(Name = "Day", Order = 4)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date/time that the game is scheduled to be played in UTC.
+        /// The date and time of the game (in US Eastern Time)
         /// </summary>
-        [Description("The date/time that the game is scheduled to be played in UTC.")]
+        [Description("The date and time of the game (in US Eastern Time)")]
         [DataMember(Name = "DateTime", Order = 5)]
         public DateTime? DateTime { get; set; }
 
@@ -51,30 +51,30 @@ namespace FantasyData.Api.Client.Model.CBB
         public string Status { get; set; }
 
         /// <summary>
-        /// The TeamId of the away team.
+        /// The unique ID of the away team
         /// </summary>
-        [Description("The TeamId of the away team.")]
+        [Description("The unique ID of the away team")]
         [DataMember(Name = "AwayTeamId", Order = 7)]
         public int? AwayTeamId { get; set; }
 
         /// <summary>
-        /// The TeamId of the home team.
+        /// The unique ID of the home team
         /// </summary>
-        [Description("The TeamId of the home team.")]
+        [Description("The unique ID of the home team")]
         [DataMember(Name = "HomeTeamId", Order = 8)]
         public int? HomeTeamId { get; set; }
 
         /// <summary>
-        /// The name of the away team.
+        /// The full name of the away team (school & mascot) (E.g. Tulane Green Wave, Memphis Tigers, Arizona State Sun Devils)
         /// </summary>
-        [Description("The name of the away team.")]
+        [Description("The full name of the away team (school & mascot) (E.g. Tulane Green Wave, Memphis Tigers, Arizona State Sun Devils)")]
         [DataMember(Name = "AwayTeamName", Order = 9)]
         public string AwayTeamName { get; set; }
 
         /// <summary>
-        /// The name of the home team.
+        /// The full name of the home team (school & mascot) (E.g. Tulane Green Wave, Memphis Tigers, Arizona State Sun Devils)
         /// </summary>
-        [Description("The name of the home team.")]
+        [Description("The full name of the home team (school & mascot) (E.g. Tulane Green Wave, Memphis Tigers, Arizona State Sun Devils)")]
         [DataMember(Name = "HomeTeamName", Order = 10)]
         public string HomeTeamName { get; set; }
 
@@ -107,30 +107,30 @@ namespace FantasyData.Api.Client.Model.CBB
         public GameOdd[] PregameOdds { get; set; }
 
         /// <summary>
-        /// List of Live GameOdds from different sportsbooks
+        /// Shows a list of live odds from different sportsbooks
         /// </summary>
-        [Description("List of Live GameOdds from different sportsbooks")]
+        [Description("Shows a list of live odds from different sportsbooks")]
         [DataMember(Name = "LiveOdds", Order = 20015)]
         public GameOdd[] LiveOdds { get; set; }
 
         /// <summary>
-        /// Score of the home team (updated after game ends to allow for resolving bets)
+        /// Total number of points the home team scored in this game (updated after game ends to allow for resolving bets)
         /// </summary>
-        [Description("Score of the home team (updated after game ends to allow for resolving bets)")]
+        [Description("Total number of points the home team scored in this game (updated after game ends to allow for resolving bets)")]
         [DataMember(Name = "HomeTeamScore", Order = 16)]
         public int? HomeTeamScore { get; set; }
 
         /// <summary>
-        /// Score of the away team (updated after game ends to allow for resolving bets)
+        /// Total number of points the away team scored in the game (updated after game ends to allow for resolving bets)
         /// </summary>
-        [Description("Score of the away team (updated after game ends to allow for resolving bets)")]
+        [Description("Total number of points the away team scored in the game (updated after game ends to allow for resolving bets)")]
         [DataMember(Name = "AwayTeamScore", Order = 17)]
         public int? AwayTeamScore { get; set; }
 
         /// <summary>
-        /// Total scored points in the game (updated after game ends to allow for resolving bets)
+        /// The total amount of points scored in the game by both teams. Updated after the game ends to allow for resulting bets.
         /// </summary>
-        [Description("Total scored points in the game (updated after game ends to allow for resolving bets)")]
+        [Description("The total amount of points scored in the game by both teams. Updated after the game ends to allow for resulting bets.")]
         [DataMember(Name = "TotalScore", Order = 18)]
         public int? TotalScore { get; set; }
 
@@ -149,9 +149,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? AwayRotationNumber { get; set; }
 
         /// <summary>
-        /// List of Alternate Market Pregame GameOdds from different sportsbooks
+        /// A list of Alternate Market Pregame GameOdds from different sportsbooks
         /// </summary>
-        [Description("List of Alternate Market Pregame GameOdds from different sportsbooks")]
+        [Description("A list of Alternate Market Pregame GameOdds from different sportsbooks")]
         [DataMember(Name = "AlternateMarketPregameOdds", Order = 20021)]
         public GameOdd[] AlternateMarketPregameOdds { get; set; }
 

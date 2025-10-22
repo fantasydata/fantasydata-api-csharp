@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class Coach
     {
         /// <summary>
-        /// The unique ID of the coach
+        /// The unique ID of the coach
         /// </summary>
-        [Description("The unique ID of the coach")]
+        [Description("The unique ID of the coach")]
         [DataMember(Name = "CoachId", Order = 1)]
         public int CoachId { get; set; }
 
@@ -23,16 +23,16 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Coach's last name
+        /// The last name of the coach
         /// </summary>
-        [Description("Coach's last name")]
+        [Description("The last name of the coach")]
         [DataMember(Name = "LastName", Order = 3)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Coach's short name
+        /// The short name of the coach
         /// </summary>
-        [Description("Coach's short name")]
+        [Description("The short name of the coach")]
         [DataMember(Name = "ShortName", Order = 4)]
         public string ShortName { get; set; }
 

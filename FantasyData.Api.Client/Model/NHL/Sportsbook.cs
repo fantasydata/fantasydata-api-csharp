@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class Sportsbook
     {
         /// <summary>
-        /// The unique identifier of the sportsbook
+        /// The unique ID of the sportsbook
         /// </summary>
-        [Description("The unique identifier of the sportsbook")]
+        [Description("The unique ID of the sportsbook")]
         [DataMember(Name = "SportsbookID", Order = 1)]
         public int SportsbookID { get; set; }
 
         /// <summary>
-        /// The name of the sportsbooks
+        /// The name of the sportsbook(s)
         /// </summary>
-        [Description("The name of the sportsbooks")]
+        [Description("The name of the sportsbook(s)")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 

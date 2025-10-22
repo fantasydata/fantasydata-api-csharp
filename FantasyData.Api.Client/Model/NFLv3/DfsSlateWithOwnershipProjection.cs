@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string OperatorName { get; set; }
 
         /// <summary>
-        /// The day (in EST/EDT) that the slate begins (assigned by the operator).
+        /// The day that the slate begins; assigned by the operator (in US Eastern Time)
         /// </summary>
-        [Description("The day (in EST/EDT) that the slate begins (assigned by the operator).")]
+        [Description("The day that the slate begins; assigned by the operator (in US Eastern Time)")]
         [DataMember(Name = "OperatorDay", Order = 5)]
         public DateTime? OperatorDay { get; set; }
 

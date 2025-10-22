@@ -9,37 +9,37 @@ namespace FantasyData.Api.Client.Model.NHL
     public partial class Headshot
     {
         /// <summary>
-        /// Unique ID of the Player (assigned by SportsDataIO).
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career
         /// </summary>
-        [Description("Unique ID of the Player (assigned by SportsDataIO).")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID will stay with the player throughout their entire career")]
         [DataMember(Name = "PlayerID", Order = 1)]
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// Name of Player.
+        /// The player's full name
         /// </summary>
-        [Description("Name of Player.")]
+        [Description("The player's full name")]
         [DataMember(Name = "Name", Order = 2)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Unique ID of the Team the player belongs to (assigned by SportsDataIO).
+        /// The unique ID of the team
         /// </summary>
-        [Description("Unique ID of the Team the player belongs to (assigned by SportsDataIO).")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 3)]
         public int? TeamID { get; set; }
 
         /// <summary>
-        /// Name of the team the player belongs to.
+        /// The abbreviation [Key] of the team the player belongs to
         /// </summary>
-        [Description("Name of the team the player belongs to.")]
+        [Description("The abbreviation [Key] of the team the player belongs to")]
         [DataMember(Name = "Team", Order = 4)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Position player plays.
+        /// The player's primary position. Possible values: C; RW; LW; D; or G.
         /// </summary>
-        [Description("Position player plays.")]
+        [Description("The player's primary position. Possible values: C; RW; LW; D; or G.")]
         [DataMember(Name = "Position", Order = 5)]
         public string Position { get; set; }
 
@@ -58,30 +58,30 @@ namespace FantasyData.Api.Client.Model.NHL
         public DateTime? PreferredHostedHeadshotUpdated { get; set; }
 
         /// <summary>
-        /// The player's hosted headshot URL.
+        /// The player's hosted headshot URL
         /// </summary>
-        [Description("The player's hosted headshot URL.")]
+        [Description("The player's hosted headshot URL")]
         [DataMember(Name = "HostedHeadshotWithBackgroundUrl", Order = 8)]
         public string HostedHeadshotWithBackgroundUrl { get; set; }
 
         /// <summary>
-        /// The last updated date of the player's hosted headshot.
+        /// The last updated date of the player's hosted headshot
         /// </summary>
-        [Description("The last updated date of the player's hosted headshot.")]
+        [Description("The last updated date of the player's hosted headshot")]
         [DataMember(Name = "HostedHeadshotWithBackgroundUpdated", Order = 9)]
         public DateTime? HostedHeadshotWithBackgroundUpdated { get; set; }
 
         /// <summary>
-        /// The player's transparent background hosted headshot URL.
+        /// The player's transparent background hosted headshot URL
         /// </summary>
-        [Description("The player's transparent background hosted headshot URL.")]
+        [Description("The player's transparent background hosted headshot URL")]
         [DataMember(Name = "HostedHeadshotNoBackgroundUrl", Order = 10)]
         public string HostedHeadshotNoBackgroundUrl { get; set; }
 
         /// <summary>
-        /// The last updated date of the player's transparent background hosted headshot.
+        /// The last updated date of the player's transparent background hosted headshot
         /// </summary>
-        [Description("The last updated date of the player's transparent background hosted headshot.")]
+        [Description("The last updated date of the player's transparent background hosted headshot")]
         [DataMember(Name = "HostedHeadshotNoBackgroundUpdated", Order = 11)]
         public DateTime? HostedHeadshotNoBackgroundUpdated { get; set; }
 

@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string RotoworldPlayerNewsLine { get; set; }
 
         /// <summary>
-        /// The short headline
+        /// The short headline of the news item
         /// </summary>
-        [Description("The short headline")]
+        [Description("The short headline of the news item")]
         [DataMember(Name = "Headline", Order = 2)]
         public string Headline { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.NBA
         public string Comment { get; set; }
 
         /// <summary>
-        /// The body of the news article
+        /// The body of the news item
         /// </summary>
-        [Description("The body of the news article")]
+        [Description("The body of the news item")]
         [DataMember(Name = "Impact", Order = 4)]
         public string Impact { get; set; }
 

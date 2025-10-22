@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class TeamBasic
     {
         /// <summary>
-        /// Abbreviation of the team (e.g. SD, PHI, NE, IND, etc.)
+        /// Abbreviation [Key] of the team (e.g. LAC; PHI; NE; IND; etc.)
         /// </summary>
-        [Description("Abbreviation of the team (e.g. SD, PHI, NE, IND, etc.)")]
+        [Description("Abbreviation [Key] of the team (e.g. LAC; PHI; NE; IND; etc.)")]
         [DataMember(Name = "Key", Order = 1)]
         public string Key { get; set; }
 
         /// <summary>
-        /// The auto-generated unique ID of the Team.
+        /// The unique ID of the team
         /// </summary>
-        [Description("The auto-generated unique ID of the Team.")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamID", Order = 2)]
         public int TeamID { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int PlayerID { get; set; }
 
         /// <summary>
-        /// The city/location of the team (e.g. San Diego, Philadelphia, New England, Indianapolis, etc.)
+        /// The city/location of the team (e.g. Minnesota; Philadelphia; New England; Indianapolis; etc.)
         /// </summary>
-        [Description("The city/location of the team (e.g. San Diego, Philadelphia, New England, Indianapolis, etc.)")]
+        [Description("The city/location of the team (e.g. Minnesota; Philadelphia; New England; Indianapolis; etc.)")]
         [DataMember(Name = "City", Order = 4)]
         public string City { get; set; }
 
@@ -72,16 +72,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public int? StadiumID { get; set; }
 
         /// <summary>
-        /// The bye week of the team in the upcoming regular season
+        /// The bye week of the team in the upcoming or current regular season
         /// </summary>
-        [Description("The bye week of the team in the upcoming regular season")]
+        [Description("The bye week of the team in the upcoming or current regular season")]
         [DataMember(Name = "ByeWeek", Order = 10)]
         public int? ByeWeek { get; set; }
 
         /// <summary>
-        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.
+        /// A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues
         /// </summary>
-        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.")]
+        [Description("A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues")]
         [DataMember(Name = "GlobalTeamID", Order = 11)]
         public int? GlobalTeamID { get; set; }
 
@@ -93,65 +93,65 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public string HeadCoach { get; set; }
 
         /// <summary>
-        /// The team's primary color. (This is not licensed for public or commercial use)
+        /// The team's first color. (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's primary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's first color. (This is not licensed for public or commercial use)")]
         [DataMember(Name = "PrimaryColor", Order = 13)]
         public string PrimaryColor { get; set; }
 
         /// <summary>
-        /// The team's secondary color. (This is not licensed for public or commercial use)
+        /// The team's second color. (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's secondary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's second color. (This is not licensed for public or commercial use)")]
         [DataMember(Name = "SecondaryColor", Order = 14)]
         public string SecondaryColor { get; set; }
 
         /// <summary>
-        /// The team's tertiary color. (This is not licensed for public or commercial use)
+        /// The team's third color. (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's tertiary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's third color. (This is not licensed for public or commercial use)")]
         [DataMember(Name = "TertiaryColor", Order = 15)]
         public string TertiaryColor { get; set; }
 
         /// <summary>
-        /// The team's quaternary color. (This is not licensed for public or commercial use)
+        /// The team's fourth color. (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The team's quaternary color. (This is not licensed for public or commercial use)")]
+        [Description("The team's fourth color. (This is not licensed for public or commercial use)")]
         [DataMember(Name = "QuaternaryColor", Order = 16)]
         public string QuaternaryColor { get; set; }
 
         /// <summary>
-        /// The link to the team's logo hosted on Wikipedia. (This is not licensed for public or commercial use)
+        /// The link to the team's logo hosted on Wikipedia (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The link to the team's logo hosted on Wikipedia. (This is not licensed for public or commercial use)")]
+        [Description("The link to the team's logo hosted on Wikipedia (This is not licensed for public or commercial use)")]
         [DataMember(Name = "WikipediaLogoURL", Order = 17)]
         public string WikipediaLogoURL { get; set; }
 
         /// <summary>
-        /// The link to the team's wordmark logo hosted on Wikipedia. (This is not licensed for public or commercial use)
+        /// The link to the team's wordmark logo hosted on Wikipedia (This is not licensed for public or commercial use)
         /// </summary>
-        [Description("The link to the team's wordmark logo hosted on Wikipedia. (This is not licensed for public or commercial use)")]
+        [Description("The link to the team's wordmark logo hosted on Wikipedia (This is not licensed for public or commercial use)")]
         [DataMember(Name = "WikipediaWordMarkURL", Order = 18)]
         public string WikipediaWordMarkURL { get; set; }
 
         /// <summary>
-        /// The current offensive coordinator of the team
+        /// The current offensive coordinator of the team. Note: field will be NULL if team doesn't have an OFF coordinator
         /// </summary>
-        [Description("The current offensive coordinator of the team")]
+        [Description("The current offensive coordinator of the team. Note: field will be NULL if team doesn't have an OFF coordinator")]
         [DataMember(Name = "OffensiveCoordinator", Order = 19)]
         public string OffensiveCoordinator { get; set; }
 
         /// <summary>
-        /// The current defensive coordinator of the team
+        /// The current defensive coordinator of the team. Note: field will be NULL if team doesn't have an DEFF coordinator
         /// </summary>
-        [Description("The current defensive coordinator of the team")]
+        [Description("The current defensive coordinator of the team. Note: field will be NULL if team doesn't have an DEFF coordinator")]
         [DataMember(Name = "DefensiveCoordinator", Order = 20)]
         public string DefensiveCoordinator { get; set; }
 
         /// <summary>
-        /// The current special teams coach of the team
+        /// The current special teams coordinator of the team. Note: field will be NULL if team doesn't have an ST coordinator
         /// </summary>
-        [Description("The current special teams coach of the team")]
+        [Description("The current special teams coordinator of the team. Note: field will be NULL if team doesn't have an ST coordinator")]
         [DataMember(Name = "SpecialTeamsCoach", Order = 21)]
         public string SpecialTeamsCoach { get; set; }
 

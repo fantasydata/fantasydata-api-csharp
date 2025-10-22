@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.MMA
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date and time of the event
+        /// The start time and day of the event
         /// </summary>
-        [Description("The date and time of the event")]
+        [Description("The start time and day of the event")]
         [DataMember(Name = "DateTime", Order = 7)]
         public DateTime? DateTime { get; set; }
 

@@ -9,93 +9,93 @@ namespace FantasyData.Api.Client.Model.Tennis
     public partial class Match
     {
         /// <summary>
-        /// Unique ID of the Match
+        /// The unique ID of the match
         /// </summary>
-        [Description("Unique ID of the Match")]
+        [Description("The unique ID of the match")]
         [DataMember(Name = "MatchId", Order = 1)]
         public int MatchId { get; set; }
 
         /// <summary>
-        /// ID of the Round that the Match takes place within
+        /// The ID of the round that the match takes place within
         /// </summary>
-        [Description("ID of the Round that the Match takes place within")]
+        [Description("The ID of the round that the match takes place within")]
         [DataMember(Name = "RoundId", Order = 2)]
         public int RoundId { get; set; }
 
         /// <summary>
-        /// Venue where the Match is played
+        /// The venue where the match is played
         /// </summary>
-        [Description("Venue where the Match is played")]
+        [Description("The venue where the match is played")]
         [DataMember(Name = "VenueDetails", Order = 10003)]
         public Venue VenueDetails { get; set; }
 
         /// <summary>
-        /// Day that the Match is scheduled to be played (UTC)
+        /// Day that the Match is scheduled to be played
         /// </summary>
-        [Description("Day that the Match is scheduled to be played (UTC)")]
+        [Description("Day that the Match is scheduled to be played")]
         [DataMember(Name = "Day", Order = 4)]
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// Date and time that the Match is scheduled to be played (UTC)
+        /// Date and time that the Match is scheduled to be played (in US Eastern Time)
         /// </summary>
-        [Description("Date and time that the Match is scheduled to be played (UTC)")]
+        [Description("Date and time that the Match is scheduled to be played (in US Eastern Time)")]
         [DataMember(Name = "DateTime", Order = 5)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// ID of Contestant A
+        /// The unique ID of contestant A
         /// </summary>
-        [Description("ID of Contestant A")]
+        [Description("The unique ID of contestant A")]
         [DataMember(Name = "ContestantAID", Order = 6)]
         public int ContestantAID { get; set; }
 
         /// <summary>
-        /// Name of the first player of Contestant A
+        /// The name of the first (or single) player of contestant A
         /// </summary>
-        [Description("Name of the first player of Contestant A")]
+        [Description("The name of the first (or single) player of contestant A")]
         [DataMember(Name = "ContestantA1Name", Order = 7)]
         public string ContestantA1Name { get; set; }
 
         /// <summary>
-        /// Name of the second player of Contestant A
+        /// The name of the second player (if doubles) of contestant A
         /// </summary>
-        [Description("Name of the second player of Contestant A")]
+        [Description("The name of the second player (if doubles) of contestant A")]
         [DataMember(Name = "ContestantA2Name", Order = 8)]
         public string ContestantA2Name { get; set; }
 
         /// <summary>
-        /// ID of Contestant B
+        /// The unique ID of contestant B
         /// </summary>
-        [Description("ID of Contestant B")]
+        [Description("The unique ID of contestant B")]
         [DataMember(Name = "ContestantBID", Order = 9)]
         public int ContestantBID { get; set; }
 
         /// <summary>
-        /// Name of the first player of Contestant B
+        /// The name of the first (or single) player of contestant B
         /// </summary>
-        [Description("Name of the first player of Contestant B")]
+        [Description("The name of the first (or single) player of contestant B")]
         [DataMember(Name = "ContestantB1Name", Order = 10)]
         public string ContestantB1Name { get; set; }
 
         /// <summary>
-        /// Name of the second player of Contestant B
+        /// The name of the second player (if doubles) of contestant B
         /// </summary>
-        [Description("Name of the second player of Contestant B")]
+        [Description("The name of the second player (if doubles) of contestant B")]
         [DataMember(Name = "ContestantB2Name", Order = 11)]
         public string ContestantB2Name { get; set; }
 
         /// <summary>
-        /// Status of the Match
+        /// Status of the match. For a complete list of statuses, see <a href="https://support.sportsdata.io/hc/en-us/articles/14287629964567-Process-Guide-Game-Status" target="_blank">here</a>.
         /// </summary>
-        [Description("Status of the Match")]
+        [Description("Status of the match. For a complete list of statuses, see <a href=\"https://support.sportsdata.io/hc/en-us/articles/14287629964567-Process-Guide-Game-Status\" target=\"_blank\">here</a>.")]
         [DataMember(Name = "Status", Order = 12)]
         public string Status { get; set; }
 
         /// <summary>
-        /// Contestant ID of the Match winner
+        /// The contestant ID of the match winner
         /// </summary>
-        [Description("Contestant ID of the Match winner")]
+        [Description("The contestant ID of the match winner")]
         [DataMember(Name = "WinnerContestantId", Order = 13)]
         public int WinnerContestantId { get; set; }
 
@@ -128,16 +128,16 @@ namespace FantasyData.Api.Client.Model.Tennis
         public Period[] Periods { get; set; }
 
         /// <summary>
-        /// Timestamp of the last update of this record (ET)
+        /// Timestamp of the last update of this record (in US Eastern Time)
         /// </summary>
-        [Description("Timestamp of the last update of this record (ET)")]
+        [Description("Timestamp of the last update of this record (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 18)]
         public DateTime Updated { get; set; }
 
         /// <summary>
-        /// Timestamp of this record's creation (ET)
+        /// Timestamp of this record's creation (in US Eastern Time)
         /// </summary>
-        [Description("Timestamp of this record's creation (ET)")]
+        [Description("Timestamp of this record's creation (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 19)]
         public DateTime Created { get; set; }
 
@@ -147,6 +147,13 @@ namespace FantasyData.Api.Client.Model.Tennis
         [Description("Latest Odds for this Match")]
         [DataMember(Name = "MatchOdds", Order = 20020)]
         public MatchOdd[] MatchOdds { get; set; }
+
+        /// <summary>
+        /// A globally unique ID for this match. This value is guaranteed to be unique across all sports/leagues
+        /// </summary>
+        [Description("A globally unique ID for this match. This value is guaranteed to be unique across all sports/leagues")]
+        [DataMember(Name = "GlobalMatchId", Order = 21)]
+        public int GlobalMatchId { get; set; }
 
     }
 }

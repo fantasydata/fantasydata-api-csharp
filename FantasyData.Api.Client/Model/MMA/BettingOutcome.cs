@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.MMA
     public partial class BettingOutcome
     {
         /// <summary>
-        /// The unique identifier of this outcome
+        /// The unique ID of this outcome
         /// </summary>
-        [Description("The unique identifier of this outcome")]
+        [Description("The unique ID of this outcome")]
         [DataMember(Name = "BettingOutcomeID", Order = 1)]
         public int BettingOutcomeID { get; set; }
 
         /// <summary>
-        /// The id of the Betting Market for this outcome
+        /// The unique ID associated with the betting market
         /// </summary>
-        [Description("The id of the Betting Market for this outcome")]
+        [Description("The unique ID associated with the betting market")]
         [DataMember(Name = "BettingMarketID", Order = 2)]
         public int BettingMarketID { get; set; }
 
@@ -37,9 +37,9 @@ namespace FantasyData.Api.Client.Model.MMA
         public int? BettingOutcomeTypeID { get; set; }
 
         /// <summary>
-        /// The BettingOutcomeType of this outcome
+        /// The name of Betting Outcome Type (e.g. Under; Over; etc.)
         /// </summary>
-        [Description("The BettingOutcomeType of this outcome")]
+        [Description("The name of Betting Outcome Type (e.g. Under; Over; etc.)")]
         [DataMember(Name = "BettingOutcomeType", Order = 5)]
         public string BettingOutcomeType { get; set; }
 
@@ -72,37 +72,37 @@ namespace FantasyData.Api.Client.Model.MMA
         public string Participant { get; set; }
 
         /// <summary>
-        /// Is this outcome available for betting as of the last update
+        /// Indicates if this outcome is available for betting as of the last update
         /// </summary>
-        [Description("Is this outcome available for betting as of the last update")]
+        [Description("Indicates if this outcome is available for betting as of the last update")]
         [DataMember(Name = "IsAvailable", Order = 10)]
         public bool IsAvailable { get; set; }
 
         /// <summary>
-        /// Is this an alternate value or the core value
+        /// Indicates if this is an alternate value or the core value
         /// </summary>
-        [Description("Is this an alternate value or the core value")]
+        [Description("Indicates if this is an alternate value or the core value")]
         [DataMember(Name = "IsAlternate", Order = 11)]
         public bool? IsAlternate { get; set; }
 
         /// <summary>
-        /// The created date of the outcome
+        /// The timestamp of when the betting outcome was created
         /// </summary>
-        [Description("The created date of the outcome")]
+        [Description("The timestamp of when the betting outcome was created")]
         [DataMember(Name = "Created", Order = 12)]
         public DateTime Created { get; set; }
 
         /// <summary>
-        /// The last updated date of the outcome
+        /// The last updated timestamp of the outcome (in US Eastern Time)
         /// </summary>
-        [Description("The last updated date of the outcome")]
+        [Description("The last updated timestamp of the outcome (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 13)]
         public DateTime Updated { get; set; }
 
         /// <summary>
-        /// The Id of the FIghter associated with this outcome (where applicable)
+        /// The unique ID of the fighter tied to this betting outcome (where applicable)
         /// </summary>
-        [Description("The Id of the FIghter associated with this outcome (where applicable)")]
+        [Description("The unique ID of the fighter tied to this betting outcome (where applicable)")]
         [DataMember(Name = "FighterId", Order = 14)]
         public int? FighterId { get; set; }
 

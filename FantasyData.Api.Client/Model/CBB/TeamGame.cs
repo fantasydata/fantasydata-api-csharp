@@ -30,51 +30,51 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? SeasonType { get; set; }
 
         /// <summary>
-        /// The college basketball season of the game
+        /// The season that the game the team is playing in occurs. Note: season is a single year that the majority of the season occurs in
         /// </summary>
-        [Description("The college basketball season of the game")]
+        [Description("The season that the game the team is playing in occurs. Note: season is a single year that the majority of the season occurs in")]
         [DataMember(Name = "Season", Order = 4)]
         public int? Season { get; set; }
 
         /// <summary>
-        /// Team's name
+        /// Team's full name
         /// </summary>
-        [Description("Team's name")]
+        [Description("Team's full name")]
         [DataMember(Name = "Name", Order = 5)]
         public string Name { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Team
+        /// The abbreviation [Key] of the team
         /// </summary>
-        [Description("The abbreviation of the Team")]
+        [Description("The abbreviation [Key] of the team")]
         [DataMember(Name = "Team", Order = 6)]
         public string Team { get; set; }
 
         /// <summary>
-        /// Total number of team wins
+        /// The total number of wins by the team (conference & non-conference)
         /// </summary>
-        [Description("Total number of team wins")]
+        [Description("The total number of wins by the team (conference & non-conference)")]
         [DataMember(Name = "Wins", Order = 7)]
         public int? Wins { get; set; }
 
         /// <summary>
-        /// Total number of team losses
+        /// The total number of losses by the team (conference & non-conference)
         /// </summary>
-        [Description("Total number of team losses")]
+        [Description("The total number of losses by the team (conference & non-conference)")]
         [DataMember(Name = "Losses", Order = 8)]
         public int? Losses { get; set; }
 
         /// <summary>
-        /// Total number of conference wins
+        /// The total number of conference wins by the team
         /// </summary>
-        [Description("Total number of conference wins")]
+        [Description("The total number of conference wins by the team")]
         [DataMember(Name = "ConferenceWins", Order = 9)]
         public int? ConferenceWins { get; set; }
 
         /// <summary>
-        /// Total number of conference losses
+        /// The total number of conference losses by the team
         /// </summary>
-        [Description("Total number of conference losses")]
+        [Description("The total number of conference losses by the team")]
         [DataMember(Name = "ConferenceLosses", Order = 10)]
         public int? ConferenceLosses { get; set; }
 
@@ -86,9 +86,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? GlobalTeamID { get; set; }
 
         /// <summary>
-        /// Total number of team possessions as defined here: http://www.basketball-reference.com/about/glossary.html
+        /// Total number of estimated team possessions by the team in the game
         /// </summary>
-        [Description("Total number of team possessions as defined here: http://www.basketball-reference.com/about/glossary.html")]
+        [Description("Total number of estimated team possessions by the team in the game")]
         [DataMember(Name = "Possessions", Order = 12)]
         public decimal? Possessions { get; set; }
 

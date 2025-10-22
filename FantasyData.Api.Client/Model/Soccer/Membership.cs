@@ -16,72 +16,72 @@ namespace FantasyData.Api.Client.Model.Soccer
         public int MembershipId { get; set; }
 
         /// <summary>
-        /// The unique ID for the team
+        /// The unique ID of the team
         /// </summary>
-        [Description("The unique ID for the team")]
+        [Description("The unique ID of the team")]
         [DataMember(Name = "TeamId", Order = 2)]
         public int TeamId { get; set; }
 
         /// <summary>
-        /// The player's unique PlayerID as assigned by SportsDataIO.
+        /// The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career.
         /// </summary>
-        [Description("The player's unique PlayerID as assigned by SportsDataIO.")]
+        [Description("The player's unique PlayerID as assigned by SportsDataIO. Note: this ID stays with the player their entire career.")]
         [DataMember(Name = "PlayerId", Order = 3)]
         public int PlayerId { get; set; }
 
         /// <summary>
-        /// The full name of the player.
+        /// The player's full name
         /// </summary>
-        [Description("The full name of the player.")]
+        [Description("The player's full name")]
         [DataMember(Name = "PlayerName", Order = 4)]
         public string PlayerName { get; set; }
 
         /// <summary>
-        /// Name of the team
+        /// The full name of the team
         /// </summary>
-        [Description("Name of the team")]
+        [Description("The full name of the team")]
         [DataMember(Name = "TeamName", Order = 5)]
         public string TeamName { get; set; }
 
         /// <summary>
-        /// Area of the team
+        /// The area the team is located within their home country
         /// </summary>
-        [Description("Area of the team")]
+        [Description("The area the team is located within their home country")]
         [DataMember(Name = "TeamArea", Order = 6)]
         public string TeamArea { get; set; }
 
         /// <summary>
-        /// Whether the membership is active (true/false)
+        /// Whether the player's membership is active (true/false)
         /// </summary>
-        [Description("Whether the membership is active (true/false)")]
+        [Description("Whether the player's membership is active (true/false)")]
         [DataMember(Name = "Active", Order = 7)]
         public bool Active { get; set; }
 
         /// <summary>
-        /// The start date of the membership (UTC)
+        /// The start date of the membership (in UTC)
         /// </summary>
-        [Description("The start date of the membership (UTC)")]
+        [Description("The start date of the membership (in UTC)")]
         [DataMember(Name = "StartDate", Order = 8)]
         public DateTime? StartDate { get; set; }
 
         /// <summary>
-        /// The end date of the membership (UTC)
+        /// The end date of the membership (in UTC)
         /// </summary>
-        [Description("The end date of the membership (UTC)")]
+        [Description("The end date of the membership (in UTC)")]
         [DataMember(Name = "EndDate", Order = 9)]
         public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// The updated date and time of the membership (EST/EDT)
+        /// The timestamp of when the record was last updated (US Eastern Time)
         /// </summary>
-        [Description("The updated date and time of the membership (EST/EDT)")]
+        [Description("The timestamp of when the record was last updated (US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 10)]
         public DateTime? Updated { get; set; }
 
         /// <summary>
-        /// Jersey number worn by player for this team
+        /// The player's jersey number on this team
         /// </summary>
-        [Description("Jersey number worn by player for this team")]
+        [Description("The player's jersey number on this team")]
         [DataMember(Name = "Jersey", Order = 11)]
         public int? Jersey { get; set; }
 

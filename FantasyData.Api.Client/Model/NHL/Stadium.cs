@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public int StadiumID { get; set; }
 
         /// <summary>
-        /// Whether or not this arena is the home venue for an active team
+        /// Whether or not this stadium is the home venue for an active team
         /// </summary>
-        [Description("Whether or not this arena is the home venue for an active team")]
+        [Description("Whether or not this stadium is the home venue for an active team")]
         [DataMember(Name = "Active", Order = 2)]
         public bool Active { get; set; }
 
@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.NHL
         public string Name { get; set; }
 
         /// <summary>
-        /// The address where the arena is located
+        /// The address where the venue is located
         /// </summary>
-        [Description("The address where the arena is located")]
+        [Description("The address where the venue is located")]
         [DataMember(Name = "Address", Order = 4)]
         public string Address { get; set; }
 
         /// <summary>
-        /// The city where the arena is located
+        /// The city where the venue is located
         /// </summary>
-        [Description("The city where the arena is located")]
+        [Description("The city where the venue is located")]
         [DataMember(Name = "City", Order = 5)]
         public string City { get; set; }
 
@@ -58,9 +58,9 @@ namespace FantasyData.Api.Client.Model.NHL
         public string Zip { get; set; }
 
         /// <summary>
-        /// The 2-digit country code where the arena is located
+        /// The country code where the arena is located
         /// </summary>
-        [Description("The 2-digit country code where the arena is located")]
+        [Description("The country code where the arena is located")]
         [DataMember(Name = "Country", Order = 8)]
         public string Country { get; set; }
 

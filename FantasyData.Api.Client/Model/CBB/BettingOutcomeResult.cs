@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.CBB
     public partial class BettingOutcomeResult
     {
         /// <summary>
-        /// The unique identifier of the outcome
+        /// The unique ID associated with this specific outcome
         /// </summary>
-        [Description("The unique identifier of the outcome")]
+        [Description("The unique ID associated with this specific outcome")]
         [DataMember(Name = "BettingOutcomeID", Order = 1)]
         public int BettingOutcomeID { get; set; }
 
@@ -23,9 +23,9 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? BettingResultTypeID { get; set; }
 
         /// <summary>
-        /// The string identifier of the BettingResultType of this outcome (e.g. Won, Lost, Push, Not Resulted, Incomplete)
+        /// The BettingResultTypeID of this outcome
         /// </summary>
-        [Description("The string identifier of the BettingResultType of this outcome (e.g. Won, Lost, Push, Not Resulted, Incomplete)")]
+        [Description("The BettingResultTypeID of this outcome")]
         [DataMember(Name = "BettingResultType", Order = 3)]
         public string BettingResultType { get; set; }
 
@@ -37,23 +37,23 @@ namespace FantasyData.Api.Client.Model.CBB
         public int? BettingOutcomeTypeID { get; set; }
 
         /// <summary>
-        /// The BettingOutcomeType of this outcome
+        /// The name of betting outcome type (e.g. Home; Away; Under; Over)
         /// </summary>
-        [Description("The BettingOutcomeType of this outcome")]
+        [Description("The name of betting outcome type (e.g. Home; Away; Under; Over)")]
         [DataMember(Name = "BettingOutcomeType", Order = 5)]
         public string BettingOutcomeType { get; set; }
 
         /// <summary>
-        /// The value that was bet in this outcome (if applicable)
+        /// The value of the given result from a sportsbook for a game (i.e. If a team won a game by 5 and the spread was -6.5, the actual value would be 5 and the bet value would be -6.5)
         /// </summary>
-        [Description("The value that was bet in this outcome (if applicable)")]
+        [Description("The value of the given result from a sportsbook for a game (i.e. If a team won a game by 5 and the spread was -6.5, the actual value would be 5 and the bet value would be -6.5)")]
         [DataMember(Name = "BetValue", Order = 6)]
         public decimal? BetValue { get; set; }
 
         /// <summary>
-        /// The value that actually occurred in game (if applicable)
+        /// The value of the actual result that occured in game (i.e. If a team won a game by 5 and the spread was -6.5, the actual value would be 5 and the bet value would be -6.5)
         /// </summary>
-        [Description("The value that actually occurred in game (if applicable)")]
+        [Description("The value of the actual result that occured in game (i.e. If a team won a game by 5 and the spread was -6.5, the actual value would be 5 and the bet value would be -6.5)")]
         [DataMember(Name = "ActualValue", Order = 7)]
         public decimal? ActualValue { get; set; }
 

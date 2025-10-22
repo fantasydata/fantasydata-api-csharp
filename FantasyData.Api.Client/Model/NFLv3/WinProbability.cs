@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.NFLv3
     public partial class WinProbability
     {
         /// <summary>
-        /// The amount of time remaining in the current quarter (11:23, 5:34, NULL if game is not in progress or at halftime)
+        /// The amount of time remaining in the current quarter (e.g. 11:23; 5:34; NULL if game is not in progress or at halftime)
         /// </summary>
-        [Description("The amount of time remaining in the current quarter (11:23, 5:34, NULL if game is not in progress or at halftime)")]
+        [Description("The amount of time remaining in the current quarter (e.g. 11:23; 5:34; NULL if game is not in progress or at halftime)")]
         [DataMember(Name = "TimeRemaining", Order = 1)]
         public string TimeRemaining { get; set; }
 
@@ -37,16 +37,16 @@ namespace FantasyData.Api.Client.Model.NFLv3
         public decimal? HomeWinProbability { get; set; }
 
         /// <summary>
-        /// The database generated timestamp of when this win probability was first updated.
+        /// The database generated timestamp of when this win probability was first updated (in US Eastern Time)
         /// </summary>
-        [Description("The database generated timestamp of when this win probability was first updated.")]
+        [Description("The database generated timestamp of when this win probability was first updated (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 5)]
         public DateTime? Created { get; set; }
 
         /// <summary>
-        /// The database generated timestamp of when this win probability was last updated.
+        /// The database generated timestamp of when this win probability was last updated (in US Eastern time)
         /// </summary>
-        [Description("The database generated timestamp of when this win probability was last updated.")]
+        [Description("The database generated timestamp of when this win probability was last updated (in US Eastern time)")]
         [DataMember(Name = "Updated", Order = 6)]
         public DateTime? Updated { get; set; }
 

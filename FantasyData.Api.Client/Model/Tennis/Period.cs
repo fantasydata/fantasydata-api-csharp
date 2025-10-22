@@ -9,16 +9,16 @@ namespace FantasyData.Api.Client.Model.Tennis
     public partial class Period
     {
         /// <summary>
-        /// Unique ID of the Period
+        /// The unique ID of the period
         /// </summary>
-        [Description("Unique ID of the Period")]
+        [Description("The unique ID of the period")]
         [DataMember(Name = "PeriodId", Order = 1)]
         public int PeriodId { get; set; }
 
         /// <summary>
-        /// Type of the Period, an ordered description of the set. Indicates a tiebreak, if necessary
+        /// Type of the Period, an ordered description of the set. Indicates a tiebreak, if necessary. For a complete list, see <a href="https://support.sportsdata.io/hc/en-us/articles/14287629964567-Process-Guide-Game-Status" target="_blank">here</a>.
         /// </summary>
-        [Description("Type of the Period, an ordered description of the set. Indicates a tiebreak, if necessary")]
+        [Description("Type of the Period, an ordered description of the set. Indicates a tiebreak, if necessary. For a complete list, see <a href=\"https://support.sportsdata.io/hc/en-us/articles/14287629964567-Process-Guide-Game-Status\" target=\"_blank\">here</a>.")]
         [DataMember(Name = "Type", Order = 2)]
         public string Type { get; set; }
 
@@ -37,16 +37,16 @@ namespace FantasyData.Api.Client.Model.Tennis
         public int ScoreB { get; set; }
 
         /// <summary>
-        /// Timestamp of the last update of this record (ET)
+        /// Timestamp of the last update of this record (in US Eastern Time)
         /// </summary>
-        [Description("Timestamp of the last update of this record (ET)")]
+        [Description("Timestamp of the last update of this record (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 5)]
         public DateTime Updated { get; set; }
 
         /// <summary>
-        /// Timestamp of this record's creation (ET)
+        /// Timestamp of this record's creation (in US Eastern Time)
         /// </summary>
-        [Description("Timestamp of this record's creation (ET)")]
+        [Description("Timestamp of this record's creation (in US Eastern Time)")]
         [DataMember(Name = "Created", Order = 6)]
         public DateTime Created { get; set; }
 

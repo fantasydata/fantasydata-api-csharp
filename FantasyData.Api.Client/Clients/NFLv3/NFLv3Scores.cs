@@ -732,9 +732,9 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Depth Charts Asynchronous
+        /// Get Depth Charts - by Active Asynchronous
         /// </summary>
-        public Task<List<TeamDepthChart>> GetDepthChartsAsync()
+        public Task<List<TeamDepthChart>> GetDepthChartsByActiveAsync()
         {
             var parameters = new List<KeyValuePair<string, string>>();
             return Task.Run<List<TeamDepthChart>>(() =>
@@ -743,11 +743,11 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Depth Charts
+        /// Get Depth Charts - by Active
         /// </summary>
-        public List<TeamDepthChart> GetDepthCharts()
+        public List<TeamDepthChart> GetDepthChartsByActive()
         {
-            return this.GetDepthChartsAsync().Result;
+            return this.GetDepthChartsByActiveAsync().Result;
         }
 
         /// <summary>
@@ -990,6 +990,50 @@ namespace FantasyData.Api.Client
         public List<Score> GetGamesByWeekFinal(string season, int week)
         {
             return this.GetGamesByWeekFinalAsync(season, week).Result;
+        }
+
+        /// <summary>
+        /// Get Depth Charts - All Asynchronous
+        /// </summary>
+        public Task<List<TeamDepthChart>> GetDepthChartsAllAsync()
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            return Task.Run<List<TeamDepthChart>>(() =>
+                base.Get<List<TeamDepthChart>>("/v3/nfl/scores/{format}/DepthChartsAll", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Depth Charts - All
+        /// </summary>
+        public List<TeamDepthChart> GetDepthChartsAll()
+        {
+            return this.GetDepthChartsAllAsync().Result;
+        }
+
+        /// <summary>
+        /// Get Depth Charts - by Week Asynchronous
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public Task<List<TeamDepthChartWeekly>> GetDepthChartsByWeekAsync(string season, int week)
+        {
+            var parameters = new List<KeyValuePair<string, string>>();
+            parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
+            parameters.Add(new KeyValuePair<string, string>("week", week.ToString()));
+            return Task.Run<List<TeamDepthChartWeekly>>(() =>
+                base.Get<List<TeamDepthChartWeekly>>("/v3/nfl/scores/{format}/DepthChartsByWeek/{season}/{week}", parameters)
+            );
+        }
+
+        /// <summary>
+        /// Get Depth Charts - by Week
+        /// </summary>
+        /// <param name="season">Year of the season and the season type. If no season type is provided, then the default is regular season. Examples: <code>2015REG</code>, <code>2015PRE</code>, <code>2015POST</code>.</param>
+        /// <param name="week">Week of the season. Valid values are as follows: Preseason 0 to 4, Regular Season 1 to 17, Postseason 1 to 4. Example: <code>1</code></param>
+        public List<TeamDepthChartWeekly> GetDepthChartsByWeek(string season, int week)
+        {
+            return this.GetDepthChartsByWeekAsync(season, week).Result;
         }
 
     }

@@ -51,9 +51,9 @@ namespace FantasyData.Api.Client.Model.CWBB
         public DateTime? PostSeasonStartDate { get; set; }
 
         /// <summary>
-        /// The string to pass into subsequent API calls in the season parameter
+        /// The string to pass into subsequent API calls in the season parameter (e.g. 2025REG, 2025POST, etc.)
         /// </summary>
-        [Description("The string to pass into subsequent API calls in the season parameter")]
+        [Description("The string to pass into subsequent API calls in the season parameter (e.g. 2025REG, 2025POST, etc.)")]
         [DataMember(Name = "ApiSeason", Order = 7)]
         public string ApiSeason { get; set; }
 

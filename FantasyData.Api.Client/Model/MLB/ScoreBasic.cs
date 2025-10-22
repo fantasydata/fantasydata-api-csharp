@@ -9,44 +9,44 @@ namespace FantasyData.Api.Client.Model.MLB
     public partial class ScoreBasic
     {
         /// <summary>
-        /// Number of runs the away team scored in this game
+        /// Number of runs scored by the away team in the game
         /// </summary>
-        [Description("Number of runs the away team scored in this game")]
+        [Description("Number of runs scored by the away team in the game")]
         [DataMember(Name = "AwayTeamRuns", Order = 1)]
         public int? AwayTeamRuns { get; set; }
 
         /// <summary>
-        /// Number of runs the home team scored in this game
+        /// Number of runs scored by the home team in the game
         /// </summary>
-        [Description("Number of runs the home team scored in this game")]
+        [Description("Number of runs scored by the home team in the game")]
         [DataMember(Name = "HomeTeamRuns", Order = 2)]
         public int? HomeTeamRuns { get; set; }
 
         /// <summary>
-        /// Total away team hits in this game
+        /// Total hits by the away team in the game
         /// </summary>
-        [Description("Total away team hits in this game")]
+        [Description("Total hits by the away team in the game")]
         [DataMember(Name = "AwayTeamHits", Order = 3)]
         public int? AwayTeamHits { get; set; }
 
         /// <summary>
-        /// Total home team hits in this game
+        /// Total hits by the home team in the game
         /// </summary>
-        [Description("Total home team hits in this game")]
+        [Description("Total hits by the home team in the game")]
         [DataMember(Name = "HomeTeamHits", Order = 4)]
         public int? HomeTeamHits { get; set; }
 
         /// <summary>
-        /// Total away team errors committed in this game
+        /// Total errors committed by the away team in the game
         /// </summary>
-        [Description("Total away team errors committed in this game")]
+        [Description("Total errors committed by the away team in the game")]
         [DataMember(Name = "AwayTeamErrors", Order = 5)]
         public int? AwayTeamErrors { get; set; }
 
         /// <summary>
-        /// Total home team errors committed in this game
+        /// Total errors committed by the home team in the game
         /// </summary>
-        [Description("Total home team errors committed in this game")]
+        [Description("Total errors committed by the home team in the game")]
         [DataMember(Name = "HomeTeamErrors", Order = 6)]
         public int? HomeTeamErrors { get; set; }
 
@@ -93,16 +93,16 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? Inning { get; set; }
 
         /// <summary>
-        /// The inning half that the game is currently in, or the inning half in which the game ended (possible values: T, B, NULL)
+        /// The inning half that the game is currently in; or the inning half in which the game ended (possible values: T; B; E: M: NULL)
         /// </summary>
-        [Description("The inning half that the game is currently in, or the inning half in which the game ended (possible values: T, B, NULL)")]
+        [Description("The inning half that the game is currently in; or the inning half in which the game ended (possible values: T; B; E: M: NULL)")]
         [DataMember(Name = "InningHalf", Order = 13)]
         public string InningHalf { get; set; }
 
         /// <summary>
-        /// The GameID of this MLB game
+        /// The unique ID of this game
         /// </summary>
-        [Description("The GameID of this MLB game")]
+        [Description("The unique ID of this game")]
         [DataMember(Name = "GameID", Order = 14)]
         public int? GameID { get; set; }
 
@@ -114,9 +114,9 @@ namespace FantasyData.Api.Client.Model.MLB
         public int Season { get; set; }
 
         /// <summary>
-        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).
+        /// The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar)
         /// </summary>
-        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar).")]
+        [Description("The type of season that this record corresponds to (1=Regular Season, 2=Preseason, 3=Postseason, 4=Offseason, 5=AllStar)")]
         [DataMember(Name = "SeasonType", Order = 16)]
         public int SeasonType { get; set; }
 
@@ -135,37 +135,37 @@ namespace FantasyData.Api.Client.Model.MLB
         public DateTime? Day { get; set; }
 
         /// <summary>
-        /// The date and time of the game
+        /// The date and time of the game in US Eastern Time
         /// </summary>
-        [Description("The date and time of the game")]
+        [Description("The date and time of the game in US Eastern Time")]
         [DataMember(Name = "DateTime", Order = 19)]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Away Team
+        /// The abbreviation [Key] of the away team
         /// </summary>
-        [Description("The abbreviation of the Away Team")]
+        [Description("The abbreviation [Key] of the away team")]
         [DataMember(Name = "AwayTeam", Order = 20)]
         public string AwayTeam { get; set; }
 
         /// <summary>
-        /// The abbreviation of the Home Team
+        /// The abbreviation [Key] of the Home Team
         /// </summary>
-        [Description("The abbreviation of the Home Team")]
+        [Description("The abbreviation [Key] of the Home Team")]
         [DataMember(Name = "HomeTeam", Order = 21)]
         public string HomeTeam { get; set; }
 
         /// <summary>
-        /// The unique ID of the away team
+        /// The unique TeamID of the away team
         /// </summary>
-        [Description("The unique ID of the away team")]
+        [Description("The unique TeamID of the away team")]
         [DataMember(Name = "AwayTeamID", Order = 22)]
         public int? AwayTeamID { get; set; }
 
         /// <summary>
-        /// The unique ID of the home team
+        /// The unique ID of the home team
         /// </summary>
-        [Description("The unique ID of the home team")]
+        [Description("The unique ID of the home team")]
         [DataMember(Name = "HomeTeamID", Order = 23)]
         public int? HomeTeamID { get; set; }
 
@@ -184,16 +184,16 @@ namespace FantasyData.Api.Client.Model.MLB
         public int? StadiumID { get; set; }
 
         /// <summary>
-        /// Indicates whether the game is over and the final score has been verified and closed out.
+        /// Indicates whether the game is over and the final score has been verified and closed out. Note: it is recommend for bet resulting to use IsClosed = True rather than simply Final game status.
         /// </summary>
-        [Description("Indicates whether the game is over and the final score has been verified and closed out.")]
+        [Description("Indicates whether the game is over and the final score has been verified and closed out. Note: it is recommend for bet resulting to use IsClosed = True rather than simply Final game status.")]
         [DataMember(Name = "IsClosed", Order = 26)]
         public bool IsClosed { get; set; }
 
         /// <summary>
-        /// The timestamp of when the record was last updated (US Eastern Time).
+        /// The date and time of the late update made to this record (in US Eastern Time)
         /// </summary>
-        [Description("The timestamp of when the record was last updated (US Eastern Time).")]
+        [Description("The date and time of the late update made to this record (in US Eastern Time)")]
         [DataMember(Name = "Updated", Order = 27)]
         public DateTime? Updated { get; set; }
 
@@ -205,16 +205,16 @@ namespace FantasyData.Api.Client.Model.MLB
         public DateTime? GameEndDateTime { get; set; }
 
         /// <summary>
-        /// The date and time of the game in UTC.
+        /// The date and time of the game in UTC
         /// </summary>
-        [Description("The date and time of the game in UTC.")]
+        [Description("The date and time of the game in UTC")]
         [DataMember(Name = "DateTimeUTC", Order = 29)]
         public DateTime? DateTimeUTC { get; set; }
 
         /// <summary>
-        /// Contains relevant series data for playoff series only - HomeTeamWins, AwayTeamWins, GameNumber, and MaxLength
+        /// Contains relevant series data for postseason series only - HomeTeamWins; AwayTeamWins; GameNumber; and MaxLength
         /// </summary>
-        [Description("Contains relevant series data for playoff series only - HomeTeamWins, AwayTeamWins, GameNumber, and MaxLength")]
+        [Description("Contains relevant series data for postseason series only - HomeTeamWins; AwayTeamWins; GameNumber; and MaxLength")]
         [DataMember(Name = "SeriesInfo", Order = 10030)]
         public Series SeriesInfo { get; set; }
 
@@ -224,6 +224,20 @@ namespace FantasyData.Api.Client.Model.MLB
         [Description("The GameID of the originally scheduled, postponed game, that this game was rescheduled from. This only pertains to games that are scheduled as \"make up\" games.")]
         [DataMember(Name = "RescheduledFromGameID", Order = 31)]
         public int? RescheduledFromGameID { get; set; }
+
+        /// <summary>
+        /// The date a game that was suspended in play will be resumed for play. Useful for tracking when a Suspended game will return to an InProgress status.
+        /// </summary>
+        [Description("The date a game that was suspended in play will be resumed for play. Useful for tracking when a Suspended game will return to an InProgress status.")]
+        [DataMember(Name = "SuspensionResumeDay", Order = 32)]
+        public DateTime? SuspensionResumeDay { get; set; }
+
+        /// <summary>
+        /// The date and start-time that the suspended in play game will be resumed for play. Useful for tracking when a Suspended game will return to an InProgress status.
+        /// </summary>
+        [Description("The date and start-time that the suspended in play game will be resumed for play. Useful for tracking when a Suspended game will return to an InProgress status.")]
+        [DataMember(Name = "SuspensionResumeDateTime", Order = 33)]
+        public DateTime? SuspensionResumeDateTime { get; set; }
 
     }
 }

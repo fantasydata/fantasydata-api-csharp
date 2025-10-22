@@ -238,10 +238,10 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Games - by Season [Live & Final] Asynchronous
+        /// Get Tournament Hierarchy Asynchronous
         /// </summary>
-        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018POST</code>, <code>2019</code>.</param>
-        public Task<Tournament> GetGamesBySeasonLiveFinalAsync(string season)
+        /// <param name="season">Year of the season. Examples: <code>2018</code>, <code>2019</code>.</param>
+        public Task<Tournament> GetTournamentHierarchyAsync(string season)
         {
             var parameters = new List<KeyValuePair<string, string>>();
             parameters.Add(new KeyValuePair<string, string>("season", season.ToString()));
@@ -251,12 +251,12 @@ namespace FantasyData.Api.Client
         }
 
         /// <summary>
-        /// Get Games - by Season [Live & Final]
+        /// Get Tournament Hierarchy
         /// </summary>
-        /// <param name="season">Year of the season (with optional season type). Examples: <code>2018</code>, <code>2018POST</code>, <code>2019</code>.</param>
-        public Tournament GetGamesBySeasonLiveFinal(string season)
+        /// <param name="season">Year of the season. Examples: <code>2018</code>, <code>2019</code>.</param>
+        public Tournament GetTournamentHierarchy(string season)
         {
-            return this.GetGamesBySeasonLiveFinalAsync(season).Result;
+            return this.GetTournamentHierarchyAsync(season).Result;
         }
 
         /// <summary>

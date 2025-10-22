@@ -16,9 +16,9 @@ namespace FantasyData.Api.Client.Model.WNBA
         public int StadiumID { get; set; }
 
         /// <summary>
-        /// Whether or not this stadium is the home venue for an active team
+        /// Whether or not this team is active. Note: Active = True & Inactive = False
         /// </summary>
-        [Description("Whether or not this stadium is the home venue for an active team")]
+        [Description("Whether or not this team is active. Note: Active = True & Inactive = False")]
         [DataMember(Name = "Active", Order = 2)]
         public bool Active { get; set; }
 
@@ -30,16 +30,16 @@ namespace FantasyData.Api.Client.Model.WNBA
         public string Name { get; set; }
 
         /// <summary>
-        /// The city where the stadium is located
+        /// The city in which the stadium is located
         /// </summary>
-        [Description("The city where the stadium is located")]
+        [Description("The city in which the stadium is located")]
         [DataMember(Name = "City", Order = 4)]
         public string City { get; set; }
 
         /// <summary>
-        /// The US state where the stadium is located (if Stadium is outside US, this value is NULL)
+        /// The state where the stadium is located (only US and Canadian stadiums will have values)
         /// </summary>
-        [Description("The US state where the stadium is located (if Stadium is outside US, this value is NULL)")]
+        [Description("The state where the stadium is located (only US and Canadian stadiums will have values)")]
         [DataMember(Name = "State", Order = 5)]
         public string State { get; set; }
 

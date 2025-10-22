@@ -9,9 +9,9 @@ namespace FantasyData.Api.Client.Model.Soccer
     public partial class GameOddOutcome
     {
         /// <summary>
-        /// Unique ID of this odd
+        /// The unique ID of this odd
         /// </summary>
-        [Description("Unique ID of this odd")]
+        [Description("The unique ID of this odd")]
         [DataMember(Name = "GameOddId", Order = 1)]
         public int GameOddId { get; set; }
 
@@ -30,9 +30,9 @@ namespace FantasyData.Api.Client.Model.Soccer
         public string GameOddResultType { get; set; }
 
         /// <summary>
-        /// The market type of the odd (ex: live, pregame, 1st-5th Inning, etc)
+        /// The market type of the odd (ex: live; pregame; 90 minutes + stoppage time; etc.)
         /// </summary>
-        [Description("The market type of the odd (ex: live, pregame, 1st-5th Inning, etc)")]
+        [Description("The market type of the odd (ex: live; pregame; 90 minutes + stoppage time; etc.)")]
         [DataMember(Name = "OddType", Order = 4)]
         public string OddType { get; set; }
 
